@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.12%2B-blue.svg" alt="Python 3.12+"></a>
   <a href="https://arxiv.org/abs/2605.29653"><img src="https://img.shields.io/badge/arXiv-2605.29653-b31b1b.svg" alt="arXiv"></a>
-  <a href="https://gemelom.github.io/PTCG-Bench/"><img src="https://img.shields.io/badge/Project-Page-green.svg" alt="Project Page"></a>
+  <a href="https://ddhua.tech/ptcg-bench/"><img src="https://img.shields.io/badge/Project-Page-green.svg" alt="Project Page"></a>
 </p>
 
 <p align="center">
