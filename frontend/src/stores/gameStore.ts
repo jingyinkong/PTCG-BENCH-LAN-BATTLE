@@ -2,6 +2,18 @@ import { create } from 'zustand';
 import { GameState, Action, ChooseCardPrompt, LogEntry } from '../types/game';
 import { api } from '../services/api';
 import axios from 'axios';
+import { preloadCardImagesByName, preloadCardImagesForState } from '../services/cardImagePreloader';
+
+let cardImagesLoadPromise: Promise<void> | null = null;
+
+function preloadGameImages(data: {
+  state?: GameState | null;
+  chooseCardPrompt?: ChooseCardPrompt | null;
+}) {
+  const { cardImages } = useGameStore.getState();
+  preloadCardImagesForState(data.state, cardImages);
+  preloadCardImagesByName(data.chooseCardPrompt?.candidates ?? [], cardImages);
+}
 
 interface GameStore {
   gameId: string | null;
@@ -57,7 +69,9 @@ export const useGameStore = create<GameStore>((set, get) => ({
   createGame: async (config) => {
     set({ loading: true, error: null });
     try {
+      const imagesPromise = get().imagesLoaded ? Promise.resolve() : get().loadCardImages();
       const data = await api.createGame(config);
+      await imagesPromise;
       const newTurn = data.turn?.toLowerCase() as 'player1' | 'player2' | null;
       const agentPlayer = (data.agentPlayer?.toLowerCase() ?? config.agentPlayer ?? 'player2') as 'player1' | 'player2';
       const vsAgent = data.vsAgent ?? false;
@@ -78,6 +92,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
         agentModel: data.agentModel ?? null,
         isAgentThinking: false,
       });
+      preloadGameImages(data);
 
       // If agent goes first, trigger agent steps immediately
       if (vsAgent && !data.done && newTurn === agentPlayer) {
@@ -127,6 +142,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
         chooseCardPrompt: data.chooseCardPrompt ?? null,
         gameLog: [...gameLog, newEntry],
       });
+      preloadGameImages(data);
 
       // Trigger agent if it's now the agent's turn
       const { vsAgent, agentPlayer } = get();
@@ -178,6 +194,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
           chooseCardPrompt: data.chooseCardPrompt ?? null,
           gameLog: [...get().gameLog, newEntry],
         });
+        preloadGameImages(data);
 
         keepGoing = !data.done && newTurn === agentPlayer;
       }
@@ -213,14 +230,24 @@ export const useGameStore = create<GameStore>((set, get) => ({
   },
 
   loadCardImages: async () => {
-    try {
-      const response = await axios.get('/api/cards/images');
-      set({ cardImages: response.data, imagesLoaded: true });
-      console.log(`Loaded ${Object.keys(response.data).length} card images`);
-    } catch (error) {
-      console.error('Failed to load card images:', error);
-      set({ imagesLoaded: false });
-    }
+    if (get().imagesLoaded) return;
+    if (cardImagesLoadPromise) return cardImagesLoadPromise;
+
+    cardImagesLoadPromise = (async () => {
+      try {
+        const response = await axios.get('/api/cards/images');
+        set({ cardImages: response.data, imagesLoaded: true });
+        preloadCardImagesForState(get().state, response.data);
+        console.log(`Loaded ${Object.keys(response.data).length} card images`);
+      } catch (error) {
+        console.error('Failed to load card images:', error);
+        set({ imagesLoaded: false });
+      } finally {
+        cardImagesLoadPromise = null;
+      }
+    })();
+
+    return cardImagesLoadPromise;
   },
 
   getCardImageUrl: (cardName: string) => {

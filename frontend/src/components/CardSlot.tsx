@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { Card, PokemonCard } from '../types/game';
 import EnergyIcon from './EnergyIcon';
 
@@ -11,7 +11,7 @@ export interface CardSlotProps {
   onClick?: (card: Card, imageUrl?: string) => void;
 }
 
-export default function CardSlot({
+function CardSlot({
   card = null,
   imageUrl,
   faceDown = false,
@@ -22,23 +22,29 @@ export default function CardSlot({
   const [imgError, setImgError] = useState(false);
   const isEmpty = !card && !faceDown && (count === undefined || count === 0);
 
+  useEffect(() => {
+    setImgError(false);
+  }, [imageUrl]);
+
   const handleClick = () => { if (onClick && card) onClick(card, imageUrl); };
 
   let content: React.ReactNode = null;
   if (!isEmpty) {
     if (faceDown) {
-      content = <img src="/card-back.png" alt="Card" className="w-full h-full object-cover" />;
+      content = <img src="/card-back.png" alt="Card" className="w-full h-full object-cover" loading="eager" decoding="async" />;
     } else if (card && imageUrl && !imgError) {
       content = (
         <img
           src={imageUrl}
           alt={card.name}
           className="w-full h-full object-cover"
+          loading="eager"
+          decoding="async"
           onError={() => setImgError(true)}
         />
       );
     } else {
-      content = <img src="/card-back.png" alt={card?.name ?? 'Card'} className="w-full h-full object-cover" />;
+      content = <img src="/card-back.png" alt={card?.name ?? 'Card'} className="w-full h-full object-cover" loading="eager" decoding="async" />;
     }
   }
 
@@ -77,3 +83,5 @@ export default function CardSlot({
     </div>
   );
 }
+
+export default memo(CardSlot);

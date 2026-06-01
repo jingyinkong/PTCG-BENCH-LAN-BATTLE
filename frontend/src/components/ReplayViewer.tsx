@@ -6,6 +6,7 @@ import ReplayControls from './ReplayControls';
 import CardModal from './CardModal';
 import { Card, PlayerId } from '../types/game';
 import { ReplayActionData } from '../types/replay';
+import { getCardNamesFromState, preloadCardImagesByName } from '../services/cardImagePreloader';
 
 // ─── Action colour map ────────────────────────────────────────────────────────
 const ACTION_COLOR: Record<string, string> = {
@@ -188,6 +189,15 @@ export default function ReplayViewer({ onBack }: Props) {
   const [selectedCard, setSelectedCard] = useState<{ card: Card; imageUrl?: string } | null>(null);
 
   useEffect(() => { if (!imagesLoaded) loadCardImages(); }, [imagesLoaded, loadCardImages]);
+  useEffect(() => {
+    if (!imagesLoaded || frames.length === 0) return;
+
+    const names = new Set<string>();
+    frames.forEach((frame) => {
+      getCardNamesFromState(frame.state).forEach((name) => names.add(name));
+    });
+    preloadCardImagesByName(Array.from(names), cardImages);
+  }, [cardImages, frames, imagesLoaded]);
 
   if (!filename) return <FileList onBack={onBack} />;
 
