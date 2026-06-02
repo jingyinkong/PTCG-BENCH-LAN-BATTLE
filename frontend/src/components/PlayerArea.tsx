@@ -144,11 +144,7 @@ function PrizeZone({ prize }: { prize: Card[] }) {
   return (
     <div className="flex flex-col items-center">
       <ZoneLabel>Prize ({prize.length})</ZoneLabel>
-      <div className="grid grid-cols-2 gap-1">
-        {Array.from({ length: 6 }).map((_, i) => (
-          <CardSlot key={i} faceDown={i < prize.length} />
-        ))}
-      </div>
+      <CardSlot faceDown={prize.length > 0} count={prize.length > 0 ? prize.length : undefined} />
     </div>
   );
 }
