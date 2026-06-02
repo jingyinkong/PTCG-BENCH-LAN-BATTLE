@@ -211,9 +211,6 @@ async def record(
             .grid.grid-cols-12.gap-3.flex-1.min-h-0 > div:last-child {
                 display: none !important;
             }
-            .grid.grid-cols-12.gap-3.flex-1.min-h-0 > div:first-child {
-                grid-column: 1 / -1 !important;
-            }
             """,
             """
             button[title="Play"],
@@ -559,8 +556,8 @@ def main() -> None:
         default=2.0,
         help="Playback speed: 0.25 / 0.5 / 1 / 2 / 4 (default: 2)",
     )
-    parser.add_argument("--width", type=int, default=1920, help="Viewport width (default: 1920)")
-    parser.add_argument("--height", type=int, default=1400, help="Viewport height (default: 1400)")
+    parser.add_argument("--width", type=int, default=1500, help="Viewport width (default: 1500)")
+    parser.add_argument("--height", type=int, default=900, help="Viewport height (default: 900)")
     parser.add_argument(
         "--zoom",
         type=float,
