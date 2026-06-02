@@ -211,7 +211,13 @@ export default function ReplayViewer({ onBack }: Props) {
       <div className="grid grid-cols-12 gap-3 flex-1 min-h-0">
         <div className="col-span-9 min-h-0 overflow-hidden">
           {frame ? (
-            <ReplayBoard state={frame.state} cardImages={cardImages} onCardClick={(card, imageUrl) => setSelectedCard({ card, imageUrl })} />
+            <ReplayBoard
+              state={frame.state}
+              cardImages={cardImages}
+              action={frame.action}
+              frameIndex={frame.frameIndex}
+              onCardClick={(card, imageUrl) => setSelectedCard({ card, imageUrl })}
+            />
           ) : (
             <div className="flex items-center justify-center h-full text-slate-600 text-sm">No frame data</div>
           )}
