@@ -9,6 +9,7 @@ description = "Agents, benchmarks, backend, and frontend support for the PTCG en
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "bcrypt>=4.0.0",
     "fastapi>=0.135.1",
     "gepa>=0.1.1",
     "httpx>=0.26.0",
@@ -23,6 +24,7 @@ dependencies = [
     "python-multipart>=0.0.6",
     "pyyaml>=6.0",
     "rich>=13.9.4",
+    "socksio>=1.0.0",
     "tcgdex-sdk>=2.2.1",
     "tiktoken>=0.5.0",
     "toon-format",

@@ -1,7 +1,8 @@
 import { useGameStore } from '../stores/gameStore';
+import { useAuthStore } from '../stores/authStore';
 import { useReplayStore } from '../stores/replayStore';
 
-type AppMode = 'home' | 'game' | 'replay' | 'decks' | 'leaderboard';
+type AppMode = 'home' | 'game' | 'replay' | 'decks' | 'leaderboard' | 'auth' | 'lobby' | 'history';
 
 interface Props {
   mode: AppMode;
@@ -115,6 +116,7 @@ function StatusBadge() {
 // ─── NavBar ───────────────────────────────────────────────────────────────────
 export default function NavBar({ mode, onNavigate, onBattleHuman, onBattleAI }: Props) {
   const { gameId, done } = useGameStore();
+  const { isLoggedIn, user, logout } = useAuthStore();
 
   const tabs: Tab[] = [
     { id: 'home', label: 'Home', icon: <HomeIcon />, alwaysEnabled: true },
@@ -211,6 +213,29 @@ export default function NavBar({ mode, onNavigate, onBattleHuman, onBattleAI }: 
 
       {/* Right: status */}
       <div className="flex-shrink-0 flex items-center justify-end min-w-[100px]">
+        {isLoggedIn && user ? (
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => onNavigate('history' as AppMode)}
+              className="text-xs text-slate-400 hover:text-sky-400 transition-colors"
+            >
+              {user.username}
+            </button>
+            <button
+              onClick={logout}
+              className="text-xs text-slate-600 hover:text-red-400 transition-colors"
+            >
+              Logout
+            </button>
+          </div>
+        ) : (
+          <button
+            onClick={() => onNavigate('auth' as AppMode)}
+            className="text-xs text-sky-400 hover:text-sky-300 transition-colors"
+          >
+            Login
+          </button>
+        )}
         <StatusBadge />
       </div>
     </nav>

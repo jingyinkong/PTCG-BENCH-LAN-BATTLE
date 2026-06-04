@@ -53,3 +53,5 @@ bench_data/
 .vscode/
 *.swp
 *.swo
+.omc/
+backend/data/

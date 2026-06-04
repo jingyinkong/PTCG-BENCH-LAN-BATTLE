@@ -1,0 +1,299 @@
+import { useState, useEffect, useCallback, useRef } from 'react';
+import { api, RoomInfo } from '../services/api';
+import { useAuthStore } from '../stores/authStore';
+import { useGameStore } from '../stores/gameStore';
+import DeckSelectModal from './DeckSelectModal';
+
+export default function LobbyPage() {
+  const [rooms, setRooms] = useState<RoomInfo[]>([]);
+  const [myRoom, setMyRoom] = useState<RoomInfo | null>(null);
+  const [showDeckModal, setShowDeckModal] = useState(false);
+  const [deckAction, setDeckAction] = useState<'create' | 'join' | null>(null);
+  const [targetRoomId, setTargetRoomId] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [starting, setStarting] = useState(false);
+  const { user } = useAuthStore();
+  const { startPvPGame, reset, coinTossResult, sendCoinTossCall, sendCoinTossChoose } = useGameStore();
+  const pollFailCount = useRef(0);
+
+  const fetchRooms = useCallback(async () => {
+    try {
+      const data = await api.listRooms();
+      setRooms(data.rooms);
+    } catch {}
+  }, []);
+
+  // Recover myRoom from server list after page refresh / navigation
+  useEffect(() => {
+    if (!myRoom && rooms.length > 0) {
+      const ownRoom = rooms.find(r => r.is_own);
+      if (ownRoom) setMyRoom(ownRoom);
+    }
+  }, [rooms, myRoom]);
+
+  // Poll for room list (guest view)
+  useEffect(() => {
+    fetchRooms();
+    const interval = setInterval(fetchRooms, 3000);
+    return () => clearInterval(interval);
+  }, [fetchRooms]);
+
+  // Poll my own room for status changes (host or guest)
+  useEffect(() => {
+    if (!myRoom) return;
+    const roomId = myRoom.id;
+    const myUserId = user?.id;
+
+    const check = setInterval(async () => {
+      try {
+        const data = await api.getRoom(roomId);
+        const room = data.room;
+        pollFailCount.current = 0; // reset on success
+        setMyRoom(room as RoomInfo);
+
+        // Guest: detect when host starts the game
+        if (room.status === 'playing' && myUserId && room.guest_user_id === myUserId) {
+          clearInterval(check);
+          startPvPGame(roomId, 'player2');
+        }
+      } catch {
+        pollFailCount.current += 1;
+        // Only give up after 3 consecutive failures (6 seconds of no response)
+        if (pollFailCount.current >= 3) {
+          setMyRoom(null);
+          clearInterval(check);
+        }
+      }
+    }, 2000);
+    return () => clearInterval(check);
+  }, [myRoom?.id]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const handleCreateRoom = () => {
+    reset();
+    setDeckAction('create');
+    setTargetRoomId(null);
+    setShowDeckModal(true);
+  };
+
+  const handleJoinRoom = (roomId: string) => {
+    reset();
+    setDeckAction('join');
+    setTargetRoomId(roomId);
+    setShowDeckModal(true);
+  };
+
+  const handleDeckConfirm = async (deck1?: string) => {
+    setShowDeckModal(false);
+    if (!deck1) return;
+    setLoading(true);
+    try {
+      if (deckAction === 'create') {
+        const data = await api.createRoom(deck1);
+        setMyRoom(data.room);
+      } else if (deckAction === 'join' && targetRoomId) {
+        const data = await api.joinRoom(targetRoomId, deck1);
+        setMyRoom(data.room);
+      }
+    } catch (e: any) {
+      console.error(e);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleStartGame = async () => {
+    if (!myRoom) return;
+    setStarting(true);
+    try {
+      await api.startRoom(myRoom.id);
+      startPvPGame(myRoom.id, 'player1');
+    } catch (e: any) {
+      console.error(e);
+    } finally {
+      setStarting(false);
+    }
+  };
+
+  const handleCancelRoom = async () => {
+    if (myRoom) {
+      try { await api.leaveRoom(myRoom.id); } catch {}
+      setMyRoom(null);
+    }
+  };
+
+  const isHost = myRoom && user && myRoom.host_user_id === user.id;
+  const isGuest = myRoom && user && myRoom.guest_user_id === user.id;
+  const guestJoined = myRoom?.guest_user_id != null;
+
+  // Show waiting screen (host or guest waiting)
+  if (myRoom) {
+    const statusText = myRoom.status === 'playing'
+      ? 'Game Starting...'
+      : isHost
+        ? guestJoined
+          ? 'Opponent joined! Start the game when ready.'
+          : 'Waiting for opponent to join...'
+        : 'Waiting for host to start the game...';
+
+    return (
+      <div className="flex items-center justify-center" style={{ minHeight: 'calc(100vh - 44px)' }}>
+        <div className="bg-slate-900 border border-slate-700 rounded-xl p-8 w-full max-w-md text-center shadow-xl">
+          {myRoom.status !== 'playing' && (
+            <div className="w-12 h-12 mx-auto mb-4 rounded-full border-4 border-sky-500 border-t-transparent animate-spin" />
+          )}
+          {myRoom.status === 'playing' && (
+            <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-emerald-500/20 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                stroke="#34d399" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+          )}
+          <h2 className="text-xl font-bold text-slate-50 mb-2">
+            {myRoom.status === 'playing' ? 'Starting Game' : isHost ? 'Your Room' : 'Joined Room'}
+          </h2>
+          <p className="text-slate-400 text-sm mb-1">{statusText}</p>
+          <p className="text-slate-500 text-xs mb-1">
+            Room <span className="font-mono text-sky-400">#{myRoom.id}</span>
+          </p>
+          <p className="text-slate-500 text-xs mb-1">
+            Your deck: {isHost ? myRoom.host_deck : myRoom.guest_deck}
+          </p>
+          {isHost && guestJoined && (
+            <p className="text-slate-500 text-xs mb-6">
+              Opponent: <span className="text-amber-400">{myRoom.guest_username}</span> &middot; Deck: {myRoom.guest_deck}
+            </p>
+          )}
+          {isHost && !guestJoined && (
+            <p className="text-slate-600 text-xs mb-6">Share the room ID with your opponent</p>
+          )}
+          {isGuest && (
+            <p className="text-slate-500 text-xs mb-6">
+              Host: <span className="text-sky-400">{myRoom.host_username}</span>
+            </p>
+          )}
+
+          {/* ── Coin Toss Interactive UI ── */}
+          {coinTossResult && coinTossResult.phase === 'call' && (
+            <div className="mb-6 p-4 bg-amber-950/30 border border-amber-700/50 rounded-lg">
+              <p className="text-amber-300 text-sm font-semibold mb-1">🎲 Coin Toss</p>
+              <p className="text-slate-400 text-xs mb-3">
+                {coinTossResult.caller_name} is calling the coin toss
+              </p>
+              {coinTossResult.caller === (isHost ? 'player1' : 'player2') ? (
+                <div className="flex gap-3 justify-center">
+                  <button onClick={() => sendCoinTossCall('heads')}
+                    className="px-6 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded-lg font-semibold text-sm transition-colors">
+                    🪙 Heads
+                  </button>
+                  <button onClick={() => sendCoinTossCall('tails')}
+                    className="px-6 py-2 bg-slate-600 hover:bg-slate-500 text-white rounded-lg font-semibold text-sm transition-colors">
+                    🪙 Tails
+                  </button>
+                </div>
+              ) : (
+                <p className="text-slate-500 text-xs">Waiting for {coinTossResult.caller_name} to call...</p>
+              )}
+            </div>
+          )}
+
+          {coinTossResult && coinTossResult.phase === 'result' && (
+            <div className="mb-6 p-4 bg-amber-950/30 border border-amber-700/50 rounded-lg">
+              <p className="text-amber-300 text-sm font-semibold mb-1">🎲 Coin Result</p>
+              <p className="text-slate-300 text-xs mb-1">
+                {coinTossResult.caller_name} called <span className="font-bold text-white">{coinTossResult.caller_choice}</span>
+                {' → '} coin: <span className="font-bold text-amber-400">{coinTossResult.coin}</span>
+              </p>
+              <p className="text-slate-400 text-xs mb-3">
+                {coinTossResult.chooser_name} chooses who goes first
+              </p>
+              {coinTossResult.chooser === (isHost ? 'player1' : 'player2') ? (
+                <div className="flex gap-3 justify-center">
+                  <button onClick={() => sendCoinTossChoose('first')}
+                    className="px-6 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-semibold text-sm transition-colors">
+                    ⚡ Go First
+                  </button>
+                  <button onClick={() => sendCoinTossChoose('second')}
+                    className="px-6 py-2 bg-slate-600 hover:bg-slate-500 text-white rounded-lg font-semibold text-sm transition-colors">
+                    🛡️ Go Second
+                  </button>
+                </div>
+              ) : (
+                <p className="text-slate-500 text-xs">Waiting for {coinTossResult.chooser_name} to choose...</p>
+              )}
+            </div>
+          )}
+
+          <div className="flex gap-3 justify-center">
+            {/* Host: Start Game button (only when guest has joined and room is waiting) */}
+            {isHost && guestJoined && myRoom.status === 'waiting' && (
+              <button onClick={handleStartGame} disabled={starting}
+                className="px-6 py-2 bg-emerald-600 hover:bg-emerald-500 disabled:bg-slate-700 text-white rounded-lg font-semibold text-sm transition-colors">
+                {starting ? 'Starting...' : 'Start Game'}
+              </button>
+            )}
+            <button onClick={handleCancelRoom}
+              className="px-6 py-2 bg-slate-700 hover:bg-slate-600 text-slate-300 rounded-lg font-semibold text-sm transition-colors">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="p-6 max-w-2xl mx-auto" style={{ minHeight: 'calc(100vh - 44px)' }}>
+      <div className="flex items-center justify-between mb-6">
+        <h2 className="text-2xl font-bold text-slate-50">LAN Battle Lobby</h2>
+        <button onClick={handleCreateRoom} disabled={loading}
+          className="px-4 py-2 bg-sky-600 hover:bg-sky-500 disabled:bg-slate-700 text-white rounded-lg font-semibold text-sm transition-colors">
+          Create Room
+        </button>
+      </div>
+
+      {rooms.length === 0 ? (
+        <div className="text-center text-slate-500 py-16">
+          <p className="text-lg">No rooms available</p>
+          <p className="text-sm mt-2">Create a room or wait for someone else to host</p>
+        </div>
+      ) : (
+        <div className="space-y-3">
+          {rooms.filter(r => r.is_own).map((room) => (
+            <div key={room.id}
+              className="bg-sky-950 border border-sky-700 rounded-lg p-4 flex items-center justify-between">
+              <div>
+                <div className="text-sky-200 font-semibold text-sm">Your Room #{room.id}</div>
+                <div className="text-sky-400 text-xs mt-1">
+                  Deck: {room.host_deck || '—'} &middot; {room.guest_user_id ? `Guest: ${room.guest_username}` : 'Waiting for opponent...'}
+                </div>
+              </div>
+              <button onClick={() => { handleCancelRoom(); }}
+                className="px-4 py-1.5 bg-red-700 hover:bg-red-600 text-white rounded-lg text-sm font-medium transition-colors">
+                Cancel Room
+              </button>
+            </div>
+          ))}
+          {rooms.filter(r => !r.is_own).map((room) => (
+            <div key={room.id}
+              className="bg-slate-900 border border-slate-700 rounded-lg p-4 flex items-center justify-between">
+              <div>
+                <div className="text-slate-200 font-semibold text-sm">{room.host_username}'s Room</div>
+                <div className="text-slate-500 text-xs mt-1">
+                  Deck: {room.host_deck || '—'} &middot; Room #{room.id}
+                </div>
+              </div>
+              <button onClick={() => handleJoinRoom(room.id)} disabled={loading}
+                className="px-4 py-1.5 bg-emerald-600 hover:bg-emerald-500 disabled:bg-slate-700 text-white rounded-lg text-sm font-medium transition-colors">
+                Join
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <DeckSelectModal isOpen={showDeckModal} onClose={() => setShowDeckModal(false)}
+        onConfirm={handleDeckConfirm} defaultVsAgent={false} pvpMode={true} />
+    </div>
+  );
+}

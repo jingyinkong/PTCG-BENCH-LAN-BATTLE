@@ -1,8 +1,8 @@
 import { useGameStore } from '../stores/gameStore';
 
 export default function ActionPanel() {
-  const { availableActions = [], executeAction, loading, isChoosingCard, isAgentThinking, vsAgent, turn, agentPlayer } = useGameStore();
-  const isMyTurn = !vsAgent || turn !== agentPlayer;
+  const { availableActions = [], executeAction, loading, isChoosingCard, isAgentThinking, vsAgent, turn, agentPlayer, isPvP, pvpPlayerId, leavePvPGame, opponentDisconnected } = useGameStore();
+  const isMyTurn = isPvP ? turn === pvpPlayerId : vsAgent ? turn !== agentPlayer : true;
 
   const displayActions = isChoosingCard || !isMyTurn
     ? []
@@ -70,6 +70,22 @@ export default function ActionPanel() {
           })
         )}
       </div>
+
+      {/* PvP surrender / leave button */}
+      {isPvP && (
+        <div className="mt-3 pt-3 border-t border-slate-800">
+          {opponentDisconnected ? (
+            <div className="text-amber-400 text-xs text-center py-1">对手已断线</div>
+          ) : (
+            <button
+              onClick={leavePvPGame}
+              className="w-full px-3 py-2 bg-red-900/40 hover:bg-red-800/60 border border-red-800/40 hover:border-red-700/60 text-red-300 rounded-lg text-xs font-semibold transition-colors"
+            >
+              Surrender / Leave Game
+            </button>
+          )}
+        </div>
+      )}
     </div>
   );
 }

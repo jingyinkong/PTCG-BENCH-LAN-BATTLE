@@ -10,15 +10,20 @@ import ReplayViewer from './components/ReplayViewer';
 import DeckManager from './components/DeckManager';
 import Leaderboard from './components/Leaderboard';
 import DeckSelectModal from './components/DeckSelectModal';
+import AuthPage from './components/AuthPage';
+import LobbyPage from './components/LobbyPage';
+import MatchHistory from './components/MatchHistory';
+import { useAuthStore } from './stores/authStore';
 import { Card } from './types/game';
 
-type AppMode = 'home' | 'game' | 'replay' | 'decks' | 'leaderboard';
+type AppMode = 'home' | 'game' | 'replay' | 'decks' | 'leaderboard' | 'auth' | 'lobby' | 'history';
 
 // Nav height offset — h-11 = 44px
 const PAGE_WRAPPER = 'pt-11 min-h-screen bg-slate-950 text-slate-100';
 
 function App() {
   const { createGame, gameId, done, winner, loadCardImages } = useGameStore();
+  const { isLoggedIn, fetchMe } = useAuthStore();
   const [selectedCard, setSelectedCard] = useState<{ card: Card; imageUrl?: string } | null>(null);
   const [mode, setMode] = useState<AppMode>('home');
 
@@ -39,6 +44,7 @@ function App() {
 
   useEffect(() => { loadCardImages(); }, [loadCardImages]);
   useEffect(() => { if (gameId) setMode('game'); }, [gameId]);
+  useEffect(() => { fetchMe(); }, [fetchMe]);
 
   const handleNavigate = (next: AppMode) => {
     if (next === 'game' && !gameId) return;
@@ -87,6 +93,17 @@ function App() {
           </svg>
           Replays
         </button>
+        {isLoggedIn && (
+          <button
+            onClick={() => setMode('lobby')}
+            className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-semibold text-sm transition-colors shadow-md flex items-center gap-2"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-200">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+            LAN Battle
+          </button>
+        )}
         <button
           onClick={() => setMode('leaderboard')}
           className="px-6 py-2.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-sky-500/50 text-slate-200 rounded-lg font-semibold text-sm transition-colors flex items-center gap-2"
@@ -165,6 +182,12 @@ function App() {
     body = <ReplayViewer onBack={() => setMode('home')} />;
   } else if (mode === 'decks') {
     body = <DeckManager onPlayWithDeck={(deckId) => handleOpenDeckModal(deckId)} />;
+  } else if (mode === 'auth') {
+    body = <AuthPage onBack={() => setMode('home')} />;
+  } else if (mode === 'lobby') {
+    body = isLoggedIn ? <LobbyPage /> : <AuthPage onBack={() => setMode('home')} />;
+  } else if (mode === 'history') {
+    body = isLoggedIn ? <MatchHistory /> : <AuthPage onBack={() => setMode('home')} />;
   } else if (mode === 'game' && gameId) {
     body = done ? GameOverScreen : GameScreen;
   } else {

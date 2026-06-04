@@ -110,9 +110,11 @@ interface DeckSelectModalProps {
   onConfirm: (deck1?: string, deck2?: string, agent?: string, agentModel?: string) => void;
   defaultDeck1?: string | null;
   defaultVsAgent?: boolean;
+  /** PvP 模式：用户只选自己的卡组，不给对手选 */
+  pvpMode?: boolean;
 }
 
-export default function DeckSelectModal({ isOpen, onClose, onConfirm, defaultDeck1, defaultVsAgent }: DeckSelectModalProps) {
+export default function DeckSelectModal({ isOpen, onClose, onConfirm, defaultDeck1, defaultVsAgent, pvpMode }: DeckSelectModalProps) {
   const { decks, loading, loadDecks } = useDeckStore();
   const [deck1, setDeck1] = useState<string | null>(defaultDeck1 ?? null);
   const [deck2, setDeck2] = useState<string | null>(null);
@@ -164,6 +166,8 @@ export default function DeckSelectModal({ isOpen, onClose, onConfirm, defaultDec
     if (vsAgent) {
       const model = selectedAgent?.requiresModel ? (selectedModel || selectedAgent.defaultModel) : undefined;
       onConfirm(deck1 ?? undefined, deck2 ?? undefined, selectedAgentId, model);
+    } else if (pvpMode) {
+      onConfirm(deck1 ?? undefined);
     } else {
       onConfirm(deck1 ?? undefined, deck2 ?? undefined);
     }
@@ -179,8 +183,8 @@ export default function DeckSelectModal({ isOpen, onClose, onConfirm, defaultDec
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800 flex-shrink-0">
           <div>
-            <h2 className="text-sm font-semibold text-slate-100">Select Decks</h2>
-            <p className="text-[11px] text-slate-500 mt-0.5">Choose a deck for each player</p>
+            <h2 className="text-sm font-semibold text-slate-100">{pvpMode ? 'Select Your Deck' : 'Select Decks'}</h2>
+            <p className="text-[11px] text-slate-500 mt-0.5">{pvpMode ? 'Choose a deck for this battle' : 'Choose a deck for each player'}</p>
           </div>
           <div className="flex items-center gap-3">
             {/* Mode toggle */}
@@ -234,7 +238,7 @@ export default function DeckSelectModal({ isOpen, onClose, onConfirm, defaultDec
             <div className="flex items-center gap-2 mb-2.5 flex-shrink-0">
               <span className={`w-2 h-2 rounded-full ${vsAgent ? 'bg-sky-400' : 'bg-amber-400'}`} />
               <h3 className={`text-xs font-semibold ${vsAgent ? 'text-sky-400' : 'text-amber-400'}`}>
-                {vsAgent ? 'AI Agent' : 'Player 2 — Opponent'}
+                {vsAgent ? 'AI Agent' : pvpMode ? 'Opponent' : 'Player 2 — Opponent'}
               </h3>
             </div>
 
@@ -298,6 +302,10 @@ export default function DeckSelectModal({ isOpen, onClose, onConfirm, defaultDec
                   </div>
                 </div>
               </div>
+            ) : pvpMode ? (
+              <div className="flex-1 flex items-center justify-center">
+                <p className="text-slate-500 text-xs text-center px-4">您的对手将<br/>自行选择卡组</p>
+              </div>
             ) : (
               <div className="flex-1 overflow-y-auto space-y-1.5">
                 {loading ? (
@@ -322,6 +330,8 @@ export default function DeckSelectModal({ isOpen, onClose, onConfirm, defaultDec
                   <span className="text-slate-600 ml-1">({selectedModel.split('/').pop()})</span>
                 )}
               </span>
+            ) : pvpMode ? (
+              <span className="text-amber-400">Opponent</span>
             ) : (
               <span className="text-amber-400">{p2Label}</span>
             )}

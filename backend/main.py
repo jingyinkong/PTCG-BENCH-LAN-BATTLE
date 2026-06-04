@@ -13,6 +13,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 import asyncio
 import json
 import re
+import secrets
 import uuid
 from importlib.resources import files
 from typing import Any, Dict, List, Optional
@@ -21,6 +22,11 @@ from card_image_service import card_image_service
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+
+from auth import router as auth_router
+from game_rooms import router as rooms_router, rooms as game_rooms
+from match_records import router as match_records_router
+from pvp_game import PvPGameManager, active_connections, _get_user_from_token, _broadcast_state, _record_match_result, _cleanup_room
 
 from ptcgbench.agents.charizard_heuristic_agent import CharizardHeuristicAgent
 from ptcgbench.agents.common.profile import AgentProfile
@@ -35,7 +41,11 @@ app = FastAPI(title="PTCG API", version="1.0.0")
 BATTLE_LOG_DIR = Path(__file__).parent / "battle_log"
 
 _default_origins = "http://localhost:3000,http://localhost:5173,http://localhost:5174,http://localhost:5175,http://localhost:5176"
-ALLOWED_ORIGINS = os.environ.get("ALLOWED_ORIGINS", _default_origins).split(",")
+_lan_mode = os.environ.get("LAN_MODE", "").lower() in ("1", "true", "yes")
+if _lan_mode:
+    ALLOWED_ORIGINS = ["*"]
+else:
+    ALLOWED_ORIGINS = os.environ.get("ALLOWED_ORIGINS", _default_origins).split(",")
 
 app.add_middleware(
     CORSMiddleware,
@@ -44,6 +54,11 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Register auth routes and game rooms
+app.include_router(auth_router)
+app.include_router(rooms_router)
+app.include_router(match_records_router)
 
 # Game storage
 games: Dict[str, Dict] = {}
@@ -121,6 +136,18 @@ def _finalize_game_if_done(game: Dict) -> None:
     br = getattr(agent, "_battle_record", None)
     if br is not None:
         br.save_replay(env.recorder.file_path)
+
+
+@app.get("/api/lan/server-info")
+async def server_info():
+    """Return LAN server info for client discovery."""
+    import socket
+    hostname = socket.gethostname()
+    try:
+        lan_ip = socket.gethostbyname(hostname)
+    except socket.gaierror:
+        lan_ip = "127.0.0.1"
+    return {"host": lan_ip, "port": 8000, "name": hostname}
 
 
 @app.get("/")
@@ -597,6 +624,284 @@ async def websocket_game(websocket: WebSocket, game_id: str):
     except Exception as e:
         print(f"WebSocket error: {e}")
         await websocket.send_json({"type": "ERROR", "message": str(e)})
+
+
+# ============================================================================
+# PvP WebSocket Endpoint
+# ============================================================================
+
+# Per-room coin toss state for interactive PTCG coin toss protocol
+coin_toss_states: Dict[str, dict] = {}
+
+def _filter_state_for_player(state_dict: dict, viewer: str) -> dict:
+    """Replace the opponent's hand cards with hidden placeholders.
+
+    In PTCG, each player should only see:
+    - Their own hand (face up)
+    - Both players' bench, active, discard (public knowledge)
+    - Prize cards and deck are always hidden regardless
+    """
+    opponent = "player2" if viewer == "player1" else "player1"
+    # Shallow-copy top level, deep-copy the opponent section to avoid mutating original
+    result = {k: v for k, v in state_dict.items()}
+    if opponent in result and isinstance(result[opponent], dict):
+        opp = {k: v for k, v in result[opponent].items()}
+        hand_size = len(opp.get("hand", []))
+        opp["hand"] = [
+            {"name": "???", "set_name": "", "number": "hidden", "hidden": True}
+            for _ in range(hand_size)
+        ]
+        result[opponent] = opp
+    return result
+
+
+async def _send_state_to_players(room_id: str, base_msg: dict) -> None:
+    """Send per-player filtered state to each connected WebSocket.
+
+    Filters:
+    - Hand cards: opponent's hand is hidden
+    - chooseCardPrompt: only sent to the player whose turn it is
+    """
+    conns = active_connections.get(room_id, {})
+    turn = base_msg.get("turn", "")
+    for role, ws in conns.items():
+        try:
+            msg = {k: v for k, v in base_msg.items()}
+            if "state" in msg:
+                msg["state"] = _filter_state_for_player(msg["state"], role)
+            # Only the player whose turn it is should see the card selection prompt
+            is_my_turn = (role == "player1" and turn == "PLAYER1") or (
+                role == "player2" and turn == "PLAYER2"
+            )
+            if not is_my_turn:
+                msg["isChoosingCard"] = False
+                msg["chooseCardPrompt"] = None
+            await ws.send_json(msg)
+        except Exception:
+            pass
+
+
+@app.websocket("/ws/room/{room_id}")
+async def websocket_pvp_room(websocket: WebSocket, room_id: str):
+    """WebSocket endpoint for two-player PvP battles with coin-toss and hidden hands."""
+    token = websocket.query_params.get("token", "")
+    if not token:
+        await websocket.close(code=4001, reason="Missing token")
+        return
+
+    manager = PvPGameManager(room_id)
+
+    await websocket.accept()
+    player = await manager.handle_connection(websocket, token)
+    if not player:
+        return
+
+    # Create game engine instance once both players are connected
+    if manager.is_both_connected() and room_id not in coin_toss_states:
+        room = game_rooms.get(room_id)
+        if room and room.status == "playing" and room.host_deck and room.guest_deck:
+            # ── PTCG Coin Toss (interactive protocol) ──
+            # Step 1: Randomly pick who calls heads/tails
+            caller = "player1" if secrets.randbelow(2) == 1 else "player2"
+            caller_name = room.host_username if caller == "player1" else room.guest_username
+            coin_toss_states[room_id] = {
+                "phase": "call",
+                "caller": caller,
+                "caller_name": caller_name,
+                "caller_choice": None,
+                "coin": None,
+                "chooser": None,
+                "turn_choice": None,
+            }
+            # Notify both: "X will call heads or tails"
+            for ws in active_connections.get(room_id, {}).values():
+                try:
+                    await ws.send_json({
+                        "type": "COIN_TOSS",
+                        "phase": "call",
+                        "caller": caller,
+                        "caller_name": caller_name,
+                    })
+                except Exception:
+                    pass
+
+    try:
+        while True:
+            data = await websocket.receive_text()
+            try:
+                message = json.loads(data)
+            except json.JSONDecodeError:
+                await websocket.send_json({"type": "ERROR", "message": "无效的 JSON 格式"})
+                continue
+
+            # ── Coin Toss Protocol Messages ──
+            ct = coin_toss_states.get(room_id)
+            if ct and message.get("type") == "COIN_TOSS_CALL":
+                if player != ct["caller"]:
+                    await websocket.send_json({"type": "ERROR", "message": "不是由你猜硬币"})
+                    continue
+                choice = message.get("choice", "")
+                if choice not in ("heads", "tails"):
+                    await websocket.send_json({"type": "ERROR", "message": "请选择 heads 或 tails"})
+                    continue
+                ct["caller_choice"] = choice
+                ct["coin"] = "heads" if secrets.randbelow(2) == 1 else "tails"
+                ct["chooser"] = ct["caller"] if choice == ct["coin"] else (
+                    "player2" if ct["caller"] == "player1" else "player1"
+                )
+                ct["phase"] = "choose_turn"
+                room_data = game_rooms.get(room_id)
+                chooser_name = room_data.host_username if ct["chooser"] == "player1" else room_data.guest_username
+                for ws in active_connections.get(room_id, {}).values():
+                    try:
+                        await ws.send_json({
+                            "type": "COIN_TOSS",
+                            "phase": "result",
+                            "caller": ct["caller"],
+                            "caller_name": ct["caller_name"],
+                            "caller_choice": choice,
+                            "coin": ct["coin"],
+                            "chooser": ct["chooser"],
+                            "chooser_name": chooser_name,
+                        })
+                    except Exception:
+                        pass
+                continue
+
+            if ct and message.get("type") == "COIN_TOSS_CHOOSE":
+                if player != ct["chooser"]:
+                    await websocket.send_json({"type": "ERROR", "message": "不是由你选择先/后攻"})
+                    continue
+                choice = message.get("choice", "")
+                if choice not in ("first", "second"):
+                    await websocket.send_json({"type": "ERROR", "message": "请选择 first 或 second"})
+                    continue
+                ct["turn_choice"] = choice
+                ct["phase"] = "done"
+                coin_toss_states.pop(room_id, None)
+
+                # Re-fetch room in case we're in the other player's handler
+                room = game_rooms.get(room_id)
+
+                # Determine who goes first based on coin toss choice
+                # Game engine always makes deck1's player "PLAYER1" (goes first)
+                # We need the WS role assignment to match so turn validation works
+                if ct["chooser"] == "player1":
+                    first_is_host = (choice == "first")
+                else:
+                    first_is_host = (choice == "second")
+
+                deck1, deck2 = (room.host_deck, room.guest_deck) if first_is_host else (room.guest_deck, room.host_deck)
+
+                # If guest goes first, swap WS roles so game engine PLAYER1 = guest
+                swapped = not first_is_host
+                if swapped:
+                    conns = active_connections.get(room_id, {})
+                    if "player1" in conns and "player2" in conns:
+                        active_connections[room_id] = {
+                            "player1": conns["player2"],
+                            "player2": conns["player1"],
+                        }
+                    # Notify both players of their actual role
+                    for role, ws in active_connections.get(room_id, {}).items():
+                        try:
+                            await ws.send_json({"type": "ROLE_ASSIGN", "player": role})
+                        except Exception:
+                            pass
+
+                env = PokemonTCG(seed=secrets.randbelow(10000), deck1=deck1, deck2=deck2, verbose=False)
+                obs, reward, done, info = env.reset()
+                games[room_id] = {
+                    "env": env, "state": obs, "info": info,
+                    "agent": None, "agent_player": None,
+                }
+                room.game_id = room_id
+                base_state = serialize_state(obs)
+                base_actions = serialize_available_actions(info["raw_available_actions"])
+                await _send_state_to_players(room_id, {
+                    "type": "STATE_UPDATE",
+                    "state": base_state,
+                    "availableActions": base_actions,
+                    "turn": info["turn"].name,
+                    "isChoosingCard": info.get("is_choosing_card", False),
+                    "chooseCardPrompt": serialize_prompt(info.get("prompt")),
+                })
+                continue
+
+            # ── Game Action Messages ──
+            err = manager.validate_message(message)
+            if err:
+                await websocket.send_json({"type": "ERROR", "message": err})
+                continue
+
+            if message["type"] == "ACTION":
+                game = games.get(room_id)
+                if not game:
+                    await websocket.send_json({"type": "ERROR", "message": "游戏不存在"})
+                    continue
+
+                env = game["env"]
+                available = game["info"]["raw_available_actions"]
+
+                current_turn = game["info"]["turn"].name
+                if not manager.validate_turn(player, current_turn):
+                    await websocket.send_json({"type": "ERROR", "message": "不是你的回合"})
+                    continue
+
+                idx = message["action_index"]
+                if idx < 0 or idx >= len(available):
+                    await websocket.send_json({"type": "ERROR", "message": "无效的操作索引"})
+                    continue
+
+                action = available[idx]
+                obs, reward, done, info = env.step(action)
+
+                games[room_id]["state"] = obs
+                games[room_id]["info"] = info
+
+                update = {
+                    "type": "STATE_UPDATE",
+                    "state": serialize_state(obs),
+                    "availableActions": serialize_available_actions(info["raw_available_actions"]),
+                    "reward": reward,
+                    "done": done,
+                    "turn": info["turn"].name if not done else None,
+                    "isChoosingCard": info.get("is_choosing_card", False),
+                    "chooseCardPrompt": serialize_prompt(info.get("prompt")),
+                }
+
+                if done:
+                    update["winner"] = info.get("winner").name if info.get("winner") else None
+                    winner_player = "player1" if info.get("winner") and info["winner"].name == "PLAYER1" else "player2"
+                    import asyncio as _asyncio
+                    _asyncio.create_task(_record_match_result(room_id, winner=winner_player))
+                    await _send_state_to_players(room_id, update)
+                    await _broadcast_state(room_id, {
+                        "type": "GAME_OVER",
+                        "winner": info.get("winner").name if info.get("winner") else None,
+                    })
+                    _cleanup_room(room_id)
+                    break
+                else:
+                    await _send_state_to_players(room_id, update)
+
+            elif message["type"] == "GET_STATE":
+                game = games.get(room_id)
+                if game:
+                    env = game["env"]
+                    state = serialize_state(env.gamestate)
+                    filtered = _filter_state_for_player(state, player)
+                    await websocket.send_json({
+                        "type": "STATE_UPDATE",
+                        "state": filtered,
+                        "availableActions": serialize_available_actions(game["info"]["raw_available_actions"]),
+                        "turn": game["info"]["turn"].name,
+                    })
+
+    except WebSocketDisconnect:
+        await manager.handle_disconnect(player)
+    except Exception as e:
+        print(f"PvP WebSocket error: {e}")
 
 
 # ============================================================================

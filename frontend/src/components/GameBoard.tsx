@@ -23,11 +23,22 @@ function getPlayZoneLabel(matched: MatchedAction[]): string {
 }
 
 export default function GameBoard({ onCardClick }: Props) {
-  const { state, turn, cardImages, executeAction, vsAgent, agentPlayer, agentType } = useGameStore();
+  const { state, turn, cardImages, executeAction, vsAgent, agentPlayer, agentType, isPvP, pvpPlayerId } = useGameStore();
   const { isDragging, matchedActions } = useDragStore();
   const [isOver, setIsOver] = useState(false);
 
   if (!state) return null;
+
+  // In PvP mode, swap perspective so each player sees themselves at the bottom
+  const selfPlayer = isPvP && pvpPlayerId === 'player2' ? state.player2 : state.player1;
+  const oppPlayer = isPvP && pvpPlayerId === 'player2' ? state.player1 : state.player2;
+  const selfName = isPvP ? (pvpPlayerId === 'player1' ? 'You (P1)' : 'You (P2)') : 'Player 1';
+  const oppName = isPvP ? (pvpPlayerId === 'player1' ? 'Opponent (P2)' : 'Opponent (P1)') : 'Player 2';
+
+  // Display turn info with PvP-aware labels
+  const displayTurn = isPvP
+    ? (turn === pvpPlayerId ? `Your Turn` : `Opponent's Turn`)
+    : (turn ?? '—');
 
   const stadiumCard = state.stadium && state.stadium.length > 0 ? state.stadium[0] : null;
 
@@ -71,18 +82,18 @@ export default function GameBoard({ onCardClick }: Props) {
       {/* Game info bar */}
       <div className="bg-slate-900 rounded-lg px-4 py-1.5 flex items-center justify-between text-sm border border-slate-800 min-h-0">
         <div className="text-slate-400 text-xs">
-          Turn: <span className="text-sky-400 font-mono font-medium uppercase ml-1">{turn ?? '—'}</span>
+          Turn: <span className={`font-mono font-medium uppercase ml-1 ${displayTurn === 'Your Turn' ? 'text-emerald-400' : 'text-sky-400'}`}>{displayTurn}</span>
         </div>
         <div className="text-slate-500 text-xs">
           Step: <span className="text-slate-300 font-mono font-medium ml-1">{state.timestep ?? '—'}</span>
         </div>
       </div>
 
-      {/* Player 2 */}
+      {/* Opponent (top) */}
       <PlayerArea
-        player={state.player2}
+        player={oppPlayer}
         isOpponent
-        playerName="Player 2"
+        playerName={oppName}
         cardImages={cardImages}
         onCardClick={onCardClick}
         isAgent={vsAgent && agentPlayer === 'player2'}
@@ -112,11 +123,11 @@ export default function GameBoard({ onCardClick }: Props) {
         <div className="h-px flex-1 bg-slate-800" />
       </div>
 
-      {/* Player 1 */}
+      {/* Self (bottom) */}
       <PlayerArea
-        player={state.player1}
+        player={selfPlayer}
         isOpponent={false}
-        playerName="Player 1"
+        playerName={selfName}
         cardImages={cardImages}
         onCardClick={onCardClick}
       />
