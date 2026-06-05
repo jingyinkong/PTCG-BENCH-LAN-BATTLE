@@ -1,4 +1,20 @@
 {
+  "ASC-192": {
+    "name": "Lillie's Determination",
+    "set_name": "ASC",
+    "number": "192",
+    "card_type": "Supporter",
+    "img": "https://assets.tcgdex.net/en/me/me02.5/192/high.jpg",
+    "effect": "Shuffle your hand into your deck. Then, draw 6 cards. If you have exactly 6 Prize cards remaining, draw 8 cards instead."
+  },
+  "ASC-210": {
+    "name": "Team Rocket's Watchtower",
+    "set_name": "ASC",
+    "number": "210",
+    "card_type": "Stadium",
+    "img": "https://assets.tcgdex.net/en/me/me02.5/210/high.jpg",
+    "effect": "{C} Pokémon in play (both yours and your opponent's) have no Abilities."
+  },
   "ASR-046": {
     "name": "Radiant Greninja",
     "set_name": "ASR",
@@ -400,6 +416,9 @@
     "number": "056",
     "card_type": "Pokémon",
     "img": "https://assets.tcgdex.net/en/sv/sv09/056/high.jpg",
+    "tags": [
+      "ex"
+    ],
     "hp": 190,
     "stage": "Basic",
     "types": [
@@ -475,6 +494,9 @@
     "number": "151",
     "card_type": "Pokémon",
     "img": "https://assets.tcgdex.net/en/sv/sv03.5/151/high.jpg",
+    "tags": [
+      "ex"
+    ],
     "hp": 180,
     "stage": "Basic",
     "types": [
@@ -684,6 +706,9 @@
     "number": "164",
     "card_type": "Pokémon",
     "img": "https://assets.tcgdex.net/en/sv/sv03/164/high.jpg",
+    "tags": [
+      "ex"
+    ],
     "hp": 280,
     "stage": "Stage2",
     "types": [
@@ -750,12 +775,23 @@
       }
     ]
   },
+  "OBF-196": {
+    "name": "Town Store",
+    "set_name": "OBF",
+    "number": "196",
+    "card_type": "Stadium",
+    "img": "https://assets.tcgdex.net/en/sv/sv03/196/high.jpg",
+    "effect": "Once during each player's turn, that player may search their deck for a Pokémon Tool card, reveal it, and put it into their hand. Then, that player shuffles their deck."
+  },
   "PAF-054": {
     "name": "Charizard ex",
     "set_name": "PAF",
     "number": "054",
     "card_type": "Pokémon",
     "img": "https://assets.tcgdex.net/en/sv/sv04.5/054/high.jpg",
+    "tags": [
+      "ex"
+    ],
     "hp": 330,
     "stage": "Stage2",
     "types": [
@@ -878,6 +914,32 @@
     "img": "https://assets.tcgdex.net/en/sv/sv04.5/087/high.jpg",
     "effect": "Discard your hand and draw 7 cards."
   },
+  "PAF-027": {
+    "name": "Ralts",
+    "set_name": "PAF",
+    "number": "027",
+    "card_type": "Pokémon",
+    "img": "https://assets.tcgdex.net/en/sv/sv04.5/027/high.jpg",
+    "hp": 70,
+    "stage": "Basic",
+    "types": [
+      "Psychic"
+    ],
+    "retreat": 1,
+    "attacks": [
+      {
+        "name": "Psyshot",
+        "cost": [
+          "Psychic",
+          "Colorless"
+        ],
+        "damage": {
+          "amount": 30,
+          "suffix": ""
+        }
+      }
+    ]
+  },
   "PAF-089": {
     "name": "Rare Candy",
     "set_name": "PAF",
@@ -910,6 +972,14 @@
     "img": "https://assets.tcgdex.net/en/sv/sv02/265/high.jpg",
     "effect": "Switch in 1 of your opponent's Benched Pokémon to the Active Spot."
   },
+  "PAL-173": {
+    "name": "Bravery Charm",
+    "set_name": "PAL",
+    "number": "173",
+    "card_type": "Pokémon Tool",
+    "img": "https://assets.tcgdex.net/en/sv/sv02/173/high.jpg",
+    "effect": "The Basic Pokémon this card is attached to gets +50 HP."
+  },
   "PAL-183": {
     "name": "Great Ball",
     "set_name": "PAL",
@@ -932,6 +1002,9 @@
     "number": "264",
     "card_type": "Pokémon",
     "img": "https://assets.tcgdex.net/en/sv/sv02/264/high.jpg",
+    "tags": [
+      "ex"
+    ],
     "hp": 160,
     "stage": "Basic",
     "types": [
@@ -1004,6 +1077,9 @@
     "number": "139",
     "card_type": "Pokémon",
     "img": "https://assets.tcgdex.net/en/sv/sv04/139/high.jpg",
+    "tags": [
+      "ex"
+    ],
     "hp": 260,
     "stage": "Stage1",
     "types": [
@@ -1057,12 +1133,49 @@
       }
     ]
   },
+  "PAR-056": {
+    "name": "Iron Bundle",
+    "set_name": "PAR",
+    "number": "056",
+    "card_type": "Pokémon",
+    "img": "https://assets.tcgdex.net/en/sv/sv04/056/high.jpg",
+    "hp": 100,
+    "stage": "Basic",
+    "types": [
+      "Water"
+    ],
+    "retreat": 1,
+    "attacks": [
+      {
+        "name": "Refrigerated Stream",
+        "cost": [
+          "Water",
+          "Colorless",
+          "Colorless"
+        ],
+        "damage": {
+          "amount": 80,
+          "suffix": ""
+        },
+        "effect": "If the Defending Pokémon is an Evolution Pokémon, it can't attack during your opponent's next turn."
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Hyper Blower",
+        "effect": "Once during your turn, if this Pokémon is on your Bench, you may switch out your opponent's Active Pokémon to the Bench. (Your opponent chooses the new Active Pokémon.) If you do, discard this Pokémon and all attached cards."
+      }
+    ]
+  },
   "PAR-248": {
     "name": "Iron Hands ex",
     "set_name": "PAR",
     "number": "248",
     "card_type": "Pokémon",
     "img": "https://assets.tcgdex.net/en/sv/sv04/248/high.jpg",
+    "tags": [
+      "ex"
+    ],
     "hp": 230,
     "stage": "Basic",
     "types": [
@@ -1130,6 +1243,14 @@
       }
     ]
   },
+  "PAR-166": {
+    "name": "Luxurious Cape",
+    "set_name": "PAR",
+    "number": "166",
+    "card_type": "Pokémon Tool",
+    "img": "https://assets.tcgdex.net/en/sv/sv04/166/high.jpg",
+    "effect": "If the Pokémon this card is attached to doesn't have a Rule Box, it gets +100 HP, and if it is Knocked Out by damage from an attack from your opponent's Pokémon, that player takes 1 more Prize card. (Pokémon ex, Pokémon V, etc. have Rule Boxes.)"
+  },
   "PAR-257": {
     "name": "Professor Turo's Scenario",
     "set_name": "PAR",
@@ -1175,13 +1296,13 @@
       }
     ]
   },
-  "PAR-162": {
-    "name": "Defiance Vest",
+  "PAR-178": {
+    "name": "Technical Machine: Evolution",
     "set_name": "PAR",
-    "number": "162",
+    "number": "178",
     "card_type": "Pokémon Tool",
-    "img": "https://assets.tcgdex.net/en/sv/sv04/162/high.jpg",
-    "effect": "If you have more Prize cards remaining than your opponent, the Pokémon this card is attached to takes 40 less damage from attacks from your opponent's Pokémon (after applying Weakness and Resistance)."
+    "img": "https://assets.tcgdex.net/en/sv/sv04/178/high.jpg",
+    "effect": "The Pokémon this card is attached to can use the attack on this card. (You still need the necessary Energy to use this attack.) If this card is attached to 1 of your Pokémon, discard it at the end of your turn."
   },
   "PGO-029": {
     "name": "Zapdos",
@@ -1256,6 +1377,9 @@
     "number": "092",
     "card_type": "Pokémon",
     "img": "https://assets.tcgdex.net/en/sv/sv06.5/092/high.jpg",
+    "tags": [
+      "ex"
+    ],
     "hp": 210,
     "stage": "Basic",
     "types": [
@@ -1283,6 +1407,14 @@
         "effect": "Once during your turn, if any of your Pokémon were Knocked Out during your opponent's last turn, you may draw 3 cards. You can't use more than 1 Flip the Script Ability each turn."
       }
     ]
+  },
+  "SFA-061": {
+    "name": "Night Stretcher",
+    "set_name": "SFA",
+    "number": "061",
+    "card_type": "Item",
+    "img": "https://assets.tcgdex.net/en/sv/sv06.5/061/high.jpg",
+    "effect": "Put a Pokémon or a Basic Energy card from your discard pile into your hand."
   },
   "SIT-147": {
     "name": "Archeops",
@@ -1333,6 +1465,39 @@
     "card_type": "Pokémon Tool",
     "img": "https://assets.tcgdex.net/en/swsh/swsh12/156/high.jpg",
     "effect": "The Pokémon V this card is attached to can use the VSTAR Power on this card.\nStar Alchemy\nDuring your turn, you may search your deck for a card and put it into your hand. Then, shuffle your deck. (You can't use more than 1 VSTAR Power in a game.)"
+  },
+  "SIT-068": {
+    "name": "Kirlia",
+    "set_name": "SIT",
+    "number": "068",
+    "card_type": "Pokémon",
+    "img": "https://assets.tcgdex.net/en/swsh/swsh12/068/high.jpg",
+    "hp": 80,
+    "stage": "Stage1",
+    "types": [
+      "Psychic"
+    ],
+    "evolve_from": "Ralts",
+    "retreat": 2,
+    "attacks": [
+      {
+        "name": "Slap",
+        "cost": [
+          "Psychic",
+          "Colorless"
+        ],
+        "damage": {
+          "amount": 30,
+          "suffix": ""
+        }
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Refinement",
+        "effect": "You must discard a card from your hand in order to use this Ability. Once during your turn, you may draw 2 cards."
+      }
+    ]
   },
   "SIT-138": {
     "name": "Lugia V",
@@ -1477,50 +1642,15 @@
     "img": "https://assets.tcgdex.net/en/sv/sv01/170/high.jpg",
     "effect": "Look at the top 5 cards of your deck and attach up to 2 Basic {L} Energy cards you find there to your Benched {L} Pokémon in any way you like. Shuffle the other cards back into your deck."
   },
-  "SVI-165": {
-    "name": "Flamigo",
-    "set_name": "SVI",
-    "number": "165",
-    "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv01/165/high.jpg",
-    "hp": 110,
-    "stage": "Basic",
-    "types": [
-      "Colorless"
-    ],
-    "retreat": 1,
-    "attacks": [
-      {
-        "name": "Flap",
-        "cost": [
-          "Colorless"
-        ],
-        "damage": {
-          "amount": 30,
-          "suffix": ""
-        }
-      },
-      {
-        "name": "Nosedive",
-        "cost": [
-          "Colorless",
-          "Colorless",
-          "Colorless"
-        ],
-        "damage": {
-          "amount": 110,
-          "suffix": ""
-        },
-        "effect": "This Pokémon also does 20 damage to itself."
-      }
-    ]
-  },
   "SVI-086": {
     "name": "Gardevoir ex",
     "set_name": "SVI",
     "number": "086",
     "card_type": "Pokémon",
     "img": "https://assets.tcgdex.net/en/sv/sv01/086/high.jpg",
+    "tags": [
+      "ex"
+    ],
     "hp": 310,
     "stage": "Stage2",
     "types": [
@@ -1564,6 +1694,9 @@
     "number": "253",
     "card_type": "Pokémon",
     "img": "https://assets.tcgdex.net/en/sv/sv01/253/high.jpg",
+    "tags": [
+      "ex"
+    ],
     "hp": 220,
     "stage": "Basic",
     "types": [
@@ -1717,6 +1850,14 @@
       }
     ]
   },
+  "TEF-151": {
+    "name": "Heavy Baton",
+    "set_name": "TEF",
+    "number": "151",
+    "card_type": "Pokémon Tool",
+    "img": "https://assets.tcgdex.net/en/sv/sv05/151/high.jpg",
+    "effect": "If the Pokémon this card is attached to has a Retreat Cost of exactly 4, is in the Active Spot, and is Knocked Out by damage from an attack from your opponent's Pokémon, move up to 3 Basic Energy cards from that Pokémon to your Benched Pokémon in any way you like."
+  },
   "TEF-153": {
     "name": "Master Ball",
     "set_name": "TEF",
@@ -1749,12 +1890,23 @@
     "img": "https://assets.tcgdex.net/en/sv/sv05/157/high.jpg",
     "effect": "Switch in 1 of your opponent's Benched Pokémon to the Active Spot. If you do, switch your Active Pokémon with 1 of your Benched Pokémon."
   },
+  "TEF-159": {
+    "name": "Rescue Board",
+    "set_name": "TEF",
+    "number": "159",
+    "card_type": "Pokémon Tool",
+    "img": "https://assets.tcgdex.net/en/sv/sv05/159/high.jpg",
+    "effect": "The Retreat Cost of the Pokémon this card is attached to is {C} less. If that Pokémon's remaining HP is 30 or less, it has no Retreat Cost."
+  },
   "TWM-200": {
     "name": "Dragapult ex",
     "set_name": "TWM",
     "number": "200",
     "card_type": "Pokémon",
     "img": "https://assets.tcgdex.net/en/sv/sv06/200/high.jpg",
+    "tags": [
+      "ex"
+    ],
     "hp": 320,
     "stage": "Stage2",
     "types": [
@@ -1863,6 +2015,47 @@
     "card_type": "Item",
     "img": "https://assets.tcgdex.net/en/sv/sv06/152/high.jpg",
     "effect": "Search your deck for up to 3 Stage 1 Pokémon, reveal them, and put them into your hand. Then, shuffle your deck."
+  },
+  "TWM-095": {
+    "name": "Munkidori",
+    "set_name": "TWM",
+    "number": "095",
+    "card_type": "Pokémon",
+    "img": "https://assets.tcgdex.net/en/sv/sv06/095/high.jpg",
+    "hp": 110,
+    "stage": "Basic",
+    "types": [
+      "Psychic"
+    ],
+    "retreat": 1,
+    "attacks": [
+      {
+        "name": "Mind Bend",
+        "cost": [
+          "Psychic",
+          "Colorless"
+        ],
+        "damage": {
+          "amount": 60,
+          "suffix": ""
+        },
+        "effect": "Your opponent's Active Pokémon is now Confused."
+      }
+    ],
+    "abilities": [
+      {
+        "name": "Adrena-Brain",
+        "effect": "Once during your turn, if this Pokémon has any {D} Energy attached, you may move up to 3 damage counters from 1 of your Pokémon to 1 of your opponent's Pokémon."
+      }
+    ]
+  },
+  "TWM-163": {
+    "name": "Secret Box",
+    "set_name": "TWM",
+    "number": "163",
+    "card_type": "Item",
+    "img": "https://assets.tcgdex.net/en/sv/sv06/163/high.jpg",
+    "effect": "You can use this card only if you discard 3 other cards from your hand.\n\nSearch your deck for an Item card, a Pokémon Tool card, a Supporter card, and a Stadium card, reveal them, and put them into your hand. Then, shuffle your deck."
   },
   "VIV-025": {
     "name": "Charizard",

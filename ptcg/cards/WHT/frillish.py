@@ -26,7 +26,7 @@ class WHT044Frillish(PokemonCard):
         self.cardType = CardType.PSYCHIC
 
         # Retreat/Weakness/Resistance
-        self.retreat = [CardType.COLORLESS]
+        self.retreat = [CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS]
         self.weakness = [CardType.METAL]
         self.resistance = []
         self.prize = 1

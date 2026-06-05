@@ -1,0 +1,729 @@
+{
+  "summary": {
+    "total": 103,
+    "with_diffs": 17,
+    "ok": 86
+  },
+  "cards": {
+    "ASC-192": {
+      "name": "Lillie's Determination",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "ASC-210": {
+      "name": "Team Rocket's Watchtower",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "ASR-046": {
+      "name": "Radiant Greninja",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "ASR-154": {
+      "name": "Switch Cart",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "BRS-121": {
+      "name": "Bibarel",
+      "diffs": [
+        {
+          "field": "stage",
+          "code": "STAGE_1",
+          "ref": "STAGE1"
+        }
+      ],
+      "has_ref": true,
+      "verdict": "DIFF"
+    },
+    "BRS-137": {
+      "name": "Collapsed Stadium",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "BRS-151": {
+      "name": "Double Turbo Energy",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "BRS-040": {
+      "name": "Lumineon V",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "BRS-041": {
+      "name": "Manaphy",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "BRS-124": {
+      "name": "Minccino",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "BRS-158": {
+      "name": "Raichu V",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "BRS-048": {
+      "name": "Raikou V",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "CRZ-111": {
+      "name": "Bidoof",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "CRZ-127": {
+      "name": "Energy Retrieval",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "CRZ-135": {
+      "name": "Lost Vacuum",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "CRZ-020": {
+      "name": "Radiant Charizard",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "CRZ-045": {
+      "name": "Rotom V",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "JTG-056": {
+      "name": "Lillie's Clefairy ex",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "LOR-171": {
+      "name": "Gift Energy",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "LOR-143": {
+      "name": "Snorlax",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "MEW-151": {
+      "name": "Mew ex",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "MEW-017": {
+      "name": "Pidgeotto",
+      "diffs": [
+        {
+          "field": "stage",
+          "code": "STAGE_1",
+          "ref": "STAGE1"
+        }
+      ],
+      "has_ref": true,
+      "verdict": "DIFF"
+    },
+    "MEW-016": {
+      "name": "Pidgey",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "MEW-165": {
+      "name": "Rigid Band",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "MEW-123": {
+      "name": "Scyther",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "OBF-186": {
+      "name": "Arven",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "OBF-026": {
+      "name": "Charmander",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "OBF-080": {
+      "name": "Cleffa",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "OBF-189": {
+      "name": "Letter of Encouragement",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "OBF-164": {
+      "name": "Pidgeot ex",
+      "diffs": [
+        {
+          "field": "stage",
+          "code": "STAGE_2",
+          "ref": "STAGE2"
+        }
+      ],
+      "has_ref": true,
+      "verdict": "DIFF"
+    },
+    "OBF-141": {
+      "name": "Scizor",
+      "diffs": [
+        {
+          "field": "stage",
+          "code": "STAGE_1",
+          "ref": "STAGE1"
+        }
+      ],
+      "has_ref": true,
+      "verdict": "DIFF"
+    },
+    "OBF-196": {
+      "name": "Town Store",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAF-054": {
+      "name": "Charizard ex",
+      "diffs": [
+        {
+          "field": "stage",
+          "code": "STAGE_2",
+          "ref": "STAGE2"
+        }
+      ],
+      "has_ref": true,
+      "verdict": "DIFF"
+    },
+    "PAF-007": {
+      "name": "Charmander",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAF-008": {
+      "name": "Charmeleon",
+      "diffs": [
+        {
+          "field": "stage",
+          "code": "STAGE_1",
+          "ref": "STAGE1"
+        }
+      ],
+      "has_ref": true,
+      "verdict": "DIFF"
+    },
+    "PAF-080": {
+      "name": "Iono",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAF-084": {
+      "name": "Nest Ball",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAF-087": {
+      "name": "Professor's Research",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAF-027": {
+      "name": "Ralts",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAF-089": {
+      "name": "Rare Candy",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAF-091": {
+      "name": "Ultra Ball",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAL-171": {
+      "name": "Artazon",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAL-265": {
+      "name": "Boss's Orders",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAL-173": {
+      "name": "Bravery Charm",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAL-183": {
+      "name": "Great Ball",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAL-190": {
+      "name": "Jet Energy",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAL-264": {
+      "name": "Squawkabilly ex",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAL-188": {
+      "name": "Super Rod",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAL-189": {
+      "name": "Superior Energy Retrieval",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAL-193": {
+      "name": "Therapeutic Energy",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAR-160": {
+      "name": "Counter Catcher",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAR-163": {
+      "name": "Earthen Vessel",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAR-139": {
+      "name": "Gholdengo ex",
+      "diffs": [
+        {
+          "field": "stage",
+          "code": "STAGE_1",
+          "ref": "STAGE1"
+        }
+      ],
+      "has_ref": true,
+      "verdict": "DIFF"
+    },
+    "PAR-088": {
+      "name": "Gimmighoul",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAR-056": {
+      "name": "Iron Bundle",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAR-248": {
+      "name": "Iron Hands ex",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAR-126": {
+      "name": "Jirachi",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAR-166": {
+      "name": "Luxurious Cape",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAR-257": {
+      "name": "Professor Turo's Scenario",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAR-086": {
+      "name": "Scream Tail",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PAR-178": {
+      "name": "Technical Machine: Evolution",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PGO-029": {
+      "name": "Zapdos",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "PRE-043": {
+      "name": "Flutter Mane",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "SFA-092": {
+      "name": "Fezandipiti ex",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "SFA-061": {
+      "name": "Night Stretcher",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "SIT-147": {
+      "name": "Archeops",
+      "diffs": [
+        {
+          "field": "stage",
+          "code": "STAGE_2",
+          "ref": "STAGE2"
+        }
+      ],
+      "has_ref": true,
+      "verdict": "DIFF"
+    },
+    "SIT-153": {
+      "name": "Capturing Aroma",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "SIT-156": {
+      "name": "Forest Seal Stone",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "SIT-068": {
+      "name": "Kirlia",
+      "diffs": [
+        {
+          "field": "stage",
+          "code": "STAGE_1",
+          "ref": "STAGE1"
+        }
+      ],
+      "has_ref": true,
+      "verdict": "DIFF"
+    },
+    "SIT-138": {
+      "name": "Lugia V",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "SIT-139": {
+      "name": "Lugia VSTAR",
+      "diffs": [
+        {
+          "field": "stage",
+          "code": "STAGE_1",
+          "ref": "VSTAR"
+        }
+      ],
+      "has_ref": true,
+      "verdict": "DIFF"
+    },
+    "SIT-164": {
+      "name": "Serena",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "SIT-169": {
+      "name": "V Guard Energy",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "SVE-007": {
+      "name": "Darkness Energy",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "SVE-002": {
+      "name": "Fire Energy",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "SVE-004": {
+      "name": "Lightning Energy",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "SVE-008": {
+      "name": "Metal Energy",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "SVE-005": {
+      "name": "Psychic Energy",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "SVI-169": {
+      "name": "Defiance Band",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "SVI-170": {
+      "name": "Electric Generator",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "SVI-086": {
+      "name": "Gardevoir ex",
+      "diffs": [
+        {
+          "field": "stage",
+          "code": "STAGE_2",
+          "ref": "STAGE2"
+        }
+      ],
+      "has_ref": true,
+      "verdict": "DIFF"
+    },
+    "SVI-175": {
+      "name": "Jacq",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "SVI-253": {
+      "name": "Miraidon ex",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "TEF-144": {
+      "name": "Buddy-Buddy Poffin",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "TEF-137": {
+      "name": "Cinccino",
+      "diffs": [
+        {
+          "field": "stage",
+          "code": "STAGE_1",
+          "ref": "STAGE1"
+        }
+      ],
+      "has_ref": true,
+      "verdict": "DIFF"
+    },
+    "TEF-145": {
+      "name": "Ciphermaniac's Codebreaking",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "TEF-129": {
+      "name": "Dudunsparce",
+      "diffs": [
+        {
+          "field": "stage",
+          "code": "STAGE_1",
+          "ref": "STAGE1"
+        }
+      ],
+      "has_ref": true,
+      "verdict": "DIFF"
+    },
+    "TEF-128": {
+      "name": "Dunsparce",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "TEF-151": {
+      "name": "Heavy Baton",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "TEF-153": {
+      "name": "Master Ball",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "TEF-161": {
+      "name": "Mist Energy",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "TEF-155": {
+      "name": "Morty's Conviction",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "TEF-157": {
+      "name": "Prime Catcher",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "TEF-159": {
+      "name": "Rescue Board",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "TWM-200": {
+      "name": "Dragapult ex",
+      "diffs": [
+        {
+          "field": "stage",
+          "code": "STAGE_2",
+          "ref": "STAGE2"
+        }
+      ],
+      "has_ref": true,
+      "verdict": "DIFF"
+    },
+    "TWM-129": {
+      "name": "Drakloak",
+      "diffs": [
+        {
+          "field": "stage",
+          "code": "STAGE_1",
+          "ref": "STAGE1"
+        }
+      ],
+      "has_ref": true,
+      "verdict": "DIFF"
+    },
+    "TWM-128": {
+      "name": "Dreepy",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "TWM-152": {
+      "name": "Hyper Aroma",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "TWM-095": {
+      "name": "Munkidori",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "TWM-163": {
+      "name": "Secret Box",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    },
+    "VIV-025": {
+      "name": "Charizard",
+      "diffs": [
+        {
+          "field": "stage",
+          "code": "STAGE_2",
+          "ref": "STAGE2"
+        }
+      ],
+      "has_ref": true,
+      "verdict": "DIFF"
+    },
+    "VIV-024": {
+      "name": "Charmeleon",
+      "diffs": [
+        {
+          "field": "stage",
+          "code": "STAGE_1",
+          "ref": "STAGE1"
+        }
+      ],
+      "has_ref": true,
+      "verdict": "DIFF"
+    },
+    "WHT-044": {
+      "name": "Frillish",
+      "diffs": [],
+      "has_ref": true,
+      "verdict": "OK"
+    }
+  }
+}

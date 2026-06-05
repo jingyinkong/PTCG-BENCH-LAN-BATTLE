@@ -20,7 +20,7 @@ class JTG056LilliesClefairyex(PokemonCard):
         self.id = f"{self.set_name}-{self.number}"
 
         # Pokémon attributes
-        self.hp = 170
+        self.hp = 190
         self.pokemonType = PokemonType.EX
         self.pokemonRule = PokemonRule.RADIANT
         self.stage = Stage.BASIC

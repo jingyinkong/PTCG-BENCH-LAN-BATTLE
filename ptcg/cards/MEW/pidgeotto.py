@@ -18,7 +18,7 @@ class MEW017Pidgeotto(PokemonCard):
         self.pokemonRule = PokemonRule.NONE
         self.stage = Stage.STAGE_1
         self.cardType = CardType.COLORLESS
-        self.retreat = [CardType.COLORLESS]
+        self.retreat = []
         self.weakness = [CardType.LIGHTNING]
         self.resistance = [CardType.FIGHTING]
         self.prize = 1

@@ -17,7 +17,9 @@ class VIV029Charizard(PokemonCard):
         self.cardType = CardType.FIRE
         self.retreat = [CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS]
         self.weakness = [CardType.WATER]
-        self.evolvesFrom = "Charmeleon"
+        self.resistance = []
+        self.prize = 1
+        self.evolveFrom = ["Charmeleon"]
 
         self.attacks = [
             Attack(
