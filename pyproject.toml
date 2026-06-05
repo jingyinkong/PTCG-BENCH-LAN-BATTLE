@@ -19,7 +19,6 @@ dependencies = [
     "numpy>=1.24.0",
     "openai>=2.29.0",
     "playwright>=1.58.0",
-    "ptcg-engine",
     "pydantic>=2.12.5",
     "python-multipart>=0.0.6",
     "pyyaml>=6.0",
@@ -35,10 +34,11 @@ dependencies = [
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["ptcgbench*"]
+include = ["ptcgbench*", "ptcg*"]
 
 [tool.setuptools.package-data]
 ptcgbench = ["agents/prompts/*/*.md"]
+ptcg = ["decks/*.txt"]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
@@ -51,7 +51,7 @@ line-length = 100
 ignore = ["F403", "F405", "F541"]
 
 [tool.uv.sources]
-ptcg-engine = { git = "https://github.com/gemelom/ptcg-engine" }
+
 toon-format = { git = "https://github.com/toon-format/toon-python.git" }
 
 [dependency-groups]
