@@ -12,9 +12,11 @@ export default function LobbyPage() {
   const [targetRoomId, setTargetRoomId] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [starting, setStarting] = useState(false);
+  const [opponentLeft, setOpponentLeft] = useState(false);
   const { user } = useAuthStore();
   const { startPvPGame, reset, coinTossResult, sendCoinTossCall, sendCoinTossChoose } = useGameStore();
   const pollFailCount = useRef(0);
+  const hadGuest = useRef(false);
 
   const fetchRooms = useCallback(async () => {
     try {
@@ -43,6 +45,11 @@ export default function LobbyPage() {
     if (!myRoom) return;
     const roomId = myRoom.id;
     const myUserId = user?.id;
+    const isHost = myRoom.host_user_id === myUserId;
+    // Track whether guest has ever been present using ref
+    if (myRoom.guest_user_id != null) {
+      hadGuest.current = true;
+    }
 
     const check = setInterval(async () => {
       try {
@@ -51,6 +58,13 @@ export default function LobbyPage() {
         pollFailCount.current = 0; // reset on success
         setMyRoom(room as RoomInfo);
 
+        // Host: detect when guest leaves (guest_user_id becomes null)
+        if (isHost && hadGuest.current && !room.guest_user_id && room.status === 'waiting') {
+          clearInterval(check);
+          setOpponentLeft(true);
+          return;
+        }
+
         // Guest: detect when host starts the game
         if (room.status === 'playing' && myUserId && room.guest_user_id === myUserId) {
           clearInterval(check);
@@ -58,10 +72,10 @@ export default function LobbyPage() {
         }
       } catch {
         pollFailCount.current += 1;
-        // Only give up after 3 consecutive failures (6 seconds of no response)
+        // Room deleted (host cancelled) → opponent left
         if (pollFailCount.current >= 3) {
-          setMyRoom(null);
           clearInterval(check);
+          setOpponentLeft(true);
         }
       }
     }, 2000);
@@ -294,6 +308,36 @@ export default function LobbyPage() {
 
       <DeckSelectModal isOpen={showDeckModal} onClose={() => setShowDeckModal(false)}
         onConfirm={handleDeckConfirm} defaultVsAgent={false} pvpMode={true} />
+
+      {/* Opponent left popup — waiting phase */}
+      {opponentLeft && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
+          <div className="bg-slate-900 border border-slate-600 rounded-xl p-8 max-w-sm w-full mx-4 text-center shadow-2xl">
+            <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-amber-500/20 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="8" x2="12" y2="12" />
+                <line x1="12" y1="16" x2="12.01" y2="16" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold text-slate-50 mb-2">对手已退出</h3>
+            <p className="text-slate-400 text-sm mb-6">
+              对方已退出房间，房间已解散。
+            </p>
+            <button
+              onClick={() => {
+                setOpponentLeft(false);
+                setMyRoom(null);
+                reset();
+              }}
+              className="w-full px-6 py-2.5 bg-sky-600 hover:bg-sky-500 text-white rounded-lg font-semibold text-sm transition-colors"
+            >
+              返回大厅
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

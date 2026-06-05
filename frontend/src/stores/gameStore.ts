@@ -43,6 +43,7 @@ interface GameStore {
   pvpSocket: WebSocket | null;
   opponentDisconnected: boolean;
   reconnectCountdown: number;
+  opponentLeft: boolean;
   coinTossResult: {
     phase: string;
     caller?: string;
@@ -91,6 +92,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
   pvpSocket: null,
   opponentDisconnected: false,
   reconnectCountdown: 0,
+  opponentLeft: false,
   coinTossResult: null,
 
   createGame: async (config) => {
@@ -276,6 +278,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
       pvpSocket: null,
       opponentDisconnected: false,
       reconnectCountdown: 0,
+      opponentLeft: false,
       coinTossResult: null,
       agentPlayer: 'player2',
       agentType: null,
@@ -350,6 +353,8 @@ export const useGameStore = create<GameStore>((set, get) => ({
               set({ reconnectCountdown: cnt - 1 });
             }
           }, 1000);
+        } else if (msg.type === 'OPPONENT_LEFT') {
+          set({ opponentLeft: true, loading: false });
         } else if (msg.type === 'ERROR') {
           console.error('PvP WS error:', msg.message);
           set({ loading: false });
