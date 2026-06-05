@@ -329,6 +329,27 @@ feat/xxx  ●──●──●  ← PR + Squash merge
 
 如果使用 AI Agent 生成代码并提交 PR，请在 PR 描述中勾选"此 PR 由 AI Agent 生成"并确保已人工审查所有变更。PR 模板会自动提醒此检查项。
 
+### 傻瓜式提交 (`git-ez`)
+
+一步完成 stage → commit → push，自动检测 commit 类型：
+
+```bash
+# 最简用法（交互式选择类型 + 输入描述）
+./scripts/git-ez.sh
+
+# 带描述跳过交互
+./scripts/git-ez.sh "添加牌组导入功能"
+
+# 全局别名（可选）
+alias gitez='bash scripts/git-ez.sh'
+```
+
+脚本会自动：
+- 显示变更文件列表
+- 从分支名和变更内容推断 commit 类型（feat/fix/docs...）
+- 生成 conventional commit 格式的提交信息
+- 一键 `git add -A && git commit && git push`
+
 ---
 
 ## 技术栈
