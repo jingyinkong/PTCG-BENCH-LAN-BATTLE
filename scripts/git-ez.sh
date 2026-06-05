@@ -106,10 +106,61 @@ esac
 echo -e "  选择: ${GREEN}$TYPE${NC}"
 echo ""
 
-# ---- 5. 输入描述 ----
+# ---- 5. 自动总结变更 ----
+auto_summary() {
+    local out=""
+    local changed=$(git diff --name-only HEAD 2>/dev/null)
+    local staged=$(git diff --cached --name-only 2>/dev/null)
+    local new=$(git ls-files --others --exclude-standard)
+    local all=$(echo -e "$changed\n$staged\n$new" | sort -u | grep -v '^$')
+
+    # 统计每个目录的文件数
+    local dirs=$(echo "$all" | sed 's|/[^/]*$||' | sort | uniq -c | sort -rn)
+
+    # 提取关键目录（取前3个）
+    local top_dirs=$(echo "$dirs" | head -3 | awk '{
+        d=$2; gsub(/^\.$/, "根目录", d);
+        printf "%s(%s个文件) ", d, $1
+    }')
+
+    # 统计文件类型
+    local added=$(echo "$new" | grep -c . 2>/dev/null || echo 0)
+    local modified=$(echo "$changed" | grep -c . 2>/dev/null || echo 0)
+    local deleted=$(git diff --name-only --diff-filter=D HEAD 2>/dev/null | grep -c . 2>/dev/null || echo 0)
+
+    # 生成摘要
+    local parts=""
+    [ "$added" -gt 0 ] && parts="${parts}新增${added}个文件"
+    [ "$modified" -gt 0 ] && parts="${parts}${parts:+、}修改${modified}个文件"
+    [ "$deleted" -gt 0 ] && parts="${parts}${parts:+、}删除${deleted}个文件"
+
+    # 提取关键文件名作为上下文
+    local key_files=$(echo "$all" | grep -vE '(^\.|AGENTS\.md|package-lock|uv\.lock)' | head -5 | sed 's|.*/||' | tr '\n' ' ' | sed 's/ $//')
+
+    if [ -n "$parts" ]; then
+        out="${parts}"
+        [ -n "$key_files" ] && out="${out}（涉及: ${key_files}）"
+    elif [ -n "$key_files" ]; then
+        out="更新 ${key_files}"
+    else
+        out="更新代码"
+    fi
+
+    echo "$out"
+}
+
+AUTO_DESC=$(auto_summary)
+
+# ---- 6. 输入描述 ----
 DESC="${1:-}"
 if [ -z "$DESC" ]; then
-    read -p "📝 简短描述（做了什么）: " DESC
+    echo -e "${YELLOW}📝 自动生成的描述:${NC}"
+    echo -e "   ${CYAN}${AUTO_DESC}${NC}"
+    echo ""
+    read -p "   回车确认 / 输入新描述: " DESC
+    if [ -z "$DESC" ]; then
+        DESC="$AUTO_DESC"
+    fi
 fi
 
 if [ -z "$DESC" ]; then
