@@ -830,6 +830,7 @@ async def websocket_pvp_room(websocket: WebSocket, room_id: str):
                     "turn": info["turn"].name,
                     "isChoosingCard": info.get("is_choosing_card", False),
                     "chooseCardPrompt": serialize_prompt(info.get("prompt")),
+                    "autoExecuted": info.get("auto_executed", []),
                 })
                 continue
 
@@ -881,6 +882,7 @@ async def websocket_pvp_room(websocket: WebSocket, room_id: str):
                     "turn": info["turn"].name if not done else None,
                     "isChoosingCard": info.get("is_choosing_card", False),
                     "chooseCardPrompt": serialize_prompt(info.get("prompt")),
+                    "autoExecuted": info.get("auto_executed", []),
                 }
 
                 if done:

@@ -321,6 +321,17 @@ export const useGameStore = create<GameStore>((set, get) => ({
           if (!get().gameId) {
             set({ gameId: roomId });
           }
+          // Process autoExecuted events (e.g., mulligan notifications)
+          const currentLog = get().gameLog;
+          const autoEvents: string[] = msg.autoExecuted || [];
+          const autoEntries: LogEntry[] = autoEvents.map((event, i) => ({
+            id: currentLog.length + i,
+            timestep: 0,
+            turn_number: 0,
+            player: 'player1' as const,
+            actionType: 'Info',
+            source: event,
+          }));
           set({
             state: msg.state,
             availableActions: msg.availableActions || [],
@@ -330,6 +341,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
             loading: false,
             isChoosingCard: msg.isChoosingCard ?? false,
             chooseCardPrompt: msg.chooseCardPrompt ?? null,
+            gameLog: [...currentLog, ...autoEntries],
           });
           preloadGameImages(msg);
         } else if (msg.type === 'GAME_OVER') {

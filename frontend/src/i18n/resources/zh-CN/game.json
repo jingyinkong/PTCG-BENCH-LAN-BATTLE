@@ -23,7 +23,8 @@
     "useStadium": "使用竞技场",
     "pass": "过回合",
     "chooseCard": "选择卡牌",
-    "effect": "效果"
+    "effect": "效果",
+    "info": "系统消息"
   },
   "dropLabel": {
     "evolve": "进化",
