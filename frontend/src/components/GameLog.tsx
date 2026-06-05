@@ -39,12 +39,12 @@ export default function GameLog() {
     const parts: string[] = [];
     if (entry.attack) {
       parts.push(entry.attack.name);
-      if (entry.attack.damage > 0) parts.push(`${entry.attack.damage} dmg`);
+      if (entry.attack.damage > 0) parts.push(`${entry.attack.damage} ${t('desc.dmg')}`);
     }
     if (entry.source) parts.push(entry.source);
-    if (entry.target) parts.push(`→ ${entry.target}`);
+    if (entry.target) parts.push(`${t('desc.arrow')} ${entry.target}`);
     if (entry.ability) parts.push(entry.ability);
-    if (entry.position) parts.push(`pos ${entry.position}`);
+    if (entry.position) parts.push(`${t('desc.pos')} ${entry.position}`);
     if (entry.chosen && entry.chosen.length > 0) parts.push(entry.chosen.join(', '));
     return parts.join(' · ') || '—';
   }
@@ -68,12 +68,12 @@ export default function GameLog() {
         <div className="flex items-start gap-2 px-2 py-1.5 rounded hover:bg-slate-800/40 transition-colors">
           <div
             className={`mt-1 flex-shrink-0 w-1.5 h-1.5 rounded-full ${isP1 ? 'bg-sky-400' : 'bg-amber-400'}`}
-            title={isP1 ? 'Player 1' : 'Player 2'}
+            title={isP1 ? t('player.p1') : t('player.p2')}
           />
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-1.5 flex-wrap">
               <span className={`text-[10px] font-mono font-bold uppercase ${isP1 ? 'text-sky-400' : 'text-amber-400'}`}>
-                {isP1 ? 'P1' : 'P2'}
+                {isP1 ? t('player.p1') : t('player.p2')}
               </span>
               <span className={`text-[10px] font-medium px-1.5 py-0.5 rounded border ${meta.color}`}>
                 {meta.label}

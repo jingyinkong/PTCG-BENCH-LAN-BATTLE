@@ -4,8 +4,9 @@ import { useGameStore } from '../stores/gameStore';
 import ConfirmModal from './ConfirmModal';
 
 export default function ActionPanel() {
-  const { t } = useTranslation(['game', 'common']);
-  const { availableActions = [], executeAction, loading, isChoosingCard, isAgentThinking, vsAgent, turn, agentPlayer, isPvP, pvpPlayerId, leavePvPGame, opponentDisconnected } = useGameStore();
+  const { t } = useTranslation(['game', 'common', 'lobby']);
+  const gt = (key: string) => t(key, { ns: 'game' });
+  const { availableActions = [], executeAction, loading, isChoosingCard, isAgentThinking, vsAgent, turn, agentPlayer, isPvP, pvpPlayerId, leavePvPGame, opponentDisconnected, opponentLeft, reset } = useGameStore();
   const isMyTurn = isPvP ? turn === pvpPlayerId : vsAgent ? turn !== agentPlayer : true;
   const [showSurrenderConfirm, setShowSurrenderConfirm] = useState(false);
 
@@ -65,10 +66,10 @@ export default function ActionPanel() {
                 className="w-full text-left px-3 py-2.5 bg-slate-800 hover:bg-slate-700 border border-slate-700/60 hover:border-sky-500/40 disabled:opacity-40 disabled:cursor-not-allowed rounded-lg transition-all duration-150 group"
               >
                 <div className="font-semibold text-xs text-slate-200 group-hover:text-sky-300 transition-colors">
-                  {formatActionType(action.actionType)}
+                  {formatActionType(action.actionType, gt)}
                 </div>
                 <div className="text-[11px] text-slate-500 mt-0.5 leading-snug">
-                  {formatActionDescription(action)}
+                  {formatActionDescription(action, gt)}
                 </div>
               </button>
             );
@@ -102,20 +103,55 @@ export default function ActionPanel() {
         onConfirm={() => { setShowSurrenderConfirm(false); leavePvPGame(); }}
         onCancel={() => setShowSurrenderConfirm(false)}
       />
+
+      {/* Opponent left modal — shown when the other player disconnects */}
+      {opponentLeft && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
+          <div className="bg-slate-900 border border-slate-600 rounded-xl p-8 max-w-sm w-full mx-4 text-center shadow-2xl">
+            <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-amber-500/20 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="8" x2="12" y2="12" />
+                <line x1="12" y1="16" x2="12.01" y2="16" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold text-slate-50 mb-2">{t('lobby:opponentLeft')}</h3>
+            <p className="text-slate-400 text-sm mb-6">{t('lobby:opponentLeftGameDesc')}</p>
+            <button
+              onClick={() => { reset(); }}
+              className="w-full px-6 py-2.5 bg-sky-600 hover:bg-sky-500 text-white rounded-lg font-semibold text-sm transition-colors"
+            >
+              {t('common:button.backToHome')}
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
 
-function formatActionType(type: string): string {
-  return type.replace(/([A-Z])/g, ' $1').replace(/^./, (str) => str.toUpperCase()).trim();
+const ACTION_TYPE_MAP: Record<string, string> = {
+  AttackAction: 'attack', PlayPokemonAction: 'playPokemon',
+  EvolvePokemonAction: 'evolve', AttachEnergyAction: 'attachEnergy',
+  RetreatAction: 'retreat', UseAbilityAction: 'useAbility',
+  UseItemAction: 'useItem', UseSupporterAction: 'useSupporter',
+  UseToolAction: 'useTool', PutStadiumAction: 'putStadium',
+  DiscardStadiumAction: 'discardStadium', UseStadiumAction: 'useStadium',
+  PassTurn: 'pass', ChooseCardAction: 'chooseCard', EffectAction: 'effect',
+};
+
+function formatActionType(type: string, gt: (key: string) => string): string {
+  const tKey = ACTION_TYPE_MAP[type];
+  return tKey ? gt(`action.${tKey}`) : type;
 }
 
-function formatActionDescription(action: any): string {
+function formatActionDescription(action: any, gt: (key: string) => string): string {
   const parts: string[] = [];
   if (action.source) parts.push(action.source);
-  if (action.target) parts.push(`→ ${action.target}`);
-  if (action.attack) parts.push(`${action.attack.name} · ${action.attack.damage} dmg`);
-  if (action.ability) parts.push(`Ability: ${action.ability}`);
-  if (action.position) parts.push(`pos ${action.position}`);
+  if (action.target) parts.push(`${gt('desc.arrow')} ${action.target}`);
+  if (action.attack) parts.push(`${action.attack.name} · ${action.attack.damage} ${gt('desc.dmg')}`);
+  if (action.ability) parts.push(`${gt('desc.ability')}: ${action.ability}`);
+  if (action.position) parts.push(`${gt('desc.pos')} ${action.position}`);
   return parts.join(' · ') || '—';
 }

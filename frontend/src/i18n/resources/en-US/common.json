@@ -1,0 +1,83 @@
+{
+  "nav": {
+    "home": "Home",
+    "game": "Game",
+    "decks": "Decks",
+    "replay": "Replay",
+    "leaderboard": "Leaderboard",
+    "history": "History",
+    "lobby": "Lobby",
+    "auth": "Login",
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Register",
+    "vsHuman": "vs Human",
+    "vsAI": "vs AI",
+    "lanBattle": "LAN Battle",
+    "startGameFirst": "Start a game first",
+    "projectTag": "ML Research"
+  },
+  "button": {
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "back": "Back",
+    "close": "Close",
+    "backToHome": "Back to Home",
+    "backToLobby": "Back to Lobby",
+    "playAgain": "Play Again",
+    "newGame": "New Game",
+    "startGame": "Start Game",
+    "browseDecks": "Browse Decks",
+    "documentation": "Documentation",
+    "leaveGame": "Leave Game",
+    "continueGame": "Continue"
+  },
+  "status": {
+    "loading": "Loading...",
+    "processing": "Processing...",
+    "yourTurn": "Your Turn",
+    "opponentTurn": "Opponent's Turn",
+    "waiting": "Waiting",
+    "choosing": "Choosing",
+    "noActions": "No actions available",
+    "unavailable": "Unavailable"
+  },
+  "language": {
+    "switchTo": "中文"
+  },
+  "home": {
+    "description": "AI-powered Pokémon TCG simulation engine for reinforcement learning and agent evaluation research."
+  },
+  "replay": {
+    "actionLog": "Action Log",
+    "replayLibrary": "Replay Library",
+    "loadingReplays": "Loading replays…",
+    "noReplayFiles": "No replay files found in",
+    "loadingReplay": "Loading replay…",
+    "noFrameData": "No frame data",
+    "wins": "{{winner}} wins",
+    "start": "start",
+    "backToList": "Back to replay list",
+    "jumpToStart": "Jump to Start",
+    "previous": "Previous Step",
+    "play": "Play",
+    "pause": "Pause",
+    "next": "Next Step",
+    "jumpToEnd": "Jump to End",
+    "action": {
+      "AttackAction": "Attack",
+      "PlayPokemonAction": "Play Pokémon",
+      "EvolvePokemonAction": "Evolve",
+      "AttachEnergyAction": "Attach Energy",
+      "RetreatAction": "Retreat",
+      "UseAbilityAction": "Ability",
+      "UseItemAction": "Item",
+      "UseSupporterAction": "Supporter",
+      "UseToolAction": "Tool",
+      "PutStadiumAction": "Stadium",
+      "PassTurn": "Pass",
+      "ChooseCardAction": "Choose",
+      "EffectAction": "Effect"
+    }
+  }
+}

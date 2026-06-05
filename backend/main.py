@@ -849,7 +849,15 @@ async def websocket_pvp_room(websocket: WebSocket, room_id: str):
                 available = game["info"]["raw_available_actions"]
 
                 current_turn = game["info"]["turn"].name
-                if not manager.validate_turn(player, current_turn):
+                # Dynamically resolve player role from active_connections,
+                # because coin-toss role swap mutates the dict without updating
+                # each handler's local `player` variable.
+                resolved_player = player
+                for r, w in active_connections.get(room_id, {}).items():
+                    if w is websocket:
+                        resolved_player = r
+                        break
+                if not manager.validate_turn(resolved_player, current_turn):
                     await websocket.send_json({"type": "ERROR", "message": t("game_not_your_turn")})
                     continue
 

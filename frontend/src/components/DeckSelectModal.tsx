@@ -88,7 +88,7 @@ function AgentCard({ agent, selected, onClick }: { agent: AgentInfo; selected: b
           <p className={`text-xs font-semibold ${selected ? 'text-sky-300' : 'text-slate-200'}`}>{agent.name}</p>
           {!agent.available && (
             <span className="text-[9px] font-mono uppercase bg-slate-700 text-slate-500 rounded px-1.5 py-0.5">
-              {t('common:status.unavailable', 'Unavailable')}
+              {t('common:status.unavailable')}
             </span>
           )}
         </div>
@@ -249,7 +249,7 @@ export default function DeckSelectModal({ isOpen, onClose, onConfirm, defaultDec
             {vsAgent ? (
               <div className="flex-1 flex flex-col gap-3 min-h-0 overflow-y-auto">
                 <div>
-                  <p className="text-[10px] font-mono text-slate-600 uppercase tracking-wider mb-1.5">Agent Type</p>
+                  <p className="text-[10px] font-mono text-slate-600 uppercase tracking-wider mb-1.5">{t('deck:agentType')}</p>
                   {agentsLoading ? (
                     <p className="text-center text-slate-600 py-4 text-xs">{t('common:status.loading')}</p>
                   ) : (
@@ -264,7 +264,7 @@ export default function DeckSelectModal({ isOpen, onClose, onConfirm, defaultDec
 
                 {selectedAgent?.requiresModel && selectedAgent.models && (
                   <div className="flex-shrink-0">
-                    <p className="text-[10px] font-mono text-slate-600 uppercase tracking-wider mb-1.5">Model</p>
+                    <p className="text-[10px] font-mono text-slate-600 uppercase tracking-wider mb-1.5">{t('deck:model')}</p>
                     <div className="space-y-1">
                       {selectedAgent.models.map(model => (
                         <button
@@ -326,7 +326,7 @@ export default function DeckSelectModal({ isOpen, onClose, onConfirm, defaultDec
         <div className="px-6 py-3.5 border-t border-slate-800 flex-shrink-0 flex items-center justify-between gap-4">
           <p className="text-[11px] text-slate-600 truncate font-mono">
             <span className="text-sky-400">{p1Label}</span>
-            <span className="text-slate-700 mx-2">vs</span>
+            <span className="text-slate-700 mx-2">{t('deck:vs')}</span>
             {vsAgent ? (
               <span className="text-sky-400">
                 {selectedAgent?.name ?? t('common:nav.vsAI')}

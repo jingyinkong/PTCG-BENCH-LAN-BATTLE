@@ -1,0 +1,109 @@
+{
+  "zone": {
+    "active": "出战区",
+    "bench": "备战区",
+    "prize": "奖赏卡",
+    "deck": "卡组",
+    "discard": "弃牌堆",
+    "hand": "手牌",
+    "stadium": "竞技场"
+  },
+  "action": {
+    "attack": "攻击",
+    "retreat": "撤退",
+    "playPokemon": "放置宝可梦",
+    "evolve": "进化",
+    "attachEnergy": "附着能量",
+    "useAbility": "使用特性",
+    "useItem": "使用物品",
+    "useSupporter": "使用支援者",
+    "useTool": "使用道具",
+    "putStadium": "放置竞技场",
+    "discardStadium": "丢弃竞技场",
+    "useStadium": "使用竞技场",
+    "pass": "过回合",
+    "chooseCard": "选择卡牌",
+    "effect": "效果"
+  },
+  "dropLabel": {
+    "evolve": "进化",
+    "play": "放置",
+    "attach": "附着",
+    "tool": "道具",
+    "supporter": "支援者",
+    "item": "物品",
+    "stadium": "竞技场",
+    "drop": "放置"
+  },
+  "playZoneLabel": {
+    "playSupporter": "使用支援者",
+    "playItem": "使用物品",
+    "playStadium": "使用竞技场",
+    "playCard": "使用卡牌"
+  },
+  "player": {
+    "you": "你",
+    "opponent": "对手",
+    "p1": "玩家1",
+    "p2": "玩家2",
+    "youP1": "你 (P1)",
+    "youP2": "你 (P2)",
+    "opponentP1": "对手 (P1)",
+    "opponentP2": "对手 (P2)",
+    "llmAgent": "LLM 智能体",
+    "randomAgent": "随机智能体",
+    "aiAgent": "AI 智能体"
+  },
+  "gameInfo": {
+    "turn": "回合",
+    "step": "步骤",
+    "gameLog": "战斗日志",
+    "actions": "可用操作",
+    "agentThinking": "智能体思考中...",
+    "opponentTurnWait": "等待对手操作",
+    "choosingCard": "等待选择卡牌",
+    "emptyLog": "操作记录将显示在这里",
+    "emptyDiscard": "弃牌堆为空",
+    "noCards": "手牌为空",
+    "dragToPlay": "拖拽来使用",
+    "surrender": "认输 / 退出游戏"
+  },
+  "result": {
+    "gameResult": "对战结果",
+    "wins": "获胜",
+    "gameOver": "对战结束",
+    "tookAllPrizes": "已获得所有奖赏卡",
+    "you": "你"
+  },
+  "cardSelection": {
+    "title": "选择卡牌",
+    "selectCount": "选择 {{count}} 张卡牌",
+    "selectCount_plural": "选择 {{count}} 张卡牌",
+    "selectRange": "选择 {{min}}–{{max}} 张卡牌",
+    "ready": "可以确认",
+    "noCandidates": "暂无候选卡牌",
+    "confirming": "确认中…",
+    "skip": "跳过",
+    "confirm": "确认 ({{count}})",
+    "clear": "清除"
+  },
+  "error": {
+    "webSocketNotConnected": "WebSocket 未连接",
+    "createGameFailed": "创建游戏失败",
+    "executeActionFailed": "执行操作失败",
+    "agentFailed": "智能体操作失败"
+  },
+  "WebSocket not connected": "WebSocket 未连接",
+  "Failed to create game": "创建游戏失败",
+  "Failed to execute action": "执行操作失败",
+  "Agent failed to take action": "智能体操作失败",
+  "reveal": "查看",
+  "hide": "隐藏",
+  "clickToView": "点击查看",
+  "desc": {
+    "dmg": "伤害",
+    "pos": "位置",
+    "ability": "特性",
+    "arrow": "→"
+  }
+}

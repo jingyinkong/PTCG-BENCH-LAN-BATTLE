@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 interface ConfirmModalProps {
   isOpen: boolean;
   title: string;
@@ -13,12 +15,15 @@ export default function ConfirmModal({
   isOpen,
   title,
   message,
-  confirmLabel = '确认',
-  cancelLabel = '取消',
+  confirmLabel,
+  cancelLabel,
   confirmVariant = 'primary',
   onConfirm,
   onCancel,
 }: ConfirmModalProps) {
+  const { t } = useTranslation(['common']);
+  const finalConfirmLabel = confirmLabel ?? t('common:button.confirm');
+  const finalCancelLabel = cancelLabel ?? t('common:button.cancel');
   if (!isOpen) return null;
 
   const confirmClasses = confirmVariant === 'danger'
@@ -43,13 +48,13 @@ export default function ConfirmModal({
             onClick={onCancel}
             className="flex-1 px-4 py-2 bg-slate-700 hover:bg-slate-600 text-slate-300 rounded-lg font-semibold text-sm transition-colors"
           >
-            {cancelLabel}
+            {finalCancelLabel}
           </button>
           <button
             onClick={onConfirm}
             className={`flex-1 px-4 py-2 rounded-lg font-semibold text-sm transition-colors ${confirmClasses}`}
           >
-            {confirmLabel}
+            {finalConfirmLabel}
           </button>
         </div>
       </div>
