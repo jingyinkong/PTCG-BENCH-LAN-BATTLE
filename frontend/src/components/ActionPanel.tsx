@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import { useGameStore } from '../stores/gameStore';
+import ConfirmModal from './ConfirmModal';
 
 export default function ActionPanel() {
   const { availableActions = [], executeAction, loading, isChoosingCard, isAgentThinking, vsAgent, turn, agentPlayer, isPvP, pvpPlayerId, leavePvPGame, opponentDisconnected } = useGameStore();
   const isMyTurn = isPvP ? turn === pvpPlayerId : vsAgent ? turn !== agentPlayer : true;
+  const [showSurrenderConfirm, setShowSurrenderConfirm] = useState(false);
 
   const displayActions = isChoosingCard || !isMyTurn
     ? []
@@ -78,14 +81,25 @@ export default function ActionPanel() {
             <div className="text-amber-400 text-xs text-center py-1">对手已断线</div>
           ) : (
             <button
-              onClick={leavePvPGame}
+              onClick={() => setShowSurrenderConfirm(true)}
               className="w-full px-3 py-2 bg-red-900/40 hover:bg-red-800/60 border border-red-800/40 hover:border-red-700/60 text-red-300 rounded-lg text-xs font-semibold transition-colors"
             >
-              Surrender / Leave Game
+              认输 / 退出游戏
             </button>
           )}
         </div>
       )}
+
+      <ConfirmModal
+        isOpen={showSurrenderConfirm}
+        title="确认退出"
+        message="你确定要认输并退出游戏吗？退出后本局将判负。"
+        confirmLabel="退出游戏"
+        cancelLabel="继续游戏"
+        confirmVariant="danger"
+        onConfirm={() => { setShowSurrenderConfirm(false); leavePvPGame(); }}
+        onCancel={() => setShowSurrenderConfirm(false)}
+      />
     </div>
   );
 }
