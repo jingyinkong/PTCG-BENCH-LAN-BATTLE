@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Card } from '../types/game';
 import CardModal from './CardModal';
 
@@ -10,6 +11,7 @@ interface Props {
 }
 
 export default function DiscardModal({ discard, cardImages, isOpen, onClose }: Props) {
+  const { t } = useTranslation(['game', 'common']);
   const [selectedCard, setSelectedCard] = useState<{ card: Card; imageUrl?: string } | null>(null);
 
   if (!isOpen) return null;
@@ -30,7 +32,7 @@ export default function DiscardModal({ discard, cardImages, isOpen, onClose }: P
           {/* Header */}
           <div className="flex items-center justify-between px-5 py-3 border-b border-slate-800 flex-shrink-0">
             <h2 className="text-sm font-semibold text-slate-200">
-              Discard Pile
+              {t('zone.discard')}
               <span className="ml-2 text-xs text-slate-500 font-normal font-mono">
                 {discard.length} card{discard.length !== 1 ? 's' : ''}
               </span>
@@ -38,7 +40,7 @@ export default function DiscardModal({ discard, cardImages, isOpen, onClose }: P
             <button
               onClick={onClose}
               className="text-slate-600 hover:text-slate-300 transition-colors p-1 rounded"
-              aria-label="Close"
+              aria-label={t('button.close')}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
@@ -49,7 +51,7 @@ export default function DiscardModal({ discard, cardImages, isOpen, onClose }: P
           {/* Cards */}
           <div className="overflow-y-auto p-4 flex-1">
             {cards.length === 0 ? (
-              <p className="text-slate-600 text-sm text-center py-8">Discard pile is empty</p>
+              <p className="text-slate-600 text-sm text-center py-8">{t('gameInfo.emptyDiscard', 'Discard pile is empty')}</p>
             ) : (
               <div className="flex flex-wrap gap-2">
                 {cards.map((card, i) => {

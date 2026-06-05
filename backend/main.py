@@ -28,6 +28,7 @@ from game_rooms import router as rooms_router, rooms as game_rooms
 from match_records import router as match_records_router
 from pvp_game import PvPGameManager, active_connections, _get_user_from_token, _broadcast_state, _record_match_result, _cleanup_room
 from engine_patches import apply_patches
+from i18n.translator import t
 
 # Apply engine patches for bench selection during initial setup
 apply_patches()
@@ -735,18 +736,18 @@ async def websocket_pvp_room(websocket: WebSocket, room_id: str):
             try:
                 message = json.loads(data)
             except json.JSONDecodeError:
-                await websocket.send_json({"type": "ERROR", "message": "无效的 JSON 格式"})
+                await websocket.send_json({"type": "ERROR", "message": t("game_invalid_json")})
                 continue
 
             # ── Coin Toss Protocol Messages ──
             ct = coin_toss_states.get(room_id)
             if ct and message.get("type") == "COIN_TOSS_CALL":
                 if player != ct["caller"]:
-                    await websocket.send_json({"type": "ERROR", "message": "不是由你猜硬币"})
+                    await websocket.send_json({"type": "ERROR", "message": t("coin_not_your_call")})
                     continue
                 choice = message.get("choice", "")
                 if choice not in ("heads", "tails"):
-                    await websocket.send_json({"type": "ERROR", "message": "请选择 heads 或 tails"})
+                    await websocket.send_json({"type": "ERROR", "message": t("coin_invalid_choice")})
                     continue
                 ct["caller_choice"] = choice
                 ct["coin"] = "heads" if secrets.randbelow(2) == 1 else "tails"
@@ -774,11 +775,11 @@ async def websocket_pvp_room(websocket: WebSocket, room_id: str):
 
             if ct and message.get("type") == "COIN_TOSS_CHOOSE":
                 if player != ct["chooser"]:
-                    await websocket.send_json({"type": "ERROR", "message": "不是由你选择先/后攻"})
+                    await websocket.send_json({"type": "ERROR", "message": t("coin_not_your_choose")})
                     continue
                 choice = message.get("choice", "")
                 if choice not in ("first", "second"):
-                    await websocket.send_json({"type": "ERROR", "message": "请选择 first 或 second"})
+                    await websocket.send_json({"type": "ERROR", "message": t("coin_invalid_choose")})
                     continue
                 ct["turn_choice"] = choice
                 ct["phase"] = "done"
@@ -841,7 +842,7 @@ async def websocket_pvp_room(websocket: WebSocket, room_id: str):
             if message["type"] == "ACTION":
                 game = games.get(room_id)
                 if not game:
-                    await websocket.send_json({"type": "ERROR", "message": "游戏不存在"})
+                    await websocket.send_json({"type": "ERROR", "message": t("game_not_found")})
                     continue
 
                 env = game["env"]
@@ -849,12 +850,12 @@ async def websocket_pvp_room(websocket: WebSocket, room_id: str):
 
                 current_turn = game["info"]["turn"].name
                 if not manager.validate_turn(player, current_turn):
-                    await websocket.send_json({"type": "ERROR", "message": "不是你的回合"})
+                    await websocket.send_json({"type": "ERROR", "message": t("game_not_your_turn")})
                     continue
 
                 idx = message["action_index"]
                 if idx < 0 or idx >= len(available):
-                    await websocket.send_json({"type": "ERROR", "message": "无效的操作索引"})
+                    await websocket.send_json({"type": "ERROR", "message": t("game_invalid_action")})
                     continue
 
                 action = available[idx]

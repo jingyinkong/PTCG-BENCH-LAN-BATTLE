@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useDeckStore } from '../stores/deckStore';
 import { useGameStore } from '../stores/gameStore';
 import DeckCard from './DeckCard';
@@ -8,6 +9,7 @@ interface DeckManagerProps {
 }
 
 export default function DeckManager({ onPlayWithDeck }: DeckManagerProps) {
+  const { t } = useTranslation(['deck', 'common']);
   const { decks, loading, loadDecks } = useDeckStore();
   const { cardImages } = useGameStore();
 
@@ -18,22 +20,22 @@ export default function DeckManager({ onPlayWithDeck }: DeckManagerProps) {
       {/* Header */}
       <div className="mb-6 flex items-end justify-between">
         <div>
-          <div className="text-[11px] font-mono text-sky-500 uppercase tracking-widest mb-1">Configuration</div>
-          <h2 className="text-xl font-bold text-slate-50">Deck Collection</h2>
+          <div className="text-[11px] font-mono text-sky-500 uppercase tracking-widest mb-1">{t('common:nav.decks')}</div>
+          <h2 className="text-xl font-bold text-slate-50">{t('deck:yourDecks')}</h2>
           <p className="text-xs text-slate-500 mt-1">
             {decks.length > 0
-              ? `${decks.length} deck${decks.length !== 1 ? 's' : ''} available · click to start a game`
-              : 'No decks loaded'}
+              ? t('deck:decksAvailable', { count: decks.length })
+              : t('deck:noDecks')}
           </p>
         </div>
         {decks.length > 0 && (
           <span className="px-3 py-1 rounded-md bg-slate-800 border border-slate-700 text-slate-500 text-xs font-mono">
-            {decks.length} decks
+            {t('deck:count', { count: decks.length })}
           </span>
         )}
       </div>
 
-      {/* Grid */}
+      {/* Grid or loading skeleton */}
       {loading ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {Array.from({ length: 4 }).map((_, i) => (
@@ -46,8 +48,8 @@ export default function DeckManager({ onPlayWithDeck }: DeckManagerProps) {
             stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="mb-4 opacity-40">
             <rect x="2" y="5" width="20" height="14" rx="2" /><path d="M2 10h20" />
           </svg>
-          <p className="text-sm font-medium">No decks found</p>
-          <p className="text-xs mt-1 font-mono text-slate-700">Add .txt deck files to ptcg-engine/src/ptcg/decks/</p>
+          <p className="text-sm font-medium">{t('deck:noDecks')}</p>
+          <p className="text-xs mt-1 font-mono text-slate-700">{t('deck:createFirstDeck')}</p>
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">

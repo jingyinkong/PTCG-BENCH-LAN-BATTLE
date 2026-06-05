@@ -15,6 +15,7 @@ import LobbyPage from './components/LobbyPage';
 import MatchHistory from './components/MatchHistory';
 import { useAuthStore } from './stores/authStore';
 import { Card } from './types/game';
+import { useTranslation } from 'react-i18next';
 
 type AppMode = 'home' | 'game' | 'replay' | 'decks' | 'leaderboard' | 'auth' | 'lobby' | 'history';
 
@@ -22,6 +23,7 @@ type AppMode = 'home' | 'game' | 'replay' | 'decks' | 'leaderboard' | 'auth' | '
 const PAGE_WRAPPER = 'pt-11 min-h-screen bg-slate-950 text-slate-100';
 
 function App() {
+  const { t } = useTranslation(['common', 'game', 'lobby']);
   const { createGame, gameId, done, winner, loadCardImages, isPvP, opponentLeft, leavePvPGame } = useGameStore();
   const { isLoggedIn, fetchMe } = useAuthStore();
   const [selectedCard, setSelectedCard] = useState<{ card: Card; imageUrl?: string } | null>(null);
@@ -57,14 +59,14 @@ function App() {
       {/* Project identity */}
       <div className="mb-2 flex items-center gap-2">
         <span className="text-xs font-mono text-sky-500 uppercase tracking-widest px-2 py-0.5 rounded border border-sky-500/30 bg-sky-500/5">
-          ML Research
+          {t('common:nav.projectTag')}
         </span>
       </div>
       <h1 className="text-4xl font-bold text-slate-50 tracking-tight mb-2">
         Open-PTCG
       </h1>
       <p className="text-slate-400 mb-8 text-sm max-w-sm text-center leading-relaxed">
-        AI-powered Pokémon TCG simulation engine for reinforcement learning and agent evaluation research.
+        {t('common:home.description')}
       </p>
 
       {/* Action buttons */}
@@ -73,7 +75,7 @@ function App() {
           onClick={() => handleOpenDeckModal()}
           className="px-6 py-2.5 bg-sky-600 hover:bg-sky-500 text-white rounded-lg font-semibold text-sm transition-colors shadow-md"
         >
-          New Game
+          {t('common:button.newGame')}
         </button>
         <button
           onClick={() => handleOpenDeckModal(undefined, true)}
@@ -82,7 +84,7 @@ function App() {
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="text-sky-400">
             <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 0 2h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1 0-2h1a7 7 0 0 1 7-7h1V5.73A2 2 0 0 1 10 4a2 2 0 0 1 2-2m0 7a5 5 0 0 0-5 5v2h10v-2a5 5 0 0 0-5-5M8.5 16a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m7 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
           </svg>
-          vs AI Agent
+          {t('common:nav.vsAI')}
         </button>
         <button
           onClick={() => setMode('replay')}
@@ -91,7 +93,7 @@ function App() {
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-sky-400">
             <polygon points="5 3 19 12 5 21 5 3" />
           </svg>
-          Replays
+          {t('common:nav.replay')}
         </button>
         {isLoggedIn && (
           <button
@@ -101,7 +103,7 @@ function App() {
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-200">
               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
             </svg>
-            LAN Battle
+            {t('common:nav.lanBattle')}
           </button>
         )}
         <button
@@ -111,18 +113,18 @@ function App() {
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-sky-400">
             <line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" />
           </svg>
-          Leaderboard
+          {t('common:nav.leaderboard')}
         </button>
       </div>
 
       {/* Quick links */}
       <div className="mt-10 flex items-center gap-6 text-xs text-slate-600">
         <button onClick={() => setMode('decks')} className="hover:text-slate-400 transition-colors">
-          Browse Decks
+          {t('common:button.browseDecks')}
         </button>
         <span className="text-slate-800">·</span>
         <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-slate-400 transition-colors">
-          Documentation
+          {t('common:button.documentation')}
         </a>
       </div>
     </div>
@@ -132,13 +134,13 @@ function App() {
   const GameOverScreen = (
     <div className="flex flex-col items-center justify-center" style={{ minHeight: 'calc(100vh - 44px)' }}>
       <div className="bg-slate-900 border border-slate-700 rounded-xl p-10 text-center max-w-sm w-full shadow-xl">
-        <div className="text-xs font-mono text-slate-500 uppercase tracking-widest mb-3">Game Result</div>
+        <div className="text-xs font-mono text-slate-500 uppercase tracking-widest mb-3">{t('game:result.gameResult')}</div>
         <h2 className="text-2xl font-bold text-slate-50 mb-1">
-          {winner ? `${winner === 'player1' ? 'Player 1' : 'Player 2'} Wins` : 'Game Over'}
+          {winner ? `${winner === 'player1' ? t('game:player.p1') : t('game:player.p2')} ${t('game:result.wins')}` : t('game:result.gameOver')}
         </h2>
         {winner && (
           <p className="text-sm text-slate-400 mb-6">
-            {winner === 'player1' ? 'Player 1 (You)' : 'Player 2'} has taken all prize cards.
+            {winner === 'player1' ? t('game:player.youP1') : t('game:player.p2')} {t('game:result.tookAllPrizes')}
           </p>
         )}
         <div className="flex flex-col gap-2 mt-6">
@@ -146,13 +148,13 @@ function App() {
             onClick={() => { useGameStore.getState().reset(); handleOpenDeckModal(); }}
             className="w-full px-6 py-2.5 bg-sky-600 hover:bg-sky-500 text-white rounded-lg font-semibold text-sm transition-colors"
           >
-            Play Again
+            {t('common:button.playAgain')}
           </button>
           <button
             onClick={() => { useGameStore.getState().reset(); setMode('home'); }}
             className="w-full px-6 py-2.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 rounded-lg font-semibold text-sm transition-colors"
           >
-            Back to Home
+            {t('common:button.backToHome')}
           </button>
         </div>
       </div>
@@ -232,9 +234,9 @@ function App() {
                 <line x1="12" y1="16" x2="12.01" y2="16" />
               </svg>
             </div>
-            <h3 className="text-xl font-bold text-slate-50 mb-2">对手已退出</h3>
+            <h3 className="text-xl font-bold text-slate-50 mb-2">{t('lobby:opponentLeft')}</h3>
             <p className="text-slate-400 text-sm mb-6">
-              对方已退出游戏或投降，本局对战结束。
+              {t('lobby:opponentLeftGameDesc')}
             </p>
             <button
               onClick={() => {
@@ -243,7 +245,7 @@ function App() {
               }}
               className="w-full px-6 py-2.5 bg-sky-600 hover:bg-sky-500 text-white rounded-lg font-semibold text-sm transition-colors"
             >
-              返回主页
+              {t('common:button.backToHome')}
             </button>
           </div>
         </div>

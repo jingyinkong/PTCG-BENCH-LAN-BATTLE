@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useDeckStore } from '../stores/deckStore';
 import EnergyIcon from './EnergyIcon';
 import { ENERGY_CODE_TO_TYPE, getDeckColors } from './DeckCard';
@@ -50,6 +51,8 @@ function MiniDeckCard({ deck, selected, onClick }: MiniCardProps) {
 
 // ─── Agent card ───────────────────────────────────────────────────────────────
 function AgentCard({ agent, selected, onClick }: { agent: AgentInfo; selected: boolean; onClick: () => void }) {
+  const { t } = useTranslation(['common']);
+
   return (
     <button
       onClick={onClick}
@@ -85,7 +88,7 @@ function AgentCard({ agent, selected, onClick }: { agent: AgentInfo; selected: b
           <p className={`text-xs font-semibold ${selected ? 'text-sky-300' : 'text-slate-200'}`}>{agent.name}</p>
           {!agent.available && (
             <span className="text-[9px] font-mono uppercase bg-slate-700 text-slate-500 rounded px-1.5 py-0.5">
-              Unavailable
+              {t('common:status.unavailable', 'Unavailable')}
             </span>
           )}
         </div>
@@ -115,6 +118,7 @@ interface DeckSelectModalProps {
 }
 
 export default function DeckSelectModal({ isOpen, onClose, onConfirm, defaultDeck1, defaultVsAgent, pvpMode }: DeckSelectModalProps) {
+  const { t } = useTranslation(['deck', 'common']);
   const { decks, loading, loadDecks } = useDeckStore();
   const [deck1, setDeck1] = useState<string | null>(defaultDeck1 ?? null);
   const [deck2, setDeck2] = useState<string | null>(null);
@@ -183,8 +187,8 @@ export default function DeckSelectModal({ isOpen, onClose, onConfirm, defaultDec
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800 flex-shrink-0">
           <div>
-            <h2 className="text-sm font-semibold text-slate-100">{pvpMode ? 'Select Your Deck' : 'Select Decks'}</h2>
-            <p className="text-[11px] text-slate-500 mt-0.5">{pvpMode ? 'Choose a deck for this battle' : 'Choose a deck for each player'}</p>
+            <h2 className="text-sm font-semibold text-slate-100">{pvpMode ? t('deck:chooseYourDeck') : t('deck:selectDeck')}</h2>
+            <p className="text-[11px] text-slate-500 mt-0.5">{pvpMode ? t('deck:chooseYourDeck') : t('deck:selectDeck')}</p>
           </div>
           <div className="flex items-center gap-3">
             {/* Mode toggle */}
@@ -196,7 +200,7 @@ export default function DeckSelectModal({ isOpen, onClose, onConfirm, defaultDec
                   !vsAgent ? 'bg-sky-600 text-white' : 'text-slate-500 hover:text-slate-300',
                 ].join(' ')}
               >
-                vs Human
+                {t('common:nav.vsHuman')}
               </button>
               <button
                 onClick={() => setVsAgent(true)}
@@ -205,7 +209,7 @@ export default function DeckSelectModal({ isOpen, onClose, onConfirm, defaultDec
                   vsAgent ? 'bg-sky-600 text-white' : 'text-slate-500 hover:text-slate-300',
                 ].join(' ')}
               >
-                vs AI
+                {t('common:nav.vsAI')}
               </button>
             </div>
             <button onClick={onClose} className="text-slate-600 hover:text-slate-300 transition-colors p-1 rounded">
@@ -222,11 +226,11 @@ export default function DeckSelectModal({ isOpen, onClose, onConfirm, defaultDec
           <div className="flex-1 flex flex-col p-4 border-r border-slate-800/60 min-h-0">
             <div className="flex items-center gap-2 mb-2.5 flex-shrink-0">
               <span className="w-2 h-2 rounded-full bg-sky-400" />
-              <h3 className="text-xs font-semibold text-sky-400">Player 1 — You</h3>
+              <h3 className="text-xs font-semibold text-sky-400">{t('deck:yourDeck')}</h3>
             </div>
             <div className="flex-1 overflow-y-auto space-y-1.5">
               {loading ? (
-                <p className="text-center text-slate-600 py-6 text-xs">Loading decks…</p>
+                <p className="text-center text-slate-600 py-6 text-xs">{t('common:status.loading')}</p>
               ) : decks.map(deck => (
                 <MiniDeckCard key={deck.id} deck={deck} selected={deck1 === deck.id} onClick={() => setDeck1(deck.id)} />
               ))}
@@ -238,7 +242,7 @@ export default function DeckSelectModal({ isOpen, onClose, onConfirm, defaultDec
             <div className="flex items-center gap-2 mb-2.5 flex-shrink-0">
               <span className={`w-2 h-2 rounded-full ${vsAgent ? 'bg-sky-400' : 'bg-amber-400'}`} />
               <h3 className={`text-xs font-semibold ${vsAgent ? 'text-sky-400' : 'text-amber-400'}`}>
-                {vsAgent ? 'AI Agent' : pvpMode ? 'Opponent' : 'Player 2 — Opponent'}
+                {vsAgent ? t('common:nav.vsAI') : pvpMode ? t('deck:opponentDeck') : t('deck:opponentDeck')}
               </h3>
             </div>
 
@@ -247,7 +251,7 @@ export default function DeckSelectModal({ isOpen, onClose, onConfirm, defaultDec
                 <div>
                   <p className="text-[10px] font-mono text-slate-600 uppercase tracking-wider mb-1.5">Agent Type</p>
                   {agentsLoading ? (
-                    <p className="text-center text-slate-600 py-4 text-xs">Loading agents…</p>
+                    <p className="text-center text-slate-600 py-4 text-xs">{t('common:status.loading')}</p>
                   ) : (
                     <div className="space-y-1.5">
                       {agents.map(agent => (
@@ -292,10 +296,10 @@ export default function DeckSelectModal({ isOpen, onClose, onConfirm, defaultDec
                 )}
 
                 <div className="flex-shrink-0">
-                  <p className="text-[10px] font-mono text-slate-600 uppercase tracking-wider mb-1.5">Agent's Deck</p>
+                  <p className="text-[10px] font-mono text-slate-600 uppercase tracking-wider mb-1.5">{t('deck:opponentDeck')}</p>
                   <div className="space-y-1.5">
                     {loading ? (
-                      <p className="text-center text-slate-600 py-4 text-xs">Loading…</p>
+                      <p className="text-center text-slate-600 py-4 text-xs">{t('common:status.loading')}</p>
                     ) : decks.map(deck => (
                       <MiniDeckCard key={deck.id} deck={deck} selected={deck2 === deck.id} onClick={() => setDeck2(deck.id)} />
                     ))}
@@ -304,12 +308,12 @@ export default function DeckSelectModal({ isOpen, onClose, onConfirm, defaultDec
               </div>
             ) : pvpMode ? (
               <div className="flex-1 flex items-center justify-center">
-                <p className="text-slate-500 text-xs text-center px-4">您的对手将<br/>自行选择卡组</p>
+                <p className="text-slate-500 text-xs text-center px-4">{t('deck:opponentWillChoose')}</p>
               </div>
             ) : (
               <div className="flex-1 overflow-y-auto space-y-1.5">
                 {loading ? (
-                  <p className="text-center text-slate-600 py-6 text-xs">Loading decks…</p>
+                  <p className="text-center text-slate-600 py-6 text-xs">{t('common:status.loading')}</p>
                 ) : decks.map(deck => (
                   <MiniDeckCard key={deck.id} deck={deck} selected={deck2 === deck.id} onClick={() => setDeck2(deck.id)} />
                 ))}
@@ -325,13 +329,13 @@ export default function DeckSelectModal({ isOpen, onClose, onConfirm, defaultDec
             <span className="text-slate-700 mx-2">vs</span>
             {vsAgent ? (
               <span className="text-sky-400">
-                {selectedAgent?.name ?? 'AI Agent'}
+                {selectedAgent?.name ?? t('common:nav.vsAI')}
                 {selectedAgent?.requiresModel && selectedModel && (
                   <span className="text-slate-600 ml-1">({selectedModel.split('/').pop()})</span>
                 )}
               </span>
             ) : pvpMode ? (
-              <span className="text-amber-400">Opponent</span>
+              <span className="text-amber-400">{t('deck:opponentDeck')}</span>
             ) : (
               <span className="text-amber-400">{p2Label}</span>
             )}
@@ -340,7 +344,7 @@ export default function DeckSelectModal({ isOpen, onClose, onConfirm, defaultDec
             onClick={handleConfirm}
             className="flex-shrink-0 px-6 py-2 bg-sky-600 hover:bg-sky-500 text-white rounded-lg font-semibold text-sm transition-colors shadow-md"
           >
-            Start Game
+            {t('common:button.startGame')}
           </button>
         </div>
       </div>

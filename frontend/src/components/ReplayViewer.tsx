@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useReplayStore } from '../stores/replayStore';
 import { useGameStore } from '../stores/gameStore';
 import ReplayBoard from './ReplayBoard';
@@ -36,11 +37,18 @@ function playerLabel(id: string): { label: string; color: string } {
 
 // ─── Replay Log ───────────────────────────────────────────────────────────────
 function ReplayLog() {
+  const { t } = useTranslation(['common']);
   const { frames, currentFrame, goToFrame } = useReplayStore();
 
   const entries = frames
     .filter((f) => f.action !== null)
     .map((f) => ({ frameIndex: f.frameIndex, action: f.action as ReplayActionData, turn: f.turn }));
+
+  function getActionLabel(type: string): string {
+    const key = `replay.action.${type}`;
+    const result = t(key);
+    return result !== key ? result : type.replace('Action', '');
+  }
 
   return (
     <div className="bg-slate-900 border border-slate-800 rounded-lg flex flex-col h-full min-h-0">
@@ -49,7 +57,7 @@ function ReplayLog() {
           <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
           </svg>
-          Action Log
+          {t('replay.actionLog')}
         </h3>
         <span className="text-[11px] font-mono text-slate-700">{entries.length}</span>
       </div>
@@ -87,7 +95,7 @@ function ReplayLog() {
                   <div className="flex items-center gap-1.5 flex-wrap">
                     <span className={`text-[10px] font-mono font-bold uppercase ${color}`}>{label}</span>
                     <span className={`text-[10px] font-medium px-1.5 py-0.5 rounded border ${actionColor}`}>
-                      {entry.action.actionType.replace('Action', '')}
+                      {getActionLabel(entry.action.actionType)}
                     </span>
                   </div>
                   {(entry.action.source || entry.action.target) && (
@@ -116,6 +124,7 @@ function ReplayLog() {
 
 // ─── File List ────────────────────────────────────────────────────────────────
 function FileList({ onBack }: { onBack: () => void }) {
+  const { t } = useTranslation(['common']);
   const { availableFiles, filesLoading, replayLoading, error, loadReplay, fetchFileList } = useReplayStore();
 
   useEffect(() => { fetchFileList(); }, [fetchFileList]);
@@ -132,13 +141,13 @@ function FileList({ onBack }: { onBack: () => void }) {
               <line x1="2" y1="7" x2="7" y2="7" /><line x1="2" y1="17" x2="7" y2="17" />
               <line x1="17" y1="17" x2="22" y2="17" /><line x1="17" y1="7" x2="22" y2="7" />
             </svg>
-            Replay Library
+            {t('replay.replayLibrary')}
           </h2>
           <button onClick={onBack} className="text-xs text-slate-500 hover:text-slate-300 transition-colors flex items-center gap-1">
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M19 12H5m7-7-7 7 7 7"/>
             </svg>
-            Back
+            {t('button.back')}
           </button>
         </div>
 
@@ -147,10 +156,10 @@ function FileList({ onBack }: { onBack: () => void }) {
         )}
 
         {filesLoading ? (
-          <div className="text-center py-8 text-slate-600 text-sm">Loading replays…</div>
+          <div className="text-center py-8 text-slate-600 text-sm">{t('replay.loadingReplays')}</div>
         ) : availableFiles.length === 0 ? (
           <div className="text-center py-8 text-slate-600 text-sm">
-            No replay files found in <code className="text-slate-500 font-mono">backend/battle_log/</code>
+            {t('replay.noReplayFiles')} <code className="text-slate-500 font-mono">backend/battle_log/</code>
           </div>
         ) : (
           <div className="flex flex-col gap-1.5">
@@ -174,7 +183,7 @@ function FileList({ onBack }: { onBack: () => void }) {
         )}
 
         {replayLoading && (
-          <div className="mt-4 text-center text-xs text-sky-500 animate-pulse font-mono">Loading replay…</div>
+          <div className="mt-4 text-center text-xs text-sky-500 animate-pulse font-mono">{t('replay.loadingReplay')}</div>
         )}
       </div>
     </div>
@@ -187,6 +196,7 @@ interface Props {
 }
 
 export default function ReplayViewer({ onBack }: Props) {
+  const { t } = useTranslation(['common']);
   const { frames, currentFrame, filename } = useReplayStore();
   const { cardImages, loadCardImages, imagesLoaded } = useGameStore();
   const [selectedCard, setSelectedCard] = useState<{ card: Card; imageUrl?: string } | null>(null);
@@ -219,7 +229,7 @@ export default function ReplayViewer({ onBack }: Props) {
               onCardClick={(card, imageUrl) => setSelectedCard({ card, imageUrl })}
             />
           ) : (
-            <div className="flex items-center justify-center h-full text-slate-600 text-sm">No frame data</div>
+            <div className="flex items-center justify-center h-full text-slate-600 text-sm">{t('replay.noFrameData')}</div>
           )}
         </div>
         <div className="col-span-3 flex flex-col min-h-0"><ReplayLog /></div>

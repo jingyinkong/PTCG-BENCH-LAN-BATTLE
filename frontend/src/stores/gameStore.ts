@@ -142,7 +142,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
     // PvP mode: send action via WebSocket — state updates arrive via socket.onmessage
     if (isPvP) {
       if (!pvpSocket || pvpSocket.readyState !== WebSocket.OPEN) {
-        set({ error: 'WebSocket 未连接', loading: false });
+        set({ error: 'WebSocket not connected', loading: false });
         return;
       }
       const newEntry: LogEntry = {

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { useReplayStore } from '../stores/replayStore';
 
 const SPEEDS = [0.25, 0.5, 1, 2, 4];
@@ -26,6 +27,7 @@ interface Props {
 }
 
 export default function ReplayControls({ embedded = false }: Props) {
+  const { t } = useTranslation(['common']);
   const { frames, currentFrame, isPlaying, playbackSpeed, winner, filename, togglePlay, prevFrame, nextFrame, goToFrame, setSpeed, unloadReplay } = useReplayStore();
 
   const total = frames.length;
@@ -42,7 +44,7 @@ export default function ReplayControls({ embedded = false }: Props) {
       {/* Winner */}
       {isLastFrame && (
         <div className="text-center text-xs font-semibold font-mono text-amber-400 tracking-wide">
-          {winner?.toUpperCase()} wins
+          {t('replay.wins', { winner: winner?.toUpperCase() })}
         </div>
       )}
 
@@ -54,12 +56,12 @@ export default function ReplayControls({ embedded = false }: Props) {
               {currentAction.playerId.toLowerCase().includes('player1') ? 'P1' : 'P2'}
             </span>
             {' · '}
-            <span className="text-slate-400">{currentAction.actionType.replace('Action', '')}</span>
+            <span className="text-slate-400">{t('replay.action.' + currentAction.actionType)}</span>
             {currentAction.source && <> · <span className="text-slate-400">{currentAction.source}</span></>}
             {currentAction.target && <> → <span className="text-slate-500">{currentAction.target}</span></>}
           </span>
         ) : (
-          <span className="text-[11px] text-slate-700 font-mono">{currentFrame === 0 ? 'start' : '—'}</span>
+          <span className="text-[11px] text-slate-700 font-mono">{currentFrame === 0 ? t('replay.start') : '—'}</span>
         )}
       </div>
 
@@ -81,7 +83,7 @@ export default function ReplayControls({ embedded = false }: Props) {
       <div className="flex items-center justify-between">
         {/* Filename */}
         <div className="flex items-center gap-2 min-w-0">
-          <button onClick={unloadReplay} title="Back to replay list"
+          <button onClick={unloadReplay} title={t('replay.backToList')}
             className="text-slate-600 hover:text-slate-300 transition-colors flex-shrink-0">
             <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
               <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
@@ -93,8 +95,8 @@ export default function ReplayControls({ embedded = false }: Props) {
         {/* Playback buttons */}
         <div className="flex items-center gap-0.5">
           {[
-            { fn: () => goToFrame(0), disabled: atStart, title: 'Start', icon: <IconSkipBack /> },
-            { fn: prevFrame, disabled: atStart, title: 'Previous', icon: <IconStepBack /> },
+            { fn: () => goToFrame(0), disabled: atStart, title: t('replay.jumpToStart'), icon: <IconSkipBack /> },
+            { fn: prevFrame, disabled: atStart, title: t('replay.previous'), icon: <IconStepBack /> },
           ].map((btn, i) => (
             <button key={i} onClick={btn.fn} disabled={btn.disabled} title={btn.title}
               className="p-1.5 rounded text-slate-500 hover:text-slate-200 hover:bg-slate-800 disabled:opacity-25 disabled:cursor-not-allowed transition-all">
@@ -102,14 +104,14 @@ export default function ReplayControls({ embedded = false }: Props) {
             </button>
           ))}
 
-          <button onClick={togglePlay} title={isPlaying ? 'Pause' : 'Play'}
+          <button onClick={togglePlay} title={isPlaying ? t('replay.pause') : t('replay.play')}
             className="p-1.5 mx-1 rounded-full bg-sky-600 hover:bg-sky-500 text-white transition-colors">
             {isPlaying ? <IconPause /> : <IconPlay />}
           </button>
 
           {[
-            { fn: nextFrame, disabled: atEnd, title: 'Next', icon: <IconStepForward /> },
-            { fn: () => goToFrame(total - 1), disabled: atEnd, title: 'End', icon: <IconSkipForward /> },
+            { fn: nextFrame, disabled: atEnd, title: t('replay.next'), icon: <IconStepForward /> },
+            { fn: () => goToFrame(total - 1), disabled: atEnd, title: t('replay.jumpToEnd'), icon: <IconSkipForward /> },
           ].map((btn, i) => (
             <button key={i} onClick={btn.fn} disabled={btn.disabled} title={btn.title}
               className="p-1.5 rounded text-slate-500 hover:text-slate-200 hover:bg-slate-800 disabled:opacity-25 disabled:cursor-not-allowed transition-all">
