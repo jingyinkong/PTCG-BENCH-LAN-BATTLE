@@ -1,0 +1,96 @@
+name: Release
+
+on:
+  pull_request:
+    branches: [main]
+    types: [closed]
+
+jobs:
+  release:
+    if: github.event.pull_request.merged == true
+    name: Auto Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine version bump
+        id: bump
+        run: |
+          # 获取 PR 标题作为判断依据（squash merge 后成为 commit message）
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          echo "PR title: $PR_TITLE"
+
+          # 根据 conventional commits 前缀判断 bump 类型
+          if echo "$PR_TITLE" | grep -qiE '^feat[(:]'; then
+            echo "type=minor" >> $GITHUB_OUTPUT
+            echo "label=✨ Feature"
+          elif echo "$PR_TITLE" | grep -qiE '^fix[(:]'; then
+            echo "type=patch" >> $GITHUB_OUTPUT
+            echo "label=🐛 Fix"
+          else
+            echo "type=skip" >> $GITHUB_OUTPUT
+            echo "label=Skip (非 feat/fix)"
+          fi
+
+      - name: Get latest tag
+        if: steps.bump.outputs.type != 'skip'
+        id: latest_tag
+        run: |
+          git fetch --tags
+          LATEST=$(git tag -l 'v*' --sort=-v:refname | head -1)
+          if [ -z "$LATEST" ]; then
+            LATEST="v0.1.0"
+          fi
+          echo "tag=$LATEST" >> $GITHUB_OUTPUT
+          echo "Latest tag: $LATEST"
+
+      - name: Bump version
+        if: steps.bump.outputs.type != 'skip'
+        id: new_version
+        run: |
+          OLD="${{ steps.latest_tag.outputs.tag }}"
+          # 去掉 v 前缀
+          V="${OLD#v}"
+          IFS='.' read -r MAJOR MINOR PATCH <<< "$V"
+
+          if [ "${{ steps.bump.outputs.type }}" = "minor" ]; then
+            MINOR=$((MINOR + 1))
+            PATCH=0
+          elif [ "${{ steps.bump.outputs.type }}" = "patch" ]; then
+            PATCH=$((PATCH + 1))
+          fi
+
+          NEW="v${MAJOR}.${MINOR}.${PATCH}"
+          echo "version=$NEW" >> $GITHUB_OUTPUT
+          echo "New version: $NEW (was $OLD)"
+
+      - name: Create tag
+        if: steps.bump.outputs.type != 'skip'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag -a "${{ steps.new_version.outputs.version }}" -m "${{ steps.bump.outputs.label }}: ${{ github.event.pull_request.title }}"
+          git push origin "${{ steps.new_version.outputs.version }}"
+
+      - name: Create GitHub Release
+        if: steps.bump.outputs.type != 'skip'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.new_version.outputs.version }}
+          name: ${{ steps.new_version.outputs.version }} — ${{ github.event.pull_request.title }}
+          body: |
+            **${{ steps.bump.outputs.label }}**
+
+            合并 PR: [#${{ github.event.pull_request.number }}](${{ github.event.pull_request.html_url }})
+
+            ${{ github.event.pull_request.body }}
+          generate_release_notes: true
+
+      - name: Skip release
+        if: steps.bump.outputs.type == 'skip'
+        run: |
+          echo "⏭️ PR 前缀非 feat/fix，跳过版本发布"
+          echo "PR title: ${{ github.event.pull_request.title }}"

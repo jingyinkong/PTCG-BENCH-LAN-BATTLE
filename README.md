@@ -20,6 +20,7 @@
 - [硬币抛掷规则](#硬币抛掷规则)
 - [系统架构](#系统架构)
 - [开发指南](#开发指南)
+- [Git 工作流](#git-工作流)
 - [技术栈](#技术栈)
 - [引用与致谢](#引用与致谢)
 
@@ -276,6 +277,57 @@ cd frontend && npm run build
 | `ACTION` | 客户端→服务端 | 玩家操作（攻击/上场/贴能/进化/训练家等） |
 | `GAME_OVER` | 服务端→客户端 | 游戏结束 + 胜者 |
 | `OPPONENT_DISCONNECTED` | 服务端→客户端 | 对手断线（30 秒重连窗口） |
+
+---
+
+## Git 工作流
+
+本项目采用 **GitHub Flow** 工作流。所有变更通过 feature 分支和 Pull Request 进行，main 分支受保护。
+
+### 分支命名
+
+与 [Conventional Commits](https://www.conventionalcommits.org/) 对齐：
+
+| 类型 | 前缀 | 示例 |
+|------|------|------|
+| 新功能 | `feat/` | `feat/add-dark-mode` |
+| Bug 修复 | `fix/` | `fix/coin-toss-edge-case` |
+| 杂项维护 | `chore/` | `chore/update-deps` |
+
+### 开发流程
+
+```
+main ──●────●────●────●── (受保护，不可直接 push)
+        \         /
+feat/xxx  ●──●──●  ← PR + Squash merge
+```
+
+1. 从 `main` 创建 feature 分支：`git checkout -b feat/your-feature main`
+2. 开发和提交（遵循 conventional commits）
+3. Push 分支并创建 Pull Request
+4. CI 自动运行 lint + test + type check
+5. 审查 diff 后，以 **Squash merge** 合并到 main
+6. `feat:` 或 `fix:` 前缀的 PR 合并后，自动触发版本发布和打 tag
+
+### CI / CD
+
+| Workflow | 触发时机 | 内容 |
+|----------|----------|------|
+| **CI** (`.github/workflows/ci.yml`) | PR 打开/更新、push main | ruff lint + pytest + tsc type check |
+| **Release** (`.github/workflows/release.yml`) | PR 合并到 main | 根据 PR 标题自动 SemVer bump + tag + GitHub Release |
+
+### 分支保护设置
+
+在 GitHub 仓库 **Settings → Branches → Add branch protection rule** 中设置：
+
+- **Branch name pattern**: `main`
+- ✅ Require a pull request before merging
+- ✅ Require status checks to pass before merging (`Backend (Python)`, `Frontend (TypeScript)`)
+- ✅ Do not allow bypassing the above settings（Administrators 除外）
+
+### AI Agent 提交
+
+如果使用 AI Agent 生成代码并提交 PR，请在 PR 描述中勾选"此 PR 由 AI Agent 生成"并确保已人工审查所有变更。PR 模板会自动提醒此检查项。
 
 ---
 
