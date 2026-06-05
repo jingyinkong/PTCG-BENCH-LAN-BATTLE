@@ -27,6 +27,10 @@ from auth import router as auth_router
 from game_rooms import router as rooms_router, rooms as game_rooms
 from match_records import router as match_records_router
 from pvp_game import PvPGameManager, active_connections, _get_user_from_token, _broadcast_state, _record_match_result, _cleanup_room
+from engine_patches import apply_patches
+
+# Apply engine patches for bench selection during initial setup
+apply_patches()
 
 from ptcgbench.agents.charizard_heuristic_agent import CharizardHeuristicAgent
 from ptcgbench.agents.common.profile import AgentProfile
