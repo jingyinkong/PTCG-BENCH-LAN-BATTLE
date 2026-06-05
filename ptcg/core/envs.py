@@ -261,14 +261,19 @@ class PokemonTCG:
         # Don't return anything - let the main loop yield the initial state
 
     def _determine_first_player(self) -> None:
-        """Determine which player goes first via coin flip."""
+        """Determine which player goes first via coin flip.
+
+        In Pokémon TCG, the player who goes first cannot attack on their first turn,
+        but the player who goes second CAN attack on their first turn.
+        """
         if flip_coin(self.gamestate) == Coin.HEAD:
             self.gamestate.turn = PlayerId.PLAYER1
             self.gamestate.player2.supporterPlayedTurn = False
+            self.gamestate.player2.firstTurn = False  # Player 2 can attack
         else:
             self.gamestate.turn = PlayerId.PLAYER2
             self.gamestate.player1.supporterPlayedTurn = False
-
+            self.gamestate.player1.firstTurn = False  # Player 1 can attack
     def _log_game_start(self) -> None:
         player_name = f"{self.gamestate.turn}"[9:]
         if self.recorder:
