@@ -23,7 +23,8 @@
     "useStadium": "Use Stadium",
     "pass": "Pass",
     "chooseCard": "Choose Card",
-    "effect": "Effect"
+    "effect": "Effect",
+    "info": "Info"
   },
   "dropLabel": {
     "evolve": "Evolve",

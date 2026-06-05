@@ -25,6 +25,7 @@ export default function GameLog() {
     PassTurn:             { tKey: 'pass',            color: 'bg-slate-600/20 text-slate-500 border-slate-600/30' },
     ChooseCardAction:     { tKey: 'chooseCard',      color: 'bg-violet-500/15 text-violet-400 border-violet-500/30' },
     EffectAction:         { tKey: 'effect',          color: 'bg-amber-500/15 text-amber-400 border-amber-500/30' },
+    Info:                 { tKey: 'info',            color: 'bg-slate-500/15 text-slate-300 border-slate-500/30' },
   };
 
   function getActionMeta(type: string) {
