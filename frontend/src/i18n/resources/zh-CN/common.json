@@ -1,0 +1,83 @@
+{
+  "nav": {
+    "home": "首页",
+    "game": "对战",
+    "decks": "卡组",
+    "replay": "回放",
+    "leaderboard": "排行榜",
+    "history": "战绩",
+    "lobby": "大厅",
+    "auth": "登录",
+    "login": "登录",
+    "logout": "退出登录",
+    "register": "注册",
+    "vsHuman": "对战玩家",
+    "vsAI": "对战 AI",
+    "lanBattle": "局域网对战",
+    "startGameFirst": "请先开始游戏",
+    "projectTag": "机器学习研究"
+  },
+  "button": {
+    "confirm": "确认",
+    "cancel": "取消",
+    "back": "返回",
+    "close": "关闭",
+    "backToHome": "返回主页",
+    "backToLobby": "返回大厅",
+    "playAgain": "再来一局",
+    "newGame": "新游戏",
+    "startGame": "开始游戏",
+    "browseDecks": "浏览卡组",
+    "documentation": "文档",
+    "leaveGame": "退出游戏",
+    "continueGame": "继续游戏"
+  },
+  "status": {
+    "loading": "加载中...",
+    "processing": "处理中...",
+    "yourTurn": "你的回合",
+    "opponentTurn": "对手回合",
+    "waiting": "等待中",
+    "choosing": "选择中",
+    "noActions": "无可用操作",
+    "unavailable": "不可用"
+  },
+  "language": {
+    "switchTo": "EN"
+  },
+  "home": {
+    "description": "基于 AI 的宝可梦卡牌模拟引擎，用于强化学习和智能体评估研究。"
+  },
+  "replay": {
+    "actionLog": "操作日志",
+    "replayLibrary": "回放列表",
+    "loadingReplays": "正在加载回放…",
+    "noReplayFiles": "回放目录中未找到文件",
+    "loadingReplay": "正在加载回放…",
+    "noFrameData": "无帧数据",
+    "wins": "{{winner}} 获胜",
+    "start": "开始",
+    "backToList": "返回回放列表",
+    "jumpToStart": "跳至开头",
+    "previous": "上一步",
+    "play": "播放",
+    "pause": "暂停",
+    "next": "下一步",
+    "jumpToEnd": "跳至结尾",
+    "action": {
+      "AttackAction": "攻击",
+      "PlayPokemonAction": "放置宝可梦",
+      "EvolvePokemonAction": "进化",
+      "AttachEnergyAction": "附着能量",
+      "RetreatAction": "撤退",
+      "UseAbilityAction": "使用特性",
+      "UseItemAction": "使用物品",
+      "UseSupporterAction": "使用支援者",
+      "UseToolAction": "使用道具",
+      "PutStadiumAction": "放置竞技场",
+      "PassTurn": "过回合",
+      "ChooseCardAction": "选择卡牌",
+      "EffectAction": "效果"
+    }
+  }
+}

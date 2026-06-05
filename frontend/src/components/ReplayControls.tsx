@@ -27,7 +27,7 @@ interface Props {
 }
 
 export default function ReplayControls({ embedded = false }: Props) {
-  const { t } = useTranslation(['common']);
+  const { t } = useTranslation(['common', 'game']);
   const { frames, currentFrame, isPlaying, playbackSpeed, winner, filename, togglePlay, prevFrame, nextFrame, goToFrame, setSpeed, unloadReplay } = useReplayStore();
 
   const total = frames.length;
@@ -53,7 +53,7 @@ export default function ReplayControls({ embedded = false }: Props) {
         {currentAction ? (
           <span className="text-[11px] text-slate-500">
             <span className={`font-mono font-bold ${currentAction.playerId.toLowerCase().includes('player1') ? 'text-sky-400' : 'text-amber-400'}`}>
-              {currentAction.playerId.toLowerCase().includes('player1') ? 'P1' : 'P2'}
+              {currentAction.playerId.toLowerCase().includes('player1') ? t('game:player.p1') : t('game:player.p2')}
             </span>
             {' · '}
             <span className="text-slate-400">{t('replay.action.' + currentAction.actionType)}</span>

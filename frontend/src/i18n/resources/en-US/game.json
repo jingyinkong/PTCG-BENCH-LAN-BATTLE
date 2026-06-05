@@ -1,0 +1,109 @@
+{
+  "zone": {
+    "active": "Active",
+    "bench": "Bench",
+    "prize": "Prize",
+    "deck": "Deck",
+    "discard": "Discard",
+    "hand": "Hand",
+    "stadium": "Stadium"
+  },
+  "action": {
+    "attack": "Attack",
+    "retreat": "Retreat",
+    "playPokemon": "Play Pokémon",
+    "evolve": "Evolve",
+    "attachEnergy": "Attach Energy",
+    "useAbility": "Use Ability",
+    "useItem": "Use Item",
+    "useSupporter": "Use Supporter",
+    "useTool": "Use Tool",
+    "putStadium": "Put Stadium",
+    "discardStadium": "Discard Stadium",
+    "useStadium": "Use Stadium",
+    "pass": "Pass",
+    "chooseCard": "Choose Card",
+    "effect": "Effect"
+  },
+  "dropLabel": {
+    "evolve": "Evolve",
+    "play": "Play",
+    "attach": "Attach",
+    "tool": "Tool",
+    "supporter": "Supporter",
+    "item": "Item",
+    "stadium": "Stadium",
+    "drop": "Drop"
+  },
+  "playZoneLabel": {
+    "playSupporter": "Play Supporter",
+    "playItem": "Play Item",
+    "playStadium": "Play Stadium",
+    "playCard": "Play Card"
+  },
+  "player": {
+    "you": "You",
+    "opponent": "Opponent",
+    "p1": "Player 1",
+    "p2": "Player 2",
+    "youP1": "You (P1)",
+    "youP2": "You (P2)",
+    "opponentP1": "Opponent (P1)",
+    "opponentP2": "Opponent (P2)",
+    "llmAgent": "LLM Agent",
+    "randomAgent": "Random Agent",
+    "aiAgent": "AI Agent"
+  },
+  "gameInfo": {
+    "turn": "Turn",
+    "step": "Step",
+    "gameLog": "Game Log",
+    "actions": "Actions",
+    "agentThinking": "Agent thinking...",
+    "opponentTurnWait": "Opponent's turn",
+    "choosingCard": "Awaiting card selection",
+    "emptyLog": "Actions will appear here.",
+    "emptyDiscard": "Discard pile is empty",
+    "noCards": "No cards in hand",
+    "dragToPlay": "Drag to play",
+    "surrender": "Surrender / Leave Game"
+  },
+  "result": {
+    "gameResult": "Game Result",
+    "wins": "Wins",
+    "gameOver": "Game Over",
+    "tookAllPrizes": "has taken all prize cards.",
+    "you": "You"
+  },
+  "cardSelection": {
+    "title": "Choose Card",
+    "selectCount": "Select {{count}} card",
+    "selectCount_plural": "Select {{count}} cards",
+    "selectRange": "Select {{min}}–{{max}} cards",
+    "ready": "Ready to confirm",
+    "noCandidates": "No candidate cards",
+    "confirming": "Confirming…",
+    "skip": "Skip",
+    "confirm": "Confirm ({{count}})",
+    "clear": "Clear"
+  },
+  "error": {
+    "webSocketNotConnected": "WebSocket not connected",
+    "createGameFailed": "Failed to create game",
+    "executeActionFailed": "Failed to execute action",
+    "agentFailed": "Agent failed to take action"
+  },
+  "WebSocket not connected": "WebSocket not connected",
+  "Failed to create game": "Failed to create game",
+  "Failed to execute action": "Failed to execute action",
+  "Agent failed to take action": "Agent failed to take action",
+  "reveal": "Reveal",
+  "hide": "Hide",
+  "clickToView": "Click to view",
+  "desc": {
+    "dmg": "dmg",
+    "pos": "pos",
+    "ability": "Ability",
+    "arrow": "→"
+  }
+}
