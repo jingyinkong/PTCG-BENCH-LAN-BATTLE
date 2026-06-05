@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { DeckInfo } from '../types/game';
 import EnergyIcon from './EnergyIcon';
 
@@ -32,6 +33,7 @@ interface DeckCardProps {
 }
 
 export default function DeckCard({ deck, cardImages, onPlay }: DeckCardProps) {
+  const { t } = useTranslation(['deck', 'common']);
   const colors = getDeckColors(deck.energyTypes);
   const heroImage = deck.keyPokemon[0] ? cardImages[deck.keyPokemon[0]] : undefined;
   const energyTypeNames = deck.energyTypes.map(c => ENERGY_CODE_TO_TYPE[c] ?? 'colorless');
@@ -78,7 +80,7 @@ export default function DeckCard({ deck, cardImages, onPlay }: DeckCardProps) {
 
         {/* Key Pokémon */}
         <div>
-          <p className="text-[9px] font-mono uppercase tracking-widest text-slate-600 mb-1.5">Key Pokémon</p>
+          <p className="text-[9px] font-mono uppercase tracking-widest text-slate-600 mb-1.5">{t('deck:keyPokemon')}</p>
           <div className="flex flex-wrap gap-1">
             {deck.keyPokemon.slice(0, 4).map(name => (
               <span key={name} className="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700/60">
@@ -100,7 +102,7 @@ export default function DeckCard({ deck, cardImages, onPlay }: DeckCardProps) {
             className="mt-auto w-full py-1.5 rounded-lg text-xs font-semibold transition-all duration-150 border hover:brightness-110 active:scale-95"
             style={{ color: colors.accent, borderColor: `${colors.accent}40`, background: `${colors.accent}0f` }}
           >
-            Use this Deck
+            {t('deck:useThisDeck')}
           </button>
         )}
       </div>

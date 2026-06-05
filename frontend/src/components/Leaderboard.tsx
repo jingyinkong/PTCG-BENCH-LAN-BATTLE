@@ -1,4 +1,5 @@
 import { useEffect, useState, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { api } from '../services/api';
 import { AgentRating } from '../types/game';
 
@@ -107,6 +108,7 @@ function LeaderboardRow({ rating, rank, maxMu }: { rating: AgentRating; rank: nu
 }
 
 export default function Leaderboard() {
+  const { t } = useTranslation(['leaderboard', 'common']);
   const [ratings, setRatings] = useState<AgentRating[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -119,11 +121,11 @@ export default function Leaderboard() {
       setRatings(data);
       setLastUpdated(new Date());
     } catch {
-      setError('Failed to load leaderboard data.');
+      setError(t('leaderboard:loadFailed'));
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [t]);
 
   useEffect(() => { fetchLeaderboard(); }, [fetchLeaderboard]);
 
@@ -134,10 +136,10 @@ export default function Leaderboard() {
       {/* Header */}
       <div className="flex items-end justify-between mb-6">
         <div>
-          <div className="text-[11px] font-mono text-sky-500 uppercase tracking-widest mb-1">Evaluation Results</div>
-          <h2 className="text-xl font-bold text-slate-50">Agent Leaderboard</h2>
+          <div className="text-[11px] font-mono text-sky-500 uppercase tracking-widest mb-1">{t('leaderboard:evaluationResults')}</div>
+          <h2 className="text-xl font-bold text-slate-50">{t('leaderboard:title')}</h2>
           <p className="text-xs text-slate-500 mt-1">
-            Glicko-2 ratings · sorted by rating
+            {t('leaderboard:ratingSubtitle')}
             {lastUpdated && (
               <span className="ml-2 font-mono text-slate-700">
                 · {lastUpdated.toLocaleTimeString()}
@@ -157,7 +159,7 @@ export default function Leaderboard() {
             <polyline points="1 20 1 14 7 14" />
             <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
           </svg>
-          Refresh
+          {t('leaderboard:refresh')}
         </button>
       </div>
 
@@ -165,9 +167,9 @@ export default function Leaderboard() {
       {!loading && !error && ratings.length > 0 && (
         <div className="grid grid-cols-3 gap-3 mb-6">
           {[
-            { label: 'Total Agents', value: ratings.length, mono: true },
-            { label: 'Total Games', value: Math.round(ratings.reduce((s, r) => s + r.wins + r.losses + r.draws, 0) / 2), mono: true },
-            { label: 'Top Agent', value: formatAgentName(ratings[0]?.agent_id ?? '—'), mono: false },
+            { label: t('leaderboard:totalAgents'), value: ratings.length, mono: true },
+            { label: t('leaderboard:totalGames'), value: Math.round(ratings.reduce((s, r) => s + r.wins + r.losses + r.draws, 0) / 2), mono: true },
+            { label: t('leaderboard:topAgent'), value: formatAgentName(ratings[0]?.agent_id ?? '—'), mono: false },
           ].map(({ label, value, mono }) => (
             <div key={label} className="bg-slate-900 border border-slate-800 rounded-lg p-4">
               <p className="text-[10px] text-slate-600 uppercase tracking-wider font-medium mb-1.5">{label}</p>
@@ -184,18 +186,19 @@ export default function Leaderboard() {
             <svg className="animate-spin" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
               <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
             </svg>
-            Loading…
+            {t('leaderboard:loading')}
           </div>
         ) : error ? (
           <div className="flex flex-col items-center justify-center py-16 gap-3">
             <p className="text-sm text-rose-400">{error}</p>
-            <button onClick={fetchLeaderboard} className="text-xs text-sky-500 hover:text-sky-400 underline underline-offset-2">Try again</button>
+            <button onClick={fetchLeaderboard} className="text-xs text-sky-500 hover:text-sky-400 underline underline-offset-2">{t('leaderboard:tryAgain')}</button>
           </div>
         ) : ratings.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-16 text-slate-600 gap-3">
-            <p className="text-sm">No rating data yet.</p>
+            <p className="text-sm">{t('leaderboard:noRatingData')}</p>
             <p className="text-xs">
-              Run <code className="bg-slate-800 px-1.5 py-0.5 rounded text-sky-400 font-mono">python -m ptcgbench.bench.eval_pipeline --global-ratings</code>
+              {t('leaderboard:runCommandHint')}{' '}
+              <code className="bg-slate-800 px-1.5 py-0.5 rounded text-sky-400 font-mono">python -m ptcgbench.bench.eval_pipeline --global-ratings</code>
             </p>
           </div>
         ) : (
@@ -203,9 +206,9 @@ export default function Leaderboard() {
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="border-b border-slate-800">
-                  {['#', 'Agent', 'Rating', 'Win Rate', 'W', 'L', 'D', 'N'].map((h, i) => (
-                    <th key={h} className={`px-4 py-2.5 text-[10px] font-semibold font-mono text-slate-600 uppercase tracking-wider ${i >= 4 ? 'text-center' : ''}`}>
-                      {h}
+                  {['rank', 'player', 'rating', 'winRate', 'wins', 'losses', 'draws', 'total'].map((key, i) => (
+                    <th key={key} className={`px-4 py-2.5 text-[10px] font-semibold font-mono text-slate-600 uppercase tracking-wider ${i >= 4 ? 'text-center' : ''}`}>
+                      {t(`leaderboard:${key}`)}
                     </th>
                   ))}
                 </tr>
@@ -222,7 +225,7 @@ export default function Leaderboard() {
 
       {!loading && !error && ratings.length > 0 && (
         <p className="text-[10px] font-mono text-slate-700 mt-3 text-right">
-          μ = Glicko-2 rating · φ = rating deviation
+          {t('leaderboard:ratingFormula')}
         </p>
       )}
     </div>

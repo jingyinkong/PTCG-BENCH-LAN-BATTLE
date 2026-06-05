@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { PlayerState, Card, PokemonCard, Action } from '../types/game';
 import CardSlot from './CardSlot';
 import DiscardModal from './DiscardModal';
@@ -93,16 +94,16 @@ function getActionForBenchSlot(matched: MatchedAction[], slotHasPokemon: boolean
   });
 }
 
-function getDropLabel(matched: MatchedAction[]): string {
+function getDropLabel(matched: MatchedAction[], t: (key: string) => string): string {
   const types = matched.map((a) => a.action.actionType);
-  if (types.includes('EvolvePokemonAction')) return 'Evolve';
-  if (types.includes('PlayPokemonAction')) return 'Play';
-  if (types.includes('AttachEnergyAction')) return 'Attach';
-  if (types.includes('UseToolAction')) return 'Tool';
-  if (types.includes('UseSupporterAction')) return 'Supporter';
-  if (types.includes('UseItemAction')) return 'Item';
-  if (types.includes('PutStadiumAction')) return 'Stadium';
-  return 'Drop';
+  if (types.includes('EvolvePokemonAction')) return t('dropLabel.evolve');
+  if (types.includes('PlayPokemonAction')) return t('dropLabel.play');
+  if (types.includes('AttachEnergyAction')) return t('dropLabel.attach');
+  if (types.includes('UseToolAction')) return t('dropLabel.tool');
+  if (types.includes('UseSupporterAction')) return t('dropLabel.supporter');
+  if (types.includes('UseItemAction')) return t('dropLabel.item');
+  if (types.includes('PutStadiumAction')) return t('dropLabel.stadium');
+  return t('dropLabel.drop');
 }
 
 // ─── Drop Target ──────────────────────────────────────────────────────────────
@@ -141,9 +142,10 @@ function DropTarget({ isValid, onDrop, label = 'Drop', children }: {
 
 // ─── Prize Zone ───────────────────────────────────────────────────────────────
 function PrizeZone({ prize }: { prize: Card[] }) {
+  const { t } = useTranslation(['game']);
   return (
     <div className="flex flex-col items-center">
-      <ZoneLabel>Prize ({prize.length})</ZoneLabel>
+      <ZoneLabel>{t('zone.prize')} ({prize.length})</ZoneLabel>
       <CardSlot faceDown={prize.length > 0} count={prize.length > 0 ? prize.length : undefined} />
     </div>
   );
@@ -154,12 +156,13 @@ function BenchZone({ bench, cardImages, onCardClick, enableDrop = false }: {
   bench: PokemonCard[]; cardImages: Record<string, string>;
   onCardClick?: (card: Card, imageUrl?: string) => void; enableDrop?: boolean;
 }) {
+  const { t } = useTranslation(['game']);
   const { isDragging, matchedActions } = useDragStore();
   const { executeAction } = useGameStore();
-  const label = getDropLabel(matchedActions);
+  const label = getDropLabel(matchedActions, t);
   return (
     <div className="flex flex-col items-center">
-      <ZoneLabel>Bench</ZoneLabel>
+      <ZoneLabel>{t('zone.bench')}</ZoneLabel>
       <div className="flex gap-1">
         {Array.from({ length: 5 }).map((_, i) => {
           const slotCard = bench[i] ?? null;
@@ -185,16 +188,17 @@ function ActiveZone({ active, cardImages, onCardClick, enableDrop = false }: {
   active: PokemonCard[]; cardImages: Record<string, string>;
   onCardClick?: (card: Card, imageUrl?: string) => void; enableDrop?: boolean;
 }) {
+  const { t } = useTranslation(['game']);
   const { isDragging, matchedActions } = useDragStore();
   const { executeAction } = useGameStore();
   const activeCard = active[0] ?? null;
   const hasActivePokemon = !!activeCard;
   const pokemonName = activeCard?.name;
   const isValidDrop = enableDrop && isDragging && canDropOnActive(matchedActions, hasActivePokemon, pokemonName);
-  const label = getDropLabel(matchedActions);
+  const label = getDropLabel(matchedActions, t);
   return (
     <div className="flex flex-col items-center">
-      <ZoneLabel>Active</ZoneLabel>
+      <ZoneLabel>{t('zone.active')}</ZoneLabel>
       <DropTarget isValid={isValidDrop} label={label} onDrop={() => {
         const action = getActionForActive(matchedActions, hasActivePokemon, pokemonName);
         if (action) executeAction(action.actionIndex);
@@ -207,17 +211,18 @@ function ActiveZone({ active, cardImages, onCardClick, enableDrop = false }: {
 
 // ─── Deck + Discard ───────────────────────────────────────────────────────────
 function DeckDiscardZone({ deck, discard, cardImages }: { deck: Card[]; discard: Card[]; cardImages: Record<string, string>; }) {
+  const { t } = useTranslation(['game']);
   const [showDiscard, setShowDiscard] = useState(false);
   const discardTop = discard.length > 0 ? discard[discard.length - 1] : null;
   return (
     <>
       <div className="flex flex-col items-center gap-2">
         <div className="flex flex-col items-center">
-          <ZoneLabel>Deck</ZoneLabel>
+          <ZoneLabel>{t('zone.deck')}</ZoneLabel>
           <CardSlot faceDown={deck.length > 0} count={deck.length > 0 ? deck.length : undefined} />
         </div>
         <div className="flex flex-col items-center">
-          <ZoneLabel>Discard</ZoneLabel>
+          <ZoneLabel>{t('zone.discard')}</ZoneLabel>
           <div
             className={[
               'relative flex-shrink-0 rounded-lg overflow-hidden border-2 transition-all duration-150',
@@ -227,7 +232,7 @@ function DeckDiscardZone({ deck, discard, cardImages }: { deck: Card[]; discard:
                 : 'border-dashed border-slate-700 bg-slate-900/20',
             ].join(' ')}
             onClick={discard.length > 0 ? () => setShowDiscard(true) : undefined}
-            title={discard.length > 0 ? `View discard pile (${discard.length} cards)` : undefined}
+            title={discard.length > 0 ? t('clickToView') : undefined}
           >
             {discardTop ? (
               cardImages[discardTop.name] ? (
@@ -253,6 +258,7 @@ function DeckDiscardZone({ deck, discard, cardImages }: { deck: Card[]; discard:
 function HandZone({ hand, cardImages, onCardClick }: {
   hand: Card[]; cardImages: Record<string, string>; onCardClick?: (card: Card, imageUrl?: string) => void;
 }) {
+  const { t } = useTranslation(['game']);
   const [draggingIdx, setDraggingIdx] = useState<number | null>(null);
   const { isDragging } = useDragStore();
   const { availableActions, turn } = useGameStore();
@@ -269,10 +275,10 @@ function HandZone({ hand, cardImages, onCardClick }: {
 
   return (
     <div className="border-t border-slate-800/60 px-3 pt-1.5 pb-2 flex-shrink-0 overflow-hidden">
-      <ZoneLabel>Hand ({hand.length})</ZoneLabel>
+      <ZoneLabel>{t('zone.hand')} ({hand.length})</ZoneLabel>
       <div className="flex gap-1 mt-1 h-[90] items-center overflow-x-auto overflow-y-hidden overscroll-x-contain px-1 py-2">
         {hand.length === 0 ? (
-          <span className="text-xs text-slate-600 py-2 px-1">No cards in hand</span>
+          <span className="text-xs text-slate-600 py-2 px-1">{t('gameInfo.noCards')}</span>
         ) : (
           hand.map((card, i) => {
             const matched = isMyTurn ? getMatchedActionsForCard(card, availableActions) : [];
@@ -284,7 +290,7 @@ function HandZone({ hand, cardImages, onCardClick }: {
                 draggable={isDraggable}
                 onDragStart={(e) => handleDragStart(e, card, i)}
                 onDragEnd={handleDragEnd}
-                title={isDraggable ? 'Drag to play' : undefined}
+                title={isDraggable ? t('gameInfo.dragToPlay') : undefined}
                 className={[
                   'relative transition-all duration-150 select-none',
                   isDraggable ? 'cursor-grab active:cursor-grabbing' : 'cursor-default',
@@ -316,12 +322,13 @@ function HandZone({ hand, cardImages, onCardClick }: {
 function OpponentHandZone({ hand, cardImages, onCardClick }: {
   hand: Card[]; cardImages: Record<string, string>; onCardClick?: (card: Card, imageUrl?: string) => void;
 }) {
+  const { t } = useTranslation(['game']);
   const [revealed, setRevealed] = useState(false);
   return (
     <div className="border-b border-slate-800/60 px-3 pt-1.5 pb-2 flex-shrink-0 overflow-hidden">
       <div className="relative flex items-center justify-center mb-1">
         <p className="text-[10px] font-medium uppercase tracking-widest text-slate-500 text-center">
-          Hand ({hand.length})
+          {t('zone.hand')} ({hand.length})
         </p>
         <button
           onClick={() => setRevealed((v) => !v)}
@@ -339,21 +346,21 @@ function OpponentHandZone({ hand, cardImages, onCardClick }: {
                 <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
                 <line x1="1" y1="1" x2="23" y2="23"/>
               </svg>
-              Hide
+              {t('hide')}
             </>
           ) : (
             <>
               <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
               </svg>
-              Reveal
+              {t('reveal')}
             </>
           )}
         </button>
       </div>
       <div className="flex gap-1 mt-1 h-[90] items-center overflow-x-auto overflow-y-hidden overscroll-x-contain px-1 py-2">
         {hand.length === 0 ? (
-          <span className="text-xs text-slate-600 py-2 px-1">No cards in hand</span>
+          <span className="text-xs text-slate-600 py-2 px-1">{t('gameInfo.noCards')}</span>
         ) : revealed ? (
           hand.map((card, i) => <CardSlot key={i} card={card} imageUrl={cardImages[card.name]} onClick={onCardClick} />)
         ) : (
@@ -366,6 +373,7 @@ function OpponentHandZone({ hand, cardImages, onCardClick }: {
 
 // ─── Main PlayerArea ──────────────────────────────────────────────────────────
 export default function PlayerArea({ player, isOpponent, playerName, cardImages, onCardClick, isAgent, agentType }: Props) {
+  const { t } = useTranslation(['game']);
   const prizeZone = <PrizeZone prize={player.prize} />;
   const benchZone = <BenchZone bench={player.bench} cardImages={cardImages} onCardClick={onCardClick} enableDrop={!isOpponent} />;
   const activeZone = <ActiveZone active={player.active} cardImages={cardImages} onCardClick={onCardClick} enableDrop={!isOpponent} />;
@@ -388,15 +396,15 @@ export default function PlayerArea({ player, isOpponent, playerName, cardImages,
           {playerName}
           <span className="text-slate-600 font-normal ml-0.5">
             {isAgent
-              ? `· ${agentType === 'llm' ? 'LLM Agent' : agentType === 'random' ? 'Random Agent' : 'AI Agent'}`
-              : isOpponent ? '· Opponent' : '· You'}
+              ? `· ${agentType === 'llm' ? t('player.llmAgent') : agentType === 'random' ? t('player.randomAgent') : t('player.aiAgent')}`
+              : isOpponent ? `· ${t('player.opponent')}` : `· ${t('player.you')}`}
           </span>
         </span>
         <div className="flex gap-3 text-[11px] text-slate-600 font-mono">
-          <span>Hand <span className="text-slate-400">{player.hand.length}</span></span>
-          <span>Deck <span className="text-slate-400">{player.deck.length}</span></span>
-          <span>Disc <span className="text-slate-400">{player.discard.length}</span></span>
-          <span>Prize <span className="text-slate-400">{player.prize.length}</span></span>
+          <span>{t('zone.hand')} <span className="text-slate-400">{player.hand.length}</span></span>
+          <span>{t('zone.deck')} <span className="text-slate-400">{player.deck.length}</span></span>
+          <span>{t('zone.discard')} <span className="text-slate-400">{player.discard.length}</span></span>
+          <span>{t('zone.prize')} <span className="text-slate-400">{player.prize.length}</span></span>
         </div>
       </div>
 

@@ -6,6 +6,8 @@ message broadcasting, turn control, and disconnect/reconnect logic.
 """
 
 import asyncio
+
+from i18n.translator import t
 import json
 import secrets
 import time
@@ -64,7 +66,7 @@ async def _handle_reconnect_timeout(room_id: str, player: str) -> None:
         opponent = "player1" if player == "player2" else "player2"
         await _broadcast_state(room_id, {
             "type": "OPPONENT_DISCONNECTED",
-            "message": "对手断线超时"
+            "message": t("opponent_timeout")
         })
         # Record match
         await _record_match_result(room_id, winner=opponent, forfeit=True)
@@ -163,7 +165,7 @@ class PvPGameManager:
             try:
                 await opponent_ws.send_json({
                     "type": "OPPONENT_LEFT",
-                    "message": "对手已断开连接",
+                    "message": t("opponent_disconnected"),
                 })
             except Exception:
                 pass
@@ -188,11 +190,11 @@ class PvPGameManager:
     def validate_message(self, data: dict) -> Optional[str]:
         """Validate WebSocket message structure. Returns error string or None."""
         if not isinstance(data, dict):
-            return "消息格式错误"
+            return t("message_bad_format")
         if data.get("type") != "ACTION":
             return None  # Non-action messages don't need validation
         if "action_index" not in data:
-            return "缺少 action_index 字段"
+            return t("message_missing_action_index")
         if not isinstance(data["action_index"], int):
-            return "action_index 必须是整数"
+            return t("message_action_index_int")
         return None

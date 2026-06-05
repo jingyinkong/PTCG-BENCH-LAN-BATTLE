@@ -13,6 +13,7 @@ from fastapi import APIRouter, Depends, HTTPException, BackgroundTasks
 from pydantic import BaseModel
 
 from auth import get_current_user
+from i18n.translator import t
 
 router = APIRouter(prefix="/api/rooms", tags=["rooms"])
 
@@ -77,14 +78,14 @@ def join_room(
     user: dict = Depends(get_current_user),
 ) -> dict:
     if room_id not in rooms:
-        raise HTTPException(status_code=404, detail="房间不存在")
+        raise HTTPException(status_code=404, detail=t("room_not_found"))
     room = rooms[room_id]
     if room.status != "waiting":
-        raise HTTPException(status_code=400, detail="房间已无法加入")
+        raise HTTPException(status_code=400, detail=t("room_unjoinable"))
     if room.host_user_id == user["id"]:
-        raise HTTPException(status_code=400, detail="不能加入自己创建的房间")
+        raise HTTPException(status_code=400, detail=t("room_own"))
     if room.guest_user_id is not None:
-        raise HTTPException(status_code=400, detail="房间已满")
+        raise HTTPException(status_code=400, detail=t("room_full"))
 
     room.guest_user_id = user["id"]
     room.guest_username = user["username"]
@@ -95,37 +96,37 @@ def join_room(
 @router.post("/{room_id}/start")
 def start_room(room_id: str, user: dict = Depends(get_current_user)) -> dict:
     if room_id not in rooms:
-        raise HTTPException(status_code=404, detail="房间不存在")
+        raise HTTPException(status_code=404, detail=t("room_not_found"))
     room = rooms[room_id]
     if room.host_user_id != user["id"]:
-        raise HTTPException(status_code=403, detail="只有房主可以开始对战")
+        raise HTTPException(status_code=403, detail=t("room_not_host"))
     if room.guest_user_id is None:
-        raise HTTPException(status_code=400, detail="等待对手加入")
+        raise HTTPException(status_code=400, detail=t("room_waiting"))
     if not room.host_deck or not room.guest_deck:
-        raise HTTPException(status_code=400, detail="双方都需要选择卡组")
+        raise HTTPException(status_code=400, detail=t("room_need_decks"))
 
     room.status = "playing"
-    return {"room": room.model_dump(), "message": "对战开始"}
+    return {"room": room.model_dump(), "message": t("room_game_started")}
 
 
 @router.get("/{room_id}")
 def get_room(room_id: str, user: dict = Depends(get_current_user)) -> dict:
     """获取单个房间信息 — 供 host/guest 轮询状态变化用"""
     if room_id not in rooms:
-        raise HTTPException(status_code=404, detail="房间不存在")
+        raise HTTPException(status_code=404, detail=t("room_not_found"))
     room = rooms[room_id]
     if room.host_user_id != user["id"] and room.guest_user_id != user["id"]:
-        raise HTTPException(status_code=403, detail="你不在这个房间中")
+        raise HTTPException(status_code=403, detail=t("room_not_in_room"))
     return {"room": room.model_dump()}
 
 
 @router.delete("/{room_id}")
 async def leave_room(room_id: str, user: dict = Depends(get_current_user)) -> dict:
     if room_id not in rooms:
-        raise HTTPException(status_code=404, detail="房间不存在")
+        raise HTTPException(status_code=404, detail=t("room_not_found"))
     room = rooms[room_id]
     if room.host_user_id != user["id"] and room.guest_user_id != user["id"]:
-        raise HTTPException(status_code=403, detail="你不在这个房间中")
+        raise HTTPException(status_code=403, detail=t("room_not_in_room"))
 
     # Notify the other player via WebSocket before cleaning up
     from pvp_game import active_connections as _pvp_conns  # lazy import to avoid circular dependency
@@ -137,7 +138,7 @@ async def leave_room(room_id: str, user: dict = Depends(get_current_user)) -> di
         try:
             await opponent_ws.send_json({
                 "type": "OPPONENT_LEFT",
-                "message": "对手已退出游戏",
+                "message": t("opponent_left_game"),
             })
         except Exception:
             pass

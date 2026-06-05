@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { useGameStore } from '../stores/gameStore';
 import { useAuthStore } from '../stores/authStore';
 import { useReplayStore } from '../stores/replayStore';
@@ -67,6 +68,7 @@ function LeaderboardIcon() {
 
 // ─── Status badge ─────────────────────────────────────────────────────────────
 function StatusBadge() {
+  const { t } = useTranslation(['common', 'game']);
   const { gameId, done, winner, turn, loading } = useGameStore();
   const { filename: replayFilename, frames, currentFrame } = useReplayStore();
 
@@ -85,7 +87,7 @@ function StatusBadge() {
     return (
       <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-800 border border-slate-700 text-[11px] text-slate-500">
         <span className="w-1.5 h-1.5 rounded-full bg-slate-500 animate-pulse flex-shrink-0" />
-        Processing…
+        {t('common:status.processing')}
       </div>
     );
   }
@@ -94,7 +96,7 @@ function StatusBadge() {
     return (
       <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-amber-950/40 border border-amber-800/50 text-[11px] font-semibold text-amber-300">
         <span className="w-1.5 h-1.5 rounded-full bg-amber-400 flex-shrink-0" />
-        {winner === 'player1' ? 'P1' : 'P2'} Wins
+        {winner === 'player1' ? t('game:player.p1') : t('game:player.p2')} {t('game:result.wins')}
       </div>
     );
   }
@@ -108,22 +110,23 @@ function StatusBadge() {
         : 'bg-amber-950/30 border-amber-800/40 text-amber-300',
     ].join(' ')}>
       <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${isP1 ? 'bg-sky-400' : 'bg-amber-400'}`} />
-      <span className="font-mono">{turn?.replace('player', 'P')}</span> turn
+      <span className="font-mono">{isP1 ? t('game:player.p1') : t('game:player.p2')}</span> {t('game:gameInfo.turn')}
     </div>
   );
 }
 
 // ─── NavBar ───────────────────────────────────────────────────────────────────
 export default function NavBar({ mode, onNavigate, onBattleHuman, onBattleAI }: Props) {
+  const { t } = useTranslation(['common']);
   const { gameId, done } = useGameStore();
   const { isLoggedIn, user, logout } = useAuthStore();
 
   const tabs: Tab[] = [
-    { id: 'home', label: 'Home', icon: <HomeIcon />, alwaysEnabled: true },
-    { id: 'decks', label: 'Decks', icon: <DecksIcon />, alwaysEnabled: true },
-    { id: 'game', label: 'Game', icon: <GameIcon /> },
-    { id: 'replay', label: 'Replay', icon: <ReplayIcon />, alwaysEnabled: true },
-    { id: 'leaderboard', label: 'Leaderboard', icon: <LeaderboardIcon />, alwaysEnabled: true },
+    { id: 'home', label: t('common:nav.home'), icon: <HomeIcon />, alwaysEnabled: true },
+    { id: 'decks', label: t('common:nav.decks'), icon: <DecksIcon />, alwaysEnabled: true },
+    { id: 'game', label: t('common:nav.game'), icon: <GameIcon /> },
+    { id: 'replay', label: t('common:nav.replay'), icon: <ReplayIcon />, alwaysEnabled: true },
+    { id: 'leaderboard', label: t('common:nav.leaderboard'), icon: <LeaderboardIcon />, alwaysEnabled: true },
   ];
 
   const canNavigateTo = (id: AppMode) => {
@@ -159,7 +162,7 @@ export default function NavBar({ mode, onNavigate, onBattleHuman, onBattleAI }: 
                 key={tab.id}
                 onClick={() => !disabled && onNavigate(tab.id)}
                 disabled={disabled}
-                title={disabled ? 'Start a game first' : undefined}
+                title={disabled ? t('common:nav.startGameFirst') : undefined}
                 className={[
                   'flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-all duration-150',
                   active
@@ -195,7 +198,7 @@ export default function NavBar({ mode, onNavigate, onBattleHuman, onBattleAI }: 
               <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
               <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
             </svg>
-            vs Human
+            {t('common:nav.vsHuman')}
           </button>
 
           {/* vs AI */}
@@ -206,7 +209,7 @@ export default function NavBar({ mode, onNavigate, onBattleHuman, onBattleAI }: 
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 0 2h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1 0-2h1a7 7 0 0 1 7-7h1V5.73A2 2 0 0 1 10 4a2 2 0 0 1 2-2m0 7a5 5 0 0 0-5 5v2h10v-2a5 5 0 0 0-5-5M8.5 16a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m7 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
             </svg>
-            vs AI
+            {t('common:nav.vsAI')}
           </button>
         </div>
       </div>
@@ -225,7 +228,7 @@ export default function NavBar({ mode, onNavigate, onBattleHuman, onBattleAI }: 
               onClick={logout}
               className="text-xs text-slate-600 hover:text-red-400 transition-colors"
             >
-              Logout
+              {t('common:nav.logout')}
             </button>
           </div>
         ) : (
@@ -233,7 +236,7 @@ export default function NavBar({ mode, onNavigate, onBattleHuman, onBattleAI }: 
             onClick={() => onNavigate('auth' as AppMode)}
             className="text-xs text-sky-400 hover:text-sky-300 transition-colors"
           >
-            Login
+            {t('common:nav.login')}
           </button>
         )}
         <StatusBadge />

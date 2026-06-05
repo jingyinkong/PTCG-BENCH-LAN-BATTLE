@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useAuthStore } from '../stores/authStore';
 
 interface Props {
@@ -6,6 +7,7 @@ interface Props {
 }
 
 export default function AuthPage({ onBack }: Props) {
+  const { t } = useTranslation(['auth', 'common']);
   const [mode, setMode] = useState<'login' | 'register'>('login');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -36,37 +38,37 @@ export default function AuthPage({ onBack }: Props) {
     <div className="flex items-center justify-center" style={{ minHeight: 'calc(100vh - 44px)' }}>
       <div className="bg-slate-900 border border-slate-700 rounded-xl p-8 w-full max-w-sm shadow-xl">
         <h2 className="text-xl font-bold text-slate-50 mb-6 text-center">
-          {mode === 'login' ? 'Login' : 'Create Account'}
+          {mode === 'login' ? t('auth:login') : t('auth:createAccount')}
         </h2>
         <div className="flex mb-6 bg-slate-800 rounded-lg p-1">
           <button onClick={() => { setMode('login'); clearError(); }}
             className={`flex-1 py-1.5 rounded-md text-sm font-medium transition-colors ${mode === 'login' ? 'bg-sky-600 text-white' : 'text-slate-400 hover:text-slate-200'}`}>
-            Login
+            {t('auth:login')}
           </button>
           <button onClick={() => { setMode('register'); clearError(); }}
             className={`flex-1 py-1.5 rounded-md text-sm font-medium transition-colors ${mode === 'register' ? 'bg-sky-600 text-white' : 'text-slate-400 hover:text-slate-200'}`}>
-            Register
+            {t('auth:register')}
           </button>
         </div>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-xs text-slate-400 mb-1">Username</label>
+            <label className="block text-xs text-slate-400 mb-1">{t('auth:username')}</label>
             <input type="text" value={username} onChange={(e) => setUsername(e.target.value)}
               minLength={3} maxLength={20}
-              className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-slate-200 text-sm focus:outline-none focus:border-sky-500" placeholder="3-20 characters" />
+              className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-slate-200 text-sm focus:outline-none focus:border-sky-500" placeholder={t('auth:usernamePlaceholder')} />
           </div>
           <div>
-            <label className="block text-xs text-slate-400 mb-1">Password</label>
+            <label className="block text-xs text-slate-400 mb-1">{t('auth:password')}</label>
             <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}
               minLength={6}
-              className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-slate-200 text-sm focus:outline-none focus:border-sky-500" placeholder="6+ characters" />
+              className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-slate-200 text-sm focus:outline-none focus:border-sky-500" placeholder={t('auth:passwordPlaceholder')} />
           </div>
           {mode === 'register' && (
             <div>
-              <label className="block text-xs text-slate-400 mb-1">Confirm Password</label>
+              <label className="block text-xs text-slate-400 mb-1">{t('auth:confirmPassword')}</label>
               <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}
                 minLength={6}
-                className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-slate-200 text-sm focus:outline-none focus:border-sky-500" placeholder="Re-enter password" />
+                className="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-slate-200 text-sm focus:outline-none focus:border-sky-500" placeholder={t('auth:confirmPasswordPlaceholder')} />
             </div>
           )}
           {error && (
@@ -74,7 +76,7 @@ export default function AuthPage({ onBack }: Props) {
           )}
           <button type="submit" disabled={isLoading}
             className="w-full py-2.5 bg-sky-600 hover:bg-sky-500 disabled:bg-slate-700 text-white rounded-lg font-semibold text-sm transition-colors">
-            {isLoading ? 'Loading...' : mode === 'login' ? 'Login' : 'Create Account'}
+            {isLoading ? t('auth:loading') : mode === 'login' ? t('auth:login') : t('auth:createAccount')}
           </button>
         </form>
       </div>

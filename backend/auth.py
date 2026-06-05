@@ -8,10 +8,11 @@ from typing import Optional
 import sqlite3
 
 import bcrypt
-from fastapi import APIRouter, Depends, Header, HTTPException
+from fastapi import APIRouter, Depends, Header, HTTPException, Request
 from pydantic import BaseModel, field_validator
 
 from database import get_db
+from i18n.translator import t, parse_accept_language
 
 router = APIRouter(prefix="/api/auth", tags=["auth"])
 
@@ -24,16 +25,16 @@ class RegisterRequest(BaseModel):
     @classmethod
     def validate_username(cls, v: str) -> str:
         if not (3 <= len(v) <= 20):
-            raise ValueError("用户名长度须为 3-20 个字符")
+            raise ValueError(t("username_length"))
         if not re.match(r"^[a-zA-Z0-9_]+$", v):
-            raise ValueError("用户名只能包含字母、数字和下划线")
+            raise ValueError(t("username_chars"))
         return v
 
     @field_validator("password")
     @classmethod
     def validate_password(cls, v: str) -> str:
         if len(v) < 6:
-            raise ValueError("密码长度须至少 6 个字符")
+            raise ValueError(t("password_length"))
         return v
 
 
@@ -76,9 +77,9 @@ def get_current_user(
     authorization: Optional[str] = Header(None),
 ) -> dict:
     if not authorization:
-        raise HTTPException(status_code=401, detail="未提供认证 token")
+        raise HTTPException(status_code=401, detail=t("auth_no_token"))
     if not authorization.startswith("Bearer "):
-        raise HTTPException(status_code=401, detail="认证格式错误")
+        raise HTTPException(status_code=401, detail=t("auth_bad_format"))
 
     token = authorization[len("Bearer "):]
     import sqlite3 as _sqlite3
@@ -93,7 +94,7 @@ def get_current_user(
             (token,),
         ).fetchone()
         if row is None:
-            raise HTTPException(status_code=401, detail="token 无效或已过期")
+            raise HTTPException(status_code=401, detail=t("auth_invalid_token"))
         return {"id": row["id"], "username": row["username"], "created_at": row["created_at"]}
     finally:
         db.close()
@@ -103,7 +104,7 @@ def get_current_user(
 def register(body: RegisterRequest, db: sqlite3.Connection = Depends(get_db)) -> AuthResponse:
     existing = db.execute("SELECT id FROM users WHERE username = ?", (body.username,)).fetchone()
     if existing:
-        raise HTTPException(status_code=409, detail="用户名已存在")
+        raise HTTPException(status_code=409, detail=t("auth_username_taken"))
     hashed = _hash_password(body.password)
     db.execute("INSERT INTO users (username, password_hash) VALUES (?, ?)", (body.username, hashed))
     db.commit()
@@ -117,7 +118,7 @@ def login(body: LoginRequest, db: sqlite3.Connection = Depends(get_db)) -> AuthR
         "SELECT id, password_hash FROM users WHERE username = ?", (body.username,)
     ).fetchone()
     if row is None or not _verify_password(body.password, row["password_hash"]):
-        raise HTTPException(status_code=401, detail="用户名或密码错误")
+        raise HTTPException(status_code=401, detail=t("auth_wrong_credentials"))
     token = _generate_token()
     db.execute("INSERT INTO sessions (user_id, token) VALUES (?, ?)", (row["id"], token))
     db.commit()

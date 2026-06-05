@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useGameStore } from '../stores/gameStore';
 
 interface SelectableCardProps {
@@ -53,6 +54,7 @@ function SelectableCard({ cardName, imageUrl, selected, disabled, onClick }: Sel
 }
 
 export default function CardSelectionOverlay() {
+  const { t } = useTranslation(['game', 'common']);
   const { isChoosingCard, chooseCardPrompt, availableActions = [], cardImages, executeAction, loading,
     vsAgent, agentPlayer, turn } = useGameStore();
 
@@ -71,8 +73,8 @@ export default function CardSelectionOverlay() {
   const isConfirmable = selectedCount >= minCnt && selectedCount <= maxCnt;
   const candidateItems = candidates.map((name, idx) => ({ name, idx }));
   const selectionHint = minCnt === maxCnt
-    ? `Select ${minCnt} card${minCnt !== 1 ? 's' : ''}`
-    : `Select ${minCnt}–${maxCnt} cards`;
+    ? t('cardSelection.selectCount', { count: minCnt })
+    : t('cardSelection.selectRange', { min: minCnt, max: maxCnt });
 
   const handleToggle = (cardName: string, idx: number) => {
     const key = `${cardName}__${idx}`;
@@ -102,7 +104,7 @@ export default function CardSelectionOverlay() {
           <div className="flex items-start justify-between gap-4">
             <div>
               <h2 className="text-base font-semibold text-slate-100">
-                Choose Card
+                {t('cardSelection.title')}
                 {sourceName && (
                   <span className="ml-2 text-sm font-normal text-sky-400">— {sourceName}</span>
                 )}
@@ -124,7 +126,7 @@ export default function CardSelectionOverlay() {
               <div className="flex items-center gap-2 mb-1.5">
                 <span className="text-[11px] text-slate-600">{selectionHint}</span>
                 {selectedCount >= minCnt && (
-                  <span className="text-[11px] text-emerald-400 font-medium">Ready to confirm</span>
+                  <span className="text-[11px] text-emerald-400 font-medium">{t('cardSelection.ready')}</span>
                 )}
               </div>
               <div className="h-1 bg-slate-800 rounded-full overflow-hidden">
@@ -140,7 +142,7 @@ export default function CardSelectionOverlay() {
         {/* Card grid */}
         <div className="flex-1 overflow-y-auto p-6">
           {candidates.length === 0 ? (
-            <div className="text-center text-slate-600 py-10 text-sm">No candidate cards</div>
+            <div className="text-center text-slate-600 py-10 text-sm">{t('cardSelection.noCandidates')}</div>
           ) : (
             <div className="flex flex-wrap gap-3 justify-center">
               {candidateItems.map(({ name, idx }) => {
@@ -170,7 +172,7 @@ export default function CardSelectionOverlay() {
               disabled={selectedCount === 0 || loading}
               className="text-xs text-slate-500 hover:text-slate-300 disabled:opacity-30 transition-colors"
             >
-              Clear
+              {t('cardSelection.clear')}
             </button>
             <button
               onClick={() => handleConfirm()}
@@ -182,7 +184,7 @@ export default function CardSelectionOverlay() {
                   : 'bg-slate-800 text-slate-600 cursor-not-allowed border border-slate-700',
               ].join(' ')}
             >
-              {loading ? 'Confirming…' : selectedCount === 0 && minCnt === 0 ? 'Skip' : `Confirm (${selectedCount})`}
+              {loading ? t('cardSelection.confirming') : selectedCount === 0 && minCnt === 0 ? t('cardSelection.skip') : t('cardSelection.confirm', { count: selectedCount })}
             </button>
           </div>
         )}

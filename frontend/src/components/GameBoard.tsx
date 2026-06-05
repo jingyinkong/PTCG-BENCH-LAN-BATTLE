@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Card, TrainerCard } from '../types/game';
 import { useGameStore } from '../stores/gameStore';
 import { useDragStore, MatchedAction } from '../stores/dragStore';
@@ -14,30 +15,36 @@ function getPlayZoneAction(matched: MatchedAction[]): MatchedAction | undefined 
   return matched.find(({ action }) => PLAY_ZONE_TYPES.includes(action.actionType));
 }
 
-function getPlayZoneLabel(matched: MatchedAction[]): string {
-  const types = matched.map((a) => a.action.actionType);
-  if (types.includes('UseSupporterAction')) return 'Play Supporter';
-  if (types.includes('UseItemAction')) return 'Play Item';
-  if (types.includes('PutStadiumAction')) return 'Play Stadium';
-  return 'Play Card';
-}
-
 export default function GameBoard({ onCardClick }: Props) {
+  const { t } = useTranslation(['game']);
   const { state, turn, cardImages, executeAction, vsAgent, agentPlayer, agentType, isPvP, pvpPlayerId } = useGameStore();
   const { isDragging, matchedActions } = useDragStore();
   const [isOver, setIsOver] = useState(false);
 
   if (!state) return null;
 
+  function getPlayZoneLabel(matched: MatchedAction[]): string {
+    const types = matched.map((a) => a.action.actionType);
+    if (types.includes('UseSupporterAction')) return t('playZoneLabel.playSupporter');
+    if (types.includes('UseItemAction')) return t('playZoneLabel.playItem');
+    if (types.includes('PutStadiumAction')) return t('playZoneLabel.playStadium');
+    return t('playZoneLabel.playCard');
+  }
+
   // In PvP mode, swap perspective so each player sees themselves at the bottom
   const selfPlayer = isPvP && pvpPlayerId === 'player2' ? state.player2 : state.player1;
   const oppPlayer = isPvP && pvpPlayerId === 'player2' ? state.player1 : state.player2;
-  const selfName = isPvP ? (pvpPlayerId === 'player1' ? 'You (P1)' : 'You (P2)') : 'Player 1';
-  const oppName = isPvP ? (pvpPlayerId === 'player1' ? 'Opponent (P2)' : 'Opponent (P1)') : 'Player 2';
+  const selfName = isPvP
+    ? (pvpPlayerId === 'player1' ? t('player.youP1') : t('player.youP2'))
+    : t('player.p1');
+  const oppName = isPvP
+    ? (pvpPlayerId === 'player1' ? t('player.opponentP2') : t('player.opponentP1'))
+    : t('player.p2');
 
   // Display turn info with PvP-aware labels
+  const isYourTurn = isPvP && turn === pvpPlayerId;
   const displayTurn = isPvP
-    ? (turn === pvpPlayerId ? `Your Turn` : `Opponent's Turn`)
+    ? (isYourTurn ? t('common:status.yourTurn') : t('common:status.opponentTurn'))
     : (turn ?? '—');
 
   const stadiumCard = state.stadium && state.stadium.length > 0 ? state.stadium[0] : null;
@@ -82,10 +89,10 @@ export default function GameBoard({ onCardClick }: Props) {
       {/* Game info bar */}
       <div className="bg-slate-900 rounded-lg px-4 py-1.5 flex items-center justify-between text-sm border border-slate-800 min-h-0">
         <div className="text-slate-400 text-xs">
-          Turn: <span className={`font-mono font-medium uppercase ml-1 ${displayTurn === 'Your Turn' ? 'text-emerald-400' : 'text-sky-400'}`}>{displayTurn}</span>
+          {t('gameInfo.turn')}: <span className={`font-mono font-medium uppercase ml-1 ${isYourTurn ? 'text-emerald-400' : 'text-sky-400'}`}>{displayTurn}</span>
         </div>
         <div className="text-slate-500 text-xs">
-          Step: <span className="text-slate-300 font-mono font-medium ml-1">{state.timestep ?? '—'}</span>
+          {t('gameInfo.step')}: <span className="text-slate-300 font-mono font-medium ml-1">{state.timestep ?? '—'}</span>
         </div>
       </div>
 
@@ -111,10 +118,10 @@ export default function GameBoard({ onCardClick }: Props) {
               : 'border-slate-800 bg-slate-950/40',
           ].join(' ')}
           onClick={stadiumCard ? handleStadiumClick : undefined}
-          title={stadiumCard ? `Click to view ${stadiumCard.name}` : undefined}
+          title={stadiumCard ? `${t('clickToView')} ${stadiumCard.name}` : undefined}
         >
           <span className="text-[10px] uppercase tracking-widest text-slate-600 font-semibold">
-            Stadium
+            {t('zone.stadium')}
           </span>
           {stadiumCard && (
             <span className="text-xs text-sky-400 font-medium">— {stadiumCard.name}</span>
