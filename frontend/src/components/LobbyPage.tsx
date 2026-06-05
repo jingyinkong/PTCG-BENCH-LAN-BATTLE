@@ -3,6 +3,7 @@ import { api, RoomInfo } from '../services/api';
 import { useAuthStore } from '../stores/authStore';
 import { useGameStore } from '../stores/gameStore';
 import DeckSelectModal from './DeckSelectModal';
+import ConfirmModal from './ConfirmModal';
 
 export default function LobbyPage() {
   const [rooms, setRooms] = useState<RoomInfo[]>([]);
@@ -13,6 +14,7 @@ export default function LobbyPage() {
   const [loading, setLoading] = useState(false);
   const [starting, setStarting] = useState(false);
   const [opponentLeft, setOpponentLeft] = useState(false);
+  const [showCancelConfirm, setShowCancelConfirm] = useState(false);
   const { user } = useAuthStore();
   const { startPvPGame, reset, coinTossResult, sendCoinTossCall, sendCoinTossChoose } = useGameStore();
   const pollFailCount = useRef(0);
@@ -246,7 +248,7 @@ export default function LobbyPage() {
                 {starting ? 'Starting...' : 'Start Game'}
               </button>
             )}
-            <button onClick={handleCancelRoom}
+            <button onClick={() => setShowCancelConfirm(true)}
               className="px-6 py-2 bg-slate-700 hover:bg-slate-600 text-slate-300 rounded-lg font-semibold text-sm transition-colors">
               Cancel
             </button>
@@ -282,7 +284,7 @@ export default function LobbyPage() {
                   Deck: {room.host_deck || '—'} &middot; {room.guest_user_id ? `Guest: ${room.guest_username}` : 'Waiting for opponent...'}
                 </div>
               </div>
-              <button onClick={() => { handleCancelRoom(); }}
+              <button onClick={() => setShowCancelConfirm(true)}
                 className="px-4 py-1.5 bg-red-700 hover:bg-red-600 text-white rounded-lg text-sm font-medium transition-colors">
                 Cancel Room
               </button>
@@ -338,6 +340,18 @@ export default function LobbyPage() {
           </div>
         </div>
       )}
+
+      {/* Cancel room confirmation */}
+      <ConfirmModal
+        isOpen={showCancelConfirm}
+        title="退出房间"
+        message={isHost ? "确定要取消这个房间吗？对手将被移出。" : "确定要退出这个房间吗？"}
+        confirmLabel={isHost ? "取消房间" : "退出房间"}
+        cancelLabel="留在房间"
+        confirmVariant="danger"
+        onConfirm={() => { setShowCancelConfirm(false); handleCancelRoom(); }}
+        onCancel={() => setShowCancelConfirm(false)}
+      />
     </div>
   );
 }
