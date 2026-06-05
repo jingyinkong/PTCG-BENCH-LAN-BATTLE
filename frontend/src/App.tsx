@@ -22,7 +22,7 @@ type AppMode = 'home' | 'game' | 'replay' | 'decks' | 'leaderboard' | 'auth' | '
 const PAGE_WRAPPER = 'pt-11 min-h-screen bg-slate-950 text-slate-100';
 
 function App() {
-  const { createGame, gameId, done, winner, loadCardImages } = useGameStore();
+  const { createGame, gameId, done, winner, loadCardImages, isPvP, opponentLeft, leavePvPGame } = useGameStore();
   const { isLoggedIn, fetchMe } = useAuthStore();
   const [selectedCard, setSelectedCard] = useState<{ card: Card; imageUrl?: string } | null>(null);
   const [mode, setMode] = useState<AppMode>('home');
@@ -218,6 +218,35 @@ function App() {
           isOpen={true}
           onClose={() => setSelectedCard(null)}
         />
+      )}
+
+      {/* Opponent left popup — PvP mode */}
+      {isPvP && opponentLeft && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
+          <div className="bg-slate-900 border border-slate-600 rounded-xl p-8 max-w-sm w-full mx-4 text-center shadow-2xl">
+            <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-amber-500/20 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="8" x2="12" y2="12" />
+                <line x1="12" y1="16" x2="12.01" y2="16" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold text-slate-50 mb-2">对手已退出</h3>
+            <p className="text-slate-400 text-sm mb-6">
+              对方已退出游戏或投降，本局对战结束。
+            </p>
+            <button
+              onClick={() => {
+                leavePvPGame();
+                setMode('home');
+              }}
+              className="w-full px-6 py-2.5 bg-sky-600 hover:bg-sky-500 text-white rounded-lg font-semibold text-sm transition-colors"
+            >
+              返回主页
+            </button>
+          </div>
+        </div>
       )}
     </div>
   );

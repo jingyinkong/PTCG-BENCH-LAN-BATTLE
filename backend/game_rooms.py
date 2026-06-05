@@ -120,12 +120,27 @@ def get_room(room_id: str, user: dict = Depends(get_current_user)) -> dict:
 
 
 @router.delete("/{room_id}")
-def leave_room(room_id: str, user: dict = Depends(get_current_user)) -> dict:
+async def leave_room(room_id: str, user: dict = Depends(get_current_user)) -> dict:
     if room_id not in rooms:
         raise HTTPException(status_code=404, detail="房间不存在")
     room = rooms[room_id]
     if room.host_user_id != user["id"] and room.guest_user_id != user["id"]:
         raise HTTPException(status_code=403, detail="你不在这个房间中")
+
+    # Notify the other player via WebSocket before cleaning up
+    from pvp_game import active_connections as _pvp_conns  # lazy import to avoid circular dependency
+
+    conns = _pvp_conns.get(room_id, {})
+    opponent_role = "player2" if room.host_user_id == user["id"] else "player1"
+    opponent_ws = conns.get(opponent_role)
+    if opponent_ws is not None:
+        try:
+            await opponent_ws.send_json({
+                "type": "OPPONENT_LEFT",
+                "message": "对手已退出游戏",
+            })
+        except Exception:
+            pass
 
     if room.host_user_id == user["id"]:
         del rooms[room_id]

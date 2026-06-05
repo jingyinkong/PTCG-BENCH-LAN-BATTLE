@@ -154,7 +154,21 @@ class PvPGameManager:
         return player
 
     async def handle_disconnect(self, player: str) -> None:
-        """Start 30-second reconnection timer for disconnected player."""
+        """Notify the other player immediately, then start reconnection timer."""
+        # Immediately tell the opponent that this player left
+        conns = active_connections.get(self.room_id, {})
+        opponent = "player1" if player == "player2" else "player2"
+        opponent_ws = conns.get(opponent)
+        if opponent_ws is not None:
+            try:
+                await opponent_ws.send_json({
+                    "type": "OPPONENT_LEFT",
+                    "message": "对手已断开连接",
+                })
+            except Exception:
+                pass
+
+        # Still start the 30-second reconnection timer for potential reconnect
         if self.room_id not in reconnect_timers:
             reconnect_timers[self.room_id] = {}
         reconnect_timers[self.room_id][player] = asyncio.create_task(
