@@ -64,7 +64,8 @@ export default function CardSelectionOverlay() {
 
   const sourceName = chooseCardPrompt?.source ?? '';
   const isAgentChoosing = vsAgent && turn === agentPlayer;
-  if (!isChoosingCard || !chooseCardPrompt || isAgentChoosing) return null;
+  const hasChooseCardActions = availableActions.some(a => a.actionType === 'ChooseCardAction');
+  if (!isChoosingCard || !chooseCardPrompt || isAgentChoosing || !hasChooseCardActions) return null;
 
   const { minCnt, maxCnt, candidates, tips, hidden } = chooseCardPrompt;
   const isMultiSelect = maxCnt > 1;
@@ -83,6 +84,7 @@ export default function CardSelectionOverlay() {
     if (!canSelectMore) return;
     const next = [...selectedCards, key];
     setSelectedCards(next);
+    console.log('[CardSelection] toggle:', cardName, 'multiSelect:', isMultiSelect, 'nextCount:', next.length);
     if (!isMultiSelect && next.length === 1) handleConfirm(next);
   };
 
@@ -93,7 +95,9 @@ export default function CardSelectionOverlay() {
       const actionChosen = [...(action.chosen ?? [])].sort();
       return JSON.stringify(actionChosen) === JSON.stringify(chosenNames);
     });
+    console.log('[CardSelection] confirm:', {chosenNames, actionIndex, availableActionsCount: availableActions.length});
     if (actionIndex >= 0) executeAction(actionIndex);
+    else console.warn('[CardSelection] No matching action found! availableActions:', availableActions);
   };
 
   return (

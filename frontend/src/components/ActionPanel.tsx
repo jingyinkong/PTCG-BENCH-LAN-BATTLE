@@ -10,7 +10,8 @@ export default function ActionPanel() {
   const isMyTurn = isPvP ? turn === pvpPlayerId : vsAgent ? turn !== agentPlayer : true;
   const [showSurrenderConfirm, setShowSurrenderConfirm] = useState(false);
 
-  const displayActions = isChoosingCard || !isMyTurn
+  const hasChooseCardActions = availableActions.some(a => a.actionType === 'ChooseCardAction');
+  const displayActions = (isChoosingCard && hasChooseCardActions) || !isMyTurn
     ? []
     : availableActions.filter((a) => a.actionType !== 'ChooseCardAction');
 
