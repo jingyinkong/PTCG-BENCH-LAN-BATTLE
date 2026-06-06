@@ -1,7 +1,7 @@
 from ptcg.core.ability import Ability
 from ptcg.core.attack import Attack
 from ptcg.core.card import PokemonCard
-from ptcg.core.enums import *
+from ptcg.core.enums import AbilityType, CardType, PokemonType, Stage
 
 
 class VIV029Charizard(PokemonCard):
@@ -17,7 +17,13 @@ class VIV029Charizard(PokemonCard):
         self.cardType = CardType.FIRE
         self.retreat = [CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS]
         self.weakness = [CardType.WATER]
-        self.evolvesFrom = "Charmeleon"
+        self.resistance = []
+        self.prize = 1
+        self.evolveFrom = ["Charmeleon"]
+        self.evolved = []
+
+        self.energy = []
+        self.attachment = []
 
         self.attacks = [
             Attack(
@@ -44,3 +50,6 @@ class VIV029Charizard(PokemonCard):
 
     def get_actions(self, state):
         return []
+
+    def reduce_action(self, action, state):
+        pass

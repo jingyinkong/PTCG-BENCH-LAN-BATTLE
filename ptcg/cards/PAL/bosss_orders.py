@@ -1,8 +1,8 @@
 from ptcg.core.action import UseSupporterAction, choose_card_actions
 from ptcg.core.card import SupporterCard
-from ptcg.core.enums import *
+from ptcg.core.enums import CardPosition, CardType
 from ptcg.core.reducer import reduce_choose_card_actions
-from ptcg.utils.utils import *
+from ptcg.utils.utils import current_player, move_cards, opponent_player, switch_pokemon
 
 
 class PAL265BosssOrders(SupporterCard):

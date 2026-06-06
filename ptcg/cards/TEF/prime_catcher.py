@@ -1,8 +1,10 @@
 from ptcg.core.action import UseItemAction, choose_card_actions
 from ptcg.core.card import ItemCard
-from ptcg.core.enums import *
-from ptcg.core.reducer import *
-from ptcg.utils.utils import *
+from ptcg.core.enums import CardPosition, CardType
+from ptcg.core.reducer import reduce_choose_card_actions
+from ptcg.utils.utils import (
+    current_bench, current_player, move_cards, move_pokemon, opponent_bench, opponent_player
+)
 
 
 class TEF157PrimeCatcher(ItemCard):

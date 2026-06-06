@@ -2,12 +2,13 @@ from ptcg.core.action import AttackAction, PlayPokemonAction, choose_card_action
 from ptcg.core.attack import Attack
 from ptcg.core.card import PokemonCard
 from ptcg.core.enums import (
+    AbilityTrigger,
     CardPosition,
     CardType,
     PokemonPosition,
     PokemonRule,
     PokemonType,
-    Stage,
+    Stage
 )
 from ptcg.core.exceptions import GameTermination
 from ptcg.core.reducer import (
@@ -20,8 +21,10 @@ from ptcg.utils.utils import (
     current_player,
     discard_pokemon,
     move_cards,
+    move_pokemon,
+    next_turn,
     opponent_active,
-    opponent_player,
+    opponent_player
 )
 
 
@@ -113,7 +116,6 @@ class PAR248IronHandsEX(PokemonCard):
         """
         # Apply all passive abilities first (same as reduce_attack_action)
         from ptcg.core.ability import PassiveAbility
-        from ptcg.core.enums import AbilityTrigger
 
         # passive ability
         if (
@@ -197,7 +199,6 @@ class PAR248IronHandsEX(PokemonCard):
             actions = choose_card_actions(opponent.id, opponent.id, 1, 1, opponent.bench, tips=tips)
             chosen_card = yield from reduce_choose_card_actions(actions, state)
             chosen_card = chosen_card[0]
-            from ptcg.utils.utils import move_pokemon
 
             move_pokemon(opponent, chosen_card)
 
@@ -205,6 +206,5 @@ class PAR248IronHandsEX(PokemonCard):
             state.turn = player.id
 
         # End turn
-        from ptcg.utils.utils import next_turn
 
         next_turn(state)

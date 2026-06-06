@@ -1,9 +1,15 @@
-from ptcg.core.action import *
+from ptcg.core.action import AttackAction, PlayPokemonAction
 from ptcg.core.attack import Attack
 from ptcg.core.card import PokemonCard
-from ptcg.core.enums import CardType, PokemonRule, PokemonType, Stage
-from ptcg.core.reducer import *
-from ptcg.utils.utils import *
+from ptcg.core.enums import (
+    CardType,
+    PokemonPosition,
+    PokemonRule,
+    PokemonType,
+    Stage
+)
+from ptcg.core.reducer import reduce_attack_action, reduce_play_pokemon_action
+from ptcg.utils.utils import check_energy, current_player, opponent_active
 
 
 class MEW017Pidgeotto(PokemonCard):
@@ -18,7 +24,7 @@ class MEW017Pidgeotto(PokemonCard):
         self.pokemonRule = PokemonRule.NONE
         self.stage = Stage.STAGE_1
         self.cardType = CardType.COLORLESS
-        self.retreat = [CardType.COLORLESS]
+        self.retreat = []
         self.weakness = [CardType.LIGHTNING]
         self.resistance = [CardType.FIGHTING]
         self.prize = 1
