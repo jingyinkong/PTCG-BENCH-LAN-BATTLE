@@ -78,6 +78,7 @@ export interface ChooseCardPrompt {
   minCnt: number;
   maxCnt: number;
   candidates: string[];
+  candidateLabels?: string[];
   hidden: boolean;
   tips: string;
   source?: string;

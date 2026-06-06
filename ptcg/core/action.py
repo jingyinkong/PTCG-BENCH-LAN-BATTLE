@@ -316,6 +316,7 @@ class ChooseCardAction(Action):
         return {
             "chosen": [card.name for card in self.chosen],
             "candidates": [card.name for card in self.candidates],
+            "candidateLabels": card_position_labels(self.candidates),
         }
 
     def choose_card_indices(self) -> List[int]:
@@ -330,6 +331,37 @@ class ChooseCardAction(Action):
             if getattr(card, "cardPosition", None) in (CardPosition.ACTIVE, CardPosition.BENCH):
                 card_indices.append(card.index)
         return card_indices
+
+
+def card_position_labels(candidates: List[Card]) -> List[str]:
+    """Generate display labels with position info for same-named field cards.
+
+    When two or more cards share the same name AND are on the field
+    (Active/Bench), appends position info so the player can distinguish them.
+    Example: "Charmander" (hand), "Charmander (战斗场)" (Active),
+    "Charmander (备战区 #1)" (Bench).
+    """
+    from ptcg.core.enums import CardPosition as _CP
+
+    in_play = [
+        c for c in candidates
+        if getattr(c, "cardPosition", None) in (_CP.ACTIVE, _CP.BENCH)
+    ]
+    name_counts: dict[str, int] = {}
+    for c in in_play:
+        name_counts[c.name] = name_counts.get(c.name, 0) + 1
+
+    labels: list[str] = []
+    for card in candidates:
+        label = card.name
+        pos = getattr(card, "cardPosition", None)
+        if pos in (_CP.ACTIVE, _CP.BENCH) and name_counts.get(card.name, 0) > 1:
+            if pos == _CP.ACTIVE:
+                label = f"{card.name} (战斗场)"
+            elif pos == _CP.BENCH:
+                label = f"{card.name} (备战区 #{card.index})"
+        labels.append(label)
+    return labels
 
 
 class ChooseCardPrompt:

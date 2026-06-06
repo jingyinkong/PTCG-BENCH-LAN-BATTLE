@@ -81,7 +81,12 @@ export default function CardSelectionOverlay() {
   const selectedCount = selectedCards.length;
   const canSelectMore = selectedCount < maxCnt;
   const isConfirmable = selectedCount >= minCnt && selectedCount <= maxCnt;
-  const candidateItems = candidates.map((name, idx) => ({ name, idx }));
+  const labels = chooseCardPrompt.candidateLabels ?? candidates;
+  const candidateItems = candidates.map((name, idx) => ({
+    name,
+    idx,
+    label: labels[idx] ?? name,
+  }));
   const selectionHint = minCnt === maxCnt
     ? t('cardSelection.selectCount', { count: minCnt })
     : t('cardSelection.selectRange', { min: minCnt, max: maxCnt });
@@ -158,14 +163,14 @@ export default function CardSelectionOverlay() {
             <div className="text-center text-slate-600 py-10 text-sm">{t('cardSelection.noCandidates')}</div>
           ) : (
             <div className="flex flex-wrap gap-3 justify-center">
-              {candidateItems.map(({ name, idx }) => {
+              {candidateItems.map(({ name, idx, label }) => {
                 const key = `${name}__${idx}`;
                 const isSelected = selectedCards.includes(key);
                 const isDisabled = !isSelected && !canSelectMore;
                 return (
                   <SelectableCard
                     key={key}
-                    cardName={name}
+                    cardName={label}
                     imageUrl={hidden ? undefined : cardImages[name]}
                     selected={isSelected}
                     disabled={isDisabled}

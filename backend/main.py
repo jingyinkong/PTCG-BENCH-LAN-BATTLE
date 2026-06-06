@@ -126,6 +126,9 @@ def serialize_prompt(prompt) -> Optional[Dict[str, Any]]:
     }
     if prompt.source and hasattr(prompt.source, "name"):
         result["source"] = prompt.source.name
+    # Include position labels for same-named field cards
+    from ptcg.core.action import card_position_labels
+    result["candidateLabels"] = card_position_labels(prompt.candidates)
     return result
 
 
