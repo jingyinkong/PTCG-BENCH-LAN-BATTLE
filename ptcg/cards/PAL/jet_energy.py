@@ -1,7 +1,7 @@
 from typing import TYPE_CHECKING, cast
 
 from ptcg.core.action import AttachEnergyAction, choose_card_actions
-from ptcg.core.card import EnergyCard
+from ptcg.core.card import EnergyCard, PokemonCard
 from ptcg.core.enums import CardPosition, CardType, EnergyType
 from ptcg.core.reducer import reduce_attach_energy_action, reduce_choose_card_actions
 from ptcg.utils.utils import (
@@ -12,7 +12,6 @@ from ptcg.utils.utils import (
 )
 
 if TYPE_CHECKING:
-    from ptcg.core.card import PokemonCard
     from ptcg.core.state import State
 
 

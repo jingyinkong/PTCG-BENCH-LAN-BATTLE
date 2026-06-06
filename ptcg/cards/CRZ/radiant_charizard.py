@@ -1,10 +1,18 @@
 from ptcg.core.ability import PassiveAbility
-from ptcg.core.action import *
+from ptcg.core.action import AttackAction, EvolvePokemonAction, PlayPokemonAction, RetreatAction
 from ptcg.core.attack import Attack
 from ptcg.core.card import PokemonCard
-from ptcg.core.enums import AbilityTrigger, AbilityType, CardType, PokemonRule, PokemonType, Stage
-from ptcg.core.reducer import *
-from ptcg.utils.utils import *
+from ptcg.core.enums import (
+    AbilityTrigger,
+    AbilityType,
+    CardType,
+    PokemonPosition,
+    PokemonRule,
+    PokemonType,
+    Stage
+)
+from ptcg.core.reducer import reduce_attack_action, reduce_evolve_pokemon_action, reduce_play_pokemon_action, reduce_retreat_action
+from ptcg.utils.utils import check_energy, opponent_active, opponent_player
 
 
 class CRZ020RadiantCharizard(PokemonCard):

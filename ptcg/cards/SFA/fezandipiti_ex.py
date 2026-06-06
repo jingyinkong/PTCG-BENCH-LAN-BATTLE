@@ -1,11 +1,27 @@
 from ptcg.core.ability import ActiveAbility
-from ptcg.core.action import AttackAction, EffectAction, PlayPokemonAction, UseAbilityAction
+from ptcg.core.action import (
+    AttackAction,
+    EffectAction,
+    PlayPokemonAction,
+    UseAbilityAction,
+    choose_card_actions
+)
 from ptcg.core.attack import Attack
 from ptcg.core.card import PokemonCard
 from ptcg.core.effect import Effect
-from ptcg.core.enums import AbilityType, CardType, PokemonRule, PokemonType, Stage
-from ptcg.core.reducer import *
-from ptcg.utils.utils import *
+from ptcg.core.enums import (
+    AbilityType,
+    CardPosition,
+    CardType,
+    PokemonPosition,
+    PokemonRule,
+    PokemonType,
+    Stage
+)
+from ptcg.core.reducer import reduce_choose_card_actions, reduce_effect_action, reduce_play_pokemon_action
+from ptcg.utils.utils import (
+    auto_end_turn, check_energy, current_player, move_cards, opponent_active, opponent_all_pokemon, opponent_player
+)
 
 
 class SFA092FezandipitiEX(PokemonCard):

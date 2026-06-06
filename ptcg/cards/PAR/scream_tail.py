@@ -10,10 +10,11 @@ from ptcg.core.enums import (
 )
 from ptcg.core.reducer import reduce_attack_action, reduce_play_pokemon_action
 from ptcg.utils.utils import (
+    Coin,
     check_energy,
     flip_coin,
     opponent_active,
-    opponent_player,
+    opponent_player
 )
 
 
@@ -81,7 +82,6 @@ class PAR086ScreamTail(PokemonCard):
 
     def _psybolt_attack(self, action, state):
         """Psybolt: Flip coin, if heads put opponent to sleep"""
-        from ptcg.utils.utils import Coin
 
         # Flip coin
         result = flip_coin(state)

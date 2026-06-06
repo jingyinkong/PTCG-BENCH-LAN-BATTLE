@@ -1,9 +1,18 @@
-from ptcg.core.action import *
+from ptcg.core.action import AttackAction, PlayPokemonAction, RetreatAction
 from ptcg.core.attack import Attack
 from ptcg.core.card import PokemonCard
-from ptcg.core.enums import CardType, PokemonRule, PokemonType, Stage
-from ptcg.core.reducer import *
-from ptcg.utils.utils import *
+from ptcg.core.enums import (
+    CardPosition,
+    CardType,
+    PokemonPosition,
+    PokemonRule,
+    PokemonType,
+    Stage
+)
+from ptcg.core.reducer import reduce_play_pokemon_action, reduce_retreat_action
+from ptcg.utils.utils import (
+    auto_end_turn, check_energy, current_player, move_cards, opponent_active
+)
 
 
 class OBF080Cleffa(PokemonCard):

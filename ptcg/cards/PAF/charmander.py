@@ -1,9 +1,11 @@
-from ptcg.core.action import *
+from ptcg.core.action import AttackAction, DiscardStadiumAction, PlayPokemonAction
 from ptcg.core.attack import Attack
 from ptcg.core.card import PokemonCard
-from ptcg.core.enums import *
-from ptcg.core.reducer import *
-from ptcg.utils.utils import *
+from ptcg.core.enums import (
+    CardType, PokemonPosition, PokemonRule, PokemonType, Stage
+)
+from ptcg.core.reducer import reduce_attack_action, reduce_play_pokemon_action
+from ptcg.utils.utils import auto_end_turn, check_energy, opponent_active
 
 
 class PAF007Charmander(PokemonCard):

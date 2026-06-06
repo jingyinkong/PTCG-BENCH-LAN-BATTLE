@@ -17,12 +17,14 @@ from ptcg.core.reducer import (
     reduce_play_pokemon_action,
 )
 from ptcg.utils.utils import (
+    auto_end_turn,
     check_energy,
     current_all_pokemon,
     current_player,
     move_cards,
+    next_turn,
     opponent_active,
-    shuffle_cards,
+    shuffle_cards
 )
 
 
@@ -182,11 +184,9 @@ class BRS158RaichuV(PokemonCard):
 
         # End turn appropriately based on whether it's the first turn
         if player.firstTurn:
-            from ptcg.utils.utils import auto_end_turn
 
             auto_end_turn(state)
         else:
-            from ptcg.utils.utils import next_turn
 
             next_turn(state)
 

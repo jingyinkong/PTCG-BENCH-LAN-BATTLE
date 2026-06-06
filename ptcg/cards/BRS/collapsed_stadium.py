@@ -5,9 +5,11 @@ from ptcg.core.action import (
     choose_card_actions,
 )
 from ptcg.core.card import StadiumCard
-from ptcg.core.enums import *
-from ptcg.core.reducer import *
-from ptcg.utils.utils import *
+from ptcg.core.enums import CardPosition, CardType
+from ptcg.core.reducer import reduce_choose_card_actions
+from ptcg.utils.utils import (
+    current_player, discard_card, discard_pokemon, move_cards, opponent_player
+)
 
 
 class BRS137CollapsedStadium(StadiumCard):

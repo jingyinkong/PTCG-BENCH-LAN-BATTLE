@@ -1,9 +1,13 @@
 from ptcg.core.ability import ActiveAbility
 from ptcg.core.action import UseAbilityAction, UseToolAction, choose_card_actions
 from ptcg.core.card import ToolCard
-from ptcg.core.enums import *
+from ptcg.core.enums import (
+    AbilityType, CardPosition, CardTag, CardType, PokemonType
+)
 from ptcg.core.reducer import reduce_choose_card_actions
-from ptcg.utils.utils import *
+from ptcg.utils.utils import (
+    can_attach_tool, current_all_pokemon, current_player, move_cards, shuffle_cards
+)
 
 
 class SIT156ForestSealStone(ToolCard):

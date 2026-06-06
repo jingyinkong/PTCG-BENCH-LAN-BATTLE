@@ -1,8 +1,8 @@
 from ptcg.core.action import EvolvePokemonAction, UseItemAction, choose_card_actions
 from ptcg.core.card import ItemCard, PokemonCard
-from ptcg.core.enums import *
+from ptcg.core.enums import CardPosition, CardType, Stage
 from ptcg.core.reducer import reduce_choose_card_actions
-from ptcg.utils.utils import *
+from ptcg.utils.utils import current_all_pokemon, current_player, move_cards
 
 
 class PAF089RareCandy(ItemCard):
