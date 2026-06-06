@@ -824,17 +824,10 @@ async def websocket_pvp_room(websocket: WebSocket, room_id: str):
                     obs, reward, done, info = env.reset()
 
                     # Override engine's random coin flip with PvP toss result.
-                    # The engine's _determine_first_player() does its own 50/50 coin
-                    # flip, but we already decided via the PvP coin toss protocol.
+                    # _first_player_override makes _determine_first_player()
+                    # (called at end of start stage) skip its own coin flip.
                     # deck1 always belongs to the player who should go first.
-                    # NOTE: only set gamestate fields here — the start stage is
-                    # still in progress (card selection), so do NOT overwrite
-                    # raw_available_actions or obs from reset().
-                    env.gamestate.turn = PlayerId.PLAYER1
-                    env.gamestate.player1.supporterPlayedTurn = True
-                    env.gamestate.player2.supporterPlayedTurn = False
-                    env.gamestate.player1.firstTurn = True
-                    env.gamestate.player2.firstTurn = False
+                    env._first_player_override = PlayerId.PLAYER1
 
                     games[room_id] = {
                         "env": env, "state": obs, "info": info,

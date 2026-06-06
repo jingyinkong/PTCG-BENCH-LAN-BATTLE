@@ -103,6 +103,7 @@ class PokemonTCG:
         self.verbose = verbose
         self.record_game = record_game
         self.state_checker = StateChecker()
+        self._first_player_override: Optional[PlayerId] = None
 
         if verbose:
             logger.remove()
@@ -161,8 +162,16 @@ class PokemonTCG:
 
         self.gamestate.player1.id = PlayerId.PLAYER1
         self.gamestate.player2.id = PlayerId.PLAYER2
-        self.gamestate.player1.shuffle()
-        self.gamestate.player2.shuffle()
+        self.gamestate.player1.shuffle(self.gamestate)
+        self.gamestate.player2.shuffle(self.gamestate)
+
+        # Mulligan extra draws: opponent may draw 1 card per mulligan (SV rule)
+        p1_mulligans = self.gamestate.player1.mulligan_count
+        p2_mulligans = self.gamestate.player2.mulligan_count
+        if p1_mulligans > 0:
+            self.gamestate.player2.apply_mulligan_draws(p1_mulligans, self.gamestate)
+        if p2_mulligans > 0:
+            self.gamestate.player1.apply_mulligan_draws(p2_mulligans, self.gamestate)
 
         self.start_stage = True
 
@@ -261,11 +270,23 @@ class PokemonTCG:
         # Don't return anything - let the main loop yield the initial state
 
     def _determine_first_player(self) -> None:
-        """Determine which player goes first via coin flip.
+        """Determine which player goes first.
 
-        In Pokémon TCG, the player who goes first cannot attack on their first turn,
-        but the player who goes second CAN attack on their first turn.
+        In Pokémon TCG, the player who goes first cannot attack on their
+        first turn, but the player who goes second CAN attack.
+
+        When _first_player_override is set (e.g. by PvP coin toss), the
+        engine coin flip is skipped and the override is used instead.
         """
+        if self._first_player_override is not None:
+            first = self._first_player_override
+            second = PlayerId.PLAYER1 if first == PlayerId.PLAYER2 else PlayerId.PLAYER2
+            self.gamestate.turn = first
+            sp = self.gamestate.player2 if second == PlayerId.PLAYER2 else self.gamestate.player1
+            sp.supporterPlayedTurn = False
+            sp.firstTurn = False
+            return
+
         if flip_coin(self.gamestate) == Coin.HEAD:
             self.gamestate.turn = PlayerId.PLAYER1
             self.gamestate.player2.supporterPlayedTurn = False
