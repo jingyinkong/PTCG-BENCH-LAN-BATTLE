@@ -1,8 +1,8 @@
 from ptcg.core.action import UseSupporterAction
 from ptcg.core.card import SupporterCard
-from ptcg.core.enums import *
-from ptcg.core.reducer import *
-from ptcg.utils.utils import *
+from ptcg.core.enums import CardPosition, CardType
+
+from ptcg.utils.utils import current_player, move_cards, opponent_player, shuffle_cards
 
 
 class PAF080Iono(SupporterCard):

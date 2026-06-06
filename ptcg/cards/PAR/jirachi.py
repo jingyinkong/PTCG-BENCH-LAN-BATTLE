@@ -1,19 +1,23 @@
 from ptcg.core.ability import PassiveAbility
-from ptcg.core.action import *
+from ptcg.core.action import AttackAction, EffectAction, PlayPokemonAction, choose_card_actions
 from ptcg.core.attack import Attack
 from ptcg.core.card import PokemonCard
 from ptcg.core.enums import (
     AbilityTrigger,
     AbilityType,
+    CardPosition,
     CardType,
     EnergyType,
+    PokemonPosition,
     PokemonRule,
     PokemonType,
     Stage,
-    SuperType,
+    SuperType
 )
-from ptcg.core.reducer import *
-from ptcg.utils.utils import *
+from ptcg.core.reducer import reduce_choose_card_actions, reduce_play_pokemon_action
+from ptcg.utils.utils import (
+    auto_end_turn, check_energy, current_player, move_cards, opponent_active, opponent_bench, shuffle_cards
+)
 
 
 class PAR126Jirachi(PokemonCard):

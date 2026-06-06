@@ -1,9 +1,8 @@
-from ptcg.core.action import AttackAction, UseToolAction, choose_card_actions
+from ptcg.core.action import AttackAction, EvolvePokemonAction, UseToolAction, choose_card_actions
 from ptcg.core.attack import Attack
 from ptcg.core.card import ToolCard
 from ptcg.core.enums import CardPosition, CardType, PokemonPosition, SuperType
 from ptcg.core.reducer import reduce_choose_card_actions, reduce_evolve_pokemon_action
-from ptcg.core.action import EvolvePokemonAction
 from ptcg.utils.utils import (
     can_attach_tool,
     current_all_pokemon,

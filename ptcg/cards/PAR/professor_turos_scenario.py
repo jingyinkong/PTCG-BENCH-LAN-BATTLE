@@ -1,8 +1,10 @@
 from ptcg.core.action import UseSupporterAction, choose_card_actions
 from ptcg.core.card import SupporterCard
-from ptcg.core.enums import *
+from ptcg.core.enums import CardPosition, CardType, PokemonPosition, Stage
 from ptcg.core.reducer import reduce_choose_card_actions
-from ptcg.utils.utils import *
+from ptcg.utils.utils import (
+    current_all_pokemon, current_bench, current_player, discard_card, move_cards, move_pokemon
+)
 
 
 class PAR257ProfessorTurosScenario(SupporterCard):

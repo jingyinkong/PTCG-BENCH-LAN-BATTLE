@@ -1,18 +1,24 @@
-from ptcg.core.ability import *
-from ptcg.core.action import *
+from ptcg.core.ability import ActiveAbility
+from ptcg.core.action import (
+    AttackAction, PlayPokemonAction, RetreatAction, UseAbilityAction, choose_card_actions
+)
 from ptcg.core.attack import Attack
 from ptcg.core.card import PokemonCard
 from ptcg.core.enums import (
     AbilityType,
+    CardPosition,
     CardType,
+    PokemonPosition,
     PokemonRule,
     PokemonType,
     Stage,
     SuperType,
-    TrainerType,
+    TrainerType
 )
-from ptcg.core.reducer import *
-from ptcg.utils.utils import *
+from ptcg.core.reducer import reduce_attack_action, reduce_choose_card_actions, reduce_play_pokemon_action, reduce_retreat_action
+from ptcg.utils.utils import (
+    auto_end_turn, check_energy, current_player, move_cards, opponent_active
+)
 
 
 class CRZ045RotomV(PokemonCard):

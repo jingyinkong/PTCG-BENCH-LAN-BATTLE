@@ -1,7 +1,7 @@
 from ptcg.core.ability import PassiveAbility
 from ptcg.core.action import AttachEnergyAction, AttackAction
 from ptcg.core.card import EnergyCard
-from ptcg.core.enums import *
+from ptcg.core.enums import AbilityTrigger, AbilityType, CardType, EnergyType
 from ptcg.core.reducer import reduce_attach_energy_action
 
 

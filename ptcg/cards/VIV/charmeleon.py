@@ -1,8 +1,14 @@
-from ptcg.core.action import *
+from ptcg.core.action import AttackAction, EvolvePokemonAction, PlayPokemonAction, RetreatAction
 from ptcg.core.attack import Attack
 from ptcg.core.card import PokemonCard
-from ptcg.core.enums import CardPosition, CardType, PokemonType, Stage
-from ptcg.core.reducer import *
+from ptcg.core.enums import (
+    CardPosition,
+    CardType,
+    PokemonPosition,
+    PokemonType,
+    Stage
+)
+from ptcg.core.reducer import reduce_attack_action, reduce_evolve_pokemon_action, reduce_play_pokemon_action, reduce_retreat_action
 from ptcg.utils.utils import check_energy, current_player, move_cards, opponent_active
 
 

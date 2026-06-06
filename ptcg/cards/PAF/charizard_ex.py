@@ -9,15 +9,25 @@ from ptcg.core.attack import Attack
 from ptcg.core.card import PokemonCard
 from ptcg.core.enums import (
     AbilityType,
+    CardPosition,
     CardType,
     EnergyType,
+    PokemonPosition,
     PokemonRule,
     PokemonType,
     Stage,
-    SuperType,
+    SuperType
 )
-from ptcg.core.reducer import *
-from ptcg.utils.utils import check_energy, current_all_pokemon, opponent_active, shuffle_cards
+from ptcg.core.reducer import reduce_attach_energy_action, reduce_attack_action, reduce_choose_card_actions, reduce_evolve_pokemon_action
+from ptcg.utils.utils import (
+    check_energy,
+    current_all_pokemon,
+    current_player,
+    move_cards,
+    opponent_active,
+    opponent_player,
+    shuffle_cards
+)
 
 
 class PAF054CharizardEX(PokemonCard):
