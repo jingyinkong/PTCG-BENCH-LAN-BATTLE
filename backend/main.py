@@ -7,7 +7,8 @@ import os
 import sys
 from pathlib import Path
 
-# Add repository root to path for local development imports.
+# Add backend and repository root to path for local development imports.
+sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import asyncio
@@ -38,6 +39,7 @@ from ptcgbench.agents.common.profile import AgentProfile
 from ptcgbench.agents.random_agent import RandomAgent
 from ptcgbench.agents.react_agent import ReActAgent
 from ptcg.core.action import Action
+from ptcg.core.enums import PlayerId
 from ptcg.core.envs import PokemonTCG
 
 app = FastAPI(title="PTCG API", version="1.0.0")
@@ -814,24 +816,46 @@ async def websocket_pvp_room(websocket: WebSocket, room_id: str):
                         except Exception:
                             pass
 
-                env = PokemonTCG(seed=secrets.randbelow(10000), deck1=deck1, deck2=deck2, verbose=False)
-                obs, reward, done, info = env.reset()
-                games[room_id] = {
-                    "env": env, "state": obs, "info": info,
-                    "agent": None, "agent_player": None,
-                }
-                room.game_id = room_id
-                base_state = serialize_state(obs)
-                base_actions = serialize_available_actions(info["raw_available_actions"])
-                await _send_state_to_players(room_id, {
-                    "type": "STATE_UPDATE",
-                    "state": base_state,
-                    "availableActions": base_actions,
-                    "turn": info["turn"].name,
-                    "isChoosingCard": info.get("is_choosing_card", False),
-                    "chooseCardPrompt": serialize_prompt(info.get("prompt")),
-                    "autoExecuted": info.get("auto_executed", []),
-                })
+                try:
+                    env = PokemonTCG(seed=secrets.randbelow(10000), deck1=deck1, deck2=deck2, verbose=False)
+                    obs, reward, done, info = env.reset()
+
+                    # Override engine's random coin flip with PvP toss result.
+                    # The engine's _determine_first_player() does its own 50/50 coin
+                    # flip, but we already decided via the PvP coin toss protocol.
+                    # deck1 always belongs to the player who should go first.
+                    env.gamestate.turn = PlayerId.PLAYER1
+                    env.gamestate.player1.supporterPlayedTurn = True
+                    env.gamestate.player2.supporterPlayedTurn = False
+                    env.gamestate.player1.firstTurn = True
+                    env.gamestate.player2.firstTurn = False
+                    # Re-serialize the state now that turn is corrected
+                    obs = env.gamestate.get_obs()
+                    info["turn"] = env.gamestate.turn
+                    info["raw_available_actions"] = env.get_actions(env.gamestate)
+
+                    games[room_id] = {
+                        "env": env, "state": obs, "info": info,
+                        "agent": None, "agent_player": None,
+                    }
+                    room.game_id = room_id
+                    base_state = serialize_state(obs)
+                    base_actions = serialize_available_actions(info["raw_available_actions"])
+                    await _send_state_to_players(room_id, {
+                        "type": "STATE_UPDATE",
+                        "state": base_state,
+                        "availableActions": base_actions,
+                        "turn": info["turn"].name,
+                        "isChoosingCard": info.get("is_choosing_card", False),
+                        "chooseCardPrompt": serialize_prompt(info.get("prompt")),
+                        "autoExecuted": info.get("auto_executed", []),
+                    })
+                except Exception as game_error:
+                    await websocket.send_json({
+                        "type": "ERROR",
+                        "message": f"Failed to start game: {game_error}",
+                    })
+                    print(f"PvP game creation error: {game_error}")
                 continue
 
             # ── Game Action Messages ──
