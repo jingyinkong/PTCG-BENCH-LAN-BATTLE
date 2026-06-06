@@ -937,7 +937,16 @@ async def websocket_pvp_room(websocket: WebSocket, room_id: str):
                     })
 
     except WebSocketDisconnect:
-        await manager.handle_disconnect(player)
+        # Resolve current role from active_connections — the coin toss
+        # may have swapped roles, so the handler's local `player` variable
+        # can be stale.  Look up the actual role for this websocket.
+        current_player = player
+        conns = active_connections.get(room_id, {})
+        for role, ws in conns.items():
+            if ws is websocket:
+                current_player = role
+                break
+        await manager.handle_disconnect(current_player)
     except Exception as e:
         print(f"PvP WebSocket error: {e}")
 
