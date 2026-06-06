@@ -65,7 +65,16 @@ export default function CardSelectionOverlay() {
   const sourceName = chooseCardPrompt?.source ?? '';
   const isAgentChoosing = vsAgent && turn === agentPlayer;
   const hasChooseCardActions = availableActions.some(a => a.actionType === 'ChooseCardAction');
-  if (!isChoosingCard || !chooseCardPrompt || isAgentChoosing || !hasChooseCardActions) return null;
+  if (!isChoosingCard || !chooseCardPrompt || isAgentChoosing || !hasChooseCardActions) {
+    console.log('[CardSelection] HIDDEN:', {
+      isChoosingCard,
+      hasPrompt: !!chooseCardPrompt,
+      isAgentChoosing: `${vsAgent} && ${turn} === ${agentPlayer} = ${isAgentChoosing}`,
+      hasChooseCardActions,
+      availableActionsTypes: availableActions.map(a => a.actionType),
+    });
+    return null;
+  }
 
   const { minCnt, maxCnt, candidates, tips, hidden } = chooseCardPrompt;
   const isMultiSelect = maxCnt > 1;

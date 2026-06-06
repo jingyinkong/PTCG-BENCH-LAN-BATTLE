@@ -824,15 +824,14 @@ async def websocket_pvp_room(websocket: WebSocket, room_id: str):
                     # The engine's _determine_first_player() does its own 50/50 coin
                     # flip, but we already decided via the PvP coin toss protocol.
                     # deck1 always belongs to the player who should go first.
+                    # NOTE: only set gamestate fields here — the start stage is
+                    # still in progress (card selection), so do NOT overwrite
+                    # raw_available_actions or obs from reset().
                     env.gamestate.turn = PlayerId.PLAYER1
                     env.gamestate.player1.supporterPlayedTurn = True
                     env.gamestate.player2.supporterPlayedTurn = False
                     env.gamestate.player1.firstTurn = True
                     env.gamestate.player2.firstTurn = False
-                    # Re-serialize the state now that turn is corrected
-                    obs = env.gamestate.get_obs()
-                    info["turn"] = env.gamestate.turn
-                    info["raw_available_actions"] = env.get_actions(env.gamestate)
 
                     games[room_id] = {
                         "env": env, "state": obs, "info": info,

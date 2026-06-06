@@ -121,6 +121,15 @@ export const useGameStore = create<GameStore>((set, get) => ({
         agentModel: data.agentModel ?? null,
         isAgentThinking: false,
       });
+      console.log('[GameStore] createGame:', {
+        isChoosingCard: data.isChoosingCard,
+        hasPrompt: !!data.chooseCardPrompt,
+        actionsCount: data.availableActions?.length,
+        actionTypes: data.availableActions?.map((a: any) => a.actionType),
+        turn: newTurn,
+        vsAgent,
+        agentPlayer,
+      });
       preloadGameImages(data);
 
       // If agent goes first, trigger agent steps immediately
