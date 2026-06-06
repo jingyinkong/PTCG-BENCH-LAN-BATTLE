@@ -21,18 +21,40 @@ _original_run_start_stage = PokemonTCG._run_start_stage
 _original_player_shuffle = Player.shuffle
 
 
-# ── Patched Player.shuffle (no auto-mulligan) ──────────────────────────────────
+# ── Patched Player.shuffle (mulligan tracking) ─────────────────────────────────
 
-def _patched_player_shuffle(self: Player) -> None:
-    """Shuffle deck and draw initial hand WITHOUT auto-mulligan.
+def _patched_player_shuffle(self: Player, state=None) -> None:
+    """Shuffle deck and draw initial hand.
 
-    The mulligan rule is handled in _patched_run_start_stage instead,
-    so that opponent notification and extra card draw happen properly.
+    Implements SV mulligan rule: if no Basic Pokemon in opening hand,
+    reveal hand, shuffle back, and redraw. Opponent may draw 1 extra
+    card per mulligan (applied later via apply_mulligan_draws).
+
+    The _patched_run_start_stage handles Active/Bench selection and
+    also serves as a safety-net mulligan check (though it should never
+    trigger if shuffle's mulligan loop works correctly).
+
+    Args:
+        state: Optional State for recording mulligan auto_events.
     """
     random.shuffle(self.deck)
     self.hand = self.deck[:7]
     self.prize = self.deck[7:13]
     self.left = self.deck[13:]
+
+    def can_play(card):
+        return card.superType == SuperType.POKEMON and card.stage == Stage.BASIC
+
+    if all(not can_play(card) for card in self.hand):
+        self.mulligan_count += 1
+        if state is not None:
+            player_name = "PLAYER1" if self.id == PlayerId.PLAYER1 else "PLAYER2"
+            state.auto_events.append(
+                f"{player_name} has no Basic Pokemon in opening hand. "
+                f"Revealing hand and shuffling back (Mulligan #{self.mulligan_count}). "
+                f"Opponent may draw {self.mulligan_count} extra card(s)."
+            )
+        self.shuffle(state)
 
     def set_cards_position(cards, position):
         for idx, card in enumerate(cards):

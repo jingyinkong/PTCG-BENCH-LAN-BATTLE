@@ -88,6 +88,5 @@ class PAF080Iono(SupporterCard):
             shuffle_cards(player.left)
             shuffle_cards(opponent.left)
 
-        # Mark supporter as used
+        # Mark supporter as used (only the player who played Iono)
         player.supporterPlayedTurn = True
-        opponent.supporterPlayedTurn = True
