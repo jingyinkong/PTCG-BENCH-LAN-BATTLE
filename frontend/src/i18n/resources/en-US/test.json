@@ -36,5 +36,8 @@
     "failed": "Failed",
     "pending": "Pending",
     "cancelled": "Cancelled"
-  }
+  },
+  "adminRequired": "Admin access required",
+  "taskLabel": "Task #{{id}}",
+  "gameCount": "{{count}} games"
 }

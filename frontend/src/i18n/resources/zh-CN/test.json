@@ -36,5 +36,8 @@
     "failed": "失败",
     "pending": "等待中",
     "cancelled": "已取消"
-  }
+  },
+  "adminRequired": "需要管理员权限",
+  "taskLabel": "任务 #{{id}}",
+  "gameCount": "{{count}} 局"
 }

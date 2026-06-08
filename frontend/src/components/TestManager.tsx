@@ -71,7 +71,7 @@ export default function TestManager() {
     setLoading(false);
   };
 
-  if (!isAdmin) return <div className="p-8 text-slate-400">需要管理员权限</div>;
+  if (!isAdmin) return <div className="p-8 text-slate-400">{t('test:adminRequired')}</div>;
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
@@ -158,15 +158,15 @@ export default function TestManager() {
       <div className="bg-slate-900 border border-slate-700 rounded-lg p-4">
         <h3 className="text-sm font-semibold text-slate-300 mb-3">{t('test:taskHistory')}</h3>
         {tasks.length === 0 ? <p className="text-slate-500 text-sm">{t('test:noTasks')}</p> : (
-          <div className="space-y-2">{tasks.map(t => (
-            <div key={t.id} className="flex items-center justify-between bg-slate-800 rounded p-3 text-sm">
-              <div><span className="text-slate-200 font-medium">任务 #{t.id}</span>
-                <span className="ml-3 text-xs text-slate-500">{t.deck_list?.join(', ')} · {t.batch_size} 局</span></div>
+          <div className="space-y-2">{tasks.map(task => (
+            <div key={task.id} className="flex items-center justify-between bg-slate-800 rounded p-3 text-sm">
+              <div><span className="text-slate-200 font-medium">{t('test:taskLabel', { id: task.id })}</span>
+                <span className="ml-3 text-xs text-slate-500">{task.deck_list?.join(', ')} · {t('test:gameCount', { count: task.batch_size })}</span></div>
               <div className="flex items-center gap-3">
-                <span className="text-xs text-slate-400">{t.created_at?.slice(0, 16)}</span>
-                <span className={`px-2 py-0.5 rounded text-xs ${t.status === 'completed' ? 'bg-emerald-900/50 text-emerald-400' : t.status === 'running' ? 'bg-sky-900/50 text-sky-400' : t.status === 'failed' ? 'bg-red-900/50 text-red-400' : 'bg-slate-700 text-slate-400'}`}>
-                  {(['completed','running','failed','pending','cancelled'].includes(t.status) ? (['已完成','运行中','失败','等待中','已取消'][['completed','running','failed','pending','cancelled'].indexOf(t.status)]) : t.status)}</span>
-                <span className="text-xs text-slate-500">{t.game_count}局</span></div></div>))}</div>)}
+                <span className="text-xs text-slate-400">{task.created_at?.slice(0, 16)}</span>
+                <span className={`px-2 py-0.5 rounded text-xs ${task.status === 'completed' ? 'bg-emerald-900/50 text-emerald-400' : task.status === 'running' ? 'bg-sky-900/50 text-sky-400' : task.status === 'failed' ? 'bg-red-900/50 text-red-400' : 'bg-slate-700 text-slate-400'}`}>
+                  {(['completed','running','failed','pending','cancelled'].includes(task.status) ? t(`test:status.${task.status}`) : task.status)}</span>
+                <span className="text-xs text-slate-500">{t('test:gameCount', { count: task.game_count })}</span></div></div>))}</div>)}
       </div>
     </div>
   );

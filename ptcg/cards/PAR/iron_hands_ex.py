@@ -196,7 +196,7 @@ class PAR248IronHandsEX(PokemonCard):
 
             # Change turn to opponent for active Pokemon selection
             state.turn = opponent.id
-            tips = "Your active Pokemon is knocked out. You have to choose 1 of your benched Pokemon and switch it to your active spot."
+            tips = _t("knockout.choose_replacement")
             actions = choose_card_actions(opponent.id, opponent.id, 1, 1, opponent.bench, tips=tips)
             chosen_card = yield from reduce_choose_card_actions(actions, state)
             chosen_card = chosen_card[0]
