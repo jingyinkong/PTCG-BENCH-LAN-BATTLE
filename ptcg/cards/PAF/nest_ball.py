@@ -5,6 +5,7 @@ from ptcg.core.enums import (
 )
 from ptcg.core.reducer import reduce_choose_card_actions
 from ptcg.utils.utils import current_player, move_cards, shuffle_cards
+from ptcg.i18n import t as _t
 
 
 class PAF084NestBall(ItemCard):
@@ -13,7 +14,7 @@ class PAF084NestBall(ItemCard):
         self.set_name = "PAF"
         self.number = "084"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Nest Ball"
+        self.name = "巢穴球"
         self.cardType = CardType.NONE
         self.text = "Search your deck for a Basic Pokémon and put it onto your Bench. Then, shuffle your deck."
 
@@ -39,7 +40,7 @@ class PAF084NestBall(ItemCard):
                 self, (player.id, CardPosition.HAND), (player.id, CardPosition.DISCARD), state
             )
 
-            tips = "You used Nest Ball. You can choose up to 1 basic Pokemon from your deck and put it onto your Bench."
+            tips = _t("item.nest_ball")
             actions = choose_card_actions(player.id, player.id, 0, 1, cards, tips=tips, source=self)
             chosen_card = yield from reduce_choose_card_actions(actions, state)
             if len(chosen_card) == 0:

@@ -3,6 +3,7 @@ from ptcg.core.card import ItemCard
 from ptcg.core.enums import CardPosition, CardType, SuperType
 from ptcg.core.reducer import reduce_choose_card_actions
 from ptcg.utils.utils import current_player, move_cards, shuffle_cards
+from ptcg.i18n import t as _t
 
 
 class PAL183GreatBall(ItemCard):
@@ -11,7 +12,7 @@ class PAL183GreatBall(ItemCard):
         self.set_name = "PAL"
         self.number = "183"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Great Ball"
+        self.name = "超级球"
         self.cardType = CardType.NONE
         self.text = (
             "Look at the top 7 cards of your deck. You may reveal a Pokémon you find there "
@@ -34,7 +35,7 @@ class PAL183GreatBall(ItemCard):
             top_7_cards = player.left[:7]
             pokemon_cards = [card for card in top_7_cards if card.superType == SuperType.POKEMON]
 
-            tips = "You used Great Ball. You may reveal a Pokémon you find there and put it into your hand."
+            tips = _t("item.great_ball")
             actions = choose_card_actions(
                 player.id, player.id, 0, 1, pokemon_cards, tips=tips, source=self
             )

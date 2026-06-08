@@ -9,7 +9,7 @@ from ptcg.utils.utils import check_energy, opponent_active
 class PAF027Ralts(PokemonCard):
     def __init__(self) -> None:
         super().__init__()
-        self.name = "Ralts"
+        self.name = "拉鲁拉丝"
         self.set_name = "PAF"
         self.number = "027"
         self.id = f"{self.set_name}-{self.number}"

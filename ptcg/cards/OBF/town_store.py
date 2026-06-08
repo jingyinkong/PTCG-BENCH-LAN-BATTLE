@@ -7,6 +7,7 @@ from ptcg.core.action import (
 from ptcg.core.card import StadiumCard, ToolCard
 from ptcg.core.enums import CardPosition, CardType
 from ptcg.core.reducer import reduce_choose_card_actions
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     current_player,
     discard_card,
@@ -22,7 +23,7 @@ class OBF196TownStore(StadiumCard):
         self.set_name = "OBF"
         self.number = "196"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Town Store"
+        self.name = "城镇百货"
         self.cardType = CardType.NONE
         self.text = (
             "Once during each player's turn, that player may search their deck for a "
@@ -69,7 +70,7 @@ class OBF196TownStore(StadiumCard):
 
         elif isinstance(action, UseStadiumAction):
             tools = [card for card in player.left if isinstance(card, ToolCard)]
-            tips = "You used Town Store. Choose 1 Pokémon Tool card from your deck to put into your hand."
+            tips = _t("stadium.town_store")
             actions = choose_card_actions(player.id, player.id, 1, 1, tools, tips=tips, source=self)
             chosen = yield from reduce_choose_card_actions(actions, state)
             if chosen:

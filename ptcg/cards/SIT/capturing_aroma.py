@@ -5,6 +5,7 @@ from ptcg.core.enums import (
 )
 from ptcg.core.reducer import reduce_choose_card_actions
 from ptcg.utils.utils import current_player, flip_coin, move_cards, shuffle_cards
+from ptcg.i18n import t as _t
 
 
 class SIT153CapturingAroma(ItemCard):
@@ -13,7 +14,7 @@ class SIT153CapturingAroma(ItemCard):
         self.set_name = "SIT"
         self.number = "153"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Capturing Aroma"
+        self.name = "捕获香氛"
         self.cardType = CardType.NONE
         self.text = (
             "Flip a coin. If heads, search your deck for an Evolution Pokémon, reveal it, "
@@ -46,14 +47,14 @@ class SIT153CapturingAroma(ItemCard):
                     if card.superType == SuperType.POKEMON
                     and card.stage in [Stage.STAGE_1, Stage.STAGE_2]
                 ]
-                tips = "Heads! You used Capturing Aroma. You can choose up to 1 Evolution Pokémon (Stage 1 or Stage 2) from your deck and put it into your hand."
+                tips = _t("item.capturing_aroma.heads")
             else:
                 cards = [
                     card
                     for card in player.left
                     if card.superType == SuperType.POKEMON and card.stage == Stage.BASIC
                 ]
-                tips = "Tails! You used Capturing Aroma. You can choose up to 1 Basic Pokémon from your deck and put it into your hand."
+                tips = _t("item.capturing_aroma.tails")
 
             actions = choose_card_actions(player.id, player.id, 0, 1, cards, tips=tips, source=self)
             chosen_card = yield from reduce_choose_card_actions(actions, state)

@@ -5,6 +5,7 @@ from ptcg.core.enums import (
     AbilityType, CardPosition, CardTag, CardType, PokemonType
 )
 from ptcg.core.reducer import reduce_choose_card_actions
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     can_attach_tool, current_all_pokemon, current_player, move_cards, shuffle_cards
 )
@@ -16,7 +17,7 @@ class SIT156ForestSealStone(ToolCard):
         self.set_name = "SIT"
         self.number = "156"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Forest Seal Stone"
+        self.name = "森林封印石"
         self.cardType = CardType.NONE
         self.text = "The Pokémon V this card is attached to can use the VSTAR Power on this card."
 
@@ -77,7 +78,7 @@ class SIT156ForestSealStone(ToolCard):
         elif isinstance(action, UseAbilityAction):
             player = current_player(state)
             cards = player.left
-            tips = "You used the ability Star Alchemy. You can choose up to 1 card from your deck and put it into your hand."
+            tips = _t("ability.forest_seal_stone.star_alchemy")
             actions = choose_card_actions(player.id, player.id, 0, 1, cards, tips=tips, source=self)
             chosen_card = yield from reduce_choose_card_actions(actions, state)
 

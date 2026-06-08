@@ -14,6 +14,7 @@ from ptcg.core.enums import (
     SuperType,
 )
 from ptcg.core.reducer import reduce_attack_action, reduce_choose_card_actions, reduce_evolve_pokemon_action
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     check_energy,
     current_player,
@@ -25,7 +26,7 @@ from ptcg.utils.utils import (
 class PAR139Gholdengoex(PokemonCard):
     def __init__(self) -> None:
         super().__init__()
-        self.name = "Gholdengo ex"
+        self.name = "赛富豪ex"
         self.set_name = "PAR"
         self.number = "139"
         self.id = f"{self.set_name}-{self.number}"
@@ -145,7 +146,7 @@ class PAR139Gholdengoex(PokemonCard):
         ]
 
         if basic_energy:
-            tips = "Make It Rain: choose any number of Basic Energy cards from your hand to discard. This attack does 50 damage for each card discarded."
+            tips = _t("attack.gholdengo_ex.make_it_rain")
             actions = choose_card_actions(
                 player.id, player.id, 0, len(basic_energy), basic_energy, tips=tips, source=self
             )

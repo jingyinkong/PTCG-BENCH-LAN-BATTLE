@@ -10,7 +10,7 @@ class PAL173BraveryCharm(ToolCard):
         self.set_name = "PAL"
         self.number = "173"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Bravery Charm"
+        self.name = "勇气护符"
         self.cardType = CardType.NONE
         self.text = "The Basic Pokémon this card is attached to gets +50 HP."
         self.hasAttached = False

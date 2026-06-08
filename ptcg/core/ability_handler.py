@@ -7,6 +7,7 @@ during game actions, eliminating code duplication across reducer functions.
 
 from ptcg.core.ability import PassiveAbility
 from ptcg.core.enums import AbilityTrigger
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     current_active,
     current_player,
@@ -38,7 +39,7 @@ def trigger_passive_ability(card, action, state, trigger: AbilityTrigger) -> Non
         card.use_ability(action, state)
         ability_name = card.ability.name if hasattr(card.ability, "name") else "Unknown"
         card_name = card.name if hasattr(card, "name") else "Unknown"
-        state.auto_events.append(f"Passive ability triggered: {card_name}'s {ability_name}.")
+        state.auto_events.append(_t("event.passive_ability").format(pokemon=card_name, ability=ability_name))
 
 
 def trigger_attack_abilities(action, state) -> None:

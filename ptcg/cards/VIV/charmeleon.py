@@ -18,7 +18,7 @@ class VIV028Charmeleon(PokemonCard):
         self.set_name = "VIV"
         self.number = "024"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Charmeleon"
+        self.name = "火恐龙"
         self.hp = 90
         self.pokemonType = PokemonType.NORMAL
         self.stage = Stage.STAGE_1

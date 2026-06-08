@@ -11,7 +11,7 @@ class PAF080Iono(SupporterCard):
         self.set_name = "PAF"
         self.number = "080"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Iono"
+        self.name = "奇树"
         self.cardType = CardType.NONE
         self.text = (
             "Each player shuffles their hand and puts it on the bottom of their deck. "

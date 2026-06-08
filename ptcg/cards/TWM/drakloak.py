@@ -16,6 +16,7 @@ from ptcg.core.reducer import (
     reduce_evolve_pokemon_action,
 )
 from ptcg.utils.utils import check_energy, current_player, move_cards, opponent_active
+from ptcg.i18n import t as _t
 
 
 class TWM129Drakloak(PokemonCard):
@@ -24,7 +25,7 @@ class TWM129Drakloak(PokemonCard):
         self.set_name = "TWM"
         self.number = "129"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Drakloak"
+        self.name = "多龙奇"
         self.hp = 90
         self.pokemonType = PokemonType.NORMAL
         self.pokemonRule = PokemonRule.NONE
@@ -94,7 +95,7 @@ class TWM129Drakloak(PokemonCard):
             # Look at top 2 cards of deck (index 0 is top)
             look_cards = player.left[:2]
 
-            tips = "You used the ability Recon Directive. You should choose 1 of two given cards and put it into your hand. Then, put the other card on the bottom of your deck."
+            tips = _t("ability.drakloak.recon_directive")
             actions = choose_card_actions(
                 player.id, player.id, 1, 1, look_cards, tips=tips, source=self
             )

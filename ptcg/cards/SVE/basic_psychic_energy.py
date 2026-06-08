@@ -11,7 +11,7 @@ class SVE005BasicPsychicEnergy(EnergyCard):
         self.set_name = "SVE"
         self.number = "005"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Psychic Energy"
+        self.name = "基本超能量"
         self.cardType = CardType.PSYCHIC
         self.energyType = EnergyType.BASIC
         self.provides = [CardType.PSYCHIC]

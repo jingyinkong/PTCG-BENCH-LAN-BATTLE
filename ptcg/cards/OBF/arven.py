@@ -3,6 +3,7 @@ from ptcg.core.card import SupporterCard
 from ptcg.core.enums import CardPosition, CardType, SuperType, TrainerType
 from ptcg.core.reducer import reduce_choose_card_actions
 from ptcg.utils.utils import current_player, move_cards, shuffle_cards
+from ptcg.i18n import t as _t
 
 
 class OBF186Arven(SupporterCard):
@@ -11,7 +12,7 @@ class OBF186Arven(SupporterCard):
         self.set_name = "OBF"
         self.number = "186"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Arven"
+        self.name = "派帕"
         self.cardType = CardType.NONE
         self.text = (
             "Search your deck for an Item card and a Pokémon Tool card, reveal them, "
@@ -46,7 +47,7 @@ class OBF186Arven(SupporterCard):
                 self, (player.id, CardPosition.HAND), (player.id, CardPosition.DISCARD), state
             )
 
-            tips = "You used Arven. You can choose up to 1 Item card from your deck and put it into your hand."
+            tips = _t("supporter.arven.item")
             actions = choose_card_actions(
                 player.id, player.id, 0, 1, item_cards, tips=tips, source=self
             )
@@ -61,7 +62,7 @@ class OBF186Arven(SupporterCard):
             else:
                 raise ValueError(f"Invalid action: {action}")
 
-            tips = "You used Arven. You can choose up to 1 Tool card from your deck and put it into your hand."
+            tips = _t("supporter.arven.tool")
             actions = choose_card_actions(
                 player.id, player.id, 0, 1, tool_cards, tips=tips, source=self
             )

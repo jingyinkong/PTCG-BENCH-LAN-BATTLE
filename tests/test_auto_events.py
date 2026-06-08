@@ -71,7 +71,7 @@ def test_flip_coin_records_event_on_state():
     state = _mock_state()
     result = flip_coin(state)
     assert len(state.auto_events) == 1
-    assert "Coin flip:" in state.auto_events[0]
+    assert "掷币：" in state.auto_events[0]
     if result.value == 0:  # HEAD
         assert "HEADS" in state.auto_events[0]
     else:
@@ -108,7 +108,7 @@ def test_coin_flip_attack_records_event():
         for action in info.get("raw_available_actions", []):
             if isinstance(action, AttackAction):
                 card = action.source
-                if hasattr(card, "name") and card.name == "Bidoof":
+                if hasattr(card, "name") and card.name == "大牙狸":
                     if card.position == PokemonPosition.ACTIVE:
                         return action
         return None
@@ -128,7 +128,7 @@ def test_coin_flip_attack_records_event():
                 obs, _reward, done, info = env.step(attack)
                 auto = info.get("auto_executed", [])
                 if auto:
-                    assert any("Coin flip:" in e for e in auto), (
+                    assert any("掷币：" in e for e in auto), (
                         f"Expected coin flip event, got: {auto}"
                     )
                     found = True
@@ -174,7 +174,7 @@ def test_weakness_records_event():
 
     assert damage == 120
     assert len(state.auto_events) == 1
-    assert "Weakness applied: damage doubled from 60 to 120." == state.auto_events[0]
+    assert "弱点效果触发：伤害翻倍，60 → 120。" == state.auto_events[0]
 
 
 def test_resistance_records_event():
@@ -193,7 +193,7 @@ def test_resistance_records_event():
 
     assert damage == 50
     assert len(state.auto_events) == 1
-    assert "Resistance applied: damage reduced by 30 from 80 to 50." == state.auto_events[0]
+    assert "抗性效果触发：伤害减少 30，80 → 50。" == state.auto_events[0]
 
 
 def test_no_modifier_no_event():
@@ -237,8 +237,8 @@ def test_weakness_event_in_game():
 
             auto = info.get("auto_executed", [])
             for event in auto:
-                if "Weakness applied:" in event:
-                    assert "damage doubled" in event
+                if "弱点效果触发：" in event:
+                    assert "伤害翻倍" in event
                     return
 
             action = actions[0]
@@ -267,8 +267,8 @@ def test_resistance_event_in_game():
 
             auto = info.get("auto_executed", [])
             for event in auto:
-                if "Resistance applied:" in event:
-                    assert "damage reduced by" in event
+                if "抗性效果触发：" in event:
+                    assert "伤害减少" in event
                     return
 
             action = actions[0]
@@ -301,13 +301,13 @@ def test_passive_ability_trigger_records_event():
     # card.ability is a single PassiveAbility instance (not a list)
     # to match what _has_passive_ability checks
     card.ability = ability
-    card.name = "Manaphy"
+    card.name = "玛纳霏"
 
     action = MagicMock()
     trigger_passive_ability(card, action, state, AbilityTrigger.ATTACKED)
 
     assert len(state.auto_events) == 1
-    assert "Passive ability triggered: Manaphy's Wave Veil." == state.auto_events[0]
+    assert "被动特性触发：玛纳霏 的 Wave Veil。" == state.auto_events[0]
     # Verify use_ability was called
     card.use_ability.assert_called_once_with(action, state)
 
@@ -344,8 +344,8 @@ def test_ability_trigger_in_game():
 
         auto = info.get("auto_executed", [])
         for event in auto:
-            if "Passive ability triggered:" in event:
-                assert "'s " in event
+            if "被动特性触发：" in event:
+                assert " 的 " in event
                 return
 
         action = actions[0]
@@ -375,9 +375,9 @@ def test_knockout_and_prize_events_in_game():
 
             auto = info.get("auto_executed", [])
             for event in auto:
-                if "was knocked out." in event:
+                if "被击倒了。" in event:
                     found_knockout = True
-                if "prize card(s) taken." in event:
+                if "张奖赏卡。" in event:
                     found_prize = True
 
             if found_knockout and found_prize:
@@ -408,7 +408,7 @@ def test_auto_draw_event_on_turn_switch():
 
         auto = info.get("auto_executed", [])
         for event in auto:
-            if "Turn switched to" in event and "card drawn from deck to hand." in event:
+            if "轮到 " in event and "抽1张卡到手牌。" in event:
                 found_draw = True
 
         if found_draw:
@@ -461,7 +461,7 @@ def test_knockout_event_format():
 
     # Create a proper target card mock that works with discard_pokemon
     target = MagicMock()
-    target.name = "Charizard ex"
+    target.name = "喷火龙ex"
     target.position = PokemonPosition.BENCH
     target.prize = 1
     target.attachment = []
@@ -493,6 +493,6 @@ def test_knockout_event_format():
         pass
 
     # Check that knockout event was recorded
-    knockout_events = [e for e in state.auto_events if "was knocked out." in e]
+    knockout_events = [e for e in state.auto_events if "被击倒了。" in e]
     assert len(knockout_events) >= 1
-    assert "Charizard ex was knocked out." in knockout_events[0]
+    assert "喷火龙ex 被击倒了。" in knockout_events[0]

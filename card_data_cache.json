@@ -16,11 +16,11 @@
     "effect": "{C} Pokémon in play (both yours and your opponent's) have no Abilities."
   },
   "ASR-046": {
-    "name": "Radiant Greninja",
+    "name": "光辉甲贺忍蛙",
     "set_name": "ASR",
     "number": "046",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh10/046/high.jpg",
+    "img": "/cards/CSVM1bC-003.png",
     "hp": 130,
     "stage": "Basic",
     "types": [
@@ -50,19 +50,19 @@
     ]
   },
   "ASR-154": {
-    "name": "Switch Cart",
+    "name": "交替推车",
     "set_name": "ASR",
     "number": "154",
     "card_type": "Item",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh10/154/high.jpg",
+    "img": "/cards/CSVM1cC-008.png",
     "effect": "Switch your Active Basic Pokémon with 1 of your Benched Pokémon. If you do, heal 30 damage from the Pokémon you moved to your Bench."
   },
   "BRS-121": {
-    "name": "Bibarel",
+    "name": "大尾狸",
     "set_name": "BRS",
     "number": "121",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh9/121/high.jpg",
+    "img": "/cards/CSVE2pC-019.png",
     "hp": 120,
     "stage": "Stage1",
     "types": [
@@ -93,27 +93,27 @@
     ]
   },
   "BRS-137": {
-    "name": "Collapsed Stadium",
+    "name": "崩塌的竞技场",
     "set_name": "BRS",
     "number": "137",
     "card_type": "Stadium",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh9/137/high.jpg",
+    "img": "/cards/CSVM1bC-031.png",
     "effect": "Each player can't have more than 4 Benched Pokémon. If a player has 5 or more Benched Pokémon, they discard Benched Pokémon until they have 4 Pokémon on the Bench. The player who played this card discards first. If more than one effect changes the number of Benched Pokémon allowed, use the smaller number."
   },
   "BRS-151": {
-    "name": "Double Turbo Energy",
+    "name": "双重涡轮能量",
     "set_name": "BRS",
     "number": "151",
     "card_type": "Special Energy",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh9/151/high.jpg",
+    "img": "/cards/CSVM1cC-028.png",
     "effect": "As long as this card is attached to a Pokémon, it provides ColorlessColorless Energy.\nThe attacks of the Pokémon this card is attached to do 20 less damage to your opponent's Pokémon (before applying Weakness and Resistance)."
   },
   "BRS-040": {
-    "name": "Lumineon V",
+    "name": "霓虹鱼V",
     "set_name": "BRS",
     "number": "040",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh9/040/high.jpg",
+    "img": "/cards/CSVM1bC-001.png",
     "tags": [
       "V"
     ],
@@ -146,11 +146,11 @@
     ]
   },
   "BRS-041": {
-    "name": "Manaphy",
+    "name": "玛纳霏",
     "set_name": "BRS",
     "number": "041",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh9/041/high.jpg",
+    "img": "/cards/CSVM1bC-002.png",
     "hp": 70,
     "stage": "Basic",
     "types": [
@@ -177,11 +177,11 @@
     ]
   },
   "BRS-124": {
-    "name": "Minccino",
+    "name": "泡沫栗鼠",
     "set_name": "BRS",
     "number": "124",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh9/124/high.jpg",
+    "img": "/cards/CBB4C-1501.png",
     "hp": 60,
     "stage": "Basic",
     "types": [
@@ -213,11 +213,11 @@
     ]
   },
   "BRS-158": {
-    "name": "Raichu V",
+    "name": "雷丘V",
     "set_name": "BRS",
     "number": "158",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh9/158/high.jpg",
+    "img": "/cards/CSVM1cC-002.png",
     "tags": [
       "V"
     ],
@@ -254,11 +254,11 @@
     ]
   },
   "BRS-048": {
-    "name": "Raikou V",
+    "name": "雷公V",
     "set_name": "BRS",
     "number": "048",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh9/048/high.jpg",
+    "img": "/cards/CSVM1cC-004.png",
     "tags": [
       "V"
     ],
@@ -290,11 +290,11 @@
     ]
   },
   "CRZ-111": {
-    "name": "Bidoof",
+    "name": "大牙狸",
     "set_name": "CRZ",
     "number": "111",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh12.5/111/high.jpg",
+    "img": "/cards/CSVE1C-096.png",
     "hp": 60,
     "stage": "Basic",
     "types": [
@@ -323,27 +323,27 @@
     ]
   },
   "CRZ-127": {
-    "name": "Energy Retrieval",
+    "name": "能量回收",
     "set_name": "CRZ",
     "number": "127",
     "card_type": "Item",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh12.5/127/high.jpg",
+    "img": "/cards/SVP-235.png",
     "effect": "Put up to 2 basic Energy cards from your discard pile into your hand."
   },
   "CRZ-135": {
-    "name": "Lost Vacuum",
+    "name": "放逐吸尘器",
     "set_name": "CRZ",
     "number": "135",
     "card_type": "Item",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh12.5/135/high.jpg",
+    "img": "/cards/CSVM1cC-015.png",
     "effect": "You can use this card only if you put another card from your hand in the Lost Zone.\nChoose a Pokémon Tool attached to any Pokémon, or any Stadium in play, and put it in the Lost Zone."
   },
   "CRZ-020": {
-    "name": "Radiant Charizard",
+    "name": "光辉喷火龙",
     "set_name": "CRZ",
     "number": "020",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh12.5/020/high.jpg",
+    "img": "/cards/CSVM1aC-003.png",
     "hp": 160,
     "stage": "Basic",
     "types": [
@@ -375,11 +375,11 @@
     ]
   },
   "CRZ-045": {
-    "name": "Rotom V",
+    "name": "切割洛托姆",
     "set_name": "CRZ",
     "number": "045",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh12.5/045/high.jpg",
+    "img": "/cards/CSV9C-005.png",
     "tags": [
       "V"
     ],
@@ -447,19 +447,19 @@
     ]
   },
   "LOR-171": {
-    "name": "Gift Energy",
+    "name": "馈赠能量",
     "set_name": "LOR",
     "number": "171",
     "card_type": "Special Energy",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh11/171/high.jpg",
+    "img": "/cards/CSVE2C-202.png",
     "effect": "As long as this card is attached to a Pokémon, it provides Colorless Energy.\nIf the Pokémon this card is attached to is Knocked Out by damage from an attack from your opponent's Pokémon, draw cards until you have 7 cards in your hand."
   },
   "LOR-143": {
-    "name": "Snorlax",
+    "name": "卡比兽",
     "set_name": "LOR",
     "number": "143",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh11/143/high.jpg",
+    "img": "/cards/SVP-277.png",
     "hp": 150,
     "stage": "Basic",
     "types": [
@@ -489,11 +489,11 @@
     ]
   },
   "MEW-151": {
-    "name": "Mew ex",
+    "name": "梦幻ex",
     "set_name": "MEW",
     "number": "151",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv03.5/151/high.jpg",
+    "img": "/cards/CSVM1bC-004.png",
     "tags": [
       "ex"
     ],
@@ -526,11 +526,11 @@
     ]
   },
   "MEW-017": {
-    "name": "Pidgeotto",
+    "name": "比比鸟",
     "set_name": "MEW",
     "number": "017",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv03.5/017/high.jpg",
+    "img": "/cards/CSVM1aC-009.png",
     "hp": 80,
     "stage": "Stage1",
     "types": [
@@ -552,11 +552,11 @@
     ]
   },
   "MEW-016": {
-    "name": "Pidgey",
+    "name": "波波",
     "set_name": "MEW",
     "number": "016",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv03.5/016/high.jpg",
+    "img": "/cards/CSVM1aC-008.png",
     "hp": 50,
     "stage": "Basic",
     "types": [
@@ -589,19 +589,19 @@
     ]
   },
   "MEW-165": {
-    "name": "Rigid Band",
+    "name": "坚硬束带",
     "set_name": "MEW",
     "number": "165",
     "card_type": "Pokémon Tool",
-    "img": "https://assets.tcgdex.net/en/sv/sv03.5/165/high.jpg",
+    "img": "/cards/CSVE2C-166.png",
     "effect": "The Stage 1 Pokémon this card is attached to takes 30 less damage from attacks from your opponent's Pokémon (after applying Weakness and Resistance)."
   },
   "MEW-123": {
-    "name": "Scyther",
+    "name": "飞天螳螂",
     "set_name": "MEW",
     "number": "123",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv03.5/123/high.jpg",
+    "img": "/cards/CSV7C-003.png",
     "hp": 70,
     "stage": "Basic",
     "types": [
@@ -635,19 +635,19 @@
     ]
   },
   "OBF-186": {
-    "name": "Arven",
+    "name": "派帕",
     "set_name": "OBF",
     "number": "186",
     "card_type": "Supporter",
-    "img": "https://assets.tcgdex.net/en/sv/sv03/186/high.jpg",
+    "img": "/cards/SVP-207.png",
     "effect": "Search your deck for an Item card and a Pokémon Tool card, reveal them, and put them into your hand. Then, shuffle your deck."
   },
   "OBF-026": {
-    "name": "Charmander",
+    "name": "小火龙",
     "set_name": "OBF",
     "number": "026",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv03/026/high.jpg",
+    "img": "/cards/CSVM1aC-001.png",
     "hp": 60,
     "stage": "Basic",
     "types": [
@@ -669,11 +669,11 @@
     ]
   },
   "OBF-080": {
-    "name": "Cleffa",
+    "name": "皮宝宝",
     "set_name": "OBF",
     "number": "080",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv03/080/high.jpg",
+    "img": "/cards/SVP-211.png",
     "hp": 30,
     "stage": "Basic",
     "types": [
@@ -693,19 +693,19 @@
     ]
   },
   "OBF-189": {
-    "name": "Letter of Encouragement",
+    "name": "鼓励信",
     "set_name": "OBF",
     "number": "189",
     "card_type": "Item",
-    "img": "https://assets.tcgdex.net/en/sv/sv03/189/high.jpg",
+    "img": "/cards/CSVH4aC-010.png",
     "effect": "You can use this card only if any of your Pokémon were Knocked Out during your opponent's last turn.\n\nSearch your deck for up to 3 Basic Energy cards, reveal them, and put them into your hand. Then, shuffle your deck."
   },
   "OBF-164": {
-    "name": "Pidgeot ex",
+    "name": "大比鸟ex",
     "set_name": "OBF",
     "number": "164",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv03/164/high.jpg",
+    "img": "/cards/CSVM1aC-010.png",
     "tags": [
       "ex"
     ],
@@ -738,11 +738,11 @@
     ]
   },
   "OBF-141": {
-    "name": "Scizor",
+    "name": "巨钳螳螂ex",
     "set_name": "OBF",
     "number": "141",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv03/141/high.jpg",
+    "img": "/cards/CSV7C-226.png",
     "hp": 140,
     "stage": "Stage1",
     "types": [
@@ -776,19 +776,19 @@
     ]
   },
   "OBF-196": {
-    "name": "Town Store",
+    "name": "城镇百货",
     "set_name": "OBF",
     "number": "196",
     "card_type": "Stadium",
-    "img": "https://assets.tcgdex.net/en/sv/sv03/196/high.jpg",
+    "img": "/cards/CSVM1cC-027.png",
     "effect": "Once during each player's turn, that player may search their deck for a Pokémon Tool card, reveal it, and put it into their hand. Then, that player shuffles their deck."
   },
   "PAF-054": {
-    "name": "Charizard ex",
+    "name": "喷火龙ex",
     "set_name": "PAF",
     "number": "054",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv04.5/054/high.jpg",
+    "img": "/cards/CSVM1aC-006.png",
     "tags": [
       "ex"
     ],
@@ -821,11 +821,11 @@
     ]
   },
   "PAF-007": {
-    "name": "Charmander",
+    "name": "小火龙",
     "set_name": "PAF",
     "number": "007",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv04.5/007/high.jpg",
+    "img": "/cards/CSVM1aC-001.png",
     "hp": 70,
     "stage": "Basic",
     "types": [
@@ -858,11 +858,11 @@
     ]
   },
   "PAF-008": {
-    "name": "Charmeleon",
+    "name": "火恐龙",
     "set_name": "PAF",
     "number": "008",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv04.5/008/high.jpg",
+    "img": "/cards/CSVM1aC-002.png",
     "hp": 90,
     "stage": "Stage1",
     "types": [
@@ -891,35 +891,35 @@
     ]
   },
   "PAF-080": {
-    "name": "Iono",
+    "name": "奇树",
     "set_name": "PAF",
     "number": "080",
     "card_type": "Supporter",
-    "img": "https://assets.tcgdex.net/en/sv/sv04.5/080/high.jpg",
+    "img": "/cards/CSVH4aC-021.png",
     "effect": "Each player shuffles their hand and puts it on the bottom of their deck. If either player put any cards on the bottom of their deck in this way, each player draws a card for each of their remaining Prize cards."
   },
   "PAF-084": {
-    "name": "Nest Ball",
+    "name": "巢穴球",
     "set_name": "PAF",
     "number": "084",
     "card_type": "Item",
-    "img": "https://assets.tcgdex.net/en/sv/sv04.5/084/high.jpg",
+    "img": "/cards/CSVH4C-036.png",
     "effect": "Search your deck for a Basic Pokémon and put it onto your Bench. Then, shuffle your deck."
   },
   "PAF-087": {
-    "name": "Professor's Research",
+    "name": "博士的研究",
     "set_name": "PAF",
     "number": "087",
     "card_type": "Supporter",
-    "img": "https://assets.tcgdex.net/en/sv/sv04.5/087/high.jpg",
+    "img": "/cards/CSVH4eC-047.png",
     "effect": "Discard your hand and draw 7 cards."
   },
   "PAF-027": {
-    "name": "Ralts",
+    "name": "拉鲁拉丝",
     "set_name": "PAF",
     "number": "027",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv04.5/027/high.jpg",
+    "img": "/cards/CSVM1bC-005.png",
     "hp": 70,
     "stage": "Basic",
     "types": [
@@ -941,67 +941,67 @@
     ]
   },
   "PAF-089": {
-    "name": "Rare Candy",
+    "name": "神奇糖果",
     "set_name": "PAF",
     "number": "089",
     "card_type": "Item",
-    "img": "https://assets.tcgdex.net/en/sv/sv04.5/089/high.jpg",
+    "img": "/cards/CSVH4C-038.png",
     "effect": "Choose 1 of your Basic Pokémon in play. If you have a Stage 2 card in your hand that evolves from that Pokémon, put that card onto the Basic Pokémon to evolve it, skipping the Stage 1. You can't use this card during your first turn or on a Basic Pokémon that was put into play this turn."
   },
   "PAF-091": {
-    "name": "Ultra Ball",
+    "name": "高级球",
     "set_name": "PAF",
     "number": "091",
     "card_type": "Item",
-    "img": "https://assets.tcgdex.net/en/sv/sv04.5/091/high.jpg",
+    "img": "/cards/CSVH4C-037.png",
     "effect": "You can use this card only if you discard 2 other cards from your hand.\n\nSearch your deck for a Pokémon, reveal it, and put it into your hand. Then, shuffle your deck."
   },
   "PAL-171": {
-    "name": "Artazon",
+    "name": "深钵镇",
     "set_name": "PAL",
     "number": "171",
     "card_type": "Stadium",
-    "img": "https://assets.tcgdex.net/en/sv/sv02/171/high.jpg",
+    "img": "/cards/CSVM1bC-033.png",
     "effect": "Once during each player's turn, that player may search their deck for a Basic Pokémon that doesn't have a Rule Box and put it onto their Bench. Then, that player shuffles their deck. (Pokémon ex, Pokémon V, etc. have Rule Boxes.)"
   },
   "PAL-265": {
-    "name": "Boss's Orders",
+    "name": "老大的指令",
     "set_name": "PAL",
     "number": "265",
     "card_type": "Supporter",
-    "img": "https://assets.tcgdex.net/en/sv/sv02/265/high.jpg",
+    "img": "/cards/CSVH4aC-022.png",
     "effect": "Switch in 1 of your opponent's Benched Pokémon to the Active Spot."
   },
   "PAL-173": {
-    "name": "Bravery Charm",
+    "name": "勇气护符",
     "set_name": "PAL",
     "number": "173",
     "card_type": "Pokémon Tool",
-    "img": "https://assets.tcgdex.net/en/sv/sv02/173/high.jpg",
+    "img": "/cards/SVP-295.png",
     "effect": "The Basic Pokémon this card is attached to gets +50 HP."
   },
   "PAL-183": {
-    "name": "Great Ball",
+    "name": "超级球",
     "set_name": "PAL",
     "number": "183",
     "card_type": "Item",
-    "img": "https://assets.tcgdex.net/en/sv/sv02/183/high.jpg",
+    "img": "/cards/CSVH4C-032.png",
     "effect": "Look at the top 7 cards of your deck. You may reveal a Pokémon you find there and put it into your hand. Shuffle the other cards back into your deck."
   },
   "PAL-190": {
-    "name": "Jet Energy",
+    "name": "喷射能量",
     "set_name": "PAL",
     "number": "190",
     "card_type": "Special Energy",
-    "img": "https://assets.tcgdex.net/en/sv/sv02/190/high.jpg",
+    "img": "/cards/CSV8C-263.png",
     "effect": "As long as this card is attached to a Pokémon, it provides {C} Energy.\n\nWhen you attach this card from your hand to 1 of your Benched Pokémon, switch that Pokémon with your Active Pokémon."
   },
   "PAL-264": {
-    "name": "Squawkabilly ex",
+    "name": "怒鹦哥ex",
     "set_name": "PAL",
     "number": "264",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv02/264/high.jpg",
+    "img": "/cards/CSVM1cC-007.png",
     "tags": [
       "ex"
     ],
@@ -1032,51 +1032,51 @@
     ]
   },
   "PAL-188": {
-    "name": "Super Rod",
+    "name": "厉害钓竿",
     "set_name": "PAL",
     "number": "188",
     "card_type": "Item",
-    "img": "https://assets.tcgdex.net/en/sv/sv02/188/high.jpg",
+    "img": "/cards/CSVH4C-033.png",
     "effect": "Shuffle up to 3 in any combination of Pokémon and Basic Energy cards from your discard pile into your deck."
   },
   "PAL-189": {
-    "name": "Superior Energy Retrieval",
+    "name": "超级能量回收",
     "set_name": "PAL",
     "number": "189",
     "card_type": "Item",
-    "img": "https://assets.tcgdex.net/en/sv/sv02/189/high.jpg",
+    "img": "/cards/SVP-236.png",
     "effect": "You can use this card only if you discard 2 other cards from your hand.\n\nPut up to 4 Basic Energy cards from your discard pile into your hand. (You can't choose a card you discarded with the effect of this card.)"
   },
   "PAL-193": {
-    "name": "Therapeutic Energy",
+    "name": "治疗能量",
     "set_name": "PAL",
     "number": "193",
     "card_type": "Special Energy",
-    "img": "https://assets.tcgdex.net/en/sv/sv02/193/high.jpg",
+    "img": "/cards/CSVE2C-204.png",
     "effect": "As long as this card is attached to a Pokémon, it provides {C} Energy.\n\nThe Pokémon this card is attached to recovers from being Asleep, Confused, or Paralyzed and can't be affected by those Special Conditions."
   },
   "PAR-160": {
-    "name": "Counter Catcher",
+    "name": "反击捕捉器",
     "set_name": "PAR",
     "number": "160",
     "card_type": "Item",
-    "img": "https://assets.tcgdex.net/en/sv/sv04/160/high.jpg",
+    "img": "/cards/CSVH4aC-008.png",
     "effect": "You can use this card only if you have more Prize cards remaining than your opponent.\n\nSwitch in 1 of your opponent's Benched Pokémon to the Active Spot."
   },
   "PAR-163": {
-    "name": "Earthen Vessel",
+    "name": "大地容器",
     "set_name": "PAR",
     "number": "163",
     "card_type": "Item",
-    "img": "https://assets.tcgdex.net/en/sv/sv04/163/high.jpg",
+    "img": "/cards/CSVH4C-034.png",
     "effect": "You can use this card only if you discard another card from your hand.\n\nSearch your deck for up to 2 Basic Energy cards, reveal them, and put them into your hand. Then, shuffle your deck."
   },
   "PAR-139": {
-    "name": "Gholdengo ex",
+    "name": "赛富豪ex",
     "set_name": "PAR",
     "number": "139",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv04/139/high.jpg",
+    "img": "/cards/CSV4C-089.png",
     "tags": [
       "ex"
     ],
@@ -1108,11 +1108,11 @@
     ]
   },
   "PAR-088": {
-    "name": "Gimmighoul",
+    "name": "索财灵",
     "set_name": "PAR",
     "number": "088",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv04/088/high.jpg",
+    "img": "/cards/CSV9C-096.png",
     "hp": 70,
     "stage": "Basic",
     "types": [
@@ -1134,11 +1134,11 @@
     ]
   },
   "PAR-056": {
-    "name": "Iron Bundle",
+    "name": "铁包袱",
     "set_name": "PAR",
     "number": "056",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv04/056/high.jpg",
+    "img": "/cards/CSV9C-052.png",
     "hp": 100,
     "stage": "Basic",
     "types": [
@@ -1168,11 +1168,11 @@
     ]
   },
   "PAR-248": {
-    "name": "Iron Hands ex",
+    "name": "铁臂膀",
     "set_name": "PAR",
     "number": "248",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv04/248/high.jpg",
+    "img": "/cards/CSVH4C-006.png",
     "tags": [
       "ex"
     ],
@@ -1212,11 +1212,11 @@
     ]
   },
   "PAR-126": {
-    "name": "Jirachi",
+    "name": "基拉祈",
     "set_name": "PAR",
     "number": "126",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv04/126/high.jpg",
+    "img": "/cards/CSVSC-039.png",
     "hp": 70,
     "stage": "Basic",
     "types": [
@@ -1244,27 +1244,27 @@
     ]
   },
   "PAR-166": {
-    "name": "Luxurious Cape",
+    "name": "豪华斗篷",
     "set_name": "PAR",
     "number": "166",
     "card_type": "Pokémon Tool",
-    "img": "https://assets.tcgdex.net/en/sv/sv04/166/high.jpg",
+    "img": "/cards/CSVM1bC-023.png",
     "effect": "If the Pokémon this card is attached to doesn't have a Rule Box, it gets +100 HP, and if it is Knocked Out by damage from an attack from your opponent's Pokémon, that player takes 1 more Prize card. (Pokémon ex, Pokémon V, etc. have Rule Boxes.)"
   },
   "PAR-257": {
-    "name": "Professor Turo's Scenario",
+    "name": "弗图博士的剧本",
     "set_name": "PAR",
     "number": "257",
     "card_type": "Supporter",
-    "img": "https://assets.tcgdex.net/en/sv/sv04/257/high.jpg",
+    "img": "/cards/CSVH4C-057.png",
     "effect": "Put 1 of your Pokémon in play into your hand. (Discard all cards attached to that Pokémon.)"
   },
   "PAR-086": {
-    "name": "Scream Tail",
+    "name": "吼叫尾",
     "set_name": "PAR",
     "number": "086",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv04/086/high.jpg",
+    "img": "/cards/CSVH4C-009.png",
     "hp": 90,
     "stage": "Basic",
     "types": [
@@ -1297,19 +1297,19 @@
     ]
   },
   "PAR-178": {
-    "name": "Technical Machine: Evolution",
+    "name": "招式学习器 进化",
     "set_name": "PAR",
     "number": "178",
     "card_type": "Pokémon Tool",
-    "img": "https://assets.tcgdex.net/en/sv/sv04/178/high.jpg",
+    "img": "/cards/CSVM1bC-025.png",
     "effect": "The Pokémon this card is attached to can use the attack on this card. (You still need the necessary Energy to use this attack.) If this card is attached to 1 of your Pokémon, discard it at the end of your turn."
   },
   "PGO-029": {
-    "name": "Zapdos",
+    "name": "闪电鸟",
     "set_name": "PGO",
     "number": "029",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh10.5/029/high.jpg",
+    "img": "/cards/CSVH4eC-013.png",
     "hp": 120,
     "stage": "Basic",
     "types": [
@@ -1338,11 +1338,11 @@
     ]
   },
   "PRE-043": {
-    "name": "Flutter Mane",
+    "name": "振翼发",
     "set_name": "PRE",
     "number": "043",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv08.5/043/high.jpg",
+    "img": "/cards/CSV9C-095.png",
     "hp": 90,
     "stage": "Basic",
     "types": [
@@ -1372,11 +1372,11 @@
     ]
   },
   "SFA-092": {
-    "name": "Fezandipiti ex",
+    "name": "吉雉鸡ex",
     "set_name": "SFA",
     "number": "092",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv06.5/092/high.jpg",
+    "img": "/cards/CSVNC-027.png",
     "tags": [
       "ex"
     ],
@@ -1409,19 +1409,19 @@
     ]
   },
   "SFA-061": {
-    "name": "Night Stretcher",
+    "name": "夜间担架",
     "set_name": "SFA",
     "number": "061",
     "card_type": "Item",
-    "img": "https://assets.tcgdex.net/en/sv/sv06.5/061/high.jpg",
+    "img": "/cards/CSV9C-263.png",
     "effect": "Put a Pokémon or a Basic Energy card from your discard pile into your hand."
   },
   "SIT-147": {
-    "name": "Archeops",
+    "name": "始祖大鸟",
     "set_name": "SIT",
     "number": "147",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh12/147/high.jpg",
+    "img": "/cards/CSZC-025.png",
     "hp": 150,
     "stage": "Stage2",
     "types": [
@@ -1451,27 +1451,27 @@
     ]
   },
   "SIT-153": {
-    "name": "Capturing Aroma",
+    "name": "捕获香氛",
     "set_name": "SIT",
     "number": "153",
     "card_type": "Item",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh12/153/high.jpg",
+    "img": "/cards/CSVH2aC-008.png",
     "effect": "Flip a coin. If heads, search your deck for an Evolution Pokémon, reveal it, and put it into your hand. If tails, search your deck for a Basic Pokémon, reveal it, and put it into your hand. Then, shuffle your deck."
   },
   "SIT-156": {
-    "name": "Forest Seal Stone",
+    "name": "森林封印石",
     "set_name": "SIT",
     "number": "156",
     "card_type": "Pokémon Tool",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh12/156/high.jpg",
+    "img": "/cards/CSVM1cC-020.png",
     "effect": "The Pokémon V this card is attached to can use the VSTAR Power on this card.\nStar Alchemy\nDuring your turn, you may search your deck for a card and put it into your hand. Then, shuffle your deck. (You can't use more than 1 VSTAR Power in a game.)"
   },
   "SIT-068": {
-    "name": "Kirlia",
+    "name": "奇鲁莉安",
     "set_name": "SIT",
     "number": "068",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh12/068/high.jpg",
+    "img": "/cards/CSVM1bC-006.png",
     "hp": 80,
     "stage": "Stage1",
     "types": [
@@ -1500,11 +1500,11 @@
     ]
   },
   "SIT-138": {
-    "name": "Lugia V",
+    "name": "洛奇亚ex",
     "set_name": "SIT",
     "number": "138",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh12/138/high.jpg",
+    "img": "/cards/CSV7C-163.png",
     "tags": [
       "V"
     ],
@@ -1543,11 +1543,11 @@
     ]
   },
   "SIT-139": {
-    "name": "Lugia VSTAR",
+    "name": "洛奇亚VSTAR",
     "set_name": "SIT",
     "number": "139",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh12/139/high.jpg",
+    "img": "/cards/CSZC-020.png",
     "tags": [
       "V"
     ],
@@ -1576,78 +1576,78 @@
     ]
   },
   "SIT-164": {
-    "name": "Serena",
+    "name": "莎莉娜",
     "set_name": "SIT",
     "number": "164",
     "card_type": "Supporter",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh12/164/high.jpg",
+    "img": "/cards/CSVE1C-152.png",
     "effect": "Choose 1:\n• Discard up to 3 cards from your hand. (You must discard at least 1 card.) If you do, draw cards until you have 5 cards in your hand.\n• Switch 1 of your opponent's Benched Pokémon V with their Active Pokémon."
   },
   "SIT-169": {
-    "name": "V Guard Energy",
+    "name": "V防守能量",
     "set_name": "SIT",
     "number": "169",
     "card_type": "Special Energy",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh12/169/high.jpg",
+    "img": "/cards/CS6.5C-072.png",
     "effect": "As long as this card is attached to a Pokémon, it provides Colorless Energy.\nThe Pokémon this card is attached to takes 30 less damage from attacks from your opponent's Pokémon V (after applying Weakness and Resistance). This effect can't be applied more than once at a time to the same Pokémon."
   },
   "SVE-007": {
-    "name": "Darkness Energy",
+    "name": "基本恶能量",
     "set_name": "SVE",
     "number": "007",
     "card_type": "Special Energy",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh7/236/high.jpg"
+    "img": "/cards/CSVH4pC-DAR.png"
   },
   "SVE-002": {
-    "name": "Fire Energy",
+    "name": "基本火能量",
     "set_name": "SVE",
     "number": "002",
     "card_type": "Special Energy",
-    "img": "https://assets.tcgdex.net/en/sv/sv03/230/high.jpg"
+    "img": "/cards/CSVH4C-FIR.png"
   },
   "SVE-004": {
-    "name": "Lightning Energy",
+    "name": "基本雷能量",
     "set_name": "SVE",
     "number": "004",
     "card_type": "Special Energy",
-    "img": "https://assets.tcgdex.net/en/sv/sv01/257/high.jpg"
+    "img": "/cards/CSVH4C-LIG.png"
   },
   "SVE-008": {
-    "name": "Metal Energy",
+    "name": "基本钢能量",
     "set_name": "SVE",
     "number": "008",
     "card_type": "Special Energy",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh7/237/high.jpg"
+    "img": "/cards/CSVH4C-MET.png"
   },
   "SVE-005": {
-    "name": "Psychic Energy",
+    "name": "基本超能量",
     "set_name": "SVE",
     "number": "005",
     "card_type": "Special Energy",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh6/232/high.jpg"
+    "img": "/cards/CSVH4C-PSY.png"
   },
   "SVI-169": {
-    "name": "Defiance Band",
+    "name": "不服输头带",
     "set_name": "SVI",
     "number": "169",
     "card_type": "Pokémon Tool",
-    "img": "https://assets.tcgdex.net/en/sv/sv01/169/high.jpg",
+    "img": "/cards/CSVH4C-045.png",
     "effect": "If you have more Prize cards remaining than your opponent, the attacks of the Pokémon this card is attached to do 30 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance)."
   },
   "SVI-170": {
-    "name": "Electric Generator",
+    "name": "电气发生器",
     "set_name": "SVI",
     "number": "170",
     "card_type": "Item",
-    "img": "https://assets.tcgdex.net/en/sv/sv01/170/high.jpg",
+    "img": "/cards/CSVM1cC-010.png",
     "effect": "Look at the top 5 cards of your deck and attach up to 2 Basic {L} Energy cards you find there to your Benched {L} Pokémon in any way you like. Shuffle the other cards back into your deck."
   },
   "SVI-086": {
-    "name": "Gardevoir ex",
+    "name": "沙奈朵ex",
     "set_name": "SVI",
     "number": "086",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv01/086/high.jpg",
+    "img": "/cards/CSVM1bC-007.png",
     "tags": [
       "ex"
     ],
@@ -1681,19 +1681,19 @@
     ]
   },
   "SVI-175": {
-    "name": "Jacq",
+    "name": "吉尼亚",
     "set_name": "SVI",
     "number": "175",
     "card_type": "Supporter",
-    "img": "https://assets.tcgdex.net/en/sv/sv01/175/high.jpg",
+    "img": "/cards/SVP-296.png",
     "effect": "Search your deck for up to 2 Evolution Pokémon, reveal them, and put them into your hand. Then, shuffle your deck."
   },
   "SVI-253": {
-    "name": "Miraidon ex",
+    "name": "密勒顿",
     "set_name": "SVI",
     "number": "253",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv01/253/high.jpg",
+    "img": "/cards/CSV9C-070.png",
     "tags": [
       "ex"
     ],
@@ -1726,19 +1726,19 @@
     ]
   },
   "TEF-144": {
-    "name": "Buddy-Buddy Poffin",
+    "name": "友好宝芬",
     "set_name": "TEF",
     "number": "144",
     "card_type": "Item",
-    "img": "https://assets.tcgdex.net/en/sv/sv05/144/high.jpg",
+    "img": "/cards/SVP-196.png",
     "effect": "Search your deck for up to 2 Basic Pokémon with 70 HP or less and put them onto your Bench. Then, shuffle your deck."
   },
   "TEF-137": {
-    "name": "Cinccino",
+    "name": "奇诺栗鼠",
     "set_name": "TEF",
     "number": "137",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv05/137/high.jpg",
+    "img": "/cards/CBB4C-1601.png",
     "hp": 110,
     "stage": "Stage1",
     "types": [
@@ -1772,19 +1772,19 @@
     ]
   },
   "TEF-145": {
-    "name": "Ciphermaniac's Codebreaking",
+    "name": "暗码迷的解读",
     "set_name": "TEF",
     "number": "145",
     "card_type": "Supporter",
-    "img": "https://assets.tcgdex.net/en/sv/sv05/145/high.jpg",
+    "img": "/cards/SVP-198.png",
     "effect": "Search your deck for 2 cards, shuffle your deck, then put those cards on top of it in any order."
   },
   "TEF-129": {
-    "name": "Dudunsparce",
+    "name": "土龙节节",
     "set_name": "TEF",
     "number": "129",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv05/129/high.jpg",
+    "img": "/cards/CSV7C-162.png",
     "hp": 140,
     "stage": "Stage1",
     "types": [
@@ -1814,11 +1814,11 @@
     ]
   },
   "TEF-128": {
-    "name": "Dunsparce",
+    "name": "土龙弟弟",
     "set_name": "TEF",
     "number": "128",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv05/128/high.jpg",
+    "img": "/cards/CSV7C-161.png",
     "hp": 60,
     "stage": "Basic",
     "types": [
@@ -1851,59 +1851,59 @@
     ]
   },
   "TEF-151": {
-    "name": "Heavy Baton",
+    "name": "沉重接力棒",
     "set_name": "TEF",
     "number": "151",
     "card_type": "Pokémon Tool",
-    "img": "https://assets.tcgdex.net/en/sv/sv05/151/high.jpg",
+    "img": "/cards/CSV7C-188.png",
     "effect": "If the Pokémon this card is attached to has a Retreat Cost of exactly 4, is in the Active Spot, and is Knocked Out by damage from an attack from your opponent's Pokémon, move up to 3 Basic Energy cards from that Pokémon to your Benched Pokémon in any way you like."
   },
   "TEF-153": {
-    "name": "Master Ball",
+    "name": "大师球",
     "set_name": "TEF",
     "number": "153",
     "card_type": "Item",
-    "img": "https://assets.tcgdex.net/en/sv/sv05/153/high.jpg",
+    "img": "/cards/CSV7C-181.png",
     "effect": "Search your deck for a Pokémon, reveal it, and put it into your hand. Then, shuffle your deck."
   },
   "TEF-161": {
-    "name": "Mist Energy",
+    "name": "薄雾能量",
     "set_name": "TEF",
     "number": "161",
     "card_type": "Special Energy",
-    "img": "https://assets.tcgdex.net/en/sv/sv05/161/high.jpg",
+    "img": "/cards/CSV7C-204.png",
     "effect": "As long as this card is attached to a Pokémon, it provides {C} Energy.\n\nPrevent all effects of attacks used by your opponent's Pokémon done to the Pokémon this card is attached to. (Existing effects are not removed. Damage is not an effect.)"
   },
   "TEF-155": {
-    "name": "Morty's Conviction",
+    "name": "松叶的信心",
     "set_name": "TEF",
     "number": "155",
     "card_type": "Supporter",
-    "img": "https://assets.tcgdex.net/en/sv/sv05/155/high.jpg",
+    "img": "/cards/CSVH4C-059.png",
     "effect": "You can use this card only if you discard another card from your hand.\n\nDraw a card for each of your opponent's Benched Pokémon."
   },
   "TEF-157": {
-    "name": "Prime Catcher",
+    "name": "顶尖捕捉器",
     "set_name": "TEF",
     "number": "157",
     "card_type": "Item",
-    "img": "https://assets.tcgdex.net/en/sv/sv05/157/high.jpg",
+    "img": "/cards/CSV7C-180.png",
     "effect": "Switch in 1 of your opponent's Benched Pokémon to the Active Spot. If you do, switch your Active Pokémon with 1 of your Benched Pokémon."
   },
   "TEF-159": {
-    "name": "Rescue Board",
+    "name": "紧急滑板",
     "set_name": "TEF",
     "number": "159",
     "card_type": "Pokémon Tool",
-    "img": "https://assets.tcgdex.net/en/sv/sv05/159/high.jpg",
+    "img": "/cards/CSVH4aC-013.png",
     "effect": "The Retreat Cost of the Pokémon this card is attached to is {C} less. If that Pokémon's remaining HP is 30 or less, it has no Retreat Cost."
   },
   "TWM-200": {
-    "name": "Dragapult ex",
+    "name": "多龙巴鲁托ex",
     "set_name": "TWM",
     "number": "200",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv06/200/high.jpg",
+    "img": "/cards/CSV8C-159.png",
     "tags": [
       "ex"
     ],
@@ -1940,11 +1940,11 @@
     ]
   },
   "TWM-129": {
-    "name": "Drakloak",
+    "name": "多龙奇",
     "set_name": "TWM",
     "number": "129",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv06/129/high.jpg",
+    "img": "/cards/CSV8C-158.png",
     "hp": 90,
     "stage": "Stage1",
     "types": [
@@ -1973,11 +1973,11 @@
     ]
   },
   "TWM-128": {
-    "name": "Dreepy",
+    "name": "多龙梅西亚",
     "set_name": "TWM",
     "number": "128",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv06/128/high.jpg",
+    "img": "/cards/CSV8C-157.png",
     "hp": 70,
     "stage": "Basic",
     "types": [
@@ -2009,19 +2009,19 @@
     ]
   },
   "TWM-152": {
-    "name": "Hyper Aroma",
+    "name": "高级香氛",
     "set_name": "TWM",
     "number": "152",
     "card_type": "Item",
-    "img": "https://assets.tcgdex.net/en/sv/sv06/152/high.jpg",
+    "img": "/cards/CSV7C-178.png",
     "effect": "Search your deck for up to 3 Stage 1 Pokémon, reveal them, and put them into your hand. Then, shuffle your deck."
   },
   "TWM-095": {
-    "name": "Munkidori",
+    "name": "愿增猿",
     "set_name": "TWM",
     "number": "095",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv06/095/high.jpg",
+    "img": "/cards/CSVNC-019.png",
     "hp": 110,
     "stage": "Basic",
     "types": [
@@ -2050,19 +2050,19 @@
     ]
   },
   "TWM-163": {
-    "name": "Secret Box",
+    "name": "秘密箱",
     "set_name": "TWM",
     "number": "163",
     "card_type": "Item",
-    "img": "https://assets.tcgdex.net/en/sv/sv06/163/high.jpg",
+    "img": "/cards/CSV8C-176.png",
     "effect": "You can use this card only if you discard 3 other cards from your hand.\n\nSearch your deck for an Item card, a Pokémon Tool card, a Supporter card, and a Stadium card, reveal them, and put them into your hand. Then, shuffle your deck."
   },
   "VIV-025": {
-    "name": "Charizard",
+    "name": "光辉喷火龙",
     "set_name": "VIV",
     "number": "25",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh4/25/high.jpg",
+    "img": "/cards/CSVM1aC-003.png",
     "hp": 170,
     "stage": "Stage2",
     "types": [
@@ -2092,11 +2092,11 @@
     ]
   },
   "VIV-024": {
-    "name": "Charmeleon",
+    "name": "火恐龙",
     "set_name": "VIV",
     "number": "24",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/swsh/swsh4/24/high.jpg",
+    "img": "/cards/CSVM1aC-002.png",
     "hp": 90,
     "stage": "Stage1",
     "types": [
@@ -2130,11 +2130,11 @@
     ]
   },
   "WHT-044": {
-    "name": "Frillish",
+    "name": "轻飘飘",
     "set_name": "WHT",
     "number": "044",
     "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv10.5w/044/high.jpg",
+    "img": "/cards/CS3bC-041.png",
     "hp": 80,
     "stage": "Basic",
     "types": [

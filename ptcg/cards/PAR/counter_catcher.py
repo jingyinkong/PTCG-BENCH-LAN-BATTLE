@@ -3,6 +3,7 @@ from ptcg.core.card import ItemCard
 from ptcg.core.enums import CardPosition, CardType
 from ptcg.core.reducer import reduce_choose_card_actions
 from ptcg.utils.utils import current_player, move_cards, opponent_player, switch_pokemon
+from ptcg.i18n import t as _t
 
 
 class PAR160CounterCatcher(ItemCard):
@@ -11,7 +12,7 @@ class PAR160CounterCatcher(ItemCard):
         self.set_name = "PAR"
         self.number = "160"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Counter Catcher"
+        self.name = "反击捕捉器"
         self.cardType = CardType.NONE
         self.text = (
             "You can use this card only if you have more Prize cards remaining than your opponet. "
@@ -37,7 +38,7 @@ class PAR160CounterCatcher(ItemCard):
                 self, (player.id, CardPosition.HAND), (player.id, CardPosition.DISCARD), state
             )
 
-            tips = "You used Counter Catcher. You should choose 1 of your opponent's benched Pokemon and switch it with their active Pokemon."
+            tips = _t("supporter.counter_catcher")
             actions = choose_card_actions(
                 player.id, opponent.id, 1, 1, opponent.bench, tips=tips, source=self
             )

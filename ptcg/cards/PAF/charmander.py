@@ -14,7 +14,7 @@ class PAF007Charmander(PokemonCard):
         self.set_name = "PAF"
         self.number = "007"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Charmander"
+        self.name = "小火龙"
         self.hp = 70
         self.pokemonType = PokemonType.NORMAL
         self.pokemonRule = PokemonRule.NONE

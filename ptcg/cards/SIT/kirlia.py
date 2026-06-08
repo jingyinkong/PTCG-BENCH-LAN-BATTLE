@@ -22,12 +22,13 @@ from ptcg.core.reducer import (
     reduce_evolve_pokemon_action,
 )
 from ptcg.utils.utils import check_energy, current_player, move_cards, opponent_active
+from ptcg.i18n import t as _t
 
 
 class SIT068Kirlia(PokemonCard):
     def __init__(self) -> None:
         super().__init__()
-        self.name = "Kirlia"
+        self.name = "奇鲁莉安"
         self.set_name = "SIT"
         self.number = "068"
         self.id = f"{self.set_name}-{self.number}"
@@ -102,7 +103,7 @@ class SIT068Kirlia(PokemonCard):
             player = current_player(state)
 
             discard_candidates = [c for c in player.hand if c is not self]
-            tips = "You used Refinement. Choose 1 card from your hand to discard."
+            tips = _t("supporter.kirlia.refinement")
             actions = choose_card_actions(
                 player.id, player.id, 1, 1, discard_candidates, tips=tips, source=self
             )

@@ -21,7 +21,7 @@ class OBF080Cleffa(PokemonCard):
         self.set_name = "OBF"
         self.number = "080"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Cleffa"
+        self.name = "皮宝宝"
         self.hp = 30
         self.pokemonType = PokemonType.NORMAL
         self.pokemonRule = PokemonRule.NONE

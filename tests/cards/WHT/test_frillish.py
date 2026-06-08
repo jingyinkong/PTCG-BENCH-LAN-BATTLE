@@ -6,7 +6,7 @@ from ptcg.core.enums import CardType, PokemonType, Stage, SuperType
 @pytest.mark.unit
 def test_frillish_attributes():
     card = registry.get("WHT-044")()
-    assert card.name == "Frillish"
+    assert card.name == "轻飘飘"
     assert card.hp == 80
     assert card.stage == Stage.BASIC
     assert card.superType == SuperType.POKEMON

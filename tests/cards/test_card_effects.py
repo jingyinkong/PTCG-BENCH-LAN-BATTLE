@@ -78,7 +78,7 @@ class TestPokemonCardEffects:
         """CRZ-020 Radiant Charizard 是基础宝可梦且只能放1张。"""
         card = registry.get("CRZ-020")()
         assert card.stage == Stage.BASIC
-        assert card.name == "Radiant Charizard"
+        assert card.name == "光辉喷火龙"
 
     def test_gardevoir_ex_has_embrace_ability(self):
         """SVI-086 Gardevoir ex 有 Psychic Embrace 特性。"""
@@ -99,14 +99,14 @@ class TestTrainerCardEffects:
         card = registry.get("PAL-265")()
         assert card.superType == SuperType.TRAINER
         assert card.trainerType == TrainerType.SUPPORTER
-        assert card.name == "Boss's Orders"
+        assert card.name == "老大的指令"
         assert "Switch 1 of your opponent's Benched" in card.text
 
     def test_ultra_ball_is_item(self):
         """PAF-091 Ultra Ball 是物品卡。"""
         card = registry.get("PAF-091")()
         assert card.trainerType == TrainerType.ITEM
-        assert "Ultra Ball" in card.name
+        assert "高级球" in card.name
 
     def test_rare_candy_is_item(self):
         """PAF-089 Rare Candy 是物品卡。"""
@@ -122,7 +122,7 @@ class TestTrainerCardEffects:
         """PAF-080 Iono 是支援者卡。"""
         card = registry.get("PAF-080")()
         assert card.trainerType == TrainerType.SUPPORTER
-        assert "Iono" in card.name
+        assert "奇树" in card.name
 
     def test_arven_is_supporter(self):
         """OBF-186 Arven 是支援者卡。"""

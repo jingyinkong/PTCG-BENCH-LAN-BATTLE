@@ -10,7 +10,7 @@ class ASR154SwitchCart(ItemCard):
         self.set_name = "ASR"
         self.number = "154"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Switch Cart"
+        self.name = "交替推车"
         self.cardType = CardType.NONE
         self.text = "Switch your Active Basic Pokémon with 1 of your Benched Pokémon. If you do, heal 30 damage from Pokémon you moved to your Bench."
 

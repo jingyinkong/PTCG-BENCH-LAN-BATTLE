@@ -21,7 +21,7 @@ class BRS041Manaphy(PokemonCard):
         self.set_name = "BRS"
         self.number = "041"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Manaphy"
+        self.name = "玛纳霏"
         self.hp = 70
         self.pokemonType = PokemonType.NORMAL
         self.pokemonRule = PokemonRule.NONE

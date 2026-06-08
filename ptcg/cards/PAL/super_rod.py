@@ -3,6 +3,7 @@ from ptcg.core.card import ItemCard
 from ptcg.core.enums import CardPosition, CardType, EnergyType, SuperType
 from ptcg.core.reducer import reduce_choose_card_actions
 from ptcg.utils.utils import current_player, move_cards, shuffle_cards
+from ptcg.i18n import t as _t
 
 
 class PAL188SuperRod(ItemCard):
@@ -11,7 +12,7 @@ class PAL188SuperRod(ItemCard):
         self.set_name = "PAL"
         self.number = "188"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Super Rod"
+        self.name = "厉害钓竿"
         self.cardType = CardType.NONE
         self.text = "Shuffle up to 3 in any combination of Pokémon and basic Energy cards from your discard pile back into your deck."
 
@@ -40,7 +41,7 @@ class PAL188SuperRod(ItemCard):
                 or card.superType == SuperType.POKEMON
             ]
 
-            tips = "You used Super Rod. You can choose up to 3 in any combination of Pokemon and basic Energy cards from your discard pile back into your deck."
+            tips = _t("item.super_rod")
             actions = choose_card_actions(
                 player.id, player.id, 0, min(len(cardlist), 3), cardlist, tips=tips, source=self
             )

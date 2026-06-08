@@ -3,6 +3,7 @@ from ptcg.core.card import SupporterCard
 from ptcg.core.enums import CardPosition, CardType, Stage, SuperType
 from ptcg.core.reducer import reduce_choose_card_actions
 from ptcg.utils.utils import current_player, move_cards, shuffle_cards
+from ptcg.i18n import t as _t
 
 
 class SVI175Jacq(SupporterCard):
@@ -11,7 +12,7 @@ class SVI175Jacq(SupporterCard):
         self.set_name = "SVI"
         self.number = "175"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Jacq"
+        self.name = "吉尼亚"
         self.cardType = CardType.NONE
         self.text = "Search your deck for up to 2 Evolution Pokémon, reveal them, and put them into your hand. Then, shuffle your deck."
 
@@ -45,7 +46,7 @@ class SVI175Jacq(SupporterCard):
 
             if evolution_pokemon:
                 # Let player choose up to 2 Evolution Pokemon
-                tips = "You used Jacq. You may choose up to 2 Evolution Pokémon from your deck."
+                tips = _t("supporter.jacq")
                 actions = choose_card_actions(
                     player.id,
                     player.id,

@@ -5,6 +5,7 @@ from ptcg.core.card import Card, SupporterCard
 from ptcg.core.enums import CardPosition, CardType, PokemonType
 from ptcg.core.reducer import reduce_choose_card_actions
 from ptcg.utils.utils import current_player, move_cards, opponent_player, switch_pokemon
+from ptcg.i18n import t as _t
 
 
 class SIT164Serena(SupporterCard):
@@ -13,7 +14,7 @@ class SIT164Serena(SupporterCard):
         self.set_name = "SIT"
         self.number = "164"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Serena"
+        self.name = "莎莉娜"
         self.cardType = CardType.NONE
         self.text = "Choose 1: • Discard up to 3 cards from your hand. (You must discard at least 1 card.) If you do, draw cards until you have 5 cards in your hand. • Switch 1 of your opponent's Benched Pokémon V with their Active Pokémon."
 
@@ -45,7 +46,7 @@ class SIT164Serena(SupporterCard):
                 ],
             )
 
-            tips = "Choose an effect: (1) Discard 1-3 cards and draw to 5, or (2) Switch opponent's benched Pokemon V with their active Pokemon."
+            tips = _t("supporter.serena.choose_effect")
             actions = choose_card_actions(
                 player.id, player.id, 1, 1, choice_cards, tips=tips, source=self
             )
@@ -63,7 +64,7 @@ class SIT164Serena(SupporterCard):
         max_discard = min(3, len(player.hand))
         if max_discard < 1:
             return
-        tips = f"Choose 1 to {max_discard} cards from your hand to discard."
+        tips = _t("supporter.serena.discard").format(max_discard=max_discard)
         actions = choose_card_actions(
             player.id, player.id, 1, max_discard, player.hand, tips=tips, source=self
         )
@@ -89,7 +90,7 @@ class SIT164Serena(SupporterCard):
         if not benched_vs:
             return
 
-        tips = "Choose 1 of your opponent's Benched Pokemon V to switch with their Active Pokemon."
+        tips = _t("supporter.serena.choose_v")
         actions = choose_card_actions(state.turn, opponent.id, 1, 1, benched_vs, tips=tips)
         chosen_v = yield from reduce_choose_card_actions(actions, state)
         chosen_v = chosen_v[0]

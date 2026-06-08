@@ -18,7 +18,7 @@ from ptcg.utils.utils import (
 class TEF129Dudunsparce(PokemonCard):
     def __init__(self) -> None:
         super().__init__()
-        self.name = "Dudunsparce"
+        self.name = "土龙节节"
         self.set_name = "TEF"
         self.number = "129"
         self.id = f"{self.set_name}-{self.number}"

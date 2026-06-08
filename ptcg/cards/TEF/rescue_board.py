@@ -17,7 +17,7 @@ class TEF159RescueBoard(ToolCard):
         self.set_name = "TEF"
         self.number = "159"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Rescue Board"
+        self.name = "紧急滑板"
         self.cardType = CardType.NONE
         self.text = (
             "The Retreat Cost of the Pokémon this card is attached to is {C} less. "

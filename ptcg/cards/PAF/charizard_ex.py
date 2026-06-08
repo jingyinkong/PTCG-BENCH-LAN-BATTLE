@@ -19,6 +19,7 @@ from ptcg.core.enums import (
     SuperType
 )
 from ptcg.core.reducer import reduce_attach_energy_action, reduce_attack_action, reduce_choose_card_actions, reduce_evolve_pokemon_action
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     check_energy,
     current_all_pokemon,
@@ -33,7 +34,7 @@ from ptcg.utils.utils import (
 class PAF054CharizardEX(PokemonCard):
     def __init__(self) -> None:
         super().__init__()
-        self.name = "Charizard ex"
+        self.name = "喷火龙ex"
         self.set_name = "PAF"
         self.number = "054"
         self.id = f"{self.set_name}-{self.number}"
@@ -101,7 +102,7 @@ class PAF054CharizardEX(PokemonCard):
                 and CardType.FIRE in card.provides
             ]
 
-            tips = "You used the ability Infernal Reign. You can choose up to 3 Basic Fire Energy cards from your deck and attach them to your Pokemon in any way you like."
+            tips = _t("ability.charizard_ex.infernal_reign")
             actions = choose_card_actions(
                 player.id, player.id, 0, min(len(cards), 3), cards, tips=tips, source=self
             )
@@ -117,13 +118,14 @@ class PAF054CharizardEX(PokemonCard):
                 )
 
             for energy_card in chosen_card:
-                tips = f"Choose 1 of your Pokemon in play to attach the {energy_card.name}."
+                tips = _t("ability.charizard_ex.choose_energy_target").format(card_name=energy_card.name)
                 target_actions = choose_card_actions(
                     player.id, player.id, 1, 1, current_all_pokemon(state), tips=tips, source=self
                 )
                 target = yield from reduce_choose_card_actions(target_actions, state)
                 reduce_attach_energy_action(
-                    AttachEnergyAction(player.id, energy_card, target[0]), state
+                    AttachEnergyAction(player.id, energy_card, target[0]), state,
+                    is_ability=True,
                 )
 
             shuffle_cards(player.left)
@@ -135,7 +137,10 @@ class PAF054CharizardEX(PokemonCard):
             yield from self.use_ability(action, state)
 
         elif isinstance(action, AttackAction):
-            # Burning Darkness
-            opponent = opponent_player(state)
-            action.attack.damage = 180 + 30 * (6 - len(opponent.prize))
+            # Burning Darkness — card text: "This attack does 30 more damage
+            # for each Prize card your opponent has taken."
+            # So we count prizes the opponent has taken from the current player.
+            player = current_player(state)
+            opponent_prizes_taken = 6 - len(player.prize)
+            action.attack.damage = 180 + 30 * opponent_prizes_taken
             yield from reduce_attack_action(action, state)

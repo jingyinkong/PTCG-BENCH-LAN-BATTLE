@@ -16,6 +16,7 @@ from ptcg.core.reducer import (
     reduce_choose_card_actions,
     reduce_play_pokemon_action,
 )
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     check_energy,
     current_player,
@@ -31,7 +32,7 @@ class MEW151MewEX(PokemonCard):
         self.set_name = "MEW"
         self.number = "151"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Mew ex"
+        self.name = "梦幻ex"
         self.hp = 180
         self.pokemonType = PokemonType.EX
         self.cardType = CardType.PSYCHIC
@@ -145,7 +146,7 @@ class MEW151MewEX(PokemonCard):
             return
 
         # Choose which attack to copy
-        tips = f"You used Genome Hacking. Choose 1 of {opponent_active_pokemon.name}'s attacks to copy."
+        tips = _t("attack.mew_ex.genome_hacking").format(opponent_name=opponent_active_pokemon.name)
         actions = choose_card_actions(
             player.id, player.id, 1, 1, available_attacks, tips=tips, source=self
         )

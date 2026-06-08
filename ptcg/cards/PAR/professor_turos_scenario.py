@@ -2,6 +2,7 @@ from ptcg.core.action import UseSupporterAction, choose_card_actions
 from ptcg.core.card import SupporterCard
 from ptcg.core.enums import CardPosition, CardType, PokemonPosition, Stage
 from ptcg.core.reducer import reduce_choose_card_actions
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     current_all_pokemon, current_bench, current_player, discard_card, move_cards, move_pokemon
 )
@@ -13,7 +14,7 @@ class PAR257ProfessorTurosScenario(SupporterCard):
         self.set_name = "PAR"
         self.number = "257"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Professor Turo's Scenario"
+        self.name = "弗图博士的剧本"
         self.cardType = CardType.NONE
         self.text = "Put 1 of your Pokémon in play into your hand. (Discard all cards attached to that Pokémon.)"
 
@@ -34,7 +35,7 @@ class PAR257ProfessorTurosScenario(SupporterCard):
                 self, (player.id, CardPosition.HAND), (player.id, CardPosition.DISCARD), state
             )
 
-            tips = "You used Professor Turo's Scenario. You should choose 1 of your Pokemon and put it into your hand. Then, discard all cards attached to that Pokemon."
+            tips = _t("supporter.professor_turos_scenario.choose")
             actions = choose_card_actions(
                 player.id, player.id, 1, 1, current_all_pokemon(state), tips=tips, source=self
             )
@@ -44,7 +45,7 @@ class PAR257ProfessorTurosScenario(SupporterCard):
             if chosen_card.position == PokemonPosition.ACTIVE:
                 player.active.remove(chosen_card)
                 # choose a new active
-                tips = "You used Professor Turo's Scenario and choose the active Pokemon. You should choose 1 of your benched Pokemon and switch it onto active spot."
+                tips = _t("supporter.professor_turos_scenario.replace")
                 actions = choose_card_actions(
                     player.id, player.id, 1, 1, current_bench(state), tips=tips, source=self
                 )

@@ -11,7 +11,7 @@ class SVE004BasicLightningEnergy(EnergyCard):
         self.set_name = "SVE"
         self.number = "004"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Lightning Energy"
+        self.name = "基本雷能量"
         self.cardType = CardType.LIGHTNING
         self.energyType = EnergyType.BASIC
         self.provides = [CardType.LIGHTNING]

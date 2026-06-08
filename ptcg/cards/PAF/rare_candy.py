@@ -3,6 +3,7 @@ from ptcg.core.card import ItemCard, PokemonCard
 from ptcg.core.enums import CardPosition, CardType, Stage
 from ptcg.core.reducer import reduce_choose_card_actions
 from ptcg.utils.utils import current_all_pokemon, current_player, move_cards
+from ptcg.i18n import t as _t
 
 
 class PAF089RareCandy(ItemCard):
@@ -11,7 +12,7 @@ class PAF089RareCandy(ItemCard):
         self.set_name = "PAF"
         self.number = "089"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Rare Candy"
+        self.name = "神奇糖果"
         self.cardType = CardType.NONE
         self.text = "Choose 1 of your Basic Pokémon in play. If you have a Stage 2 card in your hand that evolves from that Pokémon, put that card on the Basic Pokémon. (This counts as evolving that Pokémon.) You can't use this card during your first turn or on a Basic Pokémon that was put into play this turn."
 
@@ -51,7 +52,7 @@ class PAF089RareCandy(ItemCard):
                         evolved_cardlist.append(card)
                         break
 
-            tips = "You used Rare Candy. You should choose a stage 2 Pokemon in your hand for evolution."
+            tips = _t("item.rare_candy.choose_stage2")
             actions = choose_card_actions(
                 player.id, player.id, 1, 1, evolved_cardlist, tips=tips, source=self
             )
@@ -63,7 +64,7 @@ class PAF089RareCandy(ItemCard):
                 if pokemon.name == evolved_card.evolveFrom[-1]:
                     evolving_cardlist.append(pokemon)
 
-            tips = "You used Rare Candy. You should choose a basic Pokemon in play to evolve."
+            tips = _t("item.rare_candy.choose_basic")
             actions = choose_card_actions(
                 player.id, player.id, 1, 1, evolving_cardlist, tips=tips, source=self
             )

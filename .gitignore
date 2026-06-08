@@ -55,3 +55,5 @@ bench_data/
 *.swo
 .omc/
 backend/data/
+frontend/public/cards/
+card_data/

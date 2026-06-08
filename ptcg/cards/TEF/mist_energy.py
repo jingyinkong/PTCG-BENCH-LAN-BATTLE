@@ -11,7 +11,7 @@ class TEF161MistEnergy(EnergyCard):
         self.set_name = "TEF"
         self.number = "161"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Mist Energy"
+        self.name = "薄雾能量"
         self.cardType = CardType.COLORLESS
         self.energyType = EnergyType.SPECIAL
         self.provides = [CardType.COLORLESS]

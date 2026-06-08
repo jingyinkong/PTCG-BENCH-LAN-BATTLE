@@ -13,6 +13,7 @@ from ptcg.core.card import ToolCard
 from ptcg.core.enums import *
 from ptcg.core.reducer import reduce_retreat_action
 from ptcg.core.reward import Reward
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import *
 
 
@@ -35,7 +36,7 @@ class Player:
         self.lostZone = []
 
         self.energyPlayedTurn = False
-        self.supporterPlayedTurn = True  # can't play supporter at first turn
+        self.supporterPlayedTurn = True  # 首回合默认禁止使用支援者（先手），后由_determine_first_player为后手方修正
         self.stadiumUsedTurn = False
         self.stadiumPlayedTurn = False
         self.retreatTurn = False
@@ -43,9 +44,11 @@ class Player:
         self.onceUsedTurn = self.get_once_used_turn()
         self.onceUsedGame = self.get_once_used_game()
 
-        self.firstTurn = True
+        self.firstTurn = True  # 首回合标记：禁止攻击（先手）+ 配合firstTurnPlayed禁止进化（双方）
 
         self.hasPokemonDead = False  # knocked down during opponent's last turn
+
+        self.mulligan_count = 0  # Mulligan count: opponent may draw extra cards per mulligan
 
         self.reward = Reward()
 
@@ -131,9 +134,15 @@ class Player:
             "total_turns": len(self.turn_action_history) + (1 if self.current_turn_actions else 0),
         }
 
-    def shuffle(self):
+    def shuffle(self, state=None):
         """
-        shuffle when game start until hand is valid
+        Shuffle deck at game start and deal opening hand.
+        Implements SV mulligan rule: if no Basic Pokemon in opening hand,
+        reveal hand, shuffle back, and redraw. Opponent may draw 1 extra
+        card per mulligan.
+
+        Args:
+            state: Optional State for recording mulligan auto_events.
         """
         random.shuffle(self.deck)
         self.hand = self.deck[:7]
@@ -144,7 +153,15 @@ class Player:
             return card.superType == SuperType.POKEMON and card.stage == Stage.BASIC
 
         if all(not can_play(card) for card in self.hand):
-            self.shuffle()
+            self.mulligan_count += 1
+            if state is not None:
+                player_name = "PLAYER1" if self.id == PlayerId.PLAYER1 else "PLAYER2"
+                state.auto_events.append(
+                    _t("event.mulligan_no_basic").format(
+                        player=player_name, count=self.mulligan_count
+                    )
+                )
+            self.shuffle(state)
 
         def set_cards_position(cards, position):
             for idx, card in enumerate(cards):
@@ -159,6 +176,36 @@ class Player:
         self.deck_composition = deck
         self.deck = copy.deepcopy(deck.cards)
 
+    def apply_mulligan_draws(self, opponent_mulligan_count: int, state) -> None:
+        """Draw extra cards due to opponent's mulligans.
+
+        Per SV rules, for each mulligan the opponent takes, this player
+        may draw 1 extra card (optional, up to opponent's mulligan count).
+
+        Args:
+            opponent_mulligan_count: Number of mulligans opponent took.
+            state: Current game state (for recording auto_events).
+        """
+        if opponent_mulligan_count <= 0:
+            return
+        # Draw one card per opponent mulligan (mandatory per SV rules — actually optional
+        # in the official rules, but we implement the standard choice of drawing all)
+        for i in range(opponent_mulligan_count):
+            if len(self.left) == 0:
+                break
+            player_name = "PLAYER1" if self.id == PlayerId.PLAYER1 else "PLAYER2"
+            state.auto_events.append(
+                _t("event.mulligan_extra_draw").format(
+                    player=player_name, n=i + 1, total=opponent_mulligan_count
+                )
+            )
+            move_cards(
+                self.left[0],
+                (self.id, CardPosition.LEFT),
+                (self.id, CardPosition.HAND),
+                state,
+            )
+
     def get_actions(self, state):
         actions = []
 
@@ -170,13 +217,13 @@ class Player:
         # use hand (Trainer & Energy)
         for card in self.hand:
             if (
-                card.superType == SuperType.ENERGY
-                and not self.energyPlayedTurn
-                or card.superType == SuperType.TRAINER
-                and card.trainerType != TrainerType.SUPPORTER
-                or card.superType == SuperType.TRAINER
+                (card.superType == SuperType.ENERGY
+                and not self.energyPlayedTurn)
+                or (card.superType == SuperType.TRAINER
+                and card.trainerType != TrainerType.SUPPORTER)
+                or (card.superType == SuperType.TRAINER
                 and card.trainerType == TrainerType.SUPPORTER
-                and not self.supporterPlayedTurn
+                and not self.supporterPlayedTurn)
             ):
                 actions.extend(card.get_actions(state))
 
@@ -225,6 +272,31 @@ class Player:
                     else:
                         filtered_actions.append(action)
                 card_actions = filtered_actions
+            # Centralized energy validation: filter out attacks the Pokemon
+            # cannot pay for, as a safety net even if individual card
+            # implementations omit the energy check.
+            validated_actions = []
+            for action in card_actions:
+                if isinstance(action, AttackAction):
+                    if hasattr(card, "energy") and hasattr(action.attack, "cost"):
+                        if not check_energy(action.attack.cost, card.energy):
+                            continue  # Skip: insufficient energy for this attack
+                validated_actions.append(action)
+            card_actions = validated_actions
+
+            # Special Condition checks: paralyzed/asleep Pokemon cannot attack or retreat
+            if hasattr(card, "specialCondition") and card.specialCondition != SpecialCondition.NONE:
+                cond = card.specialCondition
+                card_actions = [
+                    a for a in card_actions
+                    if not (
+                        (isinstance(a, AttackAction) and cond in (
+                            SpecialCondition.PARALYZED, SpecialCondition.ASLEEP))
+                        or (isinstance(a, RetreatAction) and cond in (
+                            SpecialCondition.PARALYZED, SpecialCondition.ASLEEP))
+                    )
+                ]
+
             actions.extend(card_actions)
 
         # item ability

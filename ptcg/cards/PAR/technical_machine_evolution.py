@@ -18,7 +18,7 @@ class PAR178TechnicalMachineEvolution(ToolCard):
         self.set_name = "PAR"
         self.number = "178"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Technical Machine: Evolution"
+        self.name = "招式学习器 进化"
         self.cardType = CardType.NONE
         self.text = (
             "The Pokémon this card is attached to can use the attack on this card. "

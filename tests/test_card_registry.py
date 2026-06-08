@@ -51,7 +51,7 @@ def test_load_deck_from_file():
     assert len(deck.cards) > 0
 
     card_names = [card.name for card in deck.cards]
-    assert "Charizard ex" in card_names
+    assert "喷火龙ex" in card_names
 
 
 def test_load_deck_from_list():
@@ -60,8 +60,8 @@ def test_load_deck_from_list():
     deck = load_deck(deck_lines)
     assert len(deck.cards) == 7
 
-    charmanders = [c for c in deck.cards if c.name == "Charmander"]
-    charizards = [c for c in deck.cards if c.name == "Charizard ex"]
+    charmanders = [c for c in deck.cards if c.name == "小火龙"]
+    charizards = [c for c in deck.cards if c.name == "喷火龙ex"]
 
     assert len(charmanders) == 4
     assert len(charizards) == 3

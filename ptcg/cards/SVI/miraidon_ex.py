@@ -22,6 +22,7 @@ from ptcg.core.reducer import (
     reduce_choose_card_actions,
     reduce_play_pokemon_action,
 )
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     check_energy,
     current_player,
@@ -37,7 +38,7 @@ class SVI253MiraidonEX(PokemonCard):
         self.set_name = "SVI"
         self.number = "253"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Miraidon ex"
+        self.name = "密勒顿"
         self.hp = 220
         self.pokemonType = PokemonType.EX
         self.pokemonRule = PokemonRule.NONE
@@ -128,7 +129,7 @@ class SVI253MiraidonEX(PokemonCard):
                 and card.cardType == CardType.LIGHTNING
             ]
 
-            tips = "You used the ability Tandem Unit. You may choose up to 2 Basic Lightning Pokemon from your deck and put them onto your Bench."
+            tips = _t("ability.miraidon_ex.tandem_unit")
             actions = choose_card_actions(
                 player.id,
                 player.id,

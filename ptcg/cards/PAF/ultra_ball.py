@@ -3,6 +3,7 @@ from ptcg.core.card import ItemCard
 from ptcg.core.enums import CardPosition, CardType, SuperType
 from ptcg.core.reducer import reduce_choose_card_actions
 from ptcg.utils.utils import current_player, move_cards, shuffle_cards
+from ptcg.i18n import t as _t
 
 
 class PAF091UltraBall(ItemCard):
@@ -11,7 +12,7 @@ class PAF091UltraBall(ItemCard):
         self.set_name = "PAF"
         self.number = "091"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Ultra Ball"
+        self.name = "高级球"
         self.cardType = CardType.NONE
         self.text = (
             "You can use this card only if you discard 2 other cards from your hand. "
@@ -41,7 +42,7 @@ class PAF091UltraBall(ItemCard):
 
             discardCards = player.hand  # it can't discard itself
 
-            tips = "You used Ultra Ball. You should choose 2 cards in your hand to discard."
+            tips = _t("item.ultra_ball.discard")
             actions = choose_card_actions(
                 player.id, player.id, 2, 2, discardCards, tips=tips, source=self
             )
@@ -56,7 +57,7 @@ class PAF091UltraBall(ItemCard):
             else:
                 raise ValueError(f"Invalid action: {action}")
 
-            tips = "You used Ultra Ball. You can choose up to 1 Pokemon from your deck and put it into your hand."
+            tips = _t("item.ultra_ball.search")
             actions = choose_card_actions(
                 player.id, player.id, 0, 1, getCards, tips=tips, source=self
             )

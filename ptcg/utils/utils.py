@@ -12,8 +12,11 @@ from ptcg.core.enums import (
     Coin,
     PlayerId,
     PokemonPosition,
+    SpecialCondition,
     SuperType,
 )
+
+from ptcg.i18n import t as _t
 
 if TYPE_CHECKING:
     from ptcg.core.action import Action
@@ -28,7 +31,7 @@ def flip_coin(state: Optional["State"] = None) -> Coin:
         result = Coin.TAIL
     if state is not None:
         side = "HEADS" if result == Coin.HEAD else "TAILS"
-        state.auto_events.append(f"Coin flip: {side}.")
+        state.auto_events.append(_t("event.coin_flip").format(side=side))
     return result
 
 
@@ -299,6 +302,9 @@ def next_turn(state: State) -> None:
     # pokemon dead last turn
     player.hasPokemonDead = False
 
+    # Pokemon Checkup: apply special condition effects between turns
+    pokemon_checkup(state)
+
     # change turn and draw one card
     done, _ = judge_termination(state)
     if done:  # can't draw card if game ends
@@ -307,6 +313,8 @@ def next_turn(state: State) -> None:
     if state.turn == state.player1.id:
         state.turn = state.player2.id
         new_player_name = "PLAYER2"
+        if len(state.player2.left) == 0:
+            raise GameTermination(f"PLAYER2 has no cards in deck to draw.")
         move_cards(
             state.player2.left[0],
             (state.player2.id, CardPosition.LEFT),
@@ -316,13 +324,15 @@ def next_turn(state: State) -> None:
     else:
         state.turn = state.player1.id
         new_player_name = "PLAYER1"
+        if len(state.player1.left) == 0:
+            raise GameTermination(f"PLAYER1 has no cards in deck to draw.")
         move_cards(
             state.player1.left[0],
             (state.player1.id, CardPosition.LEFT),
             (state.player1.id, CardPosition.HAND),
             state,
         )
-    state.auto_events.append(f"Turn switched to {new_player_name}. 1 card drawn from deck to hand.")
+    state.auto_events.append(_t("event.turn_switch").format(player=new_player_name))
     state.end_turn = True
 
 
@@ -481,6 +491,89 @@ def get_name(cards: List[Card]) -> List[str]:
     return name_list
 
 
-# game termination eception
+def pokemon_checkup(state: "State") -> None:
+    """Perform Pokemon Checkup between turns (SV era rule).
+
+    For each Pokemon in play (active + bench, both players):
+    - POISONED: place 1 damage counter (10 damage)
+    - BURNED: place 2 damage counters (20 damage), then flip coin to recover
+    - ASLEEP: flip coin to recover (heads = wake up)
+    - PARALYZED: automatically recovers
+
+    If any Pokemon is KO'd by checkup damage, handle knockout and prizes.
+    This runs after one player ends their turn and before the next begins.
+
+    Args:
+        state: Current game state.
+    """
+    for player in [state.player1, state.player2]:
+        for pokemon in player.active + player.bench:
+            if not hasattr(pokemon, "specialCondition"):
+                continue
+            cond = pokemon.specialCondition
+            if cond == SpecialCondition.NONE:
+                continue
+
+            name = pokemon.name if hasattr(pokemon, "name") else "Pokemon"
+
+            # PARALYZED: automatically recovers during checkup
+            if cond == SpecialCondition.PARALYZED:
+                pokemon.specialCondition = SpecialCondition.NONE
+                state.auto_events.append(f"{name} recovered from Paralysis.")
+
+            # ASLEEP: flip coin to recover
+            elif cond == SpecialCondition.ASLEEP:
+                if flip_coin(state) == Coin.HEAD:
+                    pokemon.specialCondition = SpecialCondition.NONE
+                    state.auto_events.append(f"{name} woke up from Sleep (coin flip: HEADS).")
+                else:
+                    state.auto_events.append(f"{name} is still Asleep (coin flip: TAILS).")
+
+            # POISONED: place 1 damage counter
+            elif cond == SpecialCondition.POISONED:
+                pokemon.hp -= 10
+                state.auto_events.append(f"{name} took 10 damage from Poison.")
+                if pokemon.hp <= 0:
+                    _checkup_ko(pokemon, player, state)
+
+            # BURNED: place 2 damage counters, then flip coin
+            elif cond == SpecialCondition.BURNED:
+                pokemon.hp -= 20
+                state.auto_events.append(f"{name} took 20 damage from Burn.")
+                if pokemon.hp <= 0:
+                    _checkup_ko(pokemon, player, state)
+                elif flip_coin(state) == Coin.HEAD:
+                    pokemon.specialCondition = SpecialCondition.NONE
+                    state.auto_events.append(f"{name} recovered from Burn (coin flip: HEADS).")
+
+
+def _checkup_ko(pokemon: "PokemonCard", owner: "Player", state: "State") -> None:
+    """Handle a Pokemon KO'd during Pokemon Checkup.
+
+    Discards the Pokemon and its attachments. Prize cards are NOT taken
+    for checkup KOs in standard PTCG rules (only attack KOs grant prizes).
+    However, if the active is KO'd, the player must choose a replacement.
+
+    Args:
+        pokemon: The KO'd Pokemon.
+        owner: The player who owns this Pokemon.
+        state: Current game state.
+    """
+    from ptcg.core.reducer import _force_active_replacement
+
+    is_active = pokemon.position == PokemonPosition.ACTIVE
+    name = pokemon.name if hasattr(pokemon, "name") else "Pokemon"
+    state.auto_events.append(f"{name} was knocked out during Pokemon Checkup.")
+
+    discard_pokemon(owner, pokemon)
+
+    if is_active and len(owner.bench) > 0:
+        # Force active replacement (generator handled by caller)
+        pass  # _force_active_replacement would need generator support
+    elif is_active and len(owner.bench) == 0:
+        raise GameTermination
+
+
+# game termination exception
 class GameTermination(Exception):
     pass

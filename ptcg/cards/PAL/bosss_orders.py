@@ -3,6 +3,7 @@ from ptcg.core.card import SupporterCard
 from ptcg.core.enums import CardPosition, CardType
 from ptcg.core.reducer import reduce_choose_card_actions
 from ptcg.utils.utils import current_player, move_cards, opponent_player, switch_pokemon
+from ptcg.i18n import t as _t
 
 
 class PAL265BosssOrders(SupporterCard):
@@ -11,7 +12,7 @@ class PAL265BosssOrders(SupporterCard):
         self.set_name = "PAL"
         self.number = "265"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Boss's Orders"
+        self.name = "老大的指令"
         self.cardType = CardType.NONE
         self.text = "Switch 1 of your opponent's Benched Pokémon with their Active Pokémon."
 
@@ -34,7 +35,7 @@ class PAL265BosssOrders(SupporterCard):
                 self, (player.id, CardPosition.HAND), (player.id, CardPosition.DISCARD), state
             )
 
-            tips = "You used Boss's Orders. You should choose 1 of your opponent's benched Pokemon and switch it with their active Pokemon."
+            tips = _t("supporter.bosss_orders")
             actions = choose_card_actions(
                 player.id, opponent.id, 1, 1, opponent.bench, tips=tips, source=self
             )

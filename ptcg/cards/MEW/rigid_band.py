@@ -16,7 +16,7 @@ class MEW165RigidBand(ToolCard):
         self.set_name = "MEW"
         self.number = "165"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Rigid Band"
+        self.name = "坚硬束带"
         self.cardType = CardType.NONE
         self.text = "The Stage 1 Pokémon this card is attached to takes 30 less damage from attacks from your opponent's Pokémon (after applying Weakness and Resistance)."
 

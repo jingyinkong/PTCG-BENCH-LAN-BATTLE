@@ -11,7 +11,7 @@ class SIT169VGuardEnergy(EnergyCard):
         self.set_name = "SIT"
         self.number = "169"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "V Guard Energy"
+        self.name = "V防守能量"
         self.cardType = CardType.COLORLESS
         self.energyType = EnergyType.SPECIAL
         self.provides = [CardType.COLORLESS]

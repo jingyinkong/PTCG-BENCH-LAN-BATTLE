@@ -96,7 +96,7 @@ function StatusBadge() {
     return (
       <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-amber-950/40 border border-amber-800/50 text-[11px] font-semibold text-amber-300">
         <span className="w-1.5 h-1.5 rounded-full bg-amber-400 flex-shrink-0" />
-        {winner === 'player1' ? t('game:player.p1') : t('game:player.p2')} {t('game:result.wins')}
+        {winner === 'player1' ? t('game:player.you') : t('game:player.opponent')} {t('game:result.wins')}
       </div>
     );
   }

@@ -18,7 +18,7 @@ class MEW017Pidgeotto(PokemonCard):
         self.set_name = "MEW"
         self.number = "017"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Pidgeotto"
+        self.name = "比比鸟"
         self.hp = 80
         self.pokemonType = PokemonType.NORMAL
         self.pokemonRule = PokemonRule.NONE

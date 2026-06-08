@@ -11,7 +11,7 @@ class PAL193TherapeuticEnergy(EnergyCard):
         self.set_name = "PAL"
         self.number = "193"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Therapeutic Energy"
+        self.name = "治疗能量"
         self.cardType = CardType.COLORLESS
         self.energyType = EnergyType.SPECIAL
         self.provides = [CardType.COLORLESS]

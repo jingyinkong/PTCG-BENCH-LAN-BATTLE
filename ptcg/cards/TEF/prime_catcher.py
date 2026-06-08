@@ -2,6 +2,7 @@ from ptcg.core.action import UseItemAction, choose_card_actions
 from ptcg.core.card import ItemCard
 from ptcg.core.enums import CardPosition, CardType
 from ptcg.core.reducer import reduce_choose_card_actions
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     current_bench, current_player, move_cards, move_pokemon, opponent_bench, opponent_player
 )
@@ -13,7 +14,7 @@ class TEF157PrimeCatcher(ItemCard):
         self.set_name = "TEF"
         self.number = "157"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Prime Catcher"
+        self.name = "顶尖捕捉器"
         self.cardType = CardType.NONE
         self.text = (
             "Switch in 1 of your opponent's Benched Pokémon to the Active Spot. "
@@ -38,7 +39,7 @@ class TEF157PrimeCatcher(ItemCard):
             )
 
             # switch opponent
-            tips = "You used Prime Catcher. You should choose 1 of your opponent's benched Pokemon and switch it to active spot."
+            tips = _t("tool.prime_catcher.choose_opponent_bench")
             actions = choose_card_actions(
                 player.id, opponent.id, 1, 1, opponent_bench(state), tips=tips, source=self
             )
@@ -48,7 +49,7 @@ class TEF157PrimeCatcher(ItemCard):
             move_pokemon(opponent, target)
 
             # switch self
-            tips = "You used Prime Catcher. You should choose 1 of your benched Pokemon and switch it to active spot."
+            tips = _t("tool.prime_catcher.choose_your_bench")
             actions = choose_card_actions(
                 player.id, player.id, 1, 1, current_bench(state), tips=tips, source=self
             )

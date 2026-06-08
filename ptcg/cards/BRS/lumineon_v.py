@@ -14,6 +14,7 @@ from ptcg.core.enums import (
     TrainerType
 )
 from ptcg.core.reducer import reduce_attack_action, reduce_choose_card_actions, reduce_play_pokemon_action, reduce_retreat_action
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     auto_end_turn, check_energy, current_player, move_cards, move_pokemon, opponent_active, shuffle_cards
 )
@@ -25,7 +26,7 @@ class BRS040LumineonV(PokemonCard):
         self.set_name = "BRS"
         self.number = "040"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Lumineon V"
+        self.name = "霓虹鱼V"
         self.hp = 170
         self.pokemonType = PokemonType.V
         self.pokemonRule = PokemonRule.NONE
@@ -84,7 +85,7 @@ class BRS040LumineonV(PokemonCard):
                 if card.superType == SuperType.TRAINER and card.trainerType == TrainerType.SUPPORTER
             ]
 
-            tips = "You used the ability Luminous Sign. You can choose up to 1 Supporter card from your deck and put it into your hand."
+            tips = _t("ability.lumineon_v.luminous_sign")
             actions = choose_card_actions(player.id, player.id, 0, 1, cards, tips=tips, source=self)
 
             chosen_card = yield from reduce_choose_card_actions(actions, state)
@@ -116,7 +117,7 @@ class BRS040LumineonV(PokemonCard):
             player.left.extend(cards)
 
             # choose another pokemon onto active spot
-            tips = "You used the attack Aqua Return. You should choose 1 of your benched Pokemon and switch it onto active spot."
+            tips = _t("attack.lumineon_v.aqua_return")
             actions = choose_card_actions(
                 player.id, player.id, 1, 1, player.bench, tips=tips, source=self
             )

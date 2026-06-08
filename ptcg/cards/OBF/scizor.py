@@ -23,7 +23,7 @@ from ptcg.utils.utils import (
 class OBF141Scizor(PokemonCard):
     def __init__(self) -> None:
         super().__init__()
-        self.name = "Scizor"
+        self.name = "巨钳螳螂ex"
         self.set_name = "OBF"
         self.number = "141"
         self.id = f"{self.set_name}-{self.number}"

@@ -23,6 +23,7 @@ from ptcg.core.reducer import (
     reduce_effect_action,
     reduce_play_pokemon_action,
 )
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     auto_end_turn,
     check_energy,
@@ -41,7 +42,7 @@ class PRE043FlutterMane(PokemonCard):
         self.set_name = "PRE"
         self.number = "043"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Flutter Mane"
+        self.name = "振翼发"
         self.hp = 90
         self.pokemonType = PokemonType.NORMAL
         self.pokemonRule = PokemonRule.NONE
@@ -109,7 +110,7 @@ class PRE043FlutterMane(PokemonCard):
             for _ in range(2):
                 bench = opponent_bench(state)
                 if bench:
-                    tips = "You used Hex Hurl. Choose 1 of your opponent's Benched Pokémon to place 1 damage counter on."
+                    tips = _t("attack.flutter_mane.hex_hurl")
                     actions = choose_card_actions(
                         player.id, opponent.id, 1, 1, bench, tips=tips, source=self
                     )

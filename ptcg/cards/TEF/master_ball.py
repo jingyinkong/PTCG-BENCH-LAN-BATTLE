@@ -3,6 +3,7 @@ from ptcg.core.card import ItemCard
 from ptcg.core.enums import CardPosition, CardType, SuperType
 from ptcg.core.reducer import reduce_choose_card_actions
 from ptcg.utils.utils import current_player, move_cards, shuffle_cards
+from ptcg.i18n import t as _t
 
 
 class TEF153MasterBall(ItemCard):
@@ -11,7 +12,7 @@ class TEF153MasterBall(ItemCard):
         self.set_name = "TEF"
         self.number = "153"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Master Ball"
+        self.name = "大师球"
         self.cardType = CardType.NONE
         self.text = (
             "You can use this card only if you discard another card from your hand. "
@@ -41,7 +42,7 @@ class TEF153MasterBall(ItemCard):
 
             discardCards = player.hand
 
-            tips = "You used Master Ball. You should choose 1 card in your hand to discard."
+            tips = _t("item.master_ball.discard")
             actions = choose_card_actions(
                 player.id, player.id, 1, 1, discardCards, tips=tips, source=self
             )
@@ -56,7 +57,7 @@ class TEF153MasterBall(ItemCard):
             else:
                 raise ValueError(f"Invalid action: {action}")
 
-            tips = "You used Master Ball. You can choose up to 1 Pokemon from your deck and put it into your hand."
+            tips = _t("item.master_ball.search")
             actions = choose_card_actions(
                 player.id, player.id, 0, 1, getCards, tips=tips, source=self
             )

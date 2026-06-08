@@ -16,6 +16,7 @@ from ptcg.core.reducer import (
     reduce_effect_action,
     reduce_play_pokemon_action,
 )
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     check_energy,
     current_all_pokemon,
@@ -29,7 +30,7 @@ from ptcg.utils.utils import (
 class TWM095Munkidori(PokemonCard):
     def __init__(self) -> None:
         super().__init__()
-        self.name = "Munkidori"
+        self.name = "愿增猿"
         self.set_name = "TWM"
         self.number = "095"
         self.id = f"{self.set_name}-{self.number}"
@@ -109,7 +110,7 @@ class TWM095Munkidori(PokemonCard):
             player = current_player(state)
 
             my_pokemon = current_all_pokemon(state)
-            tips = "You used Adrena-Brain. Choose 1 of your Pokémon to move damage counters from."
+            tips = _t("attack.munkidori.adrena_brain_source")
             source_actions = choose_card_actions(
                 player.id, player.id, 1, 1, my_pokemon, tips=tips, source=self
             )
@@ -117,7 +118,7 @@ class TWM095Munkidori(PokemonCard):
             source = source_chosen[0]
 
             opp_pokemon = opponent_all_pokemon(state)
-            tips = "Choose 1 of your opponent's Pokémon to move up to 3 damage counters onto."
+            tips = _t("attack.munkidori.adrena_brain_target")
             target_actions = choose_card_actions(
                 player.id, player.id, 1, 1, opp_pokemon, tips=tips, source=self
             )

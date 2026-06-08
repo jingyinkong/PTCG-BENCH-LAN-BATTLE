@@ -7,10 +7,11 @@ interface SelectableCardProps {
   imageUrl?: string;
   selected: boolean;
   disabled: boolean;
+  hidden: boolean;
   onClick: () => void;
 }
 
-function SelectableCard({ cardName, imageUrl, selected, disabled, onClick }: SelectableCardProps) {
+function SelectableCard({ cardName, imageUrl, selected, disabled, hidden, onClick }: SelectableCardProps) {
   const [imgError, setImgError] = useState(false);
 
   return (
@@ -25,12 +26,12 @@ function SelectableCard({ cardName, imageUrl, selected, disabled, onClick }: Sel
           : 'border-slate-700 hover:border-sky-500/60 hover:scale-[1.04]',
       ].join(' ')}
       onClick={disabled && !selected ? undefined : onClick}
-      title={cardName}
+      title={hidden ? '' : cardName}
     >
       {imageUrl && !imgError ? (
-        <img src={imageUrl} alt={cardName} className="w-full h-full object-cover" onError={() => setImgError(true)} />
+        <img src={imageUrl} alt={hidden ? '' : cardName} className="w-full h-full object-cover" onError={() => setImgError(true)} />
       ) : (
-        <img src="/card-back.png" alt={cardName} className="w-full h-full object-cover" />
+        <img src="/card-back.png" alt={hidden ? '' : cardName} className="w-full h-full object-cover" />
       )}
 
       {selected && (
@@ -46,7 +47,7 @@ function SelectableCard({ cardName, imageUrl, selected, disabled, onClick }: Sel
 
       <div className="absolute bottom-0 left-0 right-0 bg-slate-950/80 px-1 py-0.5">
         <span className="text-[8px] text-slate-300 font-medium leading-tight line-clamp-2 block text-center">
-          {cardName}
+          {hidden ? '???' : cardName}
         </span>
       </div>
     </div>
@@ -174,6 +175,7 @@ export default function CardSelectionOverlay() {
                     imageUrl={hidden ? undefined : cardImages[name]}
                     selected={isSelected}
                     disabled={isDisabled}
+                    hidden={hidden}
                     onClick={() => handleToggle(name, idx)}
                   />
                 );

@@ -24,7 +24,7 @@ class BRS121Bibarel(PokemonCard):
         self.set_name = "BRS"
         self.number = "121"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Bibarel"
+        self.name = "大尾狸"
         self.hp = 120
         self.pokemonType = PokemonType.NORMAL
         self.pokemonRule = PokemonRule.NONE

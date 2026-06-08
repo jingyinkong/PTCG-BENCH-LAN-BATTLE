@@ -83,11 +83,13 @@ class PokemonCard(Card):
     ability: List[Ability]
 
     firstTurnPlayed: bool
+    specialCondition: SpecialCondition
 
     def __init__(self) -> None:
         super().__init__()
         self.superType = SuperType.POKEMON
         self.firstTurnPlayed = True
+        self.specialCondition = SpecialCondition.NONE
 
     def to_dict(self):
         result = super().to_dict()

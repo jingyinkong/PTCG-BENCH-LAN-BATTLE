@@ -15,6 +15,7 @@ from ptcg.core.enums import (
     SuperType
 )
 from ptcg.core.reducer import reduce_choose_card_actions, reduce_play_pokemon_action
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     auto_end_turn, check_energy, current_player, move_cards, opponent_active, opponent_bench, shuffle_cards
 )
@@ -26,7 +27,7 @@ class PAR126Jirachi(PokemonCard):
         self.set_name = "PAR"
         self.number = "126"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Jirachi"
+        self.name = "基拉祈"
         self.hp = 70
         self.pokemonType = PokemonType.NORMAL
         self.pokemonRule = PokemonRule.NONE
@@ -100,7 +101,7 @@ class PAR126Jirachi(PokemonCard):
                 if card.superType == SuperType.ENERGY and card.energyType == EnergyType.BASIC
             ]
 
-            tips = "You used the attack Charge Energy. You can choose up to 2 Basic Energy cards, and put them into your hand."
+            tips = _t("attack.jirachi.charge_energy")
             actions = choose_card_actions(player.id, player.id, 0, 2, cards, tips=tips, source=self)
 
             chosen_card = yield from reduce_choose_card_actions(actions, state)

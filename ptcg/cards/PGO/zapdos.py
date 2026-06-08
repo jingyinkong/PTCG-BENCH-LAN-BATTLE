@@ -24,7 +24,7 @@ from ptcg.utils.utils import (
 class PGO029Zapdos(PokemonCard):
     def __init__(self) -> None:
         super().__init__()
-        self.name = "Zapdos"
+        self.name = "闪电鸟"
         self.set_name = "PGO"
         self.number = "029"
         self.id = f"{self.set_name}-{self.number}"

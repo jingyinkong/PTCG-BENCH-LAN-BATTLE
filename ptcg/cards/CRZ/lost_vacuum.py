@@ -2,6 +2,7 @@ from ptcg.core.action import UseItemAction, choose_card_actions
 from ptcg.core.card import ItemCard, PokemonCard, StadiumCard, ToolCard
 from ptcg.core.enums import CardPosition, CardType
 from ptcg.core.reducer import reduce_choose_card_actions
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     current_all_pokemon, current_player, move_cards, opponent_all_pokemon, opponent_player
 )
@@ -13,7 +14,7 @@ class CRZ135LostVacuum(ItemCard):
         self.set_name = "CRZ"
         self.number = "135"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Lost Vacuum"
+        self.name = "放逐吸尘器"
         self.cardType = CardType.NONE
         self.text = (
             "You can use this card only if you put another card from your hand in the Lost Zone. "
@@ -40,7 +41,7 @@ class CRZ135LostVacuum(ItemCard):
             )
 
             # hand
-            tips = "You used Lost Vacuum. You need to put 1 card from your hand in the Lost Zone."
+            tips = _t("item.lost_vacuum.discard")
             actions = choose_card_actions(
                 player.id, player.id, 1, 1, player.hand, tips=tips, source=self
             )
@@ -51,7 +52,7 @@ class CRZ135LostVacuum(ItemCard):
 
             # tool or stadium
             cards = self.get_tool_and_stadium(state)
-            tips = "You used Lost Vacuum. You can choose a Tool or a Stadium in play, and put it in the Lost Zone."
+            tips = _t("item.lost_vacuum.choose_tool_stadium")
             actions = choose_card_actions(player.id, player.id, 1, 1, cards, tips=tips, source=self)
             target = yield from reduce_choose_card_actions(actions, state)
             target = target[0]

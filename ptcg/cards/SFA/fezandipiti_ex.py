@@ -19,6 +19,7 @@ from ptcg.core.enums import (
     Stage
 )
 from ptcg.core.reducer import reduce_choose_card_actions, reduce_effect_action, reduce_play_pokemon_action
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     auto_end_turn, check_energy, current_player, move_cards, opponent_active, opponent_all_pokemon, opponent_player
 )
@@ -30,7 +31,7 @@ class SFA092FezandipitiEX(PokemonCard):
         self.set_name = "SFA"
         self.number = "092"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Fezandipiti ex"
+        self.name = "吉雉鸡ex"
         self.hp = 210
         self.pokemonType = PokemonType.EX
         self.pokemonRule = PokemonRule.NONE
@@ -102,7 +103,7 @@ class SFA092FezandipitiEX(PokemonCard):
             player = current_player(state)
             opponent = opponent_player(state)
 
-            tips = "You used the attack Cruel Arrow. You may choose 1 of your opponent's Pokemon and put 10 damage counter on it."
+            tips = _t("attack.fezandipiti_ex.cruel_arrow")
             actions = choose_card_actions(
                 player.id, opponent.id, 1, 1, opponent_all_pokemon(state), tips=tips
             )

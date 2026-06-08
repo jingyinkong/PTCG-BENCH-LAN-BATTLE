@@ -24,7 +24,7 @@ class LOR143Snorlax(PokemonCard):
         self.set_name = "LOR"
         self.number = "143"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Snorlax"
+        self.name = "卡比兽"
         self.hp = 150
         self.pokemonType = PokemonType.NORMAL
         self.pokemonRule = PokemonRule.NONE

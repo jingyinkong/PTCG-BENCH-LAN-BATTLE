@@ -36,6 +36,7 @@ from loguru import logger
 from ptcg.core.action import Action, PlayPokemonAction
 from ptcg.core.enums import Coin, PlayerId, PokemonPosition, Stage, SuperType
 from ptcg.core.exceptions import GameTermination
+from ptcg.i18n import t as _t
 from ptcg.core.player import Player
 from ptcg.core.recorder import GameRecorder
 from ptcg.core.reducer import (
@@ -256,7 +257,7 @@ class PokemonTCG:
                 1,
                 1,
                 basic_pokemon,
-                tips="The game start. You should choose 1 basic Pokemon and put it onto active spot.",
+                tips=_t("start.choose_active"),
             )
             pokemon = yield from reduce_choose_card_actions(actions, self.gamestate)
             reduce_play_pokemon_action(

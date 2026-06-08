@@ -6,11 +6,11 @@ from ptcg.core.card_registry import registry
 from ptcg.core.enums import CardType, EnergyType, SuperType
 
 BASIC_ENERGIES = [
-    ("SVE-002", "Fire Energy", CardType.FIRE, EnergyType.BASIC, [CardType.FIRE]),
-    ("SVE-004", "Lightning Energy", CardType.LIGHTNING, EnergyType.BASIC, [CardType.LIGHTNING]),
-    ("SVE-005", "Psychic Energy", CardType.PSYCHIC, EnergyType.BASIC, [CardType.PSYCHIC]),
-    ("SVE-007", "Darkness Energy", CardType.DARK, EnergyType.BASIC, [CardType.DARK]),
-    ("SVE-008", "Metal Energy", CardType.METAL, EnergyType.BASIC, [CardType.METAL]),
+    ("SVE-002", "基本火能量", CardType.FIRE, EnergyType.BASIC, [CardType.FIRE]),
+    ("SVE-004", "基本雷能量", CardType.LIGHTNING, EnergyType.BASIC, [CardType.LIGHTNING]),
+    ("SVE-005", "基本超能量", CardType.PSYCHIC, EnergyType.BASIC, [CardType.PSYCHIC]),
+    ("SVE-007", "基本恶能量", CardType.DARK, EnergyType.BASIC, [CardType.DARK]),
+    ("SVE-008", "基本钢能量", CardType.METAL, EnergyType.BASIC, [CardType.METAL]),
 ]
 
 

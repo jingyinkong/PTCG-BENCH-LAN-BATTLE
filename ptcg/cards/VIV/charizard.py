@@ -10,7 +10,7 @@ class VIV029Charizard(PokemonCard):
         self.set_name = "VIV"
         self.number = "025"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Charizard"
+        self.name = "光辉喷火龙"
         self.hp = 170
         self.pokemonType = PokemonType.NORMAL
         self.stage = Stage.STAGE_2

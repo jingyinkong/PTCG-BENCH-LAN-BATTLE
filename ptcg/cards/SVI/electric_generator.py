@@ -8,6 +8,7 @@ from ptcg.core.enums import (
 )
 from ptcg.core.reducer import reduce_choose_card_actions
 from ptcg.utils.utils import current_player, move_cards, shuffle_cards
+from ptcg.i18n import t as _t
 
 
 class SVI170ElectricGenerator(ItemCard):
@@ -16,7 +17,7 @@ class SVI170ElectricGenerator(ItemCard):
         self.set_name = "SVI"
         self.number = "170"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Electric Generator"
+        self.name = "电气发生器"
         self.cardType = CardType.NONE
         self.text = "Look at the top 5 cards of your deck and attach up to 2 Basic [L] Energy cards you find there to your Benched [L] Pokémon in any way you like. Shuffle the other cards back into your deck."
 
@@ -59,7 +60,7 @@ class SVI170ElectricGenerator(ItemCard):
 
             if lightning_energy_cards:
                 # First, choose up to 2 Basic Lightning Energy cards
-                tips = "You used Electric Generator. You may choose up to 2 Basic Lightning Energy cards from the top 5 cards of your deck."
+                tips = _t("item.electric_generator")
                 actions = choose_card_actions(
                     player.id,
                     player.id,
@@ -83,7 +84,7 @@ class SVI170ElectricGenerator(ItemCard):
                     # Attach each chosen energy to a benched Lightning Pokemon
                     for energy_card in chosen_energies:
                         if lightning_bench_pokemon:
-                            tips = f"Choose 1 of your Benched Lightning Pokémon to attach {energy_card.name} to."
+                            tips = _t("item.electric_generator.choose_target").format(card_name=energy_card.name)
                             actions = choose_card_actions(
                                 player.id,
                                 player.id,

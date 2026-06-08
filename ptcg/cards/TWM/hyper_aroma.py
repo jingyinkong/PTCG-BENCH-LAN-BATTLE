@@ -3,6 +3,7 @@ from ptcg.core.card import ItemCard
 from ptcg.core.enums import CardPosition, CardType, Stage, SuperType
 from ptcg.core.reducer import reduce_choose_card_actions
 from ptcg.utils.utils import current_player, move_cards, shuffle_cards
+from ptcg.i18n import t as _t
 
 
 class TWM152HyperAroma(ItemCard):
@@ -11,7 +12,7 @@ class TWM152HyperAroma(ItemCard):
         self.set_name = "TWM"
         self.number = "152"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Hyper Aroma"
+        self.name = "高级香氛"
         self.cardType = CardType.NONE
         self.text = "Search your deck for up to 3 Stage 1 Pokémon, reveal them, and put them into your hand. Then, shuffle your deck."
 
@@ -48,7 +49,7 @@ class TWM152HyperAroma(ItemCard):
 
             if stage1_pokemon:
                 # Let player choose up to 3 Stage 1 Pokémon
-                tips = "You used Hyper Aroma. You may choose up to 3 Stage 1 Pokémon from your deck to reveal and add to your hand."
+                tips = _t("item.hyper_aroma")
                 actions = choose_card_actions(
                     player.id,
                     player.id,

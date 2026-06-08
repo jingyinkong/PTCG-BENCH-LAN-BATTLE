@@ -18,6 +18,7 @@ from ptcg.core.enums import (
     Stage
 )
 from ptcg.core.reducer import reduce_attack_action, reduce_choose_card_actions, reduce_evolve_pokemon_action
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     check_energy, current_player, move_cards, opponent_active, shuffle_cards
 )
@@ -29,7 +30,7 @@ class OBF164PidgeotEX(PokemonCard):
         self.set_name = "OBF"
         self.number = "164"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Pidgeot ex"
+        self.name = "大比鸟ex"
         self.hp = 280
         self.pokemonType = PokemonType.EX
         self.pokemonRule = PokemonRule.NONE
@@ -97,7 +98,7 @@ class OBF164PidgeotEX(PokemonCard):
         elif isinstance(action, UseAbilityAction):
             player = current_player(state)
             cards = player.left
-            tips = "You used the ability Quick Search. You can choose up to 1 card from your deck and put it into your hand."
+            tips = _t("ability.pidgeot_ex.quick_search")
             actions = choose_card_actions(player.id, player.id, 0, 1, cards, tips=tips, source=self)
             chosen_card = yield from reduce_choose_card_actions(actions, state)
 

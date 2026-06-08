@@ -11,6 +11,7 @@ from ptcg.core.enums import (
     SuperType
 )
 from ptcg.core.reducer import reduce_attack_action, reduce_choose_card_actions, reduce_play_pokemon_action, reduce_retreat_action
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     auto_end_turn, check_energy, current_player, move_cards, opponent_active, shuffle_cards
 )
@@ -22,7 +23,7 @@ class BRS124Minccino(PokemonCard):
         self.set_name = "BRS"
         self.number = "124"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Minccino"
+        self.name = "泡沫栗鼠"
         self.hp = 60
         self.pokemonType = PokemonType.NORMAL
         self.pokemonRule = PokemonRule.NONE
@@ -86,7 +87,7 @@ class BRS124Minccino(PokemonCard):
                 ]
                 bench_left = player.benchSize - len(player.bench)
 
-                tips = f"You used the attack Call for Family. You can choose up to {min(len(cards), bench_left, 2)} Pokemon(s) from your deck, and put them onto your bench."
+                tips = _t("attack.minccino.call_for_family").format(count=min(len(cards), bench_left, 2))
                 actions = choose_card_actions(
                     player.id,
                     player.id,

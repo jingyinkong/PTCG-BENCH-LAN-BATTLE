@@ -5,6 +5,7 @@ from ptcg.core.enums import (
 )
 from ptcg.core.reducer import reduce_choose_card_actions
 from ptcg.utils.utils import current_player, move_cards, shuffle_cards
+from ptcg.i18n import t as _t
 
 
 class TEF144BuddyBuddyPoffin(ItemCard):
@@ -13,7 +14,7 @@ class TEF144BuddyBuddyPoffin(ItemCard):
         self.set_name = "TEF"
         self.number = "144"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Buddy-Buddy Poffin"
+        self.name = "友好宝芬"
         self.cardType = CardType.NONE
         self.text = "Search your deck for up to 2 Basic Pokémon with 70 HP or less and put them onto your Bench. Then, shuffle your deck."
 
@@ -35,7 +36,7 @@ class TEF144BuddyBuddyPoffin(ItemCard):
         bench_left = player.benchSize - len(player.bench)
 
         if isinstance(action, UseItemAction):
-            tips = f"You used Buddy Buddy Poffin. You can choose up to {min(len(cards), bench_left, 2)} Pokemon(s) from your deck, and put them onto your bench."
+            tips = _t("item.buddy_buddy_poffin").format(count=min(len(cards), bench_left, 2))
             actions = choose_card_actions(
                 player.id,
                 player.id,

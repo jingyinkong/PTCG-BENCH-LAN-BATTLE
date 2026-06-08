@@ -14,7 +14,7 @@ class TEF137Cinccino(PokemonCard):
         self.set_name = "TEF"
         self.number = "137"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Cinccino"
+        self.name = "奇诺栗鼠"
         self.hp = 110
         self.pokemonType = PokemonType.NORMAL
         self.pokemonRule = PokemonRule.NONE

@@ -20,7 +20,7 @@ from ptcg.utils.utils import (
 class PAR088Gimmighoul(PokemonCard):
     def __init__(self) -> None:
         super().__init__()
-        self.name = "Gimmighoul"
+        self.name = "索财灵"
         self.set_name = "PAR"
         self.number = "088"
         self.id = f"{self.set_name}-{self.number}"

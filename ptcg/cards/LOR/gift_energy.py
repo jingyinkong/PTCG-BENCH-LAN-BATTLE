@@ -11,7 +11,7 @@ class LOR171GiftEnergy(EnergyCard):
         self.set_name = "LOR"
         self.number = "171"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Gift Energy"
+        self.name = "馈赠能量"
         self.cardType = CardType.COLORLESS
         self.energyType = EnergyType.SPECIAL
         self.provides = [CardType.COLORLESS]

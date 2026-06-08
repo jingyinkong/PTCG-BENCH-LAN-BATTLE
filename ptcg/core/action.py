@@ -333,33 +333,64 @@ class ChooseCardAction(Action):
         return card_indices
 
 
-def card_position_labels(candidates: List[Card]) -> List[str]:
-    """Generate display labels with position info for same-named field cards.
+def _energy_symbols(energy_list: list) -> str:
+    """Convert a list of CardType energy to display symbols."""
+    from ptcg.core.enums import CardType as _CT
 
-    When two or more cards share the same name AND are on the field
-    (Active/Bench), appends position info so the player can distinguish them.
-    Example: "Charmander" (hand), "Charmander (战斗场)" (Active),
-    "Charmander (备战区 #1)" (Bench).
+    _SYMBOLS = {
+        _CT.FIRE: "\U0001f525",
+        _CT.WATER: "\U0001f4a7",
+        _CT.LIGHTNING: "⚡",
+        _CT.GRASS: "\U0001f33f",
+        _CT.PSYCHIC: "\U0001f52e",
+        _CT.FIGHTING: "\U0001f44a",
+        _CT.DARK: "\U0001f311",
+        _CT.METAL: "⚙️",
+        _CT.COLORLESS: "⭐",
+        _CT.DRAGON: "\U0001f409",
+        _CT.FAIRY: "\U0001f9da",
+    }
+    if not energy_list:
+        return ""
+    symbols = []
+    for ct in energy_list:
+        sym = _SYMBOLS.get(ct)
+        if sym:
+            symbols.append(sym)
+    return "".join(symbols) if symbols else ""
+
+
+def card_position_labels(candidates: List[Card]) -> List[str]:
+    """Generate display labels with position, HP, and energy for field Pokemon.
+
+    For Pokemon on the field (Active/Bench), appends position, HP, and attached
+    energy info so the player can distinguish them. Cards in hand/deck/discard
+    keep their original name only.
+
+    Examples:
+        "Charmander (战斗场) — HP 70 — \U0001f525"
+        "Charizard ex (备战区 ①) — HP 280 — \U0001f525\U0001f525"
+        "Potion" (hand card, no extra info)
     """
     from ptcg.core.enums import CardPosition as _CP
-
-    in_play = [
-        c for c in candidates
-        if getattr(c, "cardPosition", None) in (_CP.ACTIVE, _CP.BENCH)
-    ]
-    name_counts: dict[str, int] = {}
-    for c in in_play:
-        name_counts[c.name] = name_counts.get(c.name, 0) + 1
 
     labels: list[str] = []
     for card in candidates:
         label = card.name
         pos = getattr(card, "cardPosition", None)
-        if pos in (_CP.ACTIVE, _CP.BENCH) and name_counts.get(card.name, 0) > 1:
+        if pos in (_CP.ACTIVE, _CP.BENCH):
+            hp = getattr(card, "hp", "?")
+            energy = getattr(card, "energy", [])
+            energy_str = _energy_symbols(energy) if energy else ""
+            hp_part = f"HP {hp}"
+            parts = [hp_part]
+            if energy_str:
+                parts.append(energy_str)
+            status = " — ".join(parts)
             if pos == _CP.ACTIVE:
-                label = f"{card.name} (战斗场)"
+                label = f"{card.name} (战斗场) — {status}"
             elif pos == _CP.BENCH:
-                label = f"{card.name} (备战区 #{card.index})"
+                label = f"{card.name} (备战区 #{card.index}) — {status}"
         labels.append(label)
     return labels
 

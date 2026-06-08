@@ -136,11 +136,11 @@ function App() {
       <div className="bg-slate-900 border border-slate-700 rounded-xl p-10 text-center max-w-sm w-full shadow-xl">
         <div className="text-xs font-mono text-slate-500 uppercase tracking-widest mb-3">{t('game:result.gameResult')}</div>
         <h2 className="text-2xl font-bold text-slate-50 mb-1">
-          {winner ? `${winner === 'player1' ? t('game:player.p1') : t('game:player.p2')} ${t('game:result.wins')}` : t('game:result.gameOver')}
+          {winner ? `${winner === 'player1' ? t('game:player.you') : t('game:player.opponent')} ${t('game:result.wins')}` : t('game:result.gameOver')}
         </h2>
         {winner && (
           <p className="text-sm text-slate-400 mb-6">
-            {winner === 'player1' ? t('game:player.youP1') : t('game:player.p2')} {t('game:result.tookAllPrizes')}
+            {winner === 'player1' ? t('game:player.you') : t('game:player.opponent')} {t('game:result.tookAllPrizes')}
           </p>
         )}
         <div className="flex flex-col gap-2 mt-6">

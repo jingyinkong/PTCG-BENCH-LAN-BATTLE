@@ -3,6 +3,7 @@ from ptcg.core.card import SupporterCard
 from ptcg.core.enums import CardPosition, CardType
 from ptcg.core.reducer import reduce_choose_card_actions
 from ptcg.utils.utils import current_player, move_cards, shuffle_cards
+from ptcg.i18n import t as _t
 
 
 class TEF145CiphermaniacsCodebreaking(SupporterCard):
@@ -11,7 +12,7 @@ class TEF145CiphermaniacsCodebreaking(SupporterCard):
         self.set_name = "TEF"
         self.number = "145"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Ciphermaniac's Codebreaking"
+        self.name = "暗码迷的解读"
         self.cardType = CardType.NONE
         self.text = "Search your deck for 2 cards, shuffle your deck, then put those cards on top of it in any order."
 
@@ -41,7 +42,7 @@ class TEF145CiphermaniacsCodebreaking(SupporterCard):
             )
 
             # Step 1: Player chooses 2 cards from deck
-            tips = "Ciphermaniac's Codebreaking: choose 2 cards from your deck to put on top."
+            tips = _t("supporter.ciphermaniacs_codebreaking.choose2")
             actions = choose_card_actions(
                 player.id, player.id, 2, 2, player.left[:], tips=tips, source=self
             )
@@ -53,7 +54,7 @@ class TEF145CiphermaniacsCodebreaking(SupporterCard):
             shuffle_cards(player.left)
 
             # Step 3: Player chooses which card goes on top (drawn first)
-            tips = "Choose which card to place on top of your deck (it will be drawn first)."
+            tips = _t("supporter.ciphermaniacs_codebreaking.choose_top")
             order_actions = choose_card_actions(
                 player.id, player.id, 1, 1, chosen, tips=tips, source=self
             )

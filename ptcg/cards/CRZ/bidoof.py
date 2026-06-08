@@ -22,7 +22,7 @@ class CRZ111Bidoof(PokemonCard):
         self.set_name = "CRZ"
         self.number = "111"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Bidoof"
+        self.name = "大牙狸"
         self.hp = 60
         self.pokemonType = PokemonType.NORMAL
         self.pokemonRule = PokemonRule.NONE

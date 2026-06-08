@@ -6,7 +6,7 @@ from ptcg.core.enums import SuperType, Stage
 @pytest.mark.unit
 def test_dreepy_attributes():
     card = registry.get("TWM-128")()
-    assert card.name == "Dreepy"
+    assert card.name == "多龙梅西亚"
     assert card.hp == 70
     assert card.stage == Stage.BASIC
     assert card.superType == SuperType.POKEMON

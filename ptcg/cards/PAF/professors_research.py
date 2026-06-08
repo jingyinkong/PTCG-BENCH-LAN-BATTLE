@@ -10,7 +10,7 @@ class PAF087ProfessorsResearch(SupporterCard):
         self.set_name = "PAF"
         self.number = "087"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Professor's Research"
+        self.name = "博士的研究"
         self.cardType = CardType.NONE
         self.text = "Discard your hand and draw 7 cards."
 

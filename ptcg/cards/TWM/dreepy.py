@@ -14,7 +14,7 @@ class TWM128Dreepy(PokemonCard):
         self.set_name = "TWM"
         self.number = "128"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Dreepy"
+        self.name = "多龙梅西亚"
         self.hp = 70
         self.pokemonType = PokemonType.NORMAL
         self.pokemonRule = PokemonRule.NONE

@@ -3,6 +3,7 @@ from ptcg.core.card import ToolCard
 from ptcg.core.enums import CardPosition, CardType, EnergyType, SuperType
 from ptcg.core.reducer import reduce_choose_card_actions
 from ptcg.utils.utils import can_attach_tool, current_all_pokemon, current_player, move_cards
+from ptcg.i18n import t as _t
 
 
 class TEF151HeavyBaton(ToolCard):
@@ -11,7 +12,7 @@ class TEF151HeavyBaton(ToolCard):
         self.set_name = "TEF"
         self.number = "151"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Heavy Baton"
+        self.name = "沉重接力棒"
         self.cardType = CardType.NONE
         self.text = (
             "If the Pokémon this card is attached to has a Retreat Cost of exactly 4, "
@@ -62,7 +63,7 @@ class TEF151HeavyBaton(ToolCard):
             if energy_card not in target.attachment:
                 continue
 
-            tips = f"Choose a Benched Pokémon to move {energy_card.name} to."
+            tips = _t("tool.heavy_baton.move").format(card_name=energy_card.name)
             bench_actions = choose_card_actions(
                 opponent.id, opponent.id, 1, 1, opponent.bench, tips=tips, source=self
             )

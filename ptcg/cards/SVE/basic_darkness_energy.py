@@ -11,7 +11,7 @@ class SVE007BasicDarknessEnergy(EnergyCard):
         self.set_name = "SVE"
         self.number = "007"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Darkness Energy"
+        self.name = "基本恶能量"
         self.cardType = CardType.DARK
         self.energyType = EnergyType.BASIC
         self.provides = [CardType.DARK]

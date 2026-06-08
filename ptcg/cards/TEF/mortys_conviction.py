@@ -3,6 +3,7 @@ from ptcg.core.card import SupporterCard
 from ptcg.core.enums import CardPosition, CardType
 from ptcg.core.reducer import reduce_choose_card_actions
 from ptcg.utils.utils import current_player, move_cards, opponent_player
+from ptcg.i18n import t as _t
 
 
 class TEF155MortysConviction(SupporterCard):
@@ -11,7 +12,7 @@ class TEF155MortysConviction(SupporterCard):
         self.set_name = "TEF"
         self.number = "155"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Morty's Conviction"
+        self.name = "松叶的信心"
         self.cardType = CardType.NONE
         self.text = "You can use this card only if you discard another card from your hand. Draw a card for each of your opponent's Benched Pokémon."
 
@@ -41,7 +42,7 @@ class TEF155MortysConviction(SupporterCard):
             # Discard 1 other card from hand
             other_cards = [card for card in player.hand if card != self]
             if other_cards:
-                tips = "You used Morty's Conviction. Choose 1 card from your hand to discard."
+                tips = _t("supporter.mortys_conviction")
                 actions = choose_card_actions(
                     player.id, player.id, 1, 1, other_cards, tips=tips, source=self
                 )

@@ -14,7 +14,7 @@ class SVI169DefianceBand(ToolCard):
         self.set_name = "SVI"
         self.number = "169"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Defiance Band"
+        self.name = "不服输头带"
         self.cardType = CardType.NONE
         self.text = ""
         self.ability = [

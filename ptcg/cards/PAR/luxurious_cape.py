@@ -10,7 +10,7 @@ class PAR166LuxuriousCape(ToolCard):
         self.set_name = "PAR"
         self.number = "166"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Luxurious Cape"
+        self.name = "豪华斗篷"
         self.cardType = CardType.NONE
         self.text = (
             "If the Pokémon this card is attached to doesn't have a Rule Box, it gets +100 HP."

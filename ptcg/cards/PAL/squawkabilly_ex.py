@@ -18,6 +18,7 @@ from ptcg.core.reducer import (
     reduce_choose_card_actions,
     reduce_play_pokemon_action,
 )
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     check_energy,
     current_player,
@@ -32,7 +33,7 @@ class PAL264SquawkabillyEX(PokemonCard):
         self.set_name = "PAL"
         self.number = "264"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Squawkabilly ex"
+        self.name = "怒鹦哥ex"
         self.hp = 160
         self.pokemonType = PokemonType.EX
         self.pokemonRule = PokemonRule.NONE
@@ -119,7 +120,7 @@ class PAL264SquawkabillyEX(PokemonCard):
 
         if basic_energy_cards and len(player.bench) > 0:
             # First, choose up to 2 basic energy cards from discard
-            tips = "You used Motivate. You may choose up to 2 Basic Energy cards from your discard pile."
+            tips = _t("ability.squawkabilly_ex.motivate")
             actions = choose_card_actions(
                 player.id,
                 player.id,
@@ -134,7 +135,7 @@ class PAL264SquawkabillyEX(PokemonCard):
 
             if chosen_energies:
                 # Then choose 1 Benched Pokémon to attach them to
-                tips = "Choose 1 of your Benched Pokémon to attach the selected energy cards to."
+                tips = _t("ability.squawkabilly_ex.choose_target")
                 actions = choose_card_actions(
                     player.id, player.id, 1, 1, player.bench, tips=tips, source=self
                 )

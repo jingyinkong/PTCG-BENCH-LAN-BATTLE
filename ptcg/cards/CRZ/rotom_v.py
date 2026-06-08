@@ -16,6 +16,7 @@ from ptcg.core.enums import (
     TrainerType
 )
 from ptcg.core.reducer import reduce_attack_action, reduce_choose_card_actions, reduce_play_pokemon_action, reduce_retreat_action
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     auto_end_turn, check_energy, current_player, move_cards, opponent_active
 )
@@ -27,7 +28,7 @@ class CRZ045RotomV(PokemonCard):
         self.set_name = "CRZ"
         self.number = "045"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Rotom V"
+        self.name = "切割洛托姆"
         self.hp = 190
         self.pokemonType = PokemonType.V
         self.pokemonRule = PokemonRule.NONE
@@ -91,7 +92,7 @@ class CRZ045RotomV(PokemonCard):
                 for card in player.discard
                 if card.superType == SuperType.TRAINER and card.trainerType == TrainerType.TOOL
             ]
-            tips = "You used the attack Scrap Short. You can choose any number of Tool cards from your discard and put them in the Lost Zone. Attack damage increases with the number of selected cards."
+            tips = _t("attack.rotom_v.scrap_short")
             actions = choose_card_actions(
                 player.id, player.id, 0, len(cards), cards, tips=tips, source=self
             )

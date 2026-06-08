@@ -16,6 +16,7 @@ from ptcg.core.reducer import (
     reduce_choose_card_actions,
     reduce_play_pokemon_action,
 )
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     auto_end_turn,
     check_energy,
@@ -34,7 +35,7 @@ class BRS158RaichuV(PokemonCard):
         self.set_name = "BRS"
         self.number = "158"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Raichu V"
+        self.name = "雷丘V"
         self.hp = 200
         self.pokemonType = PokemonType.V
         self.pokemonRule = PokemonRule.NONE
@@ -150,7 +151,7 @@ class BRS158RaichuV(PokemonCard):
         ]
 
         if lightning_energy_cards:
-            tips = "You used Fast Charge. You may search your deck for a Lightning Energy card and attach it to this Pokémon."
+            tips = _t("attack.raichu_v.fast_charge")
             actions = choose_card_actions(
                 player.id, player.id, 0, 1, lightning_energy_cards, tips=tips, source=self
             )
@@ -204,7 +205,7 @@ class BRS158RaichuV(PokemonCard):
                     lightning_energy_cards.append(energy_card)
 
         if lightning_energy_cards:
-            tips = "You used Dynamic Spark. You may discard any amount of Lightning Energy from your Pokémon. This attack does 60 damage for each card you discarded."
+            tips = _t("attack.raichu_v.dynamic_spark")
             actions = choose_card_actions(
                 player.id,
                 player.id,

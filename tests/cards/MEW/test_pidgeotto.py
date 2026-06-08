@@ -6,7 +6,7 @@ from ptcg.core.enums import CardType, PokemonType, Stage, SuperType
 @pytest.mark.unit
 def test_pidgeotto_attributes():
     card = registry.get("MEW-017")()
-    assert card.name == "Pidgeotto"
+    assert card.name == "比比鸟"
     assert card.hp == 80
     assert card.pokemonType == PokemonType.NORMAL
     assert card.stage == Stage.STAGE_1

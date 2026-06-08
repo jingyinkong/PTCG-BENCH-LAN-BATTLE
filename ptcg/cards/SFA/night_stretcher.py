@@ -3,6 +3,7 @@ from ptcg.core.card import ItemCard
 from ptcg.core.enums import CardPosition, CardType, EnergyType, SuperType
 from ptcg.core.reducer import reduce_choose_card_actions
 from ptcg.utils.utils import current_player, move_cards
+from ptcg.i18n import t as _t
 
 
 class SFA061NightStretcher(ItemCard):
@@ -11,7 +12,7 @@ class SFA061NightStretcher(ItemCard):
         self.set_name = "SFA"
         self.number = "061"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Night Stretcher"
+        self.name = "夜间担架"
         self.cardType = CardType.NONE
         self.text = "Put a Pokémon or a Basic Energy card from your discard pile into your hand."
 
@@ -46,7 +47,7 @@ class SFA061NightStretcher(ItemCard):
             ]
 
             if candidates:
-                tips = "You used Night Stretcher. Choose 1 Pokémon or Basic Energy card from your discard pile to put into your hand."
+                tips = _t("item.night_stretcher")
                 actions = choose_card_actions(
                     player.id, player.id, 1, 1, candidates, tips=tips, source=self
                 )

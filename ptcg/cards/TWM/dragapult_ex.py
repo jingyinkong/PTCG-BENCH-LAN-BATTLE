@@ -12,6 +12,7 @@ from ptcg.core.reducer import (
     reduce_effect_action,
     reduce_evolve_pokemon_action,
 )
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     auto_end_turn,
     check_energy,
@@ -27,7 +28,7 @@ class TWM200DragapultEX(PokemonCard):
         self.set_name = "TWM"
         self.number = "200"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Dragapult ex"
+        self.name = "多龙巴鲁托ex"
         self.hp = 320
         self.pokemonType = PokemonType.EX
         self.pokemonRule = PokemonRule.TERA
@@ -106,7 +107,7 @@ class TWM200DragapultEX(PokemonCard):
                 effect = Effect(1)
                 for _ in range(6):
                     if len(opponent.bench) > 0:
-                        tips = "You used the attack Phantom Dive. You may choose 1 of your opponent's benched Pokemon and put 1 damage counter on it."
+                        tips = _t("attack.dragapult_ex.phantom_dive")
                         actions = choose_card_actions(
                             player.id, opponent.id, 1, 1, opponent.bench, tips=tips
                         )

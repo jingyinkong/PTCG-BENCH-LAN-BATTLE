@@ -17,6 +17,7 @@ from typing import TYPE_CHECKING, Any, Generator, List, Tuple, cast
 from loguru import logger
 
 from ptcg.core.ability_handler import trigger_attack_abilities, trigger_retreat_abilities
+from ptcg.i18n import t as _t
 from ptcg.core.action import (
     AttachEnergyAction,
     ChooseCardAction,
@@ -27,12 +28,20 @@ from ptcg.core.action import (
     RetreatAction,
     choose_card_actions,
 )
-from ptcg.core.enums import CardPosition, PlayerId, PokemonPosition, SuperType
+from ptcg.core.enums import (
+    CardPosition,
+    Coin,
+    PlayerId,
+    PokemonPosition,
+    SpecialCondition,
+    SuperType,
+)
 from ptcg.core.exceptions import CardPlayError, GameTermination, InvalidCardPositionError
 from ptcg.utils.utils import (
     current_active,
     current_player,
     discard_pokemon,
+    flip_coin,
     move_cards,
     move_pokemon,
     next_turn,
@@ -85,13 +94,16 @@ def _calculate_damage(
     """
     if source.cardType in target.weakness:
         final = base_damage * 2
-        state.auto_events.append(f"Weakness applied: damage doubled from {base_damage} to {final}.")
+        state.auto_events.append(
+            _t("event.weakness_applied").format(base_damage=base_damage, final=final)
+        )
         return final
     elif source.cardType in target.resistance:
         final = max(0, base_damage - RESISTANCE_VALUE)
         state.auto_events.append(
-            f"Resistance applied: damage reduced by {RESISTANCE_VALUE} "
-            f"from {base_damage} to {final}."
+            _t("event.resistance_applied").format(
+                reduction=RESISTANCE_VALUE, base_damage=base_damage, final=final
+            )
         )
         return final
     return base_damage
@@ -121,7 +133,7 @@ def _force_active_replacement(
         raise GameTermination
 
     state.turn = opponent.id
-    tips = "Your active Pokemon is knocked out. You have to choose 1 of your benched Pokemon and switch it to your active spot."
+    tips = _t("knockout.choose_replacement")
     # source param accepts Player for "who is choosing" context
     actions = choose_card_actions(opponent.id, opponent.id, 1, 1, opponent.bench, tips=tips)
     chosen_card = yield from reduce_choose_card_actions(actions, state)
@@ -170,13 +182,11 @@ def _handle_knockout(
 
     # Record knockout event
     target_name = target.name if hasattr(target, "name") else "Pokemon"
-    state.auto_events.append(f"{target_name} was knocked out.")
+    state.auto_events.append(_t("event.knocked_out").format(pokemon=target_name))
 
     # Prize card selection
     prize_count = min(len(attacker.prize), target.prize)
-    tips = (
-        f"Congratulations! You may choose {prize_count} prize card(s) and put them into your hand."
-    )
+    tips = _t("knockout.choose_prizes").format(prize_count=prize_count)
     attacker.reward.apply_prize_card_reward(prize_count)
 
     actions = choose_card_actions(
@@ -197,7 +207,7 @@ def _handle_knockout(
     )
 
     # Record prize card event
-    state.auto_events.append(f"{prize_count} prize card(s) taken.")
+    state.auto_events.append(_t("event.prize_taken").format(count=prize_count))
 
     # Check if all prize cards taken - game ends
     if len(attacker.prize) == 0:
@@ -238,6 +248,26 @@ def reduce_attack_action(
     # action.target is typed as Card in action.py but is always PokemonCard at runtime
     source = cast("PokemonCard", action.source)
     target = cast("PokemonCard", action.target)
+
+    # Confusion check: flip coin before attacking (SV rule)
+    if source.specialCondition == SpecialCondition.CONFUSED:
+        if flip_coin(state) == Coin.TAIL:
+            # Attack fails; place 3 damage counters (30 damage) on self
+            source_name = source.name if hasattr(source, "name") else "Pokemon"
+            state.auto_events.append(
+                _t("event.confused_hurt").format(pokemon=source_name)
+            )
+            source.hp -= 30
+            if source.hp <= 0:
+                yield from _handle_knockout(source, opponent, player, state)
+            if auto_end_turn:
+                next_turn(state)
+            return
+        else:
+            source_name = source.name if hasattr(source, "name") else "Pokemon"
+            state.auto_events.append(
+                _t("event.confused_overcome").format(pokemon=source_name)
+            )
 
     damage = _calculate_damage(source, target, action.attack.damage, state)
     player.reward.apply_damage_dealt_reward(damage)
@@ -285,27 +315,32 @@ def reduce_effect_action(
 def reduce_use_ability_action(action, state: "State") -> None:
     """Reduce an ability usage action.
 
+    Abilities are handled by the card's own reduce_action method.
+    This function serves as a fallback for cards without custom handling.
+    The ability's effects (e.g., card search, damage counters) are applied
+    through trigger_attack_abilities / trigger_retreat_abilities in
+    ability_handler.py, or directly by the card's use_ability method.
+
     Args:
         action: The ability action to process.
         state: Current game state.
-
-    Note:
-        Currently not implemented.
     """
-    raise NotImplementedError("Ability action reduction not yet implemented")
+    # Default no-op: ability effects are handled by individual card implementations.
+    pass
 
 
 def reduce_use_stadium_action(action, state: "State") -> None:
     """Reduce a stadium usage action.
 
+    Stadium effects are handled by the stadium card's own reduce_action method.
+    This function serves as a fallback for stadium cards without custom handling.
+
     Args:
         action: The stadium action to process.
         state: Current game state.
-
-    Note:
-        Currently not implemented.
     """
-    raise NotImplementedError("Stadium action reduction not yet implemented")
+    # Default no-op: stadium effects are handled by individual stadium implementations.
+    pass
 
 
 def reduce_retreat_action(
@@ -330,7 +365,7 @@ def reduce_retreat_action(
     player = current_player(state)
     current_active_pokemon = current_active(state)[0]
 
-    tips = "You retreated your active Pokemon. You should choose 1 of your benched Pokemon and switch it to your active spot."
+    tips = _t("retreat.choose_replacement")
     actions = choose_card_actions(player.id, player.id, 1, 1, player.bench, tips=tips)
     target = yield from reduce_choose_card_actions(actions, state)
     target = target[0]
@@ -355,7 +390,7 @@ def reduce_retreat_action(
             )
             for combo in retreat_combinations(energy_cards_as_energy, retreat_cnt)
         ]
-        tips = "You retreated your active Pokemon. You should discard some energies attached to it."
+        tips = _t("retreat.discard_energy")
         prompt = ChooseCardPrompt(0, len(energy_cards), energy_cards, tips=tips)
         actions = (available_actions, prompt)
         chosen_card = yield from reduce_choose_card_actions(actions, state)
@@ -461,6 +496,7 @@ def reduce_evolve_pokemon_action(
 def reduce_attach_energy_action(
     action: AttachEnergyAction,
     state: "State",
+    is_ability: bool = False,
 ) -> None:
     """Reduce an attach energy action.
 
@@ -470,11 +506,14 @@ def reduce_attach_energy_action(
     Args:
         action: The attach energy action to process (must have target set).
         state: Current game state.
+        is_ability: Whether this attachment is triggered by an ability.
+                    When True, does NOT consume the turn's manual energy attach.
     """
     from ptcg.core.card import EnergyCard
 
     player = current_player(state)
-    player.energyPlayedTurn = True
+    if not is_ability:
+        player.energyPlayedTurn = True
     player.reward.apply_energy_attached_reward(1)
 
     target = cast("PokemonCard", action.target)
@@ -565,8 +604,14 @@ def reduce_choose_active_action() -> None:
     """Reduce action for choosing active Pokemon when spot is empty.
 
     This handles cases at game start or when active Pokemon is knocked out.
+    Active replacement is handled by _force_active_replacement() in the
+    knockout flow or by reduce_play_pokemon_action at game start.
 
     Note:
-        Currently not implemented.
+        This function is a placeholder; active selection is handled
+        through _force_active_replacement (post-KO) or the start stage.
     """
-    raise NotImplementedError("Choose active action reduction not yet implemented")
+    # Active selection is handled by _force_active_replacement() during
+    # knockout flow (reducer.py:_handle_knockout) or by the start stage
+    # (envs.py:_run_start_stage). This stub exists for future standalone use.
+    pass

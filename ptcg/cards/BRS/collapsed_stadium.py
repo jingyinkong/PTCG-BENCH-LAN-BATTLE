@@ -7,6 +7,7 @@ from ptcg.core.action import (
 from ptcg.core.card import StadiumCard
 from ptcg.core.enums import CardPosition, CardType
 from ptcg.core.reducer import reduce_choose_card_actions
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     current_player, discard_card, discard_pokemon, move_cards, opponent_player
 )
@@ -18,7 +19,7 @@ class BRS137CollapsedStadium(StadiumCard):
         self.set_name = "BRS"
         self.number = "137"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Collapsed Stadium"
+        self.name = "崩塌的竞技场"
         self.cardType = CardType.NONE
         self.text = (
             "Each player can't have more than 4 Benched Pokémon. "
@@ -69,7 +70,7 @@ class BRS137CollapsedStadium(StadiumCard):
             # discard extra pokemon
             if len(player.bench) > 4:
                 discard_cnt = len(player.bench) - 4
-                tips = f"Collapsed Stadium is now activated. You have to choose {discard_cnt} pokemon(s) in your bench to discard."
+                tips = _t("stadium.collapsed_stadium").format(discard_cnt=discard_cnt)
                 actions = choose_card_actions(
                     player.id,
                     player.id,
@@ -90,7 +91,7 @@ class BRS137CollapsedStadium(StadiumCard):
                 old_turn = state.turn
                 state.turn = opponent.id
                 discard_cnt = len(opponent.bench) - 4
-                tips = f"Collapsed Stadium is now activated. You have to choose {discard_cnt} pokemon(s) in your bench to discard."
+                tips = _t("stadium.collapsed_stadium").format(discard_cnt=discard_cnt)
                 actions = choose_card_actions(
                     opponent.id,
                     opponent.id,

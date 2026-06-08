@@ -18,6 +18,7 @@ from ptcg.core.reducer import (
     reduce_play_pokemon_action,
     reduce_retreat_action,
 )
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     auto_end_turn,
     check_energy,
@@ -36,7 +37,7 @@ class SIT138LugiaV(PokemonCard):
         self.set_name = "SIT"
         self.number = "138"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Lugia V"
+        self.name = "洛奇亚ex"
         self.hp = 220
         self.pokemonType = PokemonType.V
         self.pokemonRule = PokemonRule.NONE
@@ -162,7 +163,7 @@ class SIT138LugiaV(PokemonCard):
                     if chosen_energy:
                         energy_card = cast(EnergyCard, chosen_energy[0])
 
-                        tips = "Choose 1 of your Benched Pokemon to attach the Psychic Energy to."
+                        tips = _t("attack.lugia_v.choose_target")
                         actions = choose_card_actions(
                             player.id, player.id, 1, 1, bench, tips=tips, source=self
                         )

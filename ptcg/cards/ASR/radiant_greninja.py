@@ -26,7 +26,7 @@ from ptcg.utils.utils import (
 class ASR046RadiantGreninja(PokemonCard):
     def __init__(self) -> None:
         super().__init__()
-        self.name = "Radiant Greninja"
+        self.name = "光辉甲贺忍蛙"
         self.set_name = "ASR"
         self.number = "046"
         self.id = f"{self.set_name}-{self.number}"

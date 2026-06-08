@@ -31,7 +31,7 @@ class PAR056IronBundle(PokemonCard):
         self.set_name = "PAR"
         self.number = "056"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Iron Bundle"
+        self.name = "铁包袱"
         self.hp = 100
         self.pokemonType = PokemonType.NORMAL
         self.pokemonRule = PokemonRule.NONE

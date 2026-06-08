@@ -15,6 +15,7 @@ from ptcg.core.player import Player
 from ptcg.core.action import PlayPokemonAction, choose_card_actions
 from ptcg.core.enums import SuperType, Stage, PokemonPosition, PlayerId, CardPosition
 from ptcg.core.reducer import reduce_choose_card_actions, reduce_play_pokemon_action
+from ptcg.i18n import t as _t
 
 # ── Store original methods for revert ──────────────────────────────────────────
 _original_run_start_stage = PokemonTCG._run_start_stage
@@ -50,9 +51,9 @@ def _patched_player_shuffle(self: Player, state=None) -> None:
         if state is not None:
             player_name = "PLAYER1" if self.id == PlayerId.PLAYER1 else "PLAYER2"
             state.auto_events.append(
-                f"{player_name} has no Basic Pokemon in opening hand. "
-                f"Revealing hand and shuffling back (Mulligan #{self.mulligan_count}). "
-                f"Opponent may draw {self.mulligan_count} extra card(s)."
+                _t("event.mulligan_no_basic").format(
+                    player=player_name, count=self.mulligan_count
+                )
             )
         self.shuffle(state)
 
@@ -95,8 +96,9 @@ def _patched_run_start_stage(self: PokemonTCG):
 
             # Record mulligan event for both players to see
             self.gamestate.auto_events.append(
-                f"{player_name} has no Basic Pokémon in hand! "
-                f"{opponent_name} may draw 1 extra card."
+                _t("event.mulligan_no_basic_short").format(
+                    player=player_name, opponent=opponent_name
+                )
             )
 
             # Opponent draws 1 extra card from their deck (left pile)
@@ -107,7 +109,7 @@ def _patched_run_start_stage(self: PokemonTCG):
                 for idx, c in enumerate(opponent.hand):
                     c.index = idx + 1
                 self.gamestate.auto_events.append(
-                    f"{opponent_name} draws 1 extra card (hidden until game start)."
+                    _t("event.mulligan_opponent_draw").format(player=opponent_name)
                 )
 
             # Player reshuffles all cards back into deck and redraws 7
@@ -128,8 +130,9 @@ def _patched_run_start_stage(self: PokemonTCG):
                 card.index = idx + 1
 
             self.gamestate.auto_events.append(
-                f"{player_name} shuffles hand back into deck and draws 7 new cards. "
-                f"(Mulligan #{mulligan_count})"
+                _t("event.mulligan_reshuffle").format(
+                    player=player_name, count=mulligan_count
+                )
             )
 
             # Re-check for Basic Pokémon after redraw
@@ -146,7 +149,7 @@ def _patched_run_start_stage(self: PokemonTCG):
             1,
             1,
             basic_pokemon,
-            tips="The game start. You should choose 1 basic Pokemon and put it onto active spot.",
+            tips=_t("start.choose_active"),
         )
         pokemon = yield from reduce_choose_card_actions(actions, self.gamestate)
         reduce_play_pokemon_action(
@@ -168,7 +171,7 @@ def _patched_run_start_stage(self: PokemonTCG):
                 0,
                 max_bench,
                 remaining_basic,
-                tips="Choose up to 5 Basic Pokemon to put on your bench (optional).",
+                tips=_t("start.choose_bench"),
             )
             bench_pokemon = yield from reduce_choose_card_actions(actions, self.gamestate)
             for pkmn in bench_pokemon:

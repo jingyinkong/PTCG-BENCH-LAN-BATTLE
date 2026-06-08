@@ -3,6 +3,7 @@ from ptcg.core.card import ItemCard
 from ptcg.core.enums import CardPosition, CardType, EnergyType, SuperType
 from ptcg.core.reducer import reduce_choose_card_actions
 from ptcg.utils.utils import current_player, move_cards
+from ptcg.i18n import t as _t
 
 
 class CRZ127EnergyRetrieval(ItemCard):
@@ -11,7 +12,7 @@ class CRZ127EnergyRetrieval(ItemCard):
         self.set_name = "CRZ"
         self.number = "127"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Energy Retrieval"
+        self.name = "能量回收"
         self.cardType = CardType.NONE
         self.text = "Put up to 2 basic Energy cards from your discard pile into your hand."
 
@@ -53,7 +54,7 @@ class CRZ127EnergyRetrieval(ItemCard):
             )
 
             # Let player choose up to 2 basic energy cards
-            tips = "You used Energy Retrieval. You may choose up to 2 Basic Energy cards from your discard pile."
+            tips = _t("item.energy_retrieval")
             actions = choose_card_actions(
                 player.id,
                 player.id,

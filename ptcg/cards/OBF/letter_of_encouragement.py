@@ -5,6 +5,7 @@ from ptcg.core.enums import (
 )
 from ptcg.core.reducer import reduce_choose_card_actions
 from ptcg.utils.utils import current_player, move_cards, shuffle_cards
+from ptcg.i18n import t as _t
 
 
 class OBF189LetterofEncouragement(StadiumCard):
@@ -13,7 +14,7 @@ class OBF189LetterofEncouragement(StadiumCard):
         self.set_name = "OBF"
         self.number = "189"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Letter of Encouragement"
+        self.name = "鼓励信"
         self.cardType = CardType.NONE
         self.text = "You can use this card only if any of your Pokémon were Knocked Out during your opponent’s last turn. Search your deck for up to 3 Basic Energy cards, reveal them, and put them into your hand. Then, shuffle your deck."
 
@@ -55,7 +56,7 @@ class OBF189LetterofEncouragement(StadiumCard):
 
             # Let player choose energy cards
             if energy_cards:
-                tips = "You used Letter of Encouragement. You may choose up to 3 Basic Energy cards from your deck to add to your hand."
+                tips = _t("item.letter_of_encouragement")
                 actions = choose_card_actions(
                     player.id,
                     player.id,

@@ -25,6 +25,7 @@ from ptcg.core.reducer import (
     reduce_evolve_pokemon_action,
     reduce_play_pokemon_action,
 )
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     check_energy,
     current_all_pokemon,
@@ -41,7 +42,7 @@ class SIT147Archeops(PokemonCard):
         self.set_name = "SIT"
         self.number = "147"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Archeops"
+        self.name = "始祖大鸟"
         self.hp = 150
         self.pokemonType = PokemonType.NORMAL
         self.pokemonRule = PokemonRule.NONE
@@ -131,7 +132,7 @@ class SIT147Archeops(PokemonCard):
             ]
 
             max_energy = min(len(special_energy_cards), 2)
-            tips = "You used the ability Primal Turbo. Choose up to 2 Special Energy cards from your deck."
+            tips = _t("ability.archeops.primal_turbo")
             actions = choose_card_actions(
                 player.id, player.id, 0, max_energy, special_energy_cards, tips=tips, source=self
             )
@@ -140,7 +141,7 @@ class SIT147Archeops(PokemonCard):
 
             if chosen_energy_cards:
                 all_pokemon = current_all_pokemon(state)
-                tips = f"Choose 1 of your Pokemon to attach {len(chosen_energy_cards)} Special Energy card(s) to."
+                tips = _t("ability.archeops.choose_target").format(count=len(chosen_energy_cards))
                 pokemon_actions = choose_card_actions(
                     player.id, player.id, 1, 1, all_pokemon, tips=tips, source=self
                 )

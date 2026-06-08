@@ -3,6 +3,7 @@ from ptcg.core.card import ItemCard
 from ptcg.core.enums import CardPosition, CardType, EnergyType, SuperType
 from ptcg.core.reducer import reduce_choose_card_actions
 from ptcg.utils.utils import current_player, move_cards, shuffle_cards
+from ptcg.i18n import t as _t
 
 
 class PAR163EarthenVessel(ItemCard):
@@ -11,7 +12,7 @@ class PAR163EarthenVessel(ItemCard):
         self.set_name = "PAR"
         self.number = "163"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Earthen Vessel"
+        self.name = "大地容器"
         self.cardType = CardType.NONE
         self.text = "You can use this card only if you discard another card from your hand. Search your deck for up to 2 Basic Energy cards, reveal them, and put them into your hand. Then, shuffle your deck."
 
@@ -34,7 +35,7 @@ class PAR163EarthenVessel(ItemCard):
             # First, discard 1 other card from hand
             other_cards = [card for card in player.hand if card != self]
             if other_cards:
-                tips = "You used Earthen Vessel. Choose 1 card from your hand to discard."
+                tips = _t("item.earthen_vessel.discard")
                 actions = choose_card_actions(
                     player.id, player.id, 1, 1, other_cards, tips=tips, source=self
                 )
@@ -68,7 +69,7 @@ class PAR163EarthenVessel(ItemCard):
             ]
 
             # Let player choose up to 2 basic energy cards
-            tips = "You may choose up to 2 Basic Energy cards from your deck to add to your hand."
+            tips = _t("item.earthen_vessel.search")
             actions = choose_card_actions(
                 player.id,
                 player.id,

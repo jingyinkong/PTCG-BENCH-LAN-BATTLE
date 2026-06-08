@@ -16,6 +16,7 @@ from ptcg.core.reducer import (
     reduce_choose_card_actions,
     reduce_play_pokemon_action,
 )
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     check_energy,
     current_player,
@@ -34,7 +35,7 @@ class PAR248IronHandsEX(PokemonCard):
         self.set_name = "PAR"
         self.number = "248"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Iron Hands ex"
+        self.name = "铁臂膀"
         self.hp = 230
         self.pokemonType = PokemonType.EX
         self.pokemonRule = PokemonRule.NONE
@@ -165,7 +166,7 @@ class PAR248IronHandsEX(PokemonCard):
             total_prize = base_prize + 1  # Extra prize card from Amp You Very Much
 
             # Choose prize cards (normal + extra)
-            tips = f"Congratulations! You may choose {min(len(player.prize), total_prize)} prize card(s) and put them into your hand. (Including 1 extra prize card from Amp You Very Much)"
+            tips = _t("attack.iron_hands.amp_you_very_much").format(prize_count=min(len(player.prize), total_prize))
             player.reward.apply_prize_card_reward(min(len(player.prize), total_prize))
 
             actions = choose_card_actions(

@@ -21,7 +21,7 @@ class CRZ020RadiantCharizard(PokemonCard):
         self.set_name = "CRZ"
         self.number = "020"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Radiant Charizard"
+        self.name = "光辉喷火龙"
         self.hp = 160
         self.pokemonType = PokemonType.NORMAL
         self.pokemonRule = PokemonRule.RADIANT

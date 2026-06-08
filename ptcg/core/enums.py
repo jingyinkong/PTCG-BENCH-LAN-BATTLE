@@ -3,15 +3,15 @@ from enum import Enum
 
 class CardTag(Enum):
     SP = "SP"
-    EX = "EX"
+    EX = "EX"           # 旧时代 EX
     GX = "GX"
     LV_X = "LV_X"
+    V = "V"             # Sword & Shield 宝可梦V
+    VMAX = "VMAX"       # Sword & Shield 宝可梦VMAX
     VSTAR = "VSTAR"
     ACE_SPEC = "ACE_SPEC"
-    # POKEMON_SP = "SP"
-    # POKEMON_EX = "EX"
-    # POKEMON_GX = "GX"
-    # POKEMON_LV_X = "LV_X"
+    EX_LOWERCASE = "ex" # SV时代 ex (小写)
+    RADIANT = "RADIANT" # SV时代 Radiant
 
 
 class SuperType(Enum):
@@ -35,10 +35,14 @@ class TrainerType(Enum):
 
 class PokemonType(Enum):
     NORMAL = 1
-    EX = 2
+    EX = 2       # 旧时代 EX (大写)
     LEGEND = 3
     V = 4
+    VMAX = 6     # V进化 (Sword & Shield)
     VSTAR = 5
+    EX_LOWERCASE = 7  # SV时代 ex (小写)
+    RADIANT = 8  # SV时代 Radiant
+    TERA_EX = 9  # SV时代 Tera ex
 
 
 class PokemonRule(Enum):

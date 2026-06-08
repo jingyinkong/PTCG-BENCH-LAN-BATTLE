@@ -4,6 +4,7 @@ from ptcg.core.action import AttachEnergyAction, choose_card_actions
 from ptcg.core.card import EnergyCard, PokemonCard
 from ptcg.core.enums import CardPosition, CardType, EnergyType
 from ptcg.core.reducer import reduce_attach_energy_action, reduce_choose_card_actions
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     can_attach_energy,
     current_all_pokemon,
@@ -21,7 +22,7 @@ class PAL190JetEnergy(EnergyCard):
         self.set_name = "PAL"
         self.number = "190"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Jet Energy"
+        self.name = "喷射能量"
         self.cardType = CardType.COLORLESS
         self.energyType = EnergyType.SPECIAL
         self.provides = [CardType.COLORLESS]
@@ -47,7 +48,7 @@ class PAL190JetEnergy(EnergyCard):
             reduce_attach_energy_action(action, state)
 
             if was_active and len(player.bench) > 0:
-                switch_tips = "You attached Jet Energy to your Active Pokémon. Choose 1 of your Benched Pokémon to switch with your Active Pokémon."
+                switch_tips = _t("energy.jet_energy.switch")
                 switch_actions = choose_card_actions(
                     player.id, player.id, 1, 1, player.bench, tips=switch_tips
                 )

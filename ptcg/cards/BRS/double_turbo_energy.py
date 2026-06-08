@@ -11,7 +11,7 @@ class BRS151DoubleTurboEnergy(EnergyCard):
         self.set_name = "BRS"
         self.number = "151"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Double Turbo Energy"
+        self.name = "双重涡轮能量"
         self.cardType = CardType.COLORLESS
         self.energyType = EnergyType.SPECIAL
         self.provides = [CardType.COLORLESS, CardType.COLORLESS]

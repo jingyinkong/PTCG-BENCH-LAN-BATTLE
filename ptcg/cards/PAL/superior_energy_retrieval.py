@@ -3,6 +3,7 @@ from ptcg.core.card import ItemCard
 from ptcg.core.enums import CardPosition, CardType, EnergyType, SuperType
 from ptcg.core.reducer import reduce_choose_card_actions
 from ptcg.utils.utils import current_player, move_cards
+from ptcg.i18n import t as _t
 
 
 class PAL189SuperiorEnergyRetrieval(ItemCard):
@@ -11,7 +12,7 @@ class PAL189SuperiorEnergyRetrieval(ItemCard):
         self.set_name = "PAL"
         self.number = "189"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Superior Energy Retrieval"
+        self.name = "超级能量回收"
         self.cardType = CardType.NONE
         self.text = "You can use this card only if you discard 2 other cards from your hand. Put up to 4 Basic Energy cards from your discard pile into your hand."
 
@@ -66,7 +67,7 @@ class PAL189SuperiorEnergyRetrieval(ItemCard):
             ]
 
             # Let player choose up to 4 basic energy cards
-            tips = "You may choose up to 4 Basic Energy cards from your discard pile to add to your hand."
+            tips = _t("item.superior_energy_retrieval")
             actions = choose_card_actions(
                 player.id,
                 player.id,

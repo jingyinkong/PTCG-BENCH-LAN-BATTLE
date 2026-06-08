@@ -7,6 +7,7 @@ from ptcg.core.action import (
 from ptcg.core.card import StadiumCard
 from ptcg.core.enums import CardPosition, CardType, PokemonRule, Stage, SuperType
 from ptcg.core.reducer import reduce_choose_card_actions
+from ptcg.i18n import t as _t
 from ptcg.utils.utils import (
     current_player,
     discard_card,
@@ -22,7 +23,7 @@ class PAL171Artazon(StadiumCard):
         self.set_name = "PAL"
         self.number = "171"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "Artazon"
+        self.name = "深钵镇"
         self.cardType = CardType.NONE
         self.text = "Once during each player's turn, that player may search their deck for a Basic Pokémon that doesn't have a Rule Box and put it onto their Bench. Then, that player shuffles their deck. (Pokémon ex, Pokémon V, etc. have Rule Boxes.)"
         self.playedFrom = None
@@ -76,7 +77,7 @@ class PAL171Artazon(StadiumCard):
                 and card.stage == Stage.BASIC
                 and card.pokemonRule == PokemonRule.NONE
             ]
-            tips = "You used Artazon. You may choose 1 Basic Pokémon that doesn't have a Rule Box from your deck to put onto your Bench."
+            tips = _t("stadium.artazon")
             actions = choose_card_actions(
                 player.id, player.id, 1, 1, basic_pokemon, tips=tips, source=self
             )
