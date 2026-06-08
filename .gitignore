@@ -57,3 +57,6 @@ bench_data/
 backend/data/
 frontend/public/cards/
 card_data/
+
+# Deepinit auto-generated docs (regenerated on demand)
+**/AGENTS.md
