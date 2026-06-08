@@ -69,7 +69,7 @@ class SIT139LugiaVSTAR(PokemonCard):
         self.energy = []
         self.attachment = []
 
-        self.evolveFrom = ["Lugia V"]  # Evolves from Lugia V
+        self.evolveFrom = ["洛奇亚V"]  # Evolves from Lugia V
 
         self.evolved = []
 

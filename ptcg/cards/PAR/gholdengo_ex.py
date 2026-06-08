@@ -48,7 +48,7 @@ class PAR139Gholdengoex(PokemonCard):
         self.energy = []
         self.attachment = []
         self.evolved = []
-        self.evolveFrom = ["Gimmighoul"]
+        self.evolveFrom = ["索财灵"]
 
         # Attack definition
         self.attacks = [

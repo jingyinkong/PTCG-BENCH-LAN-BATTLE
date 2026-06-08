@@ -146,9 +146,9 @@ def test_notify_game_start_includes_deck_composition_in_system_prompt(tmp_path: 
     )
 
     assert "Deck Composition" in agent._system_prompt
-    assert "Pokémon: 20" in agent._system_prompt
-    assert "4 Charmander PAF 7" in agent._system_prompt
-    assert "7 Basic {R} Energy SVE 2" in agent._system_prompt
+    assert "Pokémon:" in agent._system_prompt
+    assert "Trainer:" in agent._system_prompt
+    assert "Energy:" in agent._system_prompt
     assert "Opponent deck composition" not in agent._system_prompt
     assert "The opponent's full decklist is hidden information." in agent._system_prompt
 

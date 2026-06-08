@@ -1,32 +1,34 @@
-Pokémon: 19
-4 Gimmighoul PAR 88
-3 Gholdengo ex PAR 139
-3 Dunsparce TEF 128
-3 Dudunsparce TEF 129
-2 Scyther MEW 123
-2 Scizor OBF 141
-1 Radiant Greninja ASR 46
+Pokémon: 16
 1 Manaphy BRS 41
+4 Gholdengo ex PAR 139
+1 Radiant Greninja ASR 46
+1 Dunsparce PAL 156
+1 Scizor OBF 205
+4 Gimmighoul PAR 88
+1 Fezandipiti ex SFA 38
+1 Dudunsparce TEF 129
+2 Scyther MEW 123
 
-Trainer: 30
-2 Ciphermaniac's Codebreaking TEF 145
-2 Arven OBF 186
-2 Boss's Orders PAL 265
-1 Iono PAF 80
-1 Professor Turo's Scenario PAR 257
-1 Morty's Conviction TEF 155
-4 Superior Energy Retrieval PAL 189
-3 Buddy-Buddy Poffin TEF 144
-3 Earthen Vessel PAR 163
-2 Ultra Ball PAF 91
-2 Nest Ball PAF 84
-1 Lost Vacuum CRZ 135
-1 Energy Retrieval CRZ 127
-1 Hyper Aroma TWM 152
+Trainer: 33
+4 Nest Ball SUM 123
+1 Ciphermaniac's Codebreaking TEF 145
+1 Night Stretcher SFA 61
+1 Jamming Tower TWM 153
+4 Irida ASR 147
 1 Letter of Encouragement OBF 189
-1 Counter Catcher PAR 160
-1 Rigid Band MEW 165
-1 Artazon PAL 171
+1 Professor Turo's Scenario PRE 121
+1 Pokégear 3.0 UNB 182
+1 Energy Retrieval SUM 116
+1 Roxanne ASR 150
+2 Boss's Orders RCL 154
+1 Ultra Ball SLG 68
+1 Pal Pad UPR 132
+1 Iono PAL 185
+3 Earthen Vessel PRE 106
+1 Hyper Aroma TWM 152
+4 Buddy-Buddy Poffin PRE 101
+4 Superior Energy Retrieval PAL 189
 
 Energy: 11
-11 Metal Energy SVE 8
+3 Water Energy SVE 3
+8 Metal Energy SVE 8

@@ -1,33 +1,36 @@
-Pokémon: 15
-3 Ralts PAF 27
-2 Kirlia SIT 68
+Pokémon: 17
+1 Radiant Greninja ASR 46
+1 Flutter Mane PRE 43
+1 Scream Tail PRE 42
+4 Ralts ASR 60
+3 Kirlia SIT 68
+2 Munkidori TWM 95
+1 Drifloon SVI 89
+1 Klefki SVI 96
+1 Fezandipiti ex SFA 38
 2 Gardevoir ex SVI 86
-3 Munkidori TWM 95
-1 Scream Tail PAR 86
-1 Frillish WHT 44
-1 Lillie's Clefairy ex JTG 56
-1 Mew ex MEW 151
-1 Fezandipiti ex SFA 92
 
-Trainer: 34
-4 Lillie's Determination ASC 192
-4 Iono PAF 80
-2 Arven OBF 186
-1 Professor Turo's Scenario PAR 257
-4 Ultra Ball PAF 91
-3 Earthen Vessel PAR 163
-2 Nest Ball PAF 84
+Trainer: 33
+2 Counter Catcher CIN 91
+1 Nest Ball SUM 123
+1 Moonlit Hill PAF 81
+1 Hisuian Heavy Ball ASR 146
 2 Night Stretcher SFA 61
-2 Counter Catcher PAR 160
-2 Rare Candy PAF 89
-1 Super Rod PAL 188
-1 Secret Box TWM 163
-2 Technical Machine: Evolution PAR 178
-1 Bravery Charm PAL 173
-1 Luxurious Cape PAR 166
+1 Technical Machine: Evolution PAR 178
+2 Arven SVI 166
+1 Professor Turo's Scenario PRE 121
+1 Boss's Orders RCL 154
+2 Ultra Ball SLG 68
+2 Professor's Research SSH 178
+4 Iono PAL 185
 1 Artazon PAL 171
-1 Team Rocket's Watchtower ASC 210
+1 Super Rod PAL 188
+3 Bravery Charm PAL 173
+2 Rare Candy SUM 129
+2 Earthen Vessel PRE 106
+1 Secret Box TWM 163
+3 Buddy-Buddy Poffin PRE 101
 
-Energy: 11
-8 Psychic Energy SVE 5
+Energy: 10
+7 Psychic Energy SVE 5
 3 Darkness Energy SVE 7

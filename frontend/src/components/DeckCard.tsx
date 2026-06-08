@@ -22,7 +22,7 @@ const ENERGY_GRADIENT: Record<string, { from: string; to: string; accent: string
 const DEFAULT_GRADIENT = { from: '#334155', to: '#0c0a09', accent: '#94a3b8' };
 
 export function getDeckColors(energyTypes: string[]) {
-  const typeName = ENERGY_CODE_TO_TYPE[energyTypes[0]] ?? 'colorless';
+  const typeName = ENERGY_CODE_TO_TYPE[energyTypes?.[0] ?? 'C'] ?? 'colorless';
   return ENERGY_GRADIENT[typeName] ?? DEFAULT_GRADIENT;
 }
 

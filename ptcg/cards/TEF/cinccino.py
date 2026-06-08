@@ -28,7 +28,7 @@ class TEF137Cinccino(PokemonCard):
         self.energy = []
         self.attachment = []
 
-        self.evolveFrom = ["Minccino"]
+        self.evolveFrom = ["泡沫栗鼠"]
         self.evolved = []
 
         self.attacks = [

@@ -22,14 +22,14 @@ class PAF008Charmeleon(PokemonCard):
         self.cardType = CardType.FIRE
         self.retreat = [CardType.COLORLESS, CardType.COLORLESS]
         self.weakness = [CardType.WATER]
-        self.evolveFrom = ["Charmander"]
+        self.evolveFrom = ["小火龙"]
         self.resistance = []
         self.prize = 1
 
         self.energy = []
         self.attachment = []
 
-        self.evolveFrom = ["Charmander"]
+        self.evolveFrom = ["小火龙"]
         self.evolved = []
 
         self.attacks = [

@@ -40,7 +40,7 @@ class TEF129Dudunsparce(PokemonCard):
         self.energy = []
         self.attachment = []
         self.evolved = []
-        self.evolveFrom = ["Dunsparce"]
+        self.evolveFrom = ["土龙弟弟"]
 
         # Attack definition
         self.attacks = [

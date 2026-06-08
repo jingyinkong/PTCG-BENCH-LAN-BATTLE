@@ -71,7 +71,7 @@ class TestPokemonCardEffects:
         """PAF-054 Charizard ex 是阶段2进化。"""
         card = registry.get("PAF-054")()
         assert card.stage == Stage.STAGE_2
-        assert "Charmeleon" in card.evolveFrom
+        assert "火恐龙" in card.evolveFrom
         assert card.prize == 2  # ex Pokemon give 2 prizes
 
     def test_radiant_charizard_is_basic_with_radiant_rule(self):

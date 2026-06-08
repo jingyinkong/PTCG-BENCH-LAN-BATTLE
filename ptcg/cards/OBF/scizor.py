@@ -45,7 +45,7 @@ class OBF141Scizor(PokemonCard):
         self.energy = []
         self.attachment = []
         self.evolved = []
-        self.evolveFrom = ["Scyther"]
+        self.evolveFrom = ["飞天螳螂"]
 
         # Attack definitions
         self.attacks = [

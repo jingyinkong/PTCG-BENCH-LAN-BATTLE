@@ -1,0 +1,35 @@
+Pokémon: 23
+1 Squawkabilly ex PAF 75
+2 Hoothoot SCR 114
+1 Kyurem SFA 47
+1 Entei V BRS 22
+3 Teal Mask Ogerpon ex TWM 25
+1 Mew ex MEW 151
+1 Dragapult ex PRE 73
+1 Cleffa OBF 202
+2 Regidrago VSTAR SIT 136
+2 Noctowl SCR 115
+1 Radiant Charizard CRZ 20
+1 Giratina VSTAR LOR 131
+2 Regidrago V SIT 135
+1 Latias ex SSP 76
+1 Fezandipiti ex SFA 38
+1 Hisuian Goodra VSTAR LOR 136
+1 Fan Rotom SCR 118
+
+Trainer: 28
+4 Nest Ball SUM 123
+4 Energy Switch CES 129
+1 Hisuian Heavy Ball ASR 146
+1 Prime Catcher PRE 119
+2 Boss's Orders RCL 154
+4 Ultra Ball SLG 68
+3 Professor's Research SSH 178
+2 Iono PAL 185
+2 Super Rod PAL 188
+2 Area Zero Underdepths SCR 131
+3 Earthen Vessel PRE 106
+
+Energy: 9
+3 Fire Energy SVE 2
+6 Grass Energy SVE 1

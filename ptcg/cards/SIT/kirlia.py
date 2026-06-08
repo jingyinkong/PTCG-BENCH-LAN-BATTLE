@@ -47,7 +47,7 @@ class SIT068Kirlia(PokemonCard):
         self.energy = []
         self.attachment = []
         self.evolved = []
-        self.evolveFrom = ["Ralts"]
+        self.evolveFrom = ["拉鲁拉丝"]
 
         self.attacks = [
             Attack(

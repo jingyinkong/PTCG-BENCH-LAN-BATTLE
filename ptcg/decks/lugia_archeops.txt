@@ -1,29 +1,34 @@
-Pokémon: 20
-4 Archeops SIT 147
-3 Lugia V SIT 138
-3 Lugia VSTAR SIT 139
-3 Minccino BRS 124
-3 Cinccino TEF 137
-2 Lumineon V BRS 40
-1 Snorlax LOR 143
+Pokémon: 22
 1 Flutter Mane PRE 43
+1 Squawkabilly ex PAF 75
+1 Wyrdeer V ASR 134
+1 Iron Bundle PAR 56
+2 Lumineon V BRS 40
+4 Archeops SIT 147
+2 Minccino TEF 136
+2 Cinccino TEF 137
+3 Lugia VSTAR SIT 139
+3 Lugia V SIT 138
+1 Iron Hands ex PRE 31
+1 Bloodmoon Ursaluna ex TWM 141
 
-Trainer: 24
-3 Professor's Research PAF 87
-3 Iono PAF 80
-3 Boss's Orders PAL 265
-1 Jacq SVI 175
-1 Serena SIT 164
+Trainer: 22
+1 Thorton LOR 167
+2 Nest Ball SUM 123
+1 Jamming Tower TWM 153
 4 Capturing Aroma SIT 153
-4 Ultra Ball PAF 91
-3 Great Ball PAL 183
-1 Master Ball TEF 153
-1 Collapsed Stadium BRS 137
+1 Carmine TWM 145
+3 Boss's Orders RCL 154
+4 Ultra Ball SLG 68
+1 Jacq SVI 175
+2 Professor's Research SSH 178
+2 Iono PAL 185
+1 Mesagoza SVI 178
 
 Energy: 16
 4 Jet Energy PAL 190
-4 Gift Energy LOR 171
-3 Double Turbo Energy BRS 151
-3 Mist Energy TEF 161
+1 Legacy Energy TWM 167
 1 V Guard Energy SIT 169
-1 Therapeutic Energy PAL 193
+4 Double Turbo Energy BRS 151
+3 Gift Energy LOR 171
+3 Mist Energy TEF 161

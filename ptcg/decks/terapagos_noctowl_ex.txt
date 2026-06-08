@@ -1,0 +1,37 @@
+Pokémon: 22
+1 Dusknoir SFA 20
+3 Hoothoot SCR 114
+3 Terapagos ex SCR 128
+2 Pidgey OBF 162
+2 Bouffalant SCR 119
+2 Pidgeot ex OBF 164
+3 Noctowl SCR 115
+1 Fezandipiti ex SFA 38
+2 Duskull PRE 35
+1 Bloodmoon Ursaluna ex TWM 141
+2 Fan Rotom SCR 118
+
+Trainer: 34
+1 Thorton LOR 167
+1 Counter Catcher CIN 91
+4 Nest Ball SUM 123
+1 Hisuian Heavy Ball ASR 146
+2 Night Stretcher SFA 61
+1 Prime Catcher PRE 119
+1 Professor Turo's Scenario PRE 121
+1 Boss's Orders RCL 154
+1 Lost Vacuum CRZ 135
+1 Penny SVI 183
+4 Ultra Ball SLG 68
+1 Pal Pad UPR 132
+1 Briar PRE 100
+1 Professor's Research SSH 178
+2 Iono PAL 185
+1 Feather Ball ASR 141
+3 Area Zero Underdepths SCR 131
+3 Rare Candy SUM 129
+1 Vitality Band SSH 185
+3 Buddy-Buddy Poffin PRE 101
+
+Energy: 4
+4 Double Turbo Energy BRS 151

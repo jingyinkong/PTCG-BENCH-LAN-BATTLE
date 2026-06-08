@@ -1,0 +1,33 @@
+Pokémon: 13
+1 Radiant Greninja ASR 46
+1 Squawkabilly ex PAF 75
+1 Slither Wing PAR 107
+3 Teal Mask Ogerpon ex TWM 25
+1 Iron Bundle PAR 56
+1 Koraidon SSP 116
+1 Latias ex SSP 76
+1 Fezandipiti ex SFA 38
+3 Raging Bolt ex TEF 123
+
+Trainer: 35
+1 Judge FLI 108
+4 Nest Ball SUM 123
+2 Pokémon Catcher SUM 126
+2 Night Stretcher SFA 61
+1 Prime Catcher PRE 119
+4 Professor Sada's Vitality PAR 170
+3 Trekking Shoes ASR 156
+3 Pokégear 3.0 UNB 182
+3 Energy Retrieval SUM 116
+1 Boss's Orders RCL 154
+1 Lost Vacuum CRZ 135
+2 Ultra Ball SLG 68
+1 Pal Pad UPR 132
+1 Briar PRE 100
+2 Bravery Charm PAL 173
+4 Earthen Vessel PRE 106
+
+Energy: 12
+3 Lightning Energy SVE 4
+6 Grass Energy SVE 1
+3 Fighting Energy SVE 6

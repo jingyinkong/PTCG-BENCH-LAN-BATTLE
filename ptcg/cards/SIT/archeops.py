@@ -56,7 +56,7 @@ class SIT147Archeops(PokemonCard):
         self.energy = []
         self.attachment = []
 
-        self.evolveFrom = ["Archen"]
+        self.evolveFrom = ["始祖小鸟"]
         self.evolved = []
 
         self.attacks = [

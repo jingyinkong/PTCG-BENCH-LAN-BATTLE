@@ -38,7 +38,7 @@ class BRS121Bibarel(PokemonCard):
         self.energy = []
         self.attachment = []
 
-        self.evolveFrom = ["Bidoof"]
+        self.evolveFrom = ["大牙狸"]
         self.evolved = []
 
         self.attacks = [

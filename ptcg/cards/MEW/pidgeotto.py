@@ -32,7 +32,7 @@ class MEW017Pidgeotto(PokemonCard):
         self.energy = []
         self.attachment = []
 
-        self.evolveFrom = ["Pidgey"]
+        self.evolveFrom = ["波波"]
         self.evolved = []
 
         self.attacks = [

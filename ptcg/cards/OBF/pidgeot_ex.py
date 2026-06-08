@@ -44,7 +44,7 @@ class OBF164PidgeotEX(PokemonCard):
         self.energy = []
         self.attachment = []
 
-        self.evolveFrom = ["Pidgeotto", "Pidgey"]
+        self.evolveFrom = ["比比鸟", "波波"]
         self.evolved = []
 
         self.attacks = [

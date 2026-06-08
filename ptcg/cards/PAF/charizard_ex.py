@@ -51,7 +51,7 @@ class PAF054CharizardEX(PokemonCard):
         self.energy = []
         self.attachment = []
 
-        self.evolveFrom = ["Charmeleon", "Charmander"]
+        self.evolveFrom = ["火恐龙", "小火龙"]
         self.evolved = []
 
         self.attacks = [

@@ -10,7 +10,7 @@ from database import get_db
 
 router = APIRouter(prefix="/api", tags=["decks"])
 
-_BUILTIN_DECK_NAMES = ["charizard_ex", "gardevori_ex", "gholdengo_ex", "lugia_archeops", "miraidon_ex"]
+_BUILTIN_DECK_NAMES = ["archaludon_dialga_ex", "charizard_ex", "gardevori_ex", "gholdengo_ex", "klawf_terapagos", "lugia_archeops", "miraidon_ex", "origin_palkia_noctowl_vstar", "raging_bolt_ogerpon_ex", "regidrago_vstar", "terapagos_noctowl_ex"]
 
 
 class DeckInfo(BaseModel):
@@ -29,6 +29,21 @@ def _ensure_deck_configs_table(db: sqlite3.Connection) -> None:
     db.execute("""CREATE TABLE IF NOT EXISTS deck_configs (
         deck_name TEXT PRIMARY KEY, enabled INTEGER DEFAULT 1)""")
     db.commit()
+
+
+@router.get("/decks/config")
+def list_decks(db: sqlite3.Connection = Depends(get_db)):
+    """返回所有内置卡组配置列表。"""
+    _ensure_deck_configs_table(db)
+    rows = db.execute("SELECT deck_name, enabled FROM deck_configs").fetchall()
+    config = {row[0]: bool(row[1]) for row in rows}
+    decks = []
+    for name in _BUILTIN_DECK_NAMES:
+        decks.append({
+            "name": name, "path": f"{name}.txt", "source": "builtin",
+            "enabled": config.get(name, True),
+        })
+    return decks
 
 
 @router.put("/admin/decks")

@@ -1,0 +1,39 @@
+Pokémon: 18
+1 Radiant Hisuian Sneasler LOR 123
+1 Squawkabilly ex PAF 75
+1 Iron Bundle PAR 56
+1 Lumineon V BRS 40
+1 Pecharunt SVP 149
+2 Terapagos ex SCR 128
+2 Brute Bonnet PAR 123
+1 Latias ex SSP 76
+1 Fezandipiti ex SFA 38
+1 Oranguru V ASR 133
+1 Genesect SFA 40
+1 Pecharunt ex SFA 39
+1 Bloodmoon Ursaluna ex TWM 141
+2 Klawf PAR 105
+1 Hisuian Electrode V SP 294
+
+Trainer: 38
+1 Supereffective Glasses ASR 152
+4 Nest Ball SUM 123
+2 Hisuian Heavy Ball ASR 146
+3 Night Stretcher SFA 61
+1 Energy Loto GRI 122
+3 Arven SVI 166
+1 Carmine TWM 145
+2 Switch Cart ASR 154
+3 Ancient Booster Energy Capsule PAR 159
+3 Boss's Orders RCL 154
+2 Forest Seal Stone SIT 156
+2 Ultra Ball SLG 68
+1 Precious Trolley SSP 185
+3 Binding Mochi SFA 55
+1 Professor's Research SSH 178
+1 Iono PAL 185
+4 Area Zero Underdepths SCR 131
+1 Colress's Tenacity SFA 57
+
+Energy: 4
+4 Double Turbo Energy BRS 151
