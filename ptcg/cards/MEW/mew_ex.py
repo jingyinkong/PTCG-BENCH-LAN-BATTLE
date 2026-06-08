@@ -34,7 +34,7 @@ class MEW151MewEX(PokemonCard):
         self.id = f"{self.set_name}-{self.number}"
         self.name = "梦幻ex"
         self.hp = 180
-        self.pokemonType = PokemonType.EX
+        self.pokemonType = PokemonType.EX_LOWERCASE
         self.cardType = CardType.PSYCHIC
         self.stage = Stage.BASIC
         self.pokemonRule = PokemonRule.NONE

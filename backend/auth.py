@@ -48,11 +48,13 @@ class AuthResponse(BaseModel):
     token: Optional[str] = None
     username: Optional[str] = None
     id: Optional[int] = None
+    is_admin: bool = False
 
 
 class UserInfo(BaseModel):
     id: int
     username: str
+    is_admin: bool = False
     created_at: str
 
 
@@ -88,14 +90,14 @@ def get_current_user(
     db.row_factory = _sqlite3.Row
     try:
         row = db.execute(
-            "SELECT u.id, u.username, u.created_at FROM users u "
+            "SELECT u.id, u.username, u.is_admin, u.created_at FROM users u "
             "JOIN sessions s ON s.user_id = u.id "
             "WHERE s.token = ?",
             (token,),
         ).fetchone()
         if row is None:
             raise HTTPException(status_code=401, detail=t("auth_invalid_token"))
-        return {"id": row["id"], "username": row["username"], "created_at": row["created_at"]}
+        return {"id": row["id"], "username": row["username"], "is_admin": bool(row["is_admin"]), "created_at": row["created_at"]}
     finally:
         db.close()
 
@@ -115,14 +117,14 @@ def register(body: RegisterRequest, db: sqlite3.Connection = Depends(get_db)) ->
 def login(body: LoginRequest, db: sqlite3.Connection = Depends(get_db)) -> AuthResponse:
     _cleanup_expired_sessions(db)
     row = db.execute(
-        "SELECT id, password_hash FROM users WHERE username = ?", (body.username,)
+        "SELECT id, password_hash, is_admin FROM users WHERE username = ?", (body.username,)
     ).fetchone()
     if row is None or not _verify_password(body.password, row["password_hash"]):
         raise HTTPException(status_code=401, detail=t("auth_wrong_credentials"))
     token = _generate_token()
     db.execute("INSERT INTO sessions (user_id, token) VALUES (?, ?)", (row["id"], token))
     db.commit()
-    return AuthResponse(success=True, token=token, username=body.username, id=row["id"])
+    return AuthResponse(success=True, token=token, username=body.username, id=row["id"], is_admin=bool(row["is_admin"]))
 
 
 @router.post("/logout")
@@ -139,4 +141,4 @@ def logout(
 
 @router.get("/me")
 def me(user: dict = Depends(get_current_user)) -> UserInfo:
-    return UserInfo(id=user["id"], username=user["username"], created_at=user["created_at"])
+    return UserInfo(id=user["id"], username=user["username"], is_admin=user.get("is_admin", False), created_at=user["created_at"])

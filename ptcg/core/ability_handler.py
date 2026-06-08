@@ -17,12 +17,33 @@ from ptcg.utils.utils import (
 
 
 def _has_passive_ability(card, trigger: AbilityTrigger) -> bool:
-    """Check if a card has a passive ability with the given trigger."""
-    return (
-        hasattr(card, "ability")
-        and isinstance(getattr(card, "ability"), PassiveAbility)
-        and card.ability.abilityTrigger == trigger
-    )
+    """Check if a card has a passive ability with the given trigger.
+
+    card.ability is a List[Ability], not a single object. Iterate over
+    the list to find any PassiveAbility matching the trigger.
+    """
+    if not hasattr(card, "ability"):
+        return False
+    abilities = card.ability
+    if not isinstance(abilities, list):
+        abilities = [abilities]
+    for ability in abilities:
+        if isinstance(ability, PassiveAbility) and ability.abilityTrigger == trigger:
+            return True
+    return False
+
+
+def _get_matching_passive_ability(card, trigger: AbilityTrigger):
+    """Return the first PassiveAbility matching the trigger, or None."""
+    if not hasattr(card, "ability"):
+        return None
+    abilities = card.ability
+    if not isinstance(abilities, list):
+        abilities = [abilities]
+    for ability in abilities:
+        if isinstance(ability, PassiveAbility) and ability.abilityTrigger == trigger:
+            return ability
+    return None
 
 
 def trigger_passive_ability(card, action, state, trigger: AbilityTrigger) -> None:
@@ -35,9 +56,10 @@ def trigger_passive_ability(card, action, state, trigger: AbilityTrigger) -> Non
         state: Current game state
         trigger: The ability trigger type to match
     """
-    if _has_passive_ability(card, trigger):
+    matched = _get_matching_passive_ability(card, trigger)
+    if matched is not None:
         card.use_ability(action, state)
-        ability_name = card.ability.name if hasattr(card.ability, "name") else "Unknown"
+        ability_name = matched.name if hasattr(matched, "name") else "Unknown"
         card_name = card.name if hasattr(card, "name") else "Unknown"
         state.auto_events.append(_t("event.passive_ability").format(pokemon=card_name, ability=ability_name))
 

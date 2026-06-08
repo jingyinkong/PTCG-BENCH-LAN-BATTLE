@@ -30,7 +30,7 @@ class TWM200DragapultEX(PokemonCard):
         self.id = f"{self.set_name}-{self.number}"
         self.name = "多龙巴鲁托ex"
         self.hp = 320
-        self.pokemonType = PokemonType.EX
+        self.pokemonType = PokemonType.EX_LOWERCASE
         self.pokemonRule = PokemonRule.TERA
         self.stage = Stage.STAGE_2
         self.cardType = CardType.DRAGON

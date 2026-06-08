@@ -44,7 +44,8 @@ class Player:
         self.onceUsedTurn = self.get_once_used_turn()
         self.onceUsedGame = self.get_once_used_game()
 
-        self.firstTurn = True  # 首回合标记：禁止攻击（先手）+ 配合firstTurnPlayed禁止进化（双方）
+        self.firstTurn = True  # 首回合禁止进化（双方通用规则）
+        self.firstTurnAttackBlocked = True  # 首回合禁止攻击（仅先手方，后手方在_determine_first_player中解除）
 
         self.hasPokemonDead = False  # knocked down during opponent's last turn
 
@@ -255,7 +256,7 @@ class Player:
             # Filter out UseAbilityAction for active Pokémon if suppressed by opponent
             if card in self.active and active_suppressed:
                 card_actions = [a for a in card_actions if not isinstance(a, UseAbilityAction)]
-            if self.firstTurn:
+            if self.firstTurnAttackBlocked:
                 # Allow specific attacks on first turn for certain cards
                 filtered_actions = []
                 for action in card_actions:
@@ -376,7 +377,7 @@ class Player:
             "stadiumUsed": str(self.stadiumUsedTurn),
             "retreat": str(self.retreatTurn),
         }
-        dict["vstar"] = str(self.onceUsedGame.get("VSTAR", False))
+        dict["vstar"] = str(self.onceUsedGame.get(CardTag.VSTAR, False))
 
         for card in self.active:
             dict["active"].append(card.to_dict())

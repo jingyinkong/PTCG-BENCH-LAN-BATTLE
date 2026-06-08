@@ -62,10 +62,21 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+from test_runner import router as test_runner_router
+from deck_manager import router as deck_manager_router
+from issue_reporter import router as issue_reporter_router
+from cost_tracker import router as cost_tracker_router
+from settings import router as settings_router
+
 # Register auth routes and game rooms
 app.include_router(auth_router)
 app.include_router(rooms_router)
 app.include_router(match_records_router)
+app.include_router(test_runner_router)
+app.include_router(deck_manager_router)
+app.include_router(issue_reporter_router)
+app.include_router(cost_tracker_router)
+app.include_router(settings_router)
 
 # Game storage
 games: Dict[str, Dict] = {}

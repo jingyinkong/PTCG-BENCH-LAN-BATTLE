@@ -3,13 +3,14 @@ import { useGameStore } from '../stores/gameStore';
 import { useAuthStore } from '../stores/authStore';
 import { useReplayStore } from '../stores/replayStore';
 
-type AppMode = 'home' | 'game' | 'replay' | 'decks' | 'leaderboard' | 'auth' | 'lobby' | 'history';
+type AppMode = 'home' | 'game' | 'replay' | 'decks' | 'leaderboard' | 'auth' | 'lobby' | 'history' | 'test' | 'issues';
 
 interface Props {
   mode: AppMode;
   onNavigate: (mode: AppMode) => void;
   onBattleHuman: () => void;
   onBattleAI: () => void;
+  isAdmin?: boolean;
 }
 
 interface Tab {
@@ -116,7 +117,7 @@ function StatusBadge() {
 }
 
 // ─── NavBar ───────────────────────────────────────────────────────────────────
-export default function NavBar({ mode, onNavigate, onBattleHuman, onBattleAI }: Props) {
+export default function NavBar({ mode, onNavigate, onBattleHuman, onBattleAI, isAdmin }: Props) {
   const { t } = useTranslation(['common']);
   const { gameId, done } = useGameStore();
   const { isLoggedIn, user, logout } = useAuthStore();
@@ -127,6 +128,10 @@ export default function NavBar({ mode, onNavigate, onBattleHuman, onBattleAI }: 
     { id: 'game', label: t('common:nav.game'), icon: <GameIcon /> },
     { id: 'replay', label: t('common:nav.replay'), icon: <ReplayIcon />, alwaysEnabled: true },
     { id: 'leaderboard', label: t('common:nav.leaderboard'), icon: <LeaderboardIcon />, alwaysEnabled: true },
+    ...(isAdmin ? [
+      { id: 'test' as AppMode, label: t('common:nav.test'), icon: <span className="text-xs">🧪</span>, alwaysEnabled: true },
+      { id: 'issues' as AppMode, label: t('common:nav.issues'), icon: <span className="text-xs">🐛</span>, alwaysEnabled: true },
+    ] : []),
   ];
 
   const canNavigateTo = (id: AppMode) => {

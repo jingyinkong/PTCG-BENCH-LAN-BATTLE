@@ -28,7 +28,7 @@ class SVI086Gardevoirex(PokemonCard):
 
         # Pokémon attributes
         self.hp = 310
-        self.pokemonType = PokemonType.EX
+        self.pokemonType = PokemonType.EX_LOWERCASE
         self.pokemonRule = PokemonRule.NONE
         self.stage = Stage.STAGE_2
         self.cardType = CardType.PSYCHIC

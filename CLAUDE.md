@@ -41,3 +41,59 @@
 **追踪状态变更 → 找到所有消费者 → 验证不破坏**
 
 分析时间上限：编写修复代码时间的 3 倍以内。
+
+## OMC 模型路由速查
+
+### 判断标准
+该 agent 的核心任务是否需要深度语义理解、多步因果推理、或安全性敏感决策？
+- 需要 → **Pro** (`deepseek-v4-pro`)
+- 不需要 → **Flash** (`deepseek-v4-flash`)
+
+### 🧠 Pro — 高认知负荷（调用时必须显式传 model）
+
+| Agent | 理由 | model 参数 |
+|-------|------|-----------|
+| architect | 全局架构推理、多系统权衡 | `model="opus"` |
+| planner | 多步规划、依赖分析、风险评估 | `model="opus"` |
+| code-reviewer | 语义级 bug 检测、逻辑漏洞 | `model="sonnet"` |
+| security-reviewer | 攻击面分析、安全漏洞识别 | `model="sonnet"` |
+| debugger | 假设验证、因果链追踪、根因分析 | `model="sonnet"` |
+
+### ⚡ Flash — 低认知负荷（走默认，无需传 model）
+
+| Agent | 理由 |
+|-------|------|
+| explorer | 搜索/匹配为主 |
+| executor | 机械性实现，遵循已有模式 |
+| test-engineer | 模板化测试生成 |
+| verifier | 验证已有结果、比对输出 |
+| designer | 模板化 UI 输出 |
+| writer | 文档生成、注释补全 |
+
+### ⚠️ 手动升级触发条件
+
+| Agent | 升级条件 |
+|-------|---------|
+| explorer | 追踪复杂调用链、跨模块依赖分析 → 加 `model="sonnet"` |
+| executor | 复杂重构、跨多文件逻辑变更、算法实现 → 加 `model="sonnet"` |
+| test-engineer | 复杂边界条件测试、并发测试设计 → 加 `model="sonnet"` |
+
+### Skill 路由（继承所调用 Agent 的模型）
+
+| Skill | 实际路由 |
+|-------|---------|
+| autopilot | planner(Pro) → executor(Flash) → code-reviewer(Pro) |
+| ralph / ultrawork | executor(Flash) + architect(Pro) 验证 |
+| team | 各 agent 按表独立路由 |
+| deep-interview | 提问(Flash) + **评分(Pro 强制)** + 结晶(Pro) |
+
+### 升级原则
+默认按表执行。遇到以下信号时手动切换到 Pro：
+1. Flash 输出连续 2 次不符合预期
+2. 任务涉及跨 5+ 文件的复杂逻辑
+3. 需要权衡多个冲突的架构决策
+
+> 💡 如果使用 Flash agent 后觉得输出不够好，直接重新调用并加上 `model="sonnet"` — 不需要犹豫。
+
+### 配置陷阱
+`CLAUDE_CODE_SUBAGENT_MODEL=deepseek-v4-flash` 是**全局默认**，影响所有 sub-agent。Pro agent 忘记传 `model` → 静默用 Flash → 质量下降。调用 Pro agent 时务必检查 `model` 参数。

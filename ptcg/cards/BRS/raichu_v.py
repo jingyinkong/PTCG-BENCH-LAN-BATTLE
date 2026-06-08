@@ -85,7 +85,7 @@ class BRS158RaichuV(PokemonCard):
                         if self.fastChargeUsed:
                             continue
                         # Check if it's first turn (regardless of which player)
-                        if player.firstTurn:
+                        if player.firstTurnAttackBlocked:
                             actions.extend(
                                 [
                                     AttackAction(state.turn, self, attack, target)
@@ -101,8 +101,8 @@ class BRS158RaichuV(PokemonCard):
                                 ]
                             )
                     else:
-                        # Regular attack check - not on first turn
-                        if not player.firstTurn:
+                        # Regular attack check - not blocked on first turn
+                        if not player.firstTurnAttackBlocked:
                             actions.extend(
                                 [
                                     AttackAction(state.turn, self, attack, target)
@@ -184,11 +184,9 @@ class BRS158RaichuV(PokemonCard):
         shuffle_cards(player.left)
 
         # End turn appropriately based on whether it's the first turn
-        if player.firstTurn:
-
+        if player.firstTurnAttackBlocked:
             auto_end_turn(state)
         else:
-
             next_turn(state)
 
     def _dynamic_spark_attack(self, action, state):

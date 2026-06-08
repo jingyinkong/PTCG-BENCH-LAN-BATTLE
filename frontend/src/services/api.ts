@@ -205,4 +205,18 @@ export const api = {
     const response = await axios.get(`${API_BASE}/replays/${encodeURIComponent(filename)}`);
     return response.data;
   },
+
+  // ── AI Battle Testing ──
+  async listTestTasks() { const res = await client.get('/test/tasks'); return res.data; },
+  async getTestTask(taskId: number) { const res = await client.get(`/test/tasks/${taskId}`); return res.data; },
+  async createTestTask(config: { deck_list: string[]; agent_configs: any[]; batch_size: number }) { const res = await client.post('/test/run', config); return res.data; },
+  async cancelTestTask(taskId: number) { const res = await client.post(`/test/tasks/${taskId}/cancel`); return res.data; },
+  async listIssues(params?: { task_id?: number; status?: string; category?: string }) { const res = await client.get('/test/issues', { params }); return res.data; },
+  async getIssue(issueId: number) { const res = await client.get(`/test/issues/${issueId}`); return res.data; },
+  async markIssue(issueId: number, body: { status: string }) { const res = await client.patch(`/test/issues/${issueId}`, body); return res.data; },
+  async getIssueSummary(taskId?: number) { const res = await client.get('/test/issues/summary', { params: taskId ? { task_id: taskId } : {} }); return res.data; },
+  async getTestCost(params?: { task_id?: number }) { const res = await client.get('/test/cost', { params }); return res.data; },
+  async getCostSummary() { const res = await client.get('/test/cost/summary'); return res.data; },
+  async getApiKeys() { const res = await client.get('/admin/settings/api-keys'); return res.data; },
+  async updateApiKey(body: { provider: string; api_key: string }) { const res = await client.put('/admin/settings/api-keys', body); return res.data; },
 };

@@ -96,6 +96,7 @@ class PokemonTCG:
         deck1: Optional[str] = None,
         deck2: Optional[str] = None,
         record_game: bool = True,
+        enable_enhanced_check: bool = False,
     ):
         self.seed = seed
         self.render_mode = render_mode
@@ -103,6 +104,7 @@ class PokemonTCG:
         self.deck2 = deck2
         self.verbose = verbose
         self.record_game = record_game
+        self.enable_enhanced_check = enable_enhanced_check
         self.state_checker = StateChecker()
         self._first_player_override: Optional[PlayerId] = None
 
@@ -285,17 +287,17 @@ class PokemonTCG:
             self.gamestate.turn = first
             sp = self.gamestate.player2 if second == PlayerId.PLAYER2 else self.gamestate.player1
             sp.supporterPlayedTurn = False
-            sp.firstTurn = False
+            sp.firstTurnAttackBlocked = False  # Second player can attack (but still can't evolve)
             return
 
         if flip_coin(self.gamestate) == Coin.HEAD:
             self.gamestate.turn = PlayerId.PLAYER1
             self.gamestate.player2.supporterPlayedTurn = False
-            self.gamestate.player2.firstTurn = False  # Player 2 can attack
+            self.gamestate.player2.firstTurnAttackBlocked = False  # Player 2 can attack (but still can't evolve)
         else:
             self.gamestate.turn = PlayerId.PLAYER2
             self.gamestate.player1.supporterPlayedTurn = False
-            self.gamestate.player1.firstTurn = False  # Player 1 can attack
+            self.gamestate.player1.firstTurnAttackBlocked = False  # Player 1 can attack (but still can't evolve)
     def _log_game_start(self) -> None:
         player_name = f"{self.gamestate.turn}"[9:]
         if self.recorder:

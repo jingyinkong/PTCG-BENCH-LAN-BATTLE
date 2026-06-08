@@ -8,6 +8,7 @@ import zhLobby from './resources/zh-CN/lobby.json';
 import zhAuth from './resources/zh-CN/auth.json';
 import zhDeck from './resources/zh-CN/deck.json';
 import zhLeaderboard from './resources/zh-CN/leaderboard.json';
+import zhTest from './resources/zh-CN/test.json';
 
 import enCommon from './resources/en-US/common.json';
 import enGame from './resources/en-US/game.json';
@@ -15,6 +16,7 @@ import enLobby from './resources/en-US/lobby.json';
 import enAuth from './resources/en-US/auth.json';
 import enDeck from './resources/en-US/deck.json';
 import enLeaderboard from './resources/en-US/leaderboard.json';
+import enTest from './resources/en-US/test.json';
 
 i18n
   .use(LanguageDetector)
@@ -28,6 +30,7 @@ i18n
         auth: zhAuth,
         deck: zhDeck,
         leaderboard: zhLeaderboard,
+        test: zhTest,
       },
       'en-US': {
         common: enCommon,
@@ -36,6 +39,7 @@ i18n
         auth: enAuth,
         deck: enDeck,
         leaderboard: enLeaderboard,
+        test: enTest,
       },
     },
     fallbackLng: 'zh-CN',

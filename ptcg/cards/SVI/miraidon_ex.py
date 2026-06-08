@@ -40,7 +40,7 @@ class SVI253MiraidonEX(PokemonCard):
         self.id = f"{self.set_name}-{self.number}"
         self.name = "密勒顿"
         self.hp = 220
-        self.pokemonType = PokemonType.EX
+        self.pokemonType = PokemonType.EX_LOWERCASE
         self.pokemonRule = PokemonRule.NONE
         self.stage = Stage.BASIC
         self.cardType = CardType.LIGHTNING

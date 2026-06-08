@@ -15,7 +15,9 @@
     "vsAI": "vs AI",
     "lanBattle": "LAN Battle",
     "startGameFirst": "Start a game first",
-    "projectTag": "ML Research"
+    "projectTag": "ML Research",
+    "test": "🧪 Test",
+    "issues": "🐛 Issues"
   },
   "button": {
     "confirm": "Confirm",

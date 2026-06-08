@@ -15,7 +15,9 @@
     "vsAI": "对战 AI",
     "lanBattle": "局域网对战",
     "startGameFirst": "请先开始游戏",
-    "projectTag": "机器学习研究"
+    "projectTag": "机器学习研究",
+    "test": "🧪 测试",
+    "issues": "🐛 问题"
   },
   "button": {
     "confirm": "确认",

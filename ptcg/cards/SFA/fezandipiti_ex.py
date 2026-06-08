@@ -33,7 +33,7 @@ class SFA092FezandipitiEX(PokemonCard):
         self.id = f"{self.set_name}-{self.number}"
         self.name = "吉雉鸡ex"
         self.hp = 210
-        self.pokemonType = PokemonType.EX
+        self.pokemonType = PokemonType.EX_LOWERCASE
         self.pokemonRule = PokemonRule.NONE
         self.stage = Stage.BASIC
         self.cardType = CardType.DARK

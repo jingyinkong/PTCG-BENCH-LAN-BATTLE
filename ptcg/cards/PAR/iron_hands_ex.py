@@ -37,7 +37,7 @@ class PAR248IronHandsEX(PokemonCard):
         self.id = f"{self.set_name}-{self.number}"
         self.name = "铁臂膀"
         self.hp = 230
-        self.pokemonType = PokemonType.EX
+        self.pokemonType = PokemonType.EX_LOWERCASE
         self.pokemonRule = PokemonRule.NONE
         self.stage = Stage.BASIC
         self.cardType = CardType.LIGHTNING

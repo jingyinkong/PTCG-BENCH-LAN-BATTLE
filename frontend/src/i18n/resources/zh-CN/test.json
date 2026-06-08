@@ -1,0 +1,40 @@
+{
+  "title": "AI 对战测试管理",
+  "settings": "⚙️ API 密钥设置",
+  "newRun": "新建测试任务",
+  "decks": "卡组",
+  "playerAgent": "玩家 {{n}} Agent",
+  "batchSize": "对局数量",
+  "startTest": "开始测试",
+  "starting": "启动中...",
+  "started": "任务 #{{id}} 已启动",
+  "failed": "操作失败",
+  "taskHistory": "任务历史",
+  "noTasks": "暂无测试任务",
+  "providerLabel": {
+    "deepseek": "DeepSeek",
+    "openrouter": "OpenRouter",
+    "zai": "智谱 (GLM)",
+    "dashscope": "阿里 (Qwen)",
+    "minimax": "MiniMax"
+  },
+  "keyStatus": {
+    "set": "✅ 已配置",
+    "notSet": "❌ 未配置"
+  },
+  "keyActions": {
+    "setKey": "设置密钥",
+    "update": "修改",
+    "save": "保存",
+    "cancel": "取消",
+    "pasteHint": "粘贴 API 密钥..."
+  },
+  "keyHint": "密钥存储在数据库中，设置后会自动覆盖环境变量。",
+  "status": {
+    "completed": "已完成",
+    "running": "运行中",
+    "failed": "失败",
+    "pending": "等待中",
+    "cancelled": "已取消"
+  }
+}

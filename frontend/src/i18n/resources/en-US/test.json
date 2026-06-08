@@ -1,0 +1,40 @@
+{
+  "title": "AI Battle Test Manager",
+  "settings": "⚙️ API Key Settings",
+  "newRun": "New Test Run",
+  "decks": "Decks",
+  "playerAgent": "Player {{n}} Agent",
+  "batchSize": "Batch Size",
+  "startTest": "Start Test",
+  "starting": "Starting...",
+  "started": "Task #{{id}} started",
+  "failed": "Failed",
+  "taskHistory": "Task History",
+  "noTasks": "No test runs yet.",
+  "providerLabel": {
+    "deepseek": "DeepSeek",
+    "openrouter": "OpenRouter",
+    "zai": "Zhipu (GLM)",
+    "dashscope": "Alibaba (Qwen)",
+    "minimax": "MiniMax"
+  },
+  "keyStatus": {
+    "set": "✅ Set",
+    "notSet": "❌ Not set"
+  },
+  "keyActions": {
+    "setKey": "Set Key",
+    "update": "Update",
+    "save": "Save",
+    "cancel": "Cancel",
+    "pasteHint": "Paste API key..."
+  },
+  "keyHint": "Keys are stored in the database and override environment variables when set.",
+  "status": {
+    "completed": "Completed",
+    "running": "Running",
+    "failed": "Failed",
+    "pending": "Pending",
+    "cancelled": "Cancelled"
+  }
+}

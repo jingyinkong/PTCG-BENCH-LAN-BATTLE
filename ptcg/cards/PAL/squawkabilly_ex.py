@@ -35,7 +35,7 @@ class PAL264SquawkabillyEX(PokemonCard):
         self.id = f"{self.set_name}-{self.number}"
         self.name = "怒鹦哥ex"
         self.hp = 160
-        self.pokemonType = PokemonType.EX
+        self.pokemonType = PokemonType.EX_LOWERCASE
         self.pokemonRule = PokemonRule.NONE
         self.stage = Stage.BASIC
         self.cardType = CardType.COLORLESS

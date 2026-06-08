@@ -59,38 +59,49 @@ _RETRYABLE_ERRORS = (
     openai.InternalServerError,
 )
 
-MODEL_CONFIGS: dict[str, dict[str, str]] = {
-    "deepseek-chat": {
-        "base_url": "https://api.deepseek.com",
-        "api_key": os.getenv("DEEPSEEK_API_KEY", ""),
-    },
-    "deepseek-v4-flash": {
-        "base_url": "https://api.deepseek.com",
-        "api_key": os.getenv("DEEPSEEK_API_KEY", ""),
-    },
-    "deepseek-v4-pro": {
-        "base_url": "https://api.deepseek.com",
-        "api_key": os.getenv("DEEPSEEK_API_KEY", ""),
-    },
-    "glm-4.7": {
-        "base_url": "https://api.z.ai/api/paas/v4",
-        "api_key": os.getenv("ZAI_API_KEY", ""),
-    },
-    "qwen3.5-flash": {
-        "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
-        "api_key": os.getenv("DASHSCOPE_API_KEY", ""),
-    },
-    "MiniMax-M2.5": {
-        "base_url": "https://api.minimax.io/v1",
-        "api_key": os.getenv("MINIMAX_API_KEY", ""),
-    },
-    **{
-        model: {
-            "base_url": OPENROUTER_BASE_URL,
-            "api_key": os.getenv("OPENROUTER_API_KEY", ""),
-        }
-        for model in OPENROUTER_BACKBONE_MODELS
-    },
+def _resolve_api_key(env_var: str) -> str:
+    """Get API key at call time: env var first, DB fallback (searches upward)."""
+    value = os.getenv(env_var, "")
+    if value:
+        return value
+    try:
+        import sqlite3
+        from pathlib import Path
+        current = Path(__file__).resolve().parent
+        for _ in range(8):
+            for tail in ("backend/data/ptcg.db", "data/ptcg.db"):
+                db_path = current / tail
+                if db_path.exists():
+                    db = sqlite3.connect(str(db_path))
+                    row = db.execute(
+                        "SELECT value FROM settings WHERE key = ?", (env_var,)
+                    ).fetchone()
+                    db.close()
+                    if row:
+                        return row[0]
+            current = current.parent
+    except Exception:
+        pass
+    return ""
+
+
+# Base URLs only — API keys resolved lazily in build_client()
+_MODEL_BASE_URLS: dict[str, str] = {
+    "deepseek-chat": "https://api.deepseek.com",
+    "deepseek-v4-flash": "https://api.deepseek.com",
+    "deepseek-v4-pro": "https://api.deepseek.com",
+    "glm-4.7": "https://api.z.ai/api/paas/v4",
+    "qwen3.5-flash": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "MiniMax-M2.5": "https://api.minimax.io/v1",
+}
+
+_API_KEY_ENV_MAP: dict[str, str] = {
+    "deepseek-chat": "DEEPSEEK_API_KEY",
+    "deepseek-v4-flash": "DEEPSEEK_API_KEY",
+    "deepseek-v4-pro": "DEEPSEEK_API_KEY",
+    "glm-4.7": "ZAI_API_KEY",
+    "qwen3.5-flash": "DASHSCOPE_API_KEY",
+    "MiniMax-M2.5": "MINIMAX_API_KEY",
 }
 
 
@@ -136,8 +147,19 @@ def assistant_message_to_history(message: Any) -> dict[str, Any]:
 
 
 def build_client(model: str) -> OpenAI:
-    cfg = MODEL_CONFIGS.get(model, {})
+    # Resolve base URL
+    base_url = _MODEL_BASE_URLS.get(model)
+    if base_url is None:
+        base_url = OPENROUTER_BASE_URL
+
+    # Resolve API key lazily — reads DB at call time, not import time
+    env_var = _API_KEY_ENV_MAP.get(model, "OPENROUTER_API_KEY")
+    api_key = _resolve_api_key(env_var)
+
+    import httpx
     return OpenAI(
-        base_url=cfg.get("base_url"),
-        api_key=cfg.get("api_key", ""),
+        base_url=base_url,
+        api_key=api_key,
+        timeout=httpx.Timeout(120.0, connect=10.0),
+        max_retries=1,
     )

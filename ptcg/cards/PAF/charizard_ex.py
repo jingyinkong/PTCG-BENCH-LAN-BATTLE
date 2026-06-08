@@ -39,7 +39,7 @@ class PAF054CharizardEX(PokemonCard):
         self.number = "054"
         self.id = f"{self.set_name}-{self.number}"
         self.hp = 330
-        self.pokemonType = PokemonType.EX
+        self.pokemonType = PokemonType.EX_LOWERCASE
         self.pokemonRule = PokemonRule.NONE
         self.stage = Stage.STAGE_2
         self.cardType = CardType.DARK

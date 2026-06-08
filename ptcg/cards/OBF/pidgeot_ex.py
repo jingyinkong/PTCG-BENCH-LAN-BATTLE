@@ -32,7 +32,7 @@ class OBF164PidgeotEX(PokemonCard):
         self.id = f"{self.set_name}-{self.number}"
         self.name = "大比鸟ex"
         self.hp = 280
-        self.pokemonType = PokemonType.EX
+        self.pokemonType = PokemonType.EX_LOWERCASE
         self.pokemonRule = PokemonRule.NONE
         self.stage = Stage.STAGE_2
         self.cardType = CardType.COLORLESS

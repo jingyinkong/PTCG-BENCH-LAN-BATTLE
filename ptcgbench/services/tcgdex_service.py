@@ -1,47 +1,9 @@
-"""Service for fetching card data from the tcgdex API."""
+"""
+DEPRECATED (2026-06-08): tcgdex API 已被 tcg.mik.moe API 替代。
+                      卡片数据全部从 tcg.mik.moe 获取，此服务模块不再使用。
 
-from __future__ import annotations
-
-import re
-from typing import Any
-
-from tcgdexsdk import TCGdex
-
-# Map project set codes to tcgdex set IDs
-SET_TO_TCGDEX: dict[str, str] = {
-    # Scarlet & Violet
-    "SVI": "sv01",
-    "PAL": "sv02",
-    "OBF": "sv03",
-    "MEW": "sv03.5",
-    "PAR": "sv04",
-    "PAF": "sv04.5",
-    "TEF": "sv05",
-    "TWM": "sv06",
-    "SFA": "sv06.5",
-    "SSP": "sv07",
-    "SVE": "sve",
-    "PRE": "sv08.5",
-    "DRI": "sv10",
-    "ASC": "me02.5",
-    "JTG": "sv09",
-    "WHT": "sv10.5w",
-    # Sword & Shield
-    "BRS": "swsh9",
-    "ASR": "swsh10",
-    "LOR": "swsh11",
-    "PGO": "swsh10.5",
-    "SIT": "swsh12",
-    "CRZ": "swsh12.5",
-    "VIV": "swsh4",
-}
-
-# Reverse mapping for embedding in cached data
-TCGDEX_TO_SET: dict[str, str] = {v: k for k, v in SET_TO_TCGDEX.items()}
-
-
-def _parse_damage(raw: str | int | None) -> dict[str, Any]:
-    """Parse tcgdex damage string like '180+' or '30' into project format."""
+原用途: Service for fetching card data from the tcgdex API.
+"""
     if raw is None:
         return {"amount": 0, "suffix": ""}
     if isinstance(raw, int):

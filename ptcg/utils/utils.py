@@ -298,6 +298,8 @@ def next_turn(state: State) -> None:
         player.onceUsedTurn[key] = False
     if player.firstTurn:
         player.firstTurn = False
+    if player.firstTurnAttackBlocked:
+        player.firstTurnAttackBlocked = False
 
     # pokemon dead last turn
     player.hasPokemonDead = False

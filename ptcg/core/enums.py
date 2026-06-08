@@ -59,6 +59,8 @@ class Stage(Enum):
     BASIC = 3
     STAGE_1 = 4
     STAGE_2 = 5
+    VSTAR = 6    # VSTAR进化（从V进化，非传统Stage 1）
+    VMAX = 7     # VMAX进化（从V进化，预留）
 
 
 class CardType(Enum):

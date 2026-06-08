@@ -92,7 +92,7 @@ class SIT138LugiaV(PokemonCard):
                             [AttackAction(state.turn, self, attack, target) for target in targets]
                         )
                     else:
-                        if not player.firstTurn:
+                        if not player.firstTurnAttackBlocked:
                             actions.extend(
                                 [
                                     AttackAction(state.turn, self, attack, target)
@@ -178,7 +178,7 @@ class SIT138LugiaV(PokemonCard):
                             state,
                         )
 
-        if player.firstTurn:
+        if player.firstTurnAttackBlocked:
             auto_end_turn(state)
         else:
             next_turn(state)

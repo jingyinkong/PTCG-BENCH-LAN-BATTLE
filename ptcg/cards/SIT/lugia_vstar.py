@@ -58,7 +58,7 @@ class SIT139LugiaVSTAR(PokemonCard):
         self.hp = 280
         self.pokemonType = PokemonType.VSTAR
         self.pokemonRule = PokemonRule.NONE
-        self.stage = Stage.STAGE_1
+        self.stage = Stage.VSTAR
         self.cardType = CardType.COLORLESS
         self.retreat = [CardType.COLORLESS, CardType.COLORLESS]
         self.weakness = [CardType.LIGHTNING]
@@ -149,7 +149,7 @@ class SIT139LugiaVSTAR(PokemonCard):
         if card.cardType != CardType.COLORLESS:
             return False
         # Can only put Basic or Stage 1 Pokémon on bench
-        if card.stage not in [Stage.BASIC, Stage.STAGE_1]:
+        if card.stage not in [Stage.BASIC, Stage.STAGE_1, Stage.VSTAR]:
             return False
         return True
 

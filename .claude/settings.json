@@ -1,0 +1,10 @@
+{
+  "omc": {
+    "deepInterview": {
+      "ambiguityThreshold": 0.15,
+      "maxRounds": 25,
+      "softWarningRounds": 12,
+      "enableChallengeAgents": true
+    }
+  }
+}

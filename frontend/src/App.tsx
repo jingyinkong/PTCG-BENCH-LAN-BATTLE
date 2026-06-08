@@ -13,11 +13,13 @@ import DeckSelectModal from './components/DeckSelectModal';
 import AuthPage from './components/AuthPage';
 import LobbyPage from './components/LobbyPage';
 import MatchHistory from './components/MatchHistory';
+import TestManager from './components/TestManager';
+import IssueReview from './components/IssueReview';
 import { useAuthStore } from './stores/authStore';
 import { Card } from './types/game';
 import { useTranslation } from 'react-i18next';
 
-type AppMode = 'home' | 'game' | 'replay' | 'decks' | 'leaderboard' | 'auth' | 'lobby' | 'history';
+type AppMode = 'home' | 'game' | 'replay' | 'decks' | 'leaderboard' | 'auth' | 'lobby' | 'history' | 'test' | 'issues';
 
 // Nav height offset — h-11 = 44px
 const PAGE_WRAPPER = 'pt-11 min-h-screen bg-slate-950 text-slate-100';
@@ -25,9 +27,10 @@ const PAGE_WRAPPER = 'pt-11 min-h-screen bg-slate-950 text-slate-100';
 function App() {
   const { t } = useTranslation(['common', 'game', 'lobby']);
   const { createGame, gameId, done, winner, loadCardImages, isPvP, opponentLeft, leavePvPGame } = useGameStore();
-  const { isLoggedIn, fetchMe } = useAuthStore();
+  const { isLoggedIn, isAdmin, fetchMe } = useAuthStore();
   const [selectedCard, setSelectedCard] = useState<{ card: Card; imageUrl?: string } | null>(null);
   const [mode, setMode] = useState<AppMode>('home');
+  const [authChecked, setAuthChecked] = useState(false);
 
   const [showDeckModal, setShowDeckModal] = useState(false);
   const [defaultDeck1, setDefaultDeck1] = useState<string | null>(null);
@@ -46,7 +49,7 @@ function App() {
 
   useEffect(() => { loadCardImages(); }, [loadCardImages]);
   useEffect(() => { if (gameId) setMode('game'); }, [gameId]);
-  useEffect(() => { fetchMe(); }, [fetchMe]);
+  useEffect(() => { fetchMe().finally(() => setAuthChecked(true)); }, [fetchMe]);
 
   const handleNavigate = (next: AppMode) => {
     if (next === 'game' && !gameId) return;
@@ -177,8 +180,16 @@ function App() {
   );
 
   // ── Route ─────────────────────────────────────────────────────────────────
+  // Public pages: accessible without login (leaderboard, replay, decks)
+  // Protected pages: require login (lobby, history, test, issues)
   let body: React.ReactNode;
-  if (mode === 'leaderboard') {
+  if (!authChecked) {
+    body = (
+      <div className="flex items-center justify-center" style={{ minHeight: 'calc(100vh - 44px)' }}>
+        <div className="text-slate-400 text-sm">{t('common:status.loading')}</div>
+      </div>
+    );
+  } else if (mode === 'leaderboard') {
     body = <Leaderboard />;
   } else if (mode === 'replay') {
     body = <ReplayViewer onBack={() => setMode('home')} />;
@@ -190,6 +201,10 @@ function App() {
     body = isLoggedIn ? <LobbyPage /> : <AuthPage onBack={() => setMode('home')} />;
   } else if (mode === 'history') {
     body = isLoggedIn ? <MatchHistory /> : <AuthPage onBack={() => setMode('home')} />;
+  } else if (mode === 'test') {
+    body = isLoggedIn ? (isAdmin ? <TestManager /> : <div className="p-8 text-slate-400">需要管理员权限</div>) : <AuthPage onBack={() => setMode('home')} />;
+  } else if (mode === 'issues') {
+    body = isLoggedIn ? (isAdmin ? <IssueReview /> : <div className="p-8 text-slate-400">需要管理员权限</div>) : <AuthPage onBack={() => setMode('home')} />;
   } else if (mode === 'game' && gameId) {
     body = done ? GameOverScreen : GameScreen;
   } else {
@@ -203,6 +218,7 @@ function App() {
         onNavigate={handleNavigate}
         onBattleHuman={() => handleOpenDeckModal(undefined, false)}
         onBattleAI={() => handleOpenDeckModal(undefined, true)}
+        isAdmin={isAdmin}
       />
       {body}
       <DeckSelectModal

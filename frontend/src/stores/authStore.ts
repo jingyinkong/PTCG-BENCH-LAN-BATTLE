@@ -2,9 +2,10 @@ import { create } from 'zustand';
 import { api } from '../services/api';
 
 interface AuthState {
-  user: { id: number; username: string; created_at: string } | null;
+  user: { id: number; username: string; is_admin: boolean; created_at: string } | null;
   token: string | null;
   isLoggedIn: boolean;
+  isAdmin: boolean;
   isLoading: boolean;
   error: string | null;
   login: (username: string, password: string) => Promise<boolean>;
@@ -18,6 +19,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   user: null,
   token: sessionStorage.getItem('ptcg_token'),
   isLoggedIn: false,
+  isAdmin: false,
   isLoading: false,
   error: null,
 
@@ -26,7 +28,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     try {
       const data = await api.login(username, password);
       sessionStorage.setItem('ptcg_token', data.token);
-      set({ token: data.token, user: { id: data.id ?? 0, username: data.username, created_at: '' }, isLoggedIn: true, isLoading: false });
+      set({ token: data.token, user: { id: data.id ?? 0, username: data.username, is_admin: data.is_admin ?? false, created_at: '' }, isLoggedIn: true, isAdmin: data.is_admin ?? false, isLoading: false });
       return true;
     } catch (e: any) {
       const msg = e?.response?.data?.detail || '登录失败';
@@ -51,7 +53,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   logout: async () => {
     try { await api.logout(); } catch {}
     sessionStorage.removeItem('ptcg_token');
-    set({ user: null, token: null, isLoggedIn: false, error: null });
+    set({ user: null, token: null, isLoggedIn: false, isAdmin: false, error: null });
   },
 
   fetchMe: async () => {
@@ -59,11 +61,11 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     if (!token) return false;
     try {
       const data = await api.me();
-      set({ user: data, isLoggedIn: true });
+      set({ user: data, isLoggedIn: true, isAdmin: data.is_admin ?? false });
       return true;
     } catch {
       sessionStorage.removeItem('ptcg_token');
-      set({ token: null, isLoggedIn: false });
+      set({ token: null, isLoggedIn: false, isAdmin: false });
       return false;
     }
   },

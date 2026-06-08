@@ -375,11 +375,11 @@
     ]
   },
   "CRZ-045": {
-    "name": "切割洛托姆",
+    "name": "洛托姆V",
     "set_name": "CRZ",
     "number": "045",
     "card_type": "Pokémon",
-    "img": "/cards/CSV9C-005.png",
+    "img": "/cards/CSVM1aC-005.png",
     "tags": [
       "V"
     ],
@@ -459,7 +459,7 @@
     "set_name": "LOR",
     "number": "143",
     "card_type": "Pokémon",
-    "img": "/cards/SVP-277.png",
+    "img": "/cards/CSVE2C-122.png",
     "hp": 150,
     "stage": "Basic",
     "types": [
@@ -601,7 +601,7 @@
     "set_name": "MEW",
     "number": "123",
     "card_type": "Pokémon",
-    "img": "/cards/CSV7C-003.png",
+    "img": "/cards/151C-123.png",
     "hp": 70,
     "stage": "Basic",
     "types": [
@@ -647,7 +647,7 @@
     "set_name": "OBF",
     "number": "026",
     "card_type": "Pokémon",
-    "img": "/cards/CSVM1aC-001.png",
+    "img": "/cards/SVP-098.png",
     "hp": 60,
     "stage": "Basic",
     "types": [
@@ -738,11 +738,11 @@
     ]
   },
   "OBF-141": {
-    "name": "巨钳螳螂ex",
+    "name": "巨钳螳螂",
     "set_name": "OBF",
     "number": "141",
     "card_type": "Pokémon",
-    "img": "/cards/CSV7C-226.png",
+    "img": "/cards/CSVL2C-085.png",
     "hp": 140,
     "stage": "Stage1",
     "types": [
@@ -1112,7 +1112,7 @@
     "set_name": "PAR",
     "number": "088",
     "card_type": "Pokémon",
-    "img": "/cards/CSV9C-096.png",
+    "img": "/cards/CSV4C-063.png",
     "hp": 70,
     "stage": "Basic",
     "types": [
@@ -1138,7 +1138,7 @@
     "set_name": "PAR",
     "number": "056",
     "card_type": "Pokémon",
-    "img": "/cards/CSV9C-052.png",
+    "img": "/cards/SVP-232.png",
     "hp": 100,
     "stage": "Basic",
     "types": [
@@ -1168,11 +1168,11 @@
     ]
   },
   "PAR-248": {
-    "name": "铁臂膀",
+    "name": "铁臂膀ex",
     "set_name": "PAR",
     "number": "248",
     "card_type": "Pokémon",
-    "img": "/cards/CSVH4C-006.png",
+    "img": "/cards/CSVM1cC-005.png",
     "tags": [
       "ex"
     ],
@@ -1216,7 +1216,7 @@
     "set_name": "PAR",
     "number": "126",
     "card_type": "Pokémon",
-    "img": "/cards/CSVSC-039.png",
+    "img": "/cards/SVP-215.png",
     "hp": 70,
     "stage": "Basic",
     "types": [
@@ -1309,7 +1309,7 @@
     "set_name": "PGO",
     "number": "029",
     "card_type": "Pokémon",
-    "img": "/cards/CSVH4eC-013.png",
+    "img": "/cards/CSVM1cC-003.png",
     "hp": 120,
     "stage": "Basic",
     "types": [
@@ -1342,7 +1342,7 @@
     "set_name": "PRE",
     "number": "043",
     "card_type": "Pokémon",
-    "img": "/cards/CSV9C-095.png",
+    "img": "/cards/CBB4C-2801.png",
     "hp": 90,
     "stage": "Basic",
     "types": [
@@ -1500,11 +1500,11 @@
     ]
   },
   "SIT-138": {
-    "name": "洛奇亚ex",
+    "name": "洛奇亚V",
     "set_name": "SIT",
     "number": "138",
     "card_type": "Pokémon",
-    "img": "/cards/CSV7C-163.png",
+    "img": "/cards/CS6aC-102.png",
     "tags": [
       "V"
     ],
@@ -1689,11 +1689,11 @@
     "effect": "Search your deck for up to 2 Evolution Pokémon, reveal them, and put them into your hand. Then, shuffle your deck."
   },
   "SVI-253": {
-    "name": "密勒顿",
+    "name": "密勒顿ex",
     "set_name": "SVI",
     "number": "253",
     "card_type": "Pokémon",
-    "img": "/cards/CSV9C-070.png",
+    "img": "/cards/CSVH4C-024.png",
     "tags": [
       "ex"
     ],

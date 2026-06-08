@@ -33,7 +33,7 @@ class PAR139Gholdengoex(PokemonCard):
 
         # Pokémon attributes
         self.hp = 260
-        self.pokemonType = PokemonType.EX
+        self.pokemonType = PokemonType.EX_LOWERCASE
         self.pokemonRule = PokemonRule.NONE
         self.stage = Stage.STAGE_1
         self.cardType = CardType.METAL

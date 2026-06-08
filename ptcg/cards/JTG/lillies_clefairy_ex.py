@@ -23,7 +23,7 @@ class JTG056LilliesClefairyex(PokemonCard):
 
         # Pokémon attributes
         self.hp = 190
-        self.pokemonType = PokemonType.EX
+        self.pokemonType = PokemonType.EX_LOWERCASE
         self.pokemonRule = PokemonRule.RADIANT
         self.stage = Stage.BASIC
         self.cardType = CardType.PSYCHIC
