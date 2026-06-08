@@ -136,6 +136,7 @@ def main():
     print(f"\n更新 {CACHE_FILE}...")
     cache = json.loads(CACHE_FILE.read_text(encoding="utf-8"))
     updated = 0
+    created = 0
     # card_data_cache.json key 格式: "{set_name}-{number}" (如 "SVI-086")
     # card_chinese_data.json 有 set_name 和 number 字段
     for name_key, cd in cards.items():
@@ -145,15 +146,32 @@ def main():
             # 尝试带前导零和不带前导零两种格式
             num_raw = str(number)
             num_normalized = str(int(num_raw)) if num_raw.isdigit() else num_raw
+            img_path = f"/cards/{cd['set_code_cn']}-{cd['card_index_cn']}.png"
+            chinese_name = cd.get("chinese_name", "")
+            card_type = cd.get("card_type", "")
+            found = False
             for candidate in [f"{set_name}-{num_raw}", f"{set_name}-{num_normalized}"]:
                 if candidate in cache:
                     entry = cache[candidate]
-                    entry["name"] = cd.get("chinese_name", entry.get("name", ""))
-                    entry["img"] = f"/cards/{cd['set_code_cn']}-{cd['card_index_cn']}.png"
+                    entry["name"] = chinese_name or entry.get("name", "")
+                    entry["img"] = img_path
                     updated += 1
+                    found = True
                     break
+            # Also create new entries for cards not yet in cache
+            if not found:
+                key = f"{set_name}-{num_normalized}"
+                if key not in cache:
+                    cache[key] = {
+                        "name": chinese_name or name_key,
+                        "set_name": set_name,
+                        "number": num_normalized,
+                        "card_type": card_type or "Unknown",
+                        "img": img_path,
+                    }
+                    created += 1
     CACHE_FILE.write_text(json.dumps(cache, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"已更新 {updated} 条为本地路径 /cards/")
+    print(f"已更新 {updated} 条 + 新增 {created} 条为本地路径 /cards/")
     print("完成!")
 
 

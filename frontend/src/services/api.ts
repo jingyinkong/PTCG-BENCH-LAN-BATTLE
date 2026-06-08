@@ -219,4 +219,10 @@ export const api = {
   async getCostSummary() { const res = await client.get('/test/cost/summary'); return res.data; },
   async getApiKeys() { const res = await client.get('/admin/settings/api-keys'); return res.data; },
   async updateApiKey(body: { provider: string; api_key: string }) { const res = await client.put('/admin/settings/api-keys', body); return res.data; },
+  async getDownloadStatus() { const res = await client.get('/cards/images/refresh/status'); return res.data; },
+  async refreshDecks() { const res = await client.post('/decks/refresh'); return res.data; },
+  async getDeckRefreshStatus() { const res = await client.get('/decks/refresh/status'); return res.data; },
+  async refreshCardImages() { const res = await client.post('/cards/images/refresh'); return res.data; },
+  async getDeckDetail(deckId: string) { const res = await client.get(`/decks/${deckId}`); return res.data; },
+
 };

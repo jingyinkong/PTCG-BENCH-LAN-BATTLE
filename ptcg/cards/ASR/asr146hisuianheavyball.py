@@ -14,9 +14,9 @@ class ASR146HisuianHeavyBall(ItemCard):
         self.set_name = "ASR"
         self.number = "146"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "洗翠重球"
+        self.name = "洗翠的沉重球"
         self.cardType = CardType.NONE
-        self.text = "查看自己所有反面朝上的奖赏卡，选择其中1张基础宝可梦，给对手看过之后，与这张「洗翠重球」卡牌互换，加入手牌。（将看过的奖赏卡恢复反面朝上。）"
+        self.text = "查看自己所有反面朝上的奖赏卡，选择其中1张基础宝可梦，给对手看过之后，与这张「洗翠的沉重球」卡牌互换，加入手牌。（将看过的奖赏卡恢复反面朝上。）"
 
     def get_actions(self, state):
         actions = []

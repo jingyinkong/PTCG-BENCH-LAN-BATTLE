@@ -12,7 +12,7 @@ class ASR136CancelingCologne(ItemCard):
         self.set_name = "ASR"
         self.number = "136"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "消除香水"
+        self.name = "清除古龙水"
         self.cardType = CardType.NONE
         self.text = "在这个回合结束前，对手的战斗宝可梦的特性全部无效。"
 

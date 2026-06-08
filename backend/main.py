@@ -20,7 +20,8 @@ from importlib.resources import files
 from typing import Any, Dict, List, Optional
 
 from card_image_service import card_image_service
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
+import threading
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
@@ -277,6 +278,156 @@ async def list_agents():
     return agents
 
 
+
+# Chinese deck display name mapping
+_DECK_CN_NAMES = {
+    "archaludon_dialga_ex": "铝钢桥龙 帝牙卢卡ex",
+    "charizard_ex": "喷火龙 大比鸟",
+    "gardevori_ex": "沙奈朵ex",
+    "gholdengo_ex": "赛富豪ex",
+    "klawf_terapagos": "毛崖蟹 太乐巴戈斯",
+    "lugia_archeops": "洛奇亚 始祖大鸟",
+    "miraidon_ex": "密勒顿ex",
+    "origin_palkia_noctowl_vstar": "起源帕路奇亚 猫头夜鹰VSTAR",
+    "raging_bolt_ogerpon_ex": "猛雷鼓 厄诡椪ex",
+    "regidrago_vstar": "雷吉铎拉戈VSTAR",
+    "terapagos_noctowl_ex": "太乐巴戈斯 猫头夜鹰ex",
+}
+
+
+
+def _rebuild_card_cn_names():
+    """Rebuild _CARD_CN_NAMES from card Python files (after name corrections)."""
+    global _CARD_CN_NAMES
+    _CARD_CN_NAMES.clear()
+    try:
+        import re as _re2
+        _cards_dir2 = _Path(__file__).parent.parent / "ptcg" / "cards"
+        if _cards_dir2.exists():
+            for _pyfile in _cards_dir2.rglob("*.py"):
+                if _pyfile.name == "__init__.py": continue
+                try:
+                    _text = _pyfile.read_text(encoding="utf-8")
+                    _m_name = _re2.search(r"""self\.name\s*=\s*["\x27]([^"\x27]+)["\x27]""", _text)
+                    _m_set = _re2.search(r"""self\.set_name\s*=\s*["\x27]([^"\x27]+)["\x27]""", _text)
+                    _m_num = _re2.search(r"""self\.number\s*=\s*["\x27]([^"\x27]+)["\x27]""", _text)
+                    if _m_name and _m_set and _m_num:
+                        _key = (_m_set.group(1).upper(), _m_num.group(1).zfill(3))
+                        if _key not in _CARD_CN_NAMES:
+                            _CARD_CN_NAMES[_key] = _m_name.group(1)
+                except Exception: pass
+    except Exception: pass
+
+# Load Chinese card names by parsing card Python files
+_CARD_CN_NAMES: dict = {}
+try:
+    import re as _re
+    from pathlib import Path as _Path
+    _cards_dir = _Path(__file__).parent.parent / "ptcg" / "cards"
+    if _cards_dir.exists():
+        for _pyfile in _cards_dir.rglob("*.py"):
+            if _pyfile.name == "__init__.py":
+                continue
+            try:
+                _text = _pyfile.read_text(encoding="utf-8")
+                _m_name = _re.search(r"""self\.name\s*=\s*["']([^"']+)["']""", _text)
+                _m_set = _re.search(r"""self\.set_name\s*=\s*["']([^"']+)["']""", _text)
+                _m_num = _re.search(r"""self\.number\s*=\s*["']([^"']+)["']""", _text)
+                if _m_name and _m_set and _m_num:
+                    _key = (_m_set.group(1).upper(), _m_num.group(1).zfill(3))
+                    if _key not in _CARD_CN_NAMES:
+                        _CARD_CN_NAMES[_key] = _m_name.group(1)
+            except Exception:
+                pass
+except Exception:
+    pass
+
+# Also try card_chinese_data.json as supplement
+try:
+    import json as _json
+    _cn_path = _Path(__file__).parent.parent / "card_chinese_data.json"
+    if _cn_path.exists():
+        with open(_cn_path, encoding="utf-8") as _f:
+            _cn_data = _json.load(_f)
+        for _card_key, _card_info in _cn_data.get("cards", {}).items():
+            _set = _card_info.get("set_name", "")
+            _num = _card_info.get("number", "")
+            _cn = _card_info.get("chinese_name", "")
+            if _set and _num and _cn:
+                _key = (_set.upper(), _num.zfill(3))
+                if _key not in _CARD_CN_NAMES:
+                    _CARD_CN_NAMES[_key] = _cn
+except Exception:
+    pass
+
+def _get_card_display_name(en_name: str, set_code: str, number: str) -> str:
+    """Return Chinese card name if available, otherwise English name."""
+    return _CARD_CN_NAMES.get((set_code.upper(), number.zfill(3)), en_name)
+
+# Deck refresh progress tracking
+_deck_refresh_status = {"running": False, "progress": 0, "total": 0, "message": "", "done": False, "error": None}
+
+@app.post("/api/decks/refresh")
+async def refresh_decks():
+    """Fetch latest deck data from tcg.mik.moe and regenerate deck files."""
+    global _deck_refresh_status
+    if _deck_refresh_status["running"]:
+        return {"success": False, "error": "Deck refresh already in progress"}
+    
+    import subprocess, sys
+    from pathlib import Path as _Path
+    
+    _root = _Path(__file__).parent.parent
+    _fetch_script = _root / "scripts" / "fetch_deck_data.py"
+    _write_script = _root / "scripts" / "write_decks.py"
+    
+    if not _fetch_script.exists() or not _write_script.exists():
+        raise HTTPException(status_code=500, detail="Scripts not found")
+    
+    _deck_refresh_status = {"running": True, "progress": 0, "total": 2, "message": "Fetching deck data from tcg.mik.moe...", "done": False, "error": None}
+    
+    def _run_refresh():
+        global _deck_refresh_status
+        try:
+            # Step 1: Fetch deck data
+            r1 = subprocess.run(
+                [sys.executable, str(_fetch_script)],
+                capture_output=True, text=True, timeout=120,
+                cwd=str(_root)
+            )
+            if r1.returncode != 0:
+                _deck_refresh_status = {"running": False, "progress": 0, "total": 2, "message": "Fetch failed", "done": True, "error": r1.stderr[-300:] or r1.stdout[-300:]}
+                return
+            
+            _deck_refresh_status["progress"] = 1
+            _deck_refresh_status["message"] = "Regenerating deck files..."
+            
+            # Step 2: Write deck files
+            r2 = subprocess.run(
+                [sys.executable, str(_write_script)],
+                capture_output=True, text=True, timeout=60,
+                cwd=str(_root)
+            )
+            
+            _deck_refresh_status = {
+                "running": False, "progress": 2, "total": 2,
+                "message": f"Decks refreshed successfully",
+                "done": True, "error": None if r2.returncode == 0 else r2.stderr[-300:]
+            }
+        except subprocess.TimeoutExpired:
+            _deck_refresh_status = {"running": False, "progress": 0, "total": 2, "message": "Timeout", "done": True, "error": "Refresh timed out"}
+        except Exception as e:
+            _deck_refresh_status = {"running": False, "progress": 0, "total": 2, "message": "Error", "done": True, "error": str(e)}
+    
+    threading.Thread(target=_run_refresh, daemon=True).start()
+    return {"success": True, "message": "Deck refresh started"}
+
+@app.get("/api/decks/refresh/status")
+async def get_deck_refresh_status():
+    """Get deck refresh progress."""
+    return _deck_refresh_status
+
+
 @app.get("/api/decks")
 async def list_decks():
     """List available decks with parsed card info"""
@@ -294,7 +445,7 @@ async def list_decks():
 
     for deck_file in deck_files:
         deck_name = deck_file.stem
-        display_name = deck_name.replace("_", " ").title()
+        display_name = _DECK_CN_NAMES.get(deck_name, deck_name.replace("_", " ").title())
 
         pokemon_list: List[Dict] = []
         trainer_count = 0
@@ -326,7 +477,8 @@ async def list_decks():
                         parts = line.split()
                         if len(parts) >= 4:
                             count = int(parts[0])
-                            name = " ".join(parts[1:-2])
+                            en_name = " ".join(parts[1:-2])
+                            name = _get_card_display_name(en_name, parts[-2], parts[-1])
                             if current_section == "pokemon":
                                 pokemon_list.append({"count": count, "name": name})
                             elif current_section == "energy":
@@ -351,6 +503,78 @@ async def list_decks():
 
     return decks
 
+@app.get("/api/decks/{deck_id}")
+async def get_deck_detail(deck_id: str):
+    """Return full card list for a single deck."""
+    from pathlib import Path as _Path
+    
+    decks_dir = _Path(__file__).parent.parent / "ptcg" / "decks"
+    deck_path = decks_dir / f"{deck_id}.txt"
+    if not deck_path.exists():
+        raise HTTPException(status_code=404, detail=f"Deck '{deck_id}' not found")
+
+    energy_type_re = re.compile(r"\{([A-Za-z]+)\}")
+    pokemon_list: List[Dict] = []
+    trainer_cards: List[Dict] = []
+    energy_cards: List[Dict] = []
+    trainer_count = 0
+    energy_count = 0
+    energy_types: set = set()
+    current_section: Optional[str] = None
+
+    try:
+        with open(deck_path, encoding="utf-8") as f:
+            for raw in f:
+                line = raw.strip()
+                if not line:
+                    continue
+                if "Pokémon:" in line or "Pokemon:" in line:
+                    current_section = "pokemon"
+                elif line.startswith("Trainer:"):
+                    current_section = "trainer"
+                    try:
+                        trainer_count = int(line.split(":")[1].strip())
+                    except (IndexError, ValueError):
+                        pass
+                elif line.startswith("Energy:"):
+                    current_section = "energy"
+                    try:
+                        energy_count = int(line.split(":")[1].strip())
+                    except (IndexError, ValueError):
+                        pass
+                elif current_section and line[0].isdigit():
+                    parts = line.split()
+                    if len(parts) >= 4:
+                        count = int(parts[0])
+                        en_name = " ".join(parts[1:-2])
+                        set_code = parts[-2]
+                        number = parts[-1]
+                        name = _get_card_display_name(en_name, set_code, number)
+                        if current_section == "pokemon":
+                            pokemon_list.append({"count": count, "name": name, "set": set_code, "number": number})
+                        elif current_section == "trainer":
+                            trainer_cards.append({"count": count, "name": name, "set": set_code, "number": number})
+                        elif current_section == "energy":
+                            energy_cards.append({"count": count, "name": name, "set": set_code, "number": number})
+                            for m in energy_type_re.findall(name):
+                                energy_types.add(m.upper())
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=f"Error parsing deck: {exc}")
+
+    pokemon_total = sum(p["count"] for p in pokemon_list)
+
+    return {
+        "id": deck_id,
+        "displayName": _DECK_CN_NAMES.get(deck_id, deck_id.replace("_", " ").title()),
+        "pokemon": pokemon_list,
+        "pokemonCount": pokemon_total,
+        "trainer": trainer_cards,
+        "trainerCount": trainer_count,
+        "energy": energy_cards,
+        "energyCount": energy_count,
+        "energyTypes": sorted(energy_types),
+    }
+
 
 @app.get("/api/leaderboard")
 async def get_leaderboard():
@@ -365,6 +589,73 @@ async def get_leaderboard():
     agents.sort(key=lambda a: a["mu"], reverse=True)
     return {"agents": agents}
 
+
+
+# Card image download progress tracking
+_download_status = {"running": False, "progress": 0, "total": 0, "message": "", "done": False, "error": None}
+
+@app.post("/api/cards/images/refresh")
+async def refresh_card_images():
+    """Start card image download in background thread."""
+    global _download_status
+    if _download_status["running"]:
+        return {"success": False, "error": "Download already in progress", "status": _download_status}
+    
+    import subprocess, sys, os, re
+    from pathlib import Path as _Path
+    
+    script = _Path(__file__).parent.parent / "scripts" / "download_card_images.py"
+    if not script.exists():
+        raise HTTPException(status_code=500, detail="Download script not found")
+    
+    _download_status = {"running": True, "progress": 0, "total": 0, "message": "Starting...", "done": False, "error": None}
+    
+    def _run_download():
+        global _download_status
+        try:
+            _root = _Path(__file__).parent.parent
+            _fetch_script = _root / "scripts" / "fetch_chinese_card_data.py"
+            _dl_script = _root / "scripts" / "download_card_images.py"
+            
+            # Step 1: Fetch Chinese card data for ALL cards (update card_chinese_data.json)
+            _download_status["message"] = "Fetching card data from tcg.mik.moe..."
+            r1 = subprocess.run(
+                [sys.executable, str(_fetch_script), "-c", "10"],
+                capture_output=True, text=True, timeout=120,
+                cwd=str(_root)
+            )
+            if r1.returncode != 0:
+                _download_status = {"running": False, "progress": 0, "total": 0, "message": "Fetch failed", "done": True, "error": r1.stderr[-300:] or r1.stdout[-300:]}
+                return
+            
+            # Step 2: Download images
+            _download_status["message"] = "Downloading card images..."
+            r2 = subprocess.run(
+                [sys.executable, str(_dl_script), "-c", "8"],
+                capture_output=True, text=True, timeout=180,
+                cwd=str(_root)
+            )
+            card_image_service._build_image_map()
+            # Also rebuild card Chinese name lookup (in case names were corrected)
+            _rebuild_card_cn_names()
+            _download_status = {
+                "running": False, "progress": len(card_image_service.card_images),
+                "total": len(card_image_service.card_images), "message": "Done",
+                "done": True, "error": None if r2.returncode == 0 else (r2.stderr + r2.stdout)[-300:]
+            }
+        except subprocess.TimeoutExpired:
+            _download_status = {"running": False, "progress": 0, "total": 0, "message": "Timeout", "done": True, "error": "Download timed out"}
+        except Exception as e:
+            _download_status = {"running": False, "progress": 0, "total": 0, "message": "Error", "done": True, "error": str(e)}
+    
+    threading.Thread(target=_run_download, daemon=True).start()
+    return {"success": True, "message": "Download started"}
+
+@app.get("/api/cards/images/refresh/status")
+async def get_download_status():
+    """Get current download progress."""
+    global _download_status
+    return _download_status
 
 @app.get("/api/cards/images")
 async def get_all_card_images():

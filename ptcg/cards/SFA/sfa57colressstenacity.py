@@ -14,7 +14,7 @@ class SFA57ColressTenacity(SupporterCard):
         self.set_name = "SFA"
         self.number = "057"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "阿克罗马的执着"
+        self.name = "阿克罗玛的执念"
         self.cardType = CardType.NONE
         self.text = "选择自己牌库中的1张能量卡与1张宝可梦卡（「拥有规则的宝可梦」除外），在给对手看过之后，加入手牌。并重洗牌库。"
 

@@ -15,7 +15,7 @@ class PRE121ProfessorTurosScenario(SupporterCard):
         self.set_name = "PRE"
         self.number = "121"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "弗图的剧本"
+        self.name = "弗图博士的剧本"
         self.cardType = CardType.NONE
         self.text = "选择自己场上的1只宝可梦，将其与身上附加的卡牌，全部放回手牌。"
 

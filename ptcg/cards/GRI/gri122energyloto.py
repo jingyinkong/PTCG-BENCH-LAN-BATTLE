@@ -14,7 +14,7 @@ class GRI122EnergyLoto(ItemCard):
         self.set_name = "GRI"
         self.number = "122"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "能量抽出"
+        self.name = "能量签"
         self.cardType = CardType.NONE
         self.text = "查看自己牌库上方的7张卡牌，选择其中1张基本能量，在给对手看过之后，加入手牌。将剩余卡牌放回牌库并重洗。"
 

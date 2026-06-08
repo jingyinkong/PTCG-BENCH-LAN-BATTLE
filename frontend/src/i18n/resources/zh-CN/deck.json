@@ -21,5 +21,17 @@
   "useThisDeck": "使用此卡组",
   "agentType": "智能体类型",
   "model": "模型",
-  "vs": "vs"
+  "vs": "vs",
+  "pokemonSection": "宝可梦",
+  "trainerSection": "训练家",
+  "energySection": "能量",
+  "energyCards": "张能量卡",
+  "loadFailed": "加载卡组详情失败",
+  "refreshImages": "下载卡图",
+  "refreshing": "下载中...",
+  "refreshDone": "已更新 {{count}} 张卡图",
+  "refreshFailed": "下载失败",
+  "refreshDecks": "更新卡组",
+  "deckRefreshing": "更新中...",
+  "deckRefreshDone": "卡组已更新"
 }

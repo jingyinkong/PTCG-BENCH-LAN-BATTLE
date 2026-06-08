@@ -14,7 +14,7 @@ class PRE128ScoopUpCyclone(ItemCard):
         self.set_name = "PRE"
         self.number = "128"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "回收旋风"
+        self.name = "宝可梦旋风回收机"
         self.cardType = CardType.NONE
         self.text = "选择自己场上的1只宝可梦，将其与身上附加的卡牌，全部放回手牌。"
 

@@ -37,7 +37,7 @@ class SIT138LugiaV(PokemonCard):
         self.set_name = "SIT"
         self.number = "138"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "洛奇亚ex"
+        self.name = "洛奇亚V"
         self.hp = 220
         self.pokemonType = PokemonType.V
         self.pokemonRule = PokemonRule.NONE

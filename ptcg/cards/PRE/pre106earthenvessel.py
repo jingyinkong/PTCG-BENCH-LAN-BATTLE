@@ -14,7 +14,7 @@ class PRE106EarthenVessel(ItemCard):
         self.set_name = "PRE"
         self.number = "106"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "大地之器"
+        self.name = "大地容器"
         self.cardType = CardType.NONE
         self.text = "将自己的1张手牌丢于弃牌区。（若无法丢弃则无法使用。）选择自己牌库中最多2张基本能量，在给对手看过之后，加入手牌。并重洗牌库。"
 

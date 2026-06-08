@@ -14,7 +14,7 @@ class LOR167Thorton(SupporterCard):
         self.set_name = "LOR"
         self.number = "167"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "松英"
+        self.name = "捩木"
         self.cardType = CardType.NONE
         self.text = "选择自己牌库中的1张名称与自己的场上宝可梦各不同的宝可梦卡，将其与自己的场上宝可梦互换（身上附加的卡牌、伤害指示物、特殊状态、效果等全部保留）。并重洗牌库。"
 

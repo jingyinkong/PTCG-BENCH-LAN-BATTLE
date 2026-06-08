@@ -1,14 +1,313 @@
 {
   "metadata": {
     "source": "https://tcg.mik.moe/",
-    "total": 102,
-    "matched": 99,
+    "total": 210,
+    "matched": 207,
     "not_found": 3,
     "errors": 0,
-    "elapsed_seconds": 3.5,
+    "elapsed_seconds": 4.0,
     "concurrency": 10
   },
   "cards": {
+    "cards/ASC/asc189glasstrumpet": {
+      "name": "玻璃喇叭",
+      "set_name": "ASC",
+      "number": "189",
+      "chinese_name": "玻璃喇叭",
+      "set_code_cn": "CSV9C",
+      "card_index_cn": "178",
+      "image_url": "https://tcg.mik.moe/static/img/CSV9C/178.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/ASC/asc189glasstrumpet.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/ASC/asc57pikachuex": {
+      "name": "皮卡丘ex",
+      "set_name": "ASC",
+      "number": "057",
+      "chinese_name": "皮卡丘ex",
+      "set_code_cn": "CSV9C",
+      "card_index_cn": "221",
+      "image_url": "https://tcg.mik.moe/static/img/CSV9C/221.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "黄晶伏特"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "顽强之心"
+      ],
+      "hp": 200,
+      "file": "cards/ASC/asc57pikachuex.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/ASR/asr113originformedialgav": {
+      "name": "起源帝牙卢卡V",
+      "set_name": "ASR",
+      "number": "113",
+      "chinese_name": "起源帝牙卢卡V",
+      "set_code_cn": "CSVE2C",
+      "card_index_cn": "102",
+      "image_url": "https://tcg.mik.moe/static/img/CSVE2C/102.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "金属涂层",
+        "时间断绝"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 220,
+      "file": "cards/ASR/asr113originformedialgav.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/ASR/asr114originformedialgavstar": {
+      "name": "起源帝牙卢卡VSTAR",
+      "set_name": "ASR",
+      "number": "114",
+      "chinese_name": "起源帝牙卢卡VSTAR",
+      "set_code_cn": "CSVE2C",
+      "card_index_cn": "103",
+      "image_url": "https://tcg.mik.moe/static/img/CSVE2C/103.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "金属爆破",
+        "星耀时刻"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 280,
+      "file": "cards/ASR/asr114originformedialgavstar.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/ASR/asr133oranguruv": {
+      "name": "智挥猩V",
+      "set_name": "ASR",
+      "number": "133",
+      "chinese_name": "智挥猩V",
+      "set_code_cn": "CS5bC",
+      "card_index_cn": "150",
+      "image_url": "https://tcg.mik.moe/static/img/CS5bC/150.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "精神强念"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "预订"
+      ],
+      "hp": 210,
+      "file": "cards/ASR/asr133oranguruv.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/ASR/asr134wyrdeerv": {
+      "name": "诡角鹿V",
+      "set_name": "ASR",
+      "number": "134",
+      "chinese_name": "诡角鹿V",
+      "set_code_cn": "CS5DC",
+      "card_index_cn": "111",
+      "image_url": "https://tcg.mik.moe/static/img/CS5DC/111.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "屏障猛攻"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "拓荒之路"
+      ],
+      "hp": 220,
+      "file": "cards/ASR/asr134wyrdeerv.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/ASR/asr136cancelingcologne": {
+      "name": "清除古龙水",
+      "set_name": "ASR",
+      "number": "136",
+      "chinese_name": "清除古龙水",
+      "set_code_cn": "CSZC",
+      "card_index_cn": "033",
+      "image_url": "https://tcg.mik.moe/static/img/CSZC/033.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/ASR/asr136cancelingcologne.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/ASR/asr141featherball": {
+      "name": "飞羽球",
+      "set_name": "ASR",
+      "number": "141",
+      "chinese_name": "飞羽球",
+      "set_code_cn": "SSP",
+      "card_index_cn": "196",
+      "image_url": "https://tcg.mik.moe/static/img/SSP/196.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/ASR/asr141featherball.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/ASR/asr146hisuianheavyball": {
+      "name": "洗翠的沉重球",
+      "set_name": "ASR",
+      "number": "146",
+      "chinese_name": "洗翠的沉重球",
+      "set_code_cn": "CSVE2C",
+      "card_index_cn": "157",
+      "image_url": "https://tcg.mik.moe/static/img/CSVE2C/157.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/ASR/asr146hisuianheavyball.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/ASR/asr147irida": {
+      "name": "珠贝",
+      "set_name": "ASR",
+      "number": "147",
+      "chinese_name": "珠贝",
+      "set_code_cn": "CSVE2C",
+      "card_index_cn": "173",
+      "image_url": "https://tcg.mik.moe/static/img/CSVE2C/173.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/ASR/asr147irida.py",
+      "match_score": 260,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/ASR/asr150roxanne": {
+      "name": "杜娟",
+      "set_name": "ASR",
+      "number": "150",
+      "chinese_name": "杜娟",
+      "set_code_cn": "CSVE2C",
+      "card_index_cn": "185",
+      "image_url": "https://tcg.mik.moe/static/img/CSVE2C/185.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/ASR/asr150roxanne.py",
+      "match_score": 260,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/ASR/asr152supereffectiveglasses": {
+      "name": "超群眼镜",
+      "set_name": "ASR",
+      "number": "152",
+      "chinese_name": "超群眼镜",
+      "set_code_cn": "CS5aC",
+      "card_index_cn": "118",
+      "image_url": "https://tcg.mik.moe/static/img/CS5aC/118.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/ASR/asr152supereffectiveglasses.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/ASR/asr156trekkingshoes": {
+      "name": "离洞绳",
+      "set_name": "ASR",
+      "number": "156",
+      "chinese_name": "离洞绳",
+      "set_code_cn": "CSXC",
+      "card_index_cn": "005",
+      "image_url": "https://tcg.mik.moe/static/img/CSXC/005.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/ASR/asr156trekkingshoes.py",
+      "match_score": 50,
+      "match_method": "attribute_match"
+    },
+    "cards/ASR/asr39originformepalkiav": {
+      "name": "起源帕路奇亚V",
+      "set_name": "ASR",
+      "number": "039",
+      "chinese_name": "起源帕路奇亚V",
+      "set_code_cn": "CSVE2C",
+      "card_index_cn": "036",
+      "image_url": "https://tcg.mik.moe/static/img/CSVE2C/036.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "领域支配",
+        "水炮破坏"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 220,
+      "file": "cards/ASR/asr39originformepalkiav.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/ASR/asr40originformepalkiavstar": {
+      "name": "起源帕路奇亚VSTAR",
+      "set_name": "ASR",
+      "number": "040",
+      "chinese_name": "起源帕路奇亚VSTAR",
+      "set_code_cn": "CSVE2C",
+      "card_index_cn": "037",
+      "image_url": "https://tcg.mik.moe/static/img/CSVE2C/037.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "亚空潮漩"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "星耀空扉"
+      ],
+      "hp": 280,
+      "file": "cards/ASR/asr40originformepalkiavstar.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/ASR/asr60ralts": {
+      "name": "拉鲁拉丝",
+      "set_name": "ASR",
+      "number": "060",
+      "chinese_name": "拉鲁拉丝",
+      "set_code_cn": "CSVM1bC",
+      "card_index_cn": "005",
+      "image_url": "https://tcg.mik.moe/static/img/CSVM1bC/005.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "瞬移破坏"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 70,
+      "file": "cards/ASR/asr60ralts.py",
+      "match_score": 235,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
     "cards/ASR/radiant_greninja": {
       "name": "光辉甲贺忍蛙",
       "set_name": "ASR",
@@ -66,6 +365,47 @@
       "hp": 120,
       "file": "cards/BRS/bibarel.py",
       "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/BRS/brs22enteiv": {
+      "name": "炎帝V",
+      "set_name": "BRS",
+      "number": "022",
+      "chinese_name": "炎帝V",
+      "set_code_cn": "CSVE2C",
+      "card_index_cn": "017",
+      "image_url": "https://tcg.mik.moe/static/img/CSVE2C/017.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "燃烧回旋曲"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "瞬步"
+      ],
+      "hp": 230,
+      "file": "cards/BRS/brs22enteiv.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/BRS/brs45raichuv": {
+      "name": "雷丘V",
+      "set_name": "BRS",
+      "number": "045",
+      "chinese_name": "雷丘V",
+      "set_code_cn": "CSVM1cC",
+      "card_index_cn": "002",
+      "image_url": "https://tcg.mik.moe/static/img/CSVM1cC/002.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "快速充能",
+        "强劲电光"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 200,
+      "file": "cards/BRS/brs45raichuv.py",
+      "match_score": 215,
       "match_method": "setCodeEn+cardIndexEn"
     },
     "cards/BRS/collapsed_stadium": {
@@ -205,6 +545,40 @@
       "match_score": 240,
       "match_method": "setCodeEn+cardIndexEn"
     },
+    "cards/CES/ces129energyswitch": {
+      "name": "能量转移",
+      "set_name": "CES",
+      "number": "129",
+      "chinese_name": "能量转移",
+      "set_code_cn": "SVP",
+      "card_index_cn": "293",
+      "image_url": "https://tcg.mik.moe/static/img/SVP/293.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/CES/ces129energyswitch.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/CIN/cin91countercatcher": {
+      "name": "反击捕捉器",
+      "set_name": "CIN",
+      "number": "091",
+      "chinese_name": "反击捕捉器",
+      "set_code_cn": "CSVH4aC",
+      "card_index_cn": "008",
+      "image_url": "https://tcg.mik.moe/static/img/CSVH4aC/008.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/CIN/cin91countercatcher.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
     "cards/CRZ/bidoof": {
       "name": "大牙狸",
       "set_name": "CRZ",
@@ -302,6 +676,40 @@
       "match_score": 50,
       "match_method": "attribute_match"
     },
+    "cards/FLI/fli108judge": {
+      "name": "裁判",
+      "set_name": "FLI",
+      "number": "108",
+      "chinese_name": "裁判",
+      "set_code_cn": "CSVH4C",
+      "card_index_cn": "048",
+      "image_url": "https://tcg.mik.moe/static/img/CSVH4C/048.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/FLI/fli108judge.py",
+      "match_score": 260,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/GRI/gri122energyloto": {
+      "name": "能量签",
+      "set_name": "GRI",
+      "number": "122",
+      "chinese_name": "能量签",
+      "set_code_cn": "CSVH3C",
+      "card_index_cn": "036",
+      "image_url": "https://tcg.mik.moe/static/img/CSVH3C/036.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/GRI/gri122energyloto.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
     "cards/LOR/gift_energy": {
       "name": "馈赠能量",
       "set_name": "LOR",
@@ -316,6 +724,106 @@
       "abilities_cn": [],
       "hp": null,
       "file": "cards/LOR/gift_energy.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/LOR/lor123radianthisuiansneasler": {
+      "name": "光辉洗翠 大狃拉",
+      "set_name": "LOR",
+      "number": "123",
+      "chinese_name": "光辉洗翠 大狃拉",
+      "set_code_cn": "CS5aC",
+      "card_index_cn": "079",
+      "image_url": "https://tcg.mik.moe/static/img/CS5aC/079.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "毒击"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "巅峰毒性"
+      ],
+      "hp": 130,
+      "file": "cards/LOR/lor123radianthisuiansneasler.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/LOR/lor131giratinavstar": {
+      "name": "骑拉帝纳VSTAR",
+      "set_name": "LOR",
+      "number": "131",
+      "chinese_name": "骑拉帝纳VSTAR",
+      "set_code_cn": "CS6bC",
+      "card_index_cn": "164",
+      "image_url": "https://tcg.mik.moe/static/img/CS6bC/164.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "放逐冲击",
+        "星耀安魂曲"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 280,
+      "file": "cards/LOR/lor131giratinavstar.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/LOR/lor136hisuiangoodravstar": {
+      "name": "洗翠 黏美龙VSTAR",
+      "set_name": "LOR",
+      "number": "136",
+      "chinese_name": "洗翠 黏美龙VSTAR",
+      "set_code_cn": "CS5.5C",
+      "card_index_cn": "053",
+      "image_url": "https://tcg.mik.moe/static/img/CS5.5C/053.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "钢铁滚动"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "润泽星耀"
+      ],
+      "hp": 270,
+      "file": "cards/LOR/lor136hisuiangoodravstar.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/LOR/lor167thorton": {
+      "name": "捩木",
+      "set_name": "LOR",
+      "number": "167",
+      "chinese_name": "捩木",
+      "set_code_cn": "CSVE2C",
+      "card_index_cn": "189",
+      "image_url": "https://tcg.mik.moe/static/img/CSVE2C/189.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/LOR/lor167thorton.py",
+      "match_score": 260,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/LOR/lor58rotomv": {
+      "name": "洛托姆V",
+      "set_name": "LOR",
+      "number": "058",
+      "chinese_name": "洛托姆V",
+      "set_code_cn": "CSVM1aC",
+      "card_index_cn": "005",
+      "image_url": "https://tcg.mik.moe/static/img/CSVM1aC/005.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "废品短路"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "快速充电"
+      ],
+      "hp": 190,
+      "file": "cards/LOR/lor58rotomv.py",
       "match_score": 215,
       "match_method": "setCodeEn+cardIndexEn"
     },
@@ -338,6 +846,27 @@
       "hp": 150,
       "file": "cards/LOR/snorlax.py",
       "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/MEW/mew132ditto": {
+      "name": "百变怪",
+      "set_name": "MEW",
+      "number": "132",
+      "chinese_name": "百变怪",
+      "set_code_cn": "CSVH4aC",
+      "card_index_cn": "002",
+      "image_url": "https://tcg.mik.moe/static/img/CSVH4aC/002.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "粘粑粑"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "变身启动"
+      ],
+      "hp": 60,
+      "file": "cards/MEW/mew132ditto.py",
+      "match_score": 235,
       "match_method": "setCodeEn+cardIndexEn"
     },
     "cards/MEW/mew_ex": {
@@ -509,6 +1038,85 @@
       "match_score": 265,
       "match_method": "setCodeEn+cardIndexEn"
     },
+    "cards/OBF/obf125charizardex": {
+      "name": "喷火龙ex",
+      "set_name": "OBF",
+      "number": "125",
+      "chinese_name": "喷火龙ex",
+      "set_code_cn": "CSVM1aC",
+      "card_index_cn": "006",
+      "image_url": "https://tcg.mik.moe/static/img/CSVM1aC/006.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "燃烧黑暗"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "烈炎支配"
+      ],
+      "hp": 330,
+      "file": "cards/OBF/obf125charizardex.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/OBF/obf162pidgey": {
+      "name": "波波",
+      "set_name": "OBF",
+      "number": "162",
+      "chinese_name": "波波",
+      "set_code_cn": "CSV4C",
+      "card_index_cn": "099",
+      "image_url": "https://tcg.mik.moe/static/img/CSV4C/099.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "起风"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 60,
+      "file": "cards/OBF/obf162pidgey.py",
+      "match_score": 235,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/OBF/obf202cleffa": {
+      "name": "皮宝宝",
+      "set_name": "OBF",
+      "number": "202",
+      "chinese_name": "皮宝宝",
+      "set_code_cn": "SVP",
+      "card_index_cn": "211",
+      "image_url": "https://tcg.mik.moe/static/img/SVP/211.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "握握抽取"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 30,
+      "file": "cards/OBF/obf202cleffa.py",
+      "match_score": 235,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/OBF/obf205scizor": {
+      "name": "巨钳螳螂",
+      "set_name": "OBF",
+      "number": "205",
+      "chinese_name": "巨钳螳螂",
+      "set_code_cn": "CSVL2C",
+      "card_index_cn": "085",
+      "image_url": "https://tcg.mik.moe/static/img/CSVL2C/085.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "惩罚巨钳",
+        "居合劈"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 140,
+      "file": "cards/OBF/obf205scizor.py",
+      "match_score": 235,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
     "cards/OBF/pidgeot_ex": {
       "name": "大比鸟ex",
       "set_name": "OBF",
@@ -663,6 +1271,61 @@
       "match_score": 75,
       "match_method": "attribute_match"
     },
+    "cards/PAF/paf75squawkabillyex": {
+      "name": "怒鹦哥ex",
+      "set_name": "PAF",
+      "number": "075",
+      "chinese_name": "怒鹦哥ex",
+      "set_code_cn": "CSVM1cC",
+      "card_index_cn": "007",
+      "image_url": "https://tcg.mik.moe/static/img/CSVM1cC/007.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "鼓足干劲"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "英武重抽"
+      ],
+      "hp": 160,
+      "file": "cards/PAF/paf75squawkabillyex.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/PAF/paf79electricgenerator": {
+      "name": "电气发生器",
+      "set_name": "PAF",
+      "number": "079",
+      "chinese_name": "电气发生器",
+      "set_code_cn": "CSVM1cC",
+      "card_index_cn": "010",
+      "image_url": "https://tcg.mik.moe/static/img/CSVM1cC/010.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/PAF/paf79electricgenerator.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/PAF/paf81moonlithill": {
+      "name": "月光之丘",
+      "set_name": "PAF",
+      "number": "081",
+      "chinese_name": "月光之丘",
+      "set_code_cn": "CSVM1bC",
+      "card_index_cn": "032",
+      "image_url": "https://tcg.mik.moe/static/img/CSVM1bC/032.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/PAF/paf81moonlithill.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
     "cards/PAF/professors_research": {
       "name": "博士的研究",
       "set_name": "PAF",
@@ -816,6 +1479,43 @@
       "hp": null,
       "file": "cards/PAL/jet_energy.py",
       "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/PAL/pal156dunsparce": {
+      "name": "土龙弟弟",
+      "set_name": "PAL",
+      "number": "156",
+      "chinese_name": "土龙弟弟",
+      "set_code_cn": "CSVH3aC",
+      "card_index_cn": "002",
+      "image_url": "https://tcg.mik.moe/static/img/CSVH3aC/002.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "找朋友",
+        "咬住"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 60,
+      "file": "cards/PAL/pal156dunsparce.py",
+      "match_score": 205,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/PAL/pal185iono": {
+      "name": "奇树",
+      "set_name": "PAL",
+      "number": "185",
+      "chinese_name": "奇树",
+      "set_code_cn": "CSVH4aC",
+      "card_index_cn": "021",
+      "image_url": "https://tcg.mik.moe/static/img/CSVH4aC/021.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/PAL/pal185iono.py",
+      "match_score": 260,
       "match_method": "setCodeEn+cardIndexEn"
     },
     "cards/PAL/squawkabilly_ex": {
@@ -1043,6 +1743,118 @@
       "match_score": 265,
       "match_method": "setCodeEn+cardIndexEn"
     },
+    "cards/PAR/par105klawf": {
+      "name": "毛崖蟹",
+      "set_name": "PAR",
+      "number": "105",
+      "chinese_name": "毛崖蟹",
+      "set_code_cn": "CSV6C",
+      "card_index_cn": "080",
+      "image_url": "https://tcg.mik.moe/static/img/CSV6C/080.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "歇斯底里巨钳",
+        "沸腾压制"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 120,
+      "file": "cards/PAR/par105klawf.py",
+      "match_score": 235,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/PAR/par107slitherwing": {
+      "name": "爬地翅",
+      "set_name": "PAR",
+      "number": "107",
+      "chinese_name": "爬地翅",
+      "set_code_cn": "CSV6C",
+      "card_index_cn": "082",
+      "image_url": "https://tcg.mik.moe/static/img/CSV6C/082.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "踏平",
+        "烫伤怒涛"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 140,
+      "file": "cards/PAR/par107slitherwing.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/PAR/par123brutebonnet": {
+      "name": "猛恶菇",
+      "set_name": "PAR",
+      "number": "123",
+      "chinese_name": "猛恶菇",
+      "set_code_cn": "CSV6C",
+      "card_index_cn": "095",
+      "image_url": "https://tcg.mik.moe/static/img/CSV6C/095.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "暴走重锤"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "烈毒粉尘"
+      ],
+      "hp": 120,
+      "file": "cards/PAR/par123brutebonnet.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/PAR/par159ancientboosterenergycapsule": {
+      "name": "驱劲能量 古代",
+      "set_name": "PAR",
+      "number": "159",
+      "chinese_name": "驱劲能量 古代",
+      "set_code_cn": "SVP",
+      "card_index_cn": "256",
+      "image_url": "https://tcg.mik.moe/static/img/SVP/256.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/PAR/par159ancientboosterenergycapsule.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/PAR/par170professorsadasvitality": {
+      "name": "奥琳博士的气魄",
+      "set_name": "PAR",
+      "number": "170",
+      "chinese_name": "奥琳博士的气魄",
+      "set_code_cn": "CSVH4C",
+      "card_index_cn": "046",
+      "image_url": "https://tcg.mik.moe/static/img/CSVH4C/046.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/PAR/par170professorsadasvitality.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/PAR/par177technicalmachinedevolution": {
+      "name": "招式学习器 退化",
+      "set_name": "PAR",
+      "number": "177",
+      "chinese_name": "招式学习器 退化",
+      "set_code_cn": "CSVM1aC",
+      "card_index_cn": "024",
+      "image_url": "https://tcg.mik.moe/static/img/CSVM1aC/024.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/PAR/par177technicalmachinedevolution.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
     "cards/PAR/professor_turos_scenario": {
       "name": "弗图博士的剧本",
       "set_name": "PAR",
@@ -1139,6 +1951,324 @@
       "match_score": 240,
       "match_method": "setCodeEn+cardIndexEn"
     },
+    "cards/PRE/pre100briar": {
+      "name": "白蕾雅",
+      "set_name": "PRE",
+      "number": "100",
+      "chinese_name": "白蕾雅",
+      "set_code_cn": "CSV9C",
+      "card_index_cn": "239",
+      "image_url": "https://tcg.mik.moe/static/img/CSV9C/239.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/PRE/pre100briar.py",
+      "match_score": 260,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/PRE/pre101buddybuddypoffin": {
+      "name": "友好宝芬",
+      "set_name": "PRE",
+      "number": "101",
+      "chinese_name": "友好宝芬",
+      "set_code_cn": "SVP",
+      "card_index_cn": "196",
+      "image_url": "https://tcg.mik.moe/static/img/SVP/196.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/PRE/pre101buddybuddypoffin.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/PRE/pre106earthenvessel": {
+      "name": "大地容器",
+      "set_name": "PRE",
+      "number": "106",
+      "chinese_name": "大地容器",
+      "set_code_cn": "CSVH4C",
+      "card_index_cn": "034",
+      "image_url": "https://tcg.mik.moe/static/img/CSVH4C/034.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/PRE/pre106earthenvessel.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/PRE/pre119primecatcher": {
+      "name": "顶尖捕捉器",
+      "set_name": "PRE",
+      "number": "119",
+      "chinese_name": "顶尖捕捉器",
+      "set_code_cn": "CSV7C",
+      "card_index_cn": "180",
+      "image_url": "https://tcg.mik.moe/static/img/CSV7C/180.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/PRE/pre119primecatcher.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/PRE/pre121professorturosscenario": {
+      "name": "弗图博士的剧本",
+      "set_name": "PRE",
+      "number": "121",
+      "chinese_name": "弗图博士的剧本",
+      "set_code_cn": "CSVH4C",
+      "card_index_cn": "057",
+      "image_url": "https://tcg.mik.moe/static/img/CSVH4C/057.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/PRE/pre121professorturosscenario.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/PRE/pre128scoopupcyclone": {
+      "name": "宝可梦旋风回收机",
+      "set_name": "PRE",
+      "number": "128",
+      "chinese_name": "宝可梦旋风回收机",
+      "set_code_cn": "CSV8C",
+      "card_index_cn": "181",
+      "image_url": "https://tcg.mik.moe/static/img/CSV8C/181.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/PRE/pre128scoopupcyclone.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/PRE/pre31ironhandsex": {
+      "name": "铁臂膀ex",
+      "set_name": "PRE",
+      "number": "031",
+      "chinese_name": "铁臂膀ex",
+      "set_code_cn": "CSVM1cC",
+      "card_index_cn": "005",
+      "image_url": "https://tcg.mik.moe/static/img/CSVM1cC/005.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "臂膀压制",
+        "多谢款待"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 230,
+      "file": "cards/PRE/pre31ironhandsex.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/PRE/pre35duskull": {
+      "name": "夜巡灵",
+      "set_name": "PRE",
+      "number": "035",
+      "chinese_name": "夜巡灵",
+      "set_code_cn": "CSV8C",
+      "card_index_cn": "081",
+      "image_url": "https://tcg.mik.moe/static/img/CSV8C/081.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "渡魂",
+        "喃喃自语"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 60,
+      "file": "cards/PRE/pre35duskull.py",
+      "match_score": 235,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/PRE/pre42screamtail": {
+      "name": "吼叫尾",
+      "set_name": "PRE",
+      "number": "042",
+      "chinese_name": "吼叫尾",
+      "set_code_cn": "CSVM1bC",
+      "card_index_cn": "011",
+      "image_url": "https://tcg.mik.moe/static/img/CSVM1bC/011.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "巴掌",
+        "凶暴吼叫"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 90,
+      "file": "cards/PRE/pre42screamtail.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/PRE/pre73dragapultex": {
+      "name": "多龙巴鲁托ex",
+      "set_name": "PRE",
+      "number": "073",
+      "chinese_name": "多龙巴鲁托ex",
+      "set_code_cn": "CSV8C",
+      "card_index_cn": "159",
+      "image_url": "https://tcg.mik.moe/static/img/CSV8C/159.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "喷射头击",
+        "幻影潜袭"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 320,
+      "file": "cards/PRE/pre73dragapultex.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/RCL/rcl154bosssorders": {
+      "name": "老大的指令",
+      "set_name": "RCL",
+      "number": "154",
+      "chinese_name": "老大的指令",
+      "set_code_cn": "CSVH4aC",
+      "card_index_cn": "022",
+      "image_url": "https://tcg.mik.moe/static/img/CSVH4aC/022.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/RCL/rcl154bosssorders.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SCR/scr114hoothoot": {
+      "name": "咕咕",
+      "set_name": "SCR",
+      "number": "114",
+      "chinese_name": "咕咕",
+      "set_code_cn": "CSV9C",
+      "card_index_cn": "154",
+      "image_url": "https://tcg.mik.moe/static/img/CSV9C/154.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "三刺击"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 70,
+      "file": "cards/SCR/scr114hoothoot.py",
+      "match_score": 235,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SCR/scr115noctowl": {
+      "name": "猫头夜鹰",
+      "set_name": "SCR",
+      "number": "115",
+      "chinese_name": "猫头夜鹰",
+      "set_code_cn": "CSV9C",
+      "card_index_cn": "155",
+      "image_url": "https://tcg.mik.moe/static/img/CSV9C/155.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "高速之翼"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "寻找宝石"
+      ],
+      "hp": 100,
+      "file": "cards/SCR/scr115noctowl.py",
+      "match_score": 235,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SCR/scr118fanrotom": {
+      "name": "旋转洛托姆",
+      "set_name": "SCR",
+      "number": "118",
+      "chinese_name": "旋转洛托姆",
+      "set_code_cn": "CSV9C",
+      "card_index_cn": "161",
+      "image_url": "https://tcg.mik.moe/static/img/CSV9C/161.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "突击登陆"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "风扇呼唤"
+      ],
+      "hp": 70,
+      "file": "cards/SCR/scr118fanrotom.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SCR/scr119bouffalant": {
+      "name": "爆炸头水牛",
+      "set_name": "SCR",
+      "number": "119",
+      "chinese_name": "爆炸头水牛",
+      "set_code_cn": "CSV9C",
+      "card_index_cn": "162",
+      "image_url": "https://tcg.mik.moe/static/img/CSV9C/162.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "潜力"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "卷曲厚壁"
+      ],
+      "hp": 100,
+      "file": "cards/SCR/scr119bouffalant.py",
+      "match_score": 235,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SCR/scr128terapagosex": {
+      "name": "太乐巴戈斯ex",
+      "set_name": "SCR",
+      "number": "128",
+      "chinese_name": "太乐巴戈斯ex",
+      "set_code_cn": "CSV9C",
+      "card_index_cn": "232",
+      "image_url": "https://tcg.mik.moe/static/img/CSV9C/232.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "同盟打击",
+        "皇冠蛋白石"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 230,
+      "file": "cards/SCR/scr128terapagosex.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SCR/scr131areazerounderdepths": {
+      "name": "零之大空洞",
+      "set_name": "SCR",
+      "number": "131",
+      "chinese_name": "零之大空洞",
+      "set_code_cn": "CSV9C",
+      "card_index_cn": "266",
+      "image_url": "https://tcg.mik.moe/static/img/CSV9C/266.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/SCR/scr131areazerounderdepths.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
     "cards/SFA/fezandipiti_ex": {
       "name": "吉雉鸡ex",
       "set_name": "SFA",
@@ -1175,6 +2305,166 @@
       "hp": null,
       "file": "cards/SFA/night_stretcher.py",
       "match_score": 265,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SFA/sfa19dusclops": {
+      "name": "彷徨夜灵",
+      "set_name": "SFA",
+      "number": "019",
+      "chinese_name": "彷徨夜灵",
+      "set_code_cn": "CSV8C",
+      "card_index_cn": "082",
+      "image_url": "https://tcg.mik.moe/static/img/CSV8C/082.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "磷火"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "咒怨炸弹"
+      ],
+      "hp": 90,
+      "file": "cards/SFA/sfa19dusclops.py",
+      "match_score": 235,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SFA/sfa20dusknoir": {
+      "name": "黑夜魔灵",
+      "set_name": "SFA",
+      "number": "020",
+      "chinese_name": "黑夜魔灵",
+      "set_code_cn": "CSV8C",
+      "card_index_cn": "083",
+      "image_url": "https://tcg.mik.moe/static/img/CSV8C/083.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "影子束缚"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "咒怨炸弹"
+      ],
+      "hp": 160,
+      "file": "cards/SFA/sfa20dusknoir.py",
+      "match_score": 235,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SFA/sfa38fezandipitiex": {
+      "name": "吉雉鸡ex",
+      "set_name": "SFA",
+      "number": "038",
+      "chinese_name": "吉雉鸡ex",
+      "set_code_cn": "CSVNC",
+      "card_index_cn": "027",
+      "image_url": "https://tcg.mik.moe/static/img/CSVNC/027.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "残忍箭矢"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "化危为吉"
+      ],
+      "hp": 210,
+      "file": "cards/SFA/sfa38fezandipitiex.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SFA/sfa39pecharuntex": {
+      "name": "桃歹郎ex",
+      "set_name": "SFA",
+      "number": "039",
+      "chinese_name": "桃歹郎ex",
+      "set_code_cn": "CSVNC",
+      "card_index_cn": "029",
+      "image_url": "https://tcg.mik.moe/static/img/CSVNC/029.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "焦躁爆破"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "支配锁链"
+      ],
+      "hp": 190,
+      "file": "cards/SFA/sfa39pecharuntex.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SFA/sfa40genesect": {
+      "name": "盖诺赛克特",
+      "set_name": "SFA",
+      "number": "040",
+      "chinese_name": "盖诺赛克特",
+      "set_code_cn": "CSV9C",
+      "card_index_cn": "133",
+      "image_url": "https://tcg.mik.moe/static/img/CSV9C/133.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "磁力爆破"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "ACE消除器"
+      ],
+      "hp": 110,
+      "file": "cards/SFA/sfa40genesect.py",
+      "match_score": 235,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SFA/sfa47kyurem": {
+      "name": "酋雷姆",
+      "set_name": "SFA",
+      "number": "047",
+      "chinese_name": "酋雷姆",
+      "set_code_cn": "CSV9C",
+      "card_index_cn": "147",
+      "image_url": "https://tcg.mik.moe/static/img/CSV9C/147.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "三重冰霜"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "反等离子"
+      ],
+      "hp": 130,
+      "file": "cards/SFA/sfa47kyurem.py",
+      "match_score": 235,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SFA/sfa55bindingmochi": {
+      "name": "锁链粘糕",
+      "set_name": "SFA",
+      "number": "055",
+      "chinese_name": "锁链粘糕",
+      "set_code_cn": "CSVNC",
+      "card_index_cn": "033",
+      "image_url": "https://tcg.mik.moe/static/img/CSVNC/033.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/SFA/sfa55bindingmochi.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SFA/sfa57colressstenacity": {
+      "name": "阿克罗玛的执念",
+      "set_name": "SFA",
+      "number": "057",
+      "chinese_name": "阿克罗玛的执念",
+      "set_code_cn": "CSV8C",
+      "card_index_cn": "191",
+      "image_url": "https://tcg.mik.moe/static/img/CSV8C/191.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/SFA/sfa57colressstenacity.py",
+      "match_score": 240,
       "match_method": "setCodeEn+cardIndexEn"
     },
     "cards/SIT/archeops": {
@@ -1311,6 +2601,47 @@
       "match_score": 265,
       "match_method": "setCodeEn+cardIndexEn"
     },
+    "cards/SIT/sit135regidragov": {
+      "name": "雷吉铎拉戈V",
+      "set_name": "SIT",
+      "number": "135",
+      "chinese_name": "雷吉铎拉戈V",
+      "set_code_cn": "CS6.5C",
+      "card_index_cn": "054",
+      "image_url": "https://tcg.mik.moe/static/img/CS6.5C/054.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "天之呐喊",
+        "巨龙镭射"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 220,
+      "file": "cards/SIT/sit135regidragov.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SIT/sit136regidragovstar": {
+      "name": "雷吉铎拉戈VSTAR",
+      "set_name": "SIT",
+      "number": "136",
+      "chinese_name": "雷吉铎拉戈VSTAR",
+      "set_code_cn": "CS6.5C",
+      "card_index_cn": "055",
+      "image_url": "https://tcg.mik.moe/static/img/CS6.5C/055.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "巨龙无双"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "星耀遗产"
+      ],
+      "hp": 280,
+      "file": "cards/SIT/sit136regidragovstar.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
     "cards/SIT/v_guard_energy": {
       "name": "V防守能量",
       "set_name": "SIT",
@@ -1326,6 +2657,282 @@
       "hp": null,
       "file": "cards/SIT/v_guard_energy.py",
       "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SLG/slg68ultraball": {
+      "name": "高级球",
+      "set_name": "SLG",
+      "number": "068",
+      "chinese_name": "高级球",
+      "set_code_cn": "CSVH4C",
+      "card_index_cn": "037",
+      "image_url": "https://tcg.mik.moe/static/img/CSVH4C/037.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/SLG/slg68ultraball.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SP/sp294hisuianelectrodev": {
+      "name": "洗翠 顽皮雷弹V",
+      "set_name": "SP",
+      "number": "294",
+      "chinese_name": "洗翠 顽皮雷弹V",
+      "set_code_cn": "CS5.5C",
+      "card_index_cn": "003",
+      "image_url": "https://tcg.mik.moe/static/img/CS5.5C/003.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "暴躁炸弹",
+        "日光射击"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 210,
+      "file": "cards/SP/sp294hisuianelectrodev.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SSH/ssh178professorsresearch": {
+      "name": "博士的研究",
+      "set_name": "SSH",
+      "number": "178",
+      "chinese_name": "博士的研究",
+      "set_code_cn": "CSVH4eC",
+      "card_index_cn": "047",
+      "image_url": "https://tcg.mik.moe/static/img/CSVH4eC/047.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/SSH/ssh178professorsresearch.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SSH/ssh185vitalityband": {
+      "name": "活力头带",
+      "set_name": "SSH",
+      "number": "185",
+      "chinese_name": "活力头带",
+      "set_code_cn": "CSVH4C",
+      "card_index_cn": "042",
+      "image_url": "https://tcg.mik.moe/static/img/CSVH4C/042.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/SSH/ssh185vitalityband.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SSP/ssp116koraidon": {
+      "name": "故勒顿",
+      "set_name": "SSP",
+      "number": "116",
+      "chinese_name": "故勒顿",
+      "set_code_cn": "CSV9C",
+      "card_index_cn": "112",
+      "image_url": "https://tcg.mik.moe/static/img/CSV9C/112.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "波状猛攻",
+        "头突"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 130,
+      "file": "cards/SSP/ssp116koraidon.py",
+      "match_score": 235,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SSP/ssp129duraludon": {
+      "name": "铝钢龙",
+      "set_name": "SSP",
+      "number": "129",
+      "chinese_name": "铝钢龙",
+      "set_code_cn": "CSV9C",
+      "card_index_cn": "136",
+      "image_url": "https://tcg.mik.moe/static/img/CSV9C/136.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "正面对决",
+        "铝钢光束"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 130,
+      "file": "cards/SSP/ssp129duraludon.py",
+      "match_score": 235,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SSP/ssp130archaludonex": {
+      "name": "铝钢桥龙ex",
+      "set_name": "SSP",
+      "number": "130",
+      "chinese_name": "铝钢桥龙ex",
+      "set_code_cn": "CSV9C",
+      "card_index_cn": "227",
+      "image_url": "https://tcg.mik.moe/static/img/CSV9C/227.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "金属防卫"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "合金建设"
+      ],
+      "hp": 300,
+      "file": "cards/SSP/ssp130archaludonex.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SSP/ssp185precioustrolley": {
+      "name": "贵重推车",
+      "set_name": "SSP",
+      "number": "185",
+      "chinese_name": "贵重推车",
+      "set_code_cn": "CSV9C",
+      "card_index_cn": "186",
+      "image_url": "https://tcg.mik.moe/static/img/CSV9C/186.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/SSP/ssp185precioustrolley.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SSP/ssp59magneton": {
+      "name": "三合一磁怪",
+      "set_name": "SSP",
+      "number": "059",
+      "chinese_name": "三合一磁怪",
+      "set_code_cn": "CSV9C",
+      "card_index_cn": "056",
+      "image_url": "https://tcg.mik.moe/static/img/CSV9C/056.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "雷电球"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "过量放电"
+      ],
+      "hp": 100,
+      "file": "cards/SSP/ssp59magneton.py",
+      "match_score": 235,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SSP/ssp76latiasex": {
+      "name": "拉帝亚斯ex",
+      "set_name": "SSP",
+      "number": "076",
+      "chinese_name": "拉帝亚斯ex",
+      "set_code_cn": "CSV9C",
+      "card_index_cn": "223",
+      "image_url": "https://tcg.mik.moe/static/img/CSV9C/223.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "无限之刃"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "天际线"
+      ],
+      "hp": 210,
+      "file": "cards/SSP/ssp76latiasex.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SUM/sum116energyretrieval": {
+      "name": "能量回收",
+      "set_name": "SUM",
+      "number": "116",
+      "chinese_name": "能量回收",
+      "set_code_cn": "SVP",
+      "card_index_cn": "235",
+      "image_url": "https://tcg.mik.moe/static/img/SVP/235.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/SUM/sum116energyretrieval.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SUM/sum123nestball": {
+      "name": "巢穴球",
+      "set_name": "SUM",
+      "number": "123",
+      "chinese_name": "巢穴球",
+      "set_code_cn": "CSVH4C",
+      "card_index_cn": "036",
+      "image_url": "https://tcg.mik.moe/static/img/CSVH4C/036.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/SUM/sum123nestball.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SUM/sum126pokmoncatcher": {
+      "name": "宝可梦捕捉器",
+      "set_name": "SUM",
+      "number": "126",
+      "chinese_name": "宝可梦捕捉器",
+      "set_code_cn": "CSVH4C",
+      "card_index_cn": "040",
+      "image_url": "https://tcg.mik.moe/static/img/CSVH4C/040.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/SUM/sum126pokmoncatcher.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SUM/sum129rarecandy": {
+      "name": "神奇糖果",
+      "set_name": "SUM",
+      "number": "129",
+      "chinese_name": "神奇糖果",
+      "set_code_cn": "CSVH4C",
+      "card_index_cn": "038",
+      "image_url": "https://tcg.mik.moe/static/img/CSVH4C/038.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/SUM/sum129rarecandy.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SUM/sum132switch": {
+      "name": "宝可梦交替",
+      "set_name": "SUM",
+      "number": "132",
+      "chinese_name": "宝可梦交替",
+      "set_code_cn": "SVP",
+      "card_index_cn": "294",
+      "image_url": "https://tcg.mik.moe/static/img/SVP/294.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/SUM/sum132switch.py",
+      "match_score": 260,
       "match_method": "setCodeEn+cardIndexEn"
     },
     "cards/SVE/basic_darkness_energy": {
@@ -1411,6 +3018,57 @@
       "hp": null,
       "file": "cards/SVE/basic_psychic_energy.py",
       "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SVE/sve1grassenergy": {
+      "name": "基本草能量",
+      "set_name": "SVE",
+      "number": "001",
+      "chinese_name": "基本草能量",
+      "set_code_cn": "CSVH4C",
+      "card_index_cn": "GRA",
+      "image_url": "https://tcg.mik.moe/static/img/CSVH4C/GRA.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/SVE/sve1grassenergy.py",
+      "match_score": 190,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SVE/sve3waterenergy": {
+      "name": "基本水能量",
+      "set_name": "SVE",
+      "number": "003",
+      "chinese_name": "基本水能量",
+      "set_code_cn": "CSVH4pC",
+      "card_index_cn": "WAT",
+      "image_url": "https://tcg.mik.moe/static/img/CSVH4pC/WAT.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/SVE/sve3waterenergy.py",
+      "match_score": 190,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SVE/sve6fightingenergy": {
+      "name": "基本斗能量",
+      "set_name": "SVE",
+      "number": "006",
+      "chinese_name": "基本斗能量",
+      "set_code_cn": "CSVH4C",
+      "card_index_cn": "FIG",
+      "image_url": "https://tcg.mik.moe/static/img/CSVH4C/FIG.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/SVE/sve6fightingenergy.py",
+      "match_score": 190,
       "match_method": "setCodeEn+cardIndexEn"
     },
     "cards/SVI/defiance_band": {
@@ -1504,6 +3162,160 @@
       "file": "cards/SVI/miraidon_ex.py",
       "match_score": 50,
       "match_method": "attribute_match"
+    },
+    "cards/SVI/svi166arven": {
+      "name": "阿克罗玛的实验",
+      "set_name": "SVI",
+      "number": "166",
+      "chinese_name": "阿克罗玛的实验",
+      "set_code_cn": "CSXC",
+      "card_index_cn": "015",
+      "image_url": "https://tcg.mik.moe/static/img/CSXC/015.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/SVI/svi166arven.py",
+      "match_score": 50,
+      "match_method": "attribute_match"
+    },
+    "cards/SVI/svi178mesagoza": {
+      "name": "桌台市",
+      "set_name": "SVI",
+      "number": "178",
+      "chinese_name": "桌台市",
+      "set_code_cn": "CSVE1C",
+      "card_index_cn": "168",
+      "image_url": "https://tcg.mik.moe/static/img/CSVE1C/168.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/SVI/svi178mesagoza.py",
+      "match_score": 260,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SVI/svi183penny": {
+      "name": "皮拿",
+      "set_name": "SVI",
+      "number": "183",
+      "chinese_name": "皮拿",
+      "set_code_cn": "CSV3C",
+      "card_index_cn": "125",
+      "image_url": "https://tcg.mik.moe/static/img/CSV3C/125.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/SVI/svi183penny.py",
+      "match_score": 50,
+      "match_method": "attribute_match"
+    },
+    "cards/SVI/svi63magnemite": {
+      "name": "小磁怪",
+      "set_name": "SVI",
+      "number": "063",
+      "chinese_name": "小磁怪",
+      "set_code_cn": "CSV1C",
+      "card_index_cn": "042",
+      "image_url": "https://tcg.mik.moe/static/img/CSV1C/042.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "互斥",
+        "电球"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 60,
+      "file": "cards/SVI/svi63magnemite.py",
+      "match_score": 235,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SVI/svi81miraidonex": {
+      "name": "密勒顿ex",
+      "set_name": "SVI",
+      "number": "081",
+      "chinese_name": "密勒顿ex",
+      "set_code_cn": "CSVM1cC",
+      "card_index_cn": "006",
+      "image_url": "https://tcg.mik.moe/static/img/CSVM1cC/006.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "光子引爆"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "串联装置"
+      ],
+      "hp": 220,
+      "file": "cards/SVI/svi81miraidonex.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SVI/svi89drifloon": {
+      "name": "飘飘球",
+      "set_name": "SVI",
+      "number": "089",
+      "chinese_name": "飘飘球",
+      "set_code_cn": "CSVM1bC",
+      "card_index_cn": "008",
+      "image_url": "https://tcg.mik.moe/static/img/CSVM1bC/008.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "起风",
+        "气球炸弹"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 70,
+      "file": "cards/SVI/svi89drifloon.py",
+      "match_score": 235,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SVI/svi96klefki": {
+      "name": "钥圈儿",
+      "set_name": "SVI",
+      "number": "096",
+      "chinese_name": "钥圈儿",
+      "set_code_cn": "CSVL1C",
+      "card_index_cn": "028",
+      "image_url": "https://tcg.mik.moe/static/img/CSVL1C/028.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "狙落"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "恶作剧之锁"
+      ],
+      "hp": 70,
+      "file": "cards/SVI/svi96klefki.py",
+      "match_score": 235,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/SVP/svp149pecharunt": {
+      "name": "桃歹郎",
+      "set_name": "SVP",
+      "number": "149",
+      "chinese_name": "桃歹郎",
+      "set_code_cn": "CSVNC",
+      "card_index_cn": "028",
+      "image_url": "https://tcg.mik.moe/static/img/CSVNC/028.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "毒液锁链"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "剧毒支配"
+      ],
+      "hp": 80,
+      "file": "cards/SVP/svp149pecharunt.py",
+      "match_score": 235,
+      "match_method": "setCodeEn+cardIndexEn"
     },
     "cards/TEF/buddy_buddy_poffin": {
       "name": "友好宝芬",
@@ -1702,6 +3514,65 @@
       "match_score": 265,
       "match_method": "setCodeEn+cardIndexEn"
     },
+    "cards/TEF/tef123ragingboltex": {
+      "name": "猛雷鼓ex",
+      "set_name": "TEF",
+      "number": "123",
+      "chinese_name": "猛雷鼓ex",
+      "set_code_cn": "CSV7C",
+      "card_index_cn": "227",
+      "image_url": "https://tcg.mik.moe/static/img/CSV7C/227.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "飞溅咆哮",
+        "极雷轰"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 240,
+      "file": "cards/TEF/tef123ragingboltex.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/TEF/tef126hoothoot": {
+      "name": "咕咕",
+      "set_name": "TEF",
+      "number": "126",
+      "chinese_name": "咕咕",
+      "set_code_cn": "CSV7C",
+      "card_index_cn": "159",
+      "image_url": "https://tcg.mik.moe/static/img/CSV7C/159.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "寂静之翼"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 70,
+      "file": "cards/TEF/tef126hoothoot.py",
+      "match_score": 235,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/TEF/tef136minccino": {
+      "name": "泡沫栗鼠",
+      "set_name": "TEF",
+      "number": "136",
+      "chinese_name": "泡沫栗鼠",
+      "set_code_cn": "CBB4C",
+      "card_index_cn": "1501",
+      "image_url": "https://tcg.mik.moe/static/img/CBB4C/1501.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "敲打",
+        "扫除"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": 60,
+      "file": "cards/TEF/tef136minccino.py",
+      "match_score": 205,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
     "cards/TWM/dragapult_ex": {
       "name": "多龙巴鲁托ex",
       "set_name": "TWM",
@@ -1816,6 +3687,171 @@
       "hp": null,
       "file": "cards/TWM/secret_box.py",
       "match_score": 265,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/TWM/twm141bloodmoonursalunaex": {
+      "name": "月月熊 赫月ex",
+      "set_name": "TWM",
+      "number": "141",
+      "chinese_name": "月月熊 赫月ex",
+      "set_code_cn": "CSVNC",
+      "card_index_cn": "031",
+      "image_url": "https://tcg.mik.moe/static/img/CSVNC/031.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "血月"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "老练招式"
+      ],
+      "hp": 260,
+      "file": "cards/TWM/twm141bloodmoonursalunaex.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/TWM/twm145carmine": {
+      "name": "丹瑜",
+      "set_name": "TWM",
+      "number": "145",
+      "chinese_name": "丹瑜",
+      "set_code_cn": "CSVNC",
+      "card_index_cn": "037",
+      "image_url": "https://tcg.mik.moe/static/img/CSVNC/037.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/TWM/twm145carmine.py",
+      "match_score": 260,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/TWM/twm153jammingtower": {
+      "name": "阻碍之塔",
+      "set_name": "TWM",
+      "number": "153",
+      "chinese_name": "阻碍之塔",
+      "set_code_cn": "SVP",
+      "card_index_cn": "287",
+      "image_url": "https://tcg.mik.moe/static/img/SVP/287.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/TWM/twm153jammingtower.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/TWM/twm154kieran": {
+      "name": "吉雉",
+      "set_name": "TWM",
+      "number": "154",
+      "chinese_name": "吉雉鸡",
+      "set_code_cn": "CSVNC",
+      "card_index_cn": "020",
+      "image_url": "https://tcg.mik.moe/static/img/CSVNC/020.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "能量之羽"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "亢奋费洛蒙"
+      ],
+      "hp": null,
+      "file": "cards/TWM/twm154kieran.py",
+      "match_score": 45,
+      "match_method": "attribute_match"
+    },
+    "cards/TWM/twm165unfairstamp": {
+      "name": "不公印章",
+      "set_name": "TWM",
+      "number": "165",
+      "chinese_name": "不公印章",
+      "set_code_cn": "CSV8C",
+      "card_index_cn": "173",
+      "image_url": "https://tcg.mik.moe/static/img/CSV8C/173.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/TWM/twm165unfairstamp.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/TWM/twm167legacyenergy": {
+      "name": "遗赠能量",
+      "set_name": "TWM",
+      "number": "167",
+      "chinese_name": "遗赠能量",
+      "set_code_cn": "CSV8C",
+      "card_index_cn": "207",
+      "image_url": "https://tcg.mik.moe/static/img/CSV8C/207.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/TWM/twm167legacyenergy.py",
+      "match_score": 190,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/TWM/twm25tealmaskogerponex": {
+      "name": "厄诡椪 碧草面具ex",
+      "set_name": "TWM",
+      "number": "025",
+      "chinese_name": "厄诡椪 碧草面具ex",
+      "set_code_cn": "CSVNC",
+      "card_index_cn": "011",
+      "image_url": "https://tcg.mik.moe/static/img/CSVNC/011.png",
+      "attacks_en": [],
+      "attacks_cn": [
+        "万叶阵雨"
+      ],
+      "abilities_en": [],
+      "abilities_cn": [
+        "碧草之舞"
+      ],
+      "hp": 210,
+      "file": "cards/TWM/twm25tealmaskogerponex.py",
+      "match_score": 215,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/UNB/unb182pokgear30": {
+      "name": "宝可装置3.0",
+      "set_name": "UNB",
+      "number": "182",
+      "chinese_name": "宝可装置3.0",
+      "set_code_cn": "CSVE2C",
+      "card_index_cn": "159",
+      "image_url": "https://tcg.mik.moe/static/img/CSVE2C/159.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/UNB/unb182pokgear30.py",
+      "match_score": 240,
+      "match_method": "setCodeEn+cardIndexEn"
+    },
+    "cards/UPR/upr132palpad": {
+      "name": "朋友手册",
+      "set_name": "UPR",
+      "number": "132",
+      "chinese_name": "朋友手册",
+      "set_code_cn": "CSV6C",
+      "card_index_cn": "163",
+      "image_url": "https://tcg.mik.moe/static/img/CSV6C/163.png",
+      "attacks_en": [],
+      "attacks_cn": [],
+      "abilities_en": [],
+      "abilities_cn": [],
+      "hp": null,
+      "file": "cards/UPR/upr132palpad.py",
+      "match_score": 240,
       "match_method": "setCodeEn+cardIndexEn"
     },
     "cards/VIV/charmeleon": {

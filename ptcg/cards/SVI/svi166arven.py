@@ -14,7 +14,7 @@ class SVI166Arven(SupporterCard):
         self.set_name = "SVI"
         self.number = "166"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "阿克罗玛"
+        self.name = "阿克罗玛的实验"
         self.cardType = CardType.NONE
         self.text = "选择自己牌库中的1张物品卡与1张宝可梦道具，在给对手看过之后，加入手牌。并重洗牌库。"
 

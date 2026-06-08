@@ -14,7 +14,7 @@ class PRE119PrimeCatcher(ItemCard):
         self.set_name = "PRE"
         self.number = "119"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "高级捕捉器"
+        self.name = "顶尖捕捉器"
         self.cardType = CardType.NONE
         self.text = "选择对手的1只备战宝可梦，将其与战斗宝可梦互换。"
 

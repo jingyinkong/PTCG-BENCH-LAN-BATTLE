@@ -1,6 +1,6 @@
 {
   "ASC-192": {
-    "name": "Lillie's Determination",
+    "name": "Lillie",
     "set_name": "ASC",
     "number": "192",
     "card_type": "Supporter",
@@ -8,7 +8,7 @@
     "effect": "Shuffle your hand into your deck. Then, draw 6 cards. If you have exactly 6 Prize cards remaining, draw 8 cards instead."
   },
   "ASC-210": {
-    "name": "Team Rocket's Watchtower",
+    "name": "Team Rocket",
     "set_name": "ASC",
     "number": "210",
     "card_type": "Stadium",
@@ -411,7 +411,7 @@
     ]
   },
   "JTG-056": {
-    "name": "Lillie's Clefairy ex",
+    "name": "Lillie",
     "set_name": "JTG",
     "number": "056",
     "card_type": "Pokémon",
@@ -2154,5 +2154,992 @@
         "effect": "During your opponent's next turn, they can't play any Item cards from their hand."
       }
     ]
+  },
+  "ASC-189": {
+    "name": "玻璃喇叭",
+    "set_name": "ASC",
+    "number": "189",
+    "card_type": "Unknown",
+    "img": "/cards/CSV9C-178.png"
+  },
+  "ASC-57": {
+    "name": "皮卡丘ex",
+    "set_name": "ASC",
+    "number": "57",
+    "card_type": "Unknown",
+    "img": "/cards/CSV9C-221.png"
+  },
+  "ASR-113": {
+    "name": "起源帝牙卢卡V",
+    "set_name": "ASR",
+    "number": "113",
+    "card_type": "Unknown",
+    "img": "/cards/CSVE2C-102.png"
+  },
+  "ASR-114": {
+    "name": "起源帝牙卢卡VSTAR",
+    "set_name": "ASR",
+    "number": "114",
+    "card_type": "Unknown",
+    "img": "/cards/CSVE2C-103.png"
+  },
+  "ASR-133": {
+    "name": "智挥猩V",
+    "set_name": "ASR",
+    "number": "133",
+    "card_type": "Unknown",
+    "img": "/cards/CS5bC-150.png"
+  },
+  "ASR-134": {
+    "name": "诡角鹿V",
+    "set_name": "ASR",
+    "number": "134",
+    "card_type": "Unknown",
+    "img": "/cards/CS5DC-111.png"
+  },
+  "ASR-147": {
+    "name": "珠贝",
+    "set_name": "ASR",
+    "number": "147",
+    "card_type": "Unknown",
+    "img": "/cards/CSVE2C-173.png"
+  },
+  "ASR-152": {
+    "name": "超群眼镜",
+    "set_name": "ASR",
+    "number": "152",
+    "card_type": "Unknown",
+    "img": "/cards/CS5aC-118.png"
+  },
+  "ASR-156": {
+    "name": "离洞绳",
+    "set_name": "ASR",
+    "number": "156",
+    "card_type": "Unknown",
+    "img": "/cards/CSXC-005.png"
+  },
+  "ASR-39": {
+    "name": "起源帕路奇亚V",
+    "set_name": "ASR",
+    "number": "39",
+    "card_type": "Unknown",
+    "img": "/cards/CSVE2C-036.png"
+  },
+  "ASR-40": {
+    "name": "起源帕路奇亚VSTAR",
+    "set_name": "ASR",
+    "number": "40",
+    "card_type": "Unknown",
+    "img": "/cards/CSVE2C-037.png"
+  },
+  "ASR-60": {
+    "name": "拉鲁拉丝",
+    "set_name": "ASR",
+    "number": "60",
+    "card_type": "Unknown",
+    "img": "/cards/CSVM1bC-005.png"
+  },
+  "BRS-22": {
+    "name": "炎帝V",
+    "set_name": "BRS",
+    "number": "22",
+    "card_type": "Unknown",
+    "img": "/cards/CSVE2C-017.png"
+  },
+  "BRS-45": {
+    "name": "雷丘V",
+    "set_name": "BRS",
+    "number": "45",
+    "card_type": "Unknown",
+    "img": "/cards/CSVM1cC-002.png"
+  },
+  "CES-129": {
+    "name": "能量转移",
+    "set_name": "CES",
+    "number": "129",
+    "card_type": "Unknown",
+    "img": "/cards/SVP-293.png"
+  },
+  "CIN-91": {
+    "name": "反击捕捉器",
+    "set_name": "CIN",
+    "number": "91",
+    "card_type": "Unknown",
+    "img": "/cards/CSVH4aC-008.png"
+  },
+  "FLI-108": {
+    "name": "裁判",
+    "set_name": "FLI",
+    "number": "108",
+    "card_type": "Unknown",
+    "img": "/cards/CSVH4C-048.png"
+  },
+  "LOR-123": {
+    "name": "光辉洗翠 大狃拉",
+    "set_name": "LOR",
+    "number": "123",
+    "card_type": "Unknown",
+    "img": "/cards/CS5aC-079.png"
+  },
+  "LOR-131": {
+    "name": "骑拉帝纳VSTAR",
+    "set_name": "LOR",
+    "number": "131",
+    "card_type": "Unknown",
+    "img": "/cards/CS6bC-164.png"
+  },
+  "LOR-136": {
+    "name": "洗翠 黏美龙VSTAR",
+    "set_name": "LOR",
+    "number": "136",
+    "card_type": "Unknown",
+    "img": "/cards/CS5.5C-053.png"
+  },
+  "LOR-58": {
+    "name": "洛托姆V",
+    "set_name": "LOR",
+    "number": "58",
+    "card_type": "Unknown",
+    "img": "/cards/CSVM1aC-005.png"
+  },
+  "MEW-132": {
+    "name": "百变怪",
+    "set_name": "MEW",
+    "number": "132",
+    "card_type": "Unknown",
+    "img": "/cards/CSVH4aC-002.png"
+  },
+  "OBF-125": {
+    "name": "喷火龙ex",
+    "set_name": "OBF",
+    "number": "125",
+    "card_type": "Unknown",
+    "img": "/cards/CSVM1aC-006.png"
+  },
+  "OBF-162": {
+    "name": "波波",
+    "set_name": "OBF",
+    "number": "162",
+    "card_type": "Unknown",
+    "img": "/cards/CSV4C-099.png"
+  },
+  "OBF-202": {
+    "name": "皮宝宝",
+    "set_name": "OBF",
+    "number": "202",
+    "card_type": "Unknown",
+    "img": "/cards/SVP-211.png"
+  },
+  "OBF-205": {
+    "name": "巨钳螳螂",
+    "set_name": "OBF",
+    "number": "205",
+    "card_type": "Unknown",
+    "img": "/cards/CSVL2C-085.png"
+  },
+  "PAF-75": {
+    "name": "怒鹦哥ex",
+    "set_name": "PAF",
+    "number": "75",
+    "card_type": "Unknown",
+    "img": "/cards/CSVM1cC-007.png"
+  },
+  "PAF-79": {
+    "name": "电气发生器",
+    "set_name": "PAF",
+    "number": "79",
+    "card_type": "Unknown",
+    "img": "/cards/CSVM1cC-010.png"
+  },
+  "PAF-81": {
+    "name": "月光之丘",
+    "set_name": "PAF",
+    "number": "81",
+    "card_type": "Unknown",
+    "img": "/cards/CSVM1bC-032.png"
+  },
+  "PAL-156": {
+    "name": "土龙弟弟",
+    "set_name": "PAL",
+    "number": "156",
+    "card_type": "Unknown",
+    "img": "/cards/CSVH3aC-002.png"
+  },
+  "PAL-185": {
+    "name": "奇树",
+    "set_name": "PAL",
+    "number": "185",
+    "card_type": "Unknown",
+    "img": "/cards/CSVH4aC-021.png"
+  },
+  "PAR-105": {
+    "name": "毛崖蟹",
+    "set_name": "PAR",
+    "number": "105",
+    "card_type": "Unknown",
+    "img": "/cards/CSV6C-080.png"
+  },
+  "PAR-107": {
+    "name": "爬地翅",
+    "set_name": "PAR",
+    "number": "107",
+    "card_type": "Unknown",
+    "img": "/cards/CSV6C-082.png"
+  },
+  "PAR-123": {
+    "name": "猛恶菇",
+    "set_name": "PAR",
+    "number": "123",
+    "card_type": "Unknown",
+    "img": "/cards/CSV6C-095.png"
+  },
+  "PAR-159": {
+    "name": "驱劲能量 古代",
+    "set_name": "PAR",
+    "number": "159",
+    "card_type": "Unknown",
+    "img": "/cards/SVP-256.png"
+  },
+  "PAR-170": {
+    "name": "奥琳博士的气魄",
+    "set_name": "PAR",
+    "number": "170",
+    "card_type": "Unknown",
+    "img": "/cards/CSVH4C-046.png"
+  },
+  "PAR-177": {
+    "name": "招式学习器 退化",
+    "set_name": "PAR",
+    "number": "177",
+    "card_type": "Unknown",
+    "img": "/cards/CSVM1aC-024.png"
+  },
+  "PRE-100": {
+    "name": "白蕾雅",
+    "set_name": "PRE",
+    "number": "100",
+    "card_type": "Unknown",
+    "img": "/cards/CSV9C-239.png"
+  },
+  "PRE-101": {
+    "name": "友好宝芬",
+    "set_name": "PRE",
+    "number": "101",
+    "card_type": "Unknown",
+    "img": "/cards/SVP-196.png"
+  },
+  "PRE-31": {
+    "name": "铁臂膀ex",
+    "set_name": "PRE",
+    "number": "31",
+    "card_type": "Unknown",
+    "img": "/cards/CSVM1cC-005.png"
+  },
+  "PRE-35": {
+    "name": "夜巡灵",
+    "set_name": "PRE",
+    "number": "35",
+    "card_type": "Unknown",
+    "img": "/cards/CSV8C-081.png"
+  },
+  "PRE-42": {
+    "name": "吼叫尾",
+    "set_name": "PRE",
+    "number": "42",
+    "card_type": "Unknown",
+    "img": "/cards/CSVM1bC-011.png"
+  },
+  "PRE-73": {
+    "name": "多龙巴鲁托ex",
+    "set_name": "PRE",
+    "number": "73",
+    "card_type": "Unknown",
+    "img": "/cards/CSV8C-159.png"
+  },
+  "RCL-154": {
+    "name": "老大的指令",
+    "set_name": "RCL",
+    "number": "154",
+    "card_type": "Unknown",
+    "img": "/cards/CSVH4aC-022.png"
+  },
+  "SCR-114": {
+    "name": "咕咕",
+    "set_name": "SCR",
+    "number": "114",
+    "card_type": "Unknown",
+    "img": "/cards/CSV9C-154.png"
+  },
+  "SCR-115": {
+    "name": "猫头夜鹰",
+    "set_name": "SCR",
+    "number": "115",
+    "card_type": "Unknown",
+    "img": "/cards/CSV9C-155.png"
+  },
+  "SCR-118": {
+    "name": "旋转洛托姆",
+    "set_name": "SCR",
+    "number": "118",
+    "card_type": "Unknown",
+    "img": "/cards/CSV9C-161.png"
+  },
+  "SCR-119": {
+    "name": "爆炸头水牛",
+    "set_name": "SCR",
+    "number": "119",
+    "card_type": "Unknown",
+    "img": "/cards/CSV9C-162.png"
+  },
+  "SCR-128": {
+    "name": "太乐巴戈斯ex",
+    "set_name": "SCR",
+    "number": "128",
+    "card_type": "Unknown",
+    "img": "/cards/CSV9C-232.png"
+  },
+  "SCR-131": {
+    "name": "零之大空洞",
+    "set_name": "SCR",
+    "number": "131",
+    "card_type": "Unknown",
+    "img": "/cards/CSV9C-266.png"
+  },
+  "SFA-19": {
+    "name": "彷徨夜灵",
+    "set_name": "SFA",
+    "number": "19",
+    "card_type": "Unknown",
+    "img": "/cards/CSV8C-082.png"
+  },
+  "SFA-20": {
+    "name": "黑夜魔灵",
+    "set_name": "SFA",
+    "number": "20",
+    "card_type": "Unknown",
+    "img": "/cards/CSV8C-083.png"
+  },
+  "SFA-38": {
+    "name": "吉雉鸡ex",
+    "set_name": "SFA",
+    "number": "38",
+    "card_type": "Unknown",
+    "img": "/cards/CSVNC-027.png"
+  },
+  "SFA-39": {
+    "name": "桃歹郎ex",
+    "set_name": "SFA",
+    "number": "39",
+    "card_type": "Unknown",
+    "img": "/cards/CSVNC-029.png"
+  },
+  "SFA-40": {
+    "name": "盖诺赛克特",
+    "set_name": "SFA",
+    "number": "40",
+    "card_type": "Unknown",
+    "img": "/cards/CSV9C-133.png"
+  },
+  "SFA-47": {
+    "name": "酋雷姆",
+    "set_name": "SFA",
+    "number": "47",
+    "card_type": "Unknown",
+    "img": "/cards/CSV9C-147.png"
+  },
+  "SFA-55": {
+    "name": "锁链粘糕",
+    "set_name": "SFA",
+    "number": "55",
+    "card_type": "Unknown",
+    "img": "/cards/CSVNC-033.png"
+  },
+  "SIT-135": {
+    "name": "雷吉铎拉戈V",
+    "set_name": "SIT",
+    "number": "135",
+    "card_type": "Unknown",
+    "img": "/cards/CS6.5C-054.png"
+  },
+  "SIT-136": {
+    "name": "雷吉铎拉戈VSTAR",
+    "set_name": "SIT",
+    "number": "136",
+    "card_type": "Unknown",
+    "img": "/cards/CS6.5C-055.png"
+  },
+  "SLG-68": {
+    "name": "高级球",
+    "set_name": "SLG",
+    "number": "68",
+    "card_type": "Unknown",
+    "img": "/cards/CSVH4C-037.png"
+  },
+  "SP-294": {
+    "name": "洗翠 顽皮雷弹V",
+    "set_name": "SP",
+    "number": "294",
+    "card_type": "Unknown",
+    "img": "/cards/CS5.5C-003.png"
+  },
+  "SSH-178": {
+    "name": "博士的研究",
+    "set_name": "SSH",
+    "number": "178",
+    "card_type": "Unknown",
+    "img": "/cards/CSVH4eC-047.png"
+  },
+  "SSH-185": {
+    "name": "活力头带",
+    "set_name": "SSH",
+    "number": "185",
+    "card_type": "Unknown",
+    "img": "/cards/CSVH4C-042.png"
+  },
+  "SSP-116": {
+    "name": "故勒顿",
+    "set_name": "SSP",
+    "number": "116",
+    "card_type": "Unknown",
+    "img": "/cards/CSV9C-112.png"
+  },
+  "SSP-129": {
+    "name": "铝钢龙",
+    "set_name": "SSP",
+    "number": "129",
+    "card_type": "Unknown",
+    "img": "/cards/CSV9C-136.png"
+  },
+  "SSP-130": {
+    "name": "铝钢桥龙ex",
+    "set_name": "SSP",
+    "number": "130",
+    "card_type": "Unknown",
+    "img": "/cards/CSV9C-227.png"
+  },
+  "SSP-59": {
+    "name": "三合一磁怪",
+    "set_name": "SSP",
+    "number": "59",
+    "card_type": "Unknown",
+    "img": "/cards/CSV9C-056.png"
+  },
+  "SSP-76": {
+    "name": "拉帝亚斯ex",
+    "set_name": "SSP",
+    "number": "76",
+    "card_type": "Unknown",
+    "img": "/cards/CSV9C-223.png"
+  },
+  "SUM-116": {
+    "name": "能量回收",
+    "set_name": "SUM",
+    "number": "116",
+    "card_type": "Unknown",
+    "img": "/cards/SVP-235.png"
+  },
+  "SUM-123": {
+    "name": "巢穴球",
+    "set_name": "SUM",
+    "number": "123",
+    "card_type": "Unknown",
+    "img": "/cards/CSVH4C-036.png"
+  },
+  "SUM-126": {
+    "name": "宝可梦捕捉器",
+    "set_name": "SUM",
+    "number": "126",
+    "card_type": "Unknown",
+    "img": "/cards/CSVH4C-040.png"
+  },
+  "SUM-129": {
+    "name": "神奇糖果",
+    "set_name": "SUM",
+    "number": "129",
+    "card_type": "Unknown",
+    "img": "/cards/CSVH4C-038.png"
+  },
+  "SUM-132": {
+    "name": "宝可梦交替",
+    "set_name": "SUM",
+    "number": "132",
+    "card_type": "Unknown",
+    "img": "/cards/SVP-294.png"
+  },
+  "SVE-1": {
+    "name": "基本草能量",
+    "set_name": "SVE",
+    "number": "1",
+    "card_type": "Unknown",
+    "img": "/cards/CSVH4C-GRA.png"
+  },
+  "SVE-3": {
+    "name": "基本水能量",
+    "set_name": "SVE",
+    "number": "3",
+    "card_type": "Unknown",
+    "img": "/cards/CSVH4pC-WAT.png"
+  },
+  "SVE-6": {
+    "name": "基本斗能量",
+    "set_name": "SVE",
+    "number": "6",
+    "card_type": "Unknown",
+    "img": "/cards/CSVH4C-FIG.png"
+  },
+  "SVI-178": {
+    "name": "桌台市",
+    "set_name": "SVI",
+    "number": "178",
+    "card_type": "Unknown",
+    "img": "/cards/CSVE1C-168.png"
+  },
+  "SVI-183": {
+    "name": "皮拿",
+    "set_name": "SVI",
+    "number": "183",
+    "card_type": "Unknown",
+    "img": "/cards/CSV3C-125.png"
+  },
+  "SVI-63": {
+    "name": "小磁怪",
+    "set_name": "SVI",
+    "number": "63",
+    "card_type": "Unknown",
+    "img": "/cards/CSV1C-042.png"
+  },
+  "SVI-81": {
+    "name": "密勒顿ex",
+    "set_name": "SVI",
+    "number": "81",
+    "card_type": "Unknown",
+    "img": "/cards/CSVM1cC-006.png"
+  },
+  "SVI-89": {
+    "name": "飘飘球",
+    "set_name": "SVI",
+    "number": "89",
+    "card_type": "Unknown",
+    "img": "/cards/CSVM1bC-008.png"
+  },
+  "SVI-96": {
+    "name": "钥圈儿",
+    "set_name": "SVI",
+    "number": "96",
+    "card_type": "Unknown",
+    "img": "/cards/CSVL1C-028.png"
+  },
+  "SVP-149": {
+    "name": "桃歹郎",
+    "set_name": "SVP",
+    "number": "149",
+    "card_type": "Unknown",
+    "img": "/cards/CSVNC-028.png"
+  },
+  "TEF-123": {
+    "name": "猛雷鼓ex",
+    "set_name": "TEF",
+    "number": "123",
+    "card_type": "Unknown",
+    "img": "/cards/CSV7C-227.png"
+  },
+  "TEF-126": {
+    "name": "咕咕",
+    "set_name": "TEF",
+    "number": "126",
+    "card_type": "Unknown",
+    "img": "/cards/CSV7C-159.png"
+  },
+  "TEF-136": {
+    "name": "泡沫栗鼠",
+    "set_name": "TEF",
+    "number": "136",
+    "card_type": "Unknown",
+    "img": "/cards/CBB4C-1501.png"
+  },
+  "TWM-141": {
+    "name": "月月熊 赫月ex",
+    "set_name": "TWM",
+    "number": "141",
+    "card_type": "Unknown",
+    "img": "/cards/CSVNC-031.png"
+  },
+  "TWM-153": {
+    "name": "阻碍之塔",
+    "set_name": "TWM",
+    "number": "153",
+    "card_type": "Unknown",
+    "img": "/cards/SVP-287.png"
+  },
+  "TWM-154": {
+    "name": "吉雉鸡",
+    "set_name": "TWM",
+    "number": "154",
+    "card_type": "Unknown",
+    "img": "/cards/CSVNC-020.png"
+  },
+  "TWM-165": {
+    "name": "不公印章",
+    "set_name": "TWM",
+    "number": "165",
+    "card_type": "Unknown",
+    "img": "/cards/CSV8C-173.png"
+  },
+  "TWM-167": {
+    "name": "遗赠能量",
+    "set_name": "TWM",
+    "number": "167",
+    "card_type": "Unknown",
+    "img": "/cards/CSV8C-207.png"
+  },
+  "TWM-25": {
+    "name": "厄诡椪 碧草面具ex",
+    "set_name": "TWM",
+    "number": "25",
+    "card_type": "Unknown",
+    "img": "/cards/CSVNC-011.png"
+  },
+  "UPR-132": {
+    "name": "朋友手册",
+    "set_name": "UPR",
+    "number": "132",
+    "card_type": "Unknown",
+    "img": "/cards/CSV6C-163.png"
+  },
+  "ASC-057": {
+    "name": "皮卡丘ex",
+    "set_name": "ASC",
+    "number": "057",
+    "card_type": "Pokémon",
+    "img": "/cards/CSV9C-221.png"
+  },
+  "ASR-039": {
+    "name": "起源帕路奇亚V",
+    "set_name": "ASR",
+    "number": "039",
+    "card_type": "Pokémon",
+    "img": "/cards/CSVE2C-036.png"
+  },
+  "ASR-040": {
+    "name": "起源帕路奇亚VSTAR",
+    "set_name": "ASR",
+    "number": "040",
+    "card_type": "Pokémon",
+    "img": "/cards/CSVE2C-037.png"
+  },
+  "ASR-060": {
+    "name": "拉鲁拉丝",
+    "set_name": "ASR",
+    "number": "060",
+    "card_type": "Pokémon",
+    "img": "/cards/CSVM1bC-005.png"
+  },
+  "BRS-022": {
+    "name": "炎帝V",
+    "set_name": "BRS",
+    "number": "022",
+    "card_type": "Pokémon",
+    "img": "/cards/CSVE2C-017.png"
+  },
+  "BRS-045": {
+    "name": "雷丘V",
+    "set_name": "BRS",
+    "number": "045",
+    "card_type": "Pokémon",
+    "img": "/cards/CSVM1cC-002.png"
+  },
+  "CIN-091": {
+    "name": "反击捕捉器",
+    "set_name": "CIN",
+    "number": "091",
+    "card_type": "Item",
+    "img": "/cards/CSVH4aC-008.png"
+  },
+  "LOR-058": {
+    "name": "洛托姆V",
+    "set_name": "LOR",
+    "number": "058",
+    "card_type": "Pokémon",
+    "img": "/cards/CSVM1aC-005.png"
+  },
+  "PAF-075": {
+    "name": "怒鹦哥ex",
+    "set_name": "PAF",
+    "number": "075",
+    "card_type": "Pokémon",
+    "img": "/cards/CSVM1cC-007.png"
+  },
+  "PAF-079": {
+    "name": "电气发生器",
+    "set_name": "PAF",
+    "number": "079",
+    "card_type": "Item",
+    "img": "/cards/CSVM1cC-010.png"
+  },
+  "PAF-081": {
+    "name": "月光之丘",
+    "set_name": "PAF",
+    "number": "081",
+    "card_type": "Stadium",
+    "img": "/cards/CSVM1bC-032.png"
+  },
+  "PRE-031": {
+    "name": "铁臂膀ex",
+    "set_name": "PRE",
+    "number": "031",
+    "card_type": "Pokémon",
+    "img": "/cards/CSVM1cC-005.png"
+  },
+  "PRE-035": {
+    "name": "夜巡灵",
+    "set_name": "PRE",
+    "number": "035",
+    "card_type": "Pokémon",
+    "img": "/cards/CSV8C-081.png"
+  },
+  "PRE-042": {
+    "name": "吼叫尾",
+    "set_name": "PRE",
+    "number": "042",
+    "card_type": "Pokémon",
+    "img": "/cards/CSVM1bC-011.png"
+  },
+  "PRE-073": {
+    "name": "多龙巴鲁托ex",
+    "set_name": "PRE",
+    "number": "073",
+    "card_type": "Pokémon",
+    "img": "/cards/CSV8C-159.png"
+  },
+  "SFA-019": {
+    "name": "彷徨夜灵",
+    "set_name": "SFA",
+    "number": "019",
+    "card_type": "Pokémon",
+    "img": "/cards/CSV8C-082.png"
+  },
+  "SFA-020": {
+    "name": "黑夜魔灵",
+    "set_name": "SFA",
+    "number": "020",
+    "card_type": "Pokémon",
+    "img": "/cards/CSV8C-083.png"
+  },
+  "SFA-038": {
+    "name": "吉雉鸡ex",
+    "set_name": "SFA",
+    "number": "038",
+    "card_type": "Pokémon",
+    "img": "/cards/CSVNC-027.png"
+  },
+  "SFA-039": {
+    "name": "桃歹郎ex",
+    "set_name": "SFA",
+    "number": "039",
+    "card_type": "Pokémon",
+    "img": "/cards/CSVNC-029.png"
+  },
+  "SFA-040": {
+    "name": "盖诺赛克特",
+    "set_name": "SFA",
+    "number": "040",
+    "card_type": "Pokémon",
+    "img": "/cards/CSV9C-133.png"
+  },
+  "SFA-047": {
+    "name": "酋雷姆",
+    "set_name": "SFA",
+    "number": "047",
+    "card_type": "Pokémon",
+    "img": "/cards/CSV9C-147.png"
+  },
+  "SFA-055": {
+    "name": "锁链粘糕",
+    "set_name": "SFA",
+    "number": "055",
+    "card_type": "Tool",
+    "img": "/cards/CSVNC-033.png"
+  },
+  "SLG-068": {
+    "name": "高级球",
+    "set_name": "SLG",
+    "number": "068",
+    "card_type": "Item",
+    "img": "/cards/CSVH4C-037.png"
+  },
+  "SSP-059": {
+    "name": "三合一磁怪",
+    "set_name": "SSP",
+    "number": "059",
+    "card_type": "Pokémon",
+    "img": "/cards/CSV9C-056.png"
+  },
+  "SSP-076": {
+    "name": "拉帝亚斯ex",
+    "set_name": "SSP",
+    "number": "076",
+    "card_type": "Pokémon",
+    "img": "/cards/CSV9C-223.png"
+  },
+  "SVE-001": {
+    "name": "基本草能量",
+    "set_name": "SVE",
+    "number": "001",
+    "card_type": "Energy",
+    "img": "/cards/CSVH4C-GRA.png"
+  },
+  "SVE-003": {
+    "name": "基本水能量",
+    "set_name": "SVE",
+    "number": "003",
+    "card_type": "Energy",
+    "img": "/cards/CSVH4pC-WAT.png"
+  },
+  "SVE-006": {
+    "name": "基本斗能量",
+    "set_name": "SVE",
+    "number": "006",
+    "card_type": "Energy",
+    "img": "/cards/CSVH4C-FIG.png"
+  },
+  "SVI-063": {
+    "name": "小磁怪",
+    "set_name": "SVI",
+    "number": "063",
+    "card_type": "Pokémon",
+    "img": "/cards/CSV1C-042.png"
+  },
+  "SVI-081": {
+    "name": "密勒顿ex",
+    "set_name": "SVI",
+    "number": "081",
+    "card_type": "Pokémon",
+    "img": "/cards/CSVM1cC-006.png"
+  },
+  "SVI-089": {
+    "name": "飘飘球",
+    "set_name": "SVI",
+    "number": "089",
+    "card_type": "Pokémon",
+    "img": "/cards/CSVM1bC-008.png"
+  },
+  "SVI-096": {
+    "name": "钥圈儿",
+    "set_name": "SVI",
+    "number": "096",
+    "card_type": "Pokémon",
+    "img": "/cards/CSVL1C-028.png"
+  },
+  "TWM-025": {
+    "name": "厄诡椪 碧草面具ex",
+    "set_name": "TWM",
+    "number": "025",
+    "card_type": "Pokémon",
+    "img": "/cards/CSVNC-011.png"
+  },
+  "ASR-136": {
+    "name": "清除古龙水",
+    "set_name": "ASR",
+    "number": "136",
+    "card_type": "Item",
+    "img": "/cards/CSZC-033.png"
+  },
+  "ASR-141": {
+    "name": "飞羽球",
+    "set_name": "ASR",
+    "number": "141",
+    "card_type": "Item",
+    "img": "/cards/SSP-196.png"
+  },
+  "ASR-146": {
+    "name": "洗翠的沉重球",
+    "set_name": "ASR",
+    "number": "146",
+    "card_type": "Item",
+    "img": "/cards/CSVE2C-157.png"
+  },
+  "ASR-150": {
+    "name": "杜娟",
+    "set_name": "ASR",
+    "number": "150",
+    "card_type": "Supporter",
+    "img": "/cards/CSVE2C-185.png"
+  },
+  "GRI-122": {
+    "name": "能量签",
+    "set_name": "GRI",
+    "number": "122",
+    "card_type": "Item",
+    "img": "/cards/CSVH3C-036.png"
+  },
+  "LOR-167": {
+    "name": "捩木",
+    "set_name": "LOR",
+    "number": "167",
+    "card_type": "Supporter",
+    "img": "/cards/CSVE2C-189.png"
+  },
+  "PRE-106": {
+    "name": "大地容器",
+    "set_name": "PRE",
+    "number": "106",
+    "card_type": "Item",
+    "img": "/cards/CSVH4C-034.png"
+  },
+  "PRE-119": {
+    "name": "顶尖捕捉器",
+    "set_name": "PRE",
+    "number": "119",
+    "card_type": "Tool",
+    "img": "/cards/CSV7C-180.png"
+  },
+  "PRE-121": {
+    "name": "弗图博士的剧本",
+    "set_name": "PRE",
+    "number": "121",
+    "card_type": "Supporter",
+    "img": "/cards/CSVH4C-057.png"
+  },
+  "PRE-128": {
+    "name": "宝可梦旋风回收机",
+    "set_name": "PRE",
+    "number": "128",
+    "card_type": "Item",
+    "img": "/cards/CSV8C-181.png"
+  },
+  "SFA-057": {
+    "name": "阿克罗玛的执念",
+    "set_name": "SFA",
+    "number": "057",
+    "card_type": "Supporter",
+    "img": "/cards/CSV8C-191.png"
+  },
+  "SSP-185": {
+    "name": "贵重推车",
+    "set_name": "SSP",
+    "number": "185",
+    "card_type": "Item",
+    "img": "/cards/CSV9C-186.png"
+  },
+  "SVI-166": {
+    "name": "阿克罗玛的实验",
+    "set_name": "SVI",
+    "number": "166",
+    "card_type": "Supporter",
+    "img": "/cards/CSXC-015.png"
+  },
+  "TWM-145": {
+    "name": "丹瑜",
+    "set_name": "TWM",
+    "number": "145",
+    "card_type": "Supporter",
+    "img": "/cards/CSVNC-037.png"
+  },
+  "UNB-182": {
+    "name": "宝可装置3.0",
+    "set_name": "UNB",
+    "number": "182",
+    "card_type": "Item",
+    "img": "/cards/CSVE2C-159.png"
   }
 }

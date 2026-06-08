@@ -12,7 +12,7 @@ class SSP185PreciousTrolley(ItemCard):
         self.set_name = "SSP"
         self.number = "185"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "宝物推车"
+        self.name = "贵重推车"
         self.cardType = CardType.NONE
         self.text = "选择自己牌库中任意数量的基础宝可梦，放于备战区。并重洗牌库。"
 

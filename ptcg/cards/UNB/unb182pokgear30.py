@@ -14,7 +14,7 @@ class UNB182Pokgear30(ItemCard):
         self.set_name = "UNB"
         self.number = "182"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "宝可齿轮3.0"
+        self.name = "宝可装置3.0"
         self.cardType = CardType.NONE
         self.text = "查看自己牌库上方的7张卡牌，选择其中1张支援者，在给对手看过之后，加入手牌。将剩余卡牌放回牌库并重洗。"
 

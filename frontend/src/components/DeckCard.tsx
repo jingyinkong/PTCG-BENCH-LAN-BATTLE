@@ -30,9 +30,10 @@ interface DeckCardProps {
   deck: DeckInfo;
   cardImages: Record<string, string>;
   onPlay?: (deckId: string) => void;
+  onClick?: (deckId: string) => void;
 }
 
-export default function DeckCard({ deck, cardImages, onPlay }: DeckCardProps) {
+export default function DeckCard({ deck, cardImages, onPlay, onClick }: DeckCardProps) {
   const { t } = useTranslation(['deck', 'common']);
   const colors = getDeckColors(deck.energyTypes);
   const heroImage = deck.keyPokemon[0] ? cardImages[deck.keyPokemon[0]] : undefined;
@@ -40,7 +41,8 @@ export default function DeckCard({ deck, cardImages, onPlay }: DeckCardProps) {
 
   return (
     <div
-      className="relative rounded-xl overflow-hidden border border-slate-800 bg-slate-900 flex flex-col transition-all duration-200 hover:border-slate-700 hover:scale-[1.01] group"
+      className="relative rounded-xl overflow-hidden border border-slate-800 bg-slate-900 flex flex-col transition-all duration-200 hover:border-slate-700 hover:scale-[1.01] group cursor-pointer"
+      onClick={() => onClick?.(deck.id)}
     >
       {/* Gradient header — energy visualization (kept for functional color-coding) */}
       <div

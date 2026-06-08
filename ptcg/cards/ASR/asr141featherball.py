@@ -14,7 +14,7 @@ class ASR141FeatherBall(ItemCard):
         self.set_name = "ASR"
         self.number = "141"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "羽毛球"
+        self.name = "飞羽球"
         self.cardType = CardType.NONE
         self.text = "选择自己牌库中的1只「撤退」费用为0的宝可梦，在给对手看过之后，加入手牌。并重洗牌库。"
 

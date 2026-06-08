@@ -1,6 +1,6 @@
 {
   "regulation": "FGH-CSV9C",
-  "fetched_at": "2026-06-08T21:06:10+08:00",
+  "fetched_at": "2026-06-09T01:19:29+08:00",
   "total_decks": 11,
   "decks": [
     {
@@ -29,14 +29,42 @@
       ],
       "core_cards": [
         {
-          "setCode": "CSV1C",
-          "cardIndex": "124",
-          "cardName": "牡丹",
+          "setCode": "CSV8C",
+          "cardIndex": "183",
+          "cardName": "夜间担架",
           "rarity": "U",
-          "effectId": "9fb5f53c9952d10b4fe26508ecbc644a",
-          "cardType": "Supporter",
-          "yorenCode": "Y1215",
+          "effectId": "3e6f1daf545dfed48d0588dd50792a2e",
+          "cardType": "Item",
+          "yorenCode": "Y1472",
           "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.9790356394129979,
+          "usage": [
+            {
+              "qty": 2,
+              "num": 1,
+              "usage": 0.0020964360587002098
+            },
+            {
+              "qty": 1,
+              "num": 465,
+              "usage": 0.9748427672955975
+            }
+          ]
+        },
+        {
+          "setCode": "CS5bC",
+          "cardIndex": "111",
+          "cardName": "大牙狸",
+          "rarity": "C",
+          "effectId": "5a80f8eb94c6fcc27c475c10a63cf856",
+          "cardType": "Pokemon",
+          "yorenCode": "P399",
+          "is": [
+            "Basic"
+          ],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
@@ -51,92 +79,50 @@
         },
         {
           "setCode": "CSV8C",
-          "cardIndex": "203",
-          "cardName": "阻碍之塔",
+          "cardIndex": "198",
+          "cardName": "乌栗",
           "rarity": "U",
-          "effectId": "4e16157bfa88a41e823d058a732df8e0",
-          "cardType": "Stadium",
-          "yorenCode": "Y1491",
+          "effectId": "d4a94445aa981c2f84e4df9b0525eeb0",
+          "cardType": "Supporter",
+          "yorenCode": "Y1487",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.11530398322851153,
+          "averageUsage": 0.010482180293501049,
           "usage": [
             {
-              "qty": 2,
-              "num": 1,
-              "usage": 0.0020964360587002098
-            },
-            {
               "qty": 1,
-              "num": 53,
-              "usage": 0.1111111111111111
+              "num": 5,
+              "usage": 0.010482180293501049
             }
           ]
         },
         {
-          "setCode": "CSV8C",
-          "cardIndex": "173",
-          "cardName": "不公印章",
-          "rarity": "ACE",
-          "effectId": "d324e01179ab048ed023bf4a20bf658d",
-          "cardType": "Item",
-          "yorenCode": "Y1462",
+          "setCode": "151C",
+          "cardIndex": "016",
+          "cardName": "波波",
+          "rarity": "C",
+          "effectId": "c52439ea1ed321c25091b60e04c0d1da",
+          "cardType": "Pokemon",
+          "yorenCode": "P016",
           "is": [
-            "ACE SPEC"
+            "Basic"
           ],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.9077568134171907,
+          "averageUsage": 0.1761006289308176,
           "usage": [
             {
-              "qty": 1,
-              "num": 433,
-              "usage": 0.9077568134171907
-            }
-          ]
-        },
-        {
-          "setCode": "CSV5C",
-          "cardIndex": "119",
-          "cardName": "招式学习器 进化",
-          "rarity": "U",
-          "effectId": "43386015be5c073ba2e5b9d3692ece3f",
-          "cardType": "Tool",
-          "yorenCode": "Y1347",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.006289308176100629,
-          "usage": [
+              "qty": 2,
+              "num": 34,
+              "usage": 0.07127882599580712
+            },
             {
               "qty": 1,
-              "num": 3,
-              "usage": 0.006289308176100629
-            }
-          ]
-        },
-        {
-          "setCode": "CS6.5C",
-          "cardIndex": "066",
-          "cardName": "森林封印石",
-          "rarity": "R",
-          "effectId": "9fa9943ccda36f417ac3cb675177c216",
-          "cardType": "Tool",
-          "yorenCode": "Y1172",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 1,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 477,
-              "usage": 1
+              "num": 16,
+              "usage": 0.033542976939203356
             }
           ]
         },
@@ -164,13 +150,70 @@
           ]
         },
         {
-          "setCode": "CSV8C",
-          "cardIndex": "191",
-          "cardName": "阿克罗玛的执念",
+          "setCode": "CSV7C",
+          "cardIndex": "177",
+          "cardName": "友好宝芬",
           "rarity": "U",
-          "effectId": "f7415384905a382f6f8ffe95dca595cb",
-          "cardType": "Supporter",
-          "yorenCode": "Y1480",
+          "effectId": "f866dfee26cd6b0dbbb52b74438d0a59",
+          "cardType": "Item",
+          "yorenCode": "Y1403",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 3.911949685534591,
+          "usage": [
+            {
+              "qty": 4,
+              "num": 450,
+              "usage": 0.9433962264150944
+            },
+            {
+              "qty": 3,
+              "num": 19,
+              "usage": 0.039832285115303984
+            },
+            {
+              "qty": 2,
+              "num": 1,
+              "usage": 0.0020964360587002098
+            },
+            {
+              "qty": 1,
+              "num": 7,
+              "usage": 0.014675052410901468
+            }
+          ]
+        },
+        {
+          "setCode": "CSV1C",
+          "cardIndex": "113",
+          "cardName": "宝可梦交替",
+          "rarity": "U",
+          "effectId": "7c0b20e121c9d0e0d2d8a43524f7494e",
+          "cardType": "Item",
+          "yorenCode": "Y118",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.05241090146750524,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 25,
+              "usage": 0.05241090146750524
+            }
+          ]
+        },
+        {
+          "setCode": "CSV7C",
+          "cardIndex": "185",
+          "cardName": "紧急滑板",
+          "rarity": "U",
+          "effectId": "0b4cc131a19862f92acf71494f29a0ed",
+          "cardType": "Tool",
+          "yorenCode": "Y1411",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
@@ -185,100 +228,47 @@
           ]
         },
         {
-          "setCode": "SVP",
-          "cardIndex": "067",
-          "cardName": "小火龙",
-          "rarity": "无标记",
-          "effectId": "98ecdb0066cdc5dc6697a0075bcfa4a9",
+          "setCode": "CSV4C",
+          "cardIndex": "101",
+          "cardName": "大比鸟ex",
+          "rarity": "RR",
+          "effectId": "8105afde9792c2596166f318a480d041",
           "cardType": "Pokemon",
-          "yorenCode": "P004",
+          "yorenCode": "Y1315",
           "is": [
-            "Basic"
+            "ex",
+            "Stage 2"
           ],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.15932914046121593,
+          "averageUsage": 2,
           "usage": [
-            {
-              "qty": 3,
-              "num": 10,
-              "usage": 0.020964360587002098
-            },
             {
               "qty": 2,
-              "num": 9,
-              "usage": 0.018867924528301886
-            },
-            {
-              "qty": 1,
-              "num": 28,
-              "usage": 0.05870020964360587
+              "num": 477,
+              "usage": 1
             }
           ]
         },
         {
-          "setCode": "CS5DC",
-          "cardIndex": "152",
-          "cardName": "熔岩瀑布之渊",
-          "rarity": "无标记",
-          "effectId": "d781c9da21b24ff7a1453150a534c9df",
-          "cardType": "Stadium",
-          "yorenCode": "Y963",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.010482180293501049,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 5,
-              "usage": 0.010482180293501049
-            }
-          ]
-        },
-        {
-          "setCode": "CSV9C",
-          "cardIndex": "181",
-          "cardName": "太晶珠",
+          "setCode": "CSV5C",
+          "cardIndex": "119",
+          "cardName": "招式学习器 进化",
           "rarity": "U",
-          "effectId": "93e504a96d675da78630b8a27ee6199b",
-          "cardType": "Item",
-          "yorenCode": "Y1522",
+          "effectId": "43386015be5c073ba2e5b9d3692ece3f",
+          "cardType": "Tool",
+          "yorenCode": "Y1347",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.012578616352201259,
+          "averageUsage": 0.006289308176100629,
           "usage": [
             {
               "qty": 1,
-              "num": 6,
-              "usage": 0.012578616352201259
-            }
-          ]
-        },
-        {
-          "setCode": "CSV7C",
-          "cardIndex": "187",
-          "cardName": "英雄斗篷",
-          "rarity": "ACE",
-          "effectId": "cd9192e99ba06596352434d53223514f",
-          "cardType": "Tool",
-          "yorenCode": "Y1413",
-          "is": [
-            "ACE SPEC"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.0041928721174004195,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 2,
-              "usage": 0.0041928721174004195
+              "num": 3,
+              "usage": 0.006289308176100629
             }
           ]
         },
@@ -311,86 +301,97 @@
           ]
         },
         {
-          "setCode": "CSVH1aC",
-          "cardIndex": "023",
-          "cardName": "老大的指令",
-          "rarity": "无标记",
-          "effectId": "8e1fa2c9018db938084c94c7c970d419",
-          "cardType": "Supporter",
-          "yorenCode": "Y487",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 1.9832285115303983,
-          "usage": [
-            {
-              "qty": 3,
-              "num": 1,
-              "usage": 0.0020964360587002098
-            },
-            {
-              "qty": 2,
-              "num": 467,
-              "usage": 0.9790356394129979
-            },
-            {
-              "qty": 1,
-              "num": 9,
-              "usage": 0.018867924528301886
-            }
-          ]
-        },
-        {
-          "setCode": "CSV5C",
-          "cardIndex": "075",
-          "cardName": "喷火龙ex",
-          "rarity": "RR",
-          "effectId": "767b6233bf90b98b7af190ea3b40d7a2",
-          "cardType": "Pokemon",
-          "yorenCode": "Y1181",
+          "setCode": "CSV7C",
+          "cardIndex": "180",
+          "cardName": "顶尖捕捉器",
+          "rarity": "ACE",
+          "effectId": "4ec261453212280d0eb03ed8254ca97f",
+          "cardType": "Item",
+          "yorenCode": "Y1406",
           "is": [
-            "ex",
-            "Stage 2"
+            "ACE SPEC"
           ],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 2.0272536687631026,
+          "averageUsage": 0.029350104821802937,
           "usage": [
             {
-              "qty": 3,
-              "num": 13,
-              "usage": 0.027253668763102725
-            },
+              "qty": 1,
+              "num": 14,
+              "usage": 0.029350104821802937
+            }
+          ]
+        },
+        {
+          "setCode": "CSV1C",
+          "cardIndex": "120",
+          "cardName": "吉尼亚",
+          "rarity": "U",
+          "effectId": "a8a2b27c2641d8d7212fc887ca032e4c",
+          "cardType": "Supporter",
+          "yorenCode": "Y1213",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.006289308176100629,
+          "usage": [
             {
-              "qty": 2,
-              "num": 464,
-              "usage": 0.9727463312368972
+              "qty": 1,
+              "num": 3,
+              "usage": 0.006289308176100629
             }
           ]
         },
         {
           "setCode": "CSV8C",
-          "cardIndex": "136",
-          "cardName": "桃歹郎ex",
-          "rarity": "RR",
-          "effectId": "e92d1881bfe5e0b957b87c93cd757fc7",
+          "cardIndex": "094",
+          "cardName": "愿增猿",
+          "rarity": "R",
+          "effectId": "66fee12502043db7d92b97b0d62b0f59",
           "cardType": "Pokemon",
-          "yorenCode": "Y1456",
+          "yorenCode": "P1015",
           "is": [
-            "ex",
             "Basic"
           ],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.0020964360587002098,
+          "averageUsage": 0.0041928721174004195,
           "usage": [
             {
               "qty": 1,
-              "num": 1,
-              "usage": 0.0020964360587002098
+              "num": 2,
+              "usage": 0.0041928721174004195
+            }
+          ]
+        },
+        {
+          "setCode": "CSV4C",
+          "cardIndex": "099",
+          "cardName": "波波",
+          "rarity": "C",
+          "effectId": "60635d7ef1f254b347154daf97a02fdf",
+          "cardType": "Pokemon",
+          "yorenCode": "P016",
+          "is": [
+            "Basic"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 1.821802935010482,
+          "usage": [
+            {
+              "qty": 2,
+              "num": 426,
+              "usage": 0.8930817610062893
+            },
+            {
+              "qty": 1,
+              "num": 17,
+              "usage": 0.03563941299790356
             }
           ]
         }
@@ -753,125 +754,115 @@
       ],
       "core_cards": [
         {
-          "setCode": "CSVE1C",
-          "cardIndex": "GRA",
-          "cardName": "基本草能量",
-          "rarity": "无标记",
-          "effectId": "5e2d0ce37ca0c539aa45908da10544a0",
-          "cardType": "Basic Energy",
-          "yorenCode": "Y457",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 6.967336683417085,
-          "usage": [
-            {
-              "qty": 8,
-              "num": 1,
-              "usage": 0.002512562814070352
-            },
-            {
-              "qty": 7,
-              "num": 383,
-              "usage": 0.9623115577889447
-            },
-            {
-              "qty": 6,
-              "num": 14,
-              "usage": 0.035175879396984924
-            }
-          ]
-        },
-        {
-          "setCode": "CSV1C",
-          "cardIndex": "121",
-          "cardName": "博士的研究",
-          "rarity": "R",
-          "effectId": "aecd80ca2722885c3d062a2255346f3e",
-          "cardType": "Supporter",
-          "yorenCode": "Y485",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 3.8542713567839195,
-          "usage": [
-            {
-              "qty": 4,
-              "num": 347,
-              "usage": 0.871859296482412
-            },
-            {
-              "qty": 3,
-              "num": 44,
-              "usage": 0.11055276381909548
-            },
-            {
-              "qty": 2,
-              "num": 7,
-              "usage": 0.017587939698492462
-            }
-          ]
-        },
-        {
-          "setCode": "CSV1C",
-          "cardIndex": "111",
-          "cardName": "朋友手册",
-          "rarity": "U",
-          "effectId": "a47d5a8ed00e14a2146fc511745d23b5",
-          "cardType": "Item",
-          "yorenCode": "Y87",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.02763819095477387,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 11,
-              "usage": 0.02763819095477387
-            }
-          ]
-        },
-        {
-          "setCode": "CS4DaC",
-          "cardIndex": "056",
-          "cardName": "炎帝V",
-          "rarity": "无标记",
-          "effectId": "3c6c028efc71a5e7ee0fbd2e8f70ece9",
+          "setCode": "CSV2C",
+          "cardIndex": "105",
+          "cardName": "怒鹦哥ex",
+          "rarity": "RR",
+          "effectId": "1b951205e53e179bde0905c4a194d9ee",
           "cardType": "Pokemon",
-          "yorenCode": "Y912",
+          "yorenCode": "Y1253",
           "is": [
-            "V",
+            "ex",
             "Basic"
           ],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.03768844221105527,
+          "averageUsage": 1,
           "usage": [
             {
               "qty": 1,
-              "num": 15,
-              "usage": 0.03768844221105527
+              "num": 398,
+              "usage": 1
+            }
+          ]
+        },
+        {
+          "setCode": "CSVE1C",
+          "cardIndex": "FIR",
+          "cardName": "基本火能量",
+          "rarity": "无标记",
+          "effectId": "22db5405bf0cce61a00aa8082cdd1e65",
+          "cardType": "Basic Energy",
+          "yorenCode": "Y458",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 2.851758793969849,
+          "usage": [
+            {
+              "qty": 3,
+              "num": 339,
+              "usage": 0.8517587939698492
+            },
+            {
+              "qty": 2,
+              "num": 59,
+              "usage": 0.14824120603015076
+            }
+          ]
+        },
+        {
+          "setCode": "151C",
+          "cardIndex": "151",
+          "cardName": "梦幻ex",
+          "rarity": "RR",
+          "effectId": "49669fcf461deacebeb5755c11ec51f1",
+          "cardType": "Pokemon",
+          "yorenCode": "Y1191",
+          "is": [
+            "ex",
+            "Basic"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.9773869346733668,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 389,
+              "usage": 0.9773869346733668
             }
           ]
         },
         {
           "setCode": "CSV8C",
-          "cardIndex": "183",
-          "cardName": "夜间担架",
+          "cardIndex": "182",
+          "cardName": "捕虫套装",
           "rarity": "U",
-          "effectId": "3e6f1daf545dfed48d0588dd50792a2e",
+          "effectId": "adf4d1157e58b1421d1b6d0871b2fc88",
           "cardType": "Item",
-          "yorenCode": "Y1472",
+          "yorenCode": "Y1471",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.18592964824120603,
+          "averageUsage": 0.002512562814070352,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 1,
+              "usage": 0.002512562814070352
+            }
+          ]
+        },
+        {
+          "setCode": "CSV9C",
+          "cardIndex": "147",
+          "cardName": "酋雷姆",
+          "rarity": "U",
+          "effectId": "35449fa64a627725e9f3129b6596b2a7",
+          "cardType": "Pokemon",
+          "yorenCode": "P646",
+          "is": [
+            "Basic"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.9974874371859297,
           "usage": [
             {
               "qty": 2,
@@ -880,42 +871,34 @@
             },
             {
               "qty": 1,
-              "num": 72,
-              "usage": 0.18090452261306533
+              "num": 395,
+              "usage": 0.992462311557789
             }
           ]
         },
         {
-          "setCode": "CS6.5C",
-          "cardIndex": "054",
-          "cardName": "雷吉铎拉戈V",
-          "rarity": "RR",
-          "effectId": "90c9e117fa846938024ae15eb859f1b6",
-          "cardType": "Pokemon",
-          "yorenCode": "Y1167",
-          "is": [
-            "V",
-            "Basic"
-          ],
+          "setCode": "CSVH1aC",
+          "cardIndex": "023",
+          "cardName": "老大的指令",
+          "rarity": "无标记",
+          "effectId": "8e1fa2c9018db938084c94c7c970d419",
+          "cardType": "Supporter",
+          "yorenCode": "Y487",
+          "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 2.9899497487437188,
+          "averageUsage": 2.007537688442211,
           "usage": [
             {
-              "qty": 4,
-              "num": 2,
-              "usage": 0.005025125628140704
-            },
-            {
               "qty": 3,
-              "num": 390,
-              "usage": 0.9798994974874372
+              "num": 3,
+              "usage": 0.007537688442211055
             },
             {
               "qty": 2,
-              "num": 6,
-              "usage": 0.01507537688442211
+              "num": 395,
+              "usage": 0.992462311557789
             }
           ]
         },
@@ -954,37 +937,88 @@
           ]
         },
         {
-          "setCode": "CSV1C",
-          "cardIndex": "079",
-          "cardName": "摔角鹰人",
-          "rarity": "R",
-          "effectId": "74b83ef8987d072950dfe3bde3364d87",
+          "setCode": "CS6bC",
+          "cardIndex": "035",
+          "cardName": "大嘴娃",
+          "rarity": "C",
+          "effectId": "26afb8b359bdeb40834a9dafbba4218b",
           "cardType": "Pokemon",
-          "yorenCode": "P701",
+          "yorenCode": "P303",
           "is": [
             "Basic"
           ],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.3316582914572864,
+          "averageUsage": 0.002512562814070352,
           "usage": [
             {
               "qty": 1,
-              "num": 132,
-              "usage": 0.3316582914572864
+              "num": 1,
+              "usage": 0.002512562814070352
             }
           ]
         },
         {
-          "setCode": "CS6.5C",
-          "cardIndex": "068",
-          "cardName": "菜种的活力",
+          "setCode": "CSV8C",
+          "cardIndex": "153",
+          "cardName": "双斧战龙",
+          "rarity": "R",
+          "effectId": "e45788bd7d9ffec5b3da3730d2dc806f",
+          "cardType": "Pokemon",
+          "yorenCode": "P612",
+          "is": [
+            "Stage 2"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.032663316582914576,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 13,
+              "usage": 0.032663316582914576
+            }
+          ]
+        },
+        {
+          "setCode": "CSV1C",
+          "cardIndex": "112",
+          "cardName": "高级球",
           "rarity": "U",
-          "effectId": "20644bce385069fcc3d66d70409d1ff3",
-          "cardType": "Supporter",
-          "yorenCode": "Y1173",
+          "effectId": "a337ed34a45e63c6d21d98c3d8e0cb6e",
+          "cardType": "Item",
+          "yorenCode": "Y151",
           "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 3.992462311557789,
+          "usage": [
+            {
+              "qty": 4,
+              "num": 395,
+              "usage": 0.992462311557789
+            },
+            {
+              "qty": 3,
+              "num": 3,
+              "usage": 0.007537688442211055
+            }
+          ]
+        },
+        {
+          "setCode": "CSV7C",
+          "cardIndex": "159",
+          "cardName": "咕咕",
+          "rarity": "C",
+          "effectId": "65442467f2645f5983fe6604e5bdc8d2",
+          "cardType": "Pokemon",
+          "yorenCode": "P163",
+          "is": [
+            "Basic"
+          ],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
@@ -999,14 +1033,35 @@
         },
         {
           "setCode": "CSVH1C",
-          "cardIndex": "050",
-          "cardName": "活力头带",
+          "cardIndex": "034",
+          "cardName": "能量回收",
           "rarity": "无标记",
-          "effectId": "f474805425d4849d8dc4c8c1e1af750a",
-          "cardType": "Tool",
-          "yorenCode": "Y521",
+          "effectId": "8538726d6cdfad2fa3ca5f4b462c12c5",
+          "cardType": "Item",
+          "yorenCode": "Y27",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.017587939698492462,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 7,
+              "usage": 0.017587939698492462
+            }
+          ]
+        },
+        {
+          "setCode": "151C",
+          "cardIndex": "132",
+          "cardName": "百变怪",
+          "rarity": "R",
+          "effectId": "63ea5ed31033f1cc5711c2f89bd92692",
+          "cardType": "Pokemon",
+          "yorenCode": "Y1074",
           "is": [
-            "Single Strike"
+            "Basic"
           ],
           "setCodeEn": "",
           "cardIndexEn": "",
@@ -1021,114 +1076,52 @@
           ]
         },
         {
-          "setCode": "CSV6C",
-          "cardIndex": "125",
-          "cardName": "弗图博士的剧本",
+          "setCode": "CSV8C",
+          "cardIndex": "183",
+          "cardName": "夜间担架",
           "rarity": "U",
-          "effectId": "73d5f46ecf3a6d71b23ce7bc1a28d4f4",
-          "cardType": "Supporter",
-          "yorenCode": "Y1378",
-          "is": [
-            "Future"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.020100502512562814,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 8,
-              "usage": 0.020100502512562814
-            }
-          ]
-        },
-        {
-          "setCode": "CSV9C",
-          "cardIndex": "207",
-          "cardName": "零之大空洞",
-          "rarity": "U",
-          "effectId": "cf3124da3d7bf217f7969b6ae4e60e38",
-          "cardType": "Stadium",
-          "yorenCode": "Y1547",
+          "effectId": "3e6f1daf545dfed48d0588dd50792a2e",
+          "cardType": "Item",
+          "yorenCode": "Y1472",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.05527638190954774,
+          "averageUsage": 0.18592964824120603,
           "usage": [
             {
               "qty": 2,
-              "num": 10,
-              "usage": 0.02512562814070352
+              "num": 1,
+              "usage": 0.002512562814070352
             },
             {
               "qty": 1,
-              "num": 2,
-              "usage": 0.005025125628140704
-            }
-          ]
-        },
-        {
-          "setCode": "CS6bC",
-          "cardIndex": "130",
-          "cardName": "放逐市",
-          "rarity": "U",
-          "effectId": "7f4e493ec0d852a5bb31c02bdbdb2c4e",
-          "cardType": "Stadium",
-          "yorenCode": "Y1111",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.01256281407035176,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 5,
-              "usage": 0.01256281407035176
+              "num": 72,
+              "usage": 0.18090452261306533
             }
           ]
         },
         {
           "setCode": "CSV9C",
-          "cardIndex": "189",
-          "cardName": "龙之秘药",
-          "rarity": "U",
-          "effectId": "45eee253fff88ebc65cc1215810bf7a8",
-          "cardType": "Item",
-          "yorenCode": "Y1530",
-          "is": [],
+          "cardIndex": "078",
+          "cardName": "拉帝亚斯ex",
+          "rarity": "RR",
+          "effectId": "a92ab1fcfe663d2a56b267a34307fad4",
+          "cardType": "Pokemon",
+          "yorenCode": "Y1506",
+          "is": [
+            "ex",
+            "Basic"
+          ],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.002512562814070352,
+          "averageUsage": 0.04020100502512563,
           "usage": [
             {
               "qty": 1,
-              "num": 1,
-              "usage": 0.002512562814070352
-            }
-          ]
-        },
-        {
-          "setCode": "CS6bC",
-          "cardIndex": "123",
-          "cardName": "放逐吸尘器",
-          "rarity": "U",
-          "effectId": "8f655fea1f90164bfbccb7a95c223e17",
-          "cardType": "Item",
-          "yorenCode": "Y1105",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.005025125628140704,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 2,
-              "usage": 0.005025125628140704
+              "num": 16,
+              "usage": 0.04020100502512563
             }
           ]
         }
@@ -1471,155 +1464,177 @@
       ],
       "core_cards": [
         {
-          "setCode": "CSV1C",
-          "cardIndex": "121",
-          "cardName": "博士的研究",
-          "rarity": "R",
-          "effectId": "aecd80ca2722885c3d062a2255346f3e",
-          "cardType": "Supporter",
-          "yorenCode": "Y485",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.07973421926910298,
-          "usage": [
-            {
-              "qty": 3,
-              "num": 1,
-              "usage": 0.0033222591362126247
-            },
-            {
-              "qty": 2,
-              "num": 1,
-              "usage": 0.0033222591362126247
-            },
-            {
-              "qty": 1,
-              "num": 19,
-              "usage": 0.06312292358803986
-            }
-          ]
-        },
-        {
-          "setCode": "CSV1C",
-          "cardIndex": "118",
-          "cardName": "勇气护符",
+          "setCode": "CSV3C",
+          "cardIndex": "123",
+          "cardName": "奇树",
           "rarity": "U",
-          "effectId": "d1c2f018a644e662f2b6895fdfc29281",
-          "cardType": "Tool",
-          "yorenCode": "Y1211",
+          "effectId": "af514f82d182aeae5327b2c360df703d",
+          "cardType": "Supporter",
+          "yorenCode": "Y1294",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 1.0066445182724253,
+          "averageUsage": 0.09966777408637874,
           "usage": [
             {
               "qty": 2,
-              "num": 8,
-              "usage": 0.026578073089700997
+              "num": 2,
+              "usage": 0.006644518272425249
             },
             {
               "qty": 1,
-              "num": 287,
-              "usage": 0.9534883720930233
+              "num": 26,
+              "usage": 0.08637873754152824
             }
           ]
         },
         {
-          "setCode": "151C",
-          "cardIndex": "081",
-          "cardName": "小磁怪",
-          "rarity": "C",
-          "effectId": "5c0716ee309a1b95a0ae5c534069b0d2",
+          "setCode": "CS6bC",
+          "cardIndex": "123",
+          "cardName": "放逐吸尘器",
+          "rarity": "U",
+          "effectId": "8f655fea1f90164bfbccb7a95c223e17",
+          "cardType": "Item",
+          "yorenCode": "Y1105",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.11627906976744186,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 35,
+              "usage": 0.11627906976744186
+            }
+          ]
+        },
+        {
+          "setCode": "CSV6C",
+          "cardIndex": "042",
+          "cardName": "铁包袱",
+          "rarity": "U",
+          "effectId": "47676dfc37415cfdf3b3992b1de64141",
           "cardType": "Pokemon",
-          "yorenCode": "P081",
+          "yorenCode": "P0991",
           "is": [
+            "Future",
             "Basic"
           ],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.2823920265780731,
+          "averageUsage": 0.9767441860465116,
           "usage": [
             {
               "qty": 1,
-              "num": 85,
-              "usage": 0.2823920265780731
+              "num": 294,
+              "usage": 0.9767441860465116
             }
           ]
         },
         {
           "setCode": "CSVH1C",
-          "cardIndex": "043",
-          "cardName": "巢穴球",
+          "cardIndex": "047",
+          "cardName": "宝可梦捕捉器",
           "rarity": "无标记",
-          "effectId": "1af63a7e2cb7a79215474ad8db8fd8fd",
+          "effectId": "3a6d419769778b40091e69fbd76737ec",
           "cardType": "Item",
-          "yorenCode": "Y30",
+          "yorenCode": "Y206",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 3.8870431893687707,
+          "averageUsage": 0.0033222591362126247,
           "usage": [
             {
-              "qty": 4,
-              "num": 267,
-              "usage": 0.8870431893687708
-            },
-            {
-              "qty": 3,
-              "num": 34,
-              "usage": 0.11295681063122924
+              "qty": 1,
+              "num": 1,
+              "usage": 0.0033222591362126247
             }
           ]
         },
         {
-          "setCode": "CSV9C",
-          "cardIndex": "207",
-          "cardName": "零之大空洞",
-          "rarity": "U",
-          "effectId": "cf3124da3d7bf217f7969b6ae4e60e38",
-          "cardType": "Stadium",
-          "yorenCode": "Y1547",
+          "setCode": "CSNC",
+          "cardIndex": "024",
+          "cardName": "双重涡轮能量",
+          "rarity": "无标记",
+          "effectId": "9c04dd0addf56a7b2c88476bc8e45c0e",
+          "cardType": "Special Energy",
+          "yorenCode": "Y935",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 1.8372093023255813,
+          "averageUsage": 1.0332225913621262,
           "usage": [
             {
               "qty": 2,
-              "num": 274,
-              "usage": 0.9102990033222591
+              "num": 11,
+              "usage": 0.036544850498338874
             },
             {
               "qty": 1,
-              "num": 5,
-              "usage": 0.016611295681063124
+              "num": 289,
+              "usage": 0.9601328903654485
+            }
+          ]
+        },
+        {
+          "setCode": "CS5DC",
+          "cardIndex": "140",
+          "cardName": "星月",
+          "rarity": "无标记",
+          "effectId": "e5c317e428f0cfd885b53d4d058b5d5b",
+          "cardType": "Supporter",
+          "yorenCode": "Y957",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.0033222591362126247,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 1,
+              "usage": 0.0033222591362126247
             }
           ]
         },
         {
           "setCode": "CSV1C",
-          "cardIndex": "117",
-          "cardName": "不服输头带",
+          "cardIndex": "112",
+          "cardName": "高级球",
           "rarity": "U",
-          "effectId": "e242d711feffd98f3fbb5c511d00d667",
-          "cardType": "Tool",
-          "yorenCode": "Y1210",
+          "effectId": "a337ed34a45e63c6d21d98c3d8e0cb6e",
+          "cardType": "Item",
+          "yorenCode": "Y151",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.08305647840531562,
+          "averageUsage": 2.823920265780731,
           "usage": [
             {
+              "qty": 4,
+              "num": 9,
+              "usage": 0.029900332225913623
+            },
+            {
+              "qty": 3,
+              "num": 231,
+              "usage": 0.7674418604651163
+            },
+            {
+              "qty": 2,
+              "num": 60,
+              "usage": 0.19933554817275748
+            },
+            {
               "qty": 1,
-              "num": 25,
-              "usage": 0.08305647840531562
+              "num": 1,
+              "usage": 0.0033222591362126247
             }
           ]
         },
@@ -1645,61 +1660,17 @@
           ]
         },
         {
-          "setCode": "CS5DC",
-          "cardIndex": "116",
-          "cardName": "交替推车",
-          "rarity": "无标记",
-          "effectId": "8342fe3eeec6f897f3271be1aa26a412",
-          "cardType": "Item",
-          "yorenCode": "Y951",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.5780730897009967,
-          "usage": [
-            {
-              "qty": 2,
-              "num": 13,
-              "usage": 0.04318936877076412
-            },
-            {
-              "qty": 1,
-              "num": 148,
-              "usage": 0.49169435215946844
-            }
-          ]
-        },
-        {
-          "setCode": "CSV7C",
-          "cardIndex": "188",
-          "cardName": "沉重接力棒",
-          "rarity": "U",
-          "effectId": "770c741043025f241dbd81422cb8987d",
-          "cardType": "Tool",
-          "yorenCode": "Y1414",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.029900332225913623,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 9,
-              "usage": 0.029900332225913623
-            }
-          ]
-        },
-        {
-          "setCode": "CSV9C",
-          "cardIndex": "196",
-          "cardName": "赤松",
-          "rarity": "U",
-          "effectId": "fa8d8691876be30f245bc878d0a29745",
-          "cardType": "Supporter",
-          "yorenCode": "Y1536",
-          "is": [],
+          "setCode": "CSV4C",
+          "cardIndex": "032",
+          "cardName": "卡璞・鸣鸣ex",
+          "rarity": "RR",
+          "effectId": "b7337b94bb9779b843cf7c00f703119a",
+          "cardType": "Pokemon",
+          "yorenCode": "P0785",
+          "is": [
+            "ex",
+            "Basic"
+          ],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
@@ -1713,54 +1684,23 @@
           ]
         },
         {
-          "setCode": "CSV6C",
-          "cardIndex": "114",
-          "cardName": "反击捕捉器",
+          "setCode": "CSV1C",
+          "cardIndex": "113",
+          "cardName": "宝可梦交替",
           "rarity": "U",
-          "effectId": "06bc00d5dcec33898dc6db2e4c4d10ec",
+          "effectId": "7c0b20e121c9d0e0d2d8a43524f7494e",
           "cardType": "Item",
-          "yorenCode": "Y147",
+          "yorenCode": "Y118",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.7840531561461794,
+          "averageUsage": 0.006644518272425249,
           "usage": [
             {
               "qty": 1,
-              "num": 236,
-              "usage": 0.7840531561461794
-            }
-          ]
-        },
-        {
-          "setCode": "CSVH1aC",
-          "cardIndex": "023",
-          "cardName": "老大的指令",
-          "rarity": "无标记",
-          "effectId": "8e1fa2c9018db938084c94c7c970d419",
-          "cardType": "Supporter",
-          "yorenCode": "Y487",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 3.222591362126246,
-          "usage": [
-            {
-              "qty": 4,
-              "num": 72,
-              "usage": 0.23920265780730898
-            },
-            {
-              "qty": 3,
-              "num": 224,
-              "usage": 0.7441860465116279
-            },
-            {
-              "qty": 2,
-              "num": 5,
-              "usage": 0.016611295681063124
+              "num": 2,
+              "usage": 0.006644518272425249
             }
           ]
         },
@@ -1791,6 +1731,93 @@
           ]
         },
         {
+          "setCode": "CSV1C",
+          "cardIndex": "107",
+          "cardName": "电气发生器",
+          "rarity": "U",
+          "effectId": "2234845fbc2e11ab95587e1b393bb318",
+          "cardType": "Item",
+          "yorenCode": "Y1206",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 4,
+          "usage": [
+            {
+              "qty": 4,
+              "num": 301,
+              "usage": 1
+            }
+          ]
+        },
+        {
+          "setCode": "CSV6C",
+          "cardIndex": "051",
+          "cardName": "铁臂膀ex",
+          "rarity": "RR",
+          "effectId": "e9f0c124fc2e352af2408a7e61862b95",
+          "cardType": "Pokemon",
+          "yorenCode": "Y1366",
+          "is": [
+            "ex",
+            "Future",
+            "Basic"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 1.9700996677740863,
+          "usage": [
+            {
+              "qty": 2,
+              "num": 292,
+              "usage": 0.9700996677740864
+            },
+            {
+              "qty": 1,
+              "num": 9,
+              "usage": 0.029900332225913623
+            }
+          ]
+        },
+        {
+          "setCode": "CSVE1C",
+          "cardIndex": "LIG",
+          "cardName": "基本雷能量",
+          "rarity": "无标记",
+          "effectId": "45550fd10011f6ade7eef16ba88788cf",
+          "cardType": "Basic Energy",
+          "yorenCode": "Y460",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 15.106312292358805,
+          "usage": [
+            {
+              "qty": 16,
+              "num": 54,
+              "usage": 0.17940199335548174
+            },
+            {
+              "qty": 15,
+              "num": 226,
+              "usage": 0.7508305647840532
+            },
+            {
+              "qty": 14,
+              "num": 20,
+              "usage": 0.0664451827242525
+            },
+            {
+              "qty": 13,
+              "num": 1,
+              "usage": 0.0033222591362126247
+            }
+          ]
+        },
+        {
           "setCode": "CSV8C",
           "cardIndex": "193",
           "cardName": "仙后",
@@ -1808,27 +1835,6 @@
               "qty": 1,
               "num": 1,
               "usage": 0.0033222591362126247
-            }
-          ]
-        },
-        {
-          "setCode": "CS5aC",
-          "cardIndex": "118",
-          "cardName": "超群眼镜",
-          "rarity": "U",
-          "effectId": "0ad0108e5ab1346d88f6ce11b75028d7",
-          "cardType": "Tool",
-          "yorenCode": "Y1025",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.006644518272425249,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 2,
-              "usage": 0.006644518272425249
             }
           ]
         }
@@ -2171,17 +2177,14 @@
       ],
       "core_cards": [
         {
-          "setCode": "CSV8C",
-          "cardIndex": "088",
-          "cardName": "哲尔尼亚斯ex",
-          "rarity": "RR",
-          "effectId": "f9f3064af6f889b03d08d69feb7a4419",
-          "cardType": "Pokemon",
-          "yorenCode": "Y1450",
-          "is": [
-            "ex",
-            "Basic"
-          ],
+          "setCode": "CSV7C",
+          "cardIndex": "175",
+          "cardName": "改造之锤",
+          "rarity": "U",
+          "effectId": "23ee27488d0c1317557a3106a1fc7db3",
+          "cardType": "Item",
+          "yorenCode": "Y29",
+          "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
@@ -2196,169 +2199,48 @@
         },
         {
           "setCode": "CSV9C",
-          "cardIndex": "186",
-          "cardName": "贵重推车",
-          "rarity": "ACE",
-          "effectId": "a36548792cb4ff401f9b56e3ade897f6",
-          "cardType": "Item",
-          "yorenCode": "Y1527",
-          "is": [
-            "ACE SPEC"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.018796992481203006,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 5,
-              "usage": 0.018796992481203006
-            }
-          ]
-        },
-        {
-          "setCode": "CSV1C",
-          "cardIndex": "109",
-          "cardName": "厉害钓竿",
+          "cardIndex": "177",
+          "cardName": "支援按铃",
           "rarity": "U",
-          "effectId": "c9c948169525fbb3dce70c477ec7a90a",
+          "effectId": "f36c9b4bc252fbf79c567d274202206f",
           "cardType": "Item",
-          "yorenCode": "Y1207",
+          "yorenCode": "Y1518",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 1.0977443609022557,
-          "usage": [
-            {
-              "qty": 2,
-              "num": 26,
-              "usage": 0.09774436090225563
-            },
-            {
-              "qty": 1,
-              "num": 240,
-              "usage": 0.9022556390977443
-            }
-          ]
-        },
-        {
-          "setCode": "CSV1C",
-          "cardIndex": "060",
-          "cardName": "钥圈儿",
-          "rarity": "R",
-          "effectId": "8ef8bc904c5953682fbf7a3fa50eb7fc",
-          "cardType": "Pokemon",
-          "yorenCode": "P707",
-          "is": [
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.868421052631579,
-          "usage": [
-            {
-              "qty": 2,
-              "num": 4,
-              "usage": 0.015037593984962405
-            },
-            {
-              "qty": 1,
-              "num": 223,
-              "usage": 0.8383458646616542
-            }
-          ]
-        },
-        {
-          "setCode": "CSV3C",
-          "cardIndex": "062",
-          "cardName": "谜拟丘",
-          "rarity": "R",
-          "effectId": "4ba364fe554ffe8577561515bc8b5979",
-          "cardType": "Pokemon",
-          "yorenCode": "P778",
-          "is": [
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.007518796992481203,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 2,
-              "usage": 0.007518796992481203
-            }
-          ]
-        },
-        {
-          "setCode": "CSVH1aC",
-          "cardIndex": "008",
-          "cardName": "能量转移",
-          "rarity": "无标记",
-          "effectId": "294212d9c02dc0acb886a7ef01ebeac4",
-          "cardType": "Item",
-          "yorenCode": "Y193",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.462406015037594,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 123,
-              "usage": 0.462406015037594
-            }
-          ]
-        },
-        {
-          "setCode": "CS5.5C",
-          "cardIndex": "060",
-          "cardName": "洗翠的沉重球",
-          "rarity": "U",
-          "effectId": "2f68195255c863293be4fad262bf23d2",
-          "cardType": "Item",
-          "yorenCode": "Y1078",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.9172932330827067,
-          "usage": [
-            {
-              "qty": 2,
-              "num": 1,
-              "usage": 0.0037593984962406013
-            },
-            {
-              "qty": 1,
-              "num": 242,
-              "usage": 0.9097744360902256
-            }
-          ]
-        },
-        {
-          "setCode": "CSV1C",
-          "cardIndex": "121",
-          "cardName": "博士的研究",
-          "rarity": "R",
-          "effectId": "aecd80ca2722885c3d062a2255346f3e",
-          "cardType": "Supporter",
-          "yorenCode": "Y485",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 1.0639097744360901,
+          "averageUsage": 0.06390977443609022,
           "usage": [
             {
               "qty": 4,
-              "num": 1,
-              "usage": 0.0037593984962406013
+              "num": 2,
+              "usage": 0.007518796992481203
+            },
+            {
+              "qty": 3,
+              "num": 3,
+              "usage": 0.011278195488721804
+            }
+          ]
+        },
+        {
+          "setCode": "CSV1C",
+          "cardIndex": "112",
+          "cardName": "高级球",
+          "rarity": "U",
+          "effectId": "a337ed34a45e63c6d21d98c3d8e0cb6e",
+          "cardType": "Item",
+          "yorenCode": "Y151",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 2.082706766917293,
+          "usage": [
+            {
+              "qty": 4,
+              "num": 8,
+              "usage": 0.03007518796992481
             },
             {
               "qty": 3,
@@ -2367,65 +2249,191 @@
             },
             {
               "qty": 2,
-              "num": 100,
-              "usage": 0.37593984962406013
-            },
-            {
-              "qty": 1,
-              "num": 61,
-              "usage": 0.22932330827067668
+              "num": 252,
+              "usage": 0.9473684210526315
             }
           ]
         },
         {
-          "setCode": "CSV8C",
-          "cardIndex": "183",
-          "cardName": "夜间担架",
-          "rarity": "U",
-          "effectId": "3e6f1daf545dfed48d0588dd50792a2e",
-          "cardType": "Item",
-          "yorenCode": "Y1472",
+          "setCode": "CS5DC",
+          "cardIndex": "138",
+          "cardName": "珠贝",
+          "rarity": "无标记",
+          "effectId": "4f53ab6bf158fd1a8869ae037f4a0d6d",
+          "cardType": "Supporter",
+          "yorenCode": "Y956",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 1.8909774436090225,
+          "averageUsage": 0.12781954887218044,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 34,
+              "usage": 0.12781954887218044
+            }
+          ]
+        },
+        {
+          "setCode": "CSV2C",
+          "cardIndex": "127",
+          "cardName": "深钵镇",
+          "rarity": "U",
+          "effectId": "c117bea3cc758d46430d6bef11062a56",
+          "cardType": "Stadium",
+          "yorenCode": "Y1265",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 1.6879699248120301,
           "usage": [
             {
               "qty": 2,
-              "num": 239,
-              "usage": 0.8984962406015038
+              "num": 188,
+              "usage": 0.706766917293233
             },
             {
               "qty": 1,
-              "num": 25,
-              "usage": 0.09398496240601503
+              "num": 73,
+              "usage": 0.2744360902255639
             }
           ]
         },
         {
-          "setCode": "CSV7C",
-          "cardIndex": "177",
-          "cardName": "友好宝芬",
-          "rarity": "U",
-          "effectId": "f866dfee26cd6b0dbbb52b74438d0a59",
+          "setCode": "CSVH1C",
+          "cardIndex": "043",
+          "cardName": "巢穴球",
+          "rarity": "无标记",
+          "effectId": "1af63a7e2cb7a79215474ad8db8fd8fd",
           "cardType": "Item",
-          "yorenCode": "Y1403",
+          "yorenCode": "Y30",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 3.3533834586466167,
+          "averageUsage": 0.8345864661654135,
+          "usage": [
+            {
+              "qty": 3,
+              "num": 1,
+              "usage": 0.0037593984962406013
+            },
+            {
+              "qty": 2,
+              "num": 32,
+              "usage": 0.12030075187969924
+            },
+            {
+              "qty": 1,
+              "num": 155,
+              "usage": 0.5827067669172933
+            }
+          ]
+        },
+        {
+          "setCode": "CSV6C",
+          "cardIndex": "115",
+          "cardName": "大地容器",
+          "rarity": "U",
+          "effectId": "e366f56ecd3f805a28294109a1a37453",
+          "cardType": "Item",
+          "yorenCode": "Y1371",
+          "is": [
+            "Ancient"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 2.4210526315789473,
+          "usage": [
+            {
+              "qty": 3,
+              "num": 112,
+              "usage": 0.42105263157894735
+            },
+            {
+              "qty": 2,
+              "num": 154,
+              "usage": 0.5789473684210527
+            }
+          ]
+        },
+        {
+          "setCode": "CSV9C",
+          "cardIndex": "183",
+          "cardName": "完美搅拌器",
+          "rarity": "ACE",
+          "effectId": "e6d017f040bcadf0006755aa929897b7",
+          "cardType": "Item",
+          "yorenCode": "Y1524",
+          "is": [
+            "ACE SPEC"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.0037593984962406013,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 1,
+              "usage": 0.0037593984962406013
+            }
+          ]
+        },
+        {
+          "setCode": "CSV5C",
+          "cardIndex": "119",
+          "cardName": "招式学习器 进化",
+          "rarity": "U",
+          "effectId": "43386015be5c073ba2e5b9d3692ece3f",
+          "cardType": "Tool",
+          "yorenCode": "Y1347",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 1.830827067669173,
+          "usage": [
+            {
+              "qty": 2,
+              "num": 221,
+              "usage": 0.8308270676691729
+            },
+            {
+              "qty": 1,
+              "num": 45,
+              "usage": 0.16917293233082706
+            }
+          ]
+        },
+        {
+          "setCode": "CS5aC",
+          "cardIndex": "043",
+          "cardName": "拉鲁拉丝",
+          "rarity": "C",
+          "effectId": "27246a1e79cd8b4f7d965cf2b41b5089",
+          "cardType": "Pokemon",
+          "yorenCode": "P280",
+          "is": [
+            "Basic"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 3.5902255639097747,
           "usage": [
             {
               "qty": 4,
-              "num": 124,
-              "usage": 0.46616541353383456
+              "num": 206,
+              "usage": 0.7744360902255639
             },
             {
               "qty": 3,
-              "num": 126,
-              "usage": 0.47368421052631576
+              "num": 40,
+              "usage": 0.15037593984962405
             },
             {
               "qty": 2,
@@ -2434,8 +2442,70 @@
             },
             {
               "qty": 1,
-              "num": 8,
-              "usage": 0.03007518796992481
+              "num": 1,
+              "usage": 0.0037593984962406013
+            }
+          ]
+        },
+        {
+          "setCode": "CSV2C",
+          "cardIndex": "053",
+          "cardName": "拉鲁拉丝",
+          "rarity": "C",
+          "effectId": "daccaa8fc34b41e47e77be2143eea71b",
+          "cardType": "Pokemon",
+          "yorenCode": "P280",
+          "is": [
+            "Basic"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.31203007518796994,
+          "usage": [
+            {
+              "qty": 4,
+              "num": 12,
+              "usage": 0.045112781954887216
+            },
+            {
+              "qty": 3,
+              "num": 3,
+              "usage": 0.011278195488721804
+            },
+            {
+              "qty": 2,
+              "num": 4,
+              "usage": 0.015037593984962405
+            },
+            {
+              "qty": 1,
+              "num": 18,
+              "usage": 0.06766917293233082
+            }
+          ]
+        },
+        {
+          "setCode": "CSV7C",
+          "cardIndex": "109",
+          "cardName": "振翼发",
+          "rarity": "R",
+          "effectId": "0e2ffb26032237ddfb8895534fdaf39d",
+          "cardType": "Pokemon",
+          "yorenCode": "P0987",
+          "is": [
+            "Ancient",
+            "Basic"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.9097744360902256,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 242,
+              "usage": 0.9097744360902256
             }
           ]
         },
@@ -2473,85 +2543,35 @@
           ]
         },
         {
-          "setCode": "CSVH1C",
-          "cardIndex": "043",
-          "cardName": "巢穴球",
-          "rarity": "无标记",
-          "effectId": "1af63a7e2cb7a79215474ad8db8fd8fd",
-          "cardType": "Item",
-          "yorenCode": "Y30",
-          "is": [],
+          "setCode": "CS6.5C",
+          "cardIndex": "030",
+          "cardName": "奇鲁莉安",
+          "rarity": "C",
+          "effectId": "4abd956bdf3e956fcf679120601760ff",
+          "cardType": "Pokemon",
+          "yorenCode": "P281",
+          "is": [
+            "Stage 1"
+          ],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.8345864661654135,
+          "averageUsage": 3.8834586466165413,
           "usage": [
             {
+              "qty": 4,
+              "num": 237,
+              "usage": 0.8909774436090225
+            },
+            {
               "qty": 3,
-              "num": 1,
-              "usage": 0.0037593984962406013
+              "num": 27,
+              "usage": 0.10150375939849623
             },
             {
               "qty": 2,
-              "num": 32,
-              "usage": 0.12030075187969924
-            },
-            {
-              "qty": 1,
-              "num": 155,
-              "usage": 0.5827067669172933
-            }
-          ]
-        },
-        {
-          "setCode": "CSV1C",
-          "cardIndex": "118",
-          "cardName": "勇气护符",
-          "rarity": "U",
-          "effectId": "d1c2f018a644e662f2b6895fdfc29281",
-          "cardType": "Tool",
-          "yorenCode": "Y1211",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 1.0413533834586466,
-          "usage": [
-            {
-              "qty": 3,
-              "num": 22,
-              "usage": 0.08270676691729323
-            },
-            {
-              "qty": 2,
-              "num": 47,
-              "usage": 0.17669172932330826
-            },
-            {
-              "qty": 1,
-              "num": 117,
-              "usage": 0.4398496240601504
-            }
-          ]
-        },
-        {
-          "setCode": "CSV7C",
-          "cardIndex": "175",
-          "cardName": "改造之锤",
-          "rarity": "U",
-          "effectId": "23ee27488d0c1317557a3106a1fc7db3",
-          "cardType": "Item",
-          "yorenCode": "Y29",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.0037593984962406013,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 1,
-              "usage": 0.0037593984962406013
+              "num": 2,
+              "usage": 0.007518796992481203
             }
           ]
         },
@@ -2926,103 +2946,39 @@
       ],
       "core_cards": [
         {
-          "setCode": "CSV7C",
-          "cardIndex": "154",
-          "cardName": "猛雷鼓ex",
-          "rarity": "RR",
-          "effectId": "e96bb407c5f18bb9eec55487e70395fd",
-          "cardType": "Pokemon",
-          "yorenCode": "Y1399",
-          "is": [
-            "ex",
-            "Ancient",
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 3.4598214285714284,
-          "usage": [
-            {
-              "qty": 4,
-              "num": 103,
-              "usage": 0.45982142857142855
-            },
-            {
-              "qty": 3,
-              "num": 121,
-              "usage": 0.5401785714285714
-            }
-          ]
-        },
-        {
-          "setCode": "CSVE1C",
-          "cardIndex": "GRA",
-          "cardName": "基本草能量",
+          "setCode": "CSVH1C",
+          "cardIndex": "043",
+          "cardName": "巢穴球",
           "rarity": "无标记",
-          "effectId": "5e2d0ce37ca0c539aa45908da10544a0",
-          "cardType": "Basic Energy",
-          "yorenCode": "Y457",
+          "effectId": "1af63a7e2cb7a79215474ad8db8fd8fd",
+          "cardType": "Item",
+          "yorenCode": "Y30",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 5.848214285714286,
+          "averageUsage": 3.982142857142857,
           "usage": [
             {
-              "qty": 7,
-              "num": 3,
-              "usage": 0.013392857142857142
-            },
-            {
-              "qty": 6,
-              "num": 186,
-              "usage": 0.8303571428571429
-            },
-            {
-              "qty": 5,
-              "num": 34,
-              "usage": 0.15178571428571427
+              "qty": 4,
+              "num": 220,
+              "usage": 0.9821428571428571
             },
             {
               "qty": 3,
-              "num": 1,
-              "usage": 0.004464285714285714
+              "num": 4,
+              "usage": 0.017857142857142856
             }
           ]
         },
         {
-          "setCode": "CS6.5C",
-          "cardIndex": "020",
-          "cardName": "光辉甲贺忍蛙",
-          "rarity": "K",
-          "effectId": "09445b8c32fd4abef4230ebcdc964096",
-          "cardType": "Pokemon",
-          "yorenCode": "Y1160",
-          "is": [
-            "Radiant",
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.9508928571428571,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 213,
-              "usage": 0.9508928571428571
-            }
-          ]
-        },
-        {
-          "setCode": "CSV6C",
-          "cardIndex": "127",
-          "cardName": "自行车道",
+          "setCode": "CSV8C",
+          "cardIndex": "195",
+          "cardName": "库瑟洛斯奇的企图",
           "rarity": "U",
-          "effectId": "79292d4ceeac1081fe39c155c677c7b3",
-          "cardType": "Stadium",
-          "yorenCode": "Y1380",
+          "effectId": "15f9d5ea244ceaa819ecafc18644be17",
+          "cardType": "Supporter",
+          "yorenCode": "Y1484",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
@@ -3037,64 +2993,213 @@
           ]
         },
         {
-          "setCode": "CS6bC",
-          "cardIndex": "123",
-          "cardName": "放逐吸尘器",
-          "rarity": "U",
-          "effectId": "8f655fea1f90164bfbccb7a95c223e17",
-          "cardType": "Item",
-          "yorenCode": "Y1105",
+          "setCode": "CSVH1C",
+          "cardIndex": "051",
+          "cardName": "裁判",
+          "rarity": "无标记",
+          "effectId": "0a9bdf265647461dd5c6c827ffc19e61",
+          "cardType": "Supporter",
+          "yorenCode": "Y219",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.5357142857142857,
+          "averageUsage": 0.20535714285714285,
           "usage": [
             {
-              "qty": 2,
-              "num": 1,
-              "usage": 0.004464285714285714
-            },
-            {
               "qty": 1,
-              "num": 118,
-              "usage": 0.5267857142857143
+              "num": 46,
+              "usage": 0.20535714285714285
             }
           ]
         },
         {
-          "setCode": "CSVH1C",
-          "cardIndex": "047",
-          "cardName": "宝可梦捕捉器",
-          "rarity": "无标记",
-          "effectId": "3a6d419769778b40091e69fbd76737ec",
+          "setCode": "CSV1C",
+          "cardIndex": "109",
+          "cardName": "厉害钓竿",
+          "rarity": "U",
+          "effectId": "c9c948169525fbb3dce70c477ec7a90a",
           "cardType": "Item",
-          "yorenCode": "Y206",
+          "yorenCode": "Y1207",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 1.9419642857142858,
+          "averageUsage": 0.08035714285714286,
           "usage": [
             {
-              "qty": 4,
+              "qty": 2,
               "num": 1,
               "usage": 0.004464285714285714
             },
             {
-              "qty": 3,
-              "num": 45,
-              "usage": 0.20089285714285715
-            },
+              "qty": 1,
+              "num": 16,
+              "usage": 0.07142857142857142
+            }
+          ]
+        },
+        {
+          "setCode": "CSV9C",
+          "cardIndex": "161",
+          "cardName": "旋转洛托姆",
+          "rarity": "C",
+          "effectId": "fff777c54e423cea55d217f6954f635c",
+          "cardType": "Pokemon",
+          "yorenCode": "P479",
+          "is": [
+            "Basic"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.13392857142857142,
+          "usage": [
             {
               "qty": 2,
-              "num": 146,
-              "usage": 0.6517857142857143
+              "num": 12,
+              "usage": 0.05357142857142857
             },
             {
               "qty": 1,
-              "num": 4,
-              "usage": 0.017857142857142856
+              "num": 6,
+              "usage": 0.026785714285714284
+            }
+          ]
+        },
+        {
+          "setCode": "CSVE1C",
+          "cardIndex": "FIG",
+          "cardName": "基本斗能量",
+          "rarity": "无标记",
+          "effectId": "9fedb80a97ddd5cc8b8022a21364c326",
+          "cardType": "Basic Energy",
+          "yorenCode": "Y462",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 3.0089285714285716,
+          "usage": [
+            {
+              "qty": 4,
+              "num": 2,
+              "usage": 0.008928571428571428
+            },
+            {
+              "qty": 3,
+              "num": 222,
+              "usage": 0.9910714285714286
+            }
+          ]
+        },
+        {
+          "setCode": "CSV6C",
+          "cardIndex": "115",
+          "cardName": "大地容器",
+          "rarity": "U",
+          "effectId": "e366f56ecd3f805a28294109a1a37453",
+          "cardType": "Item",
+          "yorenCode": "Y1371",
+          "is": [
+            "Ancient"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 3.7232142857142856,
+          "usage": [
+            {
+              "qty": 4,
+              "num": 165,
+              "usage": 0.7366071428571429
+            },
+            {
+              "qty": 3,
+              "num": 56,
+              "usage": 0.25
+            },
+            {
+              "qty": 2,
+              "num": 3,
+              "usage": 0.013392857142857142
+            }
+          ]
+        },
+        {
+          "setCode": "CSV9C",
+          "cardIndex": "053",
+          "cardName": "古剑豹",
+          "rarity": "R",
+          "effectId": "398c5e37a64e8f0184c7634bb63a511c",
+          "cardType": "Pokemon",
+          "yorenCode": "P1002",
+          "is": [
+            "Basic"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.004464285714285714,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 1,
+              "usage": 0.004464285714285714
+            }
+          ]
+        },
+        {
+          "setCode": "CSV8C",
+          "cardIndex": "205",
+          "cardName": "夜间学院",
+          "rarity": "U",
+          "effectId": "e75fad9484071647f96e9f41beeb4a99",
+          "cardType": "Stadium",
+          "yorenCode": "Y1435",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.03125,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 7,
+              "usage": 0.03125
+            }
+          ]
+        },
+        {
+          "setCode": "CSV9C",
+          "cardIndex": "154",
+          "cardName": "咕咕",
+          "rarity": "C",
+          "effectId": "3050727a9de336da69b1b7865ad2cf2d",
+          "cardType": "Pokemon",
+          "yorenCode": "P163",
+          "is": [
+            "Basic"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.25,
+          "usage": [
+            {
+              "qty": 3,
+              "num": 11,
+              "usage": 0.049107142857142856
+            },
+            {
+              "qty": 2,
+              "num": 6,
+              "usage": 0.026785714285714284
+            },
+            {
+              "qty": 1,
+              "num": 11,
+              "usage": 0.049107142857142856
             }
           ]
         },
@@ -3120,195 +3225,14 @@
           ]
         },
         {
-          "setCode": "CS6bC",
-          "cardIndex": "130",
-          "cardName": "放逐市",
-          "rarity": "U",
-          "effectId": "7f4e493ec0d852a5bb31c02bdbdb2c4e",
-          "cardType": "Stadium",
-          "yorenCode": "Y1111",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.07142857142857142,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 16,
-              "usage": 0.07142857142857142
-            }
-          ]
-        },
-        {
-          "setCode": "CSV9C",
-          "cardIndex": "155",
-          "cardName": "猫头夜鹰",
-          "rarity": "R",
-          "effectId": "842bef708173f5e6e1186bfb25e35e38",
-          "cardType": "Pokemon",
-          "yorenCode": "P164",
-          "is": [
-            "Stage 1"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.2544642857142857,
-          "usage": [
-            {
-              "qty": 3,
-              "num": 10,
-              "usage": 0.044642857142857144
-            },
-            {
-              "qty": 2,
-              "num": 8,
-              "usage": 0.03571428571428571
-            },
-            {
-              "qty": 1,
-              "num": 11,
-              "usage": 0.049107142857142856
-            }
-          ]
-        },
-        {
-          "setCode": "CSV7C",
-          "cardIndex": "131",
-          "cardName": "雄伟牙",
-          "rarity": "U",
-          "effectId": "23706c5baababfabc76355e59709f4ec",
-          "cardType": "Pokemon",
-          "yorenCode": "P0984",
-          "is": [
-            "Ancient",
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.008928571428571428,
-          "usage": [
-            {
-              "qty": 2,
-              "num": 1,
-              "usage": 0.004464285714285714
-            }
-          ]
-        },
-        {
           "setCode": "CSV6C",
-          "cardIndex": "082",
-          "cardName": "爬地翅",
-          "rarity": "U",
-          "effectId": "29f94ee004e4c312dbea4a7930d33544",
+          "cardIndex": "043",
+          "cardName": "古剑豹",
+          "rarity": "R",
+          "effectId": "b868f9185451bae128d75f0aca7b91f9",
           "cardType": "Pokemon",
-          "yorenCode": "P0988",
+          "yorenCode": "P1002",
           "is": [
-            "Ancient",
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.8258928571428571,
-          "usage": [
-            {
-              "qty": 2,
-              "num": 1,
-              "usage": 0.004464285714285714
-            },
-            {
-              "qty": 1,
-              "num": 183,
-              "usage": 0.8169642857142857
-            }
-          ]
-        },
-        {
-          "setCode": "CSV8C",
-          "cardIndex": "135",
-          "cardName": "吉雉鸡ex",
-          "rarity": "RR",
-          "effectId": "ab6c3357e2b8a8385a68da738f41e0c1",
-          "cardType": "Pokemon",
-          "yorenCode": "Y1455",
-          "is": [
-            "ex",
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.9910714285714286,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 222,
-              "usage": 0.9910714285714286
-            }
-          ]
-        },
-        {
-          "setCode": "CSV7C",
-          "cardIndex": "180",
-          "cardName": "顶尖捕捉器",
-          "rarity": "ACE",
-          "effectId": "4ec261453212280d0eb03ed8254ca97f",
-          "cardType": "Item",
-          "yorenCode": "Y1406",
-          "is": [
-            "ACE SPEC"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.9776785714285714,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 219,
-              "usage": 0.9776785714285714
-            }
-          ]
-        },
-        {
-          "setCode": "CSVE1C",
-          "cardIndex": "LIG",
-          "cardName": "基本雷能量",
-          "rarity": "无标记",
-          "effectId": "45550fd10011f6ade7eef16ba88788cf",
-          "cardType": "Basic Energy",
-          "yorenCode": "Y460",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 3.013392857142857,
-          "usage": [
-            {
-              "qty": 6,
-              "num": 1,
-              "usage": 0.004464285714285714
-            },
-            {
-              "qty": 3,
-              "num": 223,
-              "usage": 0.9955357142857143
-            }
-          ]
-        },
-        {
-          "setCode": "CSV8C",
-          "cardIndex": "119",
-          "cardName": "爬地翅",
-          "rarity": "U",
-          "effectId": "f133f2b8d38148794b81a8b4ca135cff",
-          "cardType": "Pokemon",
-          "yorenCode": "P0988",
-          "is": [
-            "Ancient",
             "Basic"
           ],
           "setCodeEn": "",
@@ -3320,6 +3244,89 @@
               "qty": 1,
               "num": 1,
               "usage": 0.004464285714285714
+            }
+          ]
+        },
+        {
+          "setCode": "CSV8C",
+          "cardIndex": "028",
+          "cardName": "厄诡椪 碧草面具ex",
+          "rarity": "RR",
+          "effectId": "409898a79b38fe8ca279e7bdaf4fd52e",
+          "cardType": "Pokemon",
+          "yorenCode": "Y1442",
+          "is": [
+            "ex",
+            "Basic"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 3.111607142857143,
+          "usage": [
+            {
+              "qty": 4,
+              "num": 26,
+              "usage": 0.11607142857142858
+            },
+            {
+              "qty": 3,
+              "num": 197,
+              "usage": 0.8794642857142857
+            },
+            {
+              "qty": 2,
+              "num": 1,
+              "usage": 0.004464285714285714
+            }
+          ]
+        },
+        {
+          "setCode": "CSV9C",
+          "cardIndex": "206",
+          "cardName": "振奋竞技场",
+          "rarity": "U",
+          "effectId": "4622932a419f939cc537e765a5bbe543",
+          "cardType": "Stadium",
+          "yorenCode": "Y1546",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.07589285714285714,
+          "usage": [
+            {
+              "qty": 2,
+              "num": 6,
+              "usage": 0.026785714285714284
+            },
+            {
+              "qty": 1,
+              "num": 5,
+              "usage": 0.022321428571428572
+            }
+          ]
+        },
+        {
+          "setCode": "CSVH1C",
+          "cardIndex": "050",
+          "cardName": "活力头带",
+          "rarity": "无标记",
+          "effectId": "f474805425d4849d8dc4c8c1e1af750a",
+          "cardType": "Tool",
+          "yorenCode": "Y521",
+          "is": [
+            "Single Strike"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.008928571428571428,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 2,
+              "usage": 0.008928571428571428
             }
           ]
         }
@@ -3644,125 +3651,22 @@
       "core_cards": [
         {
           "setCode": "CS5aC",
-          "cardIndex": "104",
-          "cardName": "大牙狸",
-          "rarity": "C",
-          "effectId": "c719d0d6cd0c179ea63802e8036896c0",
-          "cardType": "Pokemon",
-          "yorenCode": "P399",
-          "is": [
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.006024096385542169,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 1,
-              "usage": 0.006024096385542169
-            }
-          ]
-        },
-        {
-          "setCode": "CSVH4eC",
-          "cardIndex": "044",
-          "cardName": "空手道王的修炼",
-          "rarity": "无标记",
-          "effectId": "a444b83881df9e2a0225aee95bbc853a",
-          "cardType": "Supporter",
-          "yorenCode": "Y1496",
+          "cardIndex": "113",
+          "cardName": "清除古龙水",
+          "rarity": "U",
+          "effectId": "66b2f1d77328b6578b1bf0d58d98f66b",
+          "cardType": "Item",
+          "yorenCode": "Y1023",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.006024096385542169,
+          "averageUsage": 0.8253012048192772,
           "usage": [
             {
               "qty": 1,
-              "num": 1,
-              "usage": 0.006024096385542169
-            }
-          ]
-        },
-        {
-          "setCode": "151C",
-          "cardIndex": "151",
-          "cardName": "梦幻ex",
-          "rarity": "RR",
-          "effectId": "49669fcf461deacebeb5755c11ec51f1",
-          "cardType": "Pokemon",
-          "yorenCode": "Y1191",
-          "is": [
-            "ex",
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.7530120481927711,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 125,
-              "usage": 0.7530120481927711
-            }
-          ]
-        },
-        {
-          "setCode": "CSV6C",
-          "cardIndex": "115",
-          "cardName": "大地容器",
-          "rarity": "U",
-          "effectId": "e366f56ecd3f805a28294109a1a37453",
-          "cardType": "Item",
-          "yorenCode": "Y1371",
-          "is": [
-            "Ancient"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 2.036144578313253,
-          "usage": [
-            {
-              "qty": 3,
-              "num": 10,
-              "usage": 0.060240963855421686
-            },
-            {
-              "qty": 2,
-              "num": 152,
-              "usage": 0.9156626506024096
-            },
-            {
-              "qty": 1,
-              "num": 4,
-              "usage": 0.024096385542168676
-            }
-          ]
-        },
-        {
-          "setCode": "CSV9C",
-          "cardIndex": "162",
-          "cardName": "爆炸头水牛",
-          "rarity": "U",
-          "effectId": "80825120ec77d6da5fa04c2e5d73f115",
-          "cardType": "Pokemon",
-          "yorenCode": "P626",
-          "is": [
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.024096385542168676,
-          "usage": [
-            {
-              "qty": 2,
-              "num": 2,
-              "usage": 0.012048192771084338
+              "num": 137,
+              "usage": 0.8253012048192772
             }
           ]
         },
@@ -3788,57 +3692,117 @@
           ]
         },
         {
-          "setCode": "CSV5C",
-          "cardIndex": "120",
-          "cardName": "招式学习器 退化",
-          "rarity": "U",
-          "effectId": "e228e825c541ce80e2507c557cb506c3",
-          "cardType": "Tool",
-          "yorenCode": "Y1348",
-          "is": [],
+          "setCode": "CSV7C",
+          "cardIndex": "180",
+          "cardName": "顶尖捕捉器",
+          "rarity": "ACE",
+          "effectId": "4ec261453212280d0eb03ed8254ca97f",
+          "cardType": "Item",
+          "yorenCode": "Y1406",
+          "is": [
+            "ACE SPEC"
+          ],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.12048192771084337,
+          "averageUsage": 0.9939759036144579,
           "usage": [
             {
               "qty": 1,
-              "num": 20,
-              "usage": 0.12048192771084337
+              "num": 165,
+              "usage": 0.9939759036144579
             }
           ]
         },
         {
-          "setCode": "CS5bC",
-          "cardIndex": "111",
-          "cardName": "大牙狸",
-          "rarity": "C",
-          "effectId": "5a80f8eb94c6fcc27c475c10a63cf856",
+          "setCode": "CSV9C",
+          "cardIndex": "175",
+          "cardName": "太乐巴戈斯ex",
+          "rarity": "RR",
+          "effectId": "5de19cbd4b2d1ff80ba14d6d89246ae9",
           "cardType": "Pokemon",
-          "yorenCode": "P399",
+          "yorenCode": "Y1516",
           "is": [
+            "ex",
             "Basic"
           ],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.21686746987951808,
+          "averageUsage": 1.9879518072289157,
           "usage": [
             {
+              "qty": 3,
+              "num": 1,
+              "usage": 0.006024096385542169
+            },
+            {
+              "qty": 2,
+              "num": 162,
+              "usage": 0.9759036144578314
+            },
+            {
               "qty": 1,
-              "num": 36,
-              "usage": 0.21686746987951808
+              "num": 3,
+              "usage": 0.018072289156626505
             }
           ]
         },
         {
-          "setCode": "CSV1C",
-          "cardIndex": "118",
-          "cardName": "勇气护符",
+          "setCode": "CSV8C",
+          "cardIndex": "198",
+          "cardName": "乌栗",
           "rarity": "U",
-          "effectId": "d1c2f018a644e662f2b6895fdfc29281",
-          "cardType": "Tool",
-          "yorenCode": "Y1211",
+          "effectId": "d4a94445aa981c2f84e4df9b0525eeb0",
+          "cardType": "Supporter",
+          "yorenCode": "Y1487",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.8855421686746988,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 147,
+              "usage": 0.8855421686746988
+            }
+          ]
+        },
+        {
+          "setCode": "CSV9C",
+          "cardIndex": "178",
+          "cardName": "玻璃喇叭",
+          "rarity": "U",
+          "effectId": "3f27c81408709eb3ad93c81b1fbb516f",
+          "cardType": "Item",
+          "yorenCode": "Y1519",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 1.9879518072289157,
+          "usage": [
+            {
+              "qty": 2,
+              "num": 164,
+              "usage": 0.9879518072289156
+            },
+            {
+              "qty": 1,
+              "num": 2,
+              "usage": 0.012048192771084338
+            }
+          ]
+        },
+        {
+          "setCode": "CSV7C",
+          "cardIndex": "193",
+          "cardName": "水莲的照顾",
+          "rarity": "U",
+          "effectId": "b79ddb9a6aab6d346f6a1f71b7fcd3de",
+          "cardType": "Supporter",
+          "yorenCode": "Y1419",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
@@ -3853,60 +3817,34 @@
           ]
         },
         {
-          "setCode": "CSV2C",
-          "cardIndex": "105",
-          "cardName": "怒鹦哥ex",
-          "rarity": "RR",
-          "effectId": "1b951205e53e179bde0905c4a194d9ee",
-          "cardType": "Pokemon",
-          "yorenCode": "Y1253",
-          "is": [
-            "ex",
-            "Basic"
-          ],
+          "setCode": "CSV1C",
+          "cardIndex": "109",
+          "cardName": "厉害钓竿",
+          "rarity": "U",
+          "effectId": "c9c948169525fbb3dce70c477ec7a90a",
+          "cardType": "Item",
+          "yorenCode": "Y1207",
+          "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.03614457831325301,
+          "averageUsage": 0.030120481927710843,
           "usage": [
             {
               "qty": 1,
-              "num": 6,
-              "usage": 0.03614457831325301
+              "num": 5,
+              "usage": 0.030120481927710843
             }
           ]
         },
         {
-          "setCode": "CS5aC",
-          "cardIndex": "105",
-          "cardName": "大尾狸",
-          "rarity": "R",
-          "effectId": "d8e81bf574a9d7a0f42ff33e15b0522c",
-          "cardType": "Pokemon",
-          "yorenCode": "P400",
-          "is": [
-            "Stage 1"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.22289156626506024,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 37,
-              "usage": 0.22289156626506024
-            }
-          ]
-        },
-        {
-          "setCode": "CSV3C",
-          "cardIndex": "043",
-          "cardName": "古剑豹ex",
+          "setCode": "CSV8C",
+          "cardIndex": "067",
+          "cardName": "厄诡椪 水井面具ex",
           "rarity": "RR",
-          "effectId": "1ffc5951ba805342e6fa071781d03452",
+          "effectId": "14cf8080c35f652fe13a579f1b50542a",
           "cardType": "Pokemon",
-          "yorenCode": "Y1277",
+          "yorenCode": "Y1449",
           "is": [
             "ex",
             "Basic"
@@ -3924,52 +3862,82 @@
           ]
         },
         {
-          "setCode": "CSV1C",
-          "cardIndex": "112",
-          "cardName": "高级球",
-          "rarity": "U",
-          "effectId": "a337ed34a45e63c6d21d98c3d8e0cb6e",
-          "cardType": "Item",
-          "yorenCode": "Y151",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 3.210843373493976,
-          "usage": [
-            {
-              "qty": 4,
-              "num": 35,
-              "usage": 0.21084337349397592
-            },
-            {
-              "qty": 3,
-              "num": 131,
-              "usage": 0.7891566265060241
-            }
-          ]
-        },
-        {
-          "setCode": "CSV8C",
-          "cardIndex": "135",
-          "cardName": "吉雉鸡ex",
-          "rarity": "RR",
-          "effectId": "ab6c3357e2b8a8385a68da738f41e0c1",
+          "setCode": "151C",
+          "cardIndex": "132",
+          "cardName": "百变怪",
+          "rarity": "R",
+          "effectId": "63ea5ed31033f1cc5711c2f89bd92692",
           "cardType": "Pokemon",
-          "yorenCode": "Y1455",
+          "yorenCode": "Y1074",
           "is": [
-            "ex",
             "Basic"
           ],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 1,
+          "averageUsage": 0.927710843373494,
           "usage": [
             {
               "qty": 1,
-              "num": 166,
-              "usage": 1
+              "num": 154,
+              "usage": 0.927710843373494
+            }
+          ]
+        },
+        {
+          "setCode": "CSV4C",
+          "cardIndex": "129",
+          "cardName": "喷射能量",
+          "rarity": "U",
+          "effectId": "1323733f19cc04e54090b39bc1a393b8",
+          "cardType": "Special Energy",
+          "yorenCode": "Y1329",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.4879518072289157,
+          "usage": [
+            {
+              "qty": 3,
+              "num": 22,
+              "usage": 0.13253012048192772
+            },
+            {
+              "qty": 2,
+              "num": 6,
+              "usage": 0.03614457831325301
+            },
+            {
+              "qty": 1,
+              "num": 3,
+              "usage": 0.018072289156626505
+            }
+          ]
+        },
+        {
+          "setCode": "CSV7C",
+          "cardIndex": "177",
+          "cardName": "友好宝芬",
+          "rarity": "U",
+          "effectId": "f866dfee26cd6b0dbbb52b74438d0a59",
+          "cardType": "Item",
+          "yorenCode": "Y1403",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 1.2048192771084338,
+          "usage": [
+            {
+              "qty": 2,
+              "num": 34,
+              "usage": 0.20481927710843373
+            },
+            {
+              "qty": 1,
+              "num": 132,
+              "usage": 0.7951807228915663
             }
           ]
         },
@@ -4008,6 +3976,61 @@
               "qty": 1,
               "num": 36,
               "usage": 0.21686746987951808
+            }
+          ]
+        },
+        {
+          "setCode": "CSV8C",
+          "cardIndex": "183",
+          "cardName": "夜间担架",
+          "rarity": "U",
+          "effectId": "3e6f1daf545dfed48d0588dd50792a2e",
+          "cardType": "Item",
+          "yorenCode": "Y1472",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 2.608433734939759,
+          "usage": [
+            {
+              "qty": 3,
+              "num": 104,
+              "usage": 0.6265060240963856
+            },
+            {
+              "qty": 2,
+              "num": 59,
+              "usage": 0.35542168674698793
+            },
+            {
+              "qty": 1,
+              "num": 3,
+              "usage": 0.018072289156626505
+            }
+          ]
+        },
+        {
+          "setCode": "CSV2C",
+          "cardIndex": "105",
+          "cardName": "怒鹦哥ex",
+          "rarity": "RR",
+          "effectId": "1b951205e53e179bde0905c4a194d9ee",
+          "cardType": "Pokemon",
+          "yorenCode": "Y1253",
+          "is": [
+            "ex",
+            "Basic"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.03614457831325301,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 6,
+              "usage": 0.03614457831325301
             }
           ]
         }
@@ -4371,6 +4394,252 @@
       ],
       "core_cards": [
         {
+          "setCode": "CSV8C",
+          "cardIndex": "187",
+          "cardName": "锁链粘糕",
+          "rarity": "U",
+          "effectId": "a77ef1e9df5b37e1d529682b2b38a4b8",
+          "cardType": "Tool",
+          "yorenCode": "Y1476",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 2.937062937062937,
+          "usage": [
+            {
+              "qty": 3,
+              "num": 134,
+              "usage": 0.9370629370629371
+            },
+            {
+              "qty": 2,
+              "num": 9,
+              "usage": 0.06293706293706294
+            }
+          ]
+        },
+        {
+          "setCode": "CS6.5C",
+          "cardIndex": "066",
+          "cardName": "森林封印石",
+          "rarity": "R",
+          "effectId": "9fa9943ccda36f417ac3cb675177c216",
+          "cardType": "Tool",
+          "yorenCode": "Y1172",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 1.93006993006993,
+          "usage": [
+            {
+              "qty": 2,
+              "num": 133,
+              "usage": 0.9300699300699301
+            },
+            {
+              "qty": 1,
+              "num": 10,
+              "usage": 0.06993006993006994
+            }
+          ]
+        },
+        {
+          "setCode": "CSNC",
+          "cardIndex": "024",
+          "cardName": "双重涡轮能量",
+          "rarity": "无标记",
+          "effectId": "9c04dd0addf56a7b2c88476bc8e45c0e",
+          "cardType": "Special Energy",
+          "yorenCode": "Y935",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 4,
+          "usage": [
+            {
+              "qty": 4,
+              "num": 143,
+              "usage": 1
+            }
+          ]
+        },
+        {
+          "setCode": "CSV9C",
+          "cardIndex": "202",
+          "cardName": "白蕾雅",
+          "rarity": "U",
+          "effectId": "a7a9d14928bdbaf4ec973a65ac878999",
+          "cardType": "Supporter",
+          "yorenCode": "Y1542",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.055944055944055944,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 8,
+              "usage": 0.055944055944055944
+            }
+          ]
+        },
+        {
+          "setCode": "CSV7C",
+          "cardIndex": "142",
+          "cardName": "猛恶菇",
+          "rarity": "U",
+          "effectId": "c6083ce0a1d2bda048f3eb948b8abca8",
+          "cardType": "Pokemon",
+          "yorenCode": "P0986",
+          "is": [
+            "Ancient",
+            "Basic"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.013986013986013986,
+          "usage": [
+            {
+              "qty": 2,
+              "num": 1,
+              "usage": 0.006993006993006993
+            }
+          ]
+        },
+        {
+          "setCode": "CSV6C",
+          "cardIndex": "080",
+          "cardName": "毛崖蟹",
+          "rarity": "U",
+          "effectId": "f986b356ae9703ac2d1667d1897cfdb6",
+          "cardType": "Pokemon",
+          "yorenCode": "P0950",
+          "is": [
+            "Basic"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 1.8601398601398602,
+          "usage": [
+            {
+              "qty": 2,
+              "num": 123,
+              "usage": 0.8601398601398601
+            },
+            {
+              "qty": 1,
+              "num": 20,
+              "usage": 0.13986013986013987
+            }
+          ]
+        },
+        {
+          "setCode": "CSV1C",
+          "cardIndex": "123",
+          "cardName": "派帕",
+          "rarity": "U",
+          "effectId": "5bdbc985f9aa2e6f248b53f6f35d1d37",
+          "cardType": "Supporter",
+          "yorenCode": "Y1214",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 2.8461538461538463,
+          "usage": [
+            {
+              "qty": 4,
+              "num": 7,
+              "usage": 0.04895104895104895
+            },
+            {
+              "qty": 3,
+              "num": 107,
+              "usage": 0.7482517482517482
+            },
+            {
+              "qty": 2,
+              "num": 29,
+              "usage": 0.20279720279720279
+            }
+          ]
+        },
+        {
+          "setCode": "CS6aC",
+          "cardIndex": "127",
+          "cardName": "捩木",
+          "rarity": "U",
+          "effectId": "05b9dc8ee5c16c46da20f47a04907856",
+          "cardType": "Supporter",
+          "yorenCode": "Y1137",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.006993006993006993,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 1,
+              "usage": 0.006993006993006993
+            }
+          ]
+        },
+        {
+          "setCode": "CSV9C",
+          "cardIndex": "078",
+          "cardName": "拉帝亚斯ex",
+          "rarity": "RR",
+          "effectId": "a92ab1fcfe663d2a56b267a34307fad4",
+          "cardType": "Pokemon",
+          "yorenCode": "Y1506",
+          "is": [
+            "ex",
+            "Basic"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 1,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 143,
+              "usage": 1
+            }
+          ]
+        },
+        {
+          "setCode": "151C",
+          "cardIndex": "151",
+          "cardName": "梦幻ex",
+          "rarity": "RR",
+          "effectId": "49669fcf461deacebeb5755c11ec51f1",
+          "cardType": "Pokemon",
+          "yorenCode": "Y1191",
+          "is": [
+            "ex",
+            "Basic"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.09090909090909091,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 13,
+              "usage": 0.09090909090909091
+            }
+          ]
+        },
+        {
           "setCode": "CS5.5C",
           "cardIndex": "060",
           "cardName": "洗翠的沉重球",
@@ -4397,205 +4666,23 @@
           ]
         },
         {
-          "setCode": "CSVE1C",
-          "cardIndex": "DAR",
-          "cardName": "基本恶能量",
+          "setCode": "CSVH4eC",
+          "cardIndex": "044",
+          "cardName": "空手道王的修炼",
           "rarity": "无标记",
-          "effectId": "46c769fc57a6c250c560df648bb779f8",
-          "cardType": "Basic Energy",
-          "yorenCode": "Y463",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.027972027972027972,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 4,
-              "usage": 0.027972027972027972
-            }
-          ]
-        },
-        {
-          "setCode": "CS5.5C",
-          "cardIndex": "003",
-          "cardName": "洗翠 顽皮雷弹V",
-          "rarity": "RR",
-          "effectId": "f9a90aafccf9445be72a6ed15f66bcd6",
-          "cardType": "Pokemon",
-          "yorenCode": "Y1062",
-          "is": [
-            "V",
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.965034965034965,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 138,
-              "usage": 0.965034965034965
-            }
-          ]
-        },
-        {
-          "setCode": "CSV8C",
-          "cardIndex": "199",
-          "cardName": "丹瑜",
-          "rarity": "U",
-          "effectId": "8150af4062192998497e376ad931bea4",
+          "effectId": "a444b83881df9e2a0225aee95bbc853a",
           "cardType": "Supporter",
-          "yorenCode": "Y1440",
+          "yorenCode": "Y1496",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.9790209790209791,
+          "averageUsage": 0.013986013986013986,
           "usage": [
             {
-              "qty": 2,
+              "qty": 1,
               "num": 2,
               "usage": 0.013986013986013986
-            },
-            {
-              "qty": 1,
-              "num": 136,
-              "usage": 0.951048951048951
-            }
-          ]
-        },
-        {
-          "setCode": "CSVH1aC",
-          "cardIndex": "023",
-          "cardName": "老大的指令",
-          "rarity": "无标记",
-          "effectId": "8e1fa2c9018db938084c94c7c970d419",
-          "cardType": "Supporter",
-          "yorenCode": "Y487",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 3.013986013986014,
-          "usage": [
-            {
-              "qty": 4,
-              "num": 8,
-              "usage": 0.055944055944055944
-            },
-            {
-              "qty": 3,
-              "num": 129,
-              "usage": 0.9020979020979021
-            },
-            {
-              "qty": 2,
-              "num": 6,
-              "usage": 0.04195804195804196
-            }
-          ]
-        },
-        {
-          "setCode": "CS5bC",
-          "cardIndex": "052",
-          "cardName": "玛纳霏",
-          "rarity": "U",
-          "effectId": "04653d073ffc3ca2202746e4f9aebabd",
-          "cardType": "Pokemon",
-          "yorenCode": "P490",
-          "is": [
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.006993006993006993,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 1,
-              "usage": 0.006993006993006993
-            }
-          ]
-        },
-        {
-          "setCode": "CSV9C",
-          "cardIndex": "127",
-          "cardName": "桃歹郎",
-          "rarity": "U",
-          "effectId": "5a1d0fbbb9c71b9ec99b31734560d4d1",
-          "cardType": "Pokemon",
-          "yorenCode": "P1025",
-          "is": [
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 1.1958041958041958,
-          "usage": [
-            {
-              "qty": 2,
-              "num": 28,
-              "usage": 0.1958041958041958
-            },
-            {
-              "qty": 1,
-              "num": 115,
-              "usage": 0.8041958041958042
-            }
-          ]
-        },
-        {
-          "setCode": "CSV9C",
-          "cardIndex": "207",
-          "cardName": "零之大空洞",
-          "rarity": "U",
-          "effectId": "cf3124da3d7bf217f7969b6ae4e60e38",
-          "cardType": "Stadium",
-          "yorenCode": "Y1547",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 3.839160839160839,
-          "usage": [
-            {
-              "qty": 4,
-              "num": 120,
-              "usage": 0.8391608391608392
-            },
-            {
-              "qty": 3,
-              "num": 23,
-              "usage": 0.16083916083916083
-            }
-          ]
-        },
-        {
-          "setCode": "CSV8C",
-          "cardIndex": "135",
-          "cardName": "吉雉鸡ex",
-          "rarity": "RR",
-          "effectId": "ab6c3357e2b8a8385a68da738f41e0c1",
-          "cardType": "Pokemon",
-          "yorenCode": "Y1455",
-          "is": [
-            "ex",
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 1,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 143,
-              "usage": 1
             }
           ]
         },
@@ -4626,39 +4713,34 @@
           ]
         },
         {
-          "setCode": "CSV8C",
-          "cardIndex": "187",
-          "cardName": "锁链粘糕",
+          "setCode": "CS6bC",
+          "cardIndex": "123",
+          "cardName": "放逐吸尘器",
           "rarity": "U",
-          "effectId": "a77ef1e9df5b37e1d529682b2b38a4b8",
-          "cardType": "Tool",
-          "yorenCode": "Y1476",
+          "effectId": "8f655fea1f90164bfbccb7a95c223e17",
+          "cardType": "Item",
+          "yorenCode": "Y1105",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 2.937062937062937,
+          "averageUsage": 0.1888111888111888,
           "usage": [
             {
-              "qty": 3,
-              "num": 134,
-              "usage": 0.9370629370629371
-            },
-            {
-              "qty": 2,
-              "num": 9,
-              "usage": 0.06293706293706294
+              "qty": 1,
+              "num": 27,
+              "usage": 0.1888111888111888
             }
           ]
         },
         {
-          "setCode": "CS5bC",
-          "cardIndex": "049",
-          "cardName": "霓虹鱼V",
+          "setCode": "CS6.5C",
+          "cardIndex": "023",
+          "cardName": "洛托姆V",
           "rarity": "RR",
-          "effectId": "553639840a44f19ad83b89a892a21f98",
+          "effectId": "8ef5ff61fd97838af568f00fe3b0e3ea",
           "cardType": "Pokemon",
-          "yorenCode": "Y972",
+          "yorenCode": "Y1161",
           "is": [
             "V",
             "Basic"
@@ -4666,88 +4748,12 @@
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 1.2587412587412588,
-          "usage": [
-            {
-              "qty": 2,
-              "num": 37,
-              "usage": 0.25874125874125875
-            },
-            {
-              "qty": 1,
-              "num": 106,
-              "usage": 0.7412587412587412
-            }
-          ]
-        },
-        {
-          "setCode": "CSV9C",
-          "cardIndex": "133",
-          "cardName": "盖诺赛克特",
-          "rarity": "U",
-          "effectId": "cd6b5456da3f4e586959e20ca1b413a0",
-          "cardType": "Pokemon",
-          "yorenCode": "P649",
-          "is": [
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.6293706293706294,
+          "averageUsage": 0.013986013986013986,
           "usage": [
             {
               "qty": 1,
-              "num": 90,
-              "usage": 0.6293706293706294
-            }
-          ]
-        },
-        {
-          "setCode": "CSV8C",
-          "cardIndex": "172",
-          "cardName": "月月熊 赫月ex",
-          "rarity": "RR",
-          "effectId": "f2afef80b13b8f6a071facbcade0251c",
-          "cardType": "Pokemon",
-          "yorenCode": "Y1461",
-          "is": [
-            "ex",
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.972027972027972,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 139,
-              "usage": 0.972027972027972
-            }
-          ]
-        },
-        {
-          "setCode": "CS5aC",
-          "cardIndex": "079",
-          "cardName": "光辉洗翠 大狃拉",
-          "rarity": "K",
-          "effectId": "146a354ca20b3943ab792aa29b070fda",
-          "cardType": "Pokemon",
-          "yorenCode": "Y1015",
-          "is": [
-            "Radiant",
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 1,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 143,
-              "usage": 1
+              "num": 2,
+              "usage": 0.013986013986013986
             }
           ]
         }
@@ -5131,33 +5137,23 @@
       ],
       "core_cards": [
         {
-          "setCode": "CSVH1aC",
-          "cardIndex": "023",
-          "cardName": "老大的指令",
-          "rarity": "无标记",
-          "effectId": "8e1fa2c9018db938084c94c7c970d419",
-          "cardType": "Supporter",
-          "yorenCode": "Y487",
+          "setCode": "CS6.5C",
+          "cardIndex": "071",
+          "cardName": "崩塌的竞技场",
+          "rarity": "U",
+          "effectId": "fb3628071280487676f79281696ffbd9",
+          "cardType": "Stadium",
+          "yorenCode": "Y1175",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 3.0105263157894737,
+          "averageUsage": 0.010526315789473684,
           "usage": [
             {
-              "qty": 4,
-              "num": 4,
-              "usage": 0.042105263157894736
-            },
-            {
-              "qty": 3,
-              "num": 88,
-              "usage": 0.9263157894736842
-            },
-            {
-              "qty": 2,
-              "num": 3,
-              "usage": 0.031578947368421054
+              "qty": 1,
+              "num": 1,
+              "usage": 0.010526315789473684
             }
           ]
         },
@@ -5191,13 +5187,13 @@
           ]
         },
         {
-          "setCode": "CSVH1C",
-          "cardIndex": "051",
-          "cardName": "裁判",
-          "rarity": "无标记",
-          "effectId": "0a9bdf265647461dd5c6c827ffc19e61",
-          "cardType": "Supporter",
-          "yorenCode": "Y219",
+          "setCode": "CSV4C",
+          "cardIndex": "128",
+          "cardName": "练习室",
+          "rarity": "U",
+          "effectId": "45e96e576a5a81e61acd2e46a81547b4",
+          "cardType": "Stadium",
+          "yorenCode": "Y1328",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
@@ -5212,46 +5208,150 @@
           ]
         },
         {
-          "setCode": "CSV1C",
-          "cardIndex": "111",
-          "cardName": "朋友手册",
-          "rarity": "U",
-          "effectId": "a47d5a8ed00e14a2146fc511745d23b5",
-          "cardType": "Item",
-          "yorenCode": "Y87",
+          "setCode": "CS5DC",
+          "cardIndex": "138",
+          "cardName": "珠贝",
+          "rarity": "无标记",
+          "effectId": "4f53ab6bf158fd1a8869ae037f4a0d6d",
+          "cardType": "Supporter",
+          "yorenCode": "Y956",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.9578947368421052,
+          "averageUsage": 0.021052631578947368,
           "usage": [
             {
-              "qty": 1,
-              "num": 91,
-              "usage": 0.9578947368421052
+              "qty": 2,
+              "num": 1,
+              "usage": 0.010526315789473684
             }
           ]
         },
         {
-          "setCode": "CSV9C",
-          "cardIndex": "137",
-          "cardName": "铝钢桥龙",
-          "rarity": "R",
-          "effectId": "e5b5f21d3d91e433188733bbd04a3553",
+          "setCode": "CSV5C",
+          "cardIndex": "009",
+          "cardName": "陆地水母",
+          "rarity": "U",
+          "effectId": "880338810e1bc9460b1d20044377e08c",
           "cardType": "Pokemon",
-          "yorenCode": "P1018",
+          "yorenCode": "P0949",
           "is": [
             "Stage 1"
           ],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.08421052631578947,
+          "averageUsage": 0.010526315789473684,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 1,
+              "usage": 0.010526315789473684
+            }
+          ]
+        },
+        {
+          "setCode": "CSVH1aC",
+          "cardIndex": "023",
+          "cardName": "老大的指令",
+          "rarity": "无标记",
+          "effectId": "8e1fa2c9018db938084c94c7c970d419",
+          "cardType": "Supporter",
+          "yorenCode": "Y487",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 3.0105263157894737,
           "usage": [
             {
               "qty": 4,
+              "num": 4,
+              "usage": 0.042105263157894736
+            },
+            {
+              "qty": 3,
+              "num": 88,
+              "usage": 0.9263157894736842
+            },
+            {
+              "qty": 2,
+              "num": 3,
+              "usage": 0.031578947368421054
+            }
+          ]
+        },
+        {
+          "setCode": "CSV1C",
+          "cardIndex": "113",
+          "cardName": "宝可梦交替",
+          "rarity": "U",
+          "effectId": "7c0b20e121c9d0e0d2d8a43524f7494e",
+          "cardType": "Item",
+          "yorenCode": "Y118",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.010526315789473684,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 1,
+              "usage": 0.010526315789473684
+            }
+          ]
+        },
+        {
+          "setCode": "CSVH1C",
+          "cardIndex": "043",
+          "cardName": "巢穴球",
+          "rarity": "无标记",
+          "effectId": "1af63a7e2cb7a79215474ad8db8fd8fd",
+          "cardType": "Item",
+          "yorenCode": "Y30",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 4,
+          "usage": [
+            {
+              "qty": 4,
+              "num": 95,
+              "usage": 1
+            }
+          ]
+        },
+        {
+          "setCode": "CSV8C",
+          "cardIndex": "203",
+          "cardName": "阻碍之塔",
+          "rarity": "U",
+          "effectId": "4e16157bfa88a41e823d058a732df8e0",
+          "cardType": "Stadium",
+          "yorenCode": "Y1491",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 1.768421052631579,
+          "usage": [
+            {
+              "qty": 3,
               "num": 2,
               "usage": 0.021052631578947368
+            },
+            {
+              "qty": 2,
+              "num": 73,
+              "usage": 0.7684210526315789
+            },
+            {
+              "qty": 1,
+              "num": 16,
+              "usage": 0.16842105263157894
             }
           ]
         },
@@ -5287,6 +5387,92 @@
           ]
         },
         {
+          "setCode": "CS6.5C",
+          "cardIndex": "063",
+          "cardName": "健行鞋",
+          "rarity": "U",
+          "effectId": "70d14b4a5a9c15581b8a0c8dfd325717",
+          "cardType": "Item",
+          "yorenCode": "Y1150",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.010526315789473684,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 1,
+              "usage": 0.010526315789473684
+            }
+          ]
+        },
+        {
+          "setCode": "CSV2C",
+          "cardIndex": "114",
+          "cardName": "坚硬束带",
+          "rarity": "U",
+          "effectId": "6ec876cf4467166edf6e90fa1cc321eb",
+          "cardType": "Tool",
+          "yorenCode": "Y1256",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.021052631578947368,
+          "usage": [
+            {
+              "qty": 2,
+              "num": 1,
+              "usage": 0.010526315789473684
+            }
+          ]
+        },
+        {
+          "setCode": "CSV7C",
+          "cardIndex": "180",
+          "cardName": "顶尖捕捉器",
+          "rarity": "ACE",
+          "effectId": "4ec261453212280d0eb03ed8254ca97f",
+          "cardType": "Item",
+          "yorenCode": "Y1406",
+          "is": [
+            "ACE SPEC"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.042105263157894736,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 4,
+              "usage": 0.042105263157894736
+            }
+          ]
+        },
+        {
+          "setCode": "CSV7C",
+          "cardIndex": "200",
+          "cardName": "危险密林",
+          "rarity": "U",
+          "effectId": "16a6fb86a8ebd1cffc6f171250057d5c",
+          "cardType": "Stadium",
+          "yorenCode": "Y1426",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.021052631578947368,
+          "usage": [
+            {
+              "qty": 2,
+              "num": 1,
+              "usage": 0.010526315789473684
+            }
+          ]
+        },
+        {
           "setCode": "CS5bC",
           "cardIndex": "096",
           "cardName": "起源帝牙卢卡VSTAR",
@@ -5307,193 +5493,6 @@
               "qty": 2,
               "num": 95,
               "usage": 1
-            }
-          ]
-        },
-        {
-          "setCode": "CSV1C",
-          "cardIndex": "113",
-          "cardName": "宝可梦交替",
-          "rarity": "U",
-          "effectId": "7c0b20e121c9d0e0d2d8a43524f7494e",
-          "cardType": "Item",
-          "yorenCode": "Y118",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.010526315789473684,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 1,
-              "usage": 0.010526315789473684
-            }
-          ]
-        },
-        {
-          "setCode": "CS5bC",
-          "cardIndex": "128",
-          "cardName": "神奥神殿",
-          "rarity": "U",
-          "effectId": "53864b068a4a1e8dce3c53c884b67efa",
-          "cardType": "Stadium",
-          "yorenCode": "Y997",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.010526315789473684,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 1,
-              "usage": 0.010526315789473684
-            }
-          ]
-        },
-        {
-          "setCode": "CSVH1C",
-          "cardIndex": "050",
-          "cardName": "活力头带",
-          "rarity": "无标记",
-          "effectId": "f474805425d4849d8dc4c8c1e1af750a",
-          "cardType": "Tool",
-          "yorenCode": "Y521",
-          "is": [
-            "Single Strike"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.010526315789473684,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 1,
-              "usage": 0.010526315789473684
-            }
-          ]
-        },
-        {
-          "setCode": "CSV6C",
-          "cardIndex": "042",
-          "cardName": "铁包袱",
-          "rarity": "U",
-          "effectId": "47676dfc37415cfdf3b3992b1de64141",
-          "cardType": "Pokemon",
-          "yorenCode": "P0991",
-          "is": [
-            "Future",
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.3473684210526316,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 33,
-              "usage": 0.3473684210526316
-            }
-          ]
-        },
-        {
-          "setCode": "CSV6C",
-          "cardIndex": "114",
-          "cardName": "反击捕捉器",
-          "rarity": "U",
-          "effectId": "06bc00d5dcec33898dc6db2e4c4d10ec",
-          "cardType": "Item",
-          "yorenCode": "Y147",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 1,
-          "usage": [
-            {
-              "qty": 2,
-              "num": 6,
-              "usage": 0.06315789473684211
-            },
-            {
-              "qty": 1,
-              "num": 83,
-              "usage": 0.8736842105263158
-            }
-          ]
-        },
-        {
-          "setCode": "CSV4C",
-          "cardIndex": "081",
-          "cardName": "巨钳螳螂",
-          "rarity": "R",
-          "effectId": "0fc11aeb024998d63c530b67f99c8bbb",
-          "cardType": "Pokemon",
-          "yorenCode": "P212",
-          "is": [
-            "Stage 1"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.021052631578947368,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 2,
-              "usage": 0.021052631578947368
-            }
-          ]
-        },
-        {
-          "setCode": "CSV8C",
-          "cardIndex": "199",
-          "cardName": "丹瑜",
-          "rarity": "U",
-          "effectId": "8150af4062192998497e376ad931bea4",
-          "cardType": "Supporter",
-          "yorenCode": "Y1440",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.042105263157894736,
-          "usage": [
-            {
-              "qty": 3,
-              "num": 1,
-              "usage": 0.010526315789473684
-            },
-            {
-              "qty": 1,
-              "num": 1,
-              "usage": 0.010526315789473684
-            }
-          ]
-        },
-        {
-          "setCode": "CSV8C",
-          "cardIndex": "176",
-          "cardName": "秘密箱",
-          "rarity": "ACE",
-          "effectId": "e92a86246f44351d023bd4fa271089aa",
-          "cardType": "Item",
-          "yorenCode": "Y1465",
-          "is": [
-            "ACE SPEC"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.010526315789473684,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 1,
-              "usage": 0.010526315789473684
             }
           ]
         }
@@ -5776,143 +5775,127 @@
       ],
       "core_cards": [
         {
-          "setCode": "CS5bC",
-          "cardIndex": "111",
-          "cardName": "大牙狸",
-          "rarity": "C",
-          "effectId": "5a80f8eb94c6fcc27c475c10a63cf856",
-          "cardType": "Pokemon",
-          "yorenCode": "P399",
-          "is": [
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.02,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 2,
-              "usage": 0.02
-            }
-          ]
-        },
-        {
-          "setCode": "CSV8C",
-          "cardIndex": "121",
-          "cardName": "厄诡椪 础石面具ex",
-          "rarity": "RR",
-          "effectId": "4f25f668ee0ab45c68f6954324c73003",
-          "cardType": "Pokemon",
-          "yorenCode": "Y1452",
-          "is": [
-            "ex",
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.02,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 2,
-              "usage": 0.02
-            }
-          ]
-        },
-        {
-          "setCode": "CSVE1C",
-          "cardIndex": "PSY",
-          "cardName": "基本超能量",
-          "rarity": "无标记",
-          "effectId": "41b2d1a95fafc35e4cf39383ffae928a",
-          "cardType": "Basic Energy",
-          "yorenCode": "Y461",
+          "setCode": "CSV7C",
+          "cardIndex": "177",
+          "cardName": "友好宝芬",
+          "rarity": "U",
+          "effectId": "f866dfee26cd6b0dbbb52b74438d0a59",
+          "cardType": "Item",
+          "yorenCode": "Y1403",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 1.03,
+          "averageUsage": 3.93,
           "usage": [
             {
+              "qty": 4,
+              "num": 93,
+              "usage": 0.93
+            },
+            {
+              "qty": 3,
+              "num": 7,
+              "usage": 0.07
+            }
+          ]
+        },
+        {
+          "setCode": "CSVH1aC",
+          "cardIndex": "023",
+          "cardName": "老大的指令",
+          "rarity": "无标记",
+          "effectId": "8e1fa2c9018db938084c94c7c970d419",
+          "cardType": "Supporter",
+          "yorenCode": "Y487",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 1.98,
+          "usage": [
+            {
+              "qty": 3,
+              "num": 14,
+              "usage": 0.14
+            },
+            {
               "qty": 2,
-              "num": 6,
-              "usage": 0.06
+              "num": 70,
+              "usage": 0.7
             },
             {
               "qty": 1,
-              "num": 91,
-              "usage": 0.91
+              "num": 16,
+              "usage": 0.16
             }
           ]
         },
         {
-          "setCode": "CSV6C",
-          "cardIndex": "042",
-          "cardName": "铁包袱",
-          "rarity": "U",
-          "effectId": "47676dfc37415cfdf3b3992b1de64141",
-          "cardType": "Pokemon",
-          "yorenCode": "P0991",
-          "is": [
-            "Future",
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.73,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 73,
-              "usage": 0.73
-            }
-          ]
-        },
-        {
-          "setCode": "CS5bC",
-          "cardIndex": "052",
-          "cardName": "玛纳霏",
-          "rarity": "U",
-          "effectId": "04653d073ffc3ca2202746e4f9aebabd",
-          "cardType": "Pokemon",
-          "yorenCode": "P490",
-          "is": [
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.7,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 70,
-              "usage": 0.7
-            }
-          ]
-        },
-        {
-          "setCode": "CS6bC",
-          "cardIndex": "123",
-          "cardName": "放逐吸尘器",
-          "rarity": "U",
-          "effectId": "8f655fea1f90164bfbccb7a95c223e17",
-          "cardType": "Item",
-          "yorenCode": "Y1105",
+          "setCode": "CS5DC",
+          "cardIndex": "140",
+          "cardName": "星月",
+          "rarity": "无标记",
+          "effectId": "e5c317e428f0cfd885b53d4d058b5d5b",
+          "cardType": "Supporter",
+          "yorenCode": "Y957",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.22,
+          "averageUsage": 0.03,
           "usage": [
             {
               "qty": 1,
-              "num": 22,
-              "usage": 0.22
+              "num": 3,
+              "usage": 0.03
+            }
+          ]
+        },
+        {
+          "setCode": "CS5aC",
+          "cardIndex": "113",
+          "cardName": "清除古龙水",
+          "rarity": "U",
+          "effectId": "66b2f1d77328b6578b1bf0d58d98f66b",
+          "cardType": "Item",
+          "yorenCode": "Y1023",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.34,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 34,
+              "usage": 0.34
+            }
+          ]
+        },
+        {
+          "setCode": "CSV5C",
+          "cardIndex": "119",
+          "cardName": "招式学习器 进化",
+          "rarity": "U",
+          "effectId": "43386015be5c073ba2e5b9d3692ece3f",
+          "cardType": "Tool",
+          "yorenCode": "Y1347",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.54,
+          "usage": [
+            {
+              "qty": 2,
+              "num": 17,
+              "usage": 0.17
+            },
+            {
+              "qty": 1,
+              "num": 20,
+              "usage": 0.2
             }
           ]
         },
@@ -5946,205 +5929,246 @@
         },
         {
           "setCode": "CSVE1C",
-          "cardIndex": "FIR",
-          "cardName": "基本火能量",
+          "cardIndex": "MET",
+          "cardName": "基本钢能量",
           "rarity": "无标记",
-          "effectId": "22db5405bf0cce61a00aa8082cdd1e65",
+          "effectId": "4557c01497b81767fdaa0004089ecfb3",
           "cardType": "Basic Energy",
-          "yorenCode": "Y458",
+          "yorenCode": "Y464",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 1.02,
+          "averageUsage": 3.49,
           "usage": [
             {
-              "qty": 2,
-              "num": 6,
-              "usage": 0.06
+              "qty": 12,
+              "num": 1,
+              "usage": 0.01
             },
             {
-              "qty": 1,
-              "num": 90,
-              "usage": 0.9
+              "qty": 11,
+              "num": 2,
+              "usage": 0.02
+            },
+            {
+              "qty": 4,
+              "num": 25,
+              "usage": 0.25
+            },
+            {
+              "qty": 3,
+              "num": 71,
+              "usage": 0.71
+            },
+            {
+              "qty": 2,
+              "num": 1,
+              "usage": 0.01
             }
           ]
         },
         {
-          "setCode": "151C",
-          "cardIndex": "123",
-          "cardName": "飞天螳螂",
+          "setCode": "CS5bC",
+          "cardIndex": "052",
+          "cardName": "玛纳霏",
           "rarity": "U",
-          "effectId": "fe8b1bda35af50a16e59e2dcd7cd473f",
+          "effectId": "04653d073ffc3ca2202746e4f9aebabd",
           "cardType": "Pokemon",
-          "yorenCode": "P123",
+          "yorenCode": "P490",
           "is": [
             "Basic"
           ],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.76,
+          "averageUsage": 0.7,
           "usage": [
             {
-              "qty": 3,
-              "num": 2,
-              "usage": 0.02
-            },
-            {
-              "qty": 2,
-              "num": 19,
-              "usage": 0.19
-            },
-            {
               "qty": 1,
-              "num": 32,
-              "usage": 0.32
+              "num": 70,
+              "usage": 0.7
             }
           ]
         },
         {
-          "setCode": "CS6aC",
-          "cardIndex": "127",
-          "cardName": "捩木",
-          "rarity": "U",
-          "effectId": "05b9dc8ee5c16c46da20f47a04907856",
-          "cardType": "Supporter",
-          "yorenCode": "Y1137",
-          "is": [],
+          "setCode": "CSV4C",
+          "cardIndex": "063",
+          "cardName": "索财灵",
+          "rarity": "C",
+          "effectId": "8bcc42363d38245b8b408cfaafa1ba30",
+          "cardType": "Pokemon",
+          "yorenCode": "P0999",
+          "is": [
+            "Basic"
+          ],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.1,
+          "averageUsage": 1.46,
           "usage": [
             {
+              "qty": 4,
+              "num": 20,
+              "usage": 0.2
+            },
+            {
+              "qty": 3,
+              "num": 6,
+              "usage": 0.06
+            },
+            {
+              "qty": 2,
+              "num": 16,
+              "usage": 0.16
+            },
+            {
               "qty": 1,
-              "num": 10,
-              "usage": 0.1
+              "num": 16,
+              "usage": 0.16
             }
           ]
         },
         {
-          "setCode": "CSV5C",
-          "cardIndex": "009",
-          "cardName": "陆地水母",
-          "rarity": "U",
-          "effectId": "880338810e1bc9460b1d20044377e08c",
+          "setCode": "CSV8C",
+          "cardIndex": "158",
+          "cardName": "多龙奇",
+          "rarity": "C",
+          "effectId": "4e13cd08de3b6d141ce8e2f09d17a3a4",
           "cardType": "Pokemon",
-          "yorenCode": "P0949",
+          "yorenCode": "P886",
           "is": [
             "Stage 1"
           ],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.02,
+          "averageUsage": 0.12,
+          "usage": [
+            {
+              "qty": 2,
+              "num": 6,
+              "usage": 0.06
+            }
+          ]
+        },
+        {
+          "setCode": "CS6.5C",
+          "cardIndex": "066",
+          "cardName": "森林封印石",
+          "rarity": "R",
+          "effectId": "9fa9943ccda36f417ac3cb675177c216",
+          "cardType": "Tool",
+          "yorenCode": "Y1172",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.05,
           "usage": [
             {
               "qty": 1,
-              "num": 2,
-              "usage": 0.02
+              "num": 5,
+              "usage": 0.05
             }
           ]
         },
         {
           "setCode": "CSV6C",
-          "cardIndex": "128",
-          "cardName": "宝可梦联盟总部",
-          "rarity": "U",
-          "effectId": "b87089abe625a7abb3c523074a8497df",
-          "cardType": "Stadium",
-          "yorenCode": "Y1381",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.04,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 4,
-              "usage": 0.04
-            }
-          ]
-        },
-        {
-          "setCode": "CSV9C",
-          "cardIndex": "073",
-          "cardName": "波克比",
+          "cardIndex": "078",
+          "cardName": "原野水母",
           "rarity": "C",
-          "effectId": "1ff33aa784d1181c5e87ca96bab80ab3",
+          "effectId": "057f688b2a4ed4d2e225b599004506d5",
           "cardType": "Pokemon",
-          "yorenCode": "P175",
+          "yorenCode": "P0948",
           "is": [
             "Basic"
           ],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.22,
+          "averageUsage": 0.01,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 1,
+              "usage": 0.01
+            }
+          ]
+        },
+        {
+          "setCode": "CSV6C",
+          "cardIndex": "114",
+          "cardName": "反击捕捉器",
+          "rarity": "U",
+          "effectId": "06bc00d5dcec33898dc6db2e4c4d10ec",
+          "cardType": "Item",
+          "yorenCode": "Y147",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.93,
           "usage": [
             {
               "qty": 2,
+              "num": 4,
+              "usage": 0.04
+            },
+            {
+              "qty": 1,
+              "num": 85,
+              "usage": 0.85
+            }
+          ]
+        },
+        {
+          "setCode": "CSV2C",
+          "cardIndex": "111",
+          "cardName": "鼓励信",
+          "rarity": "U",
+          "effectId": "5ad6b7f0c1b9da35cd0d284de31b65a3",
+          "cardType": "Item",
+          "yorenCode": "Y1255",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.06,
+          "usage": [
+            {
+              "qty": 3,
               "num": 1,
               "usage": 0.01
             },
             {
               "qty": 1,
-              "num": 20,
-              "usage": 0.2
+              "num": 3,
+              "usage": 0.03
             }
           ]
         },
         {
-          "setCode": "CSV3C",
-          "cardIndex": "115",
-          "cardName": "超级能量回收",
-          "rarity": "U",
-          "effectId": "ff7e5670880217816bcf5d34388624cd",
-          "cardType": "Item",
-          "yorenCode": "Y1287",
-          "is": [],
+          "setCode": "CSV2C",
+          "cardIndex": "105",
+          "cardName": "怒鹦哥ex",
+          "rarity": "RR",
+          "effectId": "1b951205e53e179bde0905c4a194d9ee",
+          "cardType": "Pokemon",
+          "yorenCode": "Y1253",
+          "is": [
+            "ex",
+            "Basic"
+          ],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 4,
+          "averageUsage": 0.01,
           "usage": [
-            {
-              "qty": 4,
-              "num": 100,
-              "usage": 1
-            }
-          ]
-        },
-        {
-          "setCode": "CSVH1aC",
-          "cardIndex": "023",
-          "cardName": "老大的指令",
-          "rarity": "无标记",
-          "effectId": "8e1fa2c9018db938084c94c7c970d419",
-          "cardType": "Supporter",
-          "yorenCode": "Y487",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 1.98,
-          "usage": [
-            {
-              "qty": 3,
-              "num": 14,
-              "usage": 0.14
-            },
-            {
-              "qty": 2,
-              "num": 70,
-              "usage": 0.7
-            },
             {
               "qty": 1,
-              "num": 16,
-              "usage": 0.16
+              "num": 1,
+              "usage": 0.01
             }
           ]
         }
@@ -6478,43 +6502,234 @@
       ],
       "core_cards": [
         {
+          "setCode": "CS6aC",
+          "cardIndex": "126",
+          "cardName": "莎莉娜",
+          "rarity": "U",
+          "effectId": "d83b170c43c0ade1f81c817c4488d5db",
+          "cardType": "Supporter",
+          "yorenCode": "Y1136",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.2911392405063291,
+          "usage": [
+            {
+              "qty": 2,
+              "num": 2,
+              "usage": 0.02531645569620253
+            },
+            {
+              "qty": 1,
+              "num": 19,
+              "usage": 0.24050632911392406
+            }
+          ]
+        },
+        {
+          "setCode": "CSV6C",
+          "cardIndex": "114",
+          "cardName": "反击捕捉器",
+          "rarity": "U",
+          "effectId": "06bc00d5dcec33898dc6db2e4c4d10ec",
+          "cardType": "Item",
+          "yorenCode": "Y147",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.02531645569620253,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 2,
+              "usage": 0.02531645569620253
+            }
+          ]
+        },
+        {
+          "setCode": "CSV1C",
+          "cardIndex": "127",
+          "cardName": "夜光能量",
+          "rarity": "U",
+          "effectId": "540ee48bb93584e4bfe3d7f5d0ee0efc",
+          "cardType": "Special Energy",
+          "yorenCode": "Y1218",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.08860759493670886,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 7,
+              "usage": 0.08860759493670886
+            }
+          ]
+        },
+        {
+          "setCode": "CSV1C",
+          "cardIndex": "112",
+          "cardName": "高级球",
+          "rarity": "U",
+          "effectId": "a337ed34a45e63c6d21d98c3d8e0cb6e",
+          "cardType": "Item",
+          "yorenCode": "Y151",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 4,
+          "usage": [
+            {
+              "qty": 4,
+              "num": 79,
+              "usage": 1
+            }
+          ]
+        },
+        {
           "setCode": "CSV8C",
-          "cardIndex": "172",
-          "cardName": "月月熊 赫月ex",
-          "rarity": "RR",
-          "effectId": "f2afef80b13b8f6a071facbcade0251c",
+          "cardIndex": "199",
+          "cardName": "丹瑜",
+          "rarity": "U",
+          "effectId": "8150af4062192998497e376ad931bea4",
+          "cardType": "Supporter",
+          "yorenCode": "Y1440",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.7088607594936709,
+          "usage": [
+            {
+              "qty": 2,
+              "num": 5,
+              "usage": 0.06329113924050633
+            },
+            {
+              "qty": 1,
+              "num": 46,
+              "usage": 0.5822784810126582
+            }
+          ]
+        },
+        {
+          "setCode": "CSV3C",
+          "cardIndex": "116",
+          "cardName": "超级球",
+          "rarity": "U",
+          "effectId": "1838e8afe529b519a57dd8bbd307905a",
+          "cardType": "Item",
+          "yorenCode": "Y197",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.8227848101265823,
+          "usage": [
+            {
+              "qty": 3,
+              "num": 1,
+              "usage": 0.012658227848101266
+            },
+            {
+              "qty": 2,
+              "num": 26,
+              "usage": 0.3291139240506329
+            },
+            {
+              "qty": 1,
+              "num": 10,
+              "usage": 0.12658227848101267
+            }
+          ]
+        },
+        {
+          "setCode": "CSV6C",
+          "cardIndex": "042",
+          "cardName": "铁包袱",
+          "rarity": "U",
+          "effectId": "47676dfc37415cfdf3b3992b1de64141",
           "cardType": "Pokemon",
-          "yorenCode": "Y1461",
+          "yorenCode": "P0991",
           "is": [
-            "ex",
+            "Future",
             "Basic"
           ],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 1,
+          "averageUsage": 0.20253164556962025,
           "usage": [
             {
-              "qty": 2,
-              "num": 1,
-              "usage": 0.012658227848101266
-            },
-            {
               "qty": 1,
-              "num": 77,
-              "usage": 0.9746835443037974
+              "num": 16,
+              "usage": 0.20253164556962025
             }
           ]
         },
         {
-          "setCode": "CSV2C",
-          "cardIndex": "127",
-          "cardName": "深钵镇",
-          "rarity": "U",
-          "effectId": "c117bea3cc758d46430d6bef11062a56",
-          "cardType": "Stadium",
-          "yorenCode": "Y1265",
-          "is": [],
+          "setCode": "CSV7C",
+          "cardIndex": "109",
+          "cardName": "振翼发",
+          "rarity": "R",
+          "effectId": "0e2ffb26032237ddfb8895534fdaf39d",
+          "cardType": "Pokemon",
+          "yorenCode": "P0987",
+          "is": [
+            "Ancient",
+            "Basic"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.3037974683544304,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 24,
+              "usage": 0.3037974683544304
+            }
+          ]
+        },
+        {
+          "setCode": "CSV8C",
+          "cardIndex": "006",
+          "cardName": "甜甜萤",
+          "rarity": "C",
+          "effectId": "06cac03ab0a9e4a60139b65cb6d0d067",
+          "cardType": "Pokemon",
+          "yorenCode": "P0314",
+          "is": [
+            "Basic"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.012658227848101266,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 1,
+              "usage": 0.012658227848101266
+            }
+          ]
+        },
+        {
+          "setCode": "151C",
+          "cardIndex": "151",
+          "cardName": "梦幻ex",
+          "rarity": "RR",
+          "effectId": "49669fcf461deacebeb5755c11ec51f1",
+          "cardType": "Pokemon",
+          "yorenCode": "Y1191",
+          "is": [
+            "ex",
+            "Basic"
+          ],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
@@ -6556,26 +6771,49 @@
           ]
         },
         {
-          "setCode": "CSV6C",
-          "cardIndex": "042",
-          "cardName": "铁包袱",
+          "setCode": "CS6.5C",
+          "cardIndex": "072",
+          "cardName": "V防守能量",
           "rarity": "U",
-          "effectId": "47676dfc37415cfdf3b3992b1de64141",
-          "cardType": "Pokemon",
-          "yorenCode": "P0991",
-          "is": [
-            "Future",
-            "Basic"
-          ],
+          "effectId": "88bf9902f1d769a667bbd3939fc757de",
+          "cardType": "Special Energy",
+          "yorenCode": "Y1176",
+          "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.20253164556962025,
+          "averageUsage": 1.0126582278481013,
+          "usage": [
+            {
+              "qty": 2,
+              "num": 5,
+              "usage": 0.06329113924050633
+            },
+            {
+              "qty": 1,
+              "num": 70,
+              "usage": 0.8860759493670886
+            }
+          ]
+        },
+        {
+          "setCode": "CSV9C",
+          "cardIndex": "204",
+          "cardName": "琉琪亚的展现",
+          "rarity": "U",
+          "effectId": "49665630511298f462fb938a0e1b3096",
+          "cardType": "Supporter",
+          "yorenCode": "Y1544",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.012658227848101266,
           "usage": [
             {
               "qty": 1,
-              "num": 16,
-              "usage": 0.20253164556962025
+              "num": 1,
+              "usage": 0.012658227848101266
             }
           ]
         },
@@ -6601,250 +6839,28 @@
           ]
         },
         {
-          "setCode": "CSV8C",
-          "cardIndex": "006",
-          "cardName": "甜甜萤",
-          "rarity": "C",
-          "effectId": "06cac03ab0a9e4a60139b65cb6d0d067",
-          "cardType": "Pokemon",
-          "yorenCode": "P0314",
-          "is": [
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.012658227848101266,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 1,
-              "usage": 0.012658227848101266
-            }
-          ]
-        },
-        {
-          "setCode": "CSV9C",
-          "cardIndex": "154",
-          "cardName": "咕咕",
-          "rarity": "C",
-          "effectId": "3050727a9de336da69b1b7865ad2cf2d",
-          "cardType": "Pokemon",
-          "yorenCode": "P163",
-          "is": [
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.0759493670886076,
-          "usage": [
-            {
-              "qty": 3,
-              "num": 2,
-              "usage": 0.02531645569620253
-            }
-          ]
-        },
-        {
-          "setCode": "CS5DC",
-          "cardIndex": "138",
-          "cardName": "珠贝",
-          "rarity": "无标记",
-          "effectId": "4f53ab6bf158fd1a8869ae037f4a0d6d",
-          "cardType": "Supporter",
-          "yorenCode": "Y956",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.05063291139240506,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 4,
-              "usage": 0.05063291139240506
-            }
-          ]
-        },
-        {
-          "setCode": "CSV3C",
-          "cardIndex": "130",
-          "cardName": "治疗能量",
+          "setCode": "CSV4C",
+          "cardIndex": "129",
+          "cardName": "喷射能量",
           "rarity": "U",
-          "effectId": "2c65697c2aceac4e6a1f85f810fa386f",
+          "effectId": "1323733f19cc04e54090b39bc1a393b8",
           "cardType": "Special Energy",
-          "yorenCode": "Y1301",
+          "yorenCode": "Y1329",
           "is": [],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 0.0379746835443038,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 3,
-              "usage": 0.0379746835443038
-            }
-          ]
-        },
-        {
-          "setCode": "CS6aC",
-          "cardIndex": "120",
-          "cardName": "捕获香氛",
-          "rarity": "U",
-          "effectId": "7cd68d9e286b78a7f9c799fce24a7d6c",
-          "cardType": "Item",
-          "yorenCode": "Y1131",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 3.8860759493670884,
+          "averageUsage": 3.9873417721518987,
           "usage": [
             {
               "qty": 4,
-              "num": 74,
-              "usage": 0.9367088607594937
+              "num": 78,
+              "usage": 0.9873417721518988
             },
             {
               "qty": 3,
-              "num": 3,
-              "usage": 0.0379746835443038
-            },
-            {
-              "qty": 2,
               "num": 1,
               "usage": 0.012658227848101266
-            }
-          ]
-        },
-        {
-          "setCode": "CSV1C",
-          "cardIndex": "112",
-          "cardName": "高级球",
-          "rarity": "U",
-          "effectId": "a337ed34a45e63c6d21d98c3d8e0cb6e",
-          "cardType": "Item",
-          "yorenCode": "Y151",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 4,
-          "usage": [
-            {
-              "qty": 4,
-              "num": 79,
-              "usage": 1
-            }
-          ]
-        },
-        {
-          "setCode": "CS6bC",
-          "cardIndex": "089",
-          "cardName": "龙王蝎V",
-          "rarity": "RR",
-          "effectId": "b9fffbdca24e1473517aa7da3eb18703",
-          "cardType": "Pokemon",
-          "yorenCode": "Y639",
-          "is": [
-            "V",
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.012658227848101266,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 1,
-              "usage": 0.012658227848101266
-            }
-          ]
-        },
-        {
-          "setCode": "CSV2C",
-          "cardIndex": "105",
-          "cardName": "怒鹦哥ex",
-          "rarity": "RR",
-          "effectId": "1b951205e53e179bde0905c4a194d9ee",
-          "cardType": "Pokemon",
-          "yorenCode": "Y1253",
-          "is": [
-            "ex",
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.4177215189873418,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 33,
-              "usage": 0.4177215189873418
-            }
-          ]
-        },
-        {
-          "setCode": "CS5.5C",
-          "cardIndex": "007",
-          "cardName": "光辉喷火龙",
-          "rarity": "K",
-          "effectId": "8f4f913440ac17d759c061e4e6fcf947",
-          "cardType": "Pokemon",
-          "yorenCode": "Y1064",
-          "is": [
-            "Radiant",
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.11392405063291139,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 9,
-              "usage": 0.11392405063291139
-            }
-          ]
-        },
-        {
-          "setCode": "CSV1C",
-          "cardIndex": "121",
-          "cardName": "博士的研究",
-          "rarity": "R",
-          "effectId": "aecd80ca2722885c3d062a2255346f3e",
-          "cardType": "Supporter",
-          "yorenCode": "Y485",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 2.5063291139240507,
-          "usage": [
-            {
-              "qty": 4,
-              "num": 4,
-              "usage": 0.05063291139240506
-            },
-            {
-              "qty": 3,
-              "num": 40,
-              "usage": 0.5063291139240507
-            },
-            {
-              "qty": 2,
-              "num": 29,
-              "usage": 0.3670886075949367
-            },
-            {
-              "qty": 1,
-              "num": 4,
-              "usage": 0.05063291139240506
             }
           ]
         }
@@ -7178,139 +7194,30 @@
       ],
       "core_cards": [
         {
-          "setCode": "CS5aC",
-          "cardIndex": "116",
-          "cardName": "飞羽球",
-          "rarity": "U",
-          "effectId": "b029fdcf35f970d5d2254778009fa2fe",
-          "cardType": "Item",
-          "yorenCode": "Y1024",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.974025974025974,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 75,
-              "usage": 0.974025974025974
-            }
-          ]
-        },
-        {
-          "setCode": "CSVH1C",
-          "cardIndex": "043",
-          "cardName": "巢穴球",
-          "rarity": "无标记",
-          "effectId": "1af63a7e2cb7a79215474ad8db8fd8fd",
-          "cardType": "Item",
-          "yorenCode": "Y30",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 3.935064935064935,
-          "usage": [
-            {
-              "qty": 4,
-              "num": 72,
-              "usage": 0.935064935064935
-            },
-            {
-              "qty": 3,
-              "num": 5,
-              "usage": 0.06493506493506493
-            }
-          ]
-        },
-        {
-          "setCode": "CSV9C",
-          "cardIndex": "090",
-          "cardName": "仙子伊布ex",
-          "rarity": "RR",
-          "effectId": "61fb0755be18f5fcdc6a30781d5fc05e",
+          "setCode": "151C",
+          "cardIndex": "016",
+          "cardName": "波波",
+          "rarity": "C",
+          "effectId": "c52439ea1ed321c25091b60e04c0d1da",
           "cardType": "Pokemon",
-          "yorenCode": "Y1507",
+          "yorenCode": "P016",
           "is": [
-            "ex",
-            "Stage 1"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.012987012987012988,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 1,
-              "usage": 0.012987012987012988
-            }
-          ]
-        },
-        {
-          "setCode": "CSV1C",
-          "cardIndex": "111",
-          "cardName": "朋友手册",
-          "rarity": "U",
-          "effectId": "a47d5a8ed00e14a2146fc511745d23b5",
-          "cardType": "Item",
-          "yorenCode": "Y87",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.7532467532467533,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 58,
-              "usage": 0.7532467532467533
-            }
-          ]
-        },
-        {
-          "setCode": "CSV8C",
-          "cardIndex": "135",
-          "cardName": "吉雉鸡ex",
-          "rarity": "RR",
-          "effectId": "ab6c3357e2b8a8385a68da738f41e0c1",
-          "cardType": "Pokemon",
-          "yorenCode": "Y1455",
-          "is": [
-            "ex",
             "Basic"
           ],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 1,
+          "averageUsage": 0.16883116883116883,
           "usage": [
             {
-              "qty": 1,
-              "num": 77,
-              "usage": 1
-            }
-          ]
-        },
-        {
-          "setCode": "CSV8C",
-          "cardIndex": "198",
-          "cardName": "乌栗",
-          "rarity": "U",
-          "effectId": "d4a94445aa981c2f84e4df9b0525eeb0",
-          "cardType": "Supporter",
-          "yorenCode": "Y1487",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.012987012987012988,
-          "usage": [
+              "qty": 2,
+              "num": 5,
+              "usage": 0.06493506493506493
+            },
             {
               "qty": 1,
-              "num": 1,
-              "usage": 0.012987012987012988
+              "num": 3,
+              "usage": 0.03896103896103896
             }
           ]
         },
@@ -7339,135 +7246,6 @@
           ]
         },
         {
-          "setCode": "CSV9C",
-          "cardIndex": "054",
-          "cardName": "皮卡丘ex",
-          "rarity": "RR",
-          "effectId": "689549e631f4f93ecf618a215c628bd1",
-          "cardType": "Pokemon",
-          "yorenCode": "Y1223",
-          "is": [
-            "ex",
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.025974025974025976,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 2,
-              "usage": 0.025974025974025976
-            }
-          ]
-        },
-        {
-          "setCode": "CSV6C",
-          "cardIndex": "125",
-          "cardName": "弗图博士的剧本",
-          "rarity": "U",
-          "effectId": "73d5f46ecf3a6d71b23ce7bc1a28d4f4",
-          "cardType": "Supporter",
-          "yorenCode": "Y1378",
-          "is": [
-            "Future"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.8311688311688312,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 64,
-              "usage": 0.8311688311688312
-            }
-          ]
-        },
-        {
-          "setCode": "CSV6C",
-          "cardIndex": "115",
-          "cardName": "大地容器",
-          "rarity": "U",
-          "effectId": "e366f56ecd3f805a28294109a1a37453",
-          "cardType": "Item",
-          "yorenCode": "Y1371",
-          "is": [
-            "Ancient"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.012987012987012988,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 1,
-              "usage": 0.012987012987012988
-            }
-          ]
-        },
-        {
-          "setCode": "CSV4C",
-          "cardIndex": "129",
-          "cardName": "喷射能量",
-          "rarity": "U",
-          "effectId": "1323733f19cc04e54090b39bc1a393b8",
-          "cardType": "Special Energy",
-          "yorenCode": "Y1329",
-          "is": [],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.03896103896103896,
-          "usage": [
-            {
-              "qty": 1,
-              "num": 3,
-              "usage": 0.03896103896103896
-            }
-          ]
-        },
-        {
-          "setCode": "CSV7C",
-          "cardIndex": "159",
-          "cardName": "咕咕",
-          "rarity": "C",
-          "effectId": "65442467f2645f5983fe6604e5bdc8d2",
-          "cardType": "Pokemon",
-          "yorenCode": "P163",
-          "is": [
-            "Basic"
-          ],
-          "setCodeEn": "",
-          "cardIndexEn": "",
-          "nameEn": "",
-          "averageUsage": 0.5844155844155844,
-          "usage": [
-            {
-              "qty": 4,
-              "num": 4,
-              "usage": 0.05194805194805195
-            },
-            {
-              "qty": 3,
-              "num": 4,
-              "usage": 0.05194805194805195
-            },
-            {
-              "qty": 2,
-              "num": 4,
-              "usage": 0.05194805194805195
-            },
-            {
-              "qty": 1,
-              "num": 9,
-              "usage": 0.11688311688311688
-            }
-          ]
-        },
-        {
           "setCode": "151C",
           "cardIndex": "151",
           "cardName": "梦幻ex",
@@ -7492,25 +7270,85 @@
           ]
         },
         {
+          "setCode": "CSVH4eC",
+          "cardIndex": "044",
+          "cardName": "空手道王的修炼",
+          "rarity": "无标记",
+          "effectId": "a444b83881df9e2a0225aee95bbc853a",
+          "cardType": "Supporter",
+          "yorenCode": "Y1496",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.012987012987012988,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 1,
+              "usage": 0.012987012987012988
+            }
+          ]
+        },
+        {
           "setCode": "CSV9C",
-          "cardIndex": "161",
-          "cardName": "旋转洛托姆",
-          "rarity": "C",
-          "effectId": "fff777c54e423cea55d217f6954f635c",
+          "cardIndex": "162",
+          "cardName": "爆炸头水牛",
+          "rarity": "U",
+          "effectId": "80825120ec77d6da5fa04c2e5d73f115",
           "cardType": "Pokemon",
-          "yorenCode": "P479",
+          "yorenCode": "P626",
           "is": [
             "Basic"
           ],
           "setCodeEn": "",
           "cardIndexEn": "",
           "nameEn": "",
-          "averageUsage": 2,
+          "averageUsage": 1.7272727272727273,
           "usage": [
             {
+              "qty": 3,
+              "num": 1,
+              "usage": 0.012987012987012988
+            },
+            {
               "qty": 2,
-              "num": 77,
-              "usage": 1
+              "num": 65,
+              "usage": 0.8441558441558441
+            }
+          ]
+        },
+        {
+          "setCode": "CSV9C",
+          "cardIndex": "175",
+          "cardName": "太乐巴戈斯ex",
+          "rarity": "RR",
+          "effectId": "5de19cbd4b2d1ff80ba14d6d89246ae9",
+          "cardType": "Pokemon",
+          "yorenCode": "Y1516",
+          "is": [
+            "ex",
+            "Basic"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 3.0779220779220777,
+          "usage": [
+            {
+              "qty": 4,
+              "num": 10,
+              "usage": 0.12987012987012986
+            },
+            {
+              "qty": 3,
+              "num": 63,
+              "usage": 0.8181818181818182
+            },
+            {
+              "qty": 2,
+              "num": 4,
+              "usage": 0.05194805194805195
             }
           ]
         },
@@ -7534,6 +7372,198 @@
               "qty": 1,
               "num": 1,
               "usage": 0.012987012987012988
+            }
+          ]
+        },
+        {
+          "setCode": "CSNC",
+          "cardIndex": "009",
+          "cardName": "阿尔宙斯V",
+          "rarity": "无标记",
+          "effectId": "94c6f72a67045857fa44962e4fbb8c27",
+          "cardType": "Pokemon",
+          "yorenCode": "Y932",
+          "is": [
+            "V",
+            "Basic"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.025974025974025976,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 2,
+              "usage": 0.025974025974025976
+            }
+          ]
+        },
+        {
+          "setCode": "CSV7C",
+          "cardIndex": "033",
+          "cardName": "铁斑叶ex",
+          "rarity": "RR",
+          "effectId": "2e307380eb013c4e20db0a19816ba3b9",
+          "cardType": "Pokemon",
+          "yorenCode": "Y1383",
+          "is": [
+            "ex",
+            "Future",
+            "Basic"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.012987012987012988,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 1,
+              "usage": 0.012987012987012988
+            }
+          ]
+        },
+        {
+          "setCode": "CSV7C",
+          "cardIndex": "201",
+          "cardName": "重力山",
+          "rarity": "U",
+          "effectId": "aee486132c2ba880232a477fe0fe7a03",
+          "cardType": "Stadium",
+          "yorenCode": "Y1427",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.012987012987012988,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 1,
+              "usage": 0.012987012987012988
+            }
+          ]
+        },
+        {
+          "setCode": "CSVE1C",
+          "cardIndex": "FIG",
+          "cardName": "基本斗能量",
+          "rarity": "无标记",
+          "effectId": "9fedb80a97ddd5cc8b8022a21364c326",
+          "cardType": "Basic Energy",
+          "yorenCode": "Y462",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.05194805194805195,
+          "usage": [
+            {
+              "qty": 2,
+              "num": 2,
+              "usage": 0.025974025974025976
+            }
+          ]
+        },
+        {
+          "setCode": "CSVH1C",
+          "cardIndex": "050",
+          "cardName": "活力头带",
+          "rarity": "无标记",
+          "effectId": "f474805425d4849d8dc4c8c1e1af750a",
+          "cardType": "Tool",
+          "yorenCode": "Y521",
+          "is": [
+            "Single Strike"
+          ],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.2857142857142857,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 22,
+              "usage": 0.2857142857142857
+            }
+          ]
+        },
+        {
+          "setCode": "CSVE1C",
+          "cardIndex": "GRA",
+          "cardName": "基本草能量",
+          "rarity": "无标记",
+          "effectId": "5e2d0ce37ca0c539aa45908da10544a0",
+          "cardType": "Basic Energy",
+          "yorenCode": "Y457",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.1038961038961039,
+          "usage": [
+            {
+              "qty": 5,
+              "num": 1,
+              "usage": 0.012987012987012988
+            },
+            {
+              "qty": 2,
+              "num": 1,
+              "usage": 0.012987012987012988
+            },
+            {
+              "qty": 1,
+              "num": 1,
+              "usage": 0.012987012987012988
+            }
+          ]
+        },
+        {
+          "setCode": "CSV9C",
+          "cardIndex": "202",
+          "cardName": "白蕾雅",
+          "rarity": "U",
+          "effectId": "a7a9d14928bdbaf4ec973a65ac878999",
+          "cardType": "Supporter",
+          "yorenCode": "Y1542",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.974025974025974,
+          "usage": [
+            {
+              "qty": 1,
+              "num": 75,
+              "usage": 0.974025974025974
+            }
+          ]
+        },
+        {
+          "setCode": "CSVE1C",
+          "cardIndex": "LIG",
+          "cardName": "基本雷能量",
+          "rarity": "无标记",
+          "effectId": "45550fd10011f6ade7eef16ba88788cf",
+          "cardType": "Basic Energy",
+          "yorenCode": "Y460",
+          "is": [],
+          "setCodeEn": "",
+          "cardIndexEn": "",
+          "nameEn": "",
+          "averageUsage": 0.05194805194805195,
+          "usage": [
+            {
+              "qty": 2,
+              "num": 1,
+              "usage": 0.012987012987012988
+            },
+            {
+              "qty": 1,
+              "num": 2,
+              "usage": 0.025974025974025976
             }
           ]
         }

@@ -21,5 +21,17 @@
   "useThisDeck": "Use this Deck",
   "agentType": "Agent Type",
   "model": "Model",
-  "vs": "vs"
+  "vs": "vs",
+  "pokemonSection": "Pokémon",
+  "trainerSection": "Trainer",
+  "energySection": "Energy",
+  "energyCards": "Energy cards",
+  "loadFailed": "Failed to load deck details",
+  "refreshImages": "Download Card Images",
+  "refreshing": "Downloading...",
+  "refreshDone": "Updated {{count}} card images",
+  "refreshFailed": "Download failed",
+  "refreshDecks": "Refresh Decks",
+  "deckRefreshing": "Refreshing...",
+  "deckRefreshDone": "Decks refreshed"
 }

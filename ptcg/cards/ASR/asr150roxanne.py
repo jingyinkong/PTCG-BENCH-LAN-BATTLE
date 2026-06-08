@@ -13,7 +13,7 @@ class ASR150Roxanne(SupporterCard):
         self.set_name = "ASR"
         self.number = "150"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "罗莎"
+        self.name = "杜娟"
         self.cardType = CardType.NONE
         self.text = "只有对手剩余奖赏卡为3张以下时才可使用。将所有手牌放回牌库并重洗。然后，从牌库上方抽取6张。对手从牌库上方抽取2张。"
 

@@ -12,7 +12,7 @@ class TWM145Carmine(SupporterCard):
         self.set_name = "TWM"
         self.number = "145"
         self.id = f"{self.set_name}-{self.number}"
-        self.name = "瑟琵倪"
+        self.name = "丹瑜"
         self.cardType = CardType.NONE
         self.text = "将自己的所有手牌丢弃，然后从自己的牌库上方抽取5张。"
 
