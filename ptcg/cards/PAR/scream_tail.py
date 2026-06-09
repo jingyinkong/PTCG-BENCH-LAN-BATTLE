@@ -43,6 +43,7 @@ class PAR086ScreamTail(PokemonCard):
         self.energy = []
         self.attachment = []
         self.evolved = []
+        self.ability = []
 
         # Attack definitions
         self.attacks = [

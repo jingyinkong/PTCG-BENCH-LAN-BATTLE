@@ -21,7 +21,8 @@ class PAL156Dunsparce(PokemonCard):
         self.evolveFrom = []; self.prize = 1
         self.energy = []; self.attachment = []; self.evolved = []
         self.attacks = [
-            Attack({"name": "找朋友","damage": 0,"cost": [CardType.COLORLESS],"text": "选择自己牌库中的1张宝可梦，给对手看过加入手牌。重洗牌库。"})
+            Attack({"name": "找朋友","damage": 0,"cost": [CardType.COLORLESS],"text": "选择自己牌库中的1张宝可梦，给对手看过加入手牌。重洗牌库。"}),
+            Attack({"name": "咬住","damage": 50,"cost": [CardType.COLORLESS, CardType.COLORLESS, CardType.COLORLESS],"text": ""})
         ]
 
     def get_actions(self, state):

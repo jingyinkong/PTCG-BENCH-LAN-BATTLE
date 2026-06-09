@@ -18,9 +18,10 @@ class SVI063Magnemite(PokemonCard):
         self.cardType = CardType.LIGHTNING
         self.retreat = [CardType.COLORLESS]; self.weakness = [CardType.FIGHTING]; self.resistance = []
         self.evolveFrom = []; self.prize = 1
-        self.energy = []; self.attachment = []; self.evolved = []
+        self.energy = []; self.attachment = []; self.evolved = []; self.ability = []
         self.attacks = [
-            Attack({"name": "互斥","damage": 0,"cost": [CardType.COLORLESS],"text": "将这只宝可梦与备战宝可梦互换。"})
+            Attack({"name": "互斥","damage": 0,"cost": [CardType.COLORLESS],"text": "将这只宝可梦与备战宝可梦互换。"}),
+            Attack({"name": "电球","damage": 10,"cost": [CardType.LIGHTNING],"text": ""})
         ]
 
     def get_actions(self, state):

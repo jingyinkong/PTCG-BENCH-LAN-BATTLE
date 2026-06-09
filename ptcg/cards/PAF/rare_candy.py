@@ -2,7 +2,7 @@ from ptcg.core.action import EvolvePokemonAction, UseItemAction, choose_card_act
 from ptcg.core.card import ItemCard, PokemonCard
 from ptcg.core.enums import CardPosition, CardType, Stage
 from ptcg.core.reducer import reduce_choose_card_actions
-from ptcg.utils.utils import current_all_pokemon, current_player, move_cards
+from ptcg.utils.utils import current_all_pokemon, current_player, get_basic_pokemon_name, move_cards
 from ptcg.i18n import t as _t
 
 
@@ -24,7 +24,7 @@ class PAF089RareCandy(ItemCard):
             if not (isinstance(card, PokemonCard) and card.stage == Stage.STAGE_2):
                 continue
             for pokemon in current_all_pokemon(state):
-                if pokemon.name == card.evolveFrom[-1] and not pokemon.firstTurnPlayed:
+                if pokemon.name == get_basic_pokemon_name(card) and not pokemon.firstTurnPlayed:
                     found = True
                     break
 
@@ -48,7 +48,7 @@ class PAF089RareCandy(ItemCard):
                 if not (isinstance(card, PokemonCard) and card.stage == Stage.STAGE_2):
                     continue
                 for pokemon in current_all_pokemon(state):
-                    if pokemon.name == card.evolveFrom[-1]:
+                    if pokemon.name == get_basic_pokemon_name(card):
                         evolved_cardlist.append(card)
                         break
 
@@ -61,7 +61,7 @@ class PAF089RareCandy(ItemCard):
 
             evolving_cardlist = []
             for pokemon in current_all_pokemon(state):
-                if pokemon.name == evolved_card.evolveFrom[-1]:
+                if pokemon.name == get_basic_pokemon_name(evolved_card):
                     evolving_cardlist.append(pokemon)
 
             tips = _t("item.rare_candy.choose_basic")

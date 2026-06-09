@@ -21,7 +21,8 @@ class PRE035Duskull(PokemonCard):
         self.evolveFrom = []; self.prize = 1
         self.energy = []; self.attachment = []; self.evolved = []
         self.attacks = [
-            Attack({"name": "渡魂","damage": 0,"cost": [CardType.PSYCHIC],"text": "选择自己弃牌区中最多3张「夜巡灵」，放于备战区。"})
+            Attack({"name": "渡魂","damage": 0,"cost": [CardType.PSYCHIC],"text": "选择自己弃牌区中最多3张「夜巡灵」，放于备战区。"}),
+            Attack({"name": "喃喃自语","damage": 30,"cost": [CardType.PSYCHIC, CardType.PSYCHIC],"text": ""})
         ]
 
     def get_actions(self, state):

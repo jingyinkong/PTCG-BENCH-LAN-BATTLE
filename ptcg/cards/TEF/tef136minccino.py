@@ -19,8 +19,9 @@ class TEF136Minccino(PokemonCard):
         self.cardType = CardType.COLORLESS
         self.retreat = [CardType.COLORLESS]; self.weakness = [CardType.FIGHTING]; self.resistance = []
         self.evolveFrom = []; self.prize = 1
-        self.energy = []; self.attachment = []; self.evolved = []
+        self.energy = []; self.attachment = []; self.evolved = []; self.ability = []
         self.attacks = [
+            Attack({"name": "敲打","damage": 10,"cost": [CardType.COLORLESS],"text": ""}),
             Attack({"name": "扫除","damage": 0,"cost": [CardType.COLORLESS],"text": "选择放于对手场上宝可梦身上最多2张「宝可梦道具」，放于弃牌区。"})
         ]
 
@@ -53,7 +54,7 @@ class TEF136Minccino(PokemonCard):
                 if tools:
                     tool_cards = [t[1] for t in tools]
                     tips = _t("attack.minccino.clean_up")
-                    from ptcg.core.reducer import reduce_choose_card_actions as rc
+                    from ptcg.core.reducer import reduce_choose_card_actions as rc  # noqa: F811
                     acts = choose_card_actions(player.id, player.id, 0, min(2, len(tool_cards)), tool_cards, tips=tips, source=self)
                     chosen = yield from rc(acts, state)
                     if chosen:
