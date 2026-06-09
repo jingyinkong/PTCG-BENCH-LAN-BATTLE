@@ -1,8 +1,9 @@
+from ptcg.core.ability import PassiveAbility
 """Radiant Hisuian Sneasler - LOR 123"""
 from ptcg.core.action import AttackAction, EvolvePokemonAction, PlayPokemonAction, RetreatAction
 from ptcg.core.attack import Attack
 from ptcg.core.card import PokemonCard
-from ptcg.core.enums import CardType, PokemonPosition, PokemonRule, PokemonType, Stage
+from ptcg.core.enums import AbilityTrigger, AbilityType, CardType, PokemonPosition, PokemonRule, PokemonType, Stage
 from ptcg.core.reducer import reduce_attack_action, reduce_evolve_pokemon_action, reduce_play_pokemon_action, reduce_retreat_action
 from ptcg.utils.utils import check_energy, opponent_active
 
@@ -28,6 +29,15 @@ class LOR123RadiantHisuianSneasler(PokemonCard):
         self.energy = []
         self.attachment = []
         self.evolved = []
+        self.ability = [
+            PassiveAbility({
+                "name": "巅峰毒性",
+                "abilityType": AbilityType.PASSIVE_ABILITY,
+                "abilityTrigger": AbilityTrigger.ATTACKING,
+                "onceUsedPerTurn": False,
+                "text": "这只宝可梦使用招式的伤害，追加对手已经获得的奖赏卡张数×30点伤害。"
+            })
+        ]
         self.attacks = [
         Attack({"name": "毒击", "damage": 90, "cost": [CardType.DARK, CardType.COLORLESS, CardType.COLORLESS], "text": "使对手的战斗宝可梦陷入【中毒】状态。"})
         ]

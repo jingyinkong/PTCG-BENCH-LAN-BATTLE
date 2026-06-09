@@ -1,7 +1,8 @@
+from ptcg.core.ability import PassiveAbility
 from ptcg.core.action import AttackAction, EvolvePokemonAction, PlayPokemonAction, RetreatAction
 from ptcg.core.attack import Attack
 from ptcg.core.card import PokemonCard
-from ptcg.core.enums import (
+from ptcg.core.enums import (AbilityType, AbilityTrigger,
     CardPosition,
     CardType,
     PokemonPosition,
@@ -34,6 +35,15 @@ class VIV028Charmeleon(PokemonCard):
 
         self.evolveFrom = ["Charmander"]
         self.evolved = []
+        self.ability = [
+            PassiveAbility({
+                "name": "闪焰之幕",
+                "abilityType": AbilityType.PASSIVE_ABILITY,
+                "abilityTrigger": AbilityTrigger.ATTACKED,
+                "onceUsedPerTurn": False,
+                "text": "这只宝可梦不会受到对手的宝可梦ex和宝可梦V招式的伤害。"
+            })
+        ]
 
         self.attacks = [
             Attack({"name": "Slash", "damage": 20, "cost": [CardType.FIRE], "text": ""}),

@@ -223,6 +223,34 @@ def check_evolve(evolved_card: PokemonCard, state: State) -> List[PokemonCard]:
     return can_evolve
 
 
+def get_basic_pokemon_name(stage2_card: PokemonCard) -> Optional[str]:
+    """Resolve the Basic Pokemon name from a Stage 2 card's evolution chain.
+
+    Stage 2 cards have evolveFrom = [Stage1Name]. To find the Basic:
+      stage2.evolveFrom[0]  → look up Stage 1 card by name
+      Stage 1's evolveFrom[0] → Basic name
+
+    Returns None if the chain cannot be resolved.
+    """
+    if not hasattr(stage2_card, "evolveFrom") or not stage2_card.evolveFrom:
+        return None
+
+    stage1_name = stage2_card.evolveFrom[0]
+
+    from ptcg.core.card_registry import registry
+    registry._ensure_loaded()
+    for card_id, card_cls in registry._cards.items():
+        try:
+            instance = card_cls()
+            if instance.name == stage1_name and hasattr(instance, "evolveFrom"):
+                if instance.evolveFrom:
+                    return instance.evolveFrom[0]
+        except Exception:
+            continue
+
+    return None
+
+
 def judge_termination(state: State) -> Tuple[bool, Optional[PlayerId]]:
     """
     Judge whether the game ends

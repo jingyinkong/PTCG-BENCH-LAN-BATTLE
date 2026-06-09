@@ -1,8 +1,9 @@
+from ptcg.core.ability import ActiveAbility
 """Entei V - BRS 022"""
 from ptcg.core.action import AttackAction, EvolvePokemonAction, PlayPokemonAction, RetreatAction
 from ptcg.core.attack import Attack
 from ptcg.core.card import PokemonCard
-from ptcg.core.enums import CardType, PokemonPosition, PokemonRule, PokemonType, Stage
+from ptcg.core.enums import AbilityType, CardType, PokemonPosition, PokemonRule, PokemonType, Stage
 from ptcg.core.reducer import reduce_attack_action, reduce_evolve_pokemon_action, reduce_play_pokemon_action, reduce_retreat_action
 from ptcg.utils.utils import check_energy, opponent_active
 
@@ -28,6 +29,14 @@ class BRS022EnteiV(PokemonCard):
         self.energy = []
         self.attachment = []
         self.evolved = []
+        self.ability = [
+            ActiveAbility({
+                "name": "瞬步",
+                "abilityType": AbilityType.ACTIVE_ABILITY,
+                "onceUsedPerTurn": True,
+                "text": "在自己的回合，若这只宝可梦在战斗场上，可使用1次。从自己的牌库上方抽1张卡。在此之前，将自己的2张手牌放回牌库并重洗。"
+            })
+        ]
         self.attacks = [
         Attack({"name": "燃烧回旋曲", "damage": 20, "cost": [CardType.FIRE, CardType.COLORLESS], "text": "追加造成双方备战宝可梦数量x20点伤害。"})
         ]

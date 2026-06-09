@@ -1,8 +1,9 @@
+from ptcg.core.ability import PassiveAbility
 """Pecharunt ex - SFA 039"""
 from ptcg.core.action import AttackAction, EvolvePokemonAction, PlayPokemonAction, RetreatAction
 from ptcg.core.attack import Attack
 from ptcg.core.card import PokemonCard
-from ptcg.core.enums import CardType, PokemonPosition, PokemonRule, PokemonType, Stage
+from ptcg.core.enums import AbilityTrigger, AbilityType, CardType, PokemonPosition, PokemonRule, PokemonType, Stage
 from ptcg.core.reducer import reduce_attack_action, reduce_evolve_pokemon_action, reduce_play_pokemon_action, reduce_retreat_action
 from ptcg.utils.utils import check_energy, opponent_active
 
@@ -28,6 +29,15 @@ class SFA039Pecharuntex(PokemonCard):
         self.energy = []
         self.attachment = []
         self.evolved = []
+        self.ability = [
+            PassiveAbility({
+                "name": "支配锁链",
+                "abilityType": AbilityType.PASSIVE_ABILITY,
+                "abilityTrigger": AbilityTrigger.ATTACKING,
+                "onceUsedPerTurn": False,
+                "text": "这只宝可梦使用招式时，不计算对手战斗宝可梦身上附加的工具卡的效果。"
+            })
+        ]
         self.attacks = [
         Attack({"name": "焦躁爆破", "damage": 60, "cost": [CardType.DARK, CardType.DARK], "text": "造成对手已经获得的奖赏卡张数x60伤害。"})
         ]

@@ -81,3 +81,126 @@ def verify_trainer(card, expected_trainer_type):
 def assert_no_errors(errors, card_name=""):
     prefix = f"{card_name}: " if card_name else ""
     assert len(errors) == 0, f"{prefix}属性验证失败:\n" + "\n".join(f"  - {e}" for e in errors)
+
+
+# =============================================================================
+# 6-Layer Test Framework
+# =============================================================================
+# L1: Structure Check  - __init__ 属性完整性
+# L2: Action Generation - get_actions() Action 类型覆盖
+# L3: Action Handling   - reduce_action() isinstance 分支覆盖
+# L4: Effect Logic      - 效果行为 vs 官方文本
+# L5: Edge Cases        - 边界条件行为
+# L6: Integration       - 卡牌间交互
+# =============================================================================
+
+
+def check_l1_pokemon_structure(card) -> list[str]:
+    """L1: Check Pokemon-specific structure fields."""
+    errors = []
+    if not hasattr(card, "attacks") or not isinstance(card.attacks, list):
+        errors.append("缺少 attacks 列表")
+    if not hasattr(card, "energy"):
+        errors.append("缺少 energy")
+    if not hasattr(card, "attachment"):
+        errors.append("缺少 attachment")
+    return errors
+
+
+def check_l1_ability_structure(card) -> list[str]:
+    """L1: Check ability fields are correctly populated."""
+    errors = []
+    if hasattr(card, "ability") and card.ability:
+        for ab in card.ability:
+            if not hasattr(ab, "name") or not ab.name:
+                errors.append("ability 缺少 name")
+    return errors
+
+
+def get_expected_actions(card) -> set[str]:
+    """L2: Determine which Action types a card should generate."""
+    expected = set()
+    from ptcg.core.ability import ActiveAbility
+    from ptcg.core.card import ItemCard, SupporterCard, StadiumCard
+
+    if isinstance(card, ItemCard):
+        expected.add("UseItemAction")
+    if isinstance(card, SupporterCard):
+        expected.add("UseSupporterAction")
+    if isinstance(card, StadiumCard):
+        expected.add("UseStadiumAction")
+    if hasattr(card, "attacks") and card.attacks:
+        expected.add("AttackAction")
+    if hasattr(card, "ability") and card.ability:
+        for ab in card.ability:
+            if isinstance(ab, ActiveAbility):
+                expected.add("UseAbilityAction")
+                break
+    if hasattr(card, "retreat") and card.retreat:
+        expected.add("RetreatAction")
+    return expected
+
+
+def get_handled_actions(source_code: str) -> set[str]:
+    """L3: Parse isinstance branches from source to find handled Action types."""
+    import re
+    handled = set()
+    for match in re.finditer(r"isinstance\(action,\s*(\w+)\)", source_code):
+        handled.add(match.group(1))
+    return handled
+
+
+def check_l3_handler(source_code: str, generated_actions: set) -> dict:
+    """L3: Check reduce_action handles all generated Action types."""
+    handled = get_handled_actions(source_code)
+    unhandled = generated_actions - handled
+    return {"handled": handled, "unhandled": unhandled, "passes": len(unhandled) == 0}
+
+
+# Layer 4: Effect Logic Helpers
+def assert_hand_size(player, expected: int, msg: str = ""):
+    assert len(player.hand) == expected, f"{msg}期望手牌{expected}实际{len(player.hand)}"
+
+
+def assert_bench_size(player, expected: int, msg: str = ""):
+    assert len(player.bench) == expected, f"{msg}期望后排{expected}实际{len(player.bench)}"
+
+
+# Layer 5: Standard Edge Case Scenarios
+EDGE_CASES = [
+    "empty_deck_draw", "full_bench", "first_turn_block",
+    "ability_suppressed", "item_lock", "special_condition",
+    "empty_discard", "insufficient_energy",
+]
+
+
+def classify_card_tier(card) -> int:
+    """Classify card into Tier 1/2/3 based on complexity.
+
+    Tier 1: Basic energies, simple Pokemon (no ability, pure damage)
+    Tier 2: Pokemon with ability/effects, all Trainer cards
+    Tier 3: V/EX/VSTAR rule-box Pokemon
+    """
+    from ptcg.core.ability import ActiveAbility
+    from ptcg.core.card import EnergyCard, ItemCard, SupporterCard, StadiumCard
+    from ptcg.core.enums import PokemonRule
+
+    if hasattr(card, "pokemonRule") and card.pokemonRule != PokemonRule.NONE:
+        return 3
+    if isinstance(card, EnergyCard):
+        return 1
+    if isinstance(card, (ItemCard, SupporterCard, StadiumCard)):
+        return 2
+    has_active = False
+    if hasattr(card, "ability") and card.ability:
+        for ab in card.ability:
+            if isinstance(ab, ActiveAbility):
+                has_active = True
+    has_effect = False
+    if hasattr(card, "attacks") and card.attacks:
+        for atk in card.attacks:
+            if atk.text and atk.text.strip():
+                has_effect = True
+    if has_active or has_effect:
+        return 2
+    return 1

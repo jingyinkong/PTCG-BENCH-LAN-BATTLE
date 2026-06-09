@@ -1,0 +1,32 @@
+{
+  "card_id": "PAF-079",
+  "name": "电气发生器",
+  "text_rules": [
+    "查看自己牌库上方5张卡牌",
+    "选择其中任意数量的基础【雷】能量",
+    "以任意方式附着于备战区的【雷】宝可梦身上",
+    "将剩余卡牌放回牌库并重洗"
+  ],
+  "scenarios": [
+    {
+      "name": "正常使用：选2张基础雷能量附着到后场电系",
+      "expected": {
+        "energies_attached_to_bench": 2,
+        "deck_shuffled": true,
+        "item_in_discard": true
+      }
+    },
+    {
+      "name": "边界：牌库不足5张",
+      "expected": { "looked_count": 3, "deck_shuffled": true }
+    },
+    {
+      "name": "边界：无基础电能量",
+      "expected": { "energies_attached": 0, "deck_shuffled": true }
+    },
+    {
+      "name": "边界：后场无电系宝可梦",
+      "expected": { "energies_attached": 0, "deck_shuffled": true }
+    }
+  ]
+}

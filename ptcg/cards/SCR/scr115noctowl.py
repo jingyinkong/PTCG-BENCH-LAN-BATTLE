@@ -1,8 +1,9 @@
+from ptcg.core.ability import ActiveAbility
 """Noctowl - SCR 115"""
 from ptcg.core.action import AttackAction, EvolvePokemonAction, PlayPokemonAction, RetreatAction
 from ptcg.core.attack import Attack
 from ptcg.core.card import PokemonCard
-from ptcg.core.enums import CardType, PokemonPosition, PokemonRule, PokemonType, Stage
+from ptcg.core.enums import AbilityType, CardType, PokemonPosition, PokemonRule, PokemonType, Stage
 from ptcg.core.reducer import reduce_attack_action, reduce_evolve_pokemon_action, reduce_play_pokemon_action, reduce_retreat_action
 from ptcg.utils.utils import check_energy, opponent_active
 
@@ -28,6 +29,14 @@ class SCR115Noctowl(PokemonCard):
         self.energy = []
         self.attachment = []
         self.evolved = []
+        self.ability = [
+            ActiveAbility({
+                "name": "寻找宝石",
+                "abilityType": AbilityType.ACTIVE_ABILITY,
+                "onceUsedPerTurn": True,
+                "text": "在自己的回合可使用1次。从自己的牌库选择1张训练家卡，在给对手看过之后加入手牌。并重洗牌库。"
+            })
+        ]
         self.attacks = [
         Attack({"name": "高速之翼", "damage": 60, "cost": [CardType.COLORLESS, CardType.COLORLESS], "text": ""})
         ]

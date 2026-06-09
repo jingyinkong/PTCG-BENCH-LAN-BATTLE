@@ -1,9 +1,10 @@
+from ptcg.core.ability import PassiveAbility
 """Kyurem - SFA 047"""
 from ptcg.core.action import AttackAction, EffectAction, EvolvePokemonAction, PlayPokemonAction, RetreatAction, choose_card_actions
 from ptcg.core.attack import Attack
 from ptcg.core.card import PokemonCard
 from ptcg.core.effect import Effect
-from ptcg.core.enums import CardType, PokemonPosition, PokemonRule, PokemonType, Stage
+from ptcg.core.enums import AbilityTrigger, AbilityType, CardType, PokemonPosition, PokemonRule, PokemonType, Stage
 from ptcg.core.reducer import reduce_attack_action, reduce_choose_card_actions, reduce_effect_action, reduce_evolve_pokemon_action, reduce_play_pokemon_action, reduce_retreat_action
 from ptcg.utils.utils import auto_end_turn, check_energy, current_player, opponent_active, opponent_bench, opponent_player
 
@@ -20,6 +21,15 @@ class SFA047Kyurem(PokemonCard):
         self.retreat = [CardType.COLORLESS]*2; self.weakness = [CardType.METAL]; self.resistance = []
         self.evolveFrom = []; self.prize = 1
         self.energy = []; self.attachment = []; self.evolved = []
+        self.ability = [
+            PassiveAbility({
+                "name": "反等离子",
+                "abilityType": AbilityType.PASSIVE_ABILITY,
+                "abilityTrigger": AbilityTrigger.ATTACKING,
+                "onceUsedPerTurn": False,
+                "text": "这只宝可梦使用招式的伤害，因对手战斗宝可梦身上附加的等离子能量而增加20。"
+            })
+        ]
         self.attacks = [
             Attack({"name": "三重冰霜","damage": 0,"cost": [CardType.WATER,CardType.WATER,CardType.COLORLESS],"text": "将这只宝可梦身上附着的所有能量放于弃牌区，给对手的3只宝可梦，各造成110伤害。"})
         ]

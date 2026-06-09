@@ -1,7 +1,8 @@
+from ptcg.core.ability import PassiveAbility
 """Kieran - TWM 154"""
 from ptcg.core.action import UseSupporterAction
 from ptcg.core.card import SupporterCard
-from ptcg.core.enums import CardPosition, CardType
+from ptcg.core.enums import AbilityTrigger, AbilityType, CardPosition, CardType
 from ptcg.utils.utils import current_player, move_cards
 
 
@@ -15,6 +16,7 @@ class TWM154Kieran(SupporterCard):
         self.id = f"{self.set_name}-{self.number}"
         self.name = "吉雉"
         self.cardType = CardType.NONE
+        self.ability = []
         self.text = "选择1个效果:将自己的战斗宝可梦与备战宝可梦互换;或在下一个对手的回合结束前，自己的宝可梦使出的招式，对对手战斗宝可梦造成的伤害「+30」点。"
 
     def get_actions(self, state):

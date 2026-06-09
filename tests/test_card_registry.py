@@ -11,15 +11,15 @@ def test_registry_singleton():
 
 
 def test_get_card_by_id():
-    card_class = registry.get("PAF-054")
+    card_class = registry.get("OBF-125")
     assert card_class is not None
-    assert card_class.__name__ == "PAF054CharizardEX"
+    assert card_class.__name__ == "OBF125Charizardex"
 
 
 def test_get_card_by_set_and_number():
-    card_class = registry.get_by_set_and_number("PAF", "054")
+    card_class = registry.get_by_set_and_number("OBF", "125")
     assert card_class is not None
-    assert card_class.__name__ == "PAF054CharizardEX"
+    assert card_class.__name__ == "OBF125Charizardex"
 
 
 def test_get_card_not_found():
@@ -30,7 +30,7 @@ def test_get_card_not_found():
 def test_list_all_cards():
     all_cards = registry.list_all()
     assert len(all_cards) > 0
-    assert "PAF-054" in all_cards
+    assert "OBF-125" in all_cards
 
 
 def test_registry_works_without_database_json(tmp_path, monkeypatch):
@@ -39,7 +39,7 @@ def test_registry_works_without_database_json(tmp_path, monkeypatch):
 
     # The registry should have loaded from the cards directory directly
     assert len(registry.list_all()) > 0
-    assert registry.get("PAF-054") is not None
+    assert registry.get("OBF-125") is not None
 
 
 def test_load_deck_from_file():
@@ -55,7 +55,7 @@ def test_load_deck_from_file():
 
 
 def test_load_deck_from_list():
-    deck_lines = ["4 Charmander PAF 007", "3 Charizard ex PAF 054"]
+    deck_lines = ["4 Charmander PAF 007", "3 Charizard ex OBF 125"]
 
     deck = load_deck(deck_lines)
     assert len(deck.cards) == 7

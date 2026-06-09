@@ -1,8 +1,9 @@
+from ptcg.core.ability import PassiveAbility
 """Brute Bonnet - PAR 123"""
 from ptcg.core.action import AttackAction, EvolvePokemonAction, PlayPokemonAction, RetreatAction
 from ptcg.core.attack import Attack
 from ptcg.core.card import PokemonCard
-from ptcg.core.enums import CardType, PokemonPosition, PokemonRule, PokemonType, Stage
+from ptcg.core.enums import AbilityTrigger, AbilityType, CardType, PokemonPosition, PokemonRule, PokemonType, Stage
 from ptcg.core.reducer import reduce_attack_action, reduce_evolve_pokemon_action, reduce_play_pokemon_action, reduce_retreat_action
 from ptcg.utils.utils import check_energy, opponent_active
 
@@ -28,6 +29,15 @@ class PAR123BruteBonnet(PokemonCard):
         self.energy = []
         self.attachment = []
         self.evolved = []
+        self.ability = [
+            PassiveAbility({
+                "name": "烈毒粉尘",
+                "abilityType": AbilityType.PASSIVE_ABILITY,
+                "abilityTrigger": AbilityTrigger.ATTACKING,
+                "onceUsedPerTurn": False,
+                "text": "对手的战斗宝可梦因这只宝可梦使用招式的伤害而昏厥时，将那只宝可梦身上附着的所有能量丢到弃牌区。"
+            })
+        ]
         self.attacks = [
         Attack({"name": "暴走重锤", "damage": 120, "cost": [CardType.DARK, CardType.DARK, CardType.COLORLESS], "text": "在下一个自己的回合，这只宝可梦无法使用招式。"})
         ]

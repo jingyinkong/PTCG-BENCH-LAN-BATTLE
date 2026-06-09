@@ -1,3 +1,4 @@
+from ptcg.core.ability import InstantAbility
 """Squawkabilly ex - PAF 075"""
 from ptcg.core.action import (
     AttackAction, AttachEnergyAction, EvolvePokemonAction,
@@ -5,7 +6,7 @@ from ptcg.core.action import (
 )
 from ptcg.core.attack import Attack
 from ptcg.core.card import PokemonCard
-from ptcg.core.enums import (
+from ptcg.core.enums import (AbilityTrigger, AbilityType,
     CardPosition, CardType, EnergyType, PokemonPosition,
     PokemonRule, PokemonType, Stage, SuperType
 )
@@ -46,6 +47,15 @@ class PAF075Squawkabillyex(PokemonCard):
         self.energy = []
         self.attachment = []
         self.evolved = []
+        self.ability = [
+            InstantAbility({
+                "name": "英武重抽",
+                "abilityType": AbilityType.INSTANT_ABILITY,
+                "abilityTrigger": AbilityTrigger.OTHER,
+                "onceUsedPerTurn": True,
+                "text": "在最初的自己的回合，从手牌将这张卡放置于备战区时，可使用1次。将自己的手牌全部丢到弃牌区，然后从牌库上方抽6张卡。"
+            })
+        ]
         self.attacks = [
             Attack({
                 "name": "鼓足干劲",

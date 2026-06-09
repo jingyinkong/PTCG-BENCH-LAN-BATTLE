@@ -1,0 +1,15 @@
+{
+  "card_id": "PRE-106",
+  "name": "大地容器",
+  "text_rules": [
+    "将自己的1张手牌丢于弃牌区（若无法丢弃则无法使用）",
+    "选择自己牌库中最多2张基本能量",
+    "在给对手看过之后加入手牌",
+    "并重洗牌库"
+  ],
+  "scenarios": [
+    {"name": "正常：选择丢弃→选2张基本能量→加入手牌", "expected": {"discard_chosen": true, "energies_to_hand": 2, "deck_shuffled": true}},
+    {"name": "边界：手牌只有大地容器自身", "expected": {"cannot_use": true}},
+    {"name": "边界：牌库无基本能量", "expected": {"discard_chosen": true, "energies_to_hand": 0, "deck_shuffled": true}}
+  ]
+}

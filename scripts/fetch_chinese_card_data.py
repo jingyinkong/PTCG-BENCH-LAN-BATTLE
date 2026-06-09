@@ -359,9 +359,11 @@ async def fetch_one(session: aiohttp.ClientSession, card: dict,
         card_index_cn = best_match.get("cardIndex", "")
         cn_name = best_match.get("cardName", "")
 
-        # 翻译攻击和特性名称
+        # 提取完整的攻击和特性详情（名称+伤害+费用+效果文本）
         attacks_cn = []
+        attacks_detail = []
         abilities_cn = []
+        abilities_detail = []
         try:
             pa = best_detail.get("pokemonAttr")
             if isinstance(pa, str):
@@ -369,8 +371,24 @@ async def fetch_one(session: aiohttp.ClientSession, card: dict,
             if pa:
                 for atk in (pa.get("attack") or []):
                     attacks_cn.append(atk.get("name", ""))
+                    dmg = atk.get("damage", "0")
+                    if isinstance(dmg, dict):
+                        dmg_val = dmg
+                    else:
+                        dmg_val = {"amount": int(str(dmg).replace("+","").replace("×","") or "0"), "suffix": str(dmg)}
+                    attacks_detail.append({
+                        "name": atk.get("name", ""),
+                        "damage": dmg_val,
+                        "cost": atk.get("cost", []),
+                        "effect": atk.get("effect", ""),
+                    })
                 for abi in (pa.get("ability") or []):
                     abilities_cn.append(abi.get("name", ""))
+                    abilities_detail.append({
+                        "name": abi.get("name", ""),
+                        "effect": abi.get("effect", ""),
+                        "type": abi.get("type", ""),
+                    })
         except Exception:
             pass
 
@@ -384,8 +402,10 @@ async def fetch_one(session: aiohttp.ClientSession, card: dict,
             "image_url": f"{IMAGE_BASE}/{set_code_cn}/{card_index_cn}.png",
             "attacks_en": [a.get("name", "") for a in (card.get("attacks") or [])],
             "attacks_cn": attacks_cn,
+            "attacks": attacks_detail,
             "abilities_en": [a.get("name", "") for a in (card.get("abilities") or [])],
             "abilities_cn": abilities_cn,
+            "abilities": abilities_detail,
             "hp": card.get("hp"),
             "file": card["file"],
             "match_score": best_score,

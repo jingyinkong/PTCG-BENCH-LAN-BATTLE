@@ -1,0 +1,17 @@
+{
+  "card_id": "SIT-156",
+  "name": "森林封印石",
+  "text_rules": [
+    "附着于宝可梦V（前场或后场均可）",
+    "被附着的宝可梦V可使用VSTAR能力 Star Alchemy",
+    "Star Alchemy: 从牌库搜索任意1张卡加入手牌并重洗",
+    "每局游戏限用1次VSTAR能力",
+    "宝可梦道具规则：每只宝可梦最多附着1张"
+  ],
+  "scenarios": [
+    {"name": "后场附着+使用能力", "expected": {"attach_position": "BENCH_ATTACHMENT", "ability_usable": true, "card_to_hand": 1}},
+    {"name": "前场附着+使用能力", "expected": {"attach_position": "ACTIVE_ATTACHMENT", "ability_usable": true}},
+    {"name": "边界：非V宝可梦不能使用能力", "expected": {"ability_usable": false}},
+    {"name": "边界：VSTAR已用过后不能再用", "expected": {"ability_usable": false}}
+  ]
+}

@@ -1,3145 +1,5014 @@
 {
-  "ASC-192": {
-    "name": "Lillie",
+  "ASC-189": {
+    "name": "玻璃喇叭",
     "set_name": "ASC",
-    "number": "192",
-    "card_type": "Supporter",
-    "img": "https://assets.tcgdex.net/en/me/me02.5/192/high.jpg",
-    "effect": "Shuffle your hand into your deck. Then, draw 6 cards. If you have exactly 6 Prize cards remaining, draw 8 cards instead."
+    "number": "189",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV9C/178.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
-  "ASC-210": {
-    "name": "Team Rocket",
+  "ASC-057": {
+    "name": "皮卡丘ex",
     "set_name": "ASC",
-    "number": "210",
-    "card_type": "Stadium",
-    "img": "https://assets.tcgdex.net/en/me/me02.5/210/high.jpg",
-    "effect": "{C} Pokémon in play (both yours and your opponent's) have no Abilities."
+    "number": "057",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV9C/221.png",
+    "hp": 200,
+    "attacks": [
+      {
+        "name": "黄晶伏特",
+        "damage": {
+          "amount": 300,
+          "suffix": "300"
+        },
+        "cost": "GLM",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "顽强之心",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "黄晶伏特"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "顽强之心"
+    ]
+  },
+  "ASR-113": {
+    "name": "起源帝牙卢卡V",
+    "set_name": "ASR",
+    "number": "113",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVE2C/102.png",
+    "hp": 220,
+    "attacks": [
+      {
+        "name": "金属涂层",
+        "damage": {
+          "amount": 0,
+          "suffix": ""
+        },
+        "cost": "C",
+        "effect": ""
+      },
+      {
+        "name": "时间断绝",
+        "damage": {
+          "amount": 180,
+          "suffix": "180"
+        },
+        "cost": "MMMC",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "金属涂层",
+      "时间断绝"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "ASR-114": {
+    "name": "起源帝牙卢卡VSTAR",
+    "set_name": "ASR",
+    "number": "114",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVE2C/103.png",
+    "hp": 280,
+    "attacks": [
+      {
+        "name": "金属爆破",
+        "damage": {
+          "amount": 40,
+          "suffix": "40+"
+        },
+        "cost": "C",
+        "effect": ""
+      },
+      {
+        "name": "星耀时刻",
+        "damage": {
+          "amount": 220,
+          "suffix": "220"
+        },
+        "cost": "MMMMC",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "金属爆破",
+      "星耀时刻"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "ASR-133": {
+    "name": "智挥猩V",
+    "set_name": "ASR",
+    "number": "133",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CS5bC/150.png",
+    "hp": 210,
+    "attacks": [
+      {
+        "name": "精神强念",
+        "damage": {
+          "amount": 30,
+          "suffix": "30+"
+        },
+        "cost": "CCC",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "预订",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "精神强念"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "预订"
+    ]
+  },
+  "ASR-134": {
+    "name": "诡角鹿V",
+    "set_name": "ASR",
+    "number": "134",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CS5DC/111.png",
+    "hp": 220,
+    "attacks": [
+      {
+        "name": "屏障猛攻",
+        "damage": {
+          "amount": 40,
+          "suffix": "40×"
+        },
+        "cost": "CCC",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "拓荒之路",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "屏障猛攻"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "拓荒之路"
+    ]
+  },
+  "ASR-136": {
+    "name": "清除古龙水",
+    "set_name": "ASR",
+    "number": "136",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSZC/033.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "ASR-141": {
+    "name": "飞羽球",
+    "set_name": "ASR",
+    "number": "141",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/SSP/196.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "ASR-146": {
+    "name": "洗翠的沉重球",
+    "set_name": "ASR",
+    "number": "146",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVE2C/157.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "ASR-147": {
+    "name": "珠贝",
+    "set_name": "ASR",
+    "number": "147",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVE2C/173.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "ASR-150": {
+    "name": "杜娟",
+    "set_name": "ASR",
+    "number": "150",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVE2C/185.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "ASR-152": {
+    "name": "超群眼镜",
+    "set_name": "ASR",
+    "number": "152",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CS5aC/118.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "ASR-156": {
+    "name": "离洞绳",
+    "set_name": "ASR",
+    "number": "156",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSXC/005.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "ASR-039": {
+    "name": "起源帕路奇亚V",
+    "set_name": "ASR",
+    "number": "039",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVE2C/036.png",
+    "hp": 220,
+    "attacks": [
+      {
+        "name": "领域支配",
+        "damage": {
+          "amount": 0,
+          "suffix": ""
+        },
+        "cost": "W",
+        "effect": ""
+      },
+      {
+        "name": "水炮破坏",
+        "damage": {
+          "amount": 200,
+          "suffix": "200"
+        },
+        "cost": "WWC",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "领域支配",
+      "水炮破坏"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "ASR-040": {
+    "name": "起源帕路奇亚VSTAR",
+    "set_name": "ASR",
+    "number": "040",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVE2C/037.png",
+    "hp": 280,
+    "attacks": [
+      {
+        "name": "亚空潮漩",
+        "damage": {
+          "amount": 60,
+          "suffix": "60+"
+        },
+        "cost": "WW",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "星耀空扉",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "亚空潮漩"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "星耀空扉"
+    ]
+  },
+  "ASR-060": {
+    "name": "拉鲁拉丝",
+    "set_name": "ASR",
+    "number": "060",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1bC/005.png",
+    "hp": 70,
+    "attacks": [
+      {
+        "name": "瞬移破坏",
+        "damage": {
+          "amount": 10,
+          "suffix": "10"
+        },
+        "cost": "P",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "瞬移破坏"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "ASR-046": {
     "name": "光辉甲贺忍蛙",
     "set_name": "ASR",
     "number": "046",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1bC-003.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1bC/003.png",
     "hp": 130,
-    "stage": "Basic",
-    "types": [
-      "Water"
-    ],
-    "retreat": 1,
     "attacks": [
       {
-        "name": "Moonlight Shuriken",
-        "cost": [
-          "Water",
-          "Water",
-          "Colorless"
-        ],
+        "name": "月光手里剑",
         "damage": {
           "amount": 0,
           "suffix": ""
         },
-        "effect": "Discard 2 Energy from this Pokémon. This attack does 90 damage to 2 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+        "cost": "WWC",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Concealed Cards",
-        "effect": "You must discard an Energy card from your hand in order to use this Ability. Once during your turn, you may draw 2 cards."
+        "name": "隐藏牌",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "月光手里剑"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "隐藏牌"
     ]
   },
   "ASR-154": {
     "name": "交替推车",
     "set_name": "ASR",
     "number": "154",
-    "card_type": "Item",
-    "img": "/cards/CSVM1cC-008.png",
-    "effect": "Switch your Active Basic Pokémon with 1 of your Benched Pokémon. If you do, heal 30 damage from the Pokémon you moved to your Bench."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1cC/008.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "BRS-121": {
     "name": "大尾狸",
     "set_name": "BRS",
     "number": "121",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVE2pC-019.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVE2pC/019.png",
     "hp": 120,
-    "stage": "Stage1",
-    "types": [
-      "Colorless"
-    ],
-    "evolve_from": "Bidoof",
-    "retreat": 2,
     "attacks": [
       {
-        "name": "Tail Smash",
-        "cost": [
-          "Colorless",
-          "Colorless",
-          "Colorless"
-        ],
+        "name": "长尾粉碎",
         "damage": {
           "amount": 100,
-          "suffix": ""
+          "suffix": "100"
         },
-        "effect": "Flip a coin. If tails, this attack does nothing."
+        "cost": "CCC",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Industrious Incisors",
-        "effect": "Once during your turn, you may draw cards until you have 5 cards in your hand."
+        "name": "勤奋门牙",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "长尾粉碎"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "勤奋门牙"
     ]
+  },
+  "BRS-022": {
+    "name": "炎帝V",
+    "set_name": "BRS",
+    "number": "022",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVE2C/017.png",
+    "hp": 230,
+    "attacks": [
+      {
+        "name": "燃烧回旋曲",
+        "damage": {
+          "amount": 20,
+          "suffix": "20+"
+        },
+        "cost": "RC",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "瞬步",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "燃烧回旋曲"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "瞬步"
+    ]
+  },
+  "BRS-045": {
+    "name": "雷丘V",
+    "set_name": "BRS",
+    "number": "045",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1cC/002.png",
+    "hp": 200,
+    "attacks": [
+      {
+        "name": "快速充能",
+        "damage": {
+          "amount": 0,
+          "suffix": ""
+        },
+        "cost": "L",
+        "effect": ""
+      },
+      {
+        "name": "强劲电光",
+        "damage": {
+          "amount": 60,
+          "suffix": "60×"
+        },
+        "cost": "LL",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "快速充能",
+      "强劲电光"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "BRS-137": {
     "name": "崩塌的竞技场",
     "set_name": "BRS",
     "number": "137",
-    "card_type": "Stadium",
-    "img": "/cards/CSVM1bC-031.png",
-    "effect": "Each player can't have more than 4 Benched Pokémon. If a player has 5 or more Benched Pokémon, they discard Benched Pokémon until they have 4 Pokémon on the Bench. The player who played this card discards first. If more than one effect changes the number of Benched Pokémon allowed, use the smaller number."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1bC/031.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "BRS-151": {
     "name": "双重涡轮能量",
     "set_name": "BRS",
     "number": "151",
-    "card_type": "Special Energy",
-    "img": "/cards/CSVM1cC-028.png",
-    "effect": "As long as this card is attached to a Pokémon, it provides ColorlessColorless Energy.\nThe attacks of the Pokémon this card is attached to do 20 less damage to your opponent's Pokémon (before applying Weakness and Resistance)."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1cC/028.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "BRS-040": {
     "name": "霓虹鱼V",
     "set_name": "BRS",
     "number": "040",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1bC-001.png",
-    "tags": [
-      "V"
-    ],
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1bC/001.png",
     "hp": 170,
-    "stage": "Basic",
-    "types": [
-      "Water"
-    ],
-    "retreat": 1,
     "attacks": [
       {
-        "name": "Aqua Return",
-        "cost": [
-          "Water",
-          "Colorless",
-          "Colorless"
-        ],
+        "name": "水流回转",
         "damage": {
           "amount": 120,
-          "suffix": ""
+          "suffix": "120"
         },
-        "effect": "Shuffle this Pokémon and all attached cards into your deck."
+        "cost": "WCC",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Luminous Sign",
-        "effect": "When you play this Pokémon from your hand onto your Bench during your turn, you may search your deck for a Supporter card, reveal it, and put it into your hand. Then, shuffle your deck."
+        "name": "夜光信号",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "水流回转"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "夜光信号"
     ]
   },
   "BRS-041": {
     "name": "玛纳霏",
     "set_name": "BRS",
     "number": "041",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1bC-002.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1bC/002.png",
     "hp": 70,
-    "stage": "Basic",
-    "types": [
-      "Water"
-    ],
-    "retreat": 1,
     "attacks": [
       {
-        "name": "Rain Splash",
-        "cost": [
-          "Water"
-        ],
+        "name": "泼水",
         "damage": {
           "amount": 20,
-          "suffix": ""
-        }
+          "suffix": "20"
+        },
+        "cost": "W",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Wave Veil",
-        "effect": "Prevent all damage done to your Benched Pokémon by attacks from your opponent's Pokémon."
+        "name": "浪花水帘",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "泼水"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "浪花水帘"
     ]
   },
   "BRS-124": {
     "name": "泡沫栗鼠",
     "set_name": "BRS",
     "number": "124",
-    "card_type": "Pokémon",
-    "img": "/cards/CBB4C-1501.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CBB4C/1501.png",
     "hp": 60,
-    "stage": "Basic",
-    "types": [
-      "Colorless"
-    ],
-    "retreat": 1,
     "attacks": [
       {
-        "name": "Call for Family",
-        "cost": [
-          "Colorless"
-        ],
+        "name": "敲打",
+        "damage": {
+          "amount": 10,
+          "suffix": "10"
+        },
+        "cost": "C",
+        "effect": ""
+      },
+      {
+        "name": "扫除",
         "damage": {
           "amount": 0,
           "suffix": ""
         },
-        "effect": "Search your deck for up to 2 Basic Pokémon and put them onto your Bench. Then, shuffle your deck."
-      },
-      {
-        "name": "Pound",
-        "cost": [
-          "Colorless"
-        ],
-        "damage": {
-          "amount": 10,
-          "suffix": ""
-        }
+        "cost": "CC",
+        "effect": ""
       }
-    ]
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "敲打",
+      "扫除"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "BRS-158": {
     "name": "雷丘V",
     "set_name": "BRS",
     "number": "158",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1cC-002.png",
-    "tags": [
-      "V"
-    ],
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1cC/002.png",
     "hp": 200,
-    "stage": "Basic",
-    "types": [
-      "Lightning"
-    ],
-    "retreat": 1,
     "attacks": [
       {
-        "name": "Fast Charge",
-        "cost": [
-          "Lightning"
-        ],
+        "name": "快速充能",
         "damage": {
           "amount": 0,
           "suffix": ""
         },
-        "effect": "If you go first, you can use this attack during your first turn. Search your deck for a Lightning Energy card and attach it to this Pokémon. Then, shuffle your deck."
+        "cost": "L",
+        "effect": ""
       },
       {
-        "name": "Dynamic Spark",
-        "cost": [
-          "Lightning",
-          "Lightning"
-        ],
+        "name": "强劲电光",
         "damage": {
           "amount": 60,
-          "suffix": "×"
+          "suffix": "60×"
         },
-        "effect": "You may discard any amount of Lightning Energy from your Pokémon. This attack does 60 damage for each card you discarded in this way."
+        "cost": "LL",
+        "effect": ""
       }
-    ]
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "快速充能",
+      "强劲电光"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "BRS-048": {
     "name": "雷公V",
     "set_name": "BRS",
     "number": "048",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1cC-004.png",
-    "tags": [
-      "V"
-    ],
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1cC/004.png",
     "hp": 200,
-    "stage": "Basic",
-    "types": [
-      "Lightning"
-    ],
-    "retreat": 1,
     "attacks": [
       {
-        "name": "Lightning Rondo",
-        "cost": [
-          "Lightning",
-          "Colorless"
-        ],
+        "name": "雷电回旋曲",
         "damage": {
           "amount": 20,
-          "suffix": "+"
+          "suffix": "20+"
         },
-        "effect": "This attack does 20 more damage for each Benched Pokémon (both yours and your opponent's)."
+        "cost": "LC",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Fleet-Footed",
-        "effect": "Once during your turn, if this Pokémon is in the Active Spot, you may draw a card."
+        "name": "瞬步",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "雷电回旋曲"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "瞬步"
     ]
+  },
+  "CES-129": {
+    "name": "能量转移",
+    "set_name": "CES",
+    "number": "129",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/SVP/293.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "CIN-091": {
+    "name": "反击捕捉器",
+    "set_name": "CIN",
+    "number": "091",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4aC/008.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "CRZ-111": {
     "name": "大牙狸",
     "set_name": "CRZ",
     "number": "111",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVE1C-096.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVE1C/096.png",
     "hp": 60,
-    "stage": "Basic",
-    "types": [
-      "Colorless"
-    ],
-    "retreat": 1,
     "attacks": [
       {
-        "name": "Hyper Fang",
-        "cost": [
-          "Colorless",
-          "Colorless"
-        ],
+        "name": "终结门牙",
         "damage": {
           "amount": 30,
-          "suffix": ""
+          "suffix": "30"
         },
-        "effect": "Flip a coin. If tails, this attack does nothing."
+        "cost": "CC",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Carefree Countenance",
-        "effect": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's)."
+        "name": "毫不在意",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "终结门牙"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "毫不在意"
     ]
   },
   "CRZ-127": {
     "name": "能量回收",
     "set_name": "CRZ",
     "number": "127",
-    "card_type": "Item",
-    "img": "/cards/SVP-235.png",
-    "effect": "Put up to 2 basic Energy cards from your discard pile into your hand."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/SVP/235.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "CRZ-135": {
     "name": "放逐吸尘器",
     "set_name": "CRZ",
     "number": "135",
-    "card_type": "Item",
-    "img": "/cards/CSVM1cC-015.png",
-    "effect": "You can use this card only if you put another card from your hand in the Lost Zone.\nChoose a Pokémon Tool attached to any Pokémon, or any Stadium in play, and put it in the Lost Zone."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1cC/015.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "CRZ-020": {
     "name": "光辉喷火龙",
     "set_name": "CRZ",
     "number": "020",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1aC-003.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1aC/003.png",
     "hp": 160,
-    "stage": "Basic",
-    "types": [
-      "Fire"
-    ],
-    "retreat": 3,
     "attacks": [
       {
-        "name": "Combustion Blast",
-        "cost": [
-          "Fire",
-          "Colorless",
-          "Colorless",
-          "Colorless",
-          "Colorless"
-        ],
+        "name": "炎爆",
         "damage": {
           "amount": 250,
-          "suffix": ""
+          "suffix": "250"
         },
-        "effect": "During your next turn, this Pokémon can't use Combustion Blast."
+        "cost": "RCCCC",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Excited Heart",
-        "effect": "This Pokémon's attacks cost Colorless less for each Prize card your opponent has taken."
+        "name": "振奋之心",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "炎爆"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "振奋之心"
     ]
   },
   "CRZ-045": {
     "name": "洛托姆V",
     "set_name": "CRZ",
     "number": "045",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1aC-005.png",
-    "tags": [
-      "V"
-    ],
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1aC/005.png",
     "hp": 190,
-    "stage": "Basic",
-    "types": [
-      "Lightning"
-    ],
-    "retreat": 1,
     "attacks": [
       {
-        "name": "Scrap Short",
-        "cost": [
-          "Lightning",
-          "Lightning"
-        ],
+        "name": "废品短路",
         "damage": {
           "amount": 40,
-          "suffix": "+"
+          "suffix": "40+"
         },
-        "effect": "Put any number of Pokémon Tool cards from your discard pile in the Lost Zone. This attack does 40 more damage for each card you put in the Lost Zone in this way."
+        "cost": "LL",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Instant Charge",
-        "effect": "Once during your turn, you may draw 3 cards. If you use this Ability, your turn ends."
+        "name": "快速充电",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "废品短路"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "快速充电"
     ]
   },
-  "JTG-056": {
-    "name": "Lillie",
-    "set_name": "JTG",
-    "number": "056",
-    "card_type": "Pokémon",
-    "img": "https://assets.tcgdex.net/en/sv/sv09/056/high.jpg",
-    "tags": [
-      "ex"
-    ],
-    "hp": 190,
-    "stage": "Basic",
-    "types": [
-      "Psychic"
-    ],
-    "retreat": 1,
-    "attacks": [
-      {
-        "name": "Full Moon Rondo",
-        "cost": [
-          "Psychic",
-          "Colorless"
-        ],
-        "damage": {
-          "amount": 20,
-          "suffix": "+"
-        },
-        "effect": "This attack does 20 more damage for each Benched Pokémon (both yours and your opponent's)."
-      }
-    ],
-    "abilities": [
-      {
-        "name": "Fairy Zone",
-        "effect": "The Weakness of each of your opponent's {N} Pokémon in play is now {P}. (Apply Weakness as ×2.)"
-      }
-    ]
+  "FLI-108": {
+    "name": "裁判",
+    "set_name": "FLI",
+    "number": "108",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/048.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "GRI-122": {
+    "name": "能量签",
+    "set_name": "GRI",
+    "number": "122",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH3C/036.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "LOR-171": {
     "name": "馈赠能量",
     "set_name": "LOR",
     "number": "171",
-    "card_type": "Special Energy",
-    "img": "/cards/CSVE2C-202.png",
-    "effect": "As long as this card is attached to a Pokémon, it provides Colorless Energy.\nIf the Pokémon this card is attached to is Knocked Out by damage from an attack from your opponent's Pokémon, draw cards until you have 7 cards in your hand."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVE2C/202.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "LOR-123": {
+    "name": "光辉洗翠 大狃拉",
+    "set_name": "LOR",
+    "number": "123",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CS5aC/079.png",
+    "hp": 130,
+    "attacks": [
+      {
+        "name": "毒击",
+        "damage": {
+          "amount": 90,
+          "suffix": "90"
+        },
+        "cost": "DCC",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "巅峰毒性",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "毒击"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "巅峰毒性"
+    ]
+  },
+  "LOR-131": {
+    "name": "骑拉帝纳VSTAR",
+    "set_name": "LOR",
+    "number": "131",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CS6bC/164.png",
+    "hp": 280,
+    "attacks": [
+      {
+        "name": "放逐冲击",
+        "damage": {
+          "amount": 280,
+          "suffix": "280"
+        },
+        "cost": "GPC",
+        "effect": ""
+      },
+      {
+        "name": "星耀安魂曲",
+        "damage": {
+          "amount": 0,
+          "suffix": ""
+        },
+        "cost": "GP",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "放逐冲击",
+      "星耀安魂曲"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "LOR-136": {
+    "name": "洗翠 黏美龙VSTAR",
+    "set_name": "LOR",
+    "number": "136",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CS5.5C/053.png",
+    "hp": 270,
+    "attacks": [
+      {
+        "name": "钢铁滚动",
+        "damage": {
+          "amount": 200,
+          "suffix": "200"
+        },
+        "cost": "WMC",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "润泽星耀",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "钢铁滚动"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "润泽星耀"
+    ]
+  },
+  "LOR-167": {
+    "name": "捩木",
+    "set_name": "LOR",
+    "number": "167",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVE2C/189.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "LOR-058": {
+    "name": "洛托姆V",
+    "set_name": "LOR",
+    "number": "058",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1aC/005.png",
+    "hp": 190,
+    "attacks": [
+      {
+        "name": "废品短路",
+        "damage": {
+          "amount": 40,
+          "suffix": "40+"
+        },
+        "cost": "LL",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "快速充电",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "废品短路"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "快速充电"
+    ]
   },
   "LOR-143": {
     "name": "卡比兽",
     "set_name": "LOR",
     "number": "143",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVE2C-122.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVE2C/122.png",
     "hp": 150,
-    "stage": "Basic",
-    "types": [
-      "Colorless"
-    ],
-    "retreat": 4,
     "attacks": [
       {
-        "name": "Thumping Snore",
-        "cost": [
-          "Colorless",
-          "Colorless",
-          "Colorless"
-        ],
+        "name": "轰隆鼾声",
         "damage": {
           "amount": 180,
-          "suffix": ""
+          "suffix": "180"
         },
-        "effect": "This Pokémon is now Asleep. During Pokémon Checkup, flip 2 coins instead of 1. If either of them is tails, this Pokémon is still Asleep."
+        "cost": "CCC",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Unfazed Fat",
-        "effect": "Prevent all effects of attacks from your opponent's Pokémon done to this Pokémon. (Damage is not an effect.)"
+        "name": "无畏脂肪",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "轰隆鼾声"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "无畏脂肪"
+    ]
+  },
+  "MEW-132": {
+    "name": "百变怪",
+    "set_name": "MEW",
+    "number": "132",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4aC/002.png",
+    "hp": 60,
+    "attacks": [
+      {
+        "name": "粘粑粑",
+        "damage": {
+          "amount": 10,
+          "suffix": "10"
+        },
+        "cost": "C",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "变身启动",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "粘粑粑"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "变身启动"
     ]
   },
   "MEW-151": {
     "name": "梦幻ex",
     "set_name": "MEW",
     "number": "151",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1bC-004.png",
-    "tags": [
-      "ex"
-    ],
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1bC/004.png",
     "hp": 180,
-    "stage": "Basic",
-    "types": [
-      "Psychic"
-    ],
-    "retreat": 0,
     "attacks": [
       {
-        "name": "Genome Hacking",
-        "cost": [
-          "Colorless",
-          "Colorless",
-          "Colorless"
-        ],
+        "name": "基因侵入",
         "damage": {
           "amount": 0,
           "suffix": ""
         },
-        "effect": "Choose 1 of your opponent's Active Pokémon's attacks and use it as this attack."
+        "cost": "CCC",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Restart",
-        "effect": "Once during your turn, you may draw cards until you have 3 cards in your hand."
+        "name": "再起动",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "基因侵入"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "再起动"
     ]
   },
   "MEW-017": {
     "name": "比比鸟",
     "set_name": "MEW",
     "number": "017",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1aC-009.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1aC/009.png",
     "hp": 80,
-    "stage": "Stage1",
-    "types": [
-      "Colorless"
-    ],
-    "evolve_from": "Pidgey",
-    "retreat": 0,
     "attacks": [
       {
-        "name": "Flap",
-        "cost": [
-          "Colorless"
-        ],
+        "name": "振翅",
         "damage": {
           "amount": 20,
-          "suffix": ""
-        }
+          "suffix": "20"
+        },
+        "cost": "C",
+        "effect": ""
       }
-    ]
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "振翅"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "MEW-016": {
     "name": "波波",
     "set_name": "MEW",
     "number": "016",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1aC-008.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1aC/008.png",
     "hp": 50,
-    "stage": "Basic",
-    "types": [
-      "Colorless"
-    ],
-    "retreat": 1,
     "attacks": [
       {
-        "name": "Call for Family",
-        "cost": [
-          "Colorless"
-        ],
+        "name": "呼朋引伴",
         "damage": {
           "amount": 0,
           "suffix": ""
         },
-        "effect": "Search your deck for up to 2 Basic Pokémon and put them onto your Bench. Then, shuffle your deck."
+        "cost": "C",
+        "effect": ""
       },
       {
-        "name": "Tackle",
-        "cost": [
-          "Colorless",
-          "Colorless"
-        ],
+        "name": "撞击",
         "damage": {
           "amount": 20,
-          "suffix": ""
-        }
+          "suffix": "20"
+        },
+        "cost": "CC",
+        "effect": ""
       }
-    ]
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "呼朋引伴",
+      "撞击"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "MEW-165": {
     "name": "坚硬束带",
     "set_name": "MEW",
     "number": "165",
-    "card_type": "Pokémon Tool",
-    "img": "/cards/CSVE2C-166.png",
-    "effect": "The Stage 1 Pokémon this card is attached to takes 30 less damage from attacks from your opponent's Pokémon (after applying Weakness and Resistance)."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVE2C/166.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "MEW-123": {
     "name": "飞天螳螂",
     "set_name": "MEW",
     "number": "123",
-    "card_type": "Pokémon",
-    "img": "/cards/151C-123.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/151C/123.png",
     "hp": 70,
-    "stage": "Basic",
-    "types": [
-      "Grass"
-    ],
-    "retreat": 0,
     "attacks": [
       {
-        "name": "Helpful Slash",
-        "cost": [
-          "Grass"
-        ],
+        "name": "辅助斩",
         "damage": {
           "amount": 20,
-          "suffix": ""
+          "suffix": "20"
         },
-        "effect": "Attach a Basic {G} Energy card from your discard pile to 1 of your Benched Pokémon."
+        "cost": "G",
+        "effect": ""
       },
       {
-        "name": "Slicing Blade",
-        "cost": [
-          "Grass",
-          "Colorless",
-          "Colorless"
-        ],
+        "name": "薄片利刃",
         "damage": {
           "amount": 70,
-          "suffix": ""
-        }
+          "suffix": "70"
+        },
+        "cost": "GCC",
+        "effect": ""
       }
-    ]
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "辅助斩",
+      "薄片利刃"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "OBF-186": {
     "name": "派帕",
     "set_name": "OBF",
     "number": "186",
-    "card_type": "Supporter",
-    "img": "/cards/SVP-207.png",
-    "effect": "Search your deck for an Item card and a Pokémon Tool card, reveal them, and put them into your hand. Then, shuffle your deck."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/SVP/207.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "OBF-026": {
     "name": "小火龙",
     "set_name": "OBF",
     "number": "026",
-    "card_type": "Pokémon",
-    "img": "/cards/SVP-098.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/SVP/098.png",
     "hp": 60,
-    "stage": "Basic",
-    "types": [
-      "Fire"
-    ],
-    "retreat": 1,
     "attacks": [
       {
-        "name": "Heat Tackle",
-        "cost": [
-          "Fire"
-        ],
+        "name": "高温冲撞",
         "damage": {
           "amount": 30,
-          "suffix": ""
+          "suffix": "30"
         },
-        "effect": "This Pokémon also does 10 damage to itself."
+        "cost": "R",
+        "effect": ""
       }
-    ]
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "高温冲撞"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "OBF-080": {
     "name": "皮宝宝",
     "set_name": "OBF",
     "number": "080",
-    "card_type": "Pokémon",
-    "img": "/cards/SVP-211.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/SVP/211.png",
     "hp": 30,
-    "stage": "Basic",
-    "types": [
-      "Psychic"
-    ],
-    "retreat": 0,
     "attacks": [
       {
-        "name": "Grasping Draw",
-        "cost": [],
+        "name": "握握抽取",
         "damage": {
           "amount": 0,
           "suffix": ""
         },
-        "effect": "Draw cards until you have 7 cards in your hand."
+        "cost": "0",
+        "effect": ""
       }
-    ]
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "握握抽取"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "OBF-189": {
     "name": "鼓励信",
     "set_name": "OBF",
     "number": "189",
-    "card_type": "Item",
-    "img": "/cards/CSVH4aC-010.png",
-    "effect": "You can use this card only if any of your Pokémon were Knocked Out during your opponent's last turn.\n\nSearch your deck for up to 3 Basic Energy cards, reveal them, and put them into your hand. Then, shuffle your deck."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4aC/010.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "OBF-125": {
+    "name": "喷火龙ex",
+    "set_name": "OBF",
+    "number": "125",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1aC/006.png",
+    "hp": 330,
+    "attacks": [
+      {
+        "name": "燃烧黑暗",
+        "damage": {
+          "amount": 180,
+          "suffix": "180+"
+        },
+        "cost": "RR",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "烈炎支配",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "燃烧黑暗"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "烈炎支配"
+    ]
+  },
+  "OBF-162": {
+    "name": "波波",
+    "set_name": "OBF",
+    "number": "162",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV4C/099.png",
+    "hp": 60,
+    "attacks": [
+      {
+        "name": "起风",
+        "damage": {
+          "amount": 20,
+          "suffix": "20"
+        },
+        "cost": "C",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "起风"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "OBF-202": {
+    "name": "皮宝宝",
+    "set_name": "OBF",
+    "number": "202",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/SVP/211.png",
+    "hp": 30,
+    "attacks": [
+      {
+        "name": "握握抽取",
+        "damage": {
+          "amount": 0,
+          "suffix": ""
+        },
+        "cost": "0",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "握握抽取"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "OBF-205": {
+    "name": "巨钳螳螂",
+    "set_name": "OBF",
+    "number": "205",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVL2C/085.png",
+    "hp": 140,
+    "attacks": [
+      {
+        "name": "惩罚巨钳",
+        "damage": {
+          "amount": 10,
+          "suffix": "10+"
+        },
+        "cost": "M",
+        "effect": ""
+      },
+      {
+        "name": "居合劈",
+        "damage": {
+          "amount": 70,
+          "suffix": "70"
+        },
+        "cost": "MM",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "惩罚巨钳",
+      "居合劈"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "OBF-164": {
     "name": "大比鸟ex",
     "set_name": "OBF",
     "number": "164",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1aC-010.png",
-    "tags": [
-      "ex"
-    ],
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1aC/010.png",
     "hp": 280,
-    "stage": "Stage2",
-    "types": [
-      "Colorless"
-    ],
-    "evolve_from": "Pidgeotto",
-    "retreat": 0,
     "attacks": [
       {
-        "name": "Blustery Wind",
-        "cost": [
-          "Colorless",
-          "Colorless"
-        ],
+        "name": "狂风呼啸",
         "damage": {
           "amount": 120,
-          "suffix": ""
+          "suffix": "120"
         },
-        "effect": "You may discard a Stadium in play."
+        "cost": "CC",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Quick Search",
-        "effect": "Once during your turn, you may search your deck for a card and put it into your hand. Then, shuffle your deck. You can't use more than 1 Quick Search Ability each turn."
+        "name": "音速搜索",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "狂风呼啸"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "音速搜索"
     ]
   },
   "OBF-141": {
     "name": "巨钳螳螂",
     "set_name": "OBF",
     "number": "141",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVL2C-085.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVL2C/085.png",
     "hp": 140,
-    "stage": "Stage1",
-    "types": [
-      "Metal"
-    ],
-    "evolve_from": "Scyther",
-    "retreat": 2,
     "attacks": [
       {
-        "name": "Punishing Scissors",
-        "cost": [
-          "Metal"
-        ],
+        "name": "惩罚巨钳",
         "damage": {
           "amount": 10,
-          "suffix": "+"
+          "suffix": "10+"
         },
-        "effect": "This attack does 50 more damage for each of your opponent's Pokémon in play that has an Ability."
+        "cost": "M",
+        "effect": ""
       },
       {
-        "name": "Cut",
-        "cost": [
-          "Metal",
-          "Metal"
-        ],
+        "name": "居合劈",
         "damage": {
           "amount": 70,
-          "suffix": ""
-        }
+          "suffix": "70"
+        },
+        "cost": "MM",
+        "effect": ""
       }
-    ]
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "惩罚巨钳",
+      "居合劈"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "OBF-196": {
     "name": "城镇百货",
     "set_name": "OBF",
     "number": "196",
-    "card_type": "Stadium",
-    "img": "/cards/CSVM1cC-027.png",
-    "effect": "Once during each player's turn, that player may search their deck for a Pokémon Tool card, reveal it, and put it into their hand. Then, that player shuffles their deck."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1cC/027.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "PAF-054": {
     "name": "喷火龙ex",
     "set_name": "PAF",
     "number": "054",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1aC-006.png",
-    "tags": [
-      "ex"
-    ],
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1aC/006.png",
     "hp": 330,
-    "stage": "Stage2",
-    "types": [
-      "Darkness"
-    ],
-    "evolve_from": "Charmeleon",
-    "retreat": 2,
     "attacks": [
       {
-        "name": "Burning Darkness",
-        "cost": [
-          "Fire",
-          "Fire"
-        ],
+        "name": "燃烧黑暗",
         "damage": {
           "amount": 180,
-          "suffix": "+"
+          "suffix": "180+"
         },
-        "effect": "This attack does 30 more damage for each Prize card your opponent has taken."
+        "cost": "RR",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Infernal Reign",
-        "effect": "When you play this Pokémon from your hand to evolve 1 of your Pokémon during your turn, you may search your deck for up to 3 Basic {R} Energy cards and attach them to your Pokémon in any way you like. Then, shuffle your deck."
+        "name": "烈炎支配",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "燃烧黑暗"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "烈炎支配"
     ]
   },
   "PAF-007": {
     "name": "小火龙",
     "set_name": "PAF",
     "number": "007",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1aC-001.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1aC/001.png",
     "hp": 70,
-    "stage": "Basic",
-    "types": [
-      "Fire"
-    ],
-    "retreat": 1,
     "attacks": [
       {
-        "name": "Blazing Destruction",
-        "cost": [
-          "Fire"
-        ],
+        "name": "烧光",
         "damage": {
           "amount": 0,
           "suffix": ""
         },
-        "effect": "Discard a Stadium in play."
+        "cost": "R",
+        "effect": ""
       },
       {
-        "name": "Steady Firebreathing",
-        "cost": [
-          "Fire",
-          "Fire"
-        ],
+        "name": "吐火",
         "damage": {
           "amount": 30,
-          "suffix": ""
-        }
+          "suffix": "30"
+        },
+        "cost": "RR",
+        "effect": ""
       }
-    ]
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "烧光",
+      "吐火"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "PAF-008": {
     "name": "火恐龙",
     "set_name": "PAF",
     "number": "008",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1aC-002.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1aC/002.png",
     "hp": 90,
-    "stage": "Stage1",
-    "types": [
-      "Fire"
-    ],
-    "evolve_from": "Charmander",
-    "retreat": 2,
     "attacks": [
       {
-        "name": "Combustion",
-        "cost": [
-          "Fire",
-          "Fire"
-        ],
+        "name": "烈焰",
         "damage": {
           "amount": 50,
-          "suffix": ""
-        }
+          "suffix": "50"
+        },
+        "cost": "RR",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Flare Veil",
-        "effect": "Prevent all effects of attacks used by your opponent's Pokémon done to this Pokémon. (Damage is not an effect.)"
+        "name": "闪焰之幕",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "烈焰"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "闪焰之幕"
     ]
   },
   "PAF-080": {
     "name": "奇树",
     "set_name": "PAF",
     "number": "080",
-    "card_type": "Supporter",
-    "img": "/cards/CSVH4aC-021.png",
-    "effect": "Each player shuffles their hand and puts it on the bottom of their deck. If either player put any cards on the bottom of their deck in this way, each player draws a card for each of their remaining Prize cards."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4aC/021.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "PAF-084": {
     "name": "巢穴球",
     "set_name": "PAF",
     "number": "084",
-    "card_type": "Item",
-    "img": "/cards/CSVH4C-036.png",
-    "effect": "Search your deck for a Basic Pokémon and put it onto your Bench. Then, shuffle your deck."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/036.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "PAF-075": {
+    "name": "怒鹦哥ex",
+    "set_name": "PAF",
+    "number": "075",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1cC/007.png",
+    "hp": 160,
+    "attacks": [
+      {
+        "name": "鼓足干劲",
+        "damage": {
+          "amount": 20,
+          "suffix": "20"
+        },
+        "cost": "C",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "英武重抽",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "鼓足干劲"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "英武重抽"
+    ]
+  },
+  "PAF-079": {
+    "name": "电气发生器",
+    "set_name": "PAF",
+    "number": "079",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1cC/010.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "PAF-081": {
+    "name": "月光之丘",
+    "set_name": "PAF",
+    "number": "081",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1bC/032.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "PAF-087": {
     "name": "博士的研究",
     "set_name": "PAF",
     "number": "087",
-    "card_type": "Supporter",
-    "img": "/cards/CSVH4eC-047.png",
-    "effect": "Discard your hand and draw 7 cards."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4eC/047.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "PAF-027": {
     "name": "拉鲁拉丝",
     "set_name": "PAF",
     "number": "027",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1bC-005.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1bC/005.png",
     "hp": 70,
-    "stage": "Basic",
-    "types": [
-      "Psychic"
-    ],
-    "retreat": 1,
     "attacks": [
       {
-        "name": "Psyshot",
-        "cost": [
-          "Psychic",
-          "Colorless"
-        ],
+        "name": "瞬移破坏",
         "damage": {
-          "amount": 30,
-          "suffix": ""
-        }
+          "amount": 10,
+          "suffix": "10"
+        },
+        "cost": "P",
+        "effect": ""
       }
-    ]
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "瞬移破坏"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "PAF-089": {
     "name": "神奇糖果",
     "set_name": "PAF",
     "number": "089",
-    "card_type": "Item",
-    "img": "/cards/CSVH4C-038.png",
-    "effect": "Choose 1 of your Basic Pokémon in play. If you have a Stage 2 card in your hand that evolves from that Pokémon, put that card onto the Basic Pokémon to evolve it, skipping the Stage 1. You can't use this card during your first turn or on a Basic Pokémon that was put into play this turn."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/038.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "PAF-091": {
     "name": "高级球",
     "set_name": "PAF",
     "number": "091",
-    "card_type": "Item",
-    "img": "/cards/CSVH4C-037.png",
-    "effect": "You can use this card only if you discard 2 other cards from your hand.\n\nSearch your deck for a Pokémon, reveal it, and put it into your hand. Then, shuffle your deck."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/037.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "PAL-171": {
     "name": "深钵镇",
     "set_name": "PAL",
     "number": "171",
-    "card_type": "Stadium",
-    "img": "/cards/CSVM1bC-033.png",
-    "effect": "Once during each player's turn, that player may search their deck for a Basic Pokémon that doesn't have a Rule Box and put it onto their Bench. Then, that player shuffles their deck. (Pokémon ex, Pokémon V, etc. have Rule Boxes.)"
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1bC/033.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "PAL-265": {
     "name": "老大的指令",
     "set_name": "PAL",
     "number": "265",
-    "card_type": "Supporter",
-    "img": "/cards/CSVH4aC-022.png",
-    "effect": "Switch in 1 of your opponent's Benched Pokémon to the Active Spot."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4aC/022.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "PAL-173": {
     "name": "勇气护符",
     "set_name": "PAL",
     "number": "173",
-    "card_type": "Pokémon Tool",
-    "img": "/cards/SVP-295.png",
-    "effect": "The Basic Pokémon this card is attached to gets +50 HP."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/SVP/295.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "PAL-183": {
     "name": "超级球",
     "set_name": "PAL",
     "number": "183",
-    "card_type": "Item",
-    "img": "/cards/CSVH4C-032.png",
-    "effect": "Look at the top 7 cards of your deck. You may reveal a Pokémon you find there and put it into your hand. Shuffle the other cards back into your deck."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/032.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "PAL-190": {
     "name": "喷射能量",
     "set_name": "PAL",
     "number": "190",
-    "card_type": "Special Energy",
-    "img": "/cards/CSV8C-263.png",
-    "effect": "As long as this card is attached to a Pokémon, it provides {C} Energy.\n\nWhen you attach this card from your hand to 1 of your Benched Pokémon, switch that Pokémon with your Active Pokémon."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV8C/263.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "PAL-156": {
+    "name": "土龙弟弟",
+    "set_name": "PAL",
+    "number": "156",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH3aC/002.png",
+    "hp": 60,
+    "attacks": [
+      {
+        "name": "找朋友",
+        "damage": {
+          "amount": 0,
+          "suffix": ""
+        },
+        "cost": "C",
+        "effect": ""
+      },
+      {
+        "name": "咬住",
+        "damage": {
+          "amount": 50,
+          "suffix": "50"
+        },
+        "cost": "CCC",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "找朋友",
+      "咬住"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "PAL-185": {
+    "name": "奇树",
+    "set_name": "PAL",
+    "number": "185",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4aC/021.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "PAL-264": {
     "name": "怒鹦哥ex",
     "set_name": "PAL",
     "number": "264",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1cC-007.png",
-    "tags": [
-      "ex"
-    ],
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1cC/007.png",
     "hp": 160,
-    "stage": "Basic",
-    "types": [
-      "Colorless"
-    ],
-    "retreat": 1,
     "attacks": [
       {
-        "name": "Motivate",
-        "cost": [
-          "Colorless"
-        ],
+        "name": "鼓足干劲",
         "damage": {
           "amount": 20,
-          "suffix": ""
+          "suffix": "20"
         },
-        "effect": "Attach up to 2 Basic Energy cards from your discard pile to 1 of your Benched Pokémon."
+        "cost": "C",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Squawk and Seize",
-        "effect": "Once during your first turn, you may discard your hand and draw 6 cards. You can't use more than 1 Squawk and Seize Ability during your turn."
+        "name": "英武重抽",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "鼓足干劲"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "英武重抽"
     ]
   },
   "PAL-188": {
     "name": "厉害钓竿",
     "set_name": "PAL",
     "number": "188",
-    "card_type": "Item",
-    "img": "/cards/CSVH4C-033.png",
-    "effect": "Shuffle up to 3 in any combination of Pokémon and Basic Energy cards from your discard pile into your deck."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/033.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "PAL-189": {
     "name": "超级能量回收",
     "set_name": "PAL",
     "number": "189",
-    "card_type": "Item",
-    "img": "/cards/SVP-236.png",
-    "effect": "You can use this card only if you discard 2 other cards from your hand.\n\nPut up to 4 Basic Energy cards from your discard pile into your hand. (You can't choose a card you discarded with the effect of this card.)"
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/SVP/236.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "PAL-193": {
     "name": "治疗能量",
     "set_name": "PAL",
     "number": "193",
-    "card_type": "Special Energy",
-    "img": "/cards/CSVE2C-204.png",
-    "effect": "As long as this card is attached to a Pokémon, it provides {C} Energy.\n\nThe Pokémon this card is attached to recovers from being Asleep, Confused, or Paralyzed and can't be affected by those Special Conditions."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVE2C/204.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "PAR-160": {
     "name": "反击捕捉器",
     "set_name": "PAR",
     "number": "160",
-    "card_type": "Item",
-    "img": "/cards/CSVH4aC-008.png",
-    "effect": "You can use this card only if you have more Prize cards remaining than your opponent.\n\nSwitch in 1 of your opponent's Benched Pokémon to the Active Spot."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4aC/008.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "PAR-163": {
     "name": "大地容器",
     "set_name": "PAR",
     "number": "163",
-    "card_type": "Item",
-    "img": "/cards/CSVH4C-034.png",
-    "effect": "You can use this card only if you discard another card from your hand.\n\nSearch your deck for up to 2 Basic Energy cards, reveal them, and put them into your hand. Then, shuffle your deck."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/034.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "PAR-139": {
     "name": "赛富豪ex",
     "set_name": "PAR",
     "number": "139",
-    "card_type": "Pokémon",
-    "img": "/cards/CSV4C-089.png",
-    "tags": [
-      "ex"
-    ],
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV4C/089.png",
     "hp": 260,
-    "stage": "Stage1",
-    "types": [
-      "Metal"
-    ],
-    "evolve_from": "Gimmighoul",
-    "retreat": 2,
     "attacks": [
       {
-        "name": "Make It Rain",
-        "cost": [
-          "Metal"
-        ],
+        "name": "淘金潮",
         "damage": {
           "amount": 50,
-          "suffix": "×"
+          "suffix": "50×"
         },
-        "effect": "Discard any number of Basic Energy cards from your hand. This attack does 50 damage for each card you discarded in this way."
+        "cost": "M",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Coin Bonus",
-        "effect": "Once during your turn, you may draw a card. If this Pokémon is in the Active Spot, draw 1 more card."
+        "name": "嘉奖硬币",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "淘金潮"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "嘉奖硬币"
     ]
   },
   "PAR-088": {
     "name": "索财灵",
     "set_name": "PAR",
     "number": "088",
-    "card_type": "Pokémon",
-    "img": "/cards/CSV4C-063.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV4C/063.png",
     "hp": 70,
-    "stage": "Basic",
-    "types": [
-      "Psychic"
-    ],
-    "retreat": 2,
     "attacks": [
       {
-        "name": "Continuous Coin Toss",
-        "cost": [
-          "Colorless"
-        ],
+        "name": "连掷硬币",
         "damage": {
           "amount": 20,
-          "suffix": "×"
+          "suffix": "20×"
         },
-        "effect": "Flip a coin until you get tails. This attack does 20 damage for each heads."
+        "cost": "C",
+        "effect": ""
       }
-    ]
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "连掷硬币"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "PAR-056": {
     "name": "铁包袱",
     "set_name": "PAR",
     "number": "056",
-    "card_type": "Pokémon",
-    "img": "/cards/SVP-232.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/SVP/232.png",
     "hp": 100,
-    "stage": "Basic",
-    "types": [
-      "Water"
-    ],
-    "retreat": 1,
     "attacks": [
       {
-        "name": "Refrigerated Stream",
-        "cost": [
-          "Water",
-          "Colorless",
-          "Colorless"
-        ],
+        "name": "冷却喷射",
         "damage": {
           "amount": 80,
-          "suffix": ""
+          "suffix": "80"
         },
-        "effect": "If the Defending Pokémon is an Evolution Pokémon, it can't attack during your opponent's next turn."
+        "cost": "WCC",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Hyper Blower",
-        "effect": "Once during your turn, if this Pokémon is on your Bench, you may switch out your opponent's Active Pokémon to the Bench. (Your opponent chooses the new Active Pokémon.) If you do, discard this Pokémon and all attached cards."
+        "name": "强力吹风机",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "冷却喷射"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "强力吹风机"
     ]
   },
   "PAR-248": {
     "name": "铁臂膀ex",
     "set_name": "PAR",
     "number": "248",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1cC-005.png",
-    "tags": [
-      "ex"
-    ],
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1cC/005.png",
     "hp": 230,
-    "stage": "Basic",
-    "types": [
-      "Lightning"
-    ],
-    "retreat": 4,
     "attacks": [
       {
-        "name": "Arm Press",
-        "cost": [
-          "Lightning",
-          "Lightning",
-          "Colorless"
-        ],
+        "name": "臂膀压制",
         "damage": {
           "amount": 160,
-          "suffix": ""
-        }
+          "suffix": "160"
+        },
+        "cost": "LLC",
+        "effect": ""
       },
       {
-        "name": "Amp You Very Much",
-        "cost": [
-          "Lightning",
-          "Colorless",
-          "Colorless",
-          "Colorless"
-        ],
+        "name": "多谢款待",
         "damage": {
           "amount": 120,
-          "suffix": ""
+          "suffix": "120"
         },
-        "effect": "If your opponent's Pokémon is Knocked Out by damage from this attack, take 1 more Prize card."
+        "cost": "LCCC",
+        "effect": ""
       }
-    ]
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "臂膀压制",
+      "多谢款待"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "PAR-126": {
     "name": "基拉祈",
     "set_name": "PAR",
     "number": "126",
-    "card_type": "Pokémon",
-    "img": "/cards/SVP-215.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/SVP/215.png",
     "hp": 70,
-    "stage": "Basic",
-    "types": [
-      "Metal"
-    ],
-    "retreat": 1,
     "attacks": [
       {
-        "name": "Charge Energy",
-        "cost": [
-          "Colorless"
-        ],
+        "name": "能量充填",
         "damage": {
           "amount": 0,
           "suffix": ""
         },
-        "effect": "Search your deck for up to 2 Basic Energy cards, reveal them, and put them into your hand. Then, shuffle your deck."
+        "cost": "C",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Stellar Veil",
-        "effect": "Prevent all damage counters from being placed on your Benched Pokémon by effects of attacks used by your opponent's Basic Pokémon."
+        "name": "恒星之幕",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "能量充填"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "恒星之幕"
     ]
   },
   "PAR-166": {
     "name": "豪华斗篷",
     "set_name": "PAR",
     "number": "166",
-    "card_type": "Pokémon Tool",
-    "img": "/cards/CSVM1bC-023.png",
-    "effect": "If the Pokémon this card is attached to doesn't have a Rule Box, it gets +100 HP, and if it is Knocked Out by damage from an attack from your opponent's Pokémon, that player takes 1 more Prize card. (Pokémon ex, Pokémon V, etc. have Rule Boxes.)"
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1bC/023.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "PAR-105": {
+    "name": "毛崖蟹",
+    "set_name": "PAR",
+    "number": "105",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV6C/080.png",
+    "hp": 120,
+    "attacks": [
+      {
+        "name": "歇斯底里巨钳",
+        "damage": {
+          "amount": 30,
+          "suffix": "30+"
+        },
+        "cost": "CC",
+        "effect": ""
+      },
+      {
+        "name": "沸腾压制",
+        "damage": {
+          "amount": 80,
+          "suffix": "80"
+        },
+        "cost": "FF",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "歇斯底里巨钳",
+      "沸腾压制"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "PAR-107": {
+    "name": "爬地翅",
+    "set_name": "PAR",
+    "number": "107",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV6C/082.png",
+    "hp": 140,
+    "attacks": [
+      {
+        "name": "踏平",
+        "damage": {
+          "amount": 0,
+          "suffix": ""
+        },
+        "cost": "F",
+        "effect": ""
+      },
+      {
+        "name": "烫伤怒涛",
+        "damage": {
+          "amount": 120,
+          "suffix": "120"
+        },
+        "cost": "FF",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "踏平",
+      "烫伤怒涛"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "PAR-123": {
+    "name": "猛恶菇",
+    "set_name": "PAR",
+    "number": "123",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV6C/095.png",
+    "hp": 120,
+    "attacks": [
+      {
+        "name": "暴走重锤",
+        "damage": {
+          "amount": 120,
+          "suffix": "120"
+        },
+        "cost": "DDC",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "烈毒粉尘",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "暴走重锤"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "烈毒粉尘"
+    ]
+  },
+  "PAR-159": {
+    "name": "驱劲能量 古代",
+    "set_name": "PAR",
+    "number": "159",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/SVP/256.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "PAR-170": {
+    "name": "奥琳博士的气魄",
+    "set_name": "PAR",
+    "number": "170",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/046.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "PAR-177": {
+    "name": "招式学习器 退化",
+    "set_name": "PAR",
+    "number": "177",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1aC/024.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "PAR-257": {
     "name": "弗图博士的剧本",
     "set_name": "PAR",
     "number": "257",
-    "card_type": "Supporter",
-    "img": "/cards/CSVH4C-057.png",
-    "effect": "Put 1 of your Pokémon in play into your hand. (Discard all cards attached to that Pokémon.)"
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/057.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "PAR-086": {
     "name": "吼叫尾",
     "set_name": "PAR",
     "number": "086",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVH4C-009.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/009.png",
     "hp": 90,
-    "stage": "Basic",
-    "types": [
-      "Psychic"
-    ],
-    "retreat": 1,
     "attacks": [
       {
-        "name": "Slap",
-        "cost": [
-          "Psychic"
-        ],
-        "damage": {
-          "amount": 30,
-          "suffix": ""
-        }
-      },
-      {
-        "name": "Roaring Scream",
-        "cost": [
-          "Psychic",
-          "Colorless"
-        ],
+        "name": "歌唱激励",
         "damage": {
           "amount": 0,
           "suffix": ""
         },
-        "effect": "This attack does 20 damage to 1 of your opponent's Pokémon for each damage counter on this Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+        "cost": "C",
+        "effect": ""
+      },
+      {
+        "name": "巨声",
+        "damage": {
+          "amount": 40,
+          "suffix": "40"
+        },
+        "cost": "CC",
+        "effect": ""
       }
-    ]
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "歌唱激励",
+      "巨声"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "PAR-178": {
     "name": "招式学习器 进化",
     "set_name": "PAR",
     "number": "178",
-    "card_type": "Pokémon Tool",
-    "img": "/cards/CSVM1bC-025.png",
-    "effect": "The Pokémon this card is attached to can use the attack on this card. (You still need the necessary Energy to use this attack.) If this card is attached to 1 of your Pokémon, discard it at the end of your turn."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1bC/025.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "PGO-029": {
     "name": "闪电鸟",
     "set_name": "PGO",
     "number": "029",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1cC-003.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1cC/003.png",
     "hp": 120,
-    "stage": "Basic",
-    "types": [
-      "Lightning"
-    ],
-    "retreat": 2,
     "attacks": [
       {
-        "name": "Electric Ball",
-        "cost": [
-          "Lightning",
-          "Lightning",
-          "Colorless"
-        ],
+        "name": "雷电球",
         "damage": {
           "amount": 110,
-          "suffix": ""
-        }
+          "suffix": "110"
+        },
+        "cost": "LLC",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Lightning Symbol",
-        "effect": "Your Basic Lightning Pokémon's attacks, except any Zapdos, do 10 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance)."
+        "name": "电气象征",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "雷电球"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "电气象征"
     ]
   },
   "PRE-043": {
     "name": "振翼发",
     "set_name": "PRE",
     "number": "043",
-    "card_type": "Pokémon",
-    "img": "/cards/CBB4C-2801.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CBB4C/2801.png",
     "hp": 90,
-    "stage": "Basic",
-    "types": [
-      "Psychic"
-    ],
-    "retreat": 1,
     "attacks": [
       {
-        "name": "Hex Hurl",
-        "cost": [
-          "Colorless",
-          "Colorless",
-          "Colorless"
-        ],
+        "name": "飞来横祸",
         "damage": {
           "amount": 90,
-          "suffix": ""
+          "suffix": "90"
         },
-        "effect": "Put 2 damage counters on your opponent's Benched Pokémon in any way you like."
+        "cost": "CCC",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Midnight Fluttering",
-        "effect": "As long as this Pokémon is in the Active Spot, your opponent's Active Pokémon has no Abilities, except for Midnight Fluttering."
+        "name": "暗夜振翼",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "飞来横祸"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "暗夜振翼"
     ]
+  },
+  "PRE-100": {
+    "name": "白蕾雅",
+    "set_name": "PRE",
+    "number": "100",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV9C/239.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "PRE-101": {
+    "name": "友好宝芬",
+    "set_name": "PRE",
+    "number": "101",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/SVP/196.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "PRE-106": {
+    "name": "大地容器",
+    "set_name": "PRE",
+    "number": "106",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/034.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "PRE-119": {
+    "name": "顶尖捕捉器",
+    "set_name": "PRE",
+    "number": "119",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV7C/180.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "PRE-121": {
+    "name": "弗图博士的剧本",
+    "set_name": "PRE",
+    "number": "121",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/057.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "PRE-128": {
+    "name": "宝可梦旋风回收机",
+    "set_name": "PRE",
+    "number": "128",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV8C/181.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "PRE-031": {
+    "name": "铁臂膀ex",
+    "set_name": "PRE",
+    "number": "031",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1cC/005.png",
+    "hp": 230,
+    "attacks": [
+      {
+        "name": "臂膀压制",
+        "damage": {
+          "amount": 160,
+          "suffix": "160"
+        },
+        "cost": "LLC",
+        "effect": ""
+      },
+      {
+        "name": "多谢款待",
+        "damage": {
+          "amount": 120,
+          "suffix": "120"
+        },
+        "cost": "LCCC",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "臂膀压制",
+      "多谢款待"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "PRE-035": {
+    "name": "夜巡灵",
+    "set_name": "PRE",
+    "number": "035",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV8C/081.png",
+    "hp": 60,
+    "attacks": [
+      {
+        "name": "渡魂",
+        "damage": {
+          "amount": 0,
+          "suffix": ""
+        },
+        "cost": "P",
+        "effect": ""
+      },
+      {
+        "name": "喃喃自语",
+        "damage": {
+          "amount": 30,
+          "suffix": "30"
+        },
+        "cost": "PP",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "渡魂",
+      "喃喃自语"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "PRE-042": {
+    "name": "吼叫尾",
+    "set_name": "PRE",
+    "number": "042",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1bC/011.png",
+    "hp": 90,
+    "attacks": [
+      {
+        "name": "巴掌",
+        "damage": {
+          "amount": 30,
+          "suffix": "30"
+        },
+        "cost": "P",
+        "effect": ""
+      },
+      {
+        "name": "凶暴吼叫",
+        "damage": {
+          "amount": 0,
+          "suffix": ""
+        },
+        "cost": "PC",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "巴掌",
+      "凶暴吼叫"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "PRE-073": {
+    "name": "多龙巴鲁托ex",
+    "set_name": "PRE",
+    "number": "073",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV8C/159.png",
+    "hp": 320,
+    "attacks": [
+      {
+        "name": "喷射头击",
+        "damage": {
+          "amount": 70,
+          "suffix": "70"
+        },
+        "cost": "C",
+        "effect": ""
+      },
+      {
+        "name": "幻影潜袭",
+        "damage": {
+          "amount": 200,
+          "suffix": "200"
+        },
+        "cost": "RP",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "喷射头击",
+      "幻影潜袭"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "RCL-154": {
+    "name": "老大的指令",
+    "set_name": "RCL",
+    "number": "154",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4aC/022.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SCR-114": {
+    "name": "咕咕",
+    "set_name": "SCR",
+    "number": "114",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV9C/154.png",
+    "hp": 70,
+    "attacks": [
+      {
+        "name": "三刺击",
+        "damage": {
+          "amount": 10,
+          "suffix": "10×"
+        },
+        "cost": "C",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "三刺击"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SCR-115": {
+    "name": "猫头夜鹰",
+    "set_name": "SCR",
+    "number": "115",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV9C/155.png",
+    "hp": 100,
+    "attacks": [
+      {
+        "name": "高速之翼",
+        "damage": {
+          "amount": 60,
+          "suffix": "60"
+        },
+        "cost": "CC",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "寻找宝石",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "高速之翼"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "寻找宝石"
+    ]
+  },
+  "SCR-118": {
+    "name": "旋转洛托姆",
+    "set_name": "SCR",
+    "number": "118",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV9C/161.png",
+    "hp": 70,
+    "attacks": [
+      {
+        "name": "突击登陆",
+        "damage": {
+          "amount": 70,
+          "suffix": "70"
+        },
+        "cost": "C",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "风扇呼唤",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "突击登陆"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "风扇呼唤"
+    ]
+  },
+  "SCR-119": {
+    "name": "爆炸头水牛",
+    "set_name": "SCR",
+    "number": "119",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV9C/162.png",
+    "hp": 100,
+    "attacks": [
+      {
+        "name": "潜力",
+        "damage": {
+          "amount": 130,
+          "suffix": "130"
+        },
+        "cost": "CCC",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "卷曲厚壁",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "潜力"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "卷曲厚壁"
+    ]
+  },
+  "SCR-128": {
+    "name": "太乐巴戈斯ex",
+    "set_name": "SCR",
+    "number": "128",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV9C/232.png",
+    "hp": 230,
+    "attacks": [
+      {
+        "name": "同盟打击",
+        "damage": {
+          "amount": 30,
+          "suffix": "30×"
+        },
+        "cost": "CC",
+        "effect": ""
+      },
+      {
+        "name": "皇冠蛋白石",
+        "damage": {
+          "amount": 180,
+          "suffix": "180"
+        },
+        "cost": "GWL",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "同盟打击",
+      "皇冠蛋白石"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SCR-131": {
+    "name": "零之大空洞",
+    "set_name": "SCR",
+    "number": "131",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV9C/266.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "SFA-092": {
     "name": "吉雉鸡ex",
     "set_name": "SFA",
     "number": "092",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVNC-027.png",
-    "tags": [
-      "ex"
-    ],
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVNC/027.png",
     "hp": 210,
-    "stage": "Basic",
-    "types": [
-      "Darkness"
-    ],
-    "retreat": 1,
     "attacks": [
       {
-        "name": "Cruel Arrow",
-        "cost": [
-          "Colorless",
-          "Colorless",
-          "Colorless"
-        ],
+        "name": "残忍箭矢",
         "damage": {
           "amount": 0,
           "suffix": ""
         },
-        "effect": "This attack does 100 damage to 1 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+        "cost": "CCC",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Flip the Script",
-        "effect": "Once during your turn, if any of your Pokémon were Knocked Out during your opponent's last turn, you may draw 3 cards. You can't use more than 1 Flip the Script Ability each turn."
+        "name": "化危为吉",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "残忍箭矢"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "化危为吉"
     ]
   },
   "SFA-061": {
     "name": "夜间担架",
     "set_name": "SFA",
     "number": "061",
-    "card_type": "Item",
-    "img": "/cards/CSV9C-263.png",
-    "effect": "Put a Pokémon or a Basic Energy card from your discard pile into your hand."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV9C/263.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SFA-019": {
+    "name": "彷徨夜灵",
+    "set_name": "SFA",
+    "number": "019",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV8C/082.png",
+    "hp": 90,
+    "attacks": [
+      {
+        "name": "磷火",
+        "damage": {
+          "amount": 50,
+          "suffix": "50"
+        },
+        "cost": "PP",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "咒怨炸弹",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "磷火"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "咒怨炸弹"
+    ]
+  },
+  "SFA-020": {
+    "name": "黑夜魔灵",
+    "set_name": "SFA",
+    "number": "020",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV8C/083.png",
+    "hp": 160,
+    "attacks": [
+      {
+        "name": "影子束缚",
+        "damage": {
+          "amount": 150,
+          "suffix": "150"
+        },
+        "cost": "PPC",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "咒怨炸弹",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "影子束缚"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "咒怨炸弹"
+    ]
+  },
+  "SFA-038": {
+    "name": "吉雉鸡ex",
+    "set_name": "SFA",
+    "number": "038",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVNC/027.png",
+    "hp": 210,
+    "attacks": [
+      {
+        "name": "残忍箭矢",
+        "damage": {
+          "amount": 0,
+          "suffix": ""
+        },
+        "cost": "CCC",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "化危为吉",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "残忍箭矢"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "化危为吉"
+    ]
+  },
+  "SFA-039": {
+    "name": "桃歹郎ex",
+    "set_name": "SFA",
+    "number": "039",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVNC/029.png",
+    "hp": 190,
+    "attacks": [
+      {
+        "name": "焦躁爆破",
+        "damage": {
+          "amount": 60,
+          "suffix": "60×"
+        },
+        "cost": "DD",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支配锁链",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "焦躁爆破"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "支配锁链"
+    ]
+  },
+  "SFA-040": {
+    "name": "盖诺赛克特",
+    "set_name": "SFA",
+    "number": "040",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV9C/133.png",
+    "hp": 110,
+    "attacks": [
+      {
+        "name": "磁力爆破",
+        "damage": {
+          "amount": 100,
+          "suffix": "100"
+        },
+        "cost": "MCC",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "ACE消除器",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "磁力爆破"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "ACE消除器"
+    ]
+  },
+  "SFA-047": {
+    "name": "酋雷姆",
+    "set_name": "SFA",
+    "number": "047",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV9C/147.png",
+    "hp": 130,
+    "attacks": [
+      {
+        "name": "三重冰霜",
+        "damage": {
+          "amount": 0,
+          "suffix": ""
+        },
+        "cost": "WWMMC",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "反等离子",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "三重冰霜"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "反等离子"
+    ]
+  },
+  "SFA-055": {
+    "name": "锁链粘糕",
+    "set_name": "SFA",
+    "number": "055",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVNC/033.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SFA-057": {
+    "name": "阿克罗玛的执念",
+    "set_name": "SFA",
+    "number": "057",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV8C/191.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "SIT-147": {
     "name": "始祖大鸟",
     "set_name": "SIT",
     "number": "147",
-    "card_type": "Pokémon",
-    "img": "/cards/CSZC-025.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSZC/025.png",
     "hp": 150,
-    "stage": "Stage2",
-    "types": [
-      "Colorless"
-    ],
-    "evolve_from": "Archen",
-    "retreat": 1,
     "attacks": [
       {
-        "name": "Speed Wing",
-        "cost": [
-          "Colorless",
-          "Colorless",
-          "Colorless"
-        ],
+        "name": "高速之翼",
         "damage": {
           "amount": 120,
-          "suffix": ""
-        }
+          "suffix": "120"
+        },
+        "cost": "CCC",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Primal Turbo",
-        "effect": "Once during your turn, you may search your deck for up to 2 Special Energy cards and attach them to 1 of your Pokémon. Then, shuffle your deck."
+        "name": "原始涡轮",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "高速之翼"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "原始涡轮"
     ]
   },
   "SIT-153": {
     "name": "捕获香氛",
     "set_name": "SIT",
     "number": "153",
-    "card_type": "Item",
-    "img": "/cards/CSVH2aC-008.png",
-    "effect": "Flip a coin. If heads, search your deck for an Evolution Pokémon, reveal it, and put it into your hand. If tails, search your deck for a Basic Pokémon, reveal it, and put it into your hand. Then, shuffle your deck."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH2aC/008.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "SIT-156": {
     "name": "森林封印石",
     "set_name": "SIT",
     "number": "156",
-    "card_type": "Pokémon Tool",
-    "img": "/cards/CSVM1cC-020.png",
-    "effect": "The Pokémon V this card is attached to can use the VSTAR Power on this card.\nStar Alchemy\nDuring your turn, you may search your deck for a card and put it into your hand. Then, shuffle your deck. (You can't use more than 1 VSTAR Power in a game.)"
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1cC/020.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "SIT-068": {
     "name": "奇鲁莉安",
     "set_name": "SIT",
     "number": "068",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1bC-006.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1bC/006.png",
     "hp": 80,
-    "stage": "Stage1",
-    "types": [
-      "Psychic"
-    ],
-    "evolve_from": "Ralts",
-    "retreat": 2,
     "attacks": [
       {
-        "name": "Slap",
-        "cost": [
-          "Psychic",
-          "Colorless"
-        ],
+        "name": "巴掌",
         "damage": {
           "amount": 30,
-          "suffix": ""
-        }
+          "suffix": "30"
+        },
+        "cost": "PC",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Refinement",
-        "effect": "You must discard a card from your hand in order to use this Ability. Once during your turn, you may draw 2 cards."
+        "name": "精炼",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "巴掌"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "精炼"
     ]
   },
   "SIT-138": {
     "name": "洛奇亚V",
     "set_name": "SIT",
     "number": "138",
-    "card_type": "Pokémon",
-    "img": "/cards/CS6aC-102.png",
-    "tags": [
-      "V"
-    ],
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CS6aC/102.png",
     "hp": 220,
-    "stage": "Basic",
-    "types": [
-      "Colorless"
-    ],
-    "retreat": 2,
     "attacks": [
       {
-        "name": "Read the Wind",
-        "cost": [
-          "Colorless"
-        ],
+        "name": "读风",
         "damage": {
           "amount": 0,
           "suffix": ""
         },
-        "effect": "Discard a card from your hand. If you do, draw 3 cards."
+        "cost": "C",
+        "effect": ""
       },
       {
-        "name": "Aero Dive",
-        "cost": [
-          "Colorless",
-          "Colorless",
-          "Colorless",
-          "Colorless"
-        ],
+        "name": "气旋俯冲",
         "damage": {
           "amount": 130,
-          "suffix": ""
+          "suffix": "130"
         },
-        "effect": "You may discard a Stadium in play."
+        "cost": "CCCC",
+        "effect": ""
       }
-    ]
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "读风",
+      "气旋俯冲"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "SIT-139": {
     "name": "洛奇亚VSTAR",
     "set_name": "SIT",
     "number": "139",
-    "card_type": "Pokémon",
-    "img": "/cards/CSZC-020.png",
-    "tags": [
-      "V"
-    ],
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSZC/020.png",
     "hp": 280,
-    "stage": "VSTAR",
-    "types": [
-      "Colorless"
-    ],
-    "evolve_from": "Lugia V",
-    "retreat": 2,
     "attacks": [
       {
-        "name": "Tempest Dive",
-        "cost": [
-          "Colorless",
-          "Colorless",
-          "Colorless",
-          "Colorless"
-        ],
+        "name": "风暴俯冲",
         "damage": {
           "amount": 220,
-          "suffix": ""
+          "suffix": "220"
         },
-        "effect": "You may discard a Stadium in play."
+        "cost": "CCCC",
+        "effect": ""
       }
+    ],
+    "abilities": [
+      {
+        "name": "星耀汇聚",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "风暴俯冲"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "星耀汇聚"
     ]
   },
   "SIT-164": {
     "name": "莎莉娜",
     "set_name": "SIT",
     "number": "164",
-    "card_type": "Supporter",
-    "img": "/cards/CSVE1C-152.png",
-    "effect": "Choose 1:\n• Discard up to 3 cards from your hand. (You must discard at least 1 card.) If you do, draw cards until you have 5 cards in your hand.\n• Switch 1 of your opponent's Benched Pokémon V with their Active Pokémon."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVE1C/152.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SIT-135": {
+    "name": "雷吉铎拉戈V",
+    "set_name": "SIT",
+    "number": "135",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CS6.5C/054.png",
+    "hp": 220,
+    "attacks": [
+      {
+        "name": "天之呐喊",
+        "damage": {
+          "amount": 0,
+          "suffix": ""
+        },
+        "cost": "C",
+        "effect": ""
+      },
+      {
+        "name": "巨龙镭射",
+        "damage": {
+          "amount": 130,
+          "suffix": "130"
+        },
+        "cost": "GGR",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "天之呐喊",
+      "巨龙镭射"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SIT-136": {
+    "name": "雷吉铎拉戈VSTAR",
+    "set_name": "SIT",
+    "number": "136",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CS6.5C/055.png",
+    "hp": 280,
+    "attacks": [
+      {
+        "name": "巨龙无双",
+        "damage": {
+          "amount": 0,
+          "suffix": ""
+        },
+        "cost": "GGR",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "星耀遗产",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "巨龙无双"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "星耀遗产"
+    ]
   },
   "SIT-169": {
     "name": "V防守能量",
     "set_name": "SIT",
     "number": "169",
-    "card_type": "Special Energy",
-    "img": "/cards/CS6.5C-072.png",
-    "effect": "As long as this card is attached to a Pokémon, it provides Colorless Energy.\nThe Pokémon this card is attached to takes 30 less damage from attacks from your opponent's Pokémon V (after applying Weakness and Resistance). This effect can't be applied more than once at a time to the same Pokémon."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CS6.5C/072.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SLG-068": {
+    "name": "高级球",
+    "set_name": "SLG",
+    "number": "068",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/037.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SP-294": {
+    "name": "洗翠 顽皮雷弹V",
+    "set_name": "SP",
+    "number": "294",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CS5.5C/003.png",
+    "hp": 210,
+    "attacks": [
+      {
+        "name": "暴躁炸弹",
+        "damage": {
+          "amount": 100,
+          "suffix": "100×"
+        },
+        "cost": "0",
+        "effect": ""
+      },
+      {
+        "name": "日光射击",
+        "damage": {
+          "amount": 120,
+          "suffix": "120"
+        },
+        "cost": "GC",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "暴躁炸弹",
+      "日光射击"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SSH-178": {
+    "name": "博士的研究",
+    "set_name": "SSH",
+    "number": "178",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4eC/047.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SSH-185": {
+    "name": "活力头带",
+    "set_name": "SSH",
+    "number": "185",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/042.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SSP-116": {
+    "name": "故勒顿",
+    "set_name": "SSP",
+    "number": "116",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV9C/112.png",
+    "hp": 130,
+    "attacks": [
+      {
+        "name": "波状猛攻",
+        "damage": {
+          "amount": 30,
+          "suffix": "30+"
+        },
+        "cost": "CC",
+        "effect": ""
+      },
+      {
+        "name": "头突",
+        "damage": {
+          "amount": 110,
+          "suffix": "110"
+        },
+        "cost": "FFC",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "波状猛攻",
+      "头突"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SSP-129": {
+    "name": "铝钢龙",
+    "set_name": "SSP",
+    "number": "129",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV9C/136.png",
+    "hp": 130,
+    "attacks": [
+      {
+        "name": "正面对决",
+        "damage": {
+          "amount": 50,
+          "suffix": "50"
+        },
+        "cost": "MM",
+        "effect": ""
+      },
+      {
+        "name": "铝钢光束",
+        "damage": {
+          "amount": 130,
+          "suffix": "130"
+        },
+        "cost": "MMM",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "正面对决",
+      "铝钢光束"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SSP-130": {
+    "name": "铝钢桥龙ex",
+    "set_name": "SSP",
+    "number": "130",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV9C/227.png",
+    "hp": 300,
+    "attacks": [
+      {
+        "name": "金属防卫",
+        "damage": {
+          "amount": 220,
+          "suffix": "220"
+        },
+        "cost": "MMM",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "合金建设",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "金属防卫"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "合金建设"
+    ]
+  },
+  "SSP-185": {
+    "name": "贵重推车",
+    "set_name": "SSP",
+    "number": "185",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV9C/186.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SSP-059": {
+    "name": "三合一磁怪",
+    "set_name": "SSP",
+    "number": "059",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV9C/056.png",
+    "hp": 100,
+    "attacks": [
+      {
+        "name": "雷电球",
+        "damage": {
+          "amount": 40,
+          "suffix": "40"
+        },
+        "cost": "LC",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "过量放电",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "雷电球"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "过量放电"
+    ]
+  },
+  "SSP-076": {
+    "name": "拉帝亚斯ex",
+    "set_name": "SSP",
+    "number": "076",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV9C/223.png",
+    "hp": 210,
+    "attacks": [
+      {
+        "name": "无限之刃",
+        "damage": {
+          "amount": 200,
+          "suffix": "200"
+        },
+        "cost": "PPC",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "天际线",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "无限之刃"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "天际线"
+    ]
+  },
+  "SUM-116": {
+    "name": "能量回收",
+    "set_name": "SUM",
+    "number": "116",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/SVP/235.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SUM-123": {
+    "name": "巢穴球",
+    "set_name": "SUM",
+    "number": "123",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/036.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SUM-126": {
+    "name": "宝可梦捕捉器",
+    "set_name": "SUM",
+    "number": "126",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/040.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SUM-129": {
+    "name": "神奇糖果",
+    "set_name": "SUM",
+    "number": "129",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/038.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SUM-132": {
+    "name": "宝可梦交替",
+    "set_name": "SUM",
+    "number": "132",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/SVP/294.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "SVE-007": {
     "name": "基本恶能量",
     "set_name": "SVE",
     "number": "007",
-    "card_type": "Special Energy",
-    "img": "/cards/CSVH4pC-DAR.png"
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4pC/DAR.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "SVE-002": {
     "name": "基本火能量",
     "set_name": "SVE",
     "number": "002",
-    "card_type": "Special Energy",
-    "img": "/cards/CSVH4C-FIR.png"
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/FIR.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "SVE-004": {
     "name": "基本雷能量",
     "set_name": "SVE",
     "number": "004",
-    "card_type": "Special Energy",
-    "img": "/cards/CSVH4C-LIG.png"
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/LIG.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "SVE-008": {
     "name": "基本钢能量",
     "set_name": "SVE",
     "number": "008",
-    "card_type": "Special Energy",
-    "img": "/cards/CSVH4C-MET.png"
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/MET.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "SVE-005": {
     "name": "基本超能量",
     "set_name": "SVE",
     "number": "005",
-    "card_type": "Special Energy",
-    "img": "/cards/CSVH4C-PSY.png"
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/PSY.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SVE-001": {
+    "name": "基本草能量",
+    "set_name": "SVE",
+    "number": "001",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/GRA.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SVE-003": {
+    "name": "基本水能量",
+    "set_name": "SVE",
+    "number": "003",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4pC/WAT.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SVE-006": {
+    "name": "基本斗能量",
+    "set_name": "SVE",
+    "number": "006",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/FIG.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "SVI-169": {
     "name": "不服输头带",
     "set_name": "SVI",
     "number": "169",
-    "card_type": "Pokémon Tool",
-    "img": "/cards/CSVH4C-045.png",
-    "effect": "If you have more Prize cards remaining than your opponent, the attacks of the Pokémon this card is attached to do 30 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance)."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/045.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "SVI-170": {
     "name": "电气发生器",
     "set_name": "SVI",
     "number": "170",
-    "card_type": "Item",
-    "img": "/cards/CSVM1cC-010.png",
-    "effect": "Look at the top 5 cards of your deck and attach up to 2 Basic {L} Energy cards you find there to your Benched {L} Pokémon in any way you like. Shuffle the other cards back into your deck."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1cC/010.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "SVI-086": {
     "name": "沙奈朵ex",
     "set_name": "SVI",
     "number": "086",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1bC-007.png",
-    "tags": [
-      "ex"
-    ],
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1bC/007.png",
     "hp": 310,
-    "stage": "Stage2",
-    "types": [
-      "Psychic"
-    ],
-    "evolve_from": "Kirlia",
-    "retreat": 2,
     "attacks": [
       {
-        "name": "Miracle Force",
-        "cost": [
-          "Psychic",
-          "Psychic",
-          "Colorless"
-        ],
+        "name": "奇迹之力",
         "damage": {
           "amount": 190,
-          "suffix": ""
+          "suffix": "190"
         },
-        "effect": "This Pokémon recovers from all Special Conditions."
+        "cost": "PPC",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Psychic Embrace",
-        "effect": "As often as you like during your turn, you may attach a Basic {P} Energy card from your discard pile to 1 of your {P} Pokémon. If you attached Energy to a Pokémon in this way, put 2 damage counters on that Pokémon. You can't use this Ability on a Pokémon that would be Knocked Out."
+        "name": "精神拥抱",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "奇迹之力"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "精神拥抱"
     ]
   },
   "SVI-175": {
     "name": "吉尼亚",
     "set_name": "SVI",
     "number": "175",
-    "card_type": "Supporter",
-    "img": "/cards/SVP-296.png",
-    "effect": "Search your deck for up to 2 Evolution Pokémon, reveal them, and put them into your hand. Then, shuffle your deck."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/SVP/296.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "SVI-253": {
     "name": "密勒顿ex",
     "set_name": "SVI",
     "number": "253",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVH4C-024.png",
-    "tags": [
-      "ex"
-    ],
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/024.png",
     "hp": 220,
-    "stage": "Basic",
-    "types": [
-      "Lightning"
-    ],
-    "retreat": 1,
     "attacks": [
       {
-        "name": "Photon Blaster",
-        "cost": [
-          "Lightning",
-          "Lightning",
-          "Colorless"
-        ],
+        "name": "排斥伏特",
+        "damage": {
+          "amount": 60,
+          "suffix": "60+"
+        },
+        "cost": "LP",
+        "effect": ""
+      },
+      {
+        "name": "异度猛冲",
         "damage": {
           "amount": 220,
+          "suffix": "220"
+        },
+        "cost": "LPC",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "排斥伏特",
+      "异度猛冲"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SVI-166": {
+    "name": "阿克罗玛的实验",
+    "set_name": "SVI",
+    "number": "166",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSXC/015.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SVI-178": {
+    "name": "桌台市",
+    "set_name": "SVI",
+    "number": "178",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVE1C/168.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SVI-183": {
+    "name": "皮拿",
+    "set_name": "SVI",
+    "number": "183",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV3C/125.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SVI-063": {
+    "name": "小磁怪",
+    "set_name": "SVI",
+    "number": "063",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV1C/042.png",
+    "hp": 60,
+    "attacks": [
+      {
+        "name": "互斥",
+        "damage": {
+          "amount": 0,
           "suffix": ""
         },
-        "effect": "During your next turn, this Pokémon can't attack."
+        "cost": "C",
+        "effect": ""
+      },
+      {
+        "name": "电球",
+        "damage": {
+          "amount": 10,
+          "suffix": "10"
+        },
+        "cost": "L",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "互斥",
+      "电球"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SVI-081": {
+    "name": "密勒顿ex",
+    "set_name": "SVI",
+    "number": "081",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1cC/006.png",
+    "hp": 220,
+    "attacks": [
+      {
+        "name": "光子引爆",
+        "damage": {
+          "amount": 220,
+          "suffix": "220"
+        },
+        "cost": "LLC",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Tandem Unit",
-        "effect": "Once during your turn, you may search your deck for up to 2 Basic {L} Pokémon and put them onto your Bench. Then, shuffle your deck."
+        "name": "串联装置",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "光子引爆"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "串联装置"
+    ]
+  },
+  "SVI-089": {
+    "name": "飘飘球",
+    "set_name": "SVI",
+    "number": "089",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1bC/008.png",
+    "hp": 70,
+    "attacks": [
+      {
+        "name": "起风",
+        "damage": {
+          "amount": 10,
+          "suffix": "10"
+        },
+        "cost": "CC",
+        "effect": ""
+      },
+      {
+        "name": "气球炸弹",
+        "damage": {
+          "amount": 30,
+          "suffix": "30×"
+        },
+        "cost": "PP",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "起风",
+      "气球炸弹"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "SVI-096": {
+    "name": "钥圈儿",
+    "set_name": "SVI",
+    "number": "096",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVL1C/028.png",
+    "hp": 70,
+    "attacks": [
+      {
+        "name": "狙落",
+        "damage": {
+          "amount": 10,
+          "suffix": "10"
+        },
+        "cost": "C",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "恶作剧之锁",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "狙落"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "恶作剧之锁"
+    ]
+  },
+  "SVP-149": {
+    "name": "桃歹郎",
+    "set_name": "SVP",
+    "number": "149",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVNC/028.png",
+    "hp": 80,
+    "attacks": [
+      {
+        "name": "毒液锁链",
+        "damage": {
+          "amount": 10,
+          "suffix": "10"
+        },
+        "cost": "DC",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "剧毒支配",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "毒液锁链"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "剧毒支配"
     ]
   },
   "TEF-144": {
     "name": "友好宝芬",
     "set_name": "TEF",
     "number": "144",
-    "card_type": "Item",
-    "img": "/cards/SVP-196.png",
-    "effect": "Search your deck for up to 2 Basic Pokémon with 70 HP or less and put them onto your Bench. Then, shuffle your deck."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/SVP/196.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "TEF-137": {
     "name": "奇诺栗鼠",
     "set_name": "TEF",
     "number": "137",
-    "card_type": "Pokémon",
-    "img": "/cards/CBB4C-1601.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CBB4C/1601.png",
     "hp": 110,
-    "stage": "Stage1",
-    "types": [
-      "Colorless"
-    ],
-    "evolve_from": "Minccino",
-    "retreat": 1,
     "attacks": [
       {
-        "name": "Gentle Slap",
-        "cost": [
-          "Colorless"
-        ],
+        "name": "重掴",
         "damage": {
           "amount": 30,
-          "suffix": ""
-        }
+          "suffix": "30"
+        },
+        "cost": "C",
+        "effect": ""
       },
       {
-        "name": "Special Roll",
-        "cost": [
-          "Colorless",
-          "Colorless"
-        ],
+        "name": "特殊滚动",
         "damage": {
           "amount": 70,
-          "suffix": "×"
+          "suffix": "70×"
         },
-        "effect": "This attack does 70 damage for each Special Energy card attached to this Pokémon."
+        "cost": "CC",
+        "effect": ""
       }
-    ]
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "重掴",
+      "特殊滚动"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "TEF-145": {
     "name": "暗码迷的解读",
     "set_name": "TEF",
     "number": "145",
-    "card_type": "Supporter",
-    "img": "/cards/SVP-198.png",
-    "effect": "Search your deck for 2 cards, shuffle your deck, then put those cards on top of it in any order."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/SVP/198.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "TEF-129": {
     "name": "土龙节节",
     "set_name": "TEF",
     "number": "129",
-    "card_type": "Pokémon",
-    "img": "/cards/CSV7C-162.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV7C/162.png",
     "hp": 140,
-    "stage": "Stage1",
-    "types": [
-      "Colorless"
-    ],
-    "evolve_from": "Dunsparce",
-    "retreat": 3,
     "attacks": [
       {
-        "name": "Land Crush",
-        "cost": [
-          "Colorless",
-          "Colorless",
-          "Colorless"
-        ],
+        "name": "大地粉碎",
         "damage": {
           "amount": 90,
-          "suffix": ""
-        }
+          "suffix": "90"
+        },
+        "cost": "CCC",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Run Away Draw",
-        "effect": "Once during your turn, you may draw 3 cards. If you drew any cards in this way, shuffle this Pokémon and all attached cards into your deck."
+        "name": "逃跑抽取",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "大地粉碎"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "逃跑抽取"
     ]
   },
   "TEF-128": {
     "name": "土龙弟弟",
     "set_name": "TEF",
     "number": "128",
-    "card_type": "Pokémon",
-    "img": "/cards/CSV7C-161.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV7C/161.png",
     "hp": 60,
-    "stage": "Basic",
-    "types": [
-      "Colorless"
-    ],
-    "retreat": 0,
     "attacks": [
       {
-        "name": "Gnaw",
-        "cost": [
-          "Colorless"
-        ],
+        "name": "啃咬",
         "damage": {
           "amount": 10,
-          "suffix": ""
-        }
+          "suffix": "10"
+        },
+        "cost": "C",
+        "effect": ""
       },
       {
-        "name": "Dig",
-        "cost": [
-          "Colorless",
-          "Colorless"
-        ],
+        "name": "挖洞",
         "damage": {
           "amount": 30,
-          "suffix": ""
+          "suffix": "30"
         },
-        "effect": "Flip a coin. If heads, during your opponent's next turn, prevent all damage from and effects of attacks done to this Pokémon."
+        "cost": "CC",
+        "effect": ""
       }
-    ]
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "啃咬",
+      "挖洞"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "TEF-151": {
     "name": "沉重接力棒",
     "set_name": "TEF",
     "number": "151",
-    "card_type": "Pokémon Tool",
-    "img": "/cards/CSV7C-188.png",
-    "effect": "If the Pokémon this card is attached to has a Retreat Cost of exactly 4, is in the Active Spot, and is Knocked Out by damage from an attack from your opponent's Pokémon, move up to 3 Basic Energy cards from that Pokémon to your Benched Pokémon in any way you like."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV7C/188.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "TEF-153": {
     "name": "大师球",
     "set_name": "TEF",
     "number": "153",
-    "card_type": "Item",
-    "img": "/cards/CSV7C-181.png",
-    "effect": "Search your deck for a Pokémon, reveal it, and put it into your hand. Then, shuffle your deck."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV7C/181.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "TEF-161": {
     "name": "薄雾能量",
     "set_name": "TEF",
     "number": "161",
-    "card_type": "Special Energy",
-    "img": "/cards/CSV7C-204.png",
-    "effect": "As long as this card is attached to a Pokémon, it provides {C} Energy.\n\nPrevent all effects of attacks used by your opponent's Pokémon done to the Pokémon this card is attached to. (Existing effects are not removed. Damage is not an effect.)"
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV7C/204.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "TEF-155": {
     "name": "松叶的信心",
     "set_name": "TEF",
     "number": "155",
-    "card_type": "Supporter",
-    "img": "/cards/CSVH4C-059.png",
-    "effect": "You can use this card only if you discard another card from your hand.\n\nDraw a card for each of your opponent's Benched Pokémon."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4C/059.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "TEF-157": {
     "name": "顶尖捕捉器",
     "set_name": "TEF",
     "number": "157",
-    "card_type": "Item",
-    "img": "/cards/CSV7C-180.png",
-    "effect": "Switch in 1 of your opponent's Benched Pokémon to the Active Spot. If you do, switch your Active Pokémon with 1 of your Benched Pokémon."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV7C/180.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "TEF-159": {
     "name": "紧急滑板",
     "set_name": "TEF",
     "number": "159",
-    "card_type": "Pokémon Tool",
-    "img": "/cards/CSVH4aC-013.png",
-    "effect": "The Retreat Cost of the Pokémon this card is attached to is {C} less. If that Pokémon's remaining HP is 30 or less, it has no Retreat Cost."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVH4aC/013.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "TEF-123": {
+    "name": "猛雷鼓ex",
+    "set_name": "TEF",
+    "number": "123",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV7C/227.png",
+    "hp": 240,
+    "attacks": [
+      {
+        "name": "飞溅咆哮",
+        "damage": {
+          "amount": 0,
+          "suffix": ""
+        },
+        "cost": "C",
+        "effect": ""
+      },
+      {
+        "name": "极雷轰",
+        "damage": {
+          "amount": 70,
+          "suffix": "70×"
+        },
+        "cost": "LF",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "飞溅咆哮",
+      "极雷轰"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "TEF-126": {
+    "name": "咕咕",
+    "set_name": "TEF",
+    "number": "126",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV7C/159.png",
+    "hp": 70,
+    "attacks": [
+      {
+        "name": "寂静之翼",
+        "damage": {
+          "amount": 20,
+          "suffix": "20"
+        },
+        "cost": "CC",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "寂静之翼"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "TEF-136": {
+    "name": "泡沫栗鼠",
+    "set_name": "TEF",
+    "number": "136",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CBB4C/1501.png",
+    "hp": 60,
+    "attacks": [
+      {
+        "name": "敲打",
+        "damage": {
+          "amount": 10,
+          "suffix": "10"
+        },
+        "cost": "C",
+        "effect": ""
+      },
+      {
+        "name": "扫除",
+        "damage": {
+          "amount": 0,
+          "suffix": ""
+        },
+        "cost": "CC",
+        "effect": ""
+      }
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "敲打",
+      "扫除"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "TWM-200": {
     "name": "多龙巴鲁托ex",
     "set_name": "TWM",
     "number": "200",
-    "card_type": "Pokémon",
-    "img": "/cards/CSV8C-159.png",
-    "tags": [
-      "ex"
-    ],
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV8C/159.png",
     "hp": 320,
-    "stage": "Stage2",
-    "types": [
-      "Dragon"
-    ],
-    "evolve_from": "Drakloak",
-    "retreat": 1,
     "attacks": [
       {
-        "name": "Jet Headbutt",
-        "cost": [
-          "Colorless"
-        ],
+        "name": "喷射头击",
         "damage": {
           "amount": 70,
-          "suffix": ""
-        }
+          "suffix": "70"
+        },
+        "cost": "C",
+        "effect": ""
       },
       {
-        "name": "Phantom Dive",
-        "cost": [
-          "Fire",
-          "Psychic"
-        ],
+        "name": "幻影潜袭",
         "damage": {
           "amount": 200,
-          "suffix": ""
+          "suffix": "200"
         },
-        "effect": "Put 6 damage counters on your opponent's Benched Pokémon in any way you like."
+        "cost": "RP",
+        "effect": ""
       }
-    ]
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "喷射头击",
+      "幻影潜袭"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "TWM-129": {
     "name": "多龙奇",
     "set_name": "TWM",
     "number": "129",
-    "card_type": "Pokémon",
-    "img": "/cards/CSV8C-158.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV8C/158.png",
     "hp": 90,
-    "stage": "Stage1",
-    "types": [
-      "Dragon"
-    ],
-    "evolve_from": "Dreepy",
-    "retreat": 1,
     "attacks": [
       {
-        "name": "Dragon Headbutt",
-        "cost": [
-          "Fire",
-          "Psychic"
-        ],
+        "name": "龙之头击",
         "damage": {
           "amount": 70,
-          "suffix": ""
-        }
+          "suffix": "70"
+        },
+        "cost": "RP",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Recon Directive",
-        "effect": "Once during your turn, you may look at the top 2 cards of your deck and put 1 of them into your hand. Put the other card on the bottom of your deck."
+        "name": "侦察指令",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "龙之头击"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "侦察指令"
     ]
   },
   "TWM-128": {
     "name": "多龙梅西亚",
     "set_name": "TWM",
     "number": "128",
-    "card_type": "Pokémon",
-    "img": "/cards/CSV8C-157.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV8C/157.png",
     "hp": 70,
-    "stage": "Basic",
-    "types": [
-      "Dragon"
-    ],
-    "retreat": 1,
     "attacks": [
       {
-        "name": "Petty Grudge",
-        "cost": [
-          "Psychic"
-        ],
+        "name": "小哀怨",
         "damage": {
           "amount": 10,
-          "suffix": ""
-        }
+          "suffix": "10"
+        },
+        "cost": "P",
+        "effect": ""
       },
       {
-        "name": "Bite",
-        "cost": [
-          "Fire",
-          "Psychic"
-        ],
+        "name": "咬住",
         "damage": {
           "amount": 40,
-          "suffix": ""
-        }
+          "suffix": "40"
+        },
+        "cost": "RP",
+        "effect": ""
       }
-    ]
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "小哀怨",
+      "咬住"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "TWM-152": {
     "name": "高级香氛",
     "set_name": "TWM",
     "number": "152",
-    "card_type": "Item",
-    "img": "/cards/CSV7C-178.png",
-    "effect": "Search your deck for up to 3 Stage 1 Pokémon, reveal them, and put them into your hand. Then, shuffle your deck."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV7C/178.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "TWM-095": {
     "name": "愿增猿",
     "set_name": "TWM",
     "number": "095",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVNC-019.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVNC/019.png",
     "hp": 110,
-    "stage": "Basic",
-    "types": [
-      "Psychic"
-    ],
-    "retreat": 1,
     "attacks": [
       {
-        "name": "Mind Bend",
-        "cost": [
-          "Psychic",
-          "Colorless"
-        ],
+        "name": "精神幻觉",
         "damage": {
           "amount": 60,
-          "suffix": ""
+          "suffix": "60"
         },
-        "effect": "Your opponent's Active Pokémon is now Confused."
+        "cost": "PC",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Adrena-Brain",
-        "effect": "Once during your turn, if this Pokémon has any {D} Energy attached, you may move up to 3 damage counters from 1 of your Pokémon to 1 of your opponent's Pokémon."
+        "name": "亢奋脑力",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "精神幻觉"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "亢奋脑力"
     ]
   },
   "TWM-163": {
     "name": "秘密箱",
     "set_name": "TWM",
     "number": "163",
-    "card_type": "Item",
-    "img": "/cards/CSV8C-176.png",
-    "effect": "You can use this card only if you discard 3 other cards from your hand.\n\nSearch your deck for an Item card, a Pokémon Tool card, a Supporter card, and a Stadium card, reveal them, and put them into your hand. Then, shuffle your deck."
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV8C/176.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
-  "VIV-025": {
-    "name": "光辉喷火龙",
-    "set_name": "VIV",
-    "number": "25",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1aC-003.png",
-    "hp": 170,
-    "stage": "Stage2",
-    "types": [
-      "Fire"
-    ],
-    "evolve_from": "Charmeleon",
-    "retreat": 3,
+  "TWM-141": {
+    "name": "月月熊 赫月ex",
+    "set_name": "TWM",
+    "number": "141",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVNC/031.png",
+    "hp": 260,
     "attacks": [
       {
-        "name": "Royal Blaze",
-        "cost": [
-          "Fire",
-          "Fire"
-        ],
+        "name": "血月",
         "damage": {
-          "amount": 100,
-          "suffix": "+"
+          "amount": 240,
+          "suffix": "240"
         },
-        "effect": "This attack does 50 more damage for each Leon card in your discard pile."
+        "cost": "CCCCC",
+        "effect": ""
       }
     ],
     "abilities": [
       {
-        "name": "Battle Sense",
-        "effect": "Once during your turn, you may look at the top 3 cards of your deck and put 1 of them into your hand. Discard the other cards."
+        "name": "老练招式",
+        "effect": "",
+        "type": ""
       }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "血月"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "老练招式"
     ]
+  },
+  "TWM-145": {
+    "name": "丹瑜",
+    "set_name": "TWM",
+    "number": "145",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVNC/037.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "TWM-153": {
+    "name": "阻碍之塔",
+    "set_name": "TWM",
+    "number": "153",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/SVP/287.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "TWM-154": {
+    "name": "吉雉鸡",
+    "set_name": "TWM",
+    "number": "154",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVNC/020.png",
+    "hp": null,
+    "attacks": [
+      {
+        "name": "能量之羽",
+        "damage": {
+          "amount": 30,
+          "suffix": "30×"
+        },
+        "cost": "P",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "亢奋费洛蒙",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "能量之羽"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "亢奋费洛蒙"
+    ]
+  },
+  "TWM-165": {
+    "name": "不公印章",
+    "set_name": "TWM",
+    "number": "165",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV8C/173.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "TWM-167": {
+    "name": "遗赠能量",
+    "set_name": "TWM",
+    "number": "167",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV8C/207.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "TWM-025": {
+    "name": "厄诡椪 碧草面具ex",
+    "set_name": "TWM",
+    "number": "025",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVNC/011.png",
+    "hp": 210,
+    "attacks": [
+      {
+        "name": "万叶阵雨",
+        "damage": {
+          "amount": 30,
+          "suffix": "30+"
+        },
+        "cost": "GGG",
+        "effect": ""
+      }
+    ],
+    "abilities": [
+      {
+        "name": "碧草之舞",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "万叶阵雨"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "碧草之舞"
+    ]
+  },
+  "UNB-182": {
+    "name": "宝可装置3.0",
+    "set_name": "UNB",
+    "number": "182",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVE2C/159.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
+  },
+  "UPR-132": {
+    "name": "朋友手册",
+    "set_name": "UPR",
+    "number": "132",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSV6C/163.png",
+    "hp": null,
+    "attacks": [],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [],
+    "abilities_en": [],
+    "abilities_cn": []
   },
   "VIV-024": {
     "name": "火恐龙",
     "set_name": "VIV",
-    "number": "24",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1aC-002.png",
+    "number": "024",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CSVM1aC/002.png",
     "hp": 90,
-    "stage": "Stage1",
-    "types": [
-      "Fire"
-    ],
-    "evolve_from": "Charmander",
-    "retreat": 2,
     "attacks": [
       {
-        "name": "Slash",
-        "cost": [
-          "Fire"
-        ],
+        "name": "烈焰",
         "damage": {
-          "amount": 20,
-          "suffix": ""
-        }
-      },
-      {
-        "name": "Raging Flames",
-        "cost": [
-          "Fire",
-          "Fire"
-        ],
-        "damage": {
-          "amount": 60,
-          "suffix": ""
+          "amount": 50,
+          "suffix": "50"
         },
-        "effect": "Discard the top 3 cards of your deck."
+        "cost": "RR",
+        "effect": ""
       }
+    ],
+    "abilities": [
+      {
+        "name": "闪焰之幕",
+        "effect": "",
+        "type": ""
+      }
+    ],
+    "attacks_en": [],
+    "attacks_cn": [
+      "烈焰"
+    ],
+    "abilities_en": [],
+    "abilities_cn": [
+      "闪焰之幕"
     ]
   },
   "WHT-044": {
     "name": "轻飘飘",
     "set_name": "WHT",
     "number": "044",
-    "card_type": "Pokémon",
-    "img": "/cards/CS3bC-041.png",
+    "card_type": "Pokemon",
+    "img": "https://tcg.mik.moe/static/img/CS3bC/041.png",
     "hp": 80,
-    "stage": "Basic",
-    "types": [
-      "Psychic"
-    ],
-    "retreat": 3,
     "attacks": [
       {
-        "name": "Oceanic Gloom",
-        "cost": [
-          "Psychic"
-        ],
+        "name": "自我再生",
         "damage": {
-          "amount": 20,
+          "amount": 0,
           "suffix": ""
         },
-        "effect": "During your opponent's next turn, they can't play any Item cards from their hand."
+        "cost": "C",
+        "effect": ""
+      },
+      {
+        "name": "泼水",
+        "damage": {
+          "amount": 10,
+          "suffix": "10"
+        },
+        "cost": "W",
+        "effect": ""
       }
-    ]
-  },
-  "ASC-189": {
-    "name": "玻璃喇叭",
-    "set_name": "ASC",
-    "number": "189",
-    "card_type": "Unknown",
-    "img": "/cards/CSV9C-178.png"
-  },
-  "ASC-57": {
-    "name": "皮卡丘ex",
-    "set_name": "ASC",
-    "number": "57",
-    "card_type": "Unknown",
-    "img": "/cards/CSV9C-221.png"
-  },
-  "ASR-113": {
-    "name": "起源帝牙卢卡V",
-    "set_name": "ASR",
-    "number": "113",
-    "card_type": "Unknown",
-    "img": "/cards/CSVE2C-102.png"
-  },
-  "ASR-114": {
-    "name": "起源帝牙卢卡VSTAR",
-    "set_name": "ASR",
-    "number": "114",
-    "card_type": "Unknown",
-    "img": "/cards/CSVE2C-103.png"
-  },
-  "ASR-133": {
-    "name": "智挥猩V",
-    "set_name": "ASR",
-    "number": "133",
-    "card_type": "Unknown",
-    "img": "/cards/CS5bC-150.png"
-  },
-  "ASR-134": {
-    "name": "诡角鹿V",
-    "set_name": "ASR",
-    "number": "134",
-    "card_type": "Unknown",
-    "img": "/cards/CS5DC-111.png"
-  },
-  "ASR-147": {
-    "name": "珠贝",
-    "set_name": "ASR",
-    "number": "147",
-    "card_type": "Unknown",
-    "img": "/cards/CSVE2C-173.png"
-  },
-  "ASR-152": {
-    "name": "超群眼镜",
-    "set_name": "ASR",
-    "number": "152",
-    "card_type": "Unknown",
-    "img": "/cards/CS5aC-118.png"
-  },
-  "ASR-156": {
-    "name": "离洞绳",
-    "set_name": "ASR",
-    "number": "156",
-    "card_type": "Unknown",
-    "img": "/cards/CSXC-005.png"
-  },
-  "ASR-39": {
-    "name": "起源帕路奇亚V",
-    "set_name": "ASR",
-    "number": "39",
-    "card_type": "Unknown",
-    "img": "/cards/CSVE2C-036.png"
-  },
-  "ASR-40": {
-    "name": "起源帕路奇亚VSTAR",
-    "set_name": "ASR",
-    "number": "40",
-    "card_type": "Unknown",
-    "img": "/cards/CSVE2C-037.png"
-  },
-  "ASR-60": {
-    "name": "拉鲁拉丝",
-    "set_name": "ASR",
-    "number": "60",
-    "card_type": "Unknown",
-    "img": "/cards/CSVM1bC-005.png"
-  },
-  "BRS-22": {
-    "name": "炎帝V",
-    "set_name": "BRS",
-    "number": "22",
-    "card_type": "Unknown",
-    "img": "/cards/CSVE2C-017.png"
-  },
-  "BRS-45": {
-    "name": "雷丘V",
-    "set_name": "BRS",
-    "number": "45",
-    "card_type": "Unknown",
-    "img": "/cards/CSVM1cC-002.png"
-  },
-  "CES-129": {
-    "name": "能量转移",
-    "set_name": "CES",
-    "number": "129",
-    "card_type": "Unknown",
-    "img": "/cards/SVP-293.png"
-  },
-  "CIN-91": {
-    "name": "反击捕捉器",
-    "set_name": "CIN",
-    "number": "91",
-    "card_type": "Unknown",
-    "img": "/cards/CSVH4aC-008.png"
-  },
-  "FLI-108": {
-    "name": "裁判",
-    "set_name": "FLI",
-    "number": "108",
-    "card_type": "Unknown",
-    "img": "/cards/CSVH4C-048.png"
-  },
-  "LOR-123": {
-    "name": "光辉洗翠 大狃拉",
-    "set_name": "LOR",
-    "number": "123",
-    "card_type": "Unknown",
-    "img": "/cards/CS5aC-079.png"
-  },
-  "LOR-131": {
-    "name": "骑拉帝纳VSTAR",
-    "set_name": "LOR",
-    "number": "131",
-    "card_type": "Unknown",
-    "img": "/cards/CS6bC-164.png"
-  },
-  "LOR-136": {
-    "name": "洗翠 黏美龙VSTAR",
-    "set_name": "LOR",
-    "number": "136",
-    "card_type": "Unknown",
-    "img": "/cards/CS5.5C-053.png"
-  },
-  "LOR-58": {
-    "name": "洛托姆V",
-    "set_name": "LOR",
-    "number": "58",
-    "card_type": "Unknown",
-    "img": "/cards/CSVM1aC-005.png"
-  },
-  "MEW-132": {
-    "name": "百变怪",
-    "set_name": "MEW",
-    "number": "132",
-    "card_type": "Unknown",
-    "img": "/cards/CSVH4aC-002.png"
-  },
-  "OBF-125": {
-    "name": "喷火龙ex",
-    "set_name": "OBF",
-    "number": "125",
-    "card_type": "Unknown",
-    "img": "/cards/CSVM1aC-006.png"
-  },
-  "OBF-162": {
-    "name": "波波",
-    "set_name": "OBF",
-    "number": "162",
-    "card_type": "Unknown",
-    "img": "/cards/CSV4C-099.png"
-  },
-  "OBF-202": {
-    "name": "皮宝宝",
-    "set_name": "OBF",
-    "number": "202",
-    "card_type": "Unknown",
-    "img": "/cards/SVP-211.png"
-  },
-  "OBF-205": {
-    "name": "巨钳螳螂",
-    "set_name": "OBF",
-    "number": "205",
-    "card_type": "Unknown",
-    "img": "/cards/CSVL2C-085.png"
-  },
-  "PAF-75": {
-    "name": "怒鹦哥ex",
-    "set_name": "PAF",
-    "number": "75",
-    "card_type": "Unknown",
-    "img": "/cards/CSVM1cC-007.png"
-  },
-  "PAF-79": {
-    "name": "电气发生器",
-    "set_name": "PAF",
-    "number": "79",
-    "card_type": "Unknown",
-    "img": "/cards/CSVM1cC-010.png"
-  },
-  "PAF-81": {
-    "name": "月光之丘",
-    "set_name": "PAF",
-    "number": "81",
-    "card_type": "Unknown",
-    "img": "/cards/CSVM1bC-032.png"
-  },
-  "PAL-156": {
-    "name": "土龙弟弟",
-    "set_name": "PAL",
-    "number": "156",
-    "card_type": "Unknown",
-    "img": "/cards/CSVH3aC-002.png"
-  },
-  "PAL-185": {
-    "name": "奇树",
-    "set_name": "PAL",
-    "number": "185",
-    "card_type": "Unknown",
-    "img": "/cards/CSVH4aC-021.png"
-  },
-  "PAR-105": {
-    "name": "毛崖蟹",
-    "set_name": "PAR",
-    "number": "105",
-    "card_type": "Unknown",
-    "img": "/cards/CSV6C-080.png"
-  },
-  "PAR-107": {
-    "name": "爬地翅",
-    "set_name": "PAR",
-    "number": "107",
-    "card_type": "Unknown",
-    "img": "/cards/CSV6C-082.png"
-  },
-  "PAR-123": {
-    "name": "猛恶菇",
-    "set_name": "PAR",
-    "number": "123",
-    "card_type": "Unknown",
-    "img": "/cards/CSV6C-095.png"
-  },
-  "PAR-159": {
-    "name": "驱劲能量 古代",
-    "set_name": "PAR",
-    "number": "159",
-    "card_type": "Unknown",
-    "img": "/cards/SVP-256.png"
-  },
-  "PAR-170": {
-    "name": "奥琳博士的气魄",
-    "set_name": "PAR",
-    "number": "170",
-    "card_type": "Unknown",
-    "img": "/cards/CSVH4C-046.png"
-  },
-  "PAR-177": {
-    "name": "招式学习器 退化",
-    "set_name": "PAR",
-    "number": "177",
-    "card_type": "Unknown",
-    "img": "/cards/CSVM1aC-024.png"
-  },
-  "PRE-100": {
-    "name": "白蕾雅",
-    "set_name": "PRE",
-    "number": "100",
-    "card_type": "Unknown",
-    "img": "/cards/CSV9C-239.png"
-  },
-  "PRE-101": {
-    "name": "友好宝芬",
-    "set_name": "PRE",
-    "number": "101",
-    "card_type": "Unknown",
-    "img": "/cards/SVP-196.png"
-  },
-  "PRE-31": {
-    "name": "铁臂膀ex",
-    "set_name": "PRE",
-    "number": "31",
-    "card_type": "Unknown",
-    "img": "/cards/CSVM1cC-005.png"
-  },
-  "PRE-35": {
-    "name": "夜巡灵",
-    "set_name": "PRE",
-    "number": "35",
-    "card_type": "Unknown",
-    "img": "/cards/CSV8C-081.png"
-  },
-  "PRE-42": {
-    "name": "吼叫尾",
-    "set_name": "PRE",
-    "number": "42",
-    "card_type": "Unknown",
-    "img": "/cards/CSVM1bC-011.png"
-  },
-  "PRE-73": {
-    "name": "多龙巴鲁托ex",
-    "set_name": "PRE",
-    "number": "73",
-    "card_type": "Unknown",
-    "img": "/cards/CSV8C-159.png"
-  },
-  "RCL-154": {
-    "name": "老大的指令",
-    "set_name": "RCL",
-    "number": "154",
-    "card_type": "Unknown",
-    "img": "/cards/CSVH4aC-022.png"
-  },
-  "SCR-114": {
-    "name": "咕咕",
-    "set_name": "SCR",
-    "number": "114",
-    "card_type": "Unknown",
-    "img": "/cards/CSV9C-154.png"
-  },
-  "SCR-115": {
-    "name": "猫头夜鹰",
-    "set_name": "SCR",
-    "number": "115",
-    "card_type": "Unknown",
-    "img": "/cards/CSV9C-155.png"
-  },
-  "SCR-118": {
-    "name": "旋转洛托姆",
-    "set_name": "SCR",
-    "number": "118",
-    "card_type": "Unknown",
-    "img": "/cards/CSV9C-161.png"
-  },
-  "SCR-119": {
-    "name": "爆炸头水牛",
-    "set_name": "SCR",
-    "number": "119",
-    "card_type": "Unknown",
-    "img": "/cards/CSV9C-162.png"
-  },
-  "SCR-128": {
-    "name": "太乐巴戈斯ex",
-    "set_name": "SCR",
-    "number": "128",
-    "card_type": "Unknown",
-    "img": "/cards/CSV9C-232.png"
-  },
-  "SCR-131": {
-    "name": "零之大空洞",
-    "set_name": "SCR",
-    "number": "131",
-    "card_type": "Unknown",
-    "img": "/cards/CSV9C-266.png"
-  },
-  "SFA-19": {
-    "name": "彷徨夜灵",
-    "set_name": "SFA",
-    "number": "19",
-    "card_type": "Unknown",
-    "img": "/cards/CSV8C-082.png"
-  },
-  "SFA-20": {
-    "name": "黑夜魔灵",
-    "set_name": "SFA",
-    "number": "20",
-    "card_type": "Unknown",
-    "img": "/cards/CSV8C-083.png"
-  },
-  "SFA-38": {
-    "name": "吉雉鸡ex",
-    "set_name": "SFA",
-    "number": "38",
-    "card_type": "Unknown",
-    "img": "/cards/CSVNC-027.png"
-  },
-  "SFA-39": {
-    "name": "桃歹郎ex",
-    "set_name": "SFA",
-    "number": "39",
-    "card_type": "Unknown",
-    "img": "/cards/CSVNC-029.png"
-  },
-  "SFA-40": {
-    "name": "盖诺赛克特",
-    "set_name": "SFA",
-    "number": "40",
-    "card_type": "Unknown",
-    "img": "/cards/CSV9C-133.png"
-  },
-  "SFA-47": {
-    "name": "酋雷姆",
-    "set_name": "SFA",
-    "number": "47",
-    "card_type": "Unknown",
-    "img": "/cards/CSV9C-147.png"
-  },
-  "SFA-55": {
-    "name": "锁链粘糕",
-    "set_name": "SFA",
-    "number": "55",
-    "card_type": "Unknown",
-    "img": "/cards/CSVNC-033.png"
-  },
-  "SIT-135": {
-    "name": "雷吉铎拉戈V",
-    "set_name": "SIT",
-    "number": "135",
-    "card_type": "Unknown",
-    "img": "/cards/CS6.5C-054.png"
-  },
-  "SIT-136": {
-    "name": "雷吉铎拉戈VSTAR",
-    "set_name": "SIT",
-    "number": "136",
-    "card_type": "Unknown",
-    "img": "/cards/CS6.5C-055.png"
-  },
-  "SLG-68": {
-    "name": "高级球",
-    "set_name": "SLG",
-    "number": "68",
-    "card_type": "Unknown",
-    "img": "/cards/CSVH4C-037.png"
-  },
-  "SP-294": {
-    "name": "洗翠 顽皮雷弹V",
-    "set_name": "SP",
-    "number": "294",
-    "card_type": "Unknown",
-    "img": "/cards/CS5.5C-003.png"
-  },
-  "SSH-178": {
-    "name": "博士的研究",
-    "set_name": "SSH",
-    "number": "178",
-    "card_type": "Unknown",
-    "img": "/cards/CSVH4eC-047.png"
-  },
-  "SSH-185": {
-    "name": "活力头带",
-    "set_name": "SSH",
-    "number": "185",
-    "card_type": "Unknown",
-    "img": "/cards/CSVH4C-042.png"
-  },
-  "SSP-116": {
-    "name": "故勒顿",
-    "set_name": "SSP",
-    "number": "116",
-    "card_type": "Unknown",
-    "img": "/cards/CSV9C-112.png"
-  },
-  "SSP-129": {
-    "name": "铝钢龙",
-    "set_name": "SSP",
-    "number": "129",
-    "card_type": "Unknown",
-    "img": "/cards/CSV9C-136.png"
-  },
-  "SSP-130": {
-    "name": "铝钢桥龙ex",
-    "set_name": "SSP",
-    "number": "130",
-    "card_type": "Unknown",
-    "img": "/cards/CSV9C-227.png"
-  },
-  "SSP-59": {
-    "name": "三合一磁怪",
-    "set_name": "SSP",
-    "number": "59",
-    "card_type": "Unknown",
-    "img": "/cards/CSV9C-056.png"
-  },
-  "SSP-76": {
-    "name": "拉帝亚斯ex",
-    "set_name": "SSP",
-    "number": "76",
-    "card_type": "Unknown",
-    "img": "/cards/CSV9C-223.png"
-  },
-  "SUM-116": {
-    "name": "能量回收",
-    "set_name": "SUM",
-    "number": "116",
-    "card_type": "Unknown",
-    "img": "/cards/SVP-235.png"
-  },
-  "SUM-123": {
-    "name": "巢穴球",
-    "set_name": "SUM",
-    "number": "123",
-    "card_type": "Unknown",
-    "img": "/cards/CSVH4C-036.png"
-  },
-  "SUM-126": {
-    "name": "宝可梦捕捉器",
-    "set_name": "SUM",
-    "number": "126",
-    "card_type": "Unknown",
-    "img": "/cards/CSVH4C-040.png"
-  },
-  "SUM-129": {
-    "name": "神奇糖果",
-    "set_name": "SUM",
-    "number": "129",
-    "card_type": "Unknown",
-    "img": "/cards/CSVH4C-038.png"
-  },
-  "SUM-132": {
-    "name": "宝可梦交替",
-    "set_name": "SUM",
-    "number": "132",
-    "card_type": "Unknown",
-    "img": "/cards/SVP-294.png"
-  },
-  "SVE-1": {
-    "name": "基本草能量",
-    "set_name": "SVE",
-    "number": "1",
-    "card_type": "Unknown",
-    "img": "/cards/CSVH4C-GRA.png"
-  },
-  "SVE-3": {
-    "name": "基本水能量",
-    "set_name": "SVE",
-    "number": "3",
-    "card_type": "Unknown",
-    "img": "/cards/CSVH4pC-WAT.png"
-  },
-  "SVE-6": {
-    "name": "基本斗能量",
-    "set_name": "SVE",
-    "number": "6",
-    "card_type": "Unknown",
-    "img": "/cards/CSVH4C-FIG.png"
-  },
-  "SVI-178": {
-    "name": "桌台市",
-    "set_name": "SVI",
-    "number": "178",
-    "card_type": "Unknown",
-    "img": "/cards/CSVE1C-168.png"
-  },
-  "SVI-183": {
-    "name": "皮拿",
-    "set_name": "SVI",
-    "number": "183",
-    "card_type": "Unknown",
-    "img": "/cards/CSV3C-125.png"
-  },
-  "SVI-63": {
-    "name": "小磁怪",
-    "set_name": "SVI",
-    "number": "63",
-    "card_type": "Unknown",
-    "img": "/cards/CSV1C-042.png"
-  },
-  "SVI-81": {
-    "name": "密勒顿ex",
-    "set_name": "SVI",
-    "number": "81",
-    "card_type": "Unknown",
-    "img": "/cards/CSVM1cC-006.png"
-  },
-  "SVI-89": {
-    "name": "飘飘球",
-    "set_name": "SVI",
-    "number": "89",
-    "card_type": "Unknown",
-    "img": "/cards/CSVM1bC-008.png"
-  },
-  "SVI-96": {
-    "name": "钥圈儿",
-    "set_name": "SVI",
-    "number": "96",
-    "card_type": "Unknown",
-    "img": "/cards/CSVL1C-028.png"
-  },
-  "SVP-149": {
-    "name": "桃歹郎",
-    "set_name": "SVP",
-    "number": "149",
-    "card_type": "Unknown",
-    "img": "/cards/CSVNC-028.png"
-  },
-  "TEF-123": {
-    "name": "猛雷鼓ex",
-    "set_name": "TEF",
-    "number": "123",
-    "card_type": "Unknown",
-    "img": "/cards/CSV7C-227.png"
-  },
-  "TEF-126": {
-    "name": "咕咕",
-    "set_name": "TEF",
-    "number": "126",
-    "card_type": "Unknown",
-    "img": "/cards/CSV7C-159.png"
-  },
-  "TEF-136": {
-    "name": "泡沫栗鼠",
-    "set_name": "TEF",
-    "number": "136",
-    "card_type": "Unknown",
-    "img": "/cards/CBB4C-1501.png"
-  },
-  "TWM-141": {
-    "name": "月月熊 赫月ex",
-    "set_name": "TWM",
-    "number": "141",
-    "card_type": "Unknown",
-    "img": "/cards/CSVNC-031.png"
-  },
-  "TWM-153": {
-    "name": "阻碍之塔",
-    "set_name": "TWM",
-    "number": "153",
-    "card_type": "Unknown",
-    "img": "/cards/SVP-287.png"
-  },
-  "TWM-154": {
-    "name": "吉雉鸡",
-    "set_name": "TWM",
-    "number": "154",
-    "card_type": "Unknown",
-    "img": "/cards/CSVNC-020.png"
-  },
-  "TWM-165": {
-    "name": "不公印章",
-    "set_name": "TWM",
-    "number": "165",
-    "card_type": "Unknown",
-    "img": "/cards/CSV8C-173.png"
-  },
-  "TWM-167": {
-    "name": "遗赠能量",
-    "set_name": "TWM",
-    "number": "167",
-    "card_type": "Unknown",
-    "img": "/cards/CSV8C-207.png"
-  },
-  "TWM-25": {
-    "name": "厄诡椪 碧草面具ex",
-    "set_name": "TWM",
-    "number": "25",
-    "card_type": "Unknown",
-    "img": "/cards/CSVNC-011.png"
-  },
-  "UPR-132": {
-    "name": "朋友手册",
-    "set_name": "UPR",
-    "number": "132",
-    "card_type": "Unknown",
-    "img": "/cards/CSV6C-163.png"
-  },
-  "ASC-057": {
-    "name": "皮卡丘ex",
-    "set_name": "ASC",
-    "number": "057",
-    "card_type": "Pokémon",
-    "img": "/cards/CSV9C-221.png"
-  },
-  "ASR-039": {
-    "name": "起源帕路奇亚V",
-    "set_name": "ASR",
-    "number": "039",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVE2C-036.png"
-  },
-  "ASR-040": {
-    "name": "起源帕路奇亚VSTAR",
-    "set_name": "ASR",
-    "number": "040",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVE2C-037.png"
-  },
-  "ASR-060": {
-    "name": "拉鲁拉丝",
-    "set_name": "ASR",
-    "number": "060",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1bC-005.png"
-  },
-  "BRS-022": {
-    "name": "炎帝V",
-    "set_name": "BRS",
-    "number": "022",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVE2C-017.png"
-  },
-  "BRS-045": {
-    "name": "雷丘V",
-    "set_name": "BRS",
-    "number": "045",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1cC-002.png"
-  },
-  "CIN-091": {
-    "name": "反击捕捉器",
-    "set_name": "CIN",
-    "number": "091",
-    "card_type": "Item",
-    "img": "/cards/CSVH4aC-008.png"
-  },
-  "LOR-058": {
-    "name": "洛托姆V",
-    "set_name": "LOR",
-    "number": "058",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1aC-005.png"
-  },
-  "PAF-075": {
-    "name": "怒鹦哥ex",
-    "set_name": "PAF",
-    "number": "075",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1cC-007.png"
-  },
-  "PAF-079": {
-    "name": "电气发生器",
-    "set_name": "PAF",
-    "number": "079",
-    "card_type": "Item",
-    "img": "/cards/CSVM1cC-010.png"
-  },
-  "PAF-081": {
-    "name": "月光之丘",
-    "set_name": "PAF",
-    "number": "081",
-    "card_type": "Stadium",
-    "img": "/cards/CSVM1bC-032.png"
-  },
-  "PRE-031": {
-    "name": "铁臂膀ex",
-    "set_name": "PRE",
-    "number": "031",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1cC-005.png"
-  },
-  "PRE-035": {
-    "name": "夜巡灵",
-    "set_name": "PRE",
-    "number": "035",
-    "card_type": "Pokémon",
-    "img": "/cards/CSV8C-081.png"
-  },
-  "PRE-042": {
-    "name": "吼叫尾",
-    "set_name": "PRE",
-    "number": "042",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1bC-011.png"
-  },
-  "PRE-073": {
-    "name": "多龙巴鲁托ex",
-    "set_name": "PRE",
-    "number": "073",
-    "card_type": "Pokémon",
-    "img": "/cards/CSV8C-159.png"
-  },
-  "SFA-019": {
-    "name": "彷徨夜灵",
-    "set_name": "SFA",
-    "number": "019",
-    "card_type": "Pokémon",
-    "img": "/cards/CSV8C-082.png"
-  },
-  "SFA-020": {
-    "name": "黑夜魔灵",
-    "set_name": "SFA",
-    "number": "020",
-    "card_type": "Pokémon",
-    "img": "/cards/CSV8C-083.png"
-  },
-  "SFA-038": {
-    "name": "吉雉鸡ex",
-    "set_name": "SFA",
-    "number": "038",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVNC-027.png"
-  },
-  "SFA-039": {
-    "name": "桃歹郎ex",
-    "set_name": "SFA",
-    "number": "039",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVNC-029.png"
-  },
-  "SFA-040": {
-    "name": "盖诺赛克特",
-    "set_name": "SFA",
-    "number": "040",
-    "card_type": "Pokémon",
-    "img": "/cards/CSV9C-133.png"
-  },
-  "SFA-047": {
-    "name": "酋雷姆",
-    "set_name": "SFA",
-    "number": "047",
-    "card_type": "Pokémon",
-    "img": "/cards/CSV9C-147.png"
-  },
-  "SFA-055": {
-    "name": "锁链粘糕",
-    "set_name": "SFA",
-    "number": "055",
-    "card_type": "Tool",
-    "img": "/cards/CSVNC-033.png"
-  },
-  "SLG-068": {
-    "name": "高级球",
-    "set_name": "SLG",
-    "number": "068",
-    "card_type": "Item",
-    "img": "/cards/CSVH4C-037.png"
-  },
-  "SSP-059": {
-    "name": "三合一磁怪",
-    "set_name": "SSP",
-    "number": "059",
-    "card_type": "Pokémon",
-    "img": "/cards/CSV9C-056.png"
-  },
-  "SSP-076": {
-    "name": "拉帝亚斯ex",
-    "set_name": "SSP",
-    "number": "076",
-    "card_type": "Pokémon",
-    "img": "/cards/CSV9C-223.png"
-  },
-  "SVE-001": {
-    "name": "基本草能量",
-    "set_name": "SVE",
-    "number": "001",
-    "card_type": "Energy",
-    "img": "/cards/CSVH4C-GRA.png"
-  },
-  "SVE-003": {
-    "name": "基本水能量",
-    "set_name": "SVE",
-    "number": "003",
-    "card_type": "Energy",
-    "img": "/cards/CSVH4pC-WAT.png"
-  },
-  "SVE-006": {
-    "name": "基本斗能量",
-    "set_name": "SVE",
-    "number": "006",
-    "card_type": "Energy",
-    "img": "/cards/CSVH4C-FIG.png"
-  },
-  "SVI-063": {
-    "name": "小磁怪",
-    "set_name": "SVI",
-    "number": "063",
-    "card_type": "Pokémon",
-    "img": "/cards/CSV1C-042.png"
-  },
-  "SVI-081": {
-    "name": "密勒顿ex",
-    "set_name": "SVI",
-    "number": "081",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1cC-006.png"
-  },
-  "SVI-089": {
-    "name": "飘飘球",
-    "set_name": "SVI",
-    "number": "089",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVM1bC-008.png"
-  },
-  "SVI-096": {
-    "name": "钥圈儿",
-    "set_name": "SVI",
-    "number": "096",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVL1C-028.png"
-  },
-  "TWM-025": {
-    "name": "厄诡椪 碧草面具ex",
-    "set_name": "TWM",
-    "number": "025",
-    "card_type": "Pokémon",
-    "img": "/cards/CSVNC-011.png"
-  },
-  "ASR-136": {
-    "name": "清除古龙水",
-    "set_name": "ASR",
-    "number": "136",
-    "card_type": "Item",
-    "img": "/cards/CSZC-033.png"
-  },
-  "ASR-141": {
-    "name": "飞羽球",
-    "set_name": "ASR",
-    "number": "141",
-    "card_type": "Item",
-    "img": "/cards/SSP-196.png"
-  },
-  "ASR-146": {
-    "name": "洗翠的沉重球",
-    "set_name": "ASR",
-    "number": "146",
-    "card_type": "Item",
-    "img": "/cards/CSVE2C-157.png"
-  },
-  "ASR-150": {
-    "name": "杜娟",
-    "set_name": "ASR",
-    "number": "150",
-    "card_type": "Supporter",
-    "img": "/cards/CSVE2C-185.png"
-  },
-  "GRI-122": {
-    "name": "能量签",
-    "set_name": "GRI",
-    "number": "122",
-    "card_type": "Item",
-    "img": "/cards/CSVH3C-036.png"
-  },
-  "LOR-167": {
-    "name": "捩木",
-    "set_name": "LOR",
-    "number": "167",
-    "card_type": "Supporter",
-    "img": "/cards/CSVE2C-189.png"
-  },
-  "PRE-106": {
-    "name": "大地容器",
-    "set_name": "PRE",
-    "number": "106",
-    "card_type": "Item",
-    "img": "/cards/CSVH4C-034.png"
-  },
-  "PRE-119": {
-    "name": "顶尖捕捉器",
-    "set_name": "PRE",
-    "number": "119",
-    "card_type": "Tool",
-    "img": "/cards/CSV7C-180.png"
-  },
-  "PRE-121": {
-    "name": "弗图博士的剧本",
-    "set_name": "PRE",
-    "number": "121",
-    "card_type": "Supporter",
-    "img": "/cards/CSVH4C-057.png"
-  },
-  "PRE-128": {
-    "name": "宝可梦旋风回收机",
-    "set_name": "PRE",
-    "number": "128",
-    "card_type": "Item",
-    "img": "/cards/CSV8C-181.png"
-  },
-  "SFA-057": {
-    "name": "阿克罗玛的执念",
-    "set_name": "SFA",
-    "number": "057",
-    "card_type": "Supporter",
-    "img": "/cards/CSV8C-191.png"
-  },
-  "SSP-185": {
-    "name": "贵重推车",
-    "set_name": "SSP",
-    "number": "185",
-    "card_type": "Item",
-    "img": "/cards/CSV9C-186.png"
-  },
-  "SVI-166": {
-    "name": "阿克罗玛的实验",
-    "set_name": "SVI",
-    "number": "166",
-    "card_type": "Supporter",
-    "img": "/cards/CSXC-015.png"
-  },
-  "TWM-145": {
-    "name": "丹瑜",
-    "set_name": "TWM",
-    "number": "145",
-    "card_type": "Supporter",
-    "img": "/cards/CSVNC-037.png"
-  },
-  "UNB-182": {
-    "name": "宝可装置3.0",
-    "set_name": "UNB",
-    "number": "182",
-    "card_type": "Item",
-    "img": "/cards/CSVE2C-159.png"
+    ],
+    "abilities": [],
+    "attacks_en": [],
+    "attacks_cn": [
+      "自我再生",
+      "泼水"
+    ],
+    "abilities_en": [],
+    "abilities_cn": []
   }
 }

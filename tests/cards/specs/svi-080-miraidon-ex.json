@@ -1,0 +1,15 @@
+{
+  "card_id": "SVI-080",
+  "name": "密勒顿ex",
+  "text_rules": [
+    "特性 串联单元: 从牌库搜索最多2张基础电系宝可梦放到备战区",
+    "攻击 光子爆破: 造成220伤害，下回合不能攻击",
+    "撤退费用1",
+    "ex规则：被击倒时对方拿2张奖品卡"
+  ],
+  "scenarios": [
+    {"name": "特性：搜索2张基础电系到后场", "expected": {"bench_added": 2, "pokemon_type": "LIGHTNING", "deck_shuffled": true}},
+    {"name": "特性：牌库只有1张基础电系", "expected": {"bench_added": 1}},
+    {"name": "攻击：光子爆破后下回合不可攻击", "expected": {"next_turn_cannot_attack": true}}
+  ]
+}

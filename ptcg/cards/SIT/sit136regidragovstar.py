@@ -1,8 +1,9 @@
+from ptcg.core.ability import InstantAbility
 """Regidrago VSTAR - SIT 136"""
 from ptcg.core.action import AttackAction, EvolvePokemonAction, PlayPokemonAction, RetreatAction
 from ptcg.core.attack import Attack
 from ptcg.core.card import PokemonCard
-from ptcg.core.enums import CardType, PokemonPosition, PokemonRule, PokemonType, Stage
+from ptcg.core.enums import AbilityTrigger, AbilityType, CardType, PokemonPosition, PokemonRule, PokemonType, Stage
 from ptcg.core.reducer import reduce_attack_action, reduce_evolve_pokemon_action, reduce_play_pokemon_action, reduce_retreat_action
 from ptcg.utils.utils import auto_end_turn, check_energy, current_player, opponent_active
 
@@ -19,6 +20,15 @@ class SIT136RegidragoVSTAR(PokemonCard):
         self.retreat = [CardType.COLORLESS]*3; self.weakness = []; self.resistance = []
         self.evolveFrom = ["雷吉铎拉戈V"]; self.prize = 2
         self.energy = []; self.attachment = []; self.evolved = []
+        self.ability = [
+            InstantAbility({
+                "name": "星耀遗产",
+                "abilityType": AbilityType.INSTANT_ABILITY,
+                "abilityTrigger": AbilityTrigger.OTHER,
+                "onceUsedPerTurn": True,
+                "text": "在自己的回合可使用1次。从自己的弃牌区选择1张基本能量，附着于自己的备战宝可梦身上。"
+            })
+        ]
         self.attacks = [
             Attack({"name": "巨龙无双","damage": 0,"cost": [CardType.GRASS,CardType.FIRE],"text": "选择自己弃牌区中的【龙】宝可梦所拥有的1个招式，作为这个招式使用。"})
         ]

@@ -1,12 +1,12 @@
 {
   "metadata": {
     "source": "https://tcg.mik.moe/",
-    "total": 210,
+    "total": 158,
     "matched": 207,
     "not_found": 3,
     "errors": 0,
-    "elapsed_seconds": 4.0,
-    "concurrency": 10
+    "elapsed_seconds": 0.2,
+    "concurrency": 5
   },
   "cards": {
     "cards/ASC/asc189glasstrumpet": {

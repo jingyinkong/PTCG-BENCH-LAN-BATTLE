@@ -1,8 +1,9 @@
+from ptcg.core.ability import PassiveAbility
 """Klefki - SVI 096"""
 from ptcg.core.action import AttackAction, EvolvePokemonAction, PlayPokemonAction, RetreatAction
 from ptcg.core.attack import Attack
 from ptcg.core.card import PokemonCard
-from ptcg.core.enums import CardType, PokemonPosition, PokemonRule, PokemonType, Stage
+from ptcg.core.enums import AbilityTrigger, AbilityType, CardType, PokemonPosition, PokemonRule, PokemonType, Stage
 from ptcg.core.reducer import reduce_attack_action, reduce_evolve_pokemon_action, reduce_play_pokemon_action, reduce_retreat_action
 from ptcg.utils.utils import check_energy, opponent_active
 
@@ -28,6 +29,15 @@ class SVI096Klefki(PokemonCard):
         self.energy = []
         self.attachment = []
         self.evolved = []
+        self.ability = [
+            PassiveAbility({
+                "name": "恶作剧之锁",
+                "abilityType": AbilityType.PASSIVE_ABILITY,
+                "abilityTrigger": AbilityTrigger.OTHER,
+                "onceUsedPerTurn": False,
+                "text": "这只宝可梦在战斗场上时，对手的基础宝可梦的特性全部消除。（「恶作剧之锁」除外）"
+            })
+        ]
         self.attacks = [
         Attack({"name": "狙落", "damage": 10, "cost": [CardType.COLORLESS], "text": "在造成伤害前，将放于对手战斗宝可梦身上的「宝可梦道具」放于弃牌区。"})
         ]

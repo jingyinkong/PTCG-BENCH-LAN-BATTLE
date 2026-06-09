@@ -1,8 +1,9 @@
+from ptcg.core.ability import ActiveAbility
 """Teal Mask Ogerpon ex - TWM 025"""
 from ptcg.core.action import AttackAction, EvolvePokemonAction, PlayPokemonAction, RetreatAction
 from ptcg.core.attack import Attack
 from ptcg.core.card import PokemonCard
-from ptcg.core.enums import CardType, PokemonPosition, PokemonRule, PokemonType, Stage
+from ptcg.core.enums import AbilityType, CardType, PokemonPosition, PokemonRule, PokemonType, Stage
 from ptcg.core.reducer import reduce_attack_action, reduce_evolve_pokemon_action, reduce_play_pokemon_action, reduce_retreat_action
 from ptcg.utils.utils import check_energy, opponent_active
 
@@ -28,6 +29,14 @@ class TWM025TealMaskOgerponex(PokemonCard):
         self.energy = []
         self.attachment = []
         self.evolved = []
+        self.ability = [
+            ActiveAbility({
+                "name": "碧草之舞",
+                "abilityType": AbilityType.ACTIVE_ABILITY,
+                "onceUsedPerTurn": True,
+                "text": "在自己的回合可使用1次。从自己的手牌选择1张基本草能量，附着于自己的宝可梦身上。然后，将那只宝可梦恢复「30」HP。"
+            })
+        ]
         self.attacks = [
         Attack({"name": "万叶阵雨", "damage": 30, "cost": [CardType.GRASS, CardType.GRASS, CardType.GRASS], "text": "追加造成双方战斗宝可梦身上附着的能量数量x30伤害。"})
         ]
