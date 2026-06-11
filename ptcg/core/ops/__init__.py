@@ -14,6 +14,7 @@ from ptcg.core.ops.events import (
     OperationEventType,
 )
 from ptcg.core.ops.executor import OperationExecutor
+from ptcg.core.ops.resolver import OperationResolver
 from ptcg.core.ops.types import (
     GameOp,
     OpCategory,
@@ -44,6 +45,7 @@ __all__ = [
     "EventVisibility",
     "EventSink",
     "OperationExecutor",
+    "OperationResolver",
     "OperationError",
     "InvalidZoneError",
     "InvalidOperationError",

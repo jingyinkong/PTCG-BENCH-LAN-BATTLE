@@ -203,6 +203,44 @@ Action
 
 因此第一版对这些 `op` 会显式抛出 `InvalidOperationError`，而不是静默忽略。
 
+## 第三阶段 3.5：OperationResolver
+
+阶段 3.5 新增 `OperationResolver`，但它仍然是旁路 resolver，不接入 `env.step`，也不替换当前 source-driven reducer。
+
+这一阶段只建立 `Action/Card effect -> GameOp[]` 的安全接口，为后续在 legacy fallback 前尝试 `resolve_ops` 做准备。
+
+### 设计定位
+
+- `OperationResolver` 是旁路 resolver
+- 它只负责把 `Action` 或卡牌 effect 解释成 `GameOp[]`
+- 当前阶段不接入 `env.step`
+- 当前阶段不调用 `reduce_action`
+- 当前阶段不修改 state
+- 当前阶段不读取 LLM 或 cache
+- 当前阶段不迁移卡牌实现
+
+### 当前能力边界
+
+第一版只提供以下安全骨架：
+
+- `resolve_action(ctx)`：如果 `action.source` 定义了 `resolve_ops(ctx)`，则读取并归一化返回值
+- `resolve_card_effect(ctx, effect_name)`：如果 `source_card` 定义了 `resolve_effect_ops(ctx, effect_name)`，则读取并归一化返回值
+- `register(name, resolver_func)`：登记专用 resolver，但不会自动接入当前执行主流程
+- `resolve_registered(name, ctx)`：显式调用注册表中的 resolver
+
+### 当前明确不做的事情
+
+第一版明确不做以下事情：
+
+- 不调用 `action.source.reduce_action`
+- 不解析自然语言效果文本
+- 不读取 `card_data_cache`
+- 不调用 LLM
+- 不自动批量给卡牌增加 `resolve_ops`
+- 不接入 reducer 或 `env.step`
+
+因此当前 `OperationResolver` 的作用仅限于定义稳定接口和归一化约束，而不是替换现有执行路径。
+
 ## 后续迁移路线
 
 - 阶段 1：类型骨架
