@@ -103,6 +103,54 @@ Action
 
 这意味着第一阶段的产物仅用于定义语义层的稳定边界，为后续迁移做准备。
 
+## 第二阶段：ZoneService
+
+第二阶段新增 `ZoneService`，但它仍然是旁路服务，不替换现有 `move_cards`，也不接入 reducer 或 `env.step` 主流程。
+
+这一阶段的目标是为后续 `OperationExecutor` 提供统一的区域访问与安全移动接口，而不是改写当前引擎内部的状态变更实现。
+
+### 设计定位
+
+- `ZoneService` 是旁路服务，不替换现有 `ptcg.utils.utils.move_cards`
+- `ZoneService` 只服务后续 `OperationExecutor`
+- 当前阶段不接入 reducer
+- 当前阶段不改变现有行为
+
+### deck 与 left 的区别
+
+- `deck` 表示初始牌组或配置语义，对应 `Player.deck`
+- `left` 表示运行时牌库，对应 `Player.left`
+- 运行时抽牌、检索、移动等操作应优先基于 `left`
+
+### 第一版支持范围
+
+第一版优先支持安全的 list 型区域：
+
+- `hand`
+- `left`
+- `discard`
+- `prize`
+- `bench`
+- `lost_zone`
+
+这些区域在当前工程里都以 list 表达，旁路移动时更容易保证行为明确、可预期。
+
+### 暂不直接移动的区域
+
+以下区域在第一版中暂不直接支持移动：
+
+- `active`
+- `attachment`
+- `stadium`
+
+原因是这些区域在当前工程里的语义更复杂：
+
+- `active` 虽然以 list 表达，但与宝可梦站位、替换、击倒流程强相关
+- `attachment` 依赖 active 或 bench index 才能安全定位
+- `stadium` 是 `State` 级区域，不属于普通玩家 list 区域
+
+因此第一版 `ZoneService` 只允许读取这些区域；一旦尝试直接移动，会明确抛出异常，而不是静默失败。
+
 ## 后续迁移路线
 
 - 阶段 1：类型骨架

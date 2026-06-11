@@ -24,6 +24,7 @@ from ptcg.core.ops.types import (
     ZoneName,
     ZoneRef,
 )
+from ptcg.core.ops.zones import ZoneService
 
 __all__ = [
     "GameOp",
@@ -47,4 +48,5 @@ __all__ = [
     "OperationPreconditionError",
     "ChoiceRequiredError",
     "OperationInvariantError",
+    "ZoneService",
 ]
