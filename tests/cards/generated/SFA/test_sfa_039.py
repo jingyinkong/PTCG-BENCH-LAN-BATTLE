@@ -83,23 +83,6 @@ class Test桃歹郎exAttackBehavior:
                 except Exception:
                     pass
         assert True
-
-class Test桃歹郎exL4Behavior:
-    """L4: 效果行为验证."""
-    def test_text_rules_documented(self, card):
-        """验证效果规则已记录."""
-        # Rule: 攻击 焦躁爆破: 造成60伤害
-        # Rule: 特性 支配锁链
-        assert card.name
-    def test_使用焦躁爆破(self, card):
-        """使用焦躁爆破."""
-        # Expected: damage_dealt = 60
-        assert card is not None
-    def test_使用支配锁链(self, card):
-        """使用支配锁链."""
-        # Expected: ability_used = True
-        assert card is not None
-
 class Test桃歹郎exL5EdgeCases:
     """L5: 标准边界条件（snapshot_game 预设状态验证）."""
     def test_card_loads_correctly(self, snapshot_game):
@@ -171,14 +154,3 @@ class Test桃歹郎exL5EdgeCases:
             assert isinstance(cost, list), f"Attack {atk.name}: cost应为列表"
     def test_hp_non_negative(self, card):
         assert card.hp >= 0 if hasattr(card, "hp") else True
-
-class Test桃歹郎exL6Snapshot:
-    """L6: 场景快照."""
-    def test_snapshot_使用焦躁爆破(self, card):
-        """使用焦躁爆破."""
-        # Then: {"damage_dealt": 60}
-        assert card is not None
-    def test_snapshot_使用支配锁链(self, card):
-        """使用支配锁链."""
-        # Then: {"ability_used": true}
-        assert card is not None

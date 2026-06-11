@@ -14,7 +14,7 @@ class PAL156Dunsparce(PokemonCard):
     def __init__(self) -> None:
         super().__init__()
         self.set_name = "PAL"; self.number = "156"; self.id = f"{self.set_name}-{self.number}"
-        self.name = "土龙弟弟"; self.hp = 60
+        self.name = "土龙弟弟"; self.hp = 70
         self.pokemonType = PokemonType.NORMAL; self.pokemonRule = PokemonRule.NONE; self.stage = Stage.BASIC
         self.cardType = CardType.COLORLESS
         self.retreat = [CardType.COLORLESS]; self.weakness = [CardType.FIGHTING]; self.resistance = []

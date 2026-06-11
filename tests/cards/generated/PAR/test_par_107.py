@@ -140,23 +140,6 @@ class Test爬地翅AttackBehavior:
             except (StopIteration, IndexError, AttributeError, ValueError):
                 pass
         assert opp.hp == old_hp, f"{card.attacks[0].name} should deal 0 damage"
-
-class Test爬地翅L4Behavior:
-    """L4: 效果行为验证."""
-    def test_text_rules_documented(self, card):
-        """验证效果规则已记录."""
-        # Rule: 攻击 踏平: 造成0伤害
-        # Rule: 攻击 烫伤怒涛: 造成120伤害
-        assert card.name
-    def test_使用踏平(self, card):
-        """使用踏平."""
-        # Expected: damage_dealt = 0
-        assert card is not None
-    def test_使用烫伤怒涛(self, card):
-        """使用烫伤怒涛."""
-        # Expected: damage_dealt = 120
-        assert card is not None
-
 class Test爬地翅L5EdgeCases:
     """L5: 标准边界条件（snapshot_game 预设状态验证）."""
     def test_card_loads_correctly(self, snapshot_game):
@@ -222,14 +205,3 @@ class Test爬地翅L5EdgeCases:
             assert isinstance(cost, list), f"Attack {atk.name}: cost应为列表"
     def test_hp_non_negative(self, card):
         assert card.hp >= 0 if hasattr(card, "hp") else True
-
-class Test爬地翅L6Snapshot:
-    """L6: 场景快照."""
-    def test_snapshot_使用踏平(self, card):
-        """使用踏平."""
-        # Then: {"damage_dealt": 0}
-        assert card is not None
-    def test_snapshot_使用烫伤怒涛(self, card):
-        """使用烫伤怒涛."""
-        # Then: {"damage_dealt": 120}
-        assert card is not None

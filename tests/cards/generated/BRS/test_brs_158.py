@@ -107,23 +107,6 @@ class Test雷丘VAttackBehavior:
                 except Exception:
                     pass
         assert True
-
-class Test雷丘VL4Behavior:
-    """L4: 效果行为验证."""
-    def test_text_rules_documented(self, card):
-        """验证效果规则已记录."""
-        # Rule: 攻击 快速充能: 造成0伤害
-        # Rule: 攻击 强劲电光: 造成60伤害
-        assert card.name
-    def test_使用快速充能(self, card):
-        """使用快速充能."""
-        # Expected: damage_dealt = 0
-        assert card is not None
-    def test_使用强劲电光(self, card):
-        """使用强劲电光."""
-        # Expected: damage_dealt = 60
-        assert card is not None
-
 class Test雷丘VL5EdgeCases:
     """L5: 标准边界条件（snapshot_game 预设状态验证）."""
     def test_card_loads_correctly(self, snapshot_game):
@@ -189,14 +172,3 @@ class Test雷丘VL5EdgeCases:
             assert isinstance(cost, list), f"Attack {atk.name}: cost应为列表"
     def test_hp_non_negative(self, card):
         assert card.hp >= 0 if hasattr(card, "hp") else True
-
-class Test雷丘VL6Snapshot:
-    """L6: 场景快照."""
-    def test_snapshot_使用快速充能(self, card):
-        """使用快速充能."""
-        # Then: {"damage_dealt": 0}
-        assert card is not None
-    def test_snapshot_使用强劲电光(self, card):
-        """使用强劲电光."""
-        # Then: {"damage_dealt": 60}
-        assert card is not None

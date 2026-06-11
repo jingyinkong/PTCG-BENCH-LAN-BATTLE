@@ -112,23 +112,6 @@ class Test火恐龙AttackBehavior:
         assert damage_dealt == expected_damage, (
             f"Expected {expected_damage} damage, got {damage_dealt}"
         )
-
-class Test火恐龙L4Behavior:
-    """L4: 效果行为验证."""
-    def test_text_rules_documented(self, card):
-        """验证效果规则已记录."""
-        # Rule: 攻击 烈焰: 造成50伤害
-        # Rule: 特性 闪焰之幕
-        assert card.name
-    def test_使用烈焰(self, card):
-        """使用烈焰."""
-        # Expected: damage_dealt = 50
-        assert card is not None
-    def test_使用闪焰之幕(self, card):
-        """使用闪焰之幕."""
-        # Expected: ability_used = True
-        assert card is not None
-
 class Test火恐龙L5EdgeCases:
     """L5: 标准边界条件（snapshot_game 预设状态验证）."""
     def test_card_loads_correctly(self, snapshot_game):
@@ -200,14 +183,3 @@ class Test火恐龙L5EdgeCases:
             assert isinstance(cost, list), f"Attack {atk.name}: cost应为列表"
     def test_hp_non_negative(self, card):
         assert card.hp >= 0 if hasattr(card, "hp") else True
-
-class Test火恐龙L6Snapshot:
-    """L6: 场景快照."""
-    def test_snapshot_使用烈焰(self, card):
-        """使用烈焰."""
-        # Then: {"damage_dealt": 50}
-        assert card is not None
-    def test_snapshot_使用闪焰之幕(self, card):
-        """使用闪焰之幕."""
-        # Then: {"ability_used": true}
-        assert card is not None

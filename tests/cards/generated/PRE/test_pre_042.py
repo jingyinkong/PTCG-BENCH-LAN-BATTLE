@@ -133,23 +133,6 @@ class Test吼叫尾AttackBehavior:
             except (StopIteration, IndexError, AttributeError, ValueError):
                 pass
         assert opp.hp == old_hp, f"{card.attacks[0].name} should deal 0 damage"
-
-class Test吼叫尾L4Behavior:
-    """L4: 效果行为验证."""
-    def test_text_rules_documented(self, card):
-        """验证效果规则已记录."""
-        # Rule: 攻击 巴掌: 造成30伤害
-        # Rule: 攻击 凶暴吼叫: 造成0伤害
-        assert card.name
-    def test_使用巴掌(self, card):
-        """使用巴掌."""
-        # Expected: damage_dealt = 30
-        assert card is not None
-    def test_使用凶暴吼叫(self, card):
-        """使用凶暴吼叫."""
-        # Expected: damage_dealt = 0
-        assert card is not None
-
 class Test吼叫尾L5EdgeCases:
     """L5: 标准边界条件（snapshot_game 预设状态验证）."""
     def test_card_loads_correctly(self, snapshot_game):
@@ -215,14 +198,3 @@ class Test吼叫尾L5EdgeCases:
             assert isinstance(cost, list), f"Attack {atk.name}: cost应为列表"
     def test_hp_non_negative(self, card):
         assert card.hp >= 0 if hasattr(card, "hp") else True
-
-class Test吼叫尾L6Snapshot:
-    """L6: 场景快照."""
-    def test_snapshot_使用巴掌(self, card):
-        """使用巴掌."""
-        # Then: {"damage_dealt": 30}
-        assert card is not None
-    def test_snapshot_使用凶暴吼叫(self, card):
-        """使用凶暴吼叫."""
-        # Then: {"damage_dealt": 0}
-        assert card is not None

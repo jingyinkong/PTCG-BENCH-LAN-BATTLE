@@ -53,7 +53,7 @@ class ASR046RadiantGreninja(PokemonCard):
         self.attacks = [
             Attack(
                 {
-                    "name": "Moonlight Shuriken",
+                    "name": "月光手里剑",
                     "damage": 0,
                     "cost": [CardType.WATER, CardType.WATER, CardType.COLORLESS],
                     "text": "Discard 2 Energy from this Pokémon. This attack does 90 damage to 2 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)",
@@ -66,7 +66,7 @@ class ASR046RadiantGreninja(PokemonCard):
         self.ability = [
             ActiveAbility(
                 {
-                    "name": "Concealed Cards",
+                    "name": "隐藏牌",
                     "abilityType": AbilityType.ACTIVE_ABILITY,
                     "onceUsedPerTurn": True,
                     "text": "You must discard an Energy card from your hand in order to use this Ability. Once during your turn, you may draw 2 cards.",

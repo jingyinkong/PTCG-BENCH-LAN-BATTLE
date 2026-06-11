@@ -14,6 +14,11 @@ def card():
         pytest.skip(f"{CARD_ID} not registered")
     return cls()
 
+
+def _make_card():
+    return registry.get(CARD_ID)()
+
+
 class TestSCR128L3Structure:
     """L3: 精确属性断言."""
 
@@ -39,24 +44,6 @@ class TestSCR128L3Structure:
         assert card.attacks[1].name == "皇冠蛋白石"
         assert card.attacks[1].damage == 180
         assert card.attacks[1].cost == [CardType.GRASS, CardType.WATER, CardType.LIGHTNING]
-
-
-class Test太乐巴戈斯exL4Behavior:
-    """L4: 效果行为验证."""
-    def test_text_rules_documented(self, card):
-        """验证效果规则已记录."""
-        # Rule: 攻击 同盟打击: 造成30伤害
-        # Rule: 攻击 皇冠蛋白石: 造成180伤害
-        assert card.name
-    def test_使用同盟打击(self, card):
-        """使用同盟打击."""
-        # Expected: damage_dealt = 30
-        assert card is not None
-    def test_使用皇冠蛋白石(self, card):
-        """使用皇冠蛋白石."""
-        # Expected: damage_dealt = 180
-        assert card is not None
-
 class Test太乐巴戈斯exL5EdgeCases:
     """L5: 标准边界条件（snapshot_game 预设状态验证）."""
     def test_card_loads_correctly(self, snapshot_game):
@@ -122,14 +109,3 @@ class Test太乐巴戈斯exL5EdgeCases:
             assert isinstance(cost, list), f"Attack {atk.name}: cost应为列表"
     def test_hp_non_negative(self, card):
         assert card.hp >= 0 if hasattr(card, "hp") else True
-
-class Test太乐巴戈斯exL6Snapshot:
-    """L6: 场景快照."""
-    def test_snapshot_使用同盟打击(self, card):
-        """使用同盟打击."""
-        # Then: {"damage_dealt": 30}
-        assert card is not None
-    def test_snapshot_使用皇冠蛋白石(self, card):
-        """使用皇冠蛋白石."""
-        # Then: {"damage_dealt": 180}
-        assert card is not None

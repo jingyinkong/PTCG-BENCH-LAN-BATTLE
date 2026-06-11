@@ -108,18 +108,6 @@ class Test咕咕AttackBehavior:
         assert damage_dealt == expected_damage, (
             f"Expected {expected_damage} damage, got {damage_dealt}"
         )
-
-class Test咕咕L4Behavior:
-    """L4: 效果行为验证."""
-    def test_text_rules_documented(self, card):
-        """验证效果规则已记录."""
-        # Rule: 攻击 三刺击: 造成10伤害
-        assert card.name
-    def test_使用三刺击(self, card):
-        """使用三刺击."""
-        # Expected: damage_dealt = 10
-        assert card is not None
-
 class Test咕咕L5EdgeCases:
     """L5: 标准边界条件（snapshot_game 预设状态验证）."""
     def test_card_loads_correctly(self, snapshot_game):
@@ -185,10 +173,3 @@ class Test咕咕L5EdgeCases:
             assert isinstance(cost, list), f"Attack {atk.name}: cost应为列表"
     def test_hp_non_negative(self, card):
         assert card.hp >= 0 if hasattr(card, "hp") else True
-
-class Test咕咕L6Snapshot:
-    """L6: 场景快照."""
-    def test_snapshot_使用三刺击(self, card):
-        """使用三刺击."""
-        # Then: {"damage_dealt": 10}
-        assert card is not None

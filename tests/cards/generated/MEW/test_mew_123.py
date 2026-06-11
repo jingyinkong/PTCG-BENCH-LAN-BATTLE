@@ -82,23 +82,6 @@ class Test飞天螳螂AttackBehavior:
                 except Exception:
                     pass
         assert True
-
-class Test飞天螳螂L4Behavior:
-    """L4: 效果行为验证."""
-    def test_text_rules_documented(self, card):
-        """验证效果规则已记录."""
-        # Rule: 攻击 辅助斩: 造成20伤害
-        # Rule: 攻击 薄片利刃: 造成70伤害
-        assert card.name
-    def test_使用辅助斩(self, card):
-        """使用辅助斩."""
-        # Expected: damage_dealt = 20
-        assert card is not None
-    def test_使用薄片利刃(self, card):
-        """使用薄片利刃."""
-        # Expected: damage_dealt = 70
-        assert card is not None
-
 class Test飞天螳螂L5EdgeCases:
     """L5: 标准边界条件（snapshot_game 预设状态验证）."""
     def test_card_loads_correctly(self, snapshot_game):
@@ -164,14 +147,3 @@ class Test飞天螳螂L5EdgeCases:
             assert isinstance(cost, list), f"Attack {atk.name}: cost应为列表"
     def test_hp_non_negative(self, card):
         assert card.hp >= 0 if hasattr(card, "hp") else True
-
-class Test飞天螳螂L6Snapshot:
-    """L6: 场景快照."""
-    def test_snapshot_使用辅助斩(self, card):
-        """使用辅助斩."""
-        # Then: {"damage_dealt": 20}
-        assert card is not None
-    def test_snapshot_使用薄片利刃(self, card):
-        """使用薄片利刃."""
-        # Then: {"damage_dealt": 70}
-        assert card is not None

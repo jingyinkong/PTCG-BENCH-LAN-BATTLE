@@ -155,23 +155,6 @@ class Test切割洛托姆AttackBehavior:
                 except Exception:
                     pass
         assert True
-
-class Test洛托姆VL4Behavior:
-    """L4: 效果行为验证."""
-    def test_text_rules_documented(self, card):
-        """验证效果规则已记录."""
-        # Rule: 攻击 废品短路: 造成40伤害
-        # Rule: 特性 快速充电
-        assert card.name
-    def test_使用废品短路(self, card):
-        """使用废品短路."""
-        # Expected: damage_dealt = 40
-        assert card is not None
-    def test_使用快速充电(self, card):
-        """使用快速充电."""
-        # Expected: ability_used = True
-        assert card is not None
-
 class Test切割洛托姆L5EdgeCases:
     """L5: 标准边界条件（snapshot_game 预设状态验证）."""
     def test_card_loads_correctly(self, snapshot_game):
@@ -304,14 +287,3 @@ class Test洛托姆VL5EdgeCases:
             assert isinstance(cost, list), f"Attack {atk.name}: cost应为列表"
     def test_hp_non_negative(self, card):
         assert card.hp >= 0 if hasattr(card, "hp") else True
-
-class Test洛托姆VL6Snapshot:
-    """L6: 场景快照."""
-    def test_snapshot_使用废品短路(self, card):
-        """使用废品短路."""
-        # Then: {"damage_dealt": 40}
-        assert card is not None
-    def test_snapshot_使用快速充电(self, card):
-        """使用快速充电."""
-        # Then: {"ability_used": true}
-        assert card is not None

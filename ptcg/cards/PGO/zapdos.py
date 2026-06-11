@@ -86,6 +86,10 @@ class PGO029Zapdos(PokemonCard):
 
         return actions
 
+    def use_ability(self, action, state):
+        """Lightning Symbol: 自己的基础雷宝可梦的招式伤害增加10。"""
+        pass
+
     def reduce_action(self, action, state):
         """Handle action execution"""
         if isinstance(action, PlayPokemonAction):

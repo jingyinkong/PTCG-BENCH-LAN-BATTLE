@@ -83,23 +83,6 @@ class Test密勒顿exAttackBehavior:
                 except Exception:
                     pass
         assert True
-
-class Test密勒顿exL4Behavior:
-    """L4: 效果行为验证."""
-    def test_text_rules_documented(self, card):
-        """验证效果规则已记录."""
-        # Rule: 攻击 光子引爆: 造成220伤害
-        # Rule: 特性 串联装置
-        assert card.name
-    def test_使用光子引爆(self, card):
-        """使用光子引爆."""
-        # Expected: damage_dealt = 220
-        assert card is not None
-    def test_使用串联装置(self, card):
-        """使用串联装置."""
-        # Expected: ability_used = True
-        assert card is not None
-
 class Test密勒顿exL5EdgeCases:
     """L5: 标准边界条件（snapshot_game 预设状态验证）."""
     def test_card_loads_correctly(self, snapshot_game):
@@ -171,14 +154,3 @@ class Test密勒顿exL5EdgeCases:
             assert isinstance(cost, list), f"Attack {atk.name}: cost应为列表"
     def test_hp_non_negative(self, card):
         assert card.hp >= 0 if hasattr(card, "hp") else True
-
-class Test密勒顿exL6Snapshot:
-    """L6: 场景快照."""
-    def test_snapshot_使用光子引爆(self, card):
-        """使用光子引爆."""
-        # Then: {"damage_dealt": 220}
-        assert card is not None
-    def test_snapshot_使用串联装置(self, card):
-        """使用串联装置."""
-        # Then: {"ability_used": true}
-        assert card is not None

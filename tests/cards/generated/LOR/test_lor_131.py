@@ -82,23 +82,6 @@ class Test骑拉帝纳VSTARAttackBehavior:
                 except Exception:
                     pass
         assert True
-
-class Test骑拉帝纳VSTARL4Behavior:
-    """L4: 效果行为验证."""
-    def test_text_rules_documented(self, card):
-        """验证效果规则已记录."""
-        # Rule: 攻击 放逐冲击: 造成280伤害
-        # Rule: 攻击 星耀安魂曲: 造成0伤害
-        assert card.name
-    def test_使用放逐冲击(self, card):
-        """使用放逐冲击."""
-        # Expected: damage_dealt = 280
-        assert card is not None
-    def test_使用星耀安魂曲(self, card):
-        """使用星耀安魂曲."""
-        # Expected: damage_dealt = 0
-        assert card is not None
-
 class Test骑拉帝纳VSTARL5EdgeCases:
     """L5: 标准边界条件（snapshot_game 预设状态验证）."""
     def test_card_loads_correctly(self, snapshot_game):
@@ -164,14 +147,3 @@ class Test骑拉帝纳VSTARL5EdgeCases:
             assert isinstance(cost, list), f"Attack {atk.name}: cost应为列表"
     def test_hp_non_negative(self, card):
         assert card.hp >= 0 if hasattr(card, "hp") else True
-
-class Test骑拉帝纳VSTARL6Snapshot:
-    """L6: 场景快照."""
-    def test_snapshot_使用放逐冲击(self, card):
-        """使用放逐冲击."""
-        # Then: {"damage_dealt": 280}
-        assert card is not None
-    def test_snapshot_使用星耀安魂曲(self, card):
-        """使用星耀安魂曲."""
-        # Then: {"damage_dealt": 0}
-        assert card is not None

@@ -84,23 +84,6 @@ class Test盖诺赛克特AttackBehavior:
                 except Exception:
                     pass
         assert True
-
-class Test盖诺赛克特L4Behavior:
-    """L4: 效果行为验证."""
-    def test_text_rules_documented(self, card):
-        """验证效果规则已记录."""
-        # Rule: 攻击 磁力爆破: 造成100伤害
-        # Rule: 特性 ACE消除器
-        assert card.name
-    def test_使用磁力爆破(self, card):
-        """使用磁力爆破."""
-        # Expected: damage_dealt = 100
-        assert card is not None
-    def test_使用ACE消除器(self, card):
-        """使用ACE消除器."""
-        # Expected: ability_used = True
-        assert card is not None
-
 class Test盖诺赛克特L5EdgeCases:
     """L5: 标准边界条件（snapshot_game 预设状态验证）."""
     def test_card_loads_correctly(self, snapshot_game):
@@ -172,14 +155,3 @@ class Test盖诺赛克特L5EdgeCases:
             assert isinstance(cost, list), f"Attack {atk.name}: cost应为列表"
     def test_hp_non_negative(self, card):
         assert card.hp >= 0 if hasattr(card, "hp") else True
-
-class Test盖诺赛克特L6Snapshot:
-    """L6: 场景快照."""
-    def test_snapshot_使用磁力爆破(self, card):
-        """使用磁力爆破."""
-        # Then: {"damage_dealt": 100}
-        assert card is not None
-    def test_snapshot_使用ACE消除器(self, card):
-        """使用ACE消除器."""
-        # Then: {"ability_used": true}
-        assert card is not None

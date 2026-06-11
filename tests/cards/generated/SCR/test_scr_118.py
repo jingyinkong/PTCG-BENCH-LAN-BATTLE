@@ -108,23 +108,6 @@ class Test旋转洛托姆AttackBehavior:
             except (StopIteration, IndexError, AttributeError, ValueError):
                 pass
         assert opp.hp == old_hp, "Without stadium, 突击登陆 should fail and deal 0 damage"
-
-class Test旋转洛托姆L4Behavior:
-    """L4: 效果行为验证."""
-    def test_text_rules_documented(self, card):
-        """验证效果规则已记录."""
-        # Rule: 攻击 突击登陆: 造成70伤害
-        # Rule: 特性 风扇呼唤
-        assert card.name
-    def test_使用突击登陆(self, card):
-        """使用突击登陆."""
-        # Expected: damage_dealt = 70
-        assert card is not None
-    def test_使用风扇呼唤(self, card):
-        """使用风扇呼唤."""
-        # Expected: ability_used = True
-        assert card is not None
-
 class Test旋转洛托姆L5EdgeCases:
     """L5: 标准边界条件（snapshot_game 预设状态验证）."""
     def test_card_loads_correctly(self, snapshot_game):
@@ -196,14 +179,3 @@ class Test旋转洛托姆L5EdgeCases:
             assert isinstance(cost, list), f"Attack {atk.name}: cost应为列表"
     def test_hp_non_negative(self, card):
         assert card.hp >= 0 if hasattr(card, "hp") else True
-
-class Test旋转洛托姆L6Snapshot:
-    """L6: 场景快照."""
-    def test_snapshot_使用突击登陆(self, card):
-        """使用突击登陆."""
-        # Then: {"damage_dealt": 70}
-        assert card is not None
-    def test_snapshot_使用风扇呼唤(self, card):
-        """使用风扇呼唤."""
-        # Then: {"ability_used": true}
-        assert card is not None

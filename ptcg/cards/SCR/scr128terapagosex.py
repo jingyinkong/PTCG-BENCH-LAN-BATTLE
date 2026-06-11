@@ -77,5 +77,6 @@ class SCR128Terapagosex(PokemonCard):
             if action.attack == self.attacks[0]:
                 # 同盟打击: 备战数量 × 30
                 player = current_player(state)
-                action.attack.damage = 30 * len(player.bench)
+                bench_count = len(player.bench)
+                action.attack.damage = 30 * bench_count
             yield from reduce_attack_action(action, state)

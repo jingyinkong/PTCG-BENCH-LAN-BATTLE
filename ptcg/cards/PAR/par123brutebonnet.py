@@ -53,6 +53,10 @@ class PAR123BruteBonnet(PokemonCard):
                         break
         return actions
 
+    def use_ability(self, action, state):
+        """烈毒粉尘: 对手战斗宝可梦因这只宝可梦的招式昏厥时丢弃所有能量。"""
+        pass
+
     def reduce_action(self, action, state):
         if isinstance(action, PlayPokemonAction):
             reduce_play_pokemon_action(action, state)

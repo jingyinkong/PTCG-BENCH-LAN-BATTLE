@@ -59,6 +59,9 @@ class SCR118FanRotom(PokemonCard):
         elif isinstance(action, EvolvePokemonAction):
             reduce_evolve_pokemon_action(action, state)
         elif isinstance(action, AttackAction):
+            # "如果场上没有竞技场的话，则这个招式失败"
+            if len(state.stadium) == 0:
+                return
             yield from reduce_attack_action(action, state)
         elif isinstance(action, RetreatAction):
             yield from reduce_retreat_action(action, state)
