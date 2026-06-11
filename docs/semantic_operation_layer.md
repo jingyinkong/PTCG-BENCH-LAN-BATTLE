@@ -151,6 +151,58 @@ Action
 
 因此第一版 `ZoneService` 只允许读取这些区域；一旦尝试直接移动，会明确抛出异常，而不是静默失败。
 
+## 第三阶段：OperationExecutor
+
+第三阶段新增 `OperationExecutor`，但它仍然是旁路执行器，不接入 reducer，也不替换任何卡牌上的 `reduce_action`。
+
+这一阶段的目标是验证语义操作层从 `GameOp` 到结构化执行结果的最小闭环，为后续接入 legacy fallback 做准备。
+
+### 设计定位
+
+- `OperationExecutor` 是旁路执行器
+- 当前阶段不接入 reducer
+- 当前阶段不替换卡牌 `reduce_action`
+- 当前阶段不写入 legacy `auto_events`
+- 当前阶段只通过 `EventSink` 收集 `OperationEvent`
+
+### 第一版支持的操作
+
+第一版只支持以下安全操作：
+
+- `move_cards`
+- `draw_cards`
+- `discard_cards`
+
+这些操作都可以在现有 `ZoneService` 的安全 list 区域模型上完成，不需要引入 choice、伤害结算、能量附着或击倒流程。
+
+### 明确暂不支持的操作
+
+第一版暂不支持以下操作：
+
+- `deal_damage`
+- `attach_energy`
+- `evolve_pokemon`
+- `play_pokemon`
+- `apply_special_condition`
+- `end_turn`
+- `search_deck`
+- `choose_cards`
+- `switch_active`
+- `knockout`
+- `coin_flip`
+- `stadium_lifecycle`
+- `recursive_delegation`
+
+原因是这些操作至少涉及以下一种复杂语义：
+
+- 需要 choice/generator 交互
+- 需要战斗或伤害规则
+- 需要能量或进化语义
+- 需要回合流转
+- 需要 legacy reducer 协同
+
+因此第一版对这些 `op` 会显式抛出 `InvalidOperationError`，而不是静默忽略。
+
 ## 后续迁移路线
 
 - 阶段 1：类型骨架
