@@ -20,6 +20,8 @@
 | [系统架构](docs/ARCHITECTURE.md) | 架构设计、项目结构、技术栈、通信协议 |
 | [开发指南](docs/DEVELOPMENT.md) | 开发环境、测试、Git 工作流、CI/CD |
 | [AI Agent](docs/AI_AGENT.md) | AI 智能体类型、接入方式、Agent 开发 |
+| [CODEX](docs/CODEX.md) | 代码框架总览：模块索引、数据流、耦合分析 |
+| [添加卡牌](docs/ADDING_A_CARD.md) | 新卡牌添加流程、模板、验证清单 |
 | [评测系统](docs/EVALUATION.md) | 评测管线、Benchmark、排行榜、对战回放 |
 
 ---
