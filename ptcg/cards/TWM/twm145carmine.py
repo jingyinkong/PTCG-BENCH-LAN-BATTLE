@@ -53,6 +53,12 @@ class TWM145Carmine(SupporterCard):
                 target=ZoneRef(PlayerSide.SELF, ZoneName.HAND),
                 params={"count": 5},
             ),
+            GameOp(
+                type=OpType.MARK_SUPPORTER_PLAYED,
+                category=OpCategory.STATE_OP,
+                actor=PlayerSide.SELF,
+                order=4,
+            ),
         ]
 
     def reduce_action(self, action, state):

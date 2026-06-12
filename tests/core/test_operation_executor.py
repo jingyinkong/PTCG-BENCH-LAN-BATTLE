@@ -43,6 +43,7 @@ class FakePlayer:
     active: list[FakePokemon] = field(default_factory=list)
     bench: list[FakePokemon] = field(default_factory=list)
     lostZone: list[FakeCard] = field(default_factory=list)
+    supporterPlayedTurn: bool = False
 
 
 @dataclass
@@ -73,6 +74,23 @@ def _make_executor() -> OperationExecutor:
 
 
 class TestOperationExecutor:
+    def test_execute_op_mark_supporter_played_sets_flag_and_emits_event(self):
+        ctx, player, _, _ = _make_ctx()
+        executor = _make_executor()
+        op = GameOp(
+            type=OpType.MARK_SUPPORTER_PLAYED,
+            category=OpCategory.STATE_OP,
+            actor=PlayerSide.SELF,
+        )
+
+        result = executor.execute_op(ctx, op)
+
+        assert result.success is True
+        assert player.supporterPlayedTurn is True
+        assert len(result.events) == 1
+        assert result.events[0].event_type == OperationEventType.SUPPORTER_PLAYED_MARKED
+        assert result.events[0].payload == {"field": "supporterPlayedTurn", "value": True}
+
     def test_execute_op_move_cards_moves_one_card_from_left_to_hand(self):
         ctx, player, _, _ = _make_ctx()
         executor = _make_executor()

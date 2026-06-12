@@ -12,6 +12,7 @@ class EventVisibility(str, Enum):
 
 
 class OperationEventType(str, Enum):
+    SUPPORTER_PLAYED_MARKED = "supporter_played_marked"
     CARDS_MOVED = "cards_moved"
     DAMAGE_APPLIED = "damage_applied"
     HP_HEALED = "hp_healed"

@@ -43,6 +43,7 @@ class FakePlayer:
     bench: list[FakePokemon] = field(default_factory=list)
     active: list[FakePokemon] = field(default_factory=list)
     lostZone: list[FakeCard] = field(default_factory=list)
+    supporterPlayedTurn: bool = False
 
 
 @dataclass
@@ -146,6 +147,16 @@ class FakeSourceDiscard(_ReduceGuardMixin):
                 params={"cards": [ctx.acting_player.hand[0]]},
             )
         ]
+
+
+class FakeSourceMarkSupporterPlayed(_ReduceGuardMixin):
+    def __init__(self) -> None:
+        super().__init__()
+
+    def resolve_ops(self, ctx: ResolverContext):
+        from ptcg.core.ops import GameOp
+
+        return [GameOp(type=OpType.MARK_SUPPORTER_PLAYED, category=OpCategory.STATE_OP, actor=PlayerSide.SELF)]
 
 
 class FakeSourceInvalid(_ReduceGuardMixin):
@@ -281,6 +292,19 @@ class TestSemanticReducerBridge:
         assert result.used_semantic is True
         assert [card.id for card in player.hand] == ["hand-2"]
         assert [card.id for card in player.discard] == ["discard-1", "hand-1"]
+
+    def test_resolve_ops_mark_supporter_played_is_allowed_and_sets_flag(self):
+        state, player, _ = _make_state()
+        bridge = SemanticReducerBridge()
+
+        result = bridge.reduce(FakeAction(source=FakeSourceMarkSupporterPlayed()), state)
+
+        assert result.used_semantic is True
+        assert result.fallback_required is False
+        assert player.supporterPlayedTurn is True
+        assert result.payload["op_types"] == ["mark_supporter_played"]
+        assert len(result.events) == 1
+        assert result.events[0].event_type == OperationEventType.SUPPORTER_PLAYED_MARKED
 
     def test_semantic_execution_does_not_call_reduce_action(self):
         state, _, _ = _make_state()

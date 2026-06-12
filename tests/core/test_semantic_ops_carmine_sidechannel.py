@@ -95,10 +95,12 @@ def test_carmine_resolver_returns_expected_sidechannel_ops():
         OpType.MOVE_CARDS,
         OpType.DISCARD_CARDS,
         OpType.DRAW_CARDS,
+        OpType.MARK_SUPPORTER_PLAYED,
     ]
     assert ops[0].params["cards"] is carmine
     assert ops[1].params == {"count": "all"}
     assert ops[2].params == {"count": 5}
+    assert ops[3].params == {}
 
 
 def test_carmine_semantic_bridge_executes_sidechannel_zone_changes():
@@ -116,8 +118,10 @@ def test_carmine_semantic_bridge_executes_sidechannel_zone_changes():
         OpType.MOVE_CARDS,
         OpType.DISCARD_CARDS,
         OpType.DRAW_CARDS,
+        OpType.MARK_SUPPORTER_PLAYED,
     ]
 
+    assert player.supporterPlayedTurn is True
     assert _zone_ids(player.discard) == original_hand_ids
     assert _zone_ids(player.hand) == drawn_ids
     assert _zone_ids(player.left) == remaining_left_ids
@@ -125,18 +129,18 @@ def test_carmine_semantic_bridge_executes_sidechannel_zone_changes():
 
     assert carmine in player.discard
     assert all(card in player.discard for card in other_hand)
-    assert len(result.events) == 3
+    assert len(result.events) == 4
     assert [event.op_type for event in result.events] == [
         "move_cards",
         "discard_cards",
         "draw_cards",
+        "mark_supporter_played",
     ]
     assert [event.event_type for event in result.events] == [
         OperationEventType.CARDS_MOVED,
         OperationEventType.CARDS_MOVED,
         OperationEventType.CARDS_MOVED,
+        OperationEventType.SUPPORTER_PLAYED_MARKED,
     ]
-    assert [event.count for event in result.events] == [1, 2, 5]
+    assert [event.count for event in result.events] == [1, 2, 5, None]
     assert state.auto_events == []
-
-    # supporterPlayedTurn is still modeled only in the legacy reducer path.

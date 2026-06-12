@@ -24,6 +24,7 @@ class SemanticReducerBridge:
     """旁路语义桥接器，只在测试或未来显式桥接场景中使用。"""
 
     _SUPPORTED_OP_TYPES = {
+        OpType.MARK_SUPPORTER_PLAYED,
         OpType.MOVE_CARDS,
         OpType.DRAW_CARDS,
         OpType.DISCARD_CARDS,
