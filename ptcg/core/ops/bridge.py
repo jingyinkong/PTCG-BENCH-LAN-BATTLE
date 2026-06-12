@@ -7,7 +7,7 @@ from ptcg.core.ops.context import ExecutionContext, ResolverContext
 from ptcg.core.ops.errors import InvalidOperationError
 from ptcg.core.ops.executor import OperationExecutor
 from ptcg.core.ops.resolver import OperationResolver
-from ptcg.core.ops.types import GameOp, OpResult, OpType
+from ptcg.core.ops.types import GameOp, OpCategory, OpResult, OpType
 
 
 @dataclass
@@ -38,14 +38,18 @@ class SemanticReducerBridge:
             raise InvalidOperationError("SemanticReducerBridge.reduce 需要有效 action。")
 
         source = getattr(action, "source", None)
-        payload = self._build_payload(action)
+        has_resolve_ops = hasattr(source, "resolve_ops")
 
-        if not hasattr(source, "resolve_ops"):
+        if not has_resolve_ops:
             return BridgeResult(
                 used_semantic=False,
                 fallback_required=True,
                 reason="source_has_no_resolve_ops",
-                payload=payload,
+                payload=self._build_fallback_payload(
+                    action=action,
+                    reason="source_has_no_resolve_ops",
+                    has_resolve_ops=False,
+                ),
             )
 
         ops = self.try_resolve_ops(action, state)
@@ -54,22 +58,23 @@ class SemanticReducerBridge:
                 used_semantic=False,
                 fallback_required=True,
                 reason="resolver_returned_empty",
-                payload=payload,
+                payload=self._build_fallback_payload(
+                    action=action,
+                    reason="resolver_returned_empty",
+                    has_resolve_ops=True,
+                ),
             )
 
         self._validate_semantic_ops(ops)
         op_results = self.execute_semantic_ops(action, state, ops)
         events = [event for result in op_results for event in result.events]
-
-        semantic_payload = dict(payload)
-        semantic_payload["op_count"] = len(ops)
         return BridgeResult(
             used_semantic=True,
             fallback_required=False,
             op_results=op_results,
             events=events,
             reason="semantic_ops_executed",
-            payload=semantic_payload,
+            payload=self._build_semantic_payload(action, ops),
         )
 
     def try_resolve_ops(self, action: Any, state: Any) -> list[GameOp]:
@@ -89,6 +94,18 @@ class SemanticReducerBridge:
         for op in ops:
             if not isinstance(op, GameOp):
                 raise InvalidOperationError("SemanticReducerBridge 只接受 GameOp 列表。")
+            if op.category == OpCategory.CHOICE_OP:
+                raise InvalidOperationError("SemanticReducerBridge 当前不支持 ChoiceOp。")
+            if op.category == OpCategory.FLOW_OP:
+                raise InvalidOperationError("SemanticReducerBridge 当前不支持 FlowOp。")
+            if op.category != OpCategory.STATE_OP:
+                raise InvalidOperationError(f"SemanticReducerBridge 只允许 StateOp，收到: {op.category.value}")
+            if op.requires_choice:
+                raise InvalidOperationError("SemanticReducerBridge 当前不支持 requires_choice=True 的操作。")
+            if op.optional:
+                raise InvalidOperationError("SemanticReducerBridge 当前不支持 optional=True 的操作。")
+            if op.condition is not None:
+                raise InvalidOperationError("SemanticReducerBridge 当前不支持带 condition 的操作。")
             if op.type not in self._SUPPORTED_OP_TYPES:
                 raise InvalidOperationError(f"SemanticReducerBridge 当前不支持 op: {op.type.value}")
 
@@ -126,9 +143,23 @@ class SemanticReducerBridge:
             "source_type": type(source).__name__ if source is not None else None,
         }
 
-    def _build_payload(self, action: Any) -> dict[str, Any]:
+    def _build_fallback_payload(self, action: Any, reason: str, has_resolve_ops: bool) -> dict[str, Any]:
         payload = self._build_metadata(action)
+        payload["used_semantic"] = False
+        payload["fallback_required"] = True
+        payload["reason"] = reason
+        payload["has_resolve_ops"] = has_resolve_ops
         payload["op_count"] = 0
+        payload["op_types"] = []
+        return payload
+
+    def _build_semantic_payload(self, action: Any, ops: list[GameOp]) -> dict[str, Any]:
+        payload = self._build_metadata(action)
+        payload["used_semantic"] = True
+        payload["fallback_required"] = False
+        payload["op_count"] = len(ops)
+        payload["op_types"] = [op.type.value for op in ops]
+        payload["supported_ops_only"] = True
         return payload
 
     @staticmethod

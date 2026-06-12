@@ -291,6 +291,74 @@ Action
 
 因此它只能验证“简单 action 能否被语义层旁路消费”，不能替代现有 generator 驱动的主执行链。
 
+## 第四阶段 C：Bridge Safety Gate
+
+阶段 4C 只增强旁路 `SemanticReducerBridge` 的安全校验与诊断信息，不接入 `env.step`，也不修改 `_reduce_action` 或 reducer 主流程。
+
+### 当前 safety gate
+
+bridge 当前只允许以下安全 `StateOp` 通过：
+
+- `move_cards`
+- `draw_cards`
+- `discard_cards`
+
+除了 `op.type` 白名单外，还要求每个 `GameOp` 都满足以下约束：
+
+- `op.category` 必须是 `OpCategory.STATE_OP`
+- `op.requires_choice` 必须为 `False`
+- `op.optional` 必须为 `False`
+- `op.condition` 必须为 `None`
+
+### 显式拒绝规则
+
+当前 bridge 会显式拒绝以下语义，而不是尝试降级处理：
+
+- `ChoiceOp`
+- `FlowOp`
+- `requires_choice=True`
+- `optional=True`
+- 带 `condition` 的 `GameOp`
+- 任何不在白名单内的 `op.type`，例如 `choose_cards`、`search_deck`、`coin_flip`、`knockout`、`deal_damage`
+
+这些场景都会直接抛出 `InvalidOperationError`，不允许 fallback。
+
+### fallback 规则保持不变
+
+阶段 4C 不扩大 fallback 入口，仍然只在以下两种情况下返回 `fallback_required=True`：
+
+- `action.source` 没有 `resolve_ops`
+- `resolve_ops` 返回 `[]`
+
+一旦已经拿到非空 `GameOp[]`，bridge 就会先经过 safety gate 审核；任何非法 op、unsupported op 或 executor 错误都会直接抛异常，而不是 fallback。
+
+### payload 诊断字段
+
+为了在未来真正接入主流程前支持审计，`BridgeResult.payload` 现在固定输出一组稳定、可序列化的诊断字段。
+
+fallback 场景包含：
+
+- `action_type`
+- `source_type`
+- `used_semantic=False`
+- `fallback_required=True`
+- `reason`
+- `has_resolve_ops`
+
+semantic 成功场景包含：
+
+- `action_type`
+- `source_type`
+- `used_semantic=True`
+- `fallback_required=False`
+- `op_count`
+- `op_types`
+- `supported_ops_only=True`
+- `allow_generator=False`
+- `allow_choice=False`
+
+payload 不放入 `card`、`state` 等复杂对象，只保留易读、可序列化的诊断信息。
+
 ## 后续迁移路线
 
 - 阶段 1：类型骨架
