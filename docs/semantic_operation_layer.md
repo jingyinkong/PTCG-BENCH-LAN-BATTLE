@@ -1,0 +1,395 @@
+# Semantic Operation Layer 设计说明
+
+## 背景
+
+当前引擎采用 source-driven reducer 路径：
+
+```text
+env.step(action)
+  -> _reduce_action
+  -> action.source.reduce_action(action, state)
+```
+
+这条路径以 `Action` 为入口，由 `action.source` 决定如何修改状态。它已经支撑了当前大部分游戏流程，但状态变更语义仍然分散在 reducer、player 和单卡实现中。
+
+## 问题
+
+当前架构存在以下问题：
+
+- 卡牌效果分散在单卡 `reduce_action` 中，难以统一抽象和复用。
+- 状态修改入口不统一，迁移或审计状态变化成本较高。
+- `auto_events` 主要是字符串或弱结构事件，不利于稳定消费和后续桥接。
+- generator choice 机制深度嵌入 reducer，难以直接替换为统一语义层。
+- `effect_primitives.py` 已经展示了可复用操作原语的价值，但尚未统一接入主执行路径。
+
+## 目标架构
+
+目标是逐步形成如下链路：
+
+```text
+Action
+  -> Resolver
+  -> GameOp[]
+  -> OperationExecutor
+  -> State mutation + OperationEvent[]
+```
+
+其中：
+
+- `Resolver` 负责把玩家意图或卡牌效果解析成一组语义化操作。
+- `GameOp` 负责表达要发生什么状态变化。
+- `OperationExecutor` 负责执行这些操作。
+- `OperationEvent` 负责产出结构化事件，供日志、回放、前后端和 AI 未来桥接使用。
+
+## Action 与 GameOp 的区别
+
+- `Action` 表示玩家意图，例如攻击、贴能量、选择卡牌。
+- `GameOp` 表示状态变化语义，例如移动卡牌、造成伤害、附加特殊状态。
+
+两者不是替代关系，而是不同层级的抽象：
+
+- `Action` 面向输入和交互。
+- `GameOp` 面向执行和状态语义。
+
+## GameOp 分类
+
+第一版按职责分为三类：
+
+- `StateOp`：直接表达状态变化，例如移动卡牌、造成伤害、回复生命。
+- `ChoiceOp`：表达需要显式选择的操作，例如从牌库搜索、从候选集中选牌。
+- `FlowOp`：表达流程控制和事件编排，例如回合结束、递归委托、场地生命周期处理。
+
+## 第一批操作优先级
+
+### P0
+
+- `move_cards`
+- `draw_cards`
+- `discard_cards`
+- `play_pokemon`
+- `evolve_pokemon`
+- `attach_energy`
+- `deal_damage`
+- `apply_special_condition`
+- `end_turn`
+
+### P1
+
+- `choose_cards`
+- `search_deck`
+- `switch_active`
+- `take_prize`
+- `recover_energy`
+- `heal`
+- `knockout`
+
+### P2
+
+- `coin_flip`
+- `stadium_lifecycle`
+- `on_knocked_out_tool`
+- `lost_zone`
+- `recursive_delegation`
+
+## 第一阶段边界
+
+第一阶段只做类型骨架和文档，不接入任何现有业务路径，边界如下：
+
+- 不修改 `reducer`
+- 不接入 `env.step`
+- 不修改任何卡牌
+- 不替换 `choose_card_actions` generator
+- 不改变现有行为
+
+这意味着第一阶段的产物仅用于定义语义层的稳定边界，为后续迁移做准备。
+
+## 第二阶段：ZoneService
+
+第二阶段新增 `ZoneService`，但它仍然是旁路服务，不替换现有 `move_cards`，也不接入 reducer 或 `env.step` 主流程。
+
+这一阶段的目标是为后续 `OperationExecutor` 提供统一的区域访问与安全移动接口，而不是改写当前引擎内部的状态变更实现。
+
+### 设计定位
+
+- `ZoneService` 是旁路服务，不替换现有 `ptcg.utils.utils.move_cards`
+- `ZoneService` 只服务后续 `OperationExecutor`
+- 当前阶段不接入 reducer
+- 当前阶段不改变现有行为
+
+### deck 与 left 的区别
+
+- `deck` 表示初始牌组或配置语义，对应 `Player.deck`
+- `left` 表示运行时牌库，对应 `Player.left`
+- 运行时抽牌、检索、移动等操作应优先基于 `left`
+
+### 第一版支持范围
+
+第一版优先支持安全的 list 型区域：
+
+- `hand`
+- `left`
+- `discard`
+- `prize`
+- `bench`
+- `lost_zone`
+
+这些区域在当前工程里都以 list 表达，旁路移动时更容易保证行为明确、可预期。
+
+### 暂不直接移动的区域
+
+以下区域在第一版中暂不直接支持移动：
+
+- `active`
+- `attachment`
+- `stadium`
+
+原因是这些区域在当前工程里的语义更复杂：
+
+- `active` 虽然以 list 表达，但与宝可梦站位、替换、击倒流程强相关
+- `attachment` 依赖 active 或 bench index 才能安全定位
+- `stadium` 是 `State` 级区域，不属于普通玩家 list 区域
+
+因此第一版 `ZoneService` 只允许读取这些区域；一旦尝试直接移动，会明确抛出异常，而不是静默失败。
+
+## 第三阶段：OperationExecutor
+
+第三阶段新增 `OperationExecutor`，但它仍然是旁路执行器，不接入 reducer，也不替换任何卡牌上的 `reduce_action`。
+
+这一阶段的目标是验证语义操作层从 `GameOp` 到结构化执行结果的最小闭环，为后续接入 legacy fallback 做准备。
+
+### 设计定位
+
+- `OperationExecutor` 是旁路执行器
+- 当前阶段不接入 reducer
+- 当前阶段不替换卡牌 `reduce_action`
+- 当前阶段不写入 legacy `auto_events`
+- 当前阶段只通过 `EventSink` 收集 `OperationEvent`
+
+### 第一版支持的操作
+
+第一版只支持以下安全操作：
+
+- `move_cards`
+- `draw_cards`
+- `discard_cards`
+
+这些操作都可以在现有 `ZoneService` 的安全 list 区域模型上完成，不需要引入 choice、伤害结算、能量附着或击倒流程。
+
+### 明确暂不支持的操作
+
+第一版暂不支持以下操作：
+
+- `deal_damage`
+- `attach_energy`
+- `evolve_pokemon`
+- `play_pokemon`
+- `apply_special_condition`
+- `end_turn`
+- `search_deck`
+- `choose_cards`
+- `switch_active`
+- `knockout`
+- `coin_flip`
+- `stadium_lifecycle`
+- `recursive_delegation`
+
+原因是这些操作至少涉及以下一种复杂语义：
+
+- 需要 choice/generator 交互
+- 需要战斗或伤害规则
+- 需要能量或进化语义
+- 需要回合流转
+- 需要 legacy reducer 协同
+
+因此第一版对这些 `op` 会显式抛出 `InvalidOperationError`，而不是静默忽略。
+
+## 第三阶段 3.5：OperationResolver
+
+阶段 3.5 新增 `OperationResolver`，但它仍然是旁路 resolver，不接入 `env.step`，也不替换当前 source-driven reducer。
+
+这一阶段只建立 `Action/Card effect -> GameOp[]` 的安全接口，为后续在 legacy fallback 前尝试 `resolve_ops` 做准备。
+
+### 设计定位
+
+- `OperationResolver` 是旁路 resolver
+- 它只负责把 `Action` 或卡牌 effect 解释成 `GameOp[]`
+- 当前阶段不接入 `env.step`
+- 当前阶段不调用 `reduce_action`
+- 当前阶段不修改 state
+- 当前阶段不读取 LLM 或 cache
+- 当前阶段不迁移卡牌实现
+
+### 当前能力边界
+
+第一版只提供以下安全骨架：
+
+- `resolve_action(ctx)`：如果 `action.source` 定义了 `resolve_ops(ctx)`，则读取并归一化返回值
+- `resolve_card_effect(ctx, effect_name)`：如果 `source_card` 定义了 `resolve_effect_ops(ctx, effect_name)`，则读取并归一化返回值
+- `register(name, resolver_func)`：登记专用 resolver，但不会自动接入当前执行主流程
+- `resolve_registered(name, ctx)`：显式调用注册表中的 resolver
+
+### 当前明确不做的事情
+
+第一版明确不做以下事情：
+
+- 不调用 `action.source.reduce_action`
+- 不解析自然语言效果文本
+- 不读取 `card_data_cache`
+- 不调用 LLM
+- 不自动批量给卡牌增加 `resolve_ops`
+- 不接入 reducer 或 `env.step`
+
+因此当前 `OperationResolver` 的作用仅限于定义稳定接口和归一化约束，而不是替换现有执行路径。
+
+## 第四阶段 B：SemanticReducerBridge
+
+阶段 4B 新增 `SemanticReducerBridge`，但它仍然是旁路桥接器，只能在测试或未来显式桥接场景中调用。
+
+这一阶段的目标不是接入主流程，而是把“尝试 `resolve_ops`，否则要求 fallback”的桥接契约固定下来。
+
+### 设计定位
+
+- `SemanticReducerBridge` 是旁路桥接器
+- 当前只在测试中显式调用
+- 当前不接入 `env.step`
+- 当前不替换 `_reduce_action`
+- 当前不调用 legacy `reduce_action`
+
+### 第一版支持范围
+
+第一版 bridge 只允许以下安全 `op`：
+
+- `move_cards`
+- `draw_cards`
+- `discard_cards`
+
+只要 resolver 返回的 `GameOp[]` 中出现其他 `op`，bridge 就会显式抛出 `InvalidOperationError`，而不是 fallback。
+
+### fallback 规则
+
+第一版只在以下两种情况下返回 `fallback_required=True`：
+
+- `action.source` 没有 `resolve_ops`
+- `resolve_ops` 返回 `[]`
+
+只要已经进入语义层且出现错误，就不允许 fallback：
+
+- resolver 返回非法对象
+- executor 不支持该 `op`
+- executor 执行失败
+- bridge 自己的安全校验失败
+
+### 当前明确不支持的内容
+
+第一版 bridge 明确不处理以下内容：
+
+- generator action
+- `ChoiceOp`
+- `choose_cards`
+- 任何需要 `yield` / `yield from` 的 legacy reducer 路径
+- `state.auto_events` 写入
+
+因此它只能验证“简单 action 能否被语义层旁路消费”，不能替代现有 generator 驱动的主执行链。
+
+## 第四阶段 C：Bridge Safety Gate
+
+阶段 4C 只增强旁路 `SemanticReducerBridge` 的安全校验与诊断信息，不接入 `env.step`，也不修改 `_reduce_action` 或 reducer 主流程。
+
+### 当前 safety gate
+
+bridge 当前只允许以下安全 `StateOp` 通过：
+
+- `move_cards`
+- `draw_cards`
+- `discard_cards`
+
+除了 `op.type` 白名单外，还要求每个 `GameOp` 都满足以下约束：
+
+- `op.category` 必须是 `OpCategory.STATE_OP`
+- `op.requires_choice` 必须为 `False`
+- `op.optional` 必须为 `False`
+- `op.condition` 必须为 `None`
+
+### 显式拒绝规则
+
+当前 bridge 会显式拒绝以下语义，而不是尝试降级处理：
+
+- `ChoiceOp`
+- `FlowOp`
+- `requires_choice=True`
+- `optional=True`
+- 带 `condition` 的 `GameOp`
+- 任何不在白名单内的 `op.type`，例如 `choose_cards`、`search_deck`、`coin_flip`、`knockout`、`deal_damage`
+
+这些场景都会直接抛出 `InvalidOperationError`，不允许 fallback。
+
+### fallback 规则保持不变
+
+阶段 4C 不扩大 fallback 入口，仍然只在以下两种情况下返回 `fallback_required=True`：
+
+- `action.source` 没有 `resolve_ops`
+- `resolve_ops` 返回 `[]`
+
+一旦已经拿到非空 `GameOp[]`，bridge 就会先经过 safety gate 审核；任何非法 op、unsupported op 或 executor 错误都会直接抛异常，而不是 fallback。
+
+### payload 诊断字段
+
+为了在未来真正接入主流程前支持审计，`BridgeResult.payload` 现在固定输出一组稳定、可序列化的诊断字段。
+
+fallback 场景包含：
+
+- `action_type`
+- `source_type`
+- `used_semantic=False`
+- `fallback_required=True`
+- `reason`
+- `has_resolve_ops`
+
+semantic 成功场景包含：
+
+- `action_type`
+- `source_type`
+- `used_semantic=True`
+- `fallback_required=False`
+- `op_count`
+- `op_types`
+- `supported_ops_only=True`
+- `allow_generator=False`
+- `allow_choice=False`
+
+payload 不放入 `card`、`state` 等复杂对象，只保留易读、可序列化的诊断信息。
+
+## 后续迁移路线
+
+- 阶段 1：类型骨架
+- 阶段 2：`ZoneService` + `OperationEvent`
+- 阶段 3：基础 `OperationExecutor`
+- 阶段 4：legacy fallback 接入
+- 阶段 5：迁移简单卡
+- 阶段 6：复杂卡和 AI 语义提取
+
+## 第一阶段新增内容
+
+本阶段新增以下能力，但都不直接参与当前执行流程：
+
+- `ptcg.core.ops.types`：定义 `GameOp`、`OpType`、`ZoneRef`、`TargetRef`、`OpResult`
+- `ptcg.core.ops.context`：定义 `ResolverContext` 与 `ExecutionContext`
+- `ptcg.core.ops.events`：定义 `OperationEvent`、事件类型和事件收集器
+- `ptcg.core.ops.errors`：定义语义操作层异常体系
+- `ptcg.core.ops.__init__`：提供第一阶段常用导出入口
+
+## 设计原则
+
+- 先定义稳定接口，再逐步引入执行器。
+- 尽量避免直接依赖具体 `Card`、`Player`、`State` 类，降低循环依赖风险。
+- 事件结构保持强类型、低耦合，便于未来桥接旧事件系统。
+- 允许与现有 generator reducer 并存，在迁移期通过桥接逐步替换。
+
+## 迁移收益
+
+如果后续迁移顺利完成，语义层将带来以下收益：
+
+- 状态变化入口更统一，便于审计与调试。
+- 卡牌效果表达更可组合，便于抽取共性模板。
+- 结构化事件更利于回放、可视化和 AI 消费。
+- 为 legacy reducer 到新执行层的分阶段迁移提供清晰边界。
