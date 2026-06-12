@@ -241,6 +241,56 @@ Action
 
 因此当前 `OperationResolver` 的作用仅限于定义稳定接口和归一化约束，而不是替换现有执行路径。
 
+## 第四阶段 B：SemanticReducerBridge
+
+阶段 4B 新增 `SemanticReducerBridge`，但它仍然是旁路桥接器，只能在测试或未来显式桥接场景中调用。
+
+这一阶段的目标不是接入主流程，而是把“尝试 `resolve_ops`，否则要求 fallback”的桥接契约固定下来。
+
+### 设计定位
+
+- `SemanticReducerBridge` 是旁路桥接器
+- 当前只在测试中显式调用
+- 当前不接入 `env.step`
+- 当前不替换 `_reduce_action`
+- 当前不调用 legacy `reduce_action`
+
+### 第一版支持范围
+
+第一版 bridge 只允许以下安全 `op`：
+
+- `move_cards`
+- `draw_cards`
+- `discard_cards`
+
+只要 resolver 返回的 `GameOp[]` 中出现其他 `op`，bridge 就会显式抛出 `InvalidOperationError`，而不是 fallback。
+
+### fallback 规则
+
+第一版只在以下两种情况下返回 `fallback_required=True`：
+
+- `action.source` 没有 `resolve_ops`
+- `resolve_ops` 返回 `[]`
+
+只要已经进入语义层且出现错误，就不允许 fallback：
+
+- resolver 返回非法对象
+- executor 不支持该 `op`
+- executor 执行失败
+- bridge 自己的安全校验失败
+
+### 当前明确不支持的内容
+
+第一版 bridge 明确不处理以下内容：
+
+- generator action
+- `ChoiceOp`
+- `choose_cards`
+- 任何需要 `yield` / `yield from` 的 legacy reducer 路径
+- `state.auto_events` 写入
+
+因此它只能验证“简单 action 能否被语义层旁路消费”，不能替代现有 generator 驱动的主执行链。
+
 ## 后续迁移路线
 
 - 阶段 1：类型骨架

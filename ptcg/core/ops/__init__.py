@@ -1,4 +1,5 @@
 from ptcg.core.ops.context import ExecutionContext, ResolverContext
+from ptcg.core.ops.bridge import BridgeResult, SemanticReducerBridge
 from ptcg.core.ops.errors import (
     ChoiceRequiredError,
     InvalidOperationError,
@@ -40,6 +41,8 @@ __all__ = [
     "PlayerSide",
     "ResolverContext",
     "ExecutionContext",
+    "BridgeResult",
+    "SemanticReducerBridge",
     "OperationEvent",
     "OperationEventType",
     "EventVisibility",
