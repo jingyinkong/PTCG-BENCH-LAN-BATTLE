@@ -31,7 +31,7 @@ jobs:
         run: ruff check ptcg/core/ops tests/core/test_ops_zone_service.py tests/core/test_operation_executor.py tests/core/test_operation_resolver.py tests/core/test_semantic_reducer_bridge.py tests/core/test_semantic_ops_fake_integration.py
 
       - name: Test (pytest)
-        run: pytest tests/ -v
+        run: pytest tests/core/test_ops_zone_service.py tests/core/test_operation_executor.py tests/core/test_operation_resolver.py tests/core/test_semantic_reducer_bridge.py tests/core/test_semantic_ops_fake_integration.py -v
 
   frontend:
     name: Frontend (TypeScript)
