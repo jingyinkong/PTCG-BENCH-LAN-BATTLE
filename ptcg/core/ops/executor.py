@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from ptcg.core.ops.context import ExecutionContext
 from ptcg.core.ops.errors import InvalidOperationError
-from ptcg.core.ops.events import EventSink
+from ptcg.core.ops.events import EventSink, EventVisibility, OperationEvent, OperationEventType
 from ptcg.core.ops.types import GameOp, OpResult, OpType, ZoneName, ZoneRef
 from ptcg.core.ops.zones import ZoneService
 
@@ -15,7 +15,9 @@ class OperationExecutor:
         self.event_sink = event_sink or EventSink()
 
     def execute_op(self, ctx: ExecutionContext, op: GameOp) -> OpResult:
-        if op.type == OpType.MOVE_CARDS:
+        if op.type == OpType.MARK_SUPPORTER_PLAYED:
+            result = self._execute_mark_supporter_played(ctx, op)
+        elif op.type == OpType.MOVE_CARDS:
             result = self._execute_move_cards(ctx, op)
         elif op.type == OpType.DRAW_CARDS:
             result = self._execute_draw_cards(ctx, op)
@@ -49,6 +51,22 @@ class OperationExecutor:
         )
         event.op_type = op.type.value
         event.actor = op.actor.value
+        return OpResult(op=op, success=True, events=[event])
+
+    def _execute_mark_supporter_played(self, ctx: ExecutionContext, op: GameOp) -> OpResult:
+        if op.actor.value != "self":
+            raise InvalidOperationError("mark_supporter_played 只允许作用于当前玩家。")
+        if ctx.acting_player is None:
+            raise InvalidOperationError("mark_supporter_played 需要 ExecutionContext.acting_player。")
+
+        ctx.acting_player.supporterPlayedTurn = True
+        event = OperationEvent(
+            event_type=OperationEventType.SUPPORTER_PLAYED_MARKED,
+            op_type=op.type.value,
+            actor=op.actor.value,
+            visibility=EventVisibility.PUBLIC,
+            payload={"field": "supporterPlayedTurn", "value": True},
+        )
         return OpResult(op=op, success=True, events=[event])
 
     def _execute_draw_cards(self, ctx: ExecutionContext, op: GameOp) -> OpResult:

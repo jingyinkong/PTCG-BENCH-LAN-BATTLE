@@ -18,6 +18,7 @@ class OpCategory(str, Enum):
 
 
 class OpType(str, Enum):
+    MARK_SUPPORTER_PLAYED = "mark_supporter_played"
     MOVE_CARDS = "move_cards"
     DRAW_CARDS = "draw_cards"
     DISCARD_CARDS = "discard_cards"
