@@ -2,6 +2,7 @@
 from ptcg.core.action import UseSupporterAction
 from ptcg.core.card import SupporterCard
 from ptcg.core.enums import CardPosition, CardType
+from ptcg.core.ops import GameOp, OpCategory, OpType, PlayerSide, ZoneName, ZoneRef
 from ptcg.utils.utils import current_player, move_cards
 
 
@@ -22,6 +23,37 @@ class TWM145Carmine(SupporterCard):
         if not player.supporterPlayedTurn:
             actions.append(UseSupporterAction(state.turn, self))
         return actions
+
+    def resolve_ops(self, ctx):
+        return [
+            GameOp(
+                type=OpType.MOVE_CARDS,
+                category=OpCategory.STATE_OP,
+                actor=PlayerSide.SELF,
+                order=1,
+                source=ZoneRef(PlayerSide.SELF, ZoneName.HAND),
+                target=ZoneRef(PlayerSide.SELF, ZoneName.DISCARD),
+                params={"cards": self},
+            ),
+            GameOp(
+                type=OpType.DISCARD_CARDS,
+                category=OpCategory.STATE_OP,
+                actor=PlayerSide.SELF,
+                order=2,
+                source=ZoneRef(PlayerSide.SELF, ZoneName.HAND),
+                target=ZoneRef(PlayerSide.SELF, ZoneName.DISCARD),
+                params={"count": "all"},
+            ),
+            GameOp(
+                type=OpType.DRAW_CARDS,
+                category=OpCategory.STATE_OP,
+                actor=PlayerSide.SELF,
+                order=3,
+                source=ZoneRef(PlayerSide.SELF, ZoneName.LEFT),
+                target=ZoneRef(PlayerSide.SELF, ZoneName.HAND),
+                params={"count": 5},
+            ),
+        ]
 
     def reduce_action(self, action, state):
         if isinstance(action, UseSupporterAction):
