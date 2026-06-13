@@ -79,14 +79,18 @@ def make_tcg_mik_fetcher(
             }
 
         try:
-            resp = _requests.get(
+            resp = _requests.post(
                 _TCG_MIK_DETAIL_URL,
-                params={"setCodeEn": str(set_code_cn), "cardIndexEn": str(card_index_cn)},
+                json={"setCode": str(set_code_cn), "cardIndex": str(card_index_cn)},
                 timeout=timeout,
                 headers={"User-Agent": "ptcg-refetch-preview/1.0"},
             )
             resp.raise_for_status()
-            return resp.json()
+            body = resp.json()
+            # tcg.mik.moe wraps success in {"code": 200, "data": {...}}
+            if isinstance(body, dict) and body.get("code") == 200 and "data" in body:
+                return body["data"]
+            return body
         except _requests.Timeout:
             return {"_error": "request_timeout", "_detail": f"timeout after {timeout}s"}
         except _requests.RequestException as exc:
