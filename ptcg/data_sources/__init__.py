@@ -26,6 +26,9 @@ from ptcg.data_sources.text_refetch_plan import build_text_refetch_plan
 from ptcg.data_sources.semantic_extraction_prompt import (
     build_semantic_extraction_prompt_preview,
 )
+from ptcg.data_sources.semantic_ops_draft import (
+    build_semantic_ops_draft_preview,
+)
 
 __all__ = [
     "apply_refetch_result_to_normalized_record",
@@ -34,6 +37,7 @@ __all__ = [
     "build_refetch_dry_run_requests",
     "build_semantic_extraction_input_preview",
     "build_semantic_extraction_prompt_preview",
+    "build_semantic_ops_draft_preview",
     "build_text_refetch_plan",
     "infer_local_card_class_info",
     "_is_dangerous_output_path",
