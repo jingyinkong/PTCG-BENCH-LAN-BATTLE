@@ -360,3 +360,48 @@ def test_validate_output_path_allows_preview_names(tmp_path: Path):
 
     safe = tmp_path / "card_text_refetch_preview.json"
     assert _validate_output_path(safe) == []
+
+
+# ---------------------------------------------------------------------------
+# 额外: preview output includes response_diagnostics
+# ---------------------------------------------------------------------------
+
+
+def test_preview_output_includes_response_diagnostics(tmp_path: Path):
+    """--network with mocked fetcher writes preview containing response_diagnostics."""
+    resp = {
+        "cardType": "Supporter",
+        "description": "丢弃自己的手牌，抽出5张卡。",
+    }
+
+    _load_script_module()
+    with patch(
+        "refetch_card_text_preview.make_tcg_mik_fetcher",
+        return_value=_fake_fetcher(resp),
+    ):
+        out_file = tmp_path / "diagnostics_preview.json"
+        exit_code, _ = _run_main(
+            "--network", "--card-key", "TWM-145", "--limit", "1",
+            "--output-preview", str(out_file),
+        )
+        assert exit_code == 0
+        assert out_file.exists()
+
+        written = json.loads(out_file.read_text(encoding="utf-8"))
+        # Each result must contain response_diagnostics
+        for result in written.get("results", []):
+            diag = result.get("response_diagnostics")
+            assert diag is not None, f"result {result.get('card_key')} missing response_diagnostics"
+            assert "top_level_keys" in diag
+            assert "candidate_paths_checked" in diag
+            assert "description_path" in diag
+            assert "card_type_path" in diag
+            assert "has_description" in diag
+            assert "has_card_type" in diag
+            assert "response_shape" in diag
+            assert "safe_preview" in diag
+
+        # meta must still block cache writes
+        meta = written["meta"]
+        assert meta["writes_original_cache"] is False
+        assert meta["writes_normalized_cache"] is False
