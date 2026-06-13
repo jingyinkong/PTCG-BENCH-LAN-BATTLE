@@ -19,12 +19,16 @@ from ptcg.data_sources.tcg_mik_refetch_client import (
 )
 from ptcg.data_sources.text_refetch_dry_run import build_refetch_dry_run_requests
 from ptcg.data_sources.text_refetch_plan import build_text_refetch_plan
+from ptcg.data_sources.semantic_extraction_prompt import (
+    build_semantic_extraction_prompt_preview,
+)
 
 __all__ = [
     "apply_refetch_result_to_normalized_record",
     "build_local_card_index",
     "build_normalized_records",
     "build_refetch_dry_run_requests",
+    "build_semantic_extraction_prompt_preview",
     "build_text_refetch_plan",
     "infer_local_card_class_info",
     "load_card_chinese_data",
