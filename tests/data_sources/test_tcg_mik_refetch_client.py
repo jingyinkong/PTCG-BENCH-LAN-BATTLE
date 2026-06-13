@@ -102,7 +102,7 @@ def _fake_fetcher(response: dict):
 
 
 # ---------------------------------------------------------------------------
-# Supporter description parse
+# 1. Supporter description parse (top-level flat) + diagnostics
 # ---------------------------------------------------------------------------
 
 
@@ -127,9 +127,20 @@ def test_supporter_description_parse():
     assert result["errors"] == []
     assert result["raw_fields_found"] == ["cardType", "description"]
 
+    # response_diagnostics
+    diag = result["response_diagnostics"]
+    assert diag["description_path"] == "$.description"
+    assert diag["card_type_path"] == "$.cardType"
+    assert diag["has_description"] is True
+    assert diag["has_card_type"] is True
+    assert diag["response_shape"] == "flat"
+    assert "top_level_keys" in diag
+    assert "candidate_paths_checked" in diag
+    assert "safe_preview" in diag
+
 
 # ---------------------------------------------------------------------------
-# Missing description
+# 2. Missing description
 # ---------------------------------------------------------------------------
 
 
@@ -140,10 +151,11 @@ def test_missing_description():
 
     assert "text" not in result["normalized_patch_preview"]
     assert "missing_description" in result["errors"]
+    assert result["response_diagnostics"]["has_description"] is False
 
 
 # ---------------------------------------------------------------------------
-# Unknown cardType
+# 3. Unknown cardType
 # ---------------------------------------------------------------------------
 
 
@@ -157,7 +169,7 @@ def test_unknown_card_type():
 
 
 # ---------------------------------------------------------------------------
-# Pokemon attack / ability text preview
+# 4. Pokemon attack / ability text preview
 # ---------------------------------------------------------------------------
 
 
@@ -187,7 +199,7 @@ def test_pokemon_attack_ability_preview():
 
 
 # ---------------------------------------------------------------------------
-# Network disabled default
+# 5. Network disabled default
 # ---------------------------------------------------------------------------
 
 
@@ -202,9 +214,13 @@ def test_network_disabled_default():
     assert result["normalized_patch_preview"] == {}
     assert result["dry_run"] is True
 
+    # blocked result should have diagnostics
+    diag = result["response_diagnostics"]
+    assert diag["response_shape"] == "blocked"
+
 
 # ---------------------------------------------------------------------------
-# Fake fetcher path
+# 6. Fake fetcher path
 # ---------------------------------------------------------------------------
 
 
@@ -218,9 +234,14 @@ def test_fake_fetcher_path():
     assert result["normalized_patch_preview"]["text"]["rules_text_zh"] == "丢弃自己的手牌，抽出5张卡。"
     assert result["normalized_patch_preview"]["classification"]["card_supertype"] == "Trainer"
 
+    # should have response_diagnostics from real parse
+    diag = result["response_diagnostics"]
+    assert diag["response_shape"] == "flat"
+    assert diag["has_description"] is True
+
 
 # ---------------------------------------------------------------------------
-# No file writes / no dangerous imports
+# 7. No file writes / no dangerous imports
 # ---------------------------------------------------------------------------
 
 
@@ -246,7 +267,7 @@ def test_no_network_imports():
 
 
 # ---------------------------------------------------------------------------
-# Full dry-run chain (7D → 7E → 7F → 7G)
+# 8. Full dry-run chain (7D → 7E → 7F → 7G)
 # ---------------------------------------------------------------------------
 
 
@@ -279,3 +300,284 @@ def test_full_dry_run_chain_twm145():
     assert result["errors"] == []
     assert result["normalized_patch_preview"]["text"]["rules_text_zh"] is not None
     assert result["normalized_patch_preview"]["classification"]["card_supertype"] == "Trainer"
+
+
+# ===========================================================================
+# NEW: response diagnostics & parser hardening tests
+# ===========================================================================
+
+
+# ---------------------------------------------------------------------------
+# 9. data wrapper
+# ---------------------------------------------------------------------------
+
+
+def test_data_wrapper():
+    """Parser supports $.data.description / $.data.cardType."""
+    req = _supporter_dry_run_request()
+    resp = {
+        "data": {
+            "description": "丢弃自己的手牌，抽出5张卡。",
+            "cardType": "Supporter",
+        },
+    }
+    result = parse_tcg_mik_card_detail_response(resp, req)
+
+    patch = result["normalized_patch_preview"]
+    assert patch["text"]["rules_text_zh"] == "丢弃自己的手牌，抽出5张卡。"
+    assert patch["classification"]["card_supertype"] == "Trainer"
+
+    diag = result["response_diagnostics"]
+    assert diag["description_path"] == "$.data.description"
+    assert diag["card_type_path"] == "$.data.cardType"
+    assert diag["has_description"] is True
+    assert diag["has_card_type"] is True
+    assert diag["response_shape"] == "wrapped_data"
+    assert "data_keys" in diag["safe_preview"]
+
+
+# ---------------------------------------------------------------------------
+# 10. data.card wrapper
+# ---------------------------------------------------------------------------
+
+
+def test_data_card_wrapper():
+    """Parser supports $.data.card.description / $.data.card.cardType."""
+    req = _supporter_dry_run_request()
+    resp = {
+        "data": {
+            "card": {
+                "description": "将自己的手牌全部放回牌库并重洗。然后，从牌库上方抽出5张卡。",
+                "cardType": "Supporter",
+            },
+        },
+    }
+    result = parse_tcg_mik_card_detail_response(resp, req)
+
+    patch = result["normalized_patch_preview"]
+    assert patch["text"]["rules_text_zh"] is not None
+    assert patch["classification"]["card_supertype"] == "Trainer"
+
+    diag = result["response_diagnostics"]
+    assert diag["description_path"] == "$.data.card.description"
+    assert diag["card_type_path"] == "$.data.card.cardType"
+    assert diag["response_shape"] == "wrapped_data_card"
+    assert "card_keys" in diag["safe_preview"]
+
+
+# ---------------------------------------------------------------------------
+# 11. card wrapper
+# ---------------------------------------------------------------------------
+
+
+def test_card_wrapper():
+    """Parser supports $.card.description / $.card.cardType."""
+    req = _supporter_dry_run_request()
+    resp = {
+        "card": {
+            "description": "支援者卡。",
+            "cardType": "Supporter",
+        },
+    }
+    result = parse_tcg_mik_card_detail_response(resp, req)
+
+    patch = result["normalized_patch_preview"]
+    assert patch["text"]["rules_text_zh"] == "支援者卡。"
+    assert patch["classification"]["card_supertype"] == "Trainer"
+
+    diag = result["response_diagnostics"]
+    assert diag["description_path"] == "$.card.description"
+    assert diag["card_type_path"] == "$.card.cardType"
+    assert diag["response_shape"] == "wrapped_card"
+
+
+# ---------------------------------------------------------------------------
+# 12. result wrapper
+# ---------------------------------------------------------------------------
+
+
+def test_result_wrapper():
+    """Parser supports $.result.description / $.result.cardType."""
+    req = _supporter_dry_run_request()
+    resp = {
+        "result": {
+            "description": "道具卡。",
+            "cardType": "Item",
+        },
+    }
+    result = parse_tcg_mik_card_detail_response(resp, req)
+
+    patch = result["normalized_patch_preview"]
+    assert patch["text"]["rules_text_zh"] == "道具卡。"
+    assert patch["classification"]["card_supertype"] == "Trainer"
+    assert patch["classification"]["trainer_subtype"] == "Item"
+
+    diag = result["response_diagnostics"]
+    assert diag["description_path"] == "$.result.description"
+    assert diag["card_type_path"] == "$.result.cardType"
+    assert diag["response_shape"] == "wrapped_result"
+
+
+# ---------------------------------------------------------------------------
+# 13. missing cardType (description present, cardType absent)
+# ---------------------------------------------------------------------------
+
+
+def test_missing_card_type_warning():
+    """description exists but cardType is missing → warning missing_card_type."""
+    req = _supporter_dry_run_request()
+    resp = {"description": "道具卡效果文本。"}
+    result = parse_tcg_mik_card_detail_response(resp, req)
+
+    # text patch should still be generated
+    patch = result["normalized_patch_preview"]
+    assert patch["text"]["rules_text_zh"] == "道具卡效果文本。"
+
+    # classification should be absent
+    assert "classification" not in patch
+
+    # warning should include missing_card_type
+    assert "missing_card_type" in result["warnings"]
+
+    # diagnostics: cardType not found
+    diag = result["response_diagnostics"]
+    assert diag["has_card_type"] is False
+    assert diag["card_type_path"] is None
+    assert diag["has_description"] is True
+
+
+# ---------------------------------------------------------------------------
+# 14. API error shape
+# ---------------------------------------------------------------------------
+
+
+def test_api_error_shape():
+    """API returns {code: 404, message: 'not found'} → no crash, safe_preview captures."""
+    req = _supporter_dry_run_request()
+    resp = {"code": 404, "message": "not found"}
+    result = parse_tcg_mik_card_detail_response(resp, req)
+
+    # should not crash
+    assert "missing_description" in result["errors"]
+    assert "missing_card_type" in result["warnings"]
+
+    diag = result["response_diagnostics"]
+    assert diag["safe_preview"]["code"] == 404
+    assert diag["safe_preview"]["message"] == "not found"
+    assert diag["has_description"] is False
+    assert diag["has_card_type"] is False
+    assert diag["response_shape"] == "unknown"
+
+
+# ---------------------------------------------------------------------------
+# 15. invalid response shape (None)
+# ---------------------------------------------------------------------------
+
+
+def test_invalid_response_none():
+    """Response is None → invalid_response_shape, no crash."""
+    req = _supporter_dry_run_request()
+    result = parse_tcg_mik_card_detail_response(None, req)
+
+    assert "invalid_response_shape" in result["errors"]
+    assert result["normalized_patch_preview"] == {}
+
+    diag = result["response_diagnostics"]
+    assert diag["response_shape"] == "invalid"
+    assert diag["safe_preview"]["type"] == "NoneType"
+
+
+# ---------------------------------------------------------------------------
+# 16. invalid response shape (list)
+# ---------------------------------------------------------------------------
+
+
+def test_invalid_response_list():
+    """Response is a list → invalid_response_shape, no crash."""
+    req = _supporter_dry_run_request()
+    result = parse_tcg_mik_card_detail_response([1, 2, 3], req)
+
+    assert "invalid_response_shape" in result["errors"]
+    diag = result["response_diagnostics"]
+    assert diag["response_shape"] == "invalid"
+    assert diag["safe_preview"]["type"] == "list"
+
+
+# ---------------------------------------------------------------------------
+# 17. safe_preview does not leak full raw response
+# ---------------------------------------------------------------------------
+
+
+def test_safe_preview_no_leak():
+    """safe_preview must NOT include large fields like image, html, giant_text."""
+    req = _supporter_dry_run_request()
+    resp = {
+        "description": "正常效果文本。",
+        "cardType": "Supporter",
+        "image": "data:image/png;base64,AAAA...(10MB fake image data)...",
+        "html": "<div>very long html content ...</div>",
+        "giant_text": "x" * 100000,
+        "giantText": "y" * 100000,
+        "cardImage": "https://example.com/huge-image.png",
+        "fullCard": {"name": "full card JSON here"},
+        "raw": b"binary data",
+    }
+    result = parse_tcg_mik_card_detail_response(resp, req)
+
+    diag = result["response_diagnostics"]
+    safe = diag["safe_preview"]
+
+    # None of the blocked keys should appear in safe_preview
+    blocked = {"image", "html", "giant_text", "giantText", "cardImage", "card_image", "raw", "fullCard"}
+    for _k in safe:
+        assert _k not in blocked, f"safe_preview leaked blocked key: {_k}"
+
+    # But top_level_keys should include them (structural info is ok)
+    assert "image" in diag["top_level_keys"]
+    assert "html" in diag["top_level_keys"]
+
+    # The giant text should NOT be present in safe_preview value
+    safe_json_str = str(safe)
+    assert "x" * 1000 not in safe_json_str  # giant_text content must not leak
+
+
+# ---------------------------------------------------------------------------
+# 18. Full dry-run chain with wrapped response
+# ---------------------------------------------------------------------------
+
+
+def test_full_dry_run_chain_with_data_wrapper():
+    """7D→7E→7F→7G chain with data-wrapped fake response for TWM-145."""
+    from ptcg.data_sources.normalized_card_text import build_normalized_records
+    from ptcg.data_sources.text_refetch_plan import build_text_refetch_plan
+    from ptcg.data_sources.text_refetch_dry_run import build_refetch_dry_run_requests
+
+    chinese_data = ROOT / "card_chinese_data.json"
+    cache_data = ROOT / "card_data_cache.json"
+    cards_root = ROOT / "ptcg" / "cards"
+
+    records = build_normalized_records(chinese_data, cache_data, cards_root)
+    plan = build_text_refetch_plan(records)
+    dry_requests = build_refetch_dry_run_requests(plan)
+
+    twm_req = next(r for r in dry_requests if r["card_key"] == "TWM-145")
+
+    # data-wrapped response
+    resp = {
+        "data": {
+            "description": "将自己的手牌全部放回牌库并重洗。然后，从牌库上方抽出5张卡。",
+            "cardType": "Supporter",
+        },
+    }
+    client = TcgMikRefetchClient(fetcher=_fake_fetcher(resp), network_enabled=True)
+    result = client.fetch_detail_for_request(twm_req)
+
+    assert result["errors"] == []
+    patch = result["normalized_patch_preview"]
+    assert "text" in patch
+    assert "classification" in patch
+    assert patch["classification"]["card_supertype"] == "Trainer"
+
+    diag = result["response_diagnostics"]
+    assert diag["response_shape"] == "wrapped_data"
+    assert diag["description_path"] == "$.data.description"
