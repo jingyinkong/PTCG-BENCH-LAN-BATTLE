@@ -581,3 +581,44 @@ def test_full_dry_run_chain_with_data_wrapper():
     diag = result["response_diagnostics"]
     assert diag["response_shape"] == "wrapped_data"
     assert diag["description_path"] == "$.data.description"
+
+
+# ---------------------------------------------------------------------------
+# fetch error diagnostics: _error / _detail captured in safe_preview
+# ---------------------------------------------------------------------------
+
+
+def test_fetch_error_diagnostics():
+    """Fetcher returns {_error, _detail} → safe_preview exposes error_kind/error_detail_preview."""
+    req = _supporter_dry_run_request()
+    resp = {
+        "_error": "request_failed",
+        "_detail": "HTTP Error 404: Not Found for url: https://...",
+    }
+    result = parse_tcg_mik_card_detail_response(resp, req)
+
+    diag = result["response_diagnostics"]
+    assert diag["response_shape"] == "fetch_error"
+    assert diag["has_description"] is False
+    assert diag["has_card_type"] is False
+
+    sp = diag["safe_preview"]
+    assert sp["error_kind"] == "request_failed"
+    assert "HTTP Error 404" in sp["error_detail_preview"]
+    # _error / _detail are top-level keys
+    assert "_error" in sp["top_level_keys"]
+    assert "_detail" in sp["top_level_keys"]
+
+
+def test_fetch_error_detail_truncation():
+    """Very long _detail string → error_detail_preview truncated, error_detail_truncated set."""
+    req = _supporter_dry_run_request()
+    resp = {
+        "_error": "request_failed",
+        "_detail": "A" * 500,
+    }
+    result = parse_tcg_mik_card_detail_response(resp, req)
+
+    sp = result["response_diagnostics"]["safe_preview"]
+    assert len(sp["error_detail_preview"]) == 200
+    assert sp["error_detail_truncated"] is True

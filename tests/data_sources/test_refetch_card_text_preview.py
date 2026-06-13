@@ -277,6 +277,75 @@ def test_unsupported_lookup_strategy():
 
 
 # ---------------------------------------------------------------------------
+# 9b. Fetcher 对齐旧爬虫: POST + setCode/cardIndex JSON body
+# ---------------------------------------------------------------------------
+
+
+def test_fetcher_uses_post_with_setcode_cardindex():
+    """make_tcg_mik_fetcher 对齐旧爬虫: POST, setCode/cardIndex, unwrap data."""
+    from unittest.mock import MagicMock
+
+    _load_script_module()
+    from refetch_card_text_preview import make_tcg_mik_fetcher
+
+    mock_response = MagicMock()
+    mock_response.raise_for_status.return_value = None
+    mock_response.json.return_value = {
+        "code": 200,
+        "data": {
+            "description": "丢弃自己的手牌，抽出5张卡。",
+            "cardType": "Supporter",
+        },
+    }
+
+    with patch("requests.post", return_value=mock_response) as mock_post:
+        fetcher = make_tcg_mik_fetcher()
+        req = {
+            "card_key": "TWM-145",
+            "lookup_strategy": "detail_by_source_ids",
+            "lookup": {
+                "set_code_cn": "CSVNC",
+                "card_index_cn": "037",
+            },
+        }
+        result = fetcher(req)
+
+        # verify POST was called with correct URL and JSON body
+        mock_post.assert_called_once()
+        call_args = mock_post.call_args
+        assert "card-detail" in call_args[0][0]  # URL contains card-detail
+        assert call_args[1]["json"] == {"setCode": "CSVNC", "cardIndex": "037"}
+
+        # result should be the unwrapped data (not the outer code wrapper)
+        assert result == {"description": "丢弃自己的手牌，抽出5张卡。", "cardType": "Supporter"}
+
+
+def test_fetcher_uses_set_code_en_fallback():
+    """当 lookup 中缺少 set_code_cn/card_index_cn 时，回退到 setCodeEn/cardIndexEn 字段。"""
+    from unittest.mock import MagicMock
+
+    _load_script_module()
+    from refetch_card_text_preview import make_tcg_mik_fetcher
+
+    mock_response = MagicMock()
+    mock_response.raise_for_status.return_value = None
+    mock_response.json.return_value = {"code": 200, "data": {}}
+
+    with patch("requests.post", return_value=mock_response) as mock_post:
+        fetcher = make_tcg_mik_fetcher()
+        req = {
+            "card_key": "TEST-1",
+            "lookup_strategy": "detail_by_source_ids",
+            "lookup": {
+                "setCodeEn": "TWM",
+                "cardIndexEn": "145",
+            },
+        }
+        fetcher(req)
+        assert mock_post.call_args[1]["json"] == {"setCode": "TWM", "cardIndex": "145"}
+
+
+# ---------------------------------------------------------------------------
 # 10. 不修改现有 JSON
 # ---------------------------------------------------------------------------
 

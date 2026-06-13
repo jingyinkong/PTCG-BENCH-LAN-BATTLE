@@ -153,6 +153,14 @@ def _build_response_diagnostics(response: Any) -> dict[str, Any]:
     for _k in ("code", "message", "status"):
         if _k in response and not isinstance(response[_k], (dict, list)):
             safe[_k] = response[_k]
+    # capture fetch-layer error wrapper (_error/_detail from fetcher)
+    if "_error" in response and not isinstance(response["_error"], (dict, list)):
+        safe["error_kind"] = response["_error"]
+    if "_detail" in response:
+        raw_detail = str(response["_detail"])
+        safe["error_detail_preview"] = raw_detail[:200]
+        if len(raw_detail) > 200:
+            safe["error_detail_truncated"] = True
 
     # data keys (shallow)
     data = response.get("data")
@@ -172,7 +180,10 @@ def _build_response_diagnostics(response: Any) -> dict[str, Any]:
     raw_card_type, card_type_path = _try_extract_field(response, "cardType")
 
     # --- response_shape ------------------------------------------------
-    response_shape = _determine_shape(description_path)
+    if "_error" in response:
+        response_shape = "fetch_error"
+    else:
+        response_shape = _determine_shape(description_path)
 
     return {
         "top_level_keys": top_level_keys,
